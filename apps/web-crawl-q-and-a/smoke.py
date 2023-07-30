@@ -94,19 +94,20 @@ def collect_links(driver, url):
     driver.implicitly_wait(10)
     links_elements = driver.find_elements(By.TAG_NAME, "a")
     print(f"Found {len(links_elements)} anchor tags.")
-    links = [urldefrag(urljoin(url, link.get_attribute("href")))[0]
-             for link in links_elements if link.get_attribute("href")]
-    print(f"Collected {len(links)} links.")
+    links = [urldefrag(urljoin(url, link.get_attribute("href")))[
+        0] for link in links_elements if "developer.apple.com/documentation" in link.get_attribute("href")]
+    print(
+        f"Collected {len(links)} links containing 'developer.apple.com/documentation'.")
     return links
 
 
 def main():
     visited = set()
-    # url = "https://developer.apple.com/documentation/visionos"
-    url = 'https://developer.apple.com/documentation/SwiftUI'.lower()
+    url = 'https://developer.apple.com/documentation'
     urls = deque([url])
 
     while urls:
+        print(len(urls))
         url = urls.popleft()
         if url not in visited:
             print(f"Visiting {url}")  # Debug statement
