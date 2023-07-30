@@ -1,15 +1,14 @@
 from collections import deque
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from urllib.parse import urldefrag, urljoin
+from selenium.webdriver.common.keys import Keys
+from urllib.parse import urldefrag
 from selenium.webdriver.common.by import By  # new import here
+from selenium.webdriver.common.action_chains import ActionChains
+from urllib.parse import urljoin
+
 from urllib.parse import urlparse
-from multiprocessing import Pool, Manager
-import logging
-
 import os
-
-logging.basicConfig(level=logging.DEBUG)
 
 
 # Path to your Chrome binary
@@ -22,6 +21,24 @@ chromedriver_path = "/Users/laptop/Downloads/chromedriver-mac-arm64/chromedriver
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.binary_location = chrome_binary_path
+
+# Initialize the WebDriver
+driver = None
+try:
+    driver = webdriver.Chrome(
+        executable_path=chromedriver_path, options=chrome_options)
+    print("Successfully created a WebDriver instance.")
+except Exception as e:
+    print("ERROR: Couldn't create a WebDriver instance.")
+    print("Detailed error: ", e)
+    exit(1)
+
+# Navigate to the specified page
+base_url = "https://developer.apple.com/documentation"
+driver.get(base_url)
+
+# Wait for the page to load
+driver.implicitly_wait(10)  # wait up to 10 seconds
 
 
 def save_html_to_file(url, driver):
@@ -71,62 +88,53 @@ def save_text_to_file(url, text):
 
 
 def collect_links(driver, url):
-    logging.debug(f"Starting crawling {url}")
+    print(f"Crawling {url}")
     driver.get(url)
     # Wait for the page to fully load
     driver.implicitly_wait(10)
     links_elements = driver.find_elements(By.TAG_NAME, "a")
-    logging.debug(f"Found {len(links_elements)} anchor tags.")
+    print(f"Found {len(links_elements)} anchor tags.")
     links = [urldefrag(urljoin(url, link.get_attribute("href")))[
         0] for link in links_elements if "developer.apple.com/documentation" in link.get_attribute("href")]
-    logging.debug(
+    print(
         f"Collected {len(links)} links containing 'developer.apple.com/documentation'.")
     return links
 
 
-def process_url(url, visited, urls, driver):
-    logging.debug(f"Processing URL: {url}")
-    if url not in visited:
-        visited[url] = True
-        links = collect_links(driver, url)
-        for link in links:
-            if link not in visited:
-                logging.debug(f"Adding link to queue: {link}")
-                urls.append(link)  # Add the link to the global URL queue
-
-        # print("Content of the page:")
-        text_content = driver.find_element(By.TAG_NAME, "body").text
-        save_text_to_file(url, text_content)
-
-        # print("Images on the page:")
-        # images = driver.find_elements(By.TAG_NAME, "img")
-        # for img in images:
-        #     print(img.get_attribute("src"))
-
-
-def worker(args):
-    url, visited, urls = args
-    logging.debug(f"Worker started for URL: {url}")
-    driver = webdriver.Chrome(
-        executable_path=chromedriver_path, options=chrome_options)
-    process_url(url, visited, urls, driver)
-    driver.quit()
-
-
-def process_urls(visited, urls):
-    logging.debug("Processing URLs in parallel.")
-    with Pool(5) as pool:
-        pool.map(worker, [(url, visited, urls) for url in urls])
-
-
 def main():
-    logging.debug("Main function started.")
-    manager = Manager()
-    visited = manager.dict()  # Change to a dict
-    urls = manager.list()
-    urls.append('https://developer.apple.com/documentation')
-    process_urls(visited, urls)
-    logging.debug("Main function finished.")
+    visited = set()
+    url = 'https://developer.apple.com/documentation'
+    urls = deque([url])
+
+    while urls:
+        print(len(urls))
+        url = urls.popleft()
+        if url not in visited:
+            print(f"Visiting {url}")  # Debug statement
+
+            visited.add(url)
+            links = collect_links(driver, url)
+            # Debug statement
+            print(f"Adding {len(links)} links to the queue.")
+
+            urls.extend(link for link in links if link not in visited)
+
+            # Save the entire HTML content to a file
+            save_html_to_file(url, driver)
+
+            print("Content of the page:")
+            # Print the text content of the page
+            text_content = driver.find_element(By.TAG_NAME, "body").text
+            # print(text_content)
+
+            # Save the text content to a file
+            save_text_to_file(url, text_content)
+
+            print("Images on the page:")
+            images = driver.find_elements(By.TAG_NAME, "img")
+            for img in images:
+                # Print the source URL of each image
+                print(img.get_attribute("src"))
 
 
 if __name__ == "__main__":

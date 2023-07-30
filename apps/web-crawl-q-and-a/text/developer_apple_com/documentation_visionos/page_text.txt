@@ -303,3 +303,211 @@ Dark
 Auto
 Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
 
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Documentation
+Open Menu
+visionOS
+Create a new universe of apps and games for Apple Vision Pro.
+visionOS 1.0+
+Overview
+visionOS is the operating system that powers Vision Pro. Use visionOS together with familiar tools and technologies to build immersive apps and games for spatial computing.
+Create new apps using SwiftUI to take full advantage of the spectrum of immersion available in visionOS. If you have an existing iPad or iPhone app, add the visionOS destination to your app’s target to gain access to the standard system appearance, and add platform-specific features to create a compelling experience. To provide continuous access to your content in the meantime, deliver a compatible version of your app that runs in visionOS.
+Expand your app into immersive spaces
+Start with a familiar window-based experience to introduce people to your content. From there, add SwiftUI scene types specific to visionOS, such as volumes and spaces. These scene types let you incorporate depth, 3D objects, and immersive experiences.
+Build your app’s 3D content with RealityKit and Reality Composer Pro, and display it with a RealityView. In an immersive experience, use ARKit to integrate your content with the person’s surroundings.
+Explore new kinds of interaction
+People can select an element by looking at it and tapping their fingers together. They can also pinch, drag, zoom, and rotate objects using specific hand gestures. SwiftUI provides built-in support for these standard gestures, so rely on them for most of your app’s input. When you want to go beyond the standard gestures, use ARKit to create custom gestures.
+Tap to select
+Pinch to rotate
+Manipulate objects
+Create custom gestures
+Dive into featured sample apps
+Explore the core concepts for all visionOS apps with Hello World. Understand how to detect custom gestures using ARKit with Happy Beam. Discover streaming 2D and stereoscopic media with Destination Video. And learn how to build 3D scenes with RealityKit and Reality Composer Pro with Diorama.
+Hello World
+Use windows, volumes, and immersive spaces to teach people about the Earth.
+View sample code
+Destination Video
+Leverage 3D video and Spatial Audio to deliver an immersive experience.
+View sample code
+Happy Beam
+Leverage a Full Space to create a fun game using ARKit.
+View sample code
+Diorama
+Design scenes for your visionOS app using Reality Composer Pro.
+View sample code
+Topics
+App construction
+Creating your first visionOS app
+Build a new visionOS app using SwiftUI and add platform-specific features.
+Adding 3D content to your app
+Add depth and dimension to your visionOS app and discover how to incorporate your app’s content into a person’s surroundings.
+Creating fully immersive experiences in your app
+Build fully immersive experiences by combining spaces with content you create using RealityKit or Metal.
+Drawing sharp layer-based content in visionOS
+Deliver text and vector images at multiple resolutions from custom Core Animation layers in visionOS.
+Design
+Designing for visionOS
+When people wear Apple Vision Pro, they enter an infinite 3D space where they can engage with your app or game while staying connected to their surroundings.
+Adopting best practices for privacy and user preferences
+Minimize your use of sensitive information and provide a clear statement of what information you do use and how you use it.
+Improving accessibility support in your visionOS app
+Update your code to ensure everyone can access your app’s content in visionOS.
+SwiftUI
+Hello World
+Use windows, volumes, and immersive spaces to teach people about the Earth.
+Presenting windows and spaces
+Open and close the scenes that make up your app’s interface.
+Positioning and sizing windows
+Influence the initial geometry of windows that your app presents.
+RealityKit and Reality Composer Pro
+Diorama
+Design scenes for your visionOS app using Reality Composer Pro.
+Understanding RealityKit’s modular architecture
+Learn how everything fits together in RealityKit.
+Designing RealityKit content with Reality Composer Pro
+Design RealityKit scenes for your visionOS app.
+ARKit
+Happy Beam
+Leverage a Full Space to create a fun game using ARKit.
+Setting up access to ARKit data
+Check whether your app can use ARKit and respect people’s privacy.
+Placing content on detected planes
+Detect horizontal surfaces like tables and floors, as well as vertical planes like walls and doors.
+Incorporating real-world surroundings in an immersive experience
+Create an immersive experience by making your app’s content respond to the local shape of the world.
+Tracking specific points in world space
+Retrieve the position and orientation of anchors your app stores in ARKit.
+Tracking preregistered images in 3D space
+Place content based on the current position of a known image in a person’s surroundings.
+Video playback
+Destination Video
+Leverage 3D video and Spatial Audio to deliver an immersive experience.
+Configuring your app for media playback
+Configure apps to enable standard media playback behavior.
+Adopting the system player interface in visionOS
+Provide an optimized viewing experience for watching 3D video content.
+Controlling the transport behavior of a player
+Play, pause, and seek through a media presentation.
+Monitoring playback progress in your app
+Observe the playback of a media asset to update your app’s user-interface state.
+Trimming and exporting media in visionOS
+Display standard controls in your app to edit the timeline of the currently playing media.
+Xcode and Instruments
+Diagnosing and resolving bugs in your running app
+Inspect your app to isolate bugs, locate crashes, identify excess system-resource usage, visualize memory bugs, and investigate problems in its appearance.
+Diagnosing issues in the appearance of a running app
+Inspect your running app to investigate issues in the appearance and placement of the content it displays.
+Creating a performance plan for your visionOS app
+Identify your app’s performance and power goals and create a plan to measure and assess them.
+Configuring your app icon
+Add app icon variations to represent your app in places such as Settings, search results, and the App Store.
+Simulator
+Running your app in Simulator or on a device
+Launch your app in a simulated iOS, tvOS, watchOS, or visionOS device, or on a device connected to a Mac.
+Interacting with your app in the visionOS simulator
+Use your Mac to navigate spaces and control interactions with your visionOS apps in Simulator.
+iOS migration and compatibility
+Bringing your existing apps to visionOS
+Build a version of your iPadOS or iOS app using the visionOS SDK, and update your code for platform differences.
+Bringing your ARKit app to visionOS
+Update an iPadOS or iOS app that uses ARKit, and provide an equivalent experience in visionOS.
+Checking whether your existing app is compatible with visionOS
+Determine whether your existing iOS or iPadOS app runs as is in visionOS or requires modifications to handle platform differences.
+Making your existing app compatible with visionOS
+Modify your iPadOS or iOS app to run successfully in visionOS.
+Articles
+Hello World
+Use windows, volumes, and immersive spaces to teach people about the Earth.
+Destination Video
+Leverage 3D video and Spatial Audio to deliver an immersive experience.
+Diorama
+Design scenes for your visionOS app using Reality Composer Pro.
+Happy Beam
+Leverage a Full Space to create a fun game using ARKit.
+Current page is visionOS
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+
