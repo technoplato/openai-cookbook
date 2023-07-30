@@ -6,6 +6,7 @@ from urllib.parse import urldefrag
 from selenium.webdriver.common.by import By  # new import here
 from selenium.webdriver.common.action_chains import ActionChains
 from urllib.parse import urljoin
+from concurrent.futures import ThreadPoolExecutor
 
 from urllib.parse import urlparse
 import os
@@ -101,40 +102,46 @@ def collect_links(driver, url):
     return links
 
 
+def process_url(url, driver):
+    if url not in visited:
+        visited.add(url)
+        links = collect_links(driver, url)
+        for link in links:
+            if link not in visited:
+                urls.append(link)  # Add the link to the global URL queue
+
+        print("Content of the page:")
+        text_content = driver.find_element(By.TAG_NAME, "body").text
+        save_text_to_file(url, text_content)
+
+        print("Images on the page:")
+        images = driver.find_elements(By.TAG_NAME, "img")
+        for img in images:
+            print(img.get_attribute("src"))
+
+
+def worker():
+    # Create a separate WebDriver instance for this worker
+    driver = webdriver.Chrome(
+        executable_path=chromedriver_path, options=chrome_options)
+    while urls:
+        url = urls.popleft()  # Get the next URL from the queue
+        process_url(url, driver)
+    driver.quit()
+
+
 def main():
+    global visited
+    global urls
     visited = set()
     url = 'https://developer.apple.com/documentation'
     urls = deque([url])
 
-    while urls:
-        print(len(urls))
-        url = urls.popleft()
-        if url not in visited:
-            print(f"Visiting {url}")  # Debug statement
-
-            visited.add(url)
-            links = collect_links(driver, url)
-            # Debug statement
-            print(f"Adding {len(links)} links to the queue.")
-
-            urls.extend(link for link in links if link not in visited)
-
-            # Save the entire HTML content to a file
-            save_html_to_file(url, driver)
-
-            print("Content of the page:")
-            # Print the text content of the page
-            text_content = driver.find_element(By.TAG_NAME, "body").text
-            # print(text_content)
-
-            # Save the text content to a file
-            save_text_to_file(url, text_content)
-
-            print("Images on the page:")
-            images = driver.find_elements(By.TAG_NAME, "img")
-            for img in images:
-                # Print the source URL of each image
-                print(img.get_attribute("src"))
+    # Create a pool of workers
+    with ThreadPoolExecutor() as executor:
+        futures = [executor.submit(worker) for _ in range(5)]  # 5 workers
+        for future in futures:
+            future.result()  # Wait for all workers to complete
 
 
 if __name__ == "__main__":
