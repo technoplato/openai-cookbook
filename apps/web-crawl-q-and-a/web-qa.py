@@ -1,7 +1,19 @@
 ################################################################################
-### Step 1
+# Step 1
 ################################################################################
 
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
+import os
+from selenium.common.exceptions import WebDriverException
+
+import time
 import requests
 import re
 import urllib.request
@@ -17,14 +29,104 @@ import numpy as np
 from openai.embeddings_utils import distances_from_embeddings, cosine_similarity
 from ast import literal_eval
 
+
+chrome_options = Options()
+chrome_options.binary_location = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+# replace this with your actual path
+chromedriver_path = "/Users/laptop/Downloads/chromedriver-mac-arm64/chromedriver"
+driver = None
+
+
+def init_driver():
+    global driver
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+
+    options.binary_location = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    chromedriver_path = "/Users/laptop/Downloads/chromedriver-mac-arm64/chromedriver"
+
+    driver = webdriver.Chrome(chromedriver_path, options=options)
+
+
+init_driver()
+
+
+try:
+    driver = webdriver.Chrome(chromedriver_path, options=chrome_options)
+    print("Successfully created a WebDriver instance.")
+    driver.quit()
+except Exception as e:
+    print("ERROR: Couldn't create a WebDriver instance. This could mean that Selenium can't find the Chrome binary.")
+    print("Please make sure that Google Chrome is installed on your machine and it's accessible in your system's PATH.")
+    print(f"Detailed error:  {str(e)}")
+# # Test 1: Check if ChromeDriver can be found and initialized
+# try:
+#     chrome_driver_path = ChromeDriverManager().install()
+# except ValueError as e:
+#     print("ERROR: Couldn't install ChromeDriver. Please make sure it's installed and accessible in your system's PATH.")
+#     print("Detailed error: ", e)
+#     exit(1)
+
+# # Test 2: Check if a WebDriver instance can be created
+# try:
+#     driver = webdriver.Chrome(executable_path=chrome_driver_path)
+# except WebDriverException as e:
+#     print("ERROR: Couldn't create a WebDriver instance. This could mean that Selenium can't find the Chrome binary.")
+#     print("Please make sure that Google Chrome is installed on your machine and it's accessible in your system's PATH.")
+#     print("Detailed error: ", e)
+
+#     # Let's print out some additional debug info
+#     print("DEBUG INFO: Printing out your PATH environment variable:")
+#     print(os.environ["PATH"])
+#     print("DEBUG INFO: Checking common locations for Google Chrome:")
+
+#     common_chrome_locations = [
+#         "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",  # macOS
+#         "/usr/bin/google-chrome-stable",  # Ubuntu
+#         "/usr/bin/google-chrome",  # Linux
+#         "C:/Program Files/Google/Chrome/Application/chrome.exe",  # Windows
+#     ]
+
+#     for location in common_chrome_locations:
+#         if os.path.exists(location):
+#             print(f"Found Google Chrome at: {location}")
+#         else:
+#             print(f"No Google Chrome found at: {location}")
+
+#     exit(1)
+
+# # Test 3: Check if WebDriver can communicate with the Chrome browser
+# try:
+#     driver.get("https://www.google.com")
+#     if driver.title != "Google":
+#         print("ERROR: WebDriver was unable to open Google's homepage. There might be an issue with Chrome.")
+#     else:
+#         print("SUCCESS: Selenium setup is functioning correctly.")
+# except WebDriverException as e:
+#     print("ERROR: WebDriver was unable to communicate with the Chrome browser.")
+#     print("Detailed error: ", e)
+#     exit(1)
+# finally:
+#     driver.quit()
+
 # Regex pattern to match a URL
 HTTP_URL_PATTERN = r'^http[s]{0,1}://.+$'
 
+# key = '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'
+# openai.api_key = key
+
 # Define root domain to crawl
 domain = "openai.com"
+domain = "developer.apple.com"
 full_url = "https://openai.com/"
+full_url = "https://developer.apple.com/documentation/visionos"
 
 # Create a class to parse the HTML and get the hyperlinks
+
+
 class HyperlinkParser(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -40,39 +142,101 @@ class HyperlinkParser(HTMLParser):
             self.hyperlinks.append(attrs["href"])
 
 ################################################################################
-### Step 2
+# Step 2
 ################################################################################
 
 # Function to get the hyperlinks from a URL
+
+
+# Beautiful Soup does not handle javascriptj
+# def get_hyperlinks(url):
+
+#     # Try to open the URL and read the HTML
+#     try:
+#         # Open the URL and read the HTML
+#         with urllib.request.urlopen(url) as response:
+#             print(response.info())
+
+#             # If the response is not HTML, return an empty list
+#             if not response.info().get('Content-Type').startswith("text/html"):
+#                 return []
+
+#             # Decode the HTML
+#             html = response.read().decode('utf-8')
+#             print(html)
+#     except Exception as e:
+#         print(e)
+#         return []
+
+#     # Create the HTML Parser and then Parse the HTML to get hyperlinks
+#     parser = HyperlinkParser()
+#     parser.feed(html)
+
+#     return parser.hyperlinks
+
+
+# def get_hyperlinks(url):
+#     # Setup the webdriver
+#     webdriver_service = Service(ChromeDriverManager().install())
+#     driver = webdriver.Chrome(service=webdriver_service)
+#     driver.get(url)
+
+#     # Wait for the JavaScript to load
+#     time.sleep(5)
+
+#     # Get the page source
+#     html = driver.page_source
+
+#     # Quit the driver
+#     driver.quit()
+
+#     # Parse the HTML with BeautifulSoup as before
+#     parser = HyperlinkParser()
+#     parser.feed(html)
+
+#     return parser.hyperlinks
+
+
 def get_hyperlinks(url):
-    
-    # Try to open the URL and read the HTML
-    try:
-        # Open the URL and read the HTML
-        with urllib.request.urlopen(url) as response:
+    # Setup the webdriver
+    webdriver_service = Service(ChromeDriverManager().install())
 
-            # If the response is not HTML, return an empty list
-            if not response.info().get('Content-Type').startswith("text/html"):
-                return []
-            
-            # Decode the HTML
-            html = response.read().decode('utf-8')
-    except Exception as e:
-        print(e)
-        return []
+    # Setup Chrome options
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Ensure GUI is off
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
 
-    # Create the HTML Parser and then Parse the HTML to get hyperlinks
+    # Choose Chrome Browser
+    # driver = webdriver.Chrome(
+    #     service=webdriver_service, options=chrome_options)
+    driver.get(url)
+
+    # Wait for the JavaScript to load
+    time.sleep(5)
+
+    # Get the page source
+    html = driver.page_source
+
+    # Quit the driver
+    driver.quit()
+
+    # Parse the HTML with BeautifulSoup as before
     parser = HyperlinkParser()
     parser.feed(html)
 
     return parser.hyperlinks
 
+
 ################################################################################
-### Step 3
+# Step 3
 ################################################################################
 
 # Function to get the hyperlinks from a URL that are within the same domain
+
+
 def get_domain_hyperlinks(local_domain, url):
+    print(local_domain, url)
     clean_links = []
     for link in set(get_hyperlinks(url)):
         clean_link = None
@@ -106,50 +270,68 @@ def get_domain_hyperlinks(local_domain, url):
 
 
 ################################################################################
-### Step 4
+# Step 4
 ################################################################################
+
+# Then modify your functions to use the global `driver` variable
+def get_text_with_selenium(url):
+    global driver
+    try:
+        driver.get(url)
+    except Exception as e:
+        print(f"Failed to navigate to {url} with error: {str(e)}")
+        return None
+    time.sleep(3)
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    return soup
+
 
 def crawl(url):
     # Parse the URL and get the domain
     local_domain = urlparse(url).netloc
+    print(local_domain)
 
     # Create a queue to store the URLs to crawl
     queue = deque([url])
+    print(queue)
 
     # Create a set to store the URLs that have already been seen (no duplicates)
     seen = set([url])
 
     # Create a directory to store the text files
     if not os.path.exists("text/"):
-            os.mkdir("text/")
+        os.mkdir("text/")
 
     if not os.path.exists("text/"+local_domain+"/"):
-            os.mkdir("text/" + local_domain + "/")
+        os.mkdir("text/" + local_domain + "/")
 
     # Create a directory to store the csv files
     if not os.path.exists("processed"):
-            os.mkdir("processed")
+        os.mkdir("processed")
 
     # While the queue is not empty, continue crawling
     while queue:
+        print("hi")
 
         # Get the next URL from the queue
         url = queue.pop()
-        print(url) # for debugging and to see the progress
+        print(url)  # for debugging and to see the progress
 
         # Save text from the url to a <url>.txt file
         with open('text/'+local_domain+'/'+url[8:].replace("/", "_") + ".txt", "w", encoding="UTF-8") as f:
 
             # Get the text from the URL using BeautifulSoup
-            soup = BeautifulSoup(requests.get(url).text, "html.parser")
+            # soup = BeautifulSoup(requests.get(url).text, "html.parser")
+            soup = get_text_with_selenium(url)
 
             # Get the text but remove the tags
             text = soup.get_text()
 
             # If the crawler gets to a page that requires JavaScript, it will stop the crawl
             if ("You need to enable JavaScript to run this app." in text):
-                print("Unable to parse page " + url + " due to JavaScript being required")
-            
+                print("Unable to parse page " + url +
+                      " due to JavaScript being required")
+
             # Otherwise, write the text to the file in the text directory
             f.write(text)
 
@@ -159,11 +341,17 @@ def crawl(url):
                 queue.append(link)
                 seen.add(link)
 
+
 crawl(full_url)
 
+while True:
+    # sleep for a second
+    time.sleep(1)
+    print("stalling........")
 ################################################################################
-### Step 5
+# Step 5
 ################################################################################
+
 
 def remove_newlines(serie):
     serie = serie.str.replace('\n', ' ')
@@ -174,11 +362,11 @@ def remove_newlines(serie):
 
 
 ################################################################################
-### Step 6
+# Step 6
 ################################################################################
 
 # Create a list to store the text files
-texts=[]
+texts = []
 
 # Get all the text files in the text directory
 for file in os.listdir("text/" + domain + "/"):
@@ -188,10 +376,11 @@ for file in os.listdir("text/" + domain + "/"):
         text = f.read()
 
         # Omit the first 11 lines and the last 4 lines, then replace -, _, and #update with spaces.
-        texts.append((file[11:-4].replace('-',' ').replace('_', ' ').replace('#update',''), text))
+        texts.append(
+            (file[11:-4].replace('-', ' ').replace('_', ' ').replace('#update', ''), text))
 
 # Create a dataframe from the list of texts
-df = pd.DataFrame(texts, columns = ['fname', 'text'])
+df = pd.DataFrame(texts, columns=['fname', 'text'])
 
 # Set the text column to be the raw text with the newlines removed
 df['text'] = df.fname + ". " + remove_newlines(df.text)
@@ -199,7 +388,7 @@ df.to_csv('processed/scraped.csv')
 df.head()
 
 ################################################################################
-### Step 7
+# Step 7
 ################################################################################
 
 # Load the cl100k_base tokenizer which is designed to work with the ada-002 model
@@ -215,20 +404,23 @@ df['n_tokens'] = df.text.apply(lambda x: len(tokenizer.encode(x)))
 df.n_tokens.hist()
 
 ################################################################################
-### Step 8
+# Step 8
 ################################################################################
 
 max_tokens = 500
 
 # Function to split the text into chunks of a maximum number of tokens
-def split_into_many(text, max_tokens = max_tokens):
+
+
+def split_into_many(text, max_tokens=max_tokens):
 
     # Split the text into sentences
     sentences = text.split('. ')
 
     # Get the number of tokens for each sentence
-    n_tokens = [len(tokenizer.encode(" " + sentence)) for sentence in sentences]
-    
+    n_tokens = [len(tokenizer.encode(" " + sentence))
+                for sentence in sentences]
+
     chunks = []
     tokens_so_far = 0
     chunk = []
@@ -236,7 +428,7 @@ def split_into_many(text, max_tokens = max_tokens):
     # Loop through the sentences and tokens joined together in a tuple
     for sentence, token in zip(sentences, n_tokens):
 
-        # If the number of tokens so far plus the number of tokens in the current sentence is greater 
+        # If the number of tokens so far plus the number of tokens in the current sentence is greater
         # than the max number of tokens, then add the chunk to the list of chunks and reset
         # the chunk and tokens so far
         if tokens_so_far + token > max_tokens:
@@ -244,7 +436,7 @@ def split_into_many(text, max_tokens = max_tokens):
             chunk = []
             tokens_so_far = 0
 
-        # If the number of tokens in the current sentence is greater than the max number of 
+        # If the number of tokens in the current sentence is greater than the max number of
         # tokens, go to the next sentence
         if token > max_tokens:
             continue
@@ -252,13 +444,13 @@ def split_into_many(text, max_tokens = max_tokens):
         # Otherwise, add the sentence to the chunk and add the number of tokens to the total
         chunk.append(sentence)
         tokens_so_far += token + 1
-        
+
     # Add the last chunk to the list of chunks
     if chunk:
         chunks.append(". ".join(chunk) + ".")
 
     return chunks
-    
+
 
 shortened = []
 
@@ -272,42 +464,44 @@ for row in df.iterrows():
     # If the number of tokens is greater than the max number of tokens, split the text into chunks
     if row[1]['n_tokens'] > max_tokens:
         shortened += split_into_many(row[1]['text'])
-    
+
     # Otherwise, add the text to the list of shortened texts
     else:
-        shortened.append( row[1]['text'] )
+        shortened.append(row[1]['text'])
 
 ################################################################################
-### Step 9
+# Step 9
 ################################################################################
 
-df = pd.DataFrame(shortened, columns = ['text'])
+df = pd.DataFrame(shortened, columns=['text'])
 df['n_tokens'] = df.text.apply(lambda x: len(tokenizer.encode(x)))
 df.n_tokens.hist()
 
 ################################################################################
-### Step 10
+# Step 10
 ################################################################################
 
 # Note that you may run into rate limit issues depending on how many files you try to embed
 # Please check out our rate limit guide to learn more on how to handle this: https://platform.openai.com/docs/guides/rate-limits
 
-df['embeddings'] = df.text.apply(lambda x: openai.Embedding.create(input=x, engine='text-embedding-ada-002')['data'][0]['embedding'])
+df['embeddings'] = df.text.apply(lambda x: openai.Embedding.create(
+    input=x, engine='text-embedding-ada-002')['data'][0]['embedding'])
 df.to_csv('processed/embeddings.csv')
 df.head()
 
 ################################################################################
-### Step 11
+# Step 11
 ################################################################################
 
-df=pd.read_csv('processed/embeddings.csv', index_col=0)
+df = pd.read_csv('processed/embeddings.csv', index_col=0)
 df['embeddings'] = df['embeddings'].apply(literal_eval).apply(np.array)
 
 df.head()
 
 ################################################################################
-### Step 12
+# Step 12
 ################################################################################
+
 
 def create_context(
     question, df, max_len=1800, size="ada"
@@ -317,30 +511,32 @@ def create_context(
     """
 
     # Get the embeddings for the question
-    q_embeddings = openai.Embedding.create(input=question, engine='text-embedding-ada-002')['data'][0]['embedding']
+    q_embeddings = openai.Embedding.create(
+        input=question, engine='text-embedding-ada-002')['data'][0]['embedding']
 
     # Get the distances from the embeddings
-    df['distances'] = distances_from_embeddings(q_embeddings, df['embeddings'].values, distance_metric='cosine')
-
+    df['distances'] = distances_from_embeddings(
+        q_embeddings, df['embeddings'].values, distance_metric='cosine')
 
     returns = []
     cur_len = 0
 
     # Sort by distance and add the text to the context until the context is too long
     for i, row in df.sort_values('distances', ascending=True).iterrows():
-        
+
         # Add the length of the text to the current length
         cur_len += row['n_tokens'] + 4
-        
+
         # If the context is too long, break
         if cur_len > max_len:
             break
-        
+
         # Else add it to the text that is being returned
         returns.append(row["text"])
 
     # Return the context
     return "\n\n###\n\n".join(returns)
+
 
 def answer_question(
     df,
@@ -384,8 +580,9 @@ def answer_question(
         return ""
 
 ################################################################################
-### Step 13
+# Step 13
 ################################################################################
+
 
 print(answer_question(df, question="What day is it?", debug=False))
 

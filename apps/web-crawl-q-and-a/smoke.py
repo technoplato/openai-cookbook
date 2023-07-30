@@ -1,0 +1,70 @@
+from collections import deque
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
+from urllib.parse import urldefrag
+from selenium.webdriver.common.by import By  # new import here
+from selenium.webdriver.common.action_chains import ActionChains
+
+# Path to your Chrome binary
+chrome_binary_path = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+# Path to your ChromeDriver
+chromedriver_path = "/Users/laptop/Downloads/chromedriver-mac-arm64/chromedriver"
+
+# Set Chrome options
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+chrome_options.binary_location = chrome_binary_path
+
+# Initialize the WebDriver
+driver = None
+try:
+    driver = webdriver.Chrome(
+        executable_path=chromedriver_path, options=chrome_options)
+    print("Successfully created a WebDriver instance.")
+except Exception as e:
+    print("ERROR: Couldn't create a WebDriver instance.")
+    print("Detailed error: ", e)
+    exit(1)
+
+# Navigate to the specified page
+base_url = "https://developer.apple.com/documentation/visionos"
+driver.get(base_url)
+
+# Wait for the page to load
+driver.implicitly_wait(10)  # wait up to 10 seconds
+
+
+def collect_links(driver, url):
+    print(f"Crawling {url}")
+    driver.get(url)
+    links = driver.find_elements(By.TAG_NAME, "a")
+    return [urldefrag(link.get_attribute("href"))[0] for link in links if link.get_attribute("href").startswith(url)]
+
+
+def main():
+    visited = set()
+    url = "https://developer.apple.com/documentation/visionos"
+    urls = deque([url])
+
+    while urls:
+        url = urls.popleft()
+        if url not in visited:
+            visited.add(url)
+            links = collect_links(driver, url)
+            urls.extend(link for link in links if link not in visited)
+
+            print("Content of the page:")
+            # Print the text content of the page
+            print(driver.find_element(By.TAG_NAME, "body").text)
+
+            print("Images on the page:")
+            images = driver.find_elements(By.TAG_NAME, "img")
+            for img in images:
+                # Print the source URL of each image
+                print(img.get_attribute("src"))
+
+
+if __name__ == "__main__":
+    main()
