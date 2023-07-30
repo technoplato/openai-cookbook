@@ -6,6 +6,10 @@ from urllib.parse import urldefrag
 from selenium.webdriver.common.by import By  # new import here
 from selenium.webdriver.common.action_chains import ActionChains
 
+from urllib.parse import urlparse
+import os
+
+
 # Path to your Chrome binary
 chrome_binary_path = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
@@ -36,6 +40,28 @@ driver.get(base_url)
 driver.implicitly_wait(10)  # wait up to 10 seconds
 
 
+def save_text_to_file(url, text):
+    # Parse the domain name and path from the URL
+    parsed_url = urlparse(url)
+    domain_name = parsed_url.netloc.replace('.', '_')
+    path = parsed_url.path.strip('/').replace('/', '_')
+
+    # Create the directory path including domain name and path
+    directory_path = os.path.join('./text', domain_name, path)
+
+    # Create the directory if it doesn't exist
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
+
+    # Define the file path to save the text
+    file_path = os.path.join(directory_path, 'page_text.txt')
+
+    # Write the text content to the file
+    with open(file_path, 'a') as file:
+        file.write(text)
+        file.write("\n\n")  # Separate content of different pages
+
+
 def collect_links(driver, url):
     print(f"Crawling {url}")
     driver.get(url)
@@ -45,7 +71,8 @@ def collect_links(driver, url):
 
 def main():
     visited = set()
-    url = "https://developer.apple.com/documentation/visionos"
+    # url = "https://developer.apple.com/documentation/visionos"
+    url = 'https://developer.apple.com/documentation/SwiftUI'
     urls = deque([url])
 
     while urls:
@@ -57,7 +84,11 @@ def main():
 
             print("Content of the page:")
             # Print the text content of the page
-            print(driver.find_element(By.TAG_NAME, "body").text)
+            text_content = driver.find_element(By.TAG_NAME, "body").text
+            # print(text_content)
+
+            # Save the text content to a file
+            save_text_to_file(url, text_content)
 
             print("Images on the page:")
             images = driver.find_elements(By.TAG_NAME, "img")

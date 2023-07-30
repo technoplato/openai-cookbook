@@ -1,0 +1,268 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+ARKit
+Happy Beam
+Setting up access to ARKit data
+Placing content on detected planes
+Incorporating real-world surroundings in an immersive experience
+Tracking specific points in world space
+Tracking preregistered images in 3D space
+Video playback
+Bringing your existing apps to visionOS
+Bringing your ARKit app to visionOS
+Checking whether your existing app is compatible with visionOS
+Making your existing app compatible with visionOS
+Articles
+Hello World
+Destination Video
+Documentation
+Open Menu
+Sample Code
+Destination Video
+Leverage 3D video and Spatial Audio to deliver an immersive experience.
+Download
+iOS 17.0+
+iPadOS 17.0+
+tvOS 17.0+
+visionOS 1.0+
+Xcode 15.0+
+Overview
+Destination Video is a multiplatform video-playback app for visionOS, iOS, and tvOS. People get a familiar media-browsing experience navigating the libraryʼs content and playing videos they find interesting. The app provides a similar experience on supported platforms, but leverages unique features of visionOS to create a novel, immersive playback experience.
+Play
+Play video in an inline player
+When you select a video in the library, Destination Video presents a view that displays additional details about the item. The view presents controls to play the video and specify whether to include it in your Up Next list. In visionOS, it also displays a video poster along its leading edge. Tapping the view’s Preview button displays an inline preview of the video.
+Play
+When you present an AVPlayerViewController object’s interface as a child of another view, inline controls display, for example, pause, skip, and seek. Showing standard playback controls in your app provides a familiar UI that automatically adapts its appearance to fit each platform, and is the recommended choice in most cases.
+Destination Video uses a simple UI for the inline player view: a single button that toggles state of playback, and replays the content when it reaches the item’s end. AVPlayerViewController doesn’t provide this controls style, but the app uses it to display the video content without controls by setting the value of its showsPlaybackControls property to false. It then overlays the custom playback controls it requires. See the Destination Video’s InlinePlayerView type for details on how you can implement this.
+Note
+AVPlayerViewController only supports displaying 2D content when embedded inline. Present the player fullscreen to play 3D video.
+Play video in a fullscreen player
+One of the most exciting features of visionOS is its ability to play 3D video along with Spatial Audio, which adds a deeper level of immersion to the viewing experience. Playing 3D content in your app requires that you display AVPlayerViewController in its full screen presentation.
+When you present the player fullscreen, the system automatically docks it into the ideal viewing position, and presents streamlined playback controls that keep the person’s focus on the content.
+Note
+In iOS or tvOS, you typically present video in a full-screen presentation using the fullScreenCover(isPresented:onDismiss:content:) modifier. You can present the player this way in visionOS, but the recommended way to present it fullscreen is to set it as the root view of your app’s window group.
+Destination Video’s ContentView displays the library view by default. It observes changes to the player model’s presentation property, which indicates whether the app requests inline or fullscreen playback. When the presentation state changes to fullScreen, the view redraws the UI to display the player view in place of the library:
+struct ContentView: View {
+    
+    /// The library's selection path.
+    @State private var selectionPath = [Video]()
+    @EnvironmentObject private var player: PlayerModel
+    
+    var body: some View {
+        switch player.presentation {
+        case .fullScreen:
+            PlayerView()
+                .onAppear {
+                    player.play()
+                }
+        default:
+            LibraryView(path: $selectionPath)
+                // Set a specific frame size in case the user resizes the video-player window.
+                .frame(width: 960, height: 540)
+        }
+    }
+}
+When someone selects the Play Video button on the detail screen, this calls the player model’s loadVideo(_: presentation:) method requesting the fullScreen presentation option:
+Button {
+    /// Load the media item for full-screen presentation.
+    player.loadVideo(video, presentation: .fullScreen)
+} label: {
+    Label("Play Video", systemImage: "play.fill")
+}
+After the player model successfully loads the video content for playback, it updates its presentation value to fullScreen, which causes the app to replace the library with PlayerView.
+To dismiss the fullscreen player in visionOS, people tap the back button in the player UI. To handle this action, the app’s FullScreenPlayerView type defines an AVPlayerViewControllerDelegate object that handles the dismissal:
+func playerViewController(_ playerViewController: AVPlayerViewController,
+                          willEndFullScreenPresentationWithAnimationCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    // Resets the player state, which dismisses the player view.
+    player.reset()
+}
+When the delegate receives this call, it clears the media from the player model and resets the presentation state back to its default value, which results in the Destination Video app redisplaying the library view.
+Configure the Spatial Audio experience
+Media playback apps require common configuration of their capabilities and audio session. In addition to performing the steps outlined in Configuring your app for media playback, Destination Video also adopts new AVAudioSession API to customize a person’s Spatial Audio experience.
+After the app successfully loads a video for playback, it configures the Spatial Audio experience for the current presentation. For the inline player view, it sets the experience to a small, focused sound stage where the audio originates from the location of the view. When displaying a video full screen, it sets the experience to a large, fully immersive sound stage.
+/// Configures a person's intended Spatial Audio experience to best fit the presentation.
+/// - Parameter presentation: the requested player presentation.
+private func configureAudioExperience(for presentation: Presentation) {
+    #if os(xrOS)
+    do {
+        let experience: AVAudioSessionSpatialExperience
+        switch presentation {
+        case .inline:
+            // Set a small, focused sound stage when watching trailers.
+            experience = .headTracked(soundStageSize: .small, anchoringStrategy: .automatic)
+        case .fullScreen:
+            // Set a large sound stage size when viewing fullscreen.
+            experience = .headTracked(soundStageSize: .large, anchoringStrategy: .automatic)
+        }
+        try AVAudioSession.sharedInstance().setIntendedSpatialExperience(experience)
+    } catch {
+        logger.error("Unable to set the intended spatial experience. \(error.localizedDescription)")
+    }
+    #endif
+}
+Present an immersive space
+Building video playback apps for visionOS provides new opportunities to enhance the viewing experience beyond the bounds of the player window. To add a greater level of immersion, the sample presents an immersive space that displays a scene around a person as they watch the video. It defines the immersive space in the DestinationVideo app structure:
+struct DestinationVideo: App {
+    
+    var body: some Scene {
+        // The app's primary window.
+        WindowGroup {
+            ContentView()
+        }
+
+
+        // Defines an immersive space to present a destination in which to watch the video.
+        ImmersiveSpace(for: Destination.self) { $destination in
+            if let destination {
+                DestinationView(destination)
+            }
+        }
+        // Set the immersion style to progressive, so the person can use the Digital Crown to dial in their experience.
+        .immersionStyle(selection: .constant(.progressive), in: .progressive)
+    }
+}
+The immersive space presents an instance of DestinationView, which maps a texture to the inside of a sphere that it displays around a person. The app presents it using the .progressive immersion style, which lets someone change their amount of immersion by turning the Digital Crown on the device.
+Play
+The Destination Video app automatically presents the immersive space when a person navigates to a video’s detail view, and dismisses it when they return to the library. To monitor these events, the app observes its navigation path to determine when a navigation event occurs so it can show or dismiss the space:
+.onChange(of: navigationPath) {
+    Task {
+        // The selection path becomes empty when the person returns to the main library window.
+        if navigationPath.isEmpty {
+            if isSpaceOpen {
+                // Dismiss the space and return the person to their real-world space.
+                await dismissSpace()
+                isSpaceOpen = false
+            }
+        } else {
+            // The navigationPath has one video, or is empty.
+            guard let video = navigationPath.first else { fatalError() }
+            // Await the request to open the destination and set the state accordingly.
+            switch await openSpace(value: video.destination) {
+            case .opened: isSpaceOpen = true
+            default: isSpaceOpen = false
+            }
+        }
+    }
+}
+Provide a shared viewing experience
+One of the best ways to enhance your app’s playback experience is to make that experience shareable with others. You can use the AVFoundation and the GroupActivities frameworks to build SharePlay experiences that bring people together even when they can’t be in the same location.
+The Destination Video app creates an experience where people can watch videos with others across devices and platforms. It defines a group activity called VideoWatchingActivity that adopts the GroupActivity protocol. When people have a FaceTime call active and they play a video in the fullscreen player, it becomes eligible for playback for everyone on the call.
+The app’s VideoWatchingCoordinator actor manages Destination Video’s SharePlay functionality. It observes the activation of new VideoWatchingActivity sessions and when one starts, it sets the GroupSession instance on the player object’s AVPlaybackCoordinator:
+private var groupSession: GroupSession<VideoWatchingActivity>? {
+    didSet {
+        guard let groupSession else { return }
+        // Set the group session on the AVPlayer object's's playback coordinator.
+        // so it can synchronize playback with other devices.
+        playbackCoordinator.coordinateWithSession(groupSession)
+    }
+}
+With the player configured to use the group session, when the app loads new videos, they become eligible to share with people in the FaceTime call.
+See Also
+Related samples
+Hello World
+Use windows, volumes, and immersive spaces to teach people about the Earth.
+Happy Beam
+Leverage a Full Space to create a fun game using ARKit.
+Diorama
+Design scenes for your visionOS app using Reality Composer Pro.
+Related articles
+Configuring your app for media playback
+Configure apps to enable standard media playback behavior.
+Adopting the system player interface in visionOS
+Provide an optimized viewing experience for watching 3D video content.
+Controlling the transport behavior of a player
+Play, pause, and seek through a media presentation.
+Monitoring playback progress in your app
+Observe the playback of a media asset to update your app’s user-interface state.
+Trimming and exporting media in visionOS
+Display standard controls in your app to edit the timeline of the currently playing media.
+Related videos
+Create a great spatial playback experience
+Deliver video content for spatial experiences
+Build spatial SharePlay experiences
+Current page is Destination Video
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+
