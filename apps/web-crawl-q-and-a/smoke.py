@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from urllib.parse import urldefrag
 from selenium.webdriver.common.by import By  # new import here
 from selenium.webdriver.common.action_chains import ActionChains
+from urllib.parse import urljoin
 
 from urllib.parse import urlparse
 import os
@@ -40,6 +41,30 @@ driver.get(base_url)
 driver.implicitly_wait(10)  # wait up to 10 seconds
 
 
+def save_html_to_file(url, driver):
+    # Parse the domain name and path from the URL
+    parsed_url = urlparse(url)
+    domain_name = parsed_url.netloc.replace('.', '_')
+    path = parsed_url.path.strip('/').replace('/', '_')
+
+    # Create the directory path including domain name and path
+    directory_path = os.path.join('./html', domain_name, path)
+
+    # Create the directory if it doesn't exist
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
+
+    # Define the file path to save the HTML
+    file_path = os.path.join(directory_path, 'page.html')
+
+    # Get the entire HTML content
+    html_content = driver.page_source
+
+    # Write the HTML content to the file
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(html_content)
+
+
 def save_text_to_file(url, text):
     # Parse the domain name and path from the URL
     parsed_url = urlparse(url)
@@ -65,22 +90,36 @@ def save_text_to_file(url, text):
 def collect_links(driver, url):
     print(f"Crawling {url}")
     driver.get(url)
-    links = driver.find_elements(By.TAG_NAME, "a")
-    return [urldefrag(link.get_attribute("href"))[0] for link in links if link.get_attribute("href").startswith(url)]
+    # Wait for the page to fully load
+    driver.implicitly_wait(10)
+    links_elements = driver.find_elements(By.TAG_NAME, "a")
+    print(f"Found {len(links_elements)} anchor tags.")
+    links = [urldefrag(urljoin(url, link.get_attribute("href")))[0]
+             for link in links_elements if link.get_attribute("href")]
+    print(f"Collected {len(links)} links.")
+    return links
 
 
 def main():
     visited = set()
     # url = "https://developer.apple.com/documentation/visionos"
-    url = 'https://developer.apple.com/documentation/SwiftUI'
+    url = 'https://developer.apple.com/documentation/SwiftUI'.lower()
     urls = deque([url])
 
     while urls:
         url = urls.popleft()
         if url not in visited:
+            print(f"Visiting {url}")  # Debug statement
+
             visited.add(url)
             links = collect_links(driver, url)
+            # Debug statement
+            print(f"Adding {len(links)} links to the queue.")
+
             urls.extend(link for link in links if link not in visited)
+
+            # Save the entire HTML content to a file
+            save_html_to_file(url, driver)
 
             print("Content of the page:")
             # Print the text content of the page
