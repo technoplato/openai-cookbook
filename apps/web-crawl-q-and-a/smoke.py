@@ -1,14 +1,11 @@
 from collections import deque
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
-from urllib.parse import urldefrag
+from urllib.parse import urldefrag, urljoin
 from selenium.webdriver.common.by import By  # new import here
-from selenium.webdriver.common.action_chains import ActionChains
-from urllib.parse import urljoin
-from concurrent.futures import ThreadPoolExecutor
-
 from urllib.parse import urlparse
+from multiprocessing import Pool, Manager
+
 import os
 
 
@@ -22,24 +19,6 @@ chromedriver_path = "/Users/laptop/Downloads/chromedriver-mac-arm64/chromedriver
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.binary_location = chrome_binary_path
-
-# Initialize the WebDriver
-driver = None
-try:
-    driver = webdriver.Chrome(
-        executable_path=chromedriver_path, options=chrome_options)
-    print("Successfully created a WebDriver instance.")
-except Exception as e:
-    print("ERROR: Couldn't create a WebDriver instance.")
-    print("Detailed error: ", e)
-    exit(1)
-
-# Navigate to the specified page
-base_url = "https://developer.apple.com/documentation/visionos"
-driver.get(base_url)
-
-# Wait for the page to load
-driver.implicitly_wait(10)  # wait up to 10 seconds
 
 
 def save_html_to_file(url, driver):
@@ -120,28 +99,25 @@ def process_url(url, driver):
             print(img.get_attribute("src"))
 
 
-def worker():
+def worker(url):
     # Create a separate WebDriver instance for this worker
     driver = webdriver.Chrome(
         executable_path=chromedriver_path, options=chrome_options)
-    while urls:
-        url = urls.popleft()  # Get the next URL from the queue
-        process_url(url, driver)
+    process_url(url, driver)
     driver.quit()
 
 
 def main():
     global visited
     global urls
-    visited = set()
-    url = 'https://developer.apple.com/documentation'
-    urls = deque([url])
+    manager = Manager()
+    visited = manager.list()
+    urls = manager.list()
+    urls.append('https://developer.apple.com/documentation')
 
     # Create a pool of workers
-    with ThreadPoolExecutor() as executor:
-        futures = [executor.submit(worker) for _ in range(5)]  # 5 workers
-        for future in futures:
-            future.result()  # Wait for all workers to complete
+    with Pool(5) as pool:  # 5 workers
+        pool.map(worker, urls)
 
 
 if __name__ == "__main__":
