@@ -5,8 +5,11 @@ from urllib.parse import urldefrag, urljoin
 from selenium.webdriver.common.by import By  # new import here
 from urllib.parse import urlparse
 from multiprocessing import Pool, Manager
+import logging
 
 import os
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 # Path to your Chrome binary
@@ -68,39 +71,42 @@ def save_text_to_file(url, text):
 
 
 def collect_links(driver, url):
-    print(f"Crawling {url}")
+    logging.debug(f"Starting crawling {url}")
     driver.get(url)
     # Wait for the page to fully load
     driver.implicitly_wait(10)
     links_elements = driver.find_elements(By.TAG_NAME, "a")
-    print(f"Found {len(links_elements)} anchor tags.")
+    logging.debug(f"Found {len(links_elements)} anchor tags.")
     links = [urldefrag(urljoin(url, link.get_attribute("href")))[
         0] for link in links_elements if "developer.apple.com/documentation" in link.get_attribute("href")]
-    print(
+    logging.debug(
         f"Collected {len(links)} links containing 'developer.apple.com/documentation'.")
     return links
 
 
 def process_url(url, visited, urls, driver):
+    logging.debug(f"Processing URL: {url}")
     if url not in visited:
         visited[url] = True
         links = collect_links(driver, url)
         for link in links:
             if link not in visited:
+                logging.debug(f"Adding link to queue: {link}")
                 urls.append(link)  # Add the link to the global URL queue
 
-        print("Content of the page:")
+        # print("Content of the page:")
         text_content = driver.find_element(By.TAG_NAME, "body").text
         save_text_to_file(url, text_content)
 
-        print("Images on the page:")
-        images = driver.find_elements(By.TAG_NAME, "img")
-        for img in images:
-            print(img.get_attribute("src"))
+        # print("Images on the page:")
+        # images = driver.find_elements(By.TAG_NAME, "img")
+        # for img in images:
+        #     print(img.get_attribute("src"))
 
 
 def worker(args):
     url, visited, urls = args
+    logging.debug(f"Worker started for URL: {url}")
     driver = webdriver.Chrome(
         executable_path=chromedriver_path, options=chrome_options)
     process_url(url, visited, urls, driver)
@@ -108,16 +114,19 @@ def worker(args):
 
 
 def process_urls(visited, urls):
+    logging.debug("Processing URLs in parallel.")
     with Pool(5) as pool:
         pool.map(worker, [(url, visited, urls) for url in urls])
 
 
 def main():
+    logging.debug("Main function started.")
     manager = Manager()
     visited = manager.dict()  # Change to a dict
     urls = manager.list()
     urls.append('https://developer.apple.com/documentation')
     process_urls(visited, urls)
+    logging.debug("Main function finished.")
 
 
 if __name__ == "__main__":
