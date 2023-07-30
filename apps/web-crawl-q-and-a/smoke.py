@@ -81,9 +81,9 @@ def collect_links(driver, url):
     return links
 
 
-def process_url(url, driver):
+def process_url(url, visited, urls, driver):
     if url not in visited:
-        visited.add(url)
+        visited[url] = True
         links = collect_links(driver, url)
         for link in links:
             if link not in visited:
@@ -99,25 +99,25 @@ def process_url(url, driver):
             print(img.get_attribute("src"))
 
 
-def worker(url):
-    # Create a separate WebDriver instance for this worker
+def worker(args):
+    url, visited, urls = args
     driver = webdriver.Chrome(
         executable_path=chromedriver_path, options=chrome_options)
-    process_url(url, driver)
+    process_url(url, visited, urls, driver)
     driver.quit()
 
 
+def process_urls(visited, urls):
+    with Pool(5) as pool:
+        pool.map(worker, [(url, visited, urls) for url in urls])
+
+
 def main():
-    global visited
-    global urls
     manager = Manager()
-    visited = manager.list()
+    visited = manager.dict()  # Change to a dict
     urls = manager.list()
     urls.append('https://developer.apple.com/documentation')
-
-    # Create a pool of workers
-    with Pool(5) as pool:  # 5 workers
-        pool.map(worker, urls)
+    process_urls(visited, urls)
 
 
 if __name__ == "__main__":
