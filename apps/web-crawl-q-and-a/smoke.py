@@ -6,7 +6,8 @@ from urllib.parse import urldefrag
 from selenium.webdriver.common.by import By  # new import here
 from selenium.webdriver.common.action_chains import ActionChains
 from urllib.parse import urljoin
-
+import selenium
+import time
 from urllib.parse import urlparse
 import os
 
@@ -87,54 +88,123 @@ def save_text_to_file(url, text):
         file.write("\n\n")  # Separate content of different pages
 
 
+def save_urls_to_files(urls):
+    """
+    Save the given URLs to text files. The path for each file is derived from the URL itself.
+
+    :param urls: List of URLs to save.
+    """
+    for url in urls:
+        parsed_url = urlparse(url)
+        domain_name = parsed_url.netloc.replace('.', '_')
+        path = parsed_url.path.strip('/').replace('/', '_')
+        directory_path = os.path.join('.', domain_name, path)
+
+        # Create the directory if it doesn't exist
+        if not os.path.exists(directory_path):
+            os.makedirs(directory_path)
+
+        # Define the file path to save the URLs
+        file_path = os.path.join(directory_path, 'urls.txt')
+
+        # Write the URL to the file
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(url)
+
+
 def collect_links(driver, url):
     print(f"Crawling {url}")
     driver.get(url)
     # Wait for the page to fully load
     driver.implicitly_wait(10)
-    links_elements = driver.find_elements(By.TAG_NAME, "a")
-    print(f"Found {len(links_elements)} anchor tags.")
-    links = [urldefrag(urljoin(url, link.get_attribute("href")))[
-        0] for link in links_elements if "developer.apple.com/documentation" in link.get_attribute("href")]
-    print(
-        f"Collected {len(links)} links containing 'developer.apple.com/documentation'.")
+    time.sleep(.4)
+
+    # Execute JavaScript to retrieve all href attributes of anchor tags containing specified substrings
+    js_script = """
+    var specificUrls = [
+        // "https://developer.apple.com/documentation/swiftui",
+        // "https://developer.apple.com/documentation/coreml",
+        // "https://developer.apple.com/documentation/arkit",
+        "https://developer.apple.com/documentation/visionos",
+        // "https://developer.apple.com/documentation/realitykit"
+        // "https://developer.apple.com/documentation/combine"
+        // "https://developer.apple.com/documentation/swift"
+    ];
+    var links = document.querySelectorAll('a');
+    console.log(document)
+    var hrefs = [];
+    for (var link of links) {
+        var href = link.href;
+        if (href) {
+            href = href.toLowerCase();
+            for (var specificUrl of specificUrls) {
+                if (href.includes(specificUrl)) {
+                    hrefs.push(href);
+                }
+            }
+        }
+    }
+    return hrefs;
+    """
+    hrefs = driver.execute_script(js_script)
+
+    links = [urldefrag(urljoin(url, href))[0] for href in hrefs]
+    # print(f"Collected {len(links)} specific links:")
+    for link in links:
+        print(link)
+
     return links
 
 
 def main():
     visited = set()
-    url = 'https://developer.apple.com/documentation'
-    urls = deque([url])
+    starting_urls = [
+        # "https://developer.apple.com/documentation/swiftui",
+        # "https://developer.apple.com/documentation/arkit",
+        "https://developer.apple.com/documentation/visionos",
+        # "https://developer.apple.com/documentation/realitykit",
+        # "https://developer.apple.com/documentation/coreml",
+        # "https://developer.apple.com/documentation/combine",
+        # "https://developer.apple.com/documentation/swift"
+    ]
+    urls = starting_urls  # Using a list as a stack
 
     while urls:
         print(len(urls))
-        url = urls.popleft()
+        url = urls.pop()  # Popping from the end for LIFO behavior
         if url not in visited:
             print(f"Visiting {url}")  # Debug statement
-
-            visited.add(url)
-            links = collect_links(driver, url)
-            # Debug statement
-            print(f"Adding {len(links)} links to the queue.")
-
-            urls.extend(link for link in links if link not in visited)
-
+            try:
+                visited.add(url)
+                links = collect_links(driver, url)
+                # Debug statement
+                print(f"Adding {len(links)} links to the stack.")
+                # Extend the stack with links not already visited
+                urls.extend(link for link in links if link not in visited)
+            except selenium.common.exceptions.WebDriverException as e:
+                print(f"An error occurred while processing {url}: {e}")
+                continue
             # Save the entire HTML content to a file
-            save_html_to_file(url, driver)
+            # save_html_to_file(url, driver)
 
-            print("Content of the page:")
+            # print("Content of the page:")
             # Print the text content of the page
             text_content = driver.find_element(By.TAG_NAME, "body").text
             # print(text_content)
 
             # Save the text content to a file
-            save_text_to_file(url, text_content)
+            # save_text_to_file(url, text_content)
 
-            print("Images on the page:")
-            images = driver.find_elements(By.TAG_NAME, "img")
-            for img in images:
-                # Print the source URL of each image
-                print(img.get_attribute("src"))
+            # print("Images on the page:")
+            # images = driver.find_elements(By.TAG_NAME, "img")
+            # for img in images:
+            #     # Print the source URL of each image
+            #     print(img.get_attribute("src"))
+
+    print("Crawling completed.")
+    print("Saving URL hrefs to file...")
+
+    save_urls_to_files(visited)
 
 
 if __name__ == "__main__":
