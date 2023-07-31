@@ -111,10 +111,10 @@ def collect_links(driver, url):
     # Execute JavaScript to retrieve all href attributes of anchor tags containing specified substrings
     js_script = """
     var specificUrls = [
-        // "https://developer.apple.com/documentation/swiftui",
+        "https://developer.apple.com/documentation/swiftui",
         // "https://developer.apple.com/documentation/coreml",
         // "https://developer.apple.com/documentation/arkit",
-        "https://developer.apple.com/documentation/visionos",
+        // "https://developer.apple.com/documentation/visionos",
         // "https://developer.apple.com/documentation/realitykit"
         // "https://developer.apple.com/documentation/combine"
         // "https://developer.apple.com/documentation/swift"
@@ -148,9 +148,9 @@ def collect_links(driver, url):
 def main():
     visited = set()
     starting_urls = [
-        # "https://developer.apple.com/documentation/swiftui",
+        "https://developer.apple.com/documentation/swiftui",
         # "https://developer.apple.com/documentation/arkit",
-        "https://developer.apple.com/documentation/visionos",
+        # "https://developer.apple.com/documentation/visionos",
         # "https://developer.apple.com/documentation/realitykit",
         # "https://developer.apple.com/documentation/coreml",
         # "https://developer.apple.com/documentation/combine",

@@ -1,3 +1,4 @@
+import argparse
 from collections import deque
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -6,6 +7,18 @@ import selenium
 import time
 from urllib.parse import urlparse
 import os
+
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description='Download web pages.')
+parser.add_argument('letter', help='A single letter to specify the operation.')
+parser.add_argument('page_num', type=int, nargs='?',
+                    default=0, help='Optional page number.')
+args = parser.parse_args()
+
+# Check if the letter argument is valid
+if args.letter != 's':
+    print("Invalid letter argument. Use 's' for downloading.")
+    exit(1)
 
 
 # Path to your Chrome binary
@@ -75,19 +88,28 @@ def save_text_to_file(url, driver):
 
     # Write the text content to the file
     with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(url)
         file.write(text_content)
         file.write("\n\n")  # Separate content of different pages
 
 
 def main():
-    print("Starting to download all pages...")
+    print(
+        f"Starting to download all pages from page number {args.page_num}...")
 
     # Read URLs from the file
     with open('urls.txt', 'r', encoding='utf-8') as file:
         urls = file.readlines()
 
-    # Iterate over the URLs and download them
-    for url in urls:
+    # Check if the page number is within the range
+    if args.page_num >= len(urls):
+        print(
+            f"Page number {args.page_num} is out of range. Total pages available: {len(urls)}")
+        return
+
+    # Iterate over the URLs starting from the specified page number
+    for i, url in enumerate(urls[args.page_num:], start=args.page_num):
+        print(i)
         url = url.strip()  # Remove any leading/trailing whitespace
         save_text_to_file(url, driver)
 
