@@ -88,28 +88,17 @@ def save_text_to_file(url, text):
         file.write("\n\n")  # Separate content of different pages
 
 
-def save_urls_to_files(urls):
+def save_urls_to_file(urls):
     """
-    Save the given URLs to text files. The path for each file is derived from the URL itself.
+    Save the given URLs to a text file at the root.
 
     :param urls: List of URLs to save.
     """
-    for url in urls:
-        parsed_url = urlparse(url)
-        domain_name = parsed_url.netloc.replace('.', '_')
-        path = parsed_url.path.strip('/').replace('/', '_')
-        directory_path = os.path.join('.', domain_name, path)
+    file_path = 'urls.txt'
 
-        # Create the directory if it doesn't exist
-        if not os.path.exists(directory_path):
-            os.makedirs(directory_path)
-
-        # Define the file path to save the URLs
-        file_path = os.path.join(directory_path, 'urls.txt')
-
-        # Write the URL to the file
-        with open(file_path, 'w', encoding='utf-8') as file:
-            file.write(url)
+    # Write the URLs to the file
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write('\n'.join(urls))
 
 
 def collect_links(driver, url):
@@ -184,27 +173,14 @@ def main():
             except selenium.common.exceptions.WebDriverException as e:
                 print(f"An error occurred while processing {url}: {e}")
                 continue
-            # Save the entire HTML content to a file
-            # save_html_to_file(url, driver)
 
-            # print("Content of the page:")
-            # Print the text content of the page
+            # This is going to slowER than it could be
             text_content = driver.find_element(By.TAG_NAME, "body").text
-            # print(text_content)
-
-            # Save the text content to a file
-            # save_text_to_file(url, text_content)
-
-            # print("Images on the page:")
-            # images = driver.find_elements(By.TAG_NAME, "img")
-            # for img in images:
-            #     # Print the source URL of each image
-            #     print(img.get_attribute("src"))
 
     print("Crawling completed.")
     print("Saving URL hrefs to file...")
 
-    save_urls_to_files(visited)
+    save_urls_to_file(visited)
 
 
 if __name__ == "__main__":
