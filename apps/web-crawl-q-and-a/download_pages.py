@@ -11,12 +11,17 @@ import os
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description='Download web pages.')
 parser.add_argument('letter', help='A single letter to specify the operation.')
-parser.add_argument('page_num', type=int, nargs='?',
-                    default=0, help='Optional page number.')
+parser.add_argument('start_page', type=int, nargs='?',
+                    default=0, help='Optional start page number.')
+parser.add_argument(
+    'laedm', help='literally anything else doesnt matter-love that ;)')
+parser.add_argument('end_page', type=int, nargs='?',
+                    default=0, help='Optional end page number')
 args = parser.parse_args()
 
 # Check if the letter argument is valid
-if args.letter != 's':
+if args.letter != 's' and args.laedm != 'e':
+
     print("Invalid letter argument. Use 's' for downloading.")
     exit(1)
 
@@ -89,26 +94,27 @@ def save_text_to_file(url, driver):
     # Write the text content to the file
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(url)
+        file.write("\n\n")  # Separate content of different pages
         file.write(text_content)
         file.write("\n\n")  # Separate content of different pages
 
 
 def main():
     print(
-        f"Starting to download all pages from page number {args.page_num}...")
+        f"Starting to download all pages from page number {args.start_page} to {args.end_page}...")
 
     # Read URLs from the file
     with open('urls.txt', 'r', encoding='utf-8') as file:
         urls = file.readlines()
 
     # Check if the page number is within the range
-    if args.page_num >= len(urls):
+    if args.start_page >= len(urls) or args.start_page < 0:
         print(
-            f"Page number {args.page_num} is out of range. Total pages available: {len(urls)}")
+            f"Page number {args.start_page} is out of range. Total pages available: {len(urls)}")
         return
 
     # Iterate over the URLs starting from the specified page number
-    for i, url in enumerate(urls[args.page_num:], start=args.page_num):
+    for i, url in enumerate(urls[args.start_page:args.end_page]):
         print(i)
         url = url.strip()  # Remove any leading/trailing whitespace
         save_text_to_file(url, driver)

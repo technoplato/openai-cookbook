@@ -1,0 +1,66 @@
+Things I've Found
+
+Documentation pages that have the words "Sample Code" and Download button(s) are pages that have detailed explanations of code blocks along with entire runnable projects. 
+
+they may also include a link back to a WWDC talk that will contain more valuable information in the form of a transcript that we can utlize to gain further insights than what is present in just text from the video itself. We can OCR these videos and compare the timestamps to what is being spoken to hopefully gain additional insight. 
+
+wwdc.*\d+
+
+Below is an example of using the above regex
+
+THIS IS THIS WEBPAGE: 
+
+https://developer.apple.com/videos/play/wwdc2021/10076/
+
+Sample Code
+Creating a Photogrammetry Command-Line App
+Generate 3D objects from images using RealityKit Object Capture.
+Download
+macOS 13.0+
+Xcode 14.0+
+Overview
+Note
+This sample code project is associated with WWDC21 session 10076: Create 3D Models with Object Capture.
+
+(see /Users/laptop/Development/01-Learning/oai/openai-cookbook/apps/web-crawl-q-and-a/projects/wwdc2021-10076.txt
+  1,4:  ♪ Bass music playing ♪ ♪ Michael Patrick Johnson: Hi! My name is Michael Patrick Johnson...) for the transcript and visit the web page for the code and timestamps code is discussed
+
+  6:56 - Creating a PhotogrammetrySession with a folder of images
+import RealityKit
+
+let inputFolderUrl = URL(fileURLWithPath: "/tmp/Sneakers/", isDirectory: true)
+let session = try! PhotogrammetrySession(input: inputFolderUrl,
+                                         configuration: PhotogrammetrySession.Configuration())
+Copy Code
+9:26 - Creating the async message stream dispatcher
+// Create an async message stream dispatcher task
+
+Task {
+    do {
+        for try await output in session.outputs {
+            switch output {
+            case .requestProgress(let request, let fraction):
+                print("Request progress: \(fraction)")
+            case .requestComplete(let request, let result):
+                if case .modelFile(let url) = result {
+                    print("Request result output at \(url).")
+                }
+            case .requestError(let request, let error):
+                print("Error: \(request) error=\(error)")
+            case .processingComplete:
+                print("Completed!")
+                handleComplete()
+            default:  // Or handle other messages...
+                break
+            }
+        }
+    } catch {
+       print("Fatal session error! \(error)")
+    }
+}
+Copy Code
+13:44 - Calling process on two models simultaneously
+try! session.process(requests: [
+    .modelFile("/tmp/Outputs/model-reduced.usdz", detail: .reduced),
+    .modelFile("/tmp/Outputs/model-medium.usdz", detail: .medium)
+])

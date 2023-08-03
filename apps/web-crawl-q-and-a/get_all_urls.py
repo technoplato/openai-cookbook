@@ -106,18 +106,35 @@ def collect_links(driver, url):
     driver.get(url)
     # Wait for the page to fully load
     driver.implicitly_wait(10)
+
     time.sleep(.4)
+
+    """
+    TODO
+    https://developer.apple.com/airplay/
+    https://developer.apple.com/shareplay/
+    https://developer.apple.com/documentation/GroupActivities/
+    https://developer.apple.com/documentation/soundanalysis/
+    https://developer.apple.com/documentation/multipeerconnectivity
+    https://developer.apple.com/documentation/xcode
+    https://developer.apple.com/documentation/xcode/configuring-app-groups
+    
+    """
 
     # Execute JavaScript to retrieve all href attributes of anchor tags containing specified substrings
     js_script = """
     var specificUrls = [
-        "https://developer.apple.com/documentation/swiftui",
-        // "https://developer.apple.com/documentation/coreml",
+        "https://developer.apple.com/documentation/swiftdata",
+        "https://developer.apple.com/documentation/coreml",
+        "https://developer.apple.com/documentation/speech",
+        "https://developer.apple.com/documentation/vision", 
+        "https://developer.apple.com/documentation/createml",
         // "https://developer.apple.com/documentation/arkit",
-        // "https://developer.apple.com/documentation/visionos",
-        // "https://developer.apple.com/documentation/realitykit"
         // "https://developer.apple.com/documentation/combine"
-        // "https://developer.apple.com/documentation/swift"
+        // "https://developer.apple.com/documentation/swift",
+        // "https://developer.apple.com/documentation/swiftui", // ✅
+        // "https://developer.apple.com/documentation/visionos", // ✅.
+        // "https://developer.apple.com/documentation/realitykit" // ✅.
     ];
     var links = document.querySelectorAll('a');
     console.log(document)
@@ -148,13 +165,17 @@ def collect_links(driver, url):
 def main():
     visited = set()
     starting_urls = [
-        "https://developer.apple.com/documentation/swiftui",
+        "https://developer.apple.com/documentation/swiftdata",
+        "https://developer.apple.com/documentation/coreml",
+        "https://developer.apple.com/documentation/speech/",
+        "https://developer.apple.com/documentation/vision",
+        "https://developer.apple.com/documentation/createml",
+        # "https://developer.apple.com/documentation/swiftui",
         # "https://developer.apple.com/documentation/arkit",
-        # "https://developer.apple.com/documentation/visionos",
-        # "https://developer.apple.com/documentation/realitykit",
-        # "https://developer.apple.com/documentation/coreml",
         # "https://developer.apple.com/documentation/combine",
         # "https://developer.apple.com/documentation/swift"
+        # "https://developer.apple.com/documentation/visionos",
+        # "https://developer.apple.com/documentation/realitykit",
     ]
     urls = starting_urls  # Using a list as a stack
 
