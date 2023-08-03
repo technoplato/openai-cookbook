@@ -1,3 +1,4 @@
+from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
@@ -86,40 +87,77 @@ soup = BeautifulSoup(html_content, "html.parser")
 # ####################################################################################################
 # Function to Get "View Code" URLs
 # ####################################################################################################
-def get_view_code_urls(soup):
-    view_code_urls = []
-    view_code_links = soup.find_all("a", string="View code")
-    for link in view_code_links:
-        url = link.get("href")
-        if url:
-            view_code_urls.append(url)
-    return view_code_urls
+# def get_view_code_urls(soup):
+#     view_code_urls = []
+#     view_code_links = soup.find_all("a", string="View code")
+#     for link in view_code_links:
+#         url = link.get("href")
+#         if url:
+#             view_code_urls.append(url)
+#     return view_code_urls
+
+
+# # ####################################################################################################
+# # Navigate to Sample Code Page and Extract Available Years
+# # ####################################################################################################
+# base_url = "https://developer.apple.com/sample-code/wwdc/2023"
+# driver.get(base_url)
+# driver.implicitly_wait(10)
+# html_content = driver.page_source
+# soup = BeautifulSoup(html_content, "html.parser")
+# years_links = soup.select(".localnav-menu-items .localnav-menu-link")
+# years_urls = [link.get("href") for link in years_links]
+
+# # ####################################################################################################
+# # Iterate Through Available Years and Navigate to Sample Code Page for Each Year
+# # ####################################################################################################
+# for year_url in years_urls:
+#     print(f"Processing {year_url}")
+#     driver.get(base_url + year_url)
+#     driver.implicitly_wait(10)
+#     html_content = driver.page_source
+#     soup = BeautifulSoup(html_content, "html.parser")
+#     view_code_urls = get_view_code_urls(soup)
+#     print(f"Found {len(view_code_urls)} 'View Code' URLs for {year_url}")
+
+#     # You can add more code here to visit each "View code" URL and extract information for the year
+
+# # ####################################################################################################
+# # Close WebDriver
+# # ####################################################################################################
+# driver.quit()
 
 
 # ####################################################################################################
-# Navigate to Sample Code Page and Extract Available Years
+# Setup WebDriver and Chrome Options
 # ####################################################################################################
-base_url = "https://developer.apple.com/sample-code/wwdc/"
-driver.get(base_url)
+chrome_binary_path = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+chromedriver_path = "/Users/laptop/Downloads/chromedriver-mac-arm64/chromedriver"
+chrome_options = Options()
+chrome_options.binary_location = chrome_binary_path
+driver = webdriver.Chrome(
+    executable_path=chromedriver_path, options=chrome_options)
+
+# ####################################################################################################
+# Get the Current Year and Construct the Starting URL
+# ####################################################################################################
+current_year = datetime.now().year
+starting_url = f"https://developer.apple.com/sample-code/wwdc/{current_year}/"
+print(f"Starting URL: {starting_url}")
+
+# ####################################################################################################
+# Navigate to the Starting URL and Extract WWDC Hrefs
+# ####################################################################################################
+driver.get(starting_url)
 driver.implicitly_wait(10)
 html_content = driver.page_source
 soup = BeautifulSoup(html_content, "html.parser")
-years_links = soup.select(".localnav-menu-items .localnav-menu-link")
-years_urls = [link.get("href") for link in years_links]
-
-# ####################################################################################################
-# Iterate Through Available Years and Navigate to Sample Code Page for Each Year
-# ####################################################################################################
-for year_url in years_urls:
-    print(f"Processing {year_url}")
-    driver.get(base_url + year_url)
-    driver.implicitly_wait(10)
-    html_content = driver.page_source
-    soup = BeautifulSoup(html_content, "html.parser")
-    view_code_urls = get_view_code_urls(soup)
-    print(f"Found {len(view_code_urls)} 'View Code' URLs for {year_url}")
-
-    # You can add more code here to visit each "View code" URL and extract information for the year
+wwdc_links = soup.select(".localnav-menu-items a[href*='/sample-code/wwdc/']")
+for link in wwdc_links:
+    wwdc_text = link.text.strip()
+    if wwdc_text in ["WWDC23", "WWDC22", "WWDC21", "WWDC20"]:
+        wwdc_href = link.get("href")
+        print(f"{wwdc_text}: {wwdc_href}")
 
 # ####################################################################################################
 # Close WebDriver
