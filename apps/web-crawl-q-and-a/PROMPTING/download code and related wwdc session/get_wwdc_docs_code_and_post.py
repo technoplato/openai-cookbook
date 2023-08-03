@@ -17,6 +17,9 @@ class WWDCDatabase:
                 CREATE TABLE IF NOT EXISTS urls (
                     id INTEGER PRIMARY KEY,
                     wwdc_year TEXT,
+                    title TEXT,
+                    description TEXT,
+                    platforms TEXT,
                     url_type TEXT,
                     url TEXT,
                     page_downloaded BOOLEAN DEFAULT 0,
@@ -28,11 +31,11 @@ class WWDCDatabase:
                 )
             """)
 
-    def save_url(self, wwdc_year, url_type, url):
+    def save_url(self, wwdc_year, title, description, platforms, url_type, url):
         with self.conn:
             self.conn.execute("""
-                INSERT INTO urls (wwdc_year, url_type, url, updated_at) VALUES (?, ?, ?, ?)
-            """, (wwdc_year, url_type, url, datetime.now()))
+                INSERT INTO urls (wwdc_year, title, description, platforms, url_type, url, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (wwdc_year, title, description, platforms, url_type, url, datetime.now()))
 
     def mark_page_downloaded(self, url_id):
         self._update_status_flag(url_id, "page_downloaded")
@@ -114,15 +117,28 @@ def get_view_code_urls(driver, wwdc_year, wwdc_url, db):
     soup = BeautifulSoup(html_content, "html.parser")
 
     # Find all the "View Code" links
-    view_code_links = soup.find_all("a", string="View code")
+    view_code_divs = soup.find_all("div", class_="sample-description")
 
-    # Extract and save the URLs
+    # Extract and save the URLs along with title, description, and platforms
     view_code_urls = []
-    for link in view_code_links:
-        url = link.get("href")
+    for div in view_code_divs:
+        link = div.find("a", text="View code")
+        url = link.get("href") if link else ""
+
+        title = div.find("h4", class_="cs-title")
+        title_text = title.text.strip() if title else ""
+
+        overview = div.find("p", class_="cs-overview")
+        overview_text = overview.text.strip() if overview else ""
+
+        platforms_div = div.find("p", class_="platform-container")
+        platforms = " ".join([span.text.strip() for span in platforms_div.find_all(
+            "span")]) if platforms_div else ""
+
         if url:
             view_code_urls.append(url)
-            db.save_url(wwdc_year, "View code", url)
+            db.save_url(wwdc_year, title_text, overview_text,
+                        platforms, "View code", url)
 
     return view_code_urls
 
