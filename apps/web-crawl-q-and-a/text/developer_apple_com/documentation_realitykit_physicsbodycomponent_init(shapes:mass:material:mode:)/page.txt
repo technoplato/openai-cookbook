@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/physicsbodycomponent/init(shapes:mass:material:mode:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var angularDamping: Float
+Beta
+Instance Properties
+static func != (Self, Self) -> Bool
+static func == (PhysicsBodyComponent, PhysicsBodyComponent) -> Bool
+Comparing Physics Body Components
+M
+static func registerComponent()
+Registering a Component Type
+init(shapes: [ShapeResource], mass: Float, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)
+M
+init(shapes: [ShapeResource], density: Float, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)
+M
+init(massProperties: PhysicsMassProperties, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)
+M
+init()
+Creating a Physics Body Component
+S
+PhysicsBodyComponent
+S
+CollisionComponent
+Simulations
+S
+SpatialAudioComponent
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(shapes:mass:material:mode:)
+Creates a physics body component deriving mass properties from shape and mass.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+init(
+    shapes: [ShapeResource],
+    mass: Float,
+    material: PhysicsMaterialResource? = nil,
+    mode: PhysicsBodyMode = .dynamic
+)
+Parameters
+shapes
+The shape for which to estimate the rotational inertia and center of mass.
+mass
+The mass of the object in kilograms.
+material
+The material properties, like friction.
+mode
+The simulation mode that indicates how a body responds to forces.
+See Also
+Creating a Physics Body Component
+init()
+Creates a physics body component with default settings.
+init(massProperties: PhysicsMassProperties, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)
+Creates a physics body component with the given mass properties, material, and mode.
+init(shapes: [ShapeResource], density: Float, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)
+Creates a physics body component deriving mass properties from shape and density.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(shapes:mass:material:mode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

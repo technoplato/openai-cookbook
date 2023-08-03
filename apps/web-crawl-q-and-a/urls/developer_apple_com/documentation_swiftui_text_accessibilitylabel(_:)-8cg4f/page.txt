@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/text/accessibilitylabel(_:)-8cg4fSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fontWidth(Font.Width?) -> some View
+M
+func fontWeight(Font.Weight?) -> some View
+M
+func fontDesign(Font.Design?) -> some View
+M
+func font(Font?) -> some View
+Applying custom fonts to text
+Setting a font
+r
+P
+TextSelectability
+M
+func accessibilityLabel(Text) -> Text
+M
+func accessibilityLabel<S>(S) -> Text
+M
+func accessibilityHeading(AccessibilityHeadingLevel) -> Text
+Providing accessibility information
+M
+func speechSpellsOutCharacters(Bool) -> Text
+M
+func speechAnnouncementsQueued(Bool) -> Text
+M
+func speechAlwaysIncludesPunctuation(Bool) -> Text
+M
+func speechAdjustedPitch(Double) -> Text
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibilityLabel(_:)
+Adds a label to the view that describes its contents.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func accessibilityLabel(_ labelKey: LocalizedStringKey) -> Text
+Parameters
+labelKey
+The string key for the alternative accessibility label.
+Discussion
+Use this method to provide an alternative accessibility label to the text that is displayed. For example, you can give an alternate label to a navigation title:
+var body: some View {
+    NavigationView {
+        ContentView()
+            .navigationTitle(Text("􀈤").accessibilityLabel("Inbox"))
+    }
+}
+See Also
+Providing accessibility information
+func accessibilityHeading(AccessibilityHeadingLevel) -> Text
+Sets the accessibility level of this heading.
+func accessibilityLabel<S>(S) -> Text
+Adds a label to the view that describes its contents.
+func accessibilityLabel(Text) -> Text
+Adds a label to the view that describes its contents.
+func accessibilityTextContentType(AccessibilityTextContentType) -> Text
+Sets an accessibility text content type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityLabel(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

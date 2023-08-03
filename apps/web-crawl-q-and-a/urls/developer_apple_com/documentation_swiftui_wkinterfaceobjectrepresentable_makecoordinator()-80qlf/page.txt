@@ -1,0 +1,115 @@
+https://developer.apple.com/documentation/swiftui/wkinterfaceobjectrepresentable/makecoordinator()-80qlfSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Providing a custom coordinator object
+M
+static func dismantleWKInterfaceObject(Self.WKInterfaceObjectType, coordinator: Self.Coordinator)
+Cleaning up the interface object
+T
+WKInterfaceObjectRepresentable.Context
+M
+func updateWKInterfaceObject(Self.WKInterfaceObjectType, context: Self.Context)
+M
+func makeWKInterfaceObject(context: Self.Context) -> Self.WKInterfaceObjectType
+Creating and updating the interface object
+r
+P
+WKInterfaceObjectRepresentable
+Documentation
+Open Menu
+Swift
+Instance Method
+makeCoordinator()
+Creates the custom instance that you use to communicate changes from your interface object to other parts of your SwiftUI interface.
+watchOS 6.0+
+func makeCoordinator() -> Self.Coordinator
+Available when Coordinator is ().
+Discussion
+Implement this method if changes to your interface object might affect other parts of your app. In your implementation, create a custom Swift instance that can communicate with other parts of your interface. For example, you might provide an instance that binds its variables to SwiftUI properties, causing the two to remain synchronized. If your interface object doesn’t interact with other parts of your app, providing a coordinator is unnecessary.
+SwiftUI calls this method before calling the makeWKInterfaceObject(context:) method. The system provides your coordinator either directly or as part of a context structure when calling the other methods of your representable instance.
+Current page is makeCoordinator()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

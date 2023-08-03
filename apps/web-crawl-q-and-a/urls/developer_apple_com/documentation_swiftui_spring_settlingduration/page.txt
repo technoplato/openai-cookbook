@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/spring/settlingdurationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TimelineView
+Updating watchOS apps with timelines
+Updating a view on a schedule
+S
+EmptyAnimatableData
+r
+P
+VectorArithmetic
+S
+AnimatablePair
+r
+P
+Animatable
+P
+var response: Double
+P
+var mass: Double
+P
+var duration: TimeInterval
+P
+var dampingRatio: Double
+P
+var damping: Double
+P
+var bounce: Double
+Getting spring characteristics
+M
+static func snappy(duration: TimeInterval, extraBounce: Double) -> Spring
+Documentation
+Open Menu
+Swift
+Instance Property
+settlingDuration
+The estimated duration required for the spring system to be considered at rest.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+var settlingDuration: TimeInterval { get }
+Discussion
+This uses a target of 1.0, an initialVelocity of 0, and an epsilon of 0.001.
+See Also
+Getting spring characteristics
+var bounce: Double
+How bouncy the spring is.
+Beta
+var damping: Double
+Defines how the spring’s motion should be damped due to the forces of friction.
+Beta
+var dampingRatio: Double
+The amount of drag applied, as a fraction of the amount needed to produce critical damping.
+Beta
+var duration: TimeInterval
+The perceptual duration, which defines the pace of the spring.
+Beta
+var mass: Double
+The mass of the object attached to the end of the spring.
+Beta
+var response: Double
+The stiffness of the spring, defined as an approximate duration in seconds.
+Beta
+var stiffness: Double
+The spring stiffness coefficient.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is settlingDuration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/collect(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>
+M
+func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Self, P>
+Applying Sequence Operations to Elements
+M
+func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>
+M
+func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>
+M
+func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>
+M
+func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+M
+func collect() -> Publishers.Collect<Self>
+Reducing Elements
+M
+func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>
+M
+func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>
+M
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+M
+func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>
+M
+func removeDuplicates() -> Publishers.RemoveDuplicates<Self>
+M
+func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>
+Documentation
+Open Menu
+Swift
+Instance Method
+collect(_:)
+Collects up to the specified number of elements, and then emits a single array of the collection.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func collect(_ count: Int) -> Publishers.CollectByCount<Self>
+Parameters
+count
+The maximum number of received elements to buffer before publishing.
+Return Value
+A publisher that collects up to the specified number of elements, and then publishes them as an array.
+Discussion
+Use Publisher/collect(_:) to emit arrays of at most count elements from an upstream publisher. If the upstream publisher finishes before collecting the specified number of elements, the publisher sends an array of only the items it received. This may be fewer than count elements.
+If the upstream publisher fails with an error, this publisher forwards the error to the downstream receiver instead of sending its output.
+In the example below, the Publisher/collect(_:) operator emits one partial and two full arrays based on the requested collection size of 5:
+let numbers = (0...10)
+cancellable = numbers.publisher
+    .collect(5)
+    .sink { print("\($0), terminator: " "") }
+
+
+// Prints "[0, 1, 2, 3, 4] [5, 6, 7, 8, 9] [10] "
+Note
+When this publisher receives a request for .max(n) elements, it requests .max(count * n) from the upstream publisher.
+See Also
+Reducing Elements
+func collect() -> Publishers.Collect<Self>
+Collects all received elements, and emits a single array of the collection when the upstream publisher finishes.
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+Collects elements by a given time-grouping strategy, and emits a single array of the collection.
+func ignoreOutput() -> Publishers.IgnoreOutput<Self>
+Ignores all upstream elements, but passes along the upstream publisher’s completion state (finished or failed).
+func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>
+Applies a closure that collects each element of a stream and publishes a final result upon completion.
+func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>
+Applies an error-throwing closure that collects each element of a stream and publishes a final result upon completion.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is collect(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

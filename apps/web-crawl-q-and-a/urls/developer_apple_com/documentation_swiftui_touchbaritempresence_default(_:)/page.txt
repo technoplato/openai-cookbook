@@ -1,0 +1,127 @@
+https://developer.apple.com/documentation/swiftui/touchbaritempresence/default(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Articles
+Xcode library customization
+Previews in Xcode
+Tool support
+Technology-specific views
+WatchKit integration
+UIKit integration
+Getting presence options
+E
+TouchBarItemPresence
+S
+TouchBar
+M
+func touchBarItemPresence(TouchBarItemPresence) -> some View
+M
+func touchBarCustomizationLabel(Text) -> some View
+M
+func touchBarItemPrincipal(Bool) -> some View
+M
+func touchBar<Content>(TouchBar<Content>) -> some View
+M
+func touchBar<Content>(content: () -> Content) -> some View
+Documentation
+Open Menu
+Swift
+Case
+TouchBarItemPresence.default(_:)
+The Touch Bar view is visible by default, but can be removed during customization.
+macOS 10.15+
+case `default`(String)
+Parameters
+id
+A globally unique identifier for this item.
+See Also
+Getting presence options
+case optional(String)
+The Touch Bar view isn’t visible by default, but appears in the customization palette.
+case required(String)
+The Touch Bar view is visible by default and cannot be removed during customization.
+Current page is TouchBarItemPresence.default(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

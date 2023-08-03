@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/swiftui/dropoperation/forbiddenSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Previews in Xcode
+Tool support
+Technology-specific views
+WatchKit integration
+UIKit integration
+AppKit integration
+Framework integration
+E
+case copy
+E
+case cancel
+Getting operation types
+E
+DropOperation
+S
+DropProposal
+r
+P
+DropDelegate
+M
+func onDrop(of: [UTType], delegate: DropDelegate) -> some View
+M
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Documentation
+Open Menu
+Swift
+Case
+DropOperation.forbidden
+The drop activity is not allowed at this time or location.
+iOS 13.4+
+iPadOS 13.4+
+macOS 10.15+
+Mac Catalyst 13.4+
+visionOS 1.0+ Beta
+case forbidden
+See Also
+Getting operation types
+case cancel
+Cancel the drag operation and transfer no data.
+case copy
+Copy the data to the modified view.
+case move
+Move the data represented by the drag items instead of copying it.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DropOperation.forbidden
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/showswidgetcontainerbackgroundSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View styles
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+M
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+Widgets
+P
+var symbolVariants: SymbolVariants
+P
+var symbolRenderingMode: SymbolRenderingMode?
+P
+var springLoadingBehavior: SpringLoadingBehavior
+Beta
+P
+var redactionReasons: RedactionReasons
+P
+var realityKitScene: Scene?
+Beta
+P
+var physicalMetrics: PhysicalMetricsConverter
+Beta
+P
+var headerProminence: Prominence
+Documentation
+Open Menu
+Swift
+Instance Property
+showsWidgetContainerBackground
+An environment variable that indicates whether the background of a widget appears.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@_backDeploy(before: iOS 17.0, watchOS 10.0, macOS 14.0)
+var showsWidgetContainerBackground: Bool { get }
+Return Value
+true if, by default, the background appears in this context; false otherwise.
+Discussion
+In iOS 16 and earlier, this environment variable is always true for system widgets and false for accessory widgets. In macOS 13 and earlier, and in watchOS 9 and earlier, it always evaluates to true.
+If you pass false to containerBackgroundRemovable(_:) to always show the widget background, the system shows the widget background even if showsWidgetContainerBackground evaluates to true.
+See Also
+Widgets
+var showsWidgetLabel: Bool
+A Boolean value that indicates whether an accessory family widget can display an accessory label.
+var widgetFamily: WidgetFamily
+The template of the widget — small, medium, or large.
+var widgetRenderingMode: WidgetRenderingMode
+The widget’s rendering mode, based on where the system is displaying it.
+var widgetContentMargins: EdgeInsets
+A property that identifies the content margins of a widget.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is showsWidgetContainerBackground
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

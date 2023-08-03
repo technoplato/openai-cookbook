@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/swiftui/previews-in-xcodeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+InterfaceOrientation
+M
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+E
+PreviewLayout
+M
+func previewLayout(PreviewLayout) -> some View
+Customizing preview size and orientation
+S
+PreviewDevice
+M
+func previewDevice(PreviewDevice?) -> some View
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Body
+P
+var body: Self.Body
+Implementing a custom view
+r
+P
+View
+Declaring a custom view
+Creating a view
+View fundamentals
+Documentation
+Open Menu
+Swift
+Previews in Xcode
+Generate dynamic, interactive previews of your custom views.
+Overview
+When you create a custom View with SwiftUI, Xcode can display a preview of the view’s content that stays up-to-date as you make changes to the view’s code. You define a structure that conforms to the PreviewProvider protocol to tell Xcode what to display. Xcode shows the preview in a canvas beside your code.
+You can use view modifiers to configure the preview, including a set of preview-specific modifiers like previewDevice(_:) and previewInterfaceOrientation(_:). Xcode also reflects changes that you make in the canvas back into your code. For tips on working with the canvas, see the Creating and Combining Views tutorial.
+Topics
+Creating a preview
+macro Preview(String?, body: () -> View)
+Creates a preview of a SwiftUI view.
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Creates a preview of a SwiftUI view.
+Beta
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+Creates a preview of a SwiftUI view with custom preview cameras.
+Beta
+protocol PreviewProvider
+A type that produces view previews in Xcode.
+enum PreviewPlatform
+Platforms that can run the preview.
+Specifying a scene style for a preview
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Creates a preview of a SwiftUI in immersive space.
+Beta
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+Creates a preview of a SwiftUI in immersive space and custom preview cameras.
+Beta
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Creates a preview of a SwiftUI with given window style.
+Beta
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+Creates a preview of a SwiftUI view with given window style and custom preview cameras.
+Beta
+Naming a preview
+func previewDisplayName(String?) -> some View
+Sets a user visible name to show in the canvas for a preview.
+Assigning a device
+func previewDevice(PreviewDevice?) -> some View
+Overrides the device for a preview.
+struct PreviewDevice
+A simulator device that runs a preview.
+Customizing preview size and orientation
+func previewLayout(PreviewLayout) -> some View
+Overrides the size of the container for the preview.
+enum PreviewLayout
+A size constraint for a preview.
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+Overrides the orientation of the preview.
+struct InterfaceOrientation
+The orientation of the interface from the user’s perspective.
+Setting a context
+func previewContext<C>(C) -> some View
+Declares a context for the preview.
+protocol PreviewContext
+A context type for use with a preview.
+protocol PreviewContextKey
+A key type for a preview context.
+See Also
+Tool support
+API Reference
+Xcode library customization
+Expose custom views and modifiers in the Xcode library.
+Current page is Previews in Xcode
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

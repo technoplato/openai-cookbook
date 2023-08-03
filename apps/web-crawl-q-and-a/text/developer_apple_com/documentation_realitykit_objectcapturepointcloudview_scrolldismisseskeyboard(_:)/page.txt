@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/scrolldismisseskeyboard(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+M
+func scrollDisabled(Bool) -> some View
+M
+func scrollContentBackground(Visibility) -> some View
+M
+func scrollClipDisabled(Bool) -> some View
+M
+func scrollBounceBehavior(ScrollBounceBehavior, axes: Axis.Set) -> some View
+M
+func scenePadding(ScenePadding, edges: Edge.Set) -> some View
+M
+func scenePadding(Edge.Set) -> some View
+M
+func scaledToFit() -> some View
+M
+func scaledToFill() -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+scrollDismissesKeyboard(_:)
+Configures the behavior in which scrollable content interacts with the software keyboard.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+func scrollDismissesKeyboard(_ mode: ScrollDismissesKeyboardMode) -> some View
+Parameters
+mode
+The keyboard dismissal mode that scrollable content uses.
+Return Value
+A view that uses the specified keyboard dismissal mode.
+Discussion
+You use this modifier to customize how scrollable content interacts with the software keyboard. For example, you can specify a value of ScrollDismissesKeyboardMode/immediately to indicate that you would like scrollable content to immediately dismiss the keyboard if present when a scroll drag gesture begins.
+@State private var text = ""
+
+
+ScrollView {
+    TextField("Prompt", text: $text)
+    ForEach(0 ..< 50) { index in
+        Text("\(index)")
+            .padding()
+    }
+}
+.scrollDismissesKeyboard(.immediately)
+You can also use this modifier to customize the keyboard dismissal behavior for other kinds of scrollable views, like a List or a TextEditor.
+By default, a TextEditor is interactive while other kinds of scrollable content always dismiss the keyboard on a scroll when linked against iOS 16 or later. Pass a value of ScrollDismissesKeyboardMode/never to indicate that scrollable content should never automatically dismiss the keyboard.
+Current page is scrollDismissesKeyboard(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

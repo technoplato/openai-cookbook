@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/view/familyactivitypicker(headertext:footertext:ispresented:selection:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func photosPickerDisabledCapabilities(PHPickerCapabilities) -> some View
+Beta
+M
+func photosPickerAccessoryVisibility(Visibility, edges: Edge.Set) -> some View
+Beta
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+S
+PhotosPicker
+func familyActivityPicker(headerText: String?, footerText: String?, isPresented: Binding<Bool>, selection: Binding<FamilyActivitySelection>) -> some View
+M
+func familyActivityPicker(isPresented: Binding<Bool>, selection: Binding<FamilyActivitySelection>) -> some View
+S
+FamilyActivityPicker
+Configuring Family Sharing
+P
+var webAuthenticationSession: WebAuthenticationSession
+P
+var authorizationController: AuthorizationController
+M
+func signInWithAppleButtonStyle(SignInWithAppleButton.Style) -> some View
+S
+SignInWithAppleButton
+S
+LocalAuthenticationView
+Documentation
+Open Menu
+Swift
+Instance Method
+familyActivityPicker(headerText:footerText:isPresented:selection:)
+Presents an activity picker view as a sheet.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+func familyActivityPicker(
+    headerText: String? = nil,
+    footerText: String? = nil,
+    isPresented: Binding<Bool>,
+    selection: Binding<FamilyActivitySelection>
+) -> some View
+Parameters
+headerText
+An optional string that provides text for the header of the picker view.
+footerText
+An optional string that provides text for the footer of the picker view.
+isPresented
+A binding that indicates whether the app presents the picker view.
+selection
+A binding that manages the user-selected categories, apps, and web domains.
+Discussion
+Use this view modifier to present a FamilyControls/FamilyActivityPicker.
+See Also
+Configuring Family Sharing
+func familyActivityPicker(isPresented: Binding<Bool>, selection: Binding<FamilyActivitySelection>) -> some View
+Presents an activity picker view as a sheet.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is familyActivityPicker(headerText:footerText:isPresented:selection:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

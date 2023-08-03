@@ -1,0 +1,192 @@
+https://developer.apple.com/documentation/swiftui/togglestyle/makebody(configuration:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func textFieldStyle<S>(S) -> some View
+S
+LabelStyleConfiguration
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+Styling views that display text
+S
+ProgressViewStyleConfiguration
+r
+P
+ProgressViewStyle
+Creating custom toggle styles
+P
+static var `switch`: SwitchToggleStyle
+P
+static var checkbox: CheckboxToggleStyle
+P
+static var button: ButtonToggleStyle
+P
+static var automatic: DefaultToggleStyle
+Getting built-in toggle styles
+r
+P
+ToggleStyle
+M
+func toggleStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+makeBody(configuration:)
+Creates a view that represents the body of a toggle.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@ViewBuilder
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Required
+Parameters
+configuration
+The properties of the toggle, including a label and a binding to the toggle’s state.
+Return Value
+A view that has behavior and appearance that enables it to function as a Toggle.
+Discussion
+Implement this method when you define a custom toggle style that conforms to the ToggleStyle protocol. Use the configuration input — a ToggleStyleConfiguration instance — to access the toggle’s label and state. Return a view that has the appearance and behavior of a toggle. For example you can create a toggle that displays a label and a circle that’s either empty or filled with a checkmark:
+struct ChecklistToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button {
+            configuration.isOn.toggle()
+        } label: {
+            HStack {
+                Image(systemName: configuration.isOn
+                        ? "checkmark.circle.fill"
+                        : "circle")
+                configuration.label
+            }
+        }
+        .tint(.primary)
+        .buttonStyle(.borderless)
+    }
+}
+The ChecklistToggleStyle toggle style provides a way to both observe and modify the toggle state: the circle fills for the on state, and users can tap or click the toggle to change the state. By using a customized Button to compose the toggle’s body, SwiftUI automatically provides the behaviors that users expect from a control that has button-like characteristics.
+You can present a collection of toggles that use this style in a stack:
+When updating a view hierarchy, the system calls your implementation of the makeBody(configuration:) method for each Toggle instance that uses the associated style.
+Modify the current style
+Rather than create an entirely new style, you can alternatively modify a toggle’s current style. Use the init(_:) initializer inside the makeBody(configuration:) method to create and modify a toggle based on a configuration value. For example, you can create a style that adds padding and a red border to the current style:
+struct RedBorderToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Toggle(configuration)
+            .padding()
+            .border(.red)
+    }
+}
+If you create a redBorder static variable from this style, you can apply the style to toggles that already use another style, like the built-in switch and button styles:
+Toggle("Switch", isOn: $isSwitchOn)
+    .toggleStyle(.redBorder)
+    .toggleStyle(.switch)
+
+
+Toggle("Button", isOn: $isButtonOn)
+    .toggleStyle(.redBorder)
+    .toggleStyle(.button)
+Both toggles appear with the usual styling, each with a red border:
+Apply the custom style closer to the toggle than the modified style because SwiftUI evaluates style view modifiers in order from outermost to innermost. If you apply the styles in the other order, the red border style doesn’t have an effect, because the built-in styles override it completely.
+See Also
+Creating custom toggle styles
+struct ToggleStyleConfiguration
+The properties of a toggle instance.
+typealias Configuration
+The properties of a toggle instance.
+associatedtype Body : View
+A view that represents the appearance and interaction of a toggle.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is makeBody(configuration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/swiftui/focusstate/projectedvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func focused<Value>(FocusState<Value>.Binding, equals: Value) -> some View
+M
+func focused(FocusState<Bool>.Binding) -> some View
+P
+var isFocused: Bool
+S
+FocusState
+Creating a focus state
+M
+init<T>()
+M
+init()
+Inspecting the focus state
+M
+func focusedObject<T>(T) -> some View
+M
+func focusedSceneObject<T>(T?) -> some View
+M
+func focusedSceneObject<T>(T) -> some View
+S
+FocusedObject
+Setting focus scope
+M
+func focusScope(Namespace.ID) -> some View
+M
+func focusSection() -> some View
+Documentation
+Open Menu
+Swift
+Instance Property
+projectedValue
+A projection of the focus state value that returns a binding.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+var projectedValue: FocusState<Value>.Binding { get }
+Discussion
+When focus is outside any view that is bound to this state, the wrapped value is nil for optional-typed state or false for Boolean state.
+In the following example of a simple navigation sidebar, when the user presses the Filter Sidebar Contents button, focus moves to the sidebar’s filter text field. Conversely, if the user moves focus to the sidebar’s filter manually, then the value of isFiltering automatically becomes true, and the sidebar view updates.
+struct Sidebar: View {
+    @State private var filterText = ""
+    @FocusState private var isFiltering: Bool
+
+
+    var body: some View {
+        VStack {
+            Button("Filter Sidebar Contents") {
+                isFiltering = true
+            }
+
+
+            TextField("Filter", text: $filterText)
+                .focused($isFiltering)
+        }
+    }
+}
+See Also
+Inspecting the focus state
+struct Binding
+A property wrapper type that can read and write a value that indicates the current focus location.
+var wrappedValue: Value
+The current state value, taking into account whatever bindings might be in effect due to the current location of focus.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is projectedValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

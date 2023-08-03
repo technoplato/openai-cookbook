@@ -1,0 +1,156 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TransitionProperties
+Beta
+r
+P
+Transition
+Beta
+M
+func transition(AnyTransition) -> some View
+M
+func transition<T>(T) -> some View
+Beta
+Defining transitions
+M
+func geometryGroup() -> some View
+Beta
+S
+Namespace
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+M
+func settlingDuration<V>(target: V, initialVelocity: V, epsilon: Double) -> TimeInterval
+M
+func force<V>(fromValue: V, toValue: V, position: V, velocity: V) -> V
+M
+func force<V>(target: V, position: V, velocity: V) -> V
+Calculating forces and durations
+M
+func update<V>(value: inout V, velocity: inout V, target: V, deltaTime: TimeInterval)
+Setting spring state
+M
+func velocity<V>(fromValue: V, toValue: V, initialVelocity: V, time: TimeInterval) -> V
+M
+func velocity<V>(target: V, initialVelocity: V, time: TimeInterval) -> V
+Documentation
+Open Menu
+Swift
+Instance Method
+settlingDuration(fromValue:toValue:initialVelocity:epsilon:)
+The estimated duration required for the spring system to be considered at rest.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func settlingDuration<V>(
+    fromValue: V,
+    toValue: V,
+    initialVelocity: V,
+    epsilon: Double
+) -> TimeInterval where V : Animatable
+Discussion
+The epsilon value specifies the threshhold for how small all subsequent values need to be before the spring is considered to have settled.
+See Also
+Calculating forces and durations
+func force<V>(target: V, position: V, velocity: V) -> V
+Calculates the force upon the spring given a current position, target, and velocity amount of change.
+Beta
+func force<V>(fromValue: V, toValue: V, position: V, velocity: V) -> V
+Calculates the force upon the spring given a current position, velocity, and divisor from the starting and end values for the spring to travel.
+Beta
+func settlingDuration<V>(target: V, initialVelocity: V, epsilon: Double) -> TimeInterval
+The estimated duration required for the spring system to be considered at rest.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is settlingDuration(fromValue:toValue:initialVelocity:epsilon:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/labeledtoolbaritemgroupcontentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Configuring the toolbar title display mode
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+Supporting types
+M
+init<C, L>(placement: ToolbarItemPlacement, content: () -> C, label: () -> L)
+M
+init(placement: ToolbarItemPlacement, content: () -> Content)
+Creating a toolbar item group
+S
+ToolbarItemGroup
+S
+ToolbarItem
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+LabeledToolbarItemGroupContent
+A view that represents the view of a toolbar item group with a specified label.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct LabeledToolbarItemGroupContent<Content, Label> where Content : View, Label : View
+Overview
+You don’t create this type directly. SwiftUI creates it when you build a ToolbarItemGroup.
+Relationships
+Conforms To
+Sendable
+View
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is LabeledToolbarItemGroupContent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/accentcolor(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityAddTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityActivationPoint(CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityActivationPoint(UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityActions<Content>(() -> Content) -> some View
+M
+func accessibilityAction(named: Text, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityAction(named: LocalizedStringKey, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityAction<S>(named: S, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityAction(AccessibilityActionKind, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Instance Methods
+View Implementations
+Default Implementations
+T
+ObjectCapturePointCloudView.Body
+Type Aliases
+P
+var body: some View
+Instance Properties
+M
+init(session: ObjectCaptureSession)
+Documentation
+Open Menu
+Swift
+Instance Method
+accentColor(_:)
+Sets the accent color for this view and the views it contains.
+RealityKit
+SwiftUI
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0–1.0 Deprecated
+func accentColor(_ accentColor: Color?) -> some View
+Parameters
+accentColor
+The color to use as an accent color. Set the value to nil to use the inherited accent color.
+Discussion
+Use accentColor(_:) when you want to apply a broad theme color to your app’s user interface. Some styles of controls use the accent color as a default tint color.
+Note
+In macOS, SwiftUI applies customization of the accent color only if the user chooses Multicolor under General > Accent color in System Preferences.
+In the example below, the outer VStack contains two child views. The first is a button with the default accent color. The second is a VStack that contains a button and a slider, both of which adopt the purple accent color of their containing view. Note that the Text element used as a label alongside the Slider retains its default color.
+VStack(spacing: 20) {
+    Button(action: {}) {
+        Text("Regular Button")
+    }
+    VStack {
+        Button(action: {}) {
+            Text("Accented Button")
+        }
+        HStack {
+            Text("Accented Slider")
+            Slider(value: $sliderValue, in: -100...100, step: 0.1)
+        }
+    }
+    .accentColor(.purple)
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accentColor(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/realitykit/boundingbox/union(_:)-g4thSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a Box
+S
+OrientedBoundingBox
+Equatable Implementations
+Default Implementations
+M
+init(Rect3D)
+Beta
+Initializers
+P
+var hashValue: Int
+M
+func formUnion(BoundingBox)
+M
+func union(BoundingBox) -> BoundingBox
+Expanding Boxes
+P
+var boundingRadius: Float
+P
+var extents: SIMD3<Float>
+P
+var center: SIMD3<Float>
+P
+var min: SIMD3<Float>
+P
+var max: SIMD3<Float>
+Documentation
+Open Menu
+Swift
+Instance Method
+union(_:)
+Creates a bounding box containing the current bounds and the specified point.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func union(_ point: SIMD3<Float>) -> BoundingBox
+Parameters
+point
+A point in space.
+Return Value
+The new bounding box.
+See Also
+Expanding Boxes
+func union(BoundingBox) -> BoundingBox
+Creates a bounding box containing the current bounds and the specified bounds.
+func formUnion(BoundingBox)
+Expands the bounding box to contain the specified bounds.
+func formUnion(SIMD3<Float>)
+Expands the bounding box to contain the specified point.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is union(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

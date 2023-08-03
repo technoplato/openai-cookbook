@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/sampledanimation/frames-4eeexSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var repeatMode: AnimationRepeatMode
+Repeating Animation Playback
+M
+func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> Self
+P
+var trimEnd: TimeInterval?
+P
+var trimStart: TimeInterval?
+P
+var trimDuration: TimeInterval?
+P
+var offset: TimeInterval
+Defining Frames Data
+P
+var tweenMode: TweenMode
+P
+var additive: Bool
+P
+var isTranslationAnimated: Bool
+P
+var isScaleAnimated: Bool
+P
+var isRotationAnimated: Bool
+P
+var jointNames: [String]
+P
+var blendLayer: Int32
+Documentation
+Open Menu
+Swift
+Instance Property
+frames
+An array of joint transforms in which each element represents a discrete state of the target entity at a given point in the animation’s timeline.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var frames: [JointTransforms] { get set }
+Available when Value is JointTransforms.
+Discussion
+This array contains sequential values for the animated property when bindTarget is an array of joint transforms.
+See Also
+Defining Frames Data
+var frames: [Transform]
+An array of transforms in which each element represents a discrete state of the target entity at a given point in the animation’s timeline.
+Available when Value is Transform.
+var frames: [Double]
+An array of double-precision values in which each element represents a discrete state of the animated property at a given point in the animation’s timeline.
+Available when Value is Double.
+var frames: [Float]
+An array of floating-point values in which each element represents a discrete state of the animated property at a given point in the animation’s timeline.
+Available when Value is Float.
+var frames: [simd_quatf]
+An array of quaternions in which each element represents a discrete state of the animated property at a given point in the animation’s timeline.
+Available when Value is simd_quatf.
+var frames: [SIMD2<Float>]
+An array of floating-point pairs in which each element represents a discrete state of the animated property at a given point in the animation’s timeline.
+Available when Value is SIMD2<Float>.
+var frames: [SIMD3<Float>]
+An array of floating-point triplets in which each element represents a discrete state of the animated property at a given point in the animation’s timeline.
+Available when Value is SIMD3<Float>.
+var frames: [SIMD4<Float>]
+An array of floating-point quadruples in which each element represents a discrete state of the animated property at a given point in the animation’s timeline.
+Available when Value is SIMD4<Float>.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is frames
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

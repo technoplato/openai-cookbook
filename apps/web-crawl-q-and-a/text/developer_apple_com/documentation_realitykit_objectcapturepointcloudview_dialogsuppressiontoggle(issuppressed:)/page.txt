@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/dialogsuppressiontoggle(issuppressed:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fileDialogMessage(Text?) -> some View
+M
+func fileDialogImportsUnresolvedAliases(Bool) -> some View
+M
+func fileDialogDefaultDirectory(URL?) -> some View
+M
+func fileDialogCustomizationID(String) -> some View
+M
+func fileDialogConfirmationLabel<S>(S) -> some View
+M
+func fileDialogConfirmationLabel(Text?) -> some View
+M
+func fileDialogConfirmationLabel(LocalizedStringKey) -> some View
+func dropDestination<T>(for: T.Type, action: ([T], CGPoint) -> Bool, isTargeted: (Bool) -> Void) -> some View
+M
+func dialogSuppressionToggle(LocalizedStringKey, isSuppressed: Binding<Bool>) -> some View
+M
+func dialogSuppressionToggle(Text, isSuppressed: Binding<Bool>) -> some View
+M
+func dialogSuppressionToggle<S>(S, isSuppressed: Binding<Bool>) -> some View
+M
+func deleteDisabled(Bool) -> some View
+M
+func defersSystemGestures(on: Edge.Set) -> some View
+M
+func defaultScrollAnchor(UnitPoint?) -> some View
+M
+func defaultHoverEffect(HoverEffect?) -> some View
+M
+func defaultFocus<V>(FocusState<V>.Binding, V, priority: DefaultFocusEvaluationPriority) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+dialogSuppressionToggle(isSuppressed:)
+Enables user suppression of dialogs and alerts presented within self, with a default suppression message on macOS. Unused on other platforms.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func dialogSuppressionToggle(isSuppressed: Binding<Bool>) -> some View
+Parameters
+isSuppressed
+Whether the suppression toggle is on or off in the dialog.
+Discussion
+Applying dialog suppression adds a toggle to dialogs on macOS, which allows the user to request the alert not be displayed again. Typically whether a dialog is suppressed is stored in AppStorage and used to decide whether to present the dialog in the future.
+The following example configures a confirmationDialog with a suppression toggle. The toggle’s state is stored in AppStorage and used to determine whether or not to show the dialog when the “Delete Items” button is pressed.
+struct ConfirmEraseItems: View {
+    @State private var isShowingDialog = false
+
+
+    @AppStorage("suppressEraseItemAlert")
+    private var suppressAlert = false
+
+
+    var body: some View {
+        Button("Delete Items") {
+            if !suppressAlert {
+                isShowingDialog = true
+            } else {
+                // Handle item deletion.
+            }
+        }
+        .confirmationDialog(
+            "Are you sure you want to erase these items?",
+            isPresented: $isShowingDialog
+        ) {
+            Button("Erase", role: .destructive) {
+                // Handle item deletion.
+            }
+            Button("Cancel", role: .cancel) {
+                isShowingDialog = false
+            }
+        }
+        .dialogSuppressionToggle(isSuppressed: $suppressAlert)
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is dialogSuppressionToggle(isSuppressed:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

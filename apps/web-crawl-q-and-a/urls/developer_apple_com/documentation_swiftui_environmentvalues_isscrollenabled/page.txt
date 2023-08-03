@@ -1,0 +1,133 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/isscrollenabledSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+M
+func scrollDisabled(Bool) -> some View
+Disabling scrolling
+M
+func scrollClipDisabled(Bool) -> some View
+Beta
+M
+func scrollContentBackground(Visibility) -> some View
+Managing content visibility
+S
+ScrollIndicatorVisibility
+P
+var verticalScrollIndicatorVisibility: ScrollIndicatorVisibility
+P
+var horizontalScrollIndicatorVisibility: ScrollIndicatorVisibility
+Documentation
+Open Menu
+Swift
+Instance Property
+isScrollEnabled
+A Boolean value that indicates whether any scroll views associated with this environment allow scrolling to occur.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+var isScrollEnabled: Bool { get set }
+Discussion
+The default value is true. Use the scrollDisabled(_:) modifier to configure this property.
+See Also
+Disabling scrolling
+func scrollDisabled(Bool) -> some View
+Disables or enables scrolling in scrollable views.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is isScrollEnabled
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

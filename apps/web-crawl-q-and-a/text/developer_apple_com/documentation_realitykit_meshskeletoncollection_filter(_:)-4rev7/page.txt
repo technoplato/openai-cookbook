@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/realitykit/meshskeletoncollection/filter(_:)-4rev7Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func sorted<S, Comparator>(using: S) -> [Self.Element]
+M
+func sorted<Comparator>(using: Comparator) -> [Self.Element]
+M
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func shuffled<T>(using: inout T) -> [Self.Element]
+M
+func shuffled() -> [Self.Element]
+M
+func reversed() -> [Self.Element]
+M
+func reduce<Result>(into: Result, (inout Result, Self.Element) throws -> ()) rethrows -> Result
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func enumerated() -> EnumeratedSequence<Self>
+M
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+M
+func dropLast(Int) -> [Self.Element]
+M
+func dropFirst(Int) -> DropFirstSequence<Self>
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>
+M
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+M
+func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult
+M
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Documentation
+Open Menu
+Swift
+Instance Method
+filter(_:)
+Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func filter(_ isIncluded: (Self.Element) throws -> Bool) rethrows -> [Self.Element]
+Parameters
+isIncluded
+A closure that takes an element of the sequence as its argument and returns a Boolean value indicating whether the element should be included in the returned array.
+Return Value
+An array of the elements that isIncluded allowed.
+Discussion
+In this example, filter(_:) is used to include only names shorter than five characters.
+let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+let shortNames = cast.filter { $0.count < 5 }
+print(shortNames)
+// Prints "["Kim", "Karl"]"
+Complexity
+O(n), where n is the length of the sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is filter(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

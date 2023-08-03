@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/specular-swift.struct/init(scale:texture:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+CustomMaterial.Texture
+T
+CustomMaterial.Parameters
+Defining Material Parameter Types
+T
+CustomMaterial.FaceCulling
+E
+MaterialParameterTypes.FaceCulling
+P
+var faceCulling: CustomMaterial.FaceCulling
+Culling Unneeded Polygons
+M
+init(floatLiteral: Float)
+Creating a Specular Object
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+S
+CustomMaterial.AmbientOcclusion
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+Using Ambient Occlusion
+Documentation
+Open Menu
+Swift
+Initializer
+init(scale:texture:)
+Creates an object from a single value, a UV-mapped texture, or both.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(
+    scale: Float = 1.0,
+    texture: CustomMaterial.Texture? = nil
+)
+Discussion
+RealityKit automatically draws specular highlights for physically based materials using the values of various properties, primarily roughness and metallic. Specular highlights are bright spots of reflected light that appear on shiny objects.
+While many real-world objects can be accurately and realistically simulated with just the core physically based rendering (PBR) properties, you can create additional realistic effects by augmenting the specular highlights.
+The specular scale and texture values are available to the material’s surface shader, but RealityKit doesn’t render additional specular highlights unless the surface shader function calls params.surface().set_specular().
+The following Metal code demonstrates using the specular scale and texture values in a surface shader function to calculate specular highlights, emulating the specular behavior of PhysicallyBasedMaterial:
+    // Retrieve the opacity scale from the CustomMaterial.
+    float specularScale = params.material_constants().specular_scale();
+
+
+    // Retrieve the entity's texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Entities loaded from a USDZ or .reality file use texture coordinates
+    // with a flipped y-axis. This compensates for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample the specular texture.
+    auto tex = params.textures();
+    half specular = tex.specular().sample(textureSampler, uv).r;
+
+
+    // Multiply the tint and the sampled value from the texture and assign
+    // the result.
+    specular *= specularScale;
+    params.surface().set_specular(specular);
+scale: A value from 0.0 to 1.0 to use as the specular value for the material.
+texture: An optional UV-mapped image texture.
+See Also
+Creating a Specular Object
+init(floatLiteral: Float)
+Creates an object from a single value.
+init(PhysicallyBasedMaterial.Specular)
+Creates an object from a physically based material’s specular property.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(scale:texture:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

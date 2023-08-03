@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/selectiondisabled(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func symbolEffectsRemoved(Bool) -> some View
+M
+func symbolEffect<T, U>(T, options: SymbolEffectOptions, value: U) -> some View
+M
+func symbolEffect<T>(T, options: SymbolEffectOptions, isActive: Bool) -> some View
+M
+func swipeActions<T>(edge: HorizontalEdge, allowsFullSwipe: Bool, content: () -> T) -> some View
+M
+func submitScope(Bool) -> some View
+M
+func submitLabel(SubmitLabel) -> some View
+M
+func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+func sheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+selectionDisabled(_:)
+Adds a condition that controls whether users can select this view.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func selectionDisabled(_ isDisabled: Bool = true) -> some View
+Parameters
+isDisabled
+A Boolean value that determines whether users can select this view.
+Discussion
+Use this modifier to control the selectability of views in selectable containers like List or Table. In the example, below, the user can’t select the first item in the list.
+@Binding var selection: Item.ID?
+@Binding var items: [Item]
+
+
+var body: some View {
+    List(selection: $selection) {
+        ForEach(items) { item in
+            ItemView(item: item)
+                .selectionDisabled(item.id == items.first.id)
+        }
+    }
+}
+You can also use this modifier to specify the selectability of views within a Picker. The following example represents a flavor picker that disables selection on flavors that are unavailable.
+Picker("Flavor", selection: $selectedFlavor) {
+    ForEach(Flavor.allCases) { flavor in
+        Text(flavor.rawValue.capitalized)
+            .selectionDisabled(isSoldOut(flavor))
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is selectionDisabled(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

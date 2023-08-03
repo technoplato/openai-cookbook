@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/entity/componentsetSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func requestOwnership(timeout: TimeInterval, (SynchronizationComponent.OwnershipTransferCompletionResult) -> Void)
+P
+var isOwner: Bool
+S
+SynchronizationComponent
+P
+var synchronization: SynchronizationComponent?
+Synchronizing an Entity Among Peers
+r
+P
+HasTransform
+The Transform Component
+P
+var components: Entity.ComponentSet
+Adding Components
+r
+P
+HasHierarchy
+S
+Entity.ChildCollection
+M
+func removeChild(Entity, preservingWorldTransform: Bool)
+M
+func addChild(Entity, preservingWorldTransform: Bool)
+P
+var children: Entity.ChildCollection
+M
+func removeFromParent(preservingWorldTransform: Bool)
+Documentation
+Open Menu
+Swift
+Structure
+Entity.ComponentSet
+A set of stored components.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+struct ComponentSet
+Overview
+The set represents all the components stored on an entity. It can hold only one component of any given type.
+Topics
+Creating a Set
+func set<T>(T)
+func set([Component])
+Adds all the component in the input array to the set.
+Updating the Set
+func remove(Component.Type)
+Removes the component of the specified type from the collection.
+func removeAll()
+Removes all components from the collection.
+Accessing Members
+subscript(Component.Type) -> (Component)?
+Gets or sets the component of the specified type.
+subscript<T>(T.Type) -> T?
+Gets or sets the component of the specified type.
+Counting Members
+var count: Int
+The number of components in this collection.
+Checking for Membership
+func has(Component.Type) -> Bool
+Returns a Boolean that indicates whether the set contains a component of the given type.
+Relationships
+Conforms To
+Sendable
+See Also
+Adding Components
+var components: Entity.ComponentSet
+All the components stored on the entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Entity.ComponentSet
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

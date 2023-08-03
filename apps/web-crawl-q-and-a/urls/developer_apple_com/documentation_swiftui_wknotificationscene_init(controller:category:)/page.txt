@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/wknotificationscene/init(controller:category:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+View configuration
+View fundamentals
+Creating a notification scene
+S
+WKNotificationScene
+Creating watch notifications
+r
+P
+MenuBarExtraStyle
+M
+func menuBarExtraStyle<S>(S) -> some Scene
+S
+MenuBarExtra
+Creating a menu bar extra
+S
+SettingsLink
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(controller:category:)
+Creates a scene that appears in response to receiving a specific category of remote or local notifications.
+watchOS 7.0+
+init(
+    controller: Controller.Type = Controller.self,
+    category: String
+)
+Parameters
+controller
+The type of WKUserNotificationHostingController to display upon receipt of the specified notification category.
+category
+The category of notifications to listen for.
+Discussion
+Use a watch notification instance to add support for one or more Apple Watch notification scenes that appear on receipt of the local or remote notification categories you specify. The example below, adds two notification scenes to the app declaration:
+@main
+struct PopQuizApp : App {
+    var body: some Scene {
+        MainScene {
+            RootView()
+        }
+
+
+        WKNotificationScene(
+            controller: QuizTimeController.self,
+            category: "com.example.quiztime"
+        )
+
+
+        WKNotificationScene(
+            controller: QuizResultsController.self,
+            category: "com.example.results"
+        )
+    }
+}
+Each WKNotificationScene declaration references a WKUserNotificationHostingController and a category string that you provide. The hosting controller displays your notification’s content view upon receipt of a local or a PushKit notification. The category string you specify corresponds to the category name in the notification’s dictionary and describes a specific notification that contains the content displayed by the notification view.
+Current page is init(controller:category:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

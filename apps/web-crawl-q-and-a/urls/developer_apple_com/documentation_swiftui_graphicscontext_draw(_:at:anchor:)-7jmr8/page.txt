@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/draw(_:at:anchor:)-7jmr8Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Applying transforms
+S
+GraphicsContext.ShadowOptions
+S
+GraphicsContext.BlurOptions
+S
+GraphicsContext.FilterOptions
+S
+GraphicsContext.Filter
+M
+func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)
+Filtering
+func clipToLayer(opacity: Double, options: GraphicsContext.ClipOptions, content: (inout GraphicsContext) throws -> Void) rethrows
+Drawing a child view
+S
+GraphicsContext.ResolvedText
+M
+func resolve(Text) -> GraphicsContext.ResolvedText
+M
+func draw(GraphicsContext.ResolvedText, in: CGRect)
+M
+func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)
+M
+func draw(Text, in: CGRect)
+M
+func draw(Text, at: CGPoint, anchor: UnitPoint)
+Drawing text
+Documentation
+Open Menu
+Swift
+Instance Method
+draw(_:at:anchor:)
+Draws a resolved symbol into the context, aligning an anchor within the symbol to a point in the context.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func draw(
+    _ symbol: GraphicsContext.ResolvedSymbol,
+    at point: CGPoint,
+    anchor: UnitPoint = .center
+)
+Parameters
+symbol
+The GraphicsContext.ResolvedSymbol view to draw. Get a resolved symbol by calling resolveSymbol(id:) with the identifier that you use to tag the corresponding child view during Canvas initialization.
+point
+A point within the rectangle of the resolved symbol to anchor to a point in the context.
+anchor
+A UnitPoint within the context to align the symbol with. The default is center.
+Discussion
+The current context state defines the full drawing operation. For example, the current transformation and clip shapes affect how SwiftUI draws the symbol.
+See Also
+Drawing a child view
+func draw(GraphicsContext.ResolvedSymbol, in: CGRect)
+Draws a resolved symbol into the context, using the specified rectangle as a layout frame.
+func resolveSymbol<ID>(id: ID) -> GraphicsContext.ResolvedSymbol?
+Gets the identified child view as a resolved symbol, if the view exists.
+struct ResolvedSymbol
+A static sequence of drawing operations that may be drawn multiple times, preserving their resolution independence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is draw(_:at:anchor:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

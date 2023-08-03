@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/timelineview/contextSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+Transition
+Beta
+M
+func transition(AnyTransition) -> some View
+M
+func transition<T>(T) -> some View
+Beta
+Defining transitions
+M
+func geometryGroup() -> some View
+Beta
+S
+Namespace
+r
+P
+GeometryEffect
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+M
+init(Schedule, content: (TimelineViewDefaultContext) -> Content)
+Creating a timeline
+S
+TimelineView
+Updating watchOS apps with timelines
+Updating a view on a schedule
+S
+EmptyAnimatableData
+r
+P
+VectorArithmetic
+S
+AnimatablePair
+Documentation
+Open Menu
+Swift
+Structure
+TimelineView.Context
+Information passed to a timeline view’s content callback.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct Context
+Overview
+The context includes both the date from the schedule that triggered the callback, and a cadence that you can use to customize the appearance of your view. For example, you might choose to display the second hand of an analog clock only when the cadence is TimelineView.Context.Cadence.seconds or faster.
+Topics
+Getting the date
+let date: Date
+The date from the schedule that triggered the current view update.
+Getting the cadence
+let cadence: TimelineView<Schedule, Content>.Context.Cadence
+The rate at which the timeline updates the view.
+enum Cadence
+A rate at which timeline views can receive updates.
+Invalidating the context
+func invalidateTimelineContent()
+Resets any pre-rendered views the system has from the timeline.
+Available when Schedule conforms to TimelineSchedule.
+Relationships
+Conforms To
+Sendable
+See Also
+Creating a timeline
+init(Schedule, content: (TimelineViewDefaultContext) -> Content)
+Creates a new timeline view that uses the given schedule.
+Available when Schedule conforms to TimelineSchedule and Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TimelineView.Context
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/importfromdevicescommandsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View layout
+Drawing and graphics
+Shapes
+S
+ContextMenu
+Deprecated
+T
+PullDownButton
+Deprecated
+S
+MenuButton
+Deprecated
+Deprecated types
+S
+ToolbarCommands
+S
+TextFormattingCommands
+S
+TextEditingCommands
+S
+SidebarCommands
+Getting built-in command groups
+S
+CommandGroupPlacement
+S
+CommandsBuilder
+S
+CommandGroup
+Documentation
+Open Menu
+Swift
+Structure
+ImportFromDevicesCommands
+A built-in set of commands that enables importing content from nearby devices.
+macOS 12.0+
+struct ImportFromDevicesCommands
+Overview
+This set of commands adds items based on nearby devices and capabilities, like taking photos or scanning documents. Views can receive imported content from these menu items by using the importsItemProviders(_:onImport:) modifier.
+These commands are optional and you can explicitly request them by passing a value of this type to the commands(content:) modifier.
+Topics
+Creating the command group
+init()
+Creates a new set of device import commands.
+Relationships
+Conforms To
+Commands
+Sendable
+See Also
+Getting built-in command groups
+struct SidebarCommands
+A built-in set of commands for manipulating window sidebars.
+struct TextEditingCommands
+A built-in group of commands for searching, editing, and transforming selections of text.
+struct TextFormattingCommands
+A built-in set of commands for transforming the styles applied to selections of text.
+struct ToolbarCommands
+A built-in set of commands for manipulating window toolbars.
+struct InspectorCommands
+A built-in set of commands for manipulating inspectors.
+Beta
+struct EmptyCommands
+An empty group of commands.
+Current page is ImportFromDevicesCommands
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,131 @@
+https://developer.apple.com/documentation/realitykit/meshresource/skeleton/joint/restposetransformSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Operators
+static func == (MeshResource.Skeleton.Joint, MeshResource.Skeleton.Joint) -> Bool
+Initializers
+M
+init(name: String, parentIndex: Int?, inverseBindPoseMatrix: simd_float4x4, restPoseTransform: Transform)
+Instance Properties
+P
+var inverseBindPoseMatrix: simd_float4x4
+P
+var name: String
+P
+var parentIndex: Int?
+init(id: String, jointNames: [String], inverseBindPose: [simd_float4x4], localRestPose: [Transform]?, parentIndices: [Int]?) throws
+init?(id: String, jointNames: [String], inverseBindPoseMatrices: [simd_float4x4], restPoseTransforms: [Transform]?, parentIndices: [Int?]?)
+T
+MeshResource.Skeleton.ID
+Type Methods
+M
+static func generate(from: MeshResource.Contents) async throws -> MeshResource
+M
+static func generate(from: [MeshDescriptor]) async throws -> MeshResource
+M
+static func generateBoxWithRoundedCorners(size: SIMD3<Float>, majorRadius: Float, minorRadius: Float) -> MeshResource
+Beta
+M
+static func generateCone(height: Float, radius: Float) -> MeshResource
+Beta
+M
+static func generateCylinder(height: Float, radius: Float) -> MeshResource
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+restPoseTransform
+The local transform of this joint in skeleton’s rest pose, specified relative to this joint’s parent (or relative to model space, if this joint has no parent).
+visionOS 1.0+ Beta
+var restPoseTransform: Transform
+Discussion
+The rest pose of a skeleton is used when a joint is not otherwise animated.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is restPoseTransform
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

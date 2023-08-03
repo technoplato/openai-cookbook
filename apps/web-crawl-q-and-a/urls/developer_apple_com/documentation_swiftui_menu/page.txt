@@ -1,0 +1,222 @@
+https://developer.apple.com/documentation/swiftui/menuSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> some View
+M
+func contextMenu<MenuItems>(menuItems: () -> MenuItems) -> some View
+Creating context menus
+M
+func menuStyle<S>(S) -> some View
+M
+init(MenuStyleConfiguration)
+Creating a menu from a configuration
+M
+init(LocalizedStringKey, systemImage: String, content: () -> Content, primaryAction: () -> Void)
+Creating a menu
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+View configuration
+Documentation
+Open Menu
+Swift
+Structure
+Menu
+A control for presenting a menu of actions.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+struct Menu<Label, Content> where Label : View, Content : View
+Overview
+The following example presents a menu of three buttons and a submenu, which contains three buttons of its own.
+Menu("Actions") {
+    Button("Duplicate", action: duplicate)
+    Button("Rename", action: rename)
+    Button("Delete…", action: delete)
+    Menu("Copy") {
+        Button("Copy", action: copy)
+        Button("Copy Formatted", action: copyFormatted)
+        Button("Copy Library Path", action: copyPath)
+    }
+}
+You can create the menu’s title with a LocalizedStringKey, as seen in the previous example, or with a view builder that creates multiple views, such as an image and a text view:
+Menu {
+    Button("Open in Preview", action: openInPreview)
+    Button("Save as PDF", action: saveAsPDF)
+} label: {
+    Label("PDF", systemImage: "doc.fill")
+}
+Primary action
+Menus can be created with a custom primary action. The primary action will be performed when the user taps or clicks on the body of the control, and the menu presentation will happen on a secondary gesture, such as on long press or on click of the menu indicator. The following example creates a menu that adds bookmarks, with advanced options that are presented in a menu.
+Menu {
+    Button(action: addCurrentTabToReadingList) {
+        Label("Add to Reading List", systemImage: "eyeglasses")
+    }
+    Button(action: bookmarkAll) {
+        Label("Add Bookmarks for All Tabs", systemImage: "book")
+    }
+    Button(action: show) {
+        Label("Show All Bookmarks", systemImage: "books.vertical")
+    }
+} label: {
+    Label("Add Bookmark", systemImage: "book")
+} primaryAction: {
+    addBookmark()
+}
+Styling menus
+Use the menuStyle(_:) modifier to change the style of all menus in a view. The following example shows how to apply a custom style:
+Menu("Editing") {
+    Button("Set In Point", action: setInPoint)
+    Button("Set Out Point", action: setOutPoint)
+}
+.menuStyle(EditingControlsMenuStyle())
+Topics
+Creating a menu from content
+init(content: () -> Content, label: () -> Label)
+Creates a menu with a custom label.
+Available when Label conforms to View and Content conforms to View.
+init(LocalizedStringKey, content: () -> Content)
+Creates a menu that generates its label from a localized string key.
+Available when Label conforms to View and Content conforms to View.
+init<S>(S, content: () -> Content)
+Creates a menu that generates its label from a string.
+Available when Label conforms to View and Content conforms to View.
+Creating a menu with a primary action
+init(content: () -> Content, label: () -> Label, primaryAction: () -> Void)
+Creates a menu with a custom primary action and custom label.
+Available when Label conforms to View and Content conforms to View.
+init(LocalizedStringKey, content: () -> Content, primaryAction: () -> Void)
+Creates a menu with a custom primary action that generates its label from a localized string key.
+Available when Label conforms to View and Content conforms to View.
+init<S>(S, content: () -> Content, primaryAction: () -> Void)
+Creates a menu with a custom primary action that generates its label from a string.
+Available when Label conforms to View and Content conforms to View.
+Creating a menu with an image label
+init<S>(S, image: ImageResource, content: () -> Content)
+Creates a menu that generates its label from a string and image resource.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Beta
+init(LocalizedStringKey, image: ImageResource, content: () -> Content)
+Creates a menu that generates its label from a localized string key and image resource.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Beta
+init(LocalizedStringKey, image: ImageResource, content: () -> Content, primaryAction: () -> Void)
+Creates a menu with a custom primary action that generates its label from a localized string key.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Beta
+init<S>(S, systemImage: String, content: () -> Content)
+Creates a menu that generates its label from a string and system image.
+Available when Label is Label<Text, Image> and Content conforms to View.
+init(LocalizedStringKey, systemImage: String, content: () -> Content)
+Creates a menu that generates its label from a localized string key and system image.
+Available when Label is Label<Text, Image> and Content conforms to View.
+init(LocalizedStringKey, systemImage: String, content: () -> Content, primaryAction: () -> Void)
+Creates a menu with a custom primary action that generates its label from a localized string key and system image.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Creating a menu from a configuration
+init(MenuStyleConfiguration)
+Creates a menu based on a style configuration.
+Available when Label is MenuStyleConfiguration.Label and Content is MenuStyleConfiguration.Content.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Creating a menu
+func menuStyle<S>(S) -> some View
+Sets the style for menus within this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Menu
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

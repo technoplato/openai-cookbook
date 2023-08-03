@@ -1,0 +1,225 @@
+https://developer.apple.com/documentation/swiftui/sectionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(header: Parent, content: () -> Content)
+Deprecated
+Deprecated symbols
+M
+init<V, H>(isExpanded: Binding<Bool>, content: () -> Content, header: () -> H)
+Beta
+M
+init(isExpanded: Binding<Bool>, content: () -> Content, header: () -> Parent)
+Beta
+M
+init(LocalizedStringKey, isExpanded: Binding<Bool>, content: () -> Content)
+Beta
+M
+init<V>(LocalizedStringKey, isExpanded: Binding<Bool>, content: () -> Content)
+Beta
+M
+init<S>(S, isExpanded: Binding<Bool>, content: () -> Content)
+M
+func listStyle<S>(S) -> some View
+S
+List
+Displaying data in lists
+Creating a list
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+Documentation
+Open Menu
+Swift
+Structure
+Section
+A container view that you can use to add hierarchy to certain collection views.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+struct Section<Parent, Content, Footer>
+Overview
+Use Section instances in views like List, Picker, and Form to organize content into separate sections. Each section has custom content that you provide on a per-instance basis. You can also provide headers and footers for each section.
+Topics
+Creating a section
+init<V>(content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+init(content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent is EmptyView, Content conforms to View, and Footer is EmptyView.
+init(LocalizedStringKey, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent is Text, Content conforms to View, and Footer is EmptyView.
+init<S>(S, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent is Text, Content conforms to View, and Footer is EmptyView.
+init<V, S>(S, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+init<V>(LocalizedStringKey, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+Adding headers and footers
+init(content: () -> Content, header: () -> Parent)
+Creates a section with a header and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer is EmptyView.
+init<V, H>(content: () -> Content, header: () -> H)
+Creates a section with a header and the provided section content.
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+init(content: () -> Content, footer: () -> Footer)
+Creates a section with a footer and the provided section content.
+Available when Parent is EmptyView, Content conforms to View, and Footer conforms to View.
+init(content: () -> Content, header: () -> Parent, footer: () -> Footer)
+Creates a section with a header, footer, and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+Controlling collapsibility
+init<V, S>(S, isExpanded: Binding<Bool>, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent and Content conforms to TableRowContent.
+Beta
+init<S>(S, isExpanded: Binding<Bool>, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent is Text, Content conforms to View, and Footer is EmptyView.
+Beta
+init<V>(LocalizedStringKey, isExpanded: Binding<Bool>, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent and Content conforms to TableRowContent.
+Beta
+init(LocalizedStringKey, isExpanded: Binding<Bool>, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent is Text, Content conforms to View, and Footer is EmptyView.
+Beta
+init(isExpanded: Binding<Bool>, content: () -> Content, header: () -> Parent)
+Creates a section with a header, the provided section content, and a binding representing the section’s expansion state.
+Available when Parent conforms to View, Content conforms to View, and Footer is EmptyView.
+Beta
+init<V, H>(isExpanded: Binding<Bool>, content: () -> Content, header: () -> H)
+Creates a section with a header and the provided section content.
+Available when Parent conforms to TableRowContent and Content conforms to TableRowContent.
+Beta
+Deprecated symbols
+init(header: Parent, content: () -> Content)
+Creates a section with a header and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer is EmptyView.
+Deprecated
+init(footer: Footer, content: () -> Content)
+Creates a section with a footer and the provided section content.
+Available when Parent is EmptyView, Content conforms to View, and Footer conforms to View.
+Deprecated
+init(header: Parent, footer: Footer, content: () -> Content)
+Creates a section with a header, footer, and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+Deprecated
+func collapsible(Bool) -> some View
+Sets whether a section can be collapsed by the user.
+Available when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+Deprecated
+Relationships
+Conforms To
+Sendable
+TableRowContent
+Conforms when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+View
+Conforms when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+See Also
+Creating a list
+Displaying data in lists
+Visualize collections of data with platform-appropriate appearance.
+struct List
+A container that presents rows of data arranged in a single column, optionally providing the ability to select one or more members.
+func listStyle<S>(S) -> some View
+Sets the style for lists within this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Section
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,231 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/backgroundprominenceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func listRowSpacing(CGFloat?) -> some View
+M
+func listSectionSpacing(CGFloat) -> some View
+Beta
+M
+func listSectionSpacing(ListSectionSpacing) -> some View
+Beta
+S
+ListSectionSpacing
+Beta
+Configuring backgrounds
+M
+func listRowBackground<V>(V?) -> some View
+M
+func alternatingRowBackgrounds(AlternatingRowBackgroundBehavior) -> some View
+Beta
+S
+AlternatingRowBackgroundBehavior
+Beta
+P
+var refresh: RefreshAction?
+S
+RefreshAction
+Editing a list
+M
+func moveDisabled(Bool) -> some View
+M
+func deleteDisabled(Bool) -> some View
+P
+var editMode: Binding<EditMode>?
+E
+EditMode
+Documentation
+Open Menu
+Swift
+Instance Property
+backgroundProminence
+The prominence of the background underneath views associated with this environment.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+var backgroundProminence: BackgroundProminence { get set }
+Discussion
+Foreground elements above an increased prominence background are typically adjusted to have higher contrast against a potentially vivid color, such as taking on a higher opacity monochrome appearance according to the colorScheme. System styles like primary, secondary, etc will automatically resolve to an appropriate style in this context. The property can be read and used for custom styled elements.
+In the example below, a custom star rating element is in a list row alongside some text. When the row is selected and has an increased prominence appearance, the text and star rating will update their appearance, the star rating replacing its use of yellow with the standard secondary style.
+struct RecipeList: View {
+    var recipes: [Recipe]
+    @Binding var selectedRecipe: Recipe.ID?
+
+
+    var body: some View {
+        List(recipes, selection: $selectedRecipe) {
+            RecipeListRow(recipe: $0)
+        }
+    }
+}
+
+
+struct RecipeListRow: View {
+    var recipe: Recipe
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack(alignment: .firstTextBaseline) {
+                Text(recipe.name)
+                Spacer()
+                StarRating(rating: recipe.rating)
+            }
+            Text(recipe.description)
+                .foregroundStyle(.secondary)
+                .lineLimit(2, reservesSpace: true)
+        }
+    }
+}
+
+
+private struct StarRating: View {
+    var rating: Int
+
+
+    @Environment(\.backgroundProminence)
+    private var backgroundProminence
+
+
+    var body: some View {
+        HStack(spacing: 1) {
+            ForEach(0..<rating, id: \.self) { _ in
+                Image(systemName: "star.fill")
+            }
+        }
+        .foregroundStyle(backgroundProminence == .increased ?
+            AnyShapeStyle(.secondary) : AnyShapeStyle(.yellow))
+        .imageScale(.small)
+    }
+}
+Note that the use of backgroundProminence was used by a view that was nested in additional stack containers within the row. This ensured that the value correctly reflected the environment within the list row itself, as opposed to the environment of the list as a whole. One way to ensure correct resolution would be to prefer using this in a custom ShapeStyle instead, for example:
+private struct StarRating: View {
+    var rating: Int
+
+
+    var body: some View {
+        HStack(spacing: 1) {
+            ForEach(0..<rating, id: \.self) { _ in
+                Image(systemName: "star.fill")
+            }
+        }
+        .foregroundStyle(FillStyle())
+        .imageScale(.small)
+    }
+}
+
+
+extension StarRating {
+    struct FillStyle: ShapeStyle {
+        func resolve(in env: EnvironmentValues) -> some ShapeStyle {
+            switch env.backgroundProminence {
+            case .increased: return AnyShapeStyle(.secondary)
+            default: return AnyShapeStyle(.yellow)
+            }
+        }
+    }
+}
+Views like List and Table as well as standard shape styles like ShapeStyle.selection will automatically update the background prominence of foreground views. For custom backgrounds, this environment property can be explicitly set on views above custom backgrounds.
+See Also
+Configuring backgrounds
+func listRowBackground<V>(V?) -> some View
+Places a custom background view behind a list row item.
+func alternatingRowBackgrounds(AlternatingRowBackgroundBehavior) -> some View
+Overrides whether lists and tables in this view have alternating row backgrounds.
+Beta
+struct AlternatingRowBackgroundBehavior
+The styling of views with respect to alternating row backgrounds.
+Beta
+struct BackgroundProminence
+The prominence of backgrounds underneath other views.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is backgroundProminence
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

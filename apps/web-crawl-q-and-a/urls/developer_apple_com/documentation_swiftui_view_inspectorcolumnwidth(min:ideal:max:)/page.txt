@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/view/inspectorcolumnwidth(min:ideal:max:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+M
+func inspectorColumnWidth(CGFloat) -> some View
+Beta
+M
+func inspector<V>(isPresented: Binding<Bool>, content: () -> V) -> some View
+Beta
+Presenting an inspector
+S
+FileDialogBrowserOptions
+Beta
+M
+func fileDialogURLEnabled(Predicate<URL>) -> some View
+Beta
+M
+func fileDialogMessage(LocalizedStringKey) -> some View
+Beta
+M
+func fileDialogMessage(Text?) -> some View
+Beta
+M
+func fileDialogMessage<S>(S) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+inspectorColumnWidth(min:ideal:max:)
+Sets a flexible, preferred width for the inspector in a trailing-column presentation.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+func inspectorColumnWidth(
+    min: CGFloat? = nil,
+    ideal: CGFloat,
+    max: CGFloat? = nil
+) -> some View
+Parameters
+min
+The minimum allowed width for the trailing column inspector
+ideal
+The initial width of the inspector in the absence of state restoration. ideal influences the resulting width on macOS when a user double-clicks the divider on the leading edge of the inspector. clicks a divider to readjust
+max
+The maximum allowed width for the trailing column inspector
+Discussion
+Apply this modifier on the content of a inspector(isPresented:content:) to specify a preferred flexible width for the column. Use inspectorColumnWidth(_:) if you need to specify a fixed width.
+The following example shows an editor interface with an inspector, which when presented as a trailing-column, has a preferred width of 225 points, maximum of 400, and a minimum of 150 at which point it will collapse, if allowed.
+MyEditorView()
+    .inspector {
+        TextTraitsInspectorView()
+            .inspectorColumnWidth(min: 150, ideal: 225, max: 400)
+    }
+Only some platforms enable flexible inspector columns. If you specify a width that the current presentation environment doesn’t support, SwiftUI may use a different width for your column.
+See Also
+Presenting an inspector
+func inspector<V>(isPresented: Binding<Bool>, content: () -> V) -> some View
+Inserts an inspector at the applied position in the view hierarchy.
+Beta
+func inspectorColumnWidth(CGFloat) -> some View
+Sets a fixed, preferred width for the inspector containing this view when presented as a trailing column.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is inspectorColumnWidth(min:ideal:max:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

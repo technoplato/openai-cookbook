@@ -1,0 +1,209 @@
+https://developer.apple.com/documentation/swiftui/bindingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Managing model data in your app
+Creating model data
+Identifiable Implementations
+Default Implementations
+P
+var transaction: Transaction
+M
+func transaction(Transaction) -> Binding<Value>
+M
+func animation(Animation?) -> Binding<Value>
+S
+Bindable
+Beta
+S
+State
+Managing user interface state
+Creating and sharing view state
+Model data
+Data and storage
+App extensions
+Search
+Documentation
+Open Menu
+Swift
+Structure
+Binding
+A property wrapper type that can read and write a value owned by a source of truth.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen @propertyWrapper @dynamicMemberLookup
+struct Binding<Value>
+Overview
+Use a binding to create a two-way connection between a property that stores data, and a view that displays and changes the data. A binding connects a property to a source of truth stored elsewhere, instead of storing data directly. For example, a button that toggles between play and pause can create a binding to a property of its parent view using the Binding property wrapper.
+struct PlayButton: View {
+    @Binding var isPlaying: Bool
+
+
+    var body: some View {
+        Button(isPlaying ? "Pause" : "Play") {
+            isPlaying.toggle()
+        }
+    }
+}
+The parent view declares a property to hold the playing state, using the State property wrapper to indicate that this property is the value’s source of truth.
+struct PlayerView: View {
+    var episode: Episode
+    @State private var isPlaying: Bool = false
+
+
+    var body: some View {
+        VStack {
+            Text(episode.title)
+                .foregroundStyle(isPlaying ? .primary : .secondary)
+            PlayButton(isPlaying: $isPlaying) // Pass a binding.
+        }
+    }
+}
+When PlayerView initializes PlayButton, it passes a binding of its state property into the button’s binding property. Applying the $ prefix to a property wrapped value returns its projectedValue, which for a state property wrapper returns a binding to the value.
+Whenever the user taps the PlayButton, the PlayerView updates its isPlaying state.
+Topics
+Creating a binding
+init?(Binding<Value?>)
+Creates a binding by projecting the base value to an unwrapped value.
+init<V>(Binding<V>)
+Creates a binding by projecting the base value to an optional value.
+init<V>(Binding<V>)
+Creates a binding by projecting the base value to a hashable value.
+init(projectedValue: Binding<Value>)
+Creates a binding from the value of another binding.
+init(get: () -> Value, set: (Value, Transaction) -> Void)
+Creates a binding with a closure that reads from the binding value, and a closure that applies a transaction when writing to the binding value.
+init(get: () -> Value, set: (Value) -> Void)
+Creates a binding with closures that read and write the binding value.
+static func constant(Value) -> Binding<Value>
+Creates a binding with an immutable value.
+Getting the value
+var wrappedValue: Value
+The underlying value referenced by the binding variable.
+var projectedValue: Binding<Value>
+A projection of the binding value that returns a binding.
+subscript<Subject>(dynamicMember _: WritableKeyPath<Value, Subject>) -> Binding<Subject>
+Returns a binding to the resulting value of a given key path.
+Managing changes
+var id: Value.ID
+The stable identity of the entity associated with this instance, corresponding to the id of the binding’s wrapped value.
+Available when Value conforms to Identifiable.
+func animation(Animation?) -> Binding<Value>
+Specifies an animation to perform when the binding value changes.
+func transaction(Transaction) -> Binding<Value>
+Specifies a transaction for the binding.
+var transaction: Transaction
+The binding’s transaction.
+Default Implementations
+API Reference
+Identifiable Implementations
+Relationships
+Conforms To
+BidirectionalCollection
+Collection
+DynamicProperty
+Identifiable
+RandomAccessCollection
+Sendable
+Sequence
+See Also
+Creating and sharing view state
+Managing user interface state
+Encapsulate view-specific data within your app’s view hierarchy to make your views reusable.
+struct State
+A property wrapper type that can read and write a value managed by SwiftUI.
+struct Bindable
+A property wrapper type that supports creating bindings to the mutable properties of observable objects.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Binding
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

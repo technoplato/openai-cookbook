@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/layereffect(_:maxsampleoffset:isenabled:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creating a reality view
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+layerEffect(_:maxSampleOffset:isEnabled:)
+Returns a new view that applies shader to self as a filter on the raster layer created from self.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func layerEffect(
+    _ shader: Shader,
+    maxSampleOffset: CGSize,
+    isEnabled: Bool = true
+) -> some View
+Parameters
+shader
+The shader to apply as a layer effect.
+maxSampleOffset
+If the shader function samples from the layer at locations not equal to the destination position, this value must specify the maximum sampling distance in each axis, for all source pixels.
+isEnabled
+Whether the effect is enabled or not.
+Return Value
+A new view that renders self with the shader applied as a distortion effect.
+Discussion
+For a shader function to act as a layer effect it must have a function signature matching:
+[[ stitchable ]] half4 name(float2 position,
+  SwiftUI::Layer layer, args...)
+where position is the user-space coordinates of the destination pixel applied to the shader, and layer is a subregion of the rasterized contents of self. args... should be compatible with the uniform arguments bound to shader.
+The SwiftUI::Layer type is defined in the <SwiftUI/SwiftUI.h> header file. It exports a single sample() function that returns a linearly-filtered pixel value from a position in the source content, as a premultiplied RGBA pixel value:
+namespace SwiftUI {
+  struct Layer {
+    half4 sample(float2 position) const;
+  };
+};
+The function should return the color mapping to the destination pixel, typically by sampling one or more pixels from layer at location(s) derived from position and them applying some kind of transformation to produce a new color.
+Important
+Views backed by AppKit or UIKit views may not render into the filtered layer. Instead, they log a warning and display a placeholder image to highlight the error.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is layerEffect(_:maxSampleOffset:isEnabled:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

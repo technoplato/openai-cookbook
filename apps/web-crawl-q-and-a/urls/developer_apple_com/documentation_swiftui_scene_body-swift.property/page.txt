@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/swiftui/scene/body-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Beta
+M
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+M
+func defaultSize(Size3D) -> some Scene
+Beta
+M
+func defaultSize(CGSize) -> some Scene
+M
+func defaultPosition(UnitPoint) -> some Scene
+Sizing and positioning the scene
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some Scene
+Creating a scene
+r
+P
+Scene
+Creating scenes
+Scenes
+App organization
+App structure
+SwiftUI updates
+Exploring SwiftUI Sample Apps
+Documentation
+Open Menu
+Swift
+Instance Property
+body
+The content and behavior of the scene.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+@SceneBuilder @MainActor
+var body: Self.Body { get }
+Required
+Discussion
+For any scene that you create, provide a computed body property that defines the scene as a composition of other scenes. You can assemble a scene from built-in scenes that SwiftUI provides, as well as other scenes that you’ve defined.
+Swift infers the scene’s Body associated type based on the contents of the body property.
+See Also
+Creating a scene
+associatedtype Body : Scene
+The type of scene that represents the body of this scene.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is body
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

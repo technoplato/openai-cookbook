@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/realitykit/tweenmode/hashvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+TweenMode
+Choosing a Mode Between Frames
+E
+case hold
+E
+case linear
+Comparing Tween Modes
+static func == (TweenMode, TweenMode) -> Bool
+static func != (Self, Self) -> Bool
+M
+func hash(into: inout Hasher)
+P
+var characterControllerState: CharacterControllerStateComponent?
+S
+CharacterControllerStateComponent
+M
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+M
+func teleportCharacter(to: SIMD3<Float>, relativeTo: Entity?)
+Playing Audio
+M
+func playAudio(AudioResource) -> AudioPlaybackController
+M
+func prepareAudio(AudioResource) -> AudioPlaybackController
+Documentation
+Open Menu
+Swift
+Instance Property
+hashValue
+The hash value.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var hashValue: Int { get }
+Overview
+Because hash values aren’t always equal across app executions, saving them for future execution isn’t reliable.
+Important
+doc://com.apple.documentation/documentation/swift/hashable/1540917-hashvalue is deprecated as a Hashable requirement. To conform to Hashable, implement the hash(into:) requirement instead.
+See Also
+Comparing Tween Modes
+static func == (TweenMode, TweenMode) -> Bool
+Returns a Boolean value that indicates whether the behavior between frames is equal.
+static func != (Self, Self) -> Bool
+Returns a Boolean value that indicates whether the behavior between frames isn’t equal.
+func hash(into: inout Hasher)
+Hashes the essential components of a value by feeding them into the given hasher.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is hashValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,188 @@
+https://developer.apple.com/documentation/swiftui/layout/explicitalignment(of:in:proposal:subviews:cache:)-8ofeuSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+HStackLayout
+S
+AnyLayout
+Transitioning between layout types
+r
+P
+LayoutValueKey
+M
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+Associating values with views in a custom layout
+S
+ViewSpacing
+func explicitAlignment(of: VerticalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+func explicitAlignment(of: HorizontalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Reporting layout container characteristics
+T
+Layout.Subviews
+M
+func placeSubviews(in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache)
+M
+func sizeThatFits(proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGSize
+Sizing the container and placing subviews
+r
+P
+Layout
+Composing custom layouts with SwiftUI
+Creating a custom layout container
+Documentation
+Open Menu
+Swift
+Instance Method
+explicitAlignment(of:in:proposal:subviews:cache:)
+Returns the position of the specified horizontal alignment guide along the x axis.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func explicitAlignment(
+    of guide: HorizontalAlignment,
+    in bounds: CGRect,
+    proposal: ProposedViewSize,
+    subviews: Self.Subviews,
+    cache: inout Self.Cache
+) -> CGFloat?
+Required Default implementations provided.
+Parameters
+guide
+The HorizontalAlignment guide that the method calculates the position of.
+bounds
+The region that the container view’s parent allocates to the container view, specified in the parent’s coordinate space.
+proposal
+A proposed size for the container.
+subviews
+A collection of proxy instances that represent the views arranged by the container. You can use the proxies in the collection to get information about the subviews as you determine where to place the guide.
+cache
+Optional storage for calculated data that you can share among the methods of your custom layout container. See makeCache(subviews:) for details.
+Return Value
+The guide’s position relative to the bounds. Return nil to indicate that the guide doesn’t have an explicit value.
+Discussion
+Implement this method to return a value for the specified alignment guide of a custom layout container. The value you return affects the placement of the container as a whole, but it doesn’t affect how the container arranges subviews relative to one another.
+You can use this method to put an alignment guide in a nonstandard position. For example, you can indent the container’s leading edge alignment guide by 10 points:
+extension BasicVStack {
+    func explicitAlignment(
+        of guide: HorizontalAlignment,
+        in bounds: CGRect,
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout ()
+    ) -> CGFloat? {
+        if guide == .leading {
+            return bounds.minX + 10
+        }
+        return nil
+    }
+}
+The above example returns nil for other guides to indicate that they don’t have an explicit value. A guide without an explicit value behaves as it would for any other view. If you don’t implement the method, the protocol’s default implementation merges the subviews’ guides.
+Default Implementations
+Layout Implementations
+func explicitAlignment(of: VerticalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Returns the result of merging the vertical alignment guides of all subviews.
+func explicitAlignment(of: HorizontalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Returns the result of merging the horizontal alignment guides of all subviews.
+See Also
+Reporting layout container characteristics
+func explicitAlignment(of: VerticalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Returns the position of the specified vertical alignment guide along the y axis.
+Required Default implementations provided.
+func spacing(subviews: Self.Subviews, cache: inout Self.Cache) -> ViewSpacing
+Returns the preferred spacing values of the composite view.
+Required Default implementation provided.
+static var layoutProperties: LayoutProperties
+Properties of a layout container.
+Required Default implementation provided.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is explicitAlignment(of:in:proposal:subviews:cache:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

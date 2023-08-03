@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/realitykit/meshbuffercontainerSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+S
+AnyMeshBuffer
+S
+MeshDescriptor
+S
+MeshBuffer
+Mutable mesh buffers
+S
+MeshModelCollection
+S
+MeshInstanceCollection
+S
+MeshPartCollection
+C
+MeshResource
+Documentation
+Open Menu
+Swift
+Protocol
+MeshBufferContainer
+Conforming objects contain a table of mesh buffers.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+protocol MeshBufferContainer
+Topics
+Instance Properties
+var bitangents: MeshBuffers.Tangents?
+Buffer of bitangents, if any.
+var buffers: [MeshBuffers.Identifier : AnyMeshBuffer]
+Descriptors for the buffers.
+Required
+var normals: MeshBuffers.Normals?
+Buffer of normals, if any.
+var positions: MeshBuffers.Positions
+Positions of all the points.
+var tangents: MeshBuffers.Tangents?
+Buffer of tangents, if any.
+var textureCoordinates: MeshBuffers.TextureCoordinates?
+Buffer of texture coordinates, if any.
+Subscripts
+subscript<S>(S) -> MeshBuffer<S.Element>?
+The buffer for a given semantic. There can only be one buffer for any given ID.
+Required
+Relationships
+Conforming Types
+MeshDescriptor
+MeshResource.Part
+See Also
+Mutable mesh buffers
+struct MeshBuffer
+Mesh buffer containing elements of any type.
+struct MeshDescriptor
+An object that defines a mesh.
+struct AnyMeshBuffer
+Mesh buffer stored in the container.
+protocol MeshBufferSemantic
+A protocol that holds an identifier value for mesh buffers.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MeshBufferContainer
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

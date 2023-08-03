@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/colorschemecontrastSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+S
+RedactionReasons
+P
+var colorSchemeContrast: ColorSchemeContrast
+Getting the color scheme contrast
+E
+ColorScheme
+P
+var colorScheme: ColorScheme
+M
+func preferredColorScheme(ColorScheme?) -> some View
+Detecting and requesting the light or dark appearance
+E
+GlassBackgroundDisplayMode
+Beta
+M
+func glassBackgroundEffect<S>(in: S, displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Enumeration
+ColorSchemeContrast
+The contrast between the app’s foreground and background colors.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+enum ColorSchemeContrast
+Overview
+You receive a contrast value when you read the colorSchemeContrast environment value. The value tells you if a standard or increased contrast currently applies to the view. SwiftUI updates the value whenever the contrast changes, and redraws views that depend on the value. For example, the following Text view automatically updates when the user enables increased contrast:
+@Environment(\.colorSchemeContrast) private var colorSchemeContrast
+
+
+var body: some View {
+    Text(colorSchemeContrast == .standard ? "Standard" : "Increased")
+}
+The user sets the contrast by selecting the Increase Contrast option in Accessibility > Display in System Preferences on macOS, or Accessibility > Display & Text Size in the Settings app on iOS. Your app can’t override the user’s choice. For information about using color and contrast in your app, see Color and Contrast.
+Topics
+Getting contrast options
+case standard
+SwiftUI displays views with standard contrast between the app’s foreground and background colors.
+case increased
+SwiftUI displays views with increased contrast between the app’s foreground and background colors.
+Creating a color scheme contrast
+init?(UIAccessibilityContrast)
+Creates a contrast from its accessibility contrast equivalent.
+Relationships
+Conforms To
+CaseIterable
+Equatable
+Hashable
+Sendable
+See Also
+Getting the color scheme contrast
+var colorSchemeContrast: ColorSchemeContrast
+The contrast associated with the color scheme of this environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ColorSchemeContrast
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/image/dynamicrangeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func symbolEffect<T, U>(T, options: SymbolEffectOptions, value: U) -> some View
+Beta
+M
+func symbolEffect<T>(T, options: SymbolEffectOptions, isActive: Bool) -> some View
+Beta
+Managing symbol effects
+S
+SymbolVariants
+P
+var symbolVariants: SymbolVariants
+M
+func symbolVariant(SymbolVariants) -> some View
+Setting a symbol variant
+P
+var allowedDynamicRange: Image.DynamicRange?
+Beta
+M
+func allowedDynamicRange(Image.DynamicRange?) -> Image
+Beta
+Specifying dynamic range
+E
+Image.Interpolation
+E
+Image.TemplateRenderingMode
+M
+func interpolation(Image.Interpolation) -> Image
+M
+func renderingMode(Image.TemplateRenderingMode?) -> Image
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> Image
+Documentation
+Open Menu
+Swift
+Structure
+Image.DynamicRange
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+struct DynamicRange
+Topics
+Getting dynamic range values
+static let standard: Image.DynamicRange
+Restrict the image content dynamic range to the standard range.
+static let high: Image.DynamicRange
+Allow image content to use an unrestricted extended range.
+static let constrainedHigh: Image.DynamicRange
+Allow image content to use some extended range. This is appropriate for placing HDR content next to SDR content.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Specifying dynamic range
+func allowedDynamicRange(Image.DynamicRange?) -> Image
+Returns a new image configured with the specified allowed dynamic range.
+Beta
+var allowedDynamicRange: Image.DynamicRange?
+The allowed dynamic range for the view, or nil.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Image.DynamicRange
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

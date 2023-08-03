@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/specular-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+UnlitMaterial
+Material Implementations
+Default Implementations
+E
+CustomMaterialError
+T
+CustomMaterial.Texture
+T
+CustomMaterial.Parameters
+Defining Material Parameter Types
+Creating Highlights
+S
+CustomMaterial.AmbientOcclusion
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+Using Ambient Occlusion
+S
+CustomMaterial.Opacity
+E
+CustomMaterial.Blending
+P
+var blending: CustomMaterial.Blending
+P
+var opacityThreshold: Float?
+Documentation
+Open Menu
+Swift
+Instance Property
+specular
+The bright highlights to apply to the entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var specular: CustomMaterial.Specular { get set }
+Discussion
+In physically based rendering (PBR), specular highlights primarily come from the object’s roughness value. RealityKit renders materials that have a low roughness value with specular highlights based on the environment, lighting, and shape of the entity. As a result, for most materials, you don’t need to specify a specular value.
+For some types of dielectric (nonmetallic) materials, like facet-cut glass or gems, PBR algorithms don’t create bright enough specular highlights using just roughness. To accurately simulate those types of materials, the specular property allows you to specify additional specularity for the entity.
+The following example demonstrates how to add specularity using a single value for the entire material:
+material.specular = .init(floatLiteral: 0.8)
+The following code shows how to add specularity using a UV-mapped image texture:
+if let specularResource = try? TextureResource.load(named: "entity_specular") {
+    let specularMap = MaterialParameters.Texture(specularResource)
+    material.specular = .init(texture: specularMap)
+}
+With custom materials, the specular scale and texture are available to the material’s shader functions, but RealityKit doesn’t automatically use the values you set. To render a custom material with additional specular highlights, the material’s lightingModel must be CustomMaterial.LightingModel.lit or CustomMaterial.LightingModel.clearcoat and the material’s surface shader must call params().surface().set_specular().
+The following Metal code demonstrates using the specular scale and texture values, simulating the behavior of the shaders that render a PhysicallyBasedMaterial:
+    // Retrieve the opacity scale from the CustomMaterial.
+    float specularScale = params.material_constants().specular_scale();
+
+
+    // Retrieve the entity's texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Entities loaded from a USDZ or .reality file use texture coordinates
+    // with a flipped y-axis. This compensates for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample the specular texture.
+    auto tex = params.textures();
+    half specular = tex.specular().sample(textureSampler, uv).r;
+
+
+    // Multiply the tint and the sampled value from the texture and assign
+    // the result.
+    specular *= specularScale;
+    params.surface().set_specular(specular);
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+See Also
+Creating Highlights
+struct Specular
+An object that defines the specular highlights of an entity.
+var clearcoat: CustomMaterial.Clearcoat
+The transparent highlights that simulate a clear, shiny coating on an entity.
+struct Clearcoat
+An object that defines the intensity of an entity’s clear, shiny coating.
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+The degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+struct ClearcoatRoughness
+An object that defines the degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+Current page is specular
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

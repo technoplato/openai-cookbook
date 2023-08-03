@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/preparing-views-for-localizationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Event handling
+Scroll views
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Localizing text
+M
+func typeSelectEquivalent<S>(S) -> some View
+M
+func typeSelectEquivalent(LocalizedStringKey) -> some View
+M
+func typeSelectEquivalent(Text?) -> some View
+Specifying text equivalents
+S
+TextInputDictationBehavior
+Beta
+S
+TextInputDictationActivation
+Beta
+M
+func searchDictationBehavior(TextInputDictationBehavior) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Article
+Preparing views for localization
+Specify hints and add strings to localize your SwiftUI views.
+Overview
+Localize your SwiftUI views so users experience your app in their own native language, region, and culture.
+Xcode parses Text views for strings to localize when exporting a localization catalog. You can add hints and use string interpolation specifiers for these views so that Xcode generates correct, hinted strings to localize for your app. For non-text views, add the strings and related comments into a Localizable.strings file.
+Add comments to text views
+To ease the translation process, provide hints to translators that share how and where your app displays the strings of a Text view. To add a hint, use the optional comment parameter to the text view initializer init(_:tableName:bundle:comment:). When you localize your app with Xcode, it includes the comment string along with the string. For example, by setting a comment on the text provided to a navigation title:
+ navigationTitle(Text("Landmarks", comment: "navigation title"))
+Xcode creates the following strings file entry:
+/* navigation title */
+"Landmarks" = "Landmarks";
+Provide a specifier when using string interpolation
+Text views can use string interpolation to replace variables with values while assembling strings. If you use interpolated strings for your Text views, provide a format parameter for localization. When Xcode parses Text views that use interpolated strings, it defaults to using a specifier of %@, which may not be correct for the type of value. For a list of available specifiers, see String Format Specifiers.
+Specify the correct alternative using the specifier parameter in the interpolation. The following example uses %lld to interpolate a 64 bit integer into a string within a text view:
+Text("Copying \(copyOperation.numFiles, specifier: "%lld") files",
+    comment: "File copy message that indicates the number of files copied by the operation")
+Xcode creates the following strings file entry:
+/* File copy message that indicates the number of files copied by the operation */
+"Copying %lld files" = "Copying %lld files";
+Add localization strings for non-text views
+For anything other than a text view, initialize the view with text views or add strings for your app to provide localized views. You can localize other views, such as Label or Picker, as they accept a LocalizedStringKey on initialization. Because Xcode doesn’t parse these views for localization, you need to manually add the localization strings.
+To localize non-text views, create a Localizable.strings file in your project. Add localized text to the file for any SwiftUI views that take LocalizedStringKey on initialization. Make sure to include a comment to share the context of where and how your app uses the string for your translators. For example, to localize a Label view initialized with a string:
+Label("Message", image: "msgSymbol")
+Add the string values and a comment to the Localizable.strings file:
+/* A label that displays 'Message' and a corresponding image. */
+"Message" = "Message";
+Alternately, initialize the label with a text view:
+Label {
+    Text("Message",
+         comment: "A label that displays 'Message' and a corresponding image.")
+} icon: {
+    Image("msgSymbol")
+}
+For more information about editing strings files, see Editing XLIFF and string catalog files.
+See Also
+Localizing text
+struct LocalizedStringKey
+The key used to look up an entry in a strings file or strings dictionary file.
+var locale: Locale
+The current locale that views should use.
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> some View
+Specifies the language for typesetting.
+Beta
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> some View
+Specifies the language for typesetting.
+Beta
+struct TypesettingLanguage
+Defines how typesetting language is determined for text.
+Beta
+Current page is Preparing views for localization
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

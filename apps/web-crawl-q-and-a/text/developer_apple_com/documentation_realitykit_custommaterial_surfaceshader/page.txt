@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/surfaceshaderSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var normal: CustomMaterial.Normal
+Using a Normal Map
+S
+CustomMaterial.CustomMaterialTexture
+S
+CustomMaterial.Custom
+P
+var custom: CustomMaterial.Custom
+Using Custom Values
+S
+CustomMaterial.Metallic
+Accessing Shader Functions
+E
+CustomMaterial.LightingModel
+P
+var lightingModel: CustomMaterial.LightingModel
+Setting the Lighting Model
+M
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+M
+init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?) throws
+M
+init(from: Material, geometryModifier: CustomMaterial.GeometryModifier) throws
+Creating Custom Materials
+Documentation
+Open Menu
+Swift
+Structure
+CustomMaterial.SurfaceShader
+The custom material’s surface shader function.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+struct SurfaceShader
+Overview
+Custom materials work together with a surface shader function to render entities. The CustomMaterial properties related to rendering, such as baseColor and normal, are available in the surface shader function, but RealityKit doesn’t use them directly.
+Instead, the material’s surface shader function allows you to calculate or specify all the material parameters that RealityKit uses to render your entity, such as baseColor, normal, and roughness. RealityKit’s fragment shader calls your surface shader function once for each pixel it renders.
+Here’s a simple example of a surface shader that sets the entity’s base color:
+#include <metal_stdlib>
+#include <RealityKit/RealityKit.h>
+
+
+// Specify the current default namespace as metal so that it's not //
+necessary to prefix Metal Standard Library symbols. using namespace
+metal;
+
+
+[[visible]] void mySurfaceShader(realitykit::surface_parameters params)
+{
+    // Set the base color
+    params.surface().set_base_color(half3(1.0, 0.5, 0.5));
+} ```
+
+
+For more information on creating custom materials and writing shader
+functions, see
+<doc:modifying-realitykit-rendering-using-custom-materials>.
+Topics
+Creating Surface Shader Objects
+init(named: String, in: MTLLibrary)
+Creates a surface shader object from a named function in a Metal library.
+Accessing Surface Shader Properties
+var name: String
+The name of the surface shader function.
+var library: MTLLibrary
+The Metal library that contains this surface shader function.
+Relationships
+Conforms To
+MaterialFunction
+See Also
+Accessing Shader Functions
+struct GeometryModifier
+The custom material’s optional shader function that can manipulate an entity’s vertex data.
+Current page is CustomMaterial.SurfaceShader
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

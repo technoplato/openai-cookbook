@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/erasetoanypublisher()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+Event
+E
+CollisionEvents
+E
+AudioEvents
+E
+AnimationEvents
+E
+SceneEvents
+Publisher Implementations
+Default Implementations
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+Performing Type Erasure
+M
+func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>
+Buffering Elements
+M
+func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>
+M
+func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>
+Working with Multiple Subscribers
+M
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+M
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+Documentation
+Open Menu
+Swift
+Instance Method
+eraseToAnyPublisher()
+Wraps this publisher with a type eraser.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>
+Return Value
+An AnyPublisher wrapping this publisher.
+Discussion
+Use eraseToAnyPublisher() to expose an instance of AnyPublisher to the downstream subscriber, rather than this publisher’s actual type. This form of type erasure preserves abstraction across API boundaries, such as different modules. When you expose your publishers as the AnyPublisher type, you can change the underlying implementation over time without affecting existing clients.
+The following example shows two types that each have a publisher property. TypeWithSubject exposes this property as its actual type, PassthroughSubject, while TypeWithErasedSubject uses eraseToAnyPublisher() to expose it as an AnyPublisher. As seen in the output, a caller from another module can access TypeWithSubject.publisher as its native type. This means you can’t change your publisher to a different type without breaking the caller. By comparison, TypeWithErasedSubject.publisher appears to callers as an AnyPublisher, so you can change the underlying publisher type at will.
+public class TypeWithSubject {
+    public let publisher: some Publisher = PassthroughSubject<Int,Never>()
+}
+public class TypeWithErasedSubject {
+    public let publisher: some Publisher = PassthroughSubject<Int,Never>()
+        .eraseToAnyPublisher()
+}
+
+
+// In another module:
+let nonErased = TypeWithSubject()
+if let subject = nonErased.publisher as? PassthroughSubject<Int,Never> {
+    print("Successfully cast nonErased.publisher.")
+}
+let erased = TypeWithErasedSubject()
+if let subject = erased.publisher as? PassthroughSubject<Int,Never> {
+    print("Successfully cast erased.publisher.")
+}
+
+
+// Prints "Successfully cast nonErased.publisher."
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is eraseToAnyPublisher()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

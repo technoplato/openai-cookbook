@@ -1,0 +1,230 @@
+https://developer.apple.com/documentation/swiftui/foreachSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<C, R>(Binding<C>, id: KeyPath<C.Element, ID>, editActions: EditActions<C>, content: (Binding<C.Element>) -> R)
+M
+init<C, R>(Binding<C>, editActions: EditActions<C>, content: (Binding<C.Element>) -> R)
+Creating editable content
+M
+init(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+M
+init(Data, content: (Data.Element) -> Content)
+Creating chart content
+M
+init<V>(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+Iterating over list content
+S
+Section
+M
+func listStyle<S>(S) -> some View
+S
+List
+Displaying data in lists
+Creating a list
+Lists
+Custom layout
+Documentation
+Open Menu
+Swift
+Structure
+ForEach
+A structure that computes views on demand from an underlying collection of identified data.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+struct ForEach<Data, ID, Content> where Data : RandomAccessCollection, ID : Hashable
+Overview
+Use ForEach to provide views based on a RandomAccessCollection of some data type. Either the collection’s elements must conform to Identifiable or you need to provide an id parameter to the ForEach initializer.
+The following example creates a NamedFont type that conforms to Identifiable, and an array of this type called namedFonts. A ForEach instance iterates over the array, producing new Text instances that display examples of each SwiftUI Font style provided in the array.
+private struct NamedFont: Identifiable {
+    let name: String
+    let font: Font
+    var id: String { name }
+}
+
+
+private let namedFonts: [NamedFont] = [
+    NamedFont(name: "Large Title", font: .largeTitle),
+    NamedFont(name: "Title", font: .title),
+    NamedFont(name: "Headline", font: .headline),
+    NamedFont(name: "Body", font: .body),
+    NamedFont(name: "Caption", font: .caption)
+]
+
+
+var body: some View {
+    ForEach(namedFonts) { namedFont in
+        Text(namedFont.name)
+            .font(namedFont.font)
+    }
+}
+Topics
+Creating a collection from a range
+init(Range<Int>, content: (Int) -> Content)
+Creates an instance that computes views on demand over a given constant range.
+Available when Data is Range<Int>, ID is Int, and Content conforms to View.
+Creating a collection from data
+init(Data, content: (Data.Element) -> Content)
+Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Content conforms to View, and Data.Element conforms to Identifiable.
+init<C>(Binding<C>, content: (Binding<C.Element>) -> Content)
+Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+init(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+Creates an instance that uniquely identifies and creates views across updates based on the provided key path to the underlying data’s identifier.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+init<C>(Binding<C>, id: KeyPath<C.Element, ID>, content: (Binding<C.Element>) -> Content)
+Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+init(Data)
+Creates an instance that uniquely identifies and creates table rows across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to TableRowContent.
+Generating rotor content
+init(Data, content: (Data.Element) -> Content)
+Creates an instance that generates Rotor content by combining, in order, individual Rotor content for each element in the data given to this ForEach.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Content conforms to AccessibilityRotorContent, and Data.Element conforms to Identifiable.
+init(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+Creates an instance that generates Rotor content by combining, in order, individual Rotor content for each element in the data given to this ForEach.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to AccessibilityRotorContent.
+Creating a collection of table rows
+init<V>(Range<Int>, content: (Int) -> Content)
+Creates an instance that computes table rows on demand over a given constant range.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to TableRowContent.
+init<V>(Data, content: (Data.Element) -> Content)
+Creates an instance that uniquely identifies and creates table rows across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to TableRowContent.
+init<V>(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+Creates an instance that uniquely identifies and creates table rows across updates based on the provided key path to the underlying data’s identifier.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to TableRowContent.
+Creating chart content
+init(Data, content: (Data.Element) -> Content)
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Content conforms to ChartContent, and Data.Element conforms to Identifiable.
+init(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to ChartContent.
+Creating editable content
+init<C, R>(Binding<C>, editActions: EditActions<C>, content: (Binding<C.Element>) -> R)
+Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection and ID conforms to Hashable.
+init<C, R>(Binding<C>, id: KeyPath<C.Element, ID>, editActions: EditActions<C>, content: (Binding<C.Element>) -> R)
+Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection and ID conforms to Hashable.
+Accessing content
+var content: (Data.Element) -> Content
+A function to create content on demand using the underlying data.
+var data: Data
+The collection of underlying identified data that SwiftUI uses to create views dynamically.
+Type Aliases
+typealias Body
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+Relationships
+Conforms To
+AccessibilityRotorContent
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to AccessibilityRotorContent.
+ChartContent
+DynamicTableRowContent
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to TableRowContent.
+DynamicViewContent
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+Sendable
+TableRowContent
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to TableRowContent.
+View
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+See Also
+Iterating over list content
+protocol DynamicViewContent
+A type of view that generates views from an underlying collection of data.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ForEach
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

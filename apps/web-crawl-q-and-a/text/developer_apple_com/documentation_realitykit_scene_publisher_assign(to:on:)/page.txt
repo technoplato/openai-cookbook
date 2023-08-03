@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/assign(to:on:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Properties
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+static func != (Self, Self) -> Bool
+static func == (Scene, Scene) -> Bool
+Comparing Scenes
+r
+P
+EventSource
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+Connecting Simple Subscribers
+M
+func makeConnectable() -> Publishers.MakeConnectable<Self>
+Adding Explicit Connectability
+M
+func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>
+M
+func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>
+Specifying Schedulers
+M
+func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>
+Performing Type Erasure
+Documentation
+Open Menu
+Swift
+Instance Method
+assign(to:on:)
+Assigns each element from a publisher to a property on an object.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func assign<Root>(
+    to keyPath: ReferenceWritableKeyPath<Root, Self.Output>,
+    on object: Root
+) -> AnyCancellable
+Available when Failure is Never.
+Parameters
+keyPath
+A key path that indicates the property to assign. See Key-Path Expression in The Swift Programming Language to learn how to use key paths to specify a property of an object.
+object
+The object that contains the property. The subscriber assigns the object’s property every time it receives a new value.
+Return Value
+An AnyCancellable instance. Call Cancellable/cancel() on this instance when you no longer want the publisher to automatically assign the property. Deinitializing this instance will also cancel automatic assignment.
+Discussion
+Use the assign(to:on:) subscriber when you want to set a given property each time a publisher produces a value.
+In this example, the assign(to:on:) sets the value of the anInt property on an instance of MyClass:
+class MyClass {
+    var anInt: Int = 0 {
+        didSet {
+            print("anInt was set to: \(anInt)", terminator: "; ")
+        }
+    }
+}
+
+
+var myObject = MyClass()
+let myRange = (0...2)
+cancellable = myRange.publisher
+    .assign(to: \.anInt, on: myObject)
+
+
+// Prints: "anInt was set to: 0; anInt was set to: 1; anInt was set to: 2"
+Important
+The Subscribers/Assign instance created by this operator maintains a strong reference to object, and sets it to nil when the upstream publisher completes (either normally or with an error).
+See Also
+Connecting Simple Subscribers
+func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+Attaches a subscriber with closure-based behavior.
+func sink(receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+Attaches a subscriber with closure-based behavior to a publisher that never fails.
+Available when Failure is Never.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is assign(to:on:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

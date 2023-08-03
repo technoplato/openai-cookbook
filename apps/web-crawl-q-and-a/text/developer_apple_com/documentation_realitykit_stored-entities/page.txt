@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/realitykit/stored-entitiesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func loadBodyTrackedAsync(contentsOf: URL, withName: String?) -> LoadRequest<BodyTrackedEntity>
+M
+static func loadBodyTrackedAsync(named: String, in: Bundle?) -> LoadRequest<BodyTrackedEntity>
+M
+static func loadBodyTracked(contentsOf: URL, withName: String?) throws -> BodyTrackedEntity
+M
+static func loadBodyTracked(named: String, in: Bundle?) throws -> BodyTrackedEntity
+Loading a Flattened Body-Tracked Entity
+M
+static func loadModelAsync(contentsOf: URL, withName: String?) -> LoadRequest<ModelEntity>
+M
+static func loadModelAsync(named: String, in: Bundle?) -> LoadRequest<ModelEntity>
+Loading a Stored Entity
+M
+func didClone(from: Entity)
+M
+func clone(recursive: Bool) -> Self
+M
+init()
+Creating an Entity
+C
+Entity
+C
+Scene
+RealityKit Systems
+Documentation
+Open Menu
+Swift
+Stored Entities
+Manage entities stored as assets on disk.
+Overview
+If you bundle 3D assets with your app, or download them from the network into local file storage, you need a way to load them at runtime. RealityKit provides a collection of methods that you use to load USD and Reality files into Entity instances.
+Topics
+Essentials
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+class LoadRequest
+A resource loader that acts as a publisher.
+Deprecated
+Loading an Entity Hierarchy
+static func load(contentsOf: URL, withName: String?) throws -> Entity
+Blocks your app while loading an entity from a file URL.
+static func loadAsync(named: String, in: Bundle?) -> LoadRequest<Entity>
+Loads an entity from a file in a bundle asynchronously.
+Deprecated
+static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<Entity>
+Loads an entity from a file URL asynchronously.
+Deprecated
+Loading an Anchor Entity
+static func loadAnchor(named: String, in: Bundle?) throws -> AnchorEntity
+Blocks your app while loading an anchor entity from a file in a bundle.
+static func loadAnchor(contentsOf: URL, withName: String?) throws -> AnchorEntity
+Blocks your app while loading an anchor entity from a file URL.
+static func loadAnchorAsync(named: String, in: Bundle?) -> LoadRequest<AnchorEntity>
+Loads an anchor entity from a file in a bundle asynchronously.
+Deprecated
+static func loadAnchorAsync(contentsOf: URL, withName: String?) -> LoadRequest<AnchorEntity>
+Loads an anchor entity from a file URL asynchronously.
+Deprecated
+Loading a Flattened Model Entity
+static func loadModel(contentsOf: URL, withName: String?) throws -> ModelEntity
+Blocks your app while loading a model entity from a file URL.
+static func loadModelAsync(named: String, in: Bundle?) -> LoadRequest<ModelEntity>
+Loads a model entity from a file in a bundle asynchronously.
+Deprecated
+static func loadModelAsync(contentsOf: URL, withName: String?) -> LoadRequest<ModelEntity>
+Loads a model entity from a file URL asynchronously.
+Deprecated
+Loading a Flattened Body-Tracked Entity
+static func loadBodyTracked(named: String, in: Bundle?) throws -> BodyTrackedEntity
+Blocks your app while loading a body-tracked entity from a file in a bundle.
+static func loadBodyTracked(contentsOf: URL, withName: String?) throws -> BodyTrackedEntity
+Blocks your app while loading a body-tracked entity from a file URL.
+static func loadBodyTrackedAsync(named: String, in: Bundle?) -> LoadRequest<BodyTrackedEntity>
+Loads a body-tracked entity from a file in a bundle asynchronously.
+static func loadBodyTrackedAsync(contentsOf: URL, withName: String?) -> LoadRequest<BodyTrackedEntity>
+Loads a body-tracked entity from a file URL asynchronously.
+See Also
+Loading a Stored Entity
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+API Reference
+Creating USD files for Apple devices
+Generate 3D assets that render as expected.
+Current page is Stored Entities
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/alloweddynamicrangeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var widgetRenderingMode: WidgetRenderingMode
+P
+var widgetFamily: WidgetFamily
+P
+var showsWidgetLabel: Bool
+P
+var showsWidgetContainerBackground: Bool
+Widgets
+P
+var symbolVariants: SymbolVariants
+P
+var symbolRenderingMode: SymbolRenderingMode?
+View attributes
+P
+var truncationMode: Text.TruncationMode
+P
+var textCase: Text.Case?
+P
+var multilineTextAlignment: TextAlignment
+P
+var minimumScaleFactor: CGFloat
+P
+var lineSpacing: CGFloat
+P
+var lineLimit: Int?
+P
+var layoutDirection: LayoutDirection
+Documentation
+Open Menu
+Swift
+Instance Property
+allowedDynamicRange
+The allowed dynamic range for the view, or nil.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+var allowedDynamicRange: Image.DynamicRange? { get set }
+See Also
+View attributes
+var backgroundMaterial: Material?
+The material underneath the current view.
+var backgroundProminence: BackgroundProminence
+The prominence of the background underneath views associated with this environment.
+Beta
+var backgroundStyle: AnyShapeStyle?
+An optional style that overrides the default system background style when set.
+var badgeProminence: BadgeProminence
+The prominence to apply to badges associated with this environment.
+Beta
+var contentTransition: ContentTransition
+The current method of animating the contents of views.
+var contentTransitionAddsDrawingGroup: Bool
+A Boolean value that controls whether views that render content transitions use GPU-accelerated rendering.
+var defaultMinListHeaderHeight: CGFloat?
+The default minimum height of a header in a list.
+var defaultMinListRowHeight: CGFloat
+The default minimum height of a row in a list.
+var isFocusEffectEnabled: Bool
+A Boolean value that indicates whether the view associated with this environment allows focus effects to be displayed.
+Beta
+var headerProminence: Prominence
+The prominence to apply to section headers within a view.
+var physicalMetrics: PhysicalMetricsConverter
+The physical metrics associated with a scene.
+Beta
+var realityKitScene: Scene?
+Beta
+var redactionReasons: RedactionReasons
+The current redaction reasons applied to the view hierarchy.
+var springLoadingBehavior: SpringLoadingBehavior
+The behavior of spring loaded interactions for the views associated with this environment.
+Beta
+var symbolRenderingMode: SymbolRenderingMode?
+The current symbol rendering mode, or nil denoting that the mode is picked automatically using the current image and foreground style as parameters.
+var symbolVariants: SymbolVariants
+The symbol variant to use in this environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is allowedDynamicRange
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

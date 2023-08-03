@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/catch(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func zip<P>(P) -> Publishers.Zip<Self, P>
+M
+func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>
+M
+func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>
+M
+func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>
+M
+func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Self, P, Q, R>
+M
+func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>
+Handling Errors
+M
+func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+M
+func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>
+M
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+M
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+Working with Multiple Subscribers
+M
+func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>
+M
+func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>
+Buffering Elements
+Documentation
+Open Menu
+Swift
+Instance Method
+catch(_:)
+Handles errors from an upstream publisher by replacing it with another publisher.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func `catch`<P>(_ handler: @escaping (Self.Failure) -> P) -> Publishers.Catch<Self, P> where P : Publisher, Self.Output == P.Output
+Parameters
+handler
+A closure that accepts the upstream failure as input and returns a publisher to replace the upstream publisher.
+Return Value
+A publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher.
+Discussion
+Use catch() to replace an error from an upstream publisher with a new publisher.
+In the example below, the catch() operator handles the SimpleError thrown by the upstream publisher by replacing the error with a Just publisher. This continues the stream by publishing a single value and completing normally.
+struct SimpleError: Error {}
+let numbers = [5, 4, 3, 2, 1, 0, 9, 8, 7, 6]
+cancellable = numbers.publisher
+    .tryLast(where: {
+        guard $0 != 0 else {throw SimpleError()}
+        return true
+    })
+    .catch({ (error) in
+        Just(-1)
+    })
+    .sink { print("\($0)") }
+    // Prints: -1
+Backpressure note: This publisher passes through request and cancel to the upstream. After receiving an error, the publisher sends sends any unfulfilled demand to the new Publisher. SeeAlso: replaceError
+See Also
+Handling Errors
+func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>
+Raises a fatal error when its upstream publisher fails, and otherwise republishes all received input.
+func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>
+Handles errors from an upstream publisher by either replacing it with another publisher or throwing a new error.
+func retry(Int) -> Publishers.Retry<Self>
+Attempts to recreate a failed subscription with the upstream publisher up to the number of times you specify.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is catch(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

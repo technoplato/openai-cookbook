@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/transaction/subscript(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Clipboard
+Input events
+Gestures
+Event handling
+Scroll views
+View groupings
+Tables
+P
+var tracksVelocity: Bool
+Beta
+P
+var scrollTargetAnchor: UnitPoint?
+Beta
+P
+var isContinuous: Bool
+Getting information about a transaction
+P
+var dismissBehavior: DismissBehavior
+Beta
+Managing window dismissal
+M
+func addAnimationCompletion(criteria: AnimationCompletionCriteria, () -> Void)
+Beta
+P
+var disablesAnimations: Bool
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Accesses the transaction value associated with a custom key.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+subscript<K>(key: K.Type) -> K.Value where K : TransactionKey { get set }
+Overview
+Create custom transaction values by defining a key that conforms to the TransactionKey protocol, and then using that key with the subscript operator of the Transaction structure to get and set a value for that key:
+private struct MyTransactionKey: TransactionKey {
+    static let defaultValue = false
+}
+
+
+extension Transaction {
+    var myCustomValue: Bool {
+        get { self[MyTransactionKey.self] }
+        set { self[MyTransactionKey.self] = newValue }
+    }
+}
+See Also
+Getting information about a transaction
+var isContinuous: Bool
+A Boolean value that indicates whether the transaction originated from an action that produces a sequence of values.
+var scrollTargetAnchor: UnitPoint?
+The preferred alignment of the view within a scroll view’s visible region when scrolling to a view.
+Beta
+var tracksVelocity: Bool
+Whether this transaction will track the velocity of any animatable properties that change.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

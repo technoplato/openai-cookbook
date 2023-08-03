@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/togglestyleconfiguration/ismixedSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+ListStyle
+M
+func listStyle<S>(S) -> some View
+Styling collection views
+S
+TextEditorStyleConfiguration
+Beta
+r
+P
+TextEditorStyle
+Beta
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+Beta
+r
+P
+TextFieldStyle
+Managing the toggle state
+S
+ToggleStyleConfiguration.Label
+P
+let label: ToggleStyleConfiguration.Label
+Getting the label view
+S
+ToggleStyleConfiguration
+r
+P
+ToggleStyle
+M
+func toggleStyle<S>(S) -> some View
+Styling toggles
+Documentation
+Open Menu
+Swift
+Instance Property
+isMixed
+Whether the Toggle is currently in a mixed state.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+var isMixed: Bool
+Discussion
+Use this property to determine whether the toggle style should render a mixed state presentation. A mixed state corresponds to an underlying collection with a mix of true and false Bindings. To toggle the state, use the Bool.toggle() method on the isOn binding.
+In the following example, a custom style uses the isMixed property to render the correct toggle state using symbols:
+struct SymbolToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button {
+            configuration.isOn.toggle()
+        } label: {
+            Image(
+                systemName: configuration.isMixed
+                ? "minus.circle.fill" : configuration.isOn
+                ? "checkmark.circle.fill" : "circle.fill")
+            configuration.label
+        }
+    }
+}
+See Also
+Managing the toggle state
+var isOn: Bool
+A binding to a state property that indicates whether the toggle is on.
+var $isOn: Binding<Bool>
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is isMixed
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

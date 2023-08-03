@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/geometryproxy3dSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+Axis
+Accessing geometric constructs
+S
+ShaderLibrary
+Beta
+S
+ShaderFunction
+Beta
+S
+Shader
+Beta
+M
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+S
+GeometryProxy
+S
+GeometryReader3D
+Beta
+S
+GeometryReader
+Measuring a view
+E
+ColorRenderingMode
+E
+BlendMode
+M
+func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View
+M
+func compositingGroup() -> some View
+Documentation
+Open Menu
+Swift
+Structure
+GeometryProxy3D
+A proxy for access to the size and coordinate space of the container view.
+visionOS 1.0+ Beta
+struct GeometryProxy3D
+Overview
+You can use a proxy for anchor resolution.
+Topics
+Accessing geometry characteristics
+func frame(in: some CoordinateSpaceProtocol) -> Rect3D
+The container view’s bounds rectangle converted to a defined coordinate space.
+func immersiveSpaceDisplacement(in: some CoordinateSpaceProtocol) -> Pose3D
+var size: Size3D
+The size of the container view.
+var safeAreaInsets: EdgeInsets3D
+The safe area inset of the container view.
+subscript<T>(Anchor<T>) -> T
+Resolves the value of anchor to the container view.
+func transform(in: some CoordinateSpaceProtocol) -> AffineTransform3D?
+The container view’s 3D transform converted to a defined coordinate space. If the view does not have a well-defined transform, such as if it is affected by a projection transform, this function may return nil.
+Relationships
+Conforms To
+Sendable
+See Also
+Measuring a view
+struct GeometryReader
+A container view that defines its content as a function of its own size and coordinate space.
+struct GeometryReader3D
+A container view that defines its content as a function of its own size and coordinate space.
+Beta
+struct GeometryProxy
+A proxy for access to the size and coordinate space (for anchor resolution) of the container view.
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Assigns a name to the view’s coordinate space, so other code can operate on dimensions like points and sizes relative to the named space.
+Beta
+enum CoordinateSpace
+A resolved coordinate space created by CoordinateSpaceProtocol.
+protocol CoordinateSpaceProtocol
+A frame of reference within the layout system.
+Beta
+struct PhysicalMetric
+Provides access to a value in points that corresponds to the specified physical measurement.
+Beta
+struct PhysicalMetricsConverter
+A physical metrics converter provides conversion between point values and their extent in 3D space, in the form of physical length measurements.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GeometryProxy3D
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

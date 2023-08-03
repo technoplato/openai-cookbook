@@ -1,0 +1,226 @@
+https://developer.apple.com/documentation/swiftui/multidatepickerSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Indicating a value
+S
+ColorPicker
+Choosing a color
+P
+var timeZone: TimeZone
+P
+var calendar: Calendar
+M
+init(selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>, label: () -> Label)
+M
+init<S>(S, selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>)
+M
+func datePickerStyle<S>(S) -> some View
+S
+DatePicker
+Choosing dates
+S
+PaletteSelectionEffect
+Beta
+M
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Beta
+P
+var defaultWheelPickerItemHeight: CGFloat
+M
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+M
+func horizontalRadioGroupLayout() -> some View
+Documentation
+Open Menu
+Swift
+Structure
+MultiDatePicker
+A control for picking multiple dates.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+struct MultiDatePicker<Label> where Label : View
+Overview
+Use a MultiDatePicker when you want to provide a view that allows the user to select multiple dates.
+The following example creates a basic MultiDatePicker, which appears as a calendar view representing the selected dates:
+@State private var dates: Set<DateComponents> = []
+
+
+var body: some View {
+    MultiDatePicker("Dates Available", selection: $dates)
+}
+You can limit the MultiDatePicker to specific ranges of dates allowing selections only before or after a certain date or between two dates. The following example shows a multi-date picker that only permits selections within the 6th and (excluding) the 16th of December 2021 (in the UTC time zone):
+@Environment(\.calendar) var calendar
+@Environment(\.timeZone) var timeZone
+
+
+var bounds: Range<Date> {
+    let start = calendar.date(from: DateComponents(
+        timeZone: timeZone, year: 2022, month: 6, day: 6))!
+    let end = calendar.date(from: DateComponents(
+        timeZone: timeZone, year: 2022, month: 6, day: 16))!
+    return start ..< end
+}
+
+
+@State private var dates: Set<DateComponents> = []
+
+
+var body: some View {
+    MultiDatePicker("Dates Available", selection: $dates, in: bounds)
+}
+You can also specify an alternative locale, calendar and time zone through environment values. This can be useful when using a PreviewProvider to see how your multi-date picker behaves in environments that differ from your own.
+The following example shows a multi-date picker with a custom locale, calendar and time zone:
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        MultiDatePicker("Dates Available", selection: .constant([]))
+            .environment(\.locale, Locale.init(identifier: "zh"))
+            .environment(
+                \.calendar, Calendar.init(identifier: .chinese))
+            .environment(\.timeZone, TimeZone(abbreviation: "HKT")!)
+    }
+}
+Topics
+Picking dates
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>)
+Creates an instance that selects multiple dates with an unbounded range.
+Available when Label is Text.
+init<S>(S, selection: Binding<Set<DateComponents>>)
+Creates an instance that selects multiple dates with an unbounded range.
+Available when Label is Text.
+init(selection: Binding<Set<DateComponents>>, label: () -> Label)
+Creates an instance that selects multiple dates with an unbounded range.
+Available when Label conforms to View.
+Picking dates in a range
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>, in: Range<Date>)
+Creates an instance that selects multiple dates in a range.
+Available when Label is Text.
+init<S>(S, selection: Binding<Set<DateComponents>>, in: Range<Date>)
+Creates an instance that selects multiple dates in a range.
+Available when Label is Text.
+init(selection: Binding<Set<DateComponents>>, in: Range<Date>, label: () -> Label)
+Creates an instance that selects multiple dates in a range.
+Available when Label conforms to View.
+Picking dates after a date
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>, in: PartialRangeFrom<Date>)
+Creates an instance that selects multiple dates on or after some start date.
+Available when Label is Text.
+init<S>(S, selection: Binding<Set<DateComponents>>, in: PartialRangeFrom<Date>)
+Creates an instance that selects multiple dates on or after some start date.
+Available when Label is Text.
+init(selection: Binding<Set<DateComponents>>, in: PartialRangeFrom<Date>, label: () -> Label)
+Creates an instance that selects multiple dates on or after some start date.
+Available when Label conforms to View.
+Picking dates before a date
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>)
+Creates an instance that selects multiple dates before some end date.
+Available when Label is Text.
+init<S>(S, selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>)
+Creates an instance that selects multiple dates before some end date.
+Available when Label is Text.
+init(selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>, label: () -> Label)
+Creates an instance that selects multiple dates before some end date.
+Available when Label conforms to View.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Choosing dates
+struct DatePicker
+A control for selecting an absolute date.
+func datePickerStyle<S>(S) -> some View
+Sets the style for date pickers within this view.
+var calendar: Calendar
+The current calendar that views should use when handling dates.
+var timeZone: TimeZone
+The current time zone that views should use when handling dates.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MultiDatePicker
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

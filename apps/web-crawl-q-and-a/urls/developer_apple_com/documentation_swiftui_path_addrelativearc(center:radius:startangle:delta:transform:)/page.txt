@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/swiftui/path/addrelativearc(center:radius:startangle:delta:transform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Methods
+M
+func strokedPath(StrokeStyle) -> Path
+Applying a style
+E
+Path.Element
+M
+func forEach((Path.Element) -> Void)
+Operating over path elements
+M
+func union(Path, eoFill: Bool) -> Path
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+func addRelativeArc(center: CGPoint, radius: CGFloat, startAngle: Angle, delta: Angle, transform: CGAffineTransform)
+M
+func addRects([CGRect], transform: CGAffineTransform)
+M
+func addRect(CGRect, transform: CGAffineTransform)
+M
+func addQuadCurve(to: CGPoint, control: CGPoint)
+M
+func addPath(Path, transform: CGAffineTransform)
+M
+func addLines([CGPoint])
+M
+func addLine(to: CGPoint)
+M
+func addEllipse(in: CGRect, transform: CGAffineTransform)
+M
+func addCurve(to: CGPoint, control1: CGPoint, control2: CGPoint)
+Documentation
+Open Menu
+Swift
+Instance Method
+addRelativeArc(center:radius:startAngle:delta:transform:)
+Adds an arc of a circle to the path, specified with a radius and a difference in angle.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+mutating func addRelativeArc(
+    center: CGPoint,
+    radius: CGFloat,
+    startAngle: Angle,
+    delta: Angle,
+    transform: CGAffineTransform = .identity
+)
+Parameters
+center
+The center of the arc, in user space coordinates.
+radius
+The radius of the arc, in user space coordinates.
+startAngle
+The angle to the starting point of the arc, measured from the positive x-axis.
+delta
+The difference between the starting angle and ending angle of the arc. A positive value creates a counter- clockwise arc (in user space coordinates), and vice versa.
+transform
+An affine transform to apply to the arc before adding to the path. Defaults to the identity transform if not specified. /
+Discussion
+This method calculates starting and ending points using the radius and angles you specify, uses a sequence of cubic Bézier curves to approximate a segment of a circle between those points, and then appends those curves to the path.
+The delta parameter determines both the length of the arc the direction in which the arc is created; the actual direction of the final path is dependent on the transform parameter and the current transform of a context where the path is drawn. However, because SwiftUI by default uses a vertically-flipped coordinate system (with the origin in the top-left of the view), specifying a clockwise arc results in a counterclockwise arc after the transformation is applied.
+If the path ends with an unclosed subpath, this method adds a line connecting the current point to the starting point of the arc. If there is no unclosed subpath, this method creates a new subpath whose starting point is the starting point of the arc. The ending point of the arc becomes the new current point of the path.
+See Also
+Drawing a path
+func move(to: CGPoint)
+Begins a new subpath at the specified point.
+func addArc(center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool, transform: CGAffineTransform)
+Adds an arc of a circle to the path, specified with a radius and angles.
+func addArc(tangent1End: CGPoint, tangent2End: CGPoint, radius: CGFloat, transform: CGAffineTransform)
+Adds an arc of a circle to the path, specified with a radius and two tangent lines.
+func addCurve(to: CGPoint, control1: CGPoint, control2: CGPoint)
+the curve.
+func addEllipse(in: CGRect, transform: CGAffineTransform)
+Adds an ellipse that fits inside the specified rectangle to the path.
+func addLine(to: CGPoint)
+Appends a straight line segment from the current point to the specified point.
+func addLines([CGPoint])
+Adds a sequence of connected straight-line segments to the path.
+func addPath(Path, transform: CGAffineTransform)
+Appends another path value to this path.
+func addQuadCurve(to: CGPoint, control: CGPoint)
+the curve.
+func addRect(CGRect, transform: CGAffineTransform)
+Adds a rectangular subpath to the path.
+func addRects([CGRect], transform: CGAffineTransform)
+Adds a set of rectangular subpaths to the path.
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+Adds a rounded rectangle to the path.
+func closeSubpath()
+Closes and completes the current subpath.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is addRelativeArc(center:radius:startAngle:delta:transform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

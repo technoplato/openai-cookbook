@@ -1,0 +1,189 @@
+https://developer.apple.com/documentation/realitykit/shaperesourceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Properties
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+static func != (Self, Self) -> Bool
+static func == (ShapeResource, ShapeResource) -> Bool
+Comparing Shapes
+C
+MeshResource
+P
+var shapes: [ShapeResource]
+Setting Collision Shapes
+S
+CollisionFilter
+P
+var filter: CollisionFilter
+Filtering Collisions
+E
+CollisionComponent.Mode
+P
+var mode: CollisionComponent.Mode
+Setting the Collision Mode
+Documentation
+Open Menu
+Swift
+Class
+ShapeResource
+A representation of a shape.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+class ShapeResource
+Topics
+Transforming a Shape
+func offsetBy(rotation: simd_quatf) -> ShapeResource
+Creates a new shape resource by applying a rotation.
+func offsetBy(translation: SIMD3<Float>) -> ShapeResource
+Creates a new shape resource by applying a translation.
+func offsetBy(rotation: simd_quatf, translation: SIMD3<Float>) -> ShapeResource
+Creates a new shape resource by applying a rotation and a translation.
+Generating Boxes
+static func generateBox(size: SIMD3<Float>) -> ShapeResource
+Creates a box shape with the specified extent.
+static func generateBox(width: Float, height: Float, depth: Float) -> ShapeResource
+Creates a box shape with the specified dimensions.
+Generating Spheres
+static func generateSphere(radius: Float) -> ShapeResource
+Creates a sphere shape with the specified radius.
+Generating Capsules
+static func generateCapsule(height: Float, radius: Float) -> ShapeResource
+Creates a capsule shape with the specified height and radius.
+Generating Convex Shapes
+static func generateConvex(from: [SIMD3<Float>]) -> ShapeResource
+Creates a convex shape from the given points.
+static func generateConvex(from: MeshResource) -> ShapeResource
+Creates a convex shape from the given mesh.
+class MeshResource
+A high-level representation of a collection of vertices and edges that define a shape.
+Comparing Shapes
+static func == (ShapeResource, ShapeResource) -> Bool
+Indicates whether two shapes are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two shapes are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the shape by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the shape.
+Instance Properties
+var bounds: BoundingBox
+Axis aligned bounding box in world space.
+Type Methods
+static func generateConvex(from: [SIMD3<Float>]) async throws -> ShapeResource
+Creates a convex shape from the given points asynchronously.
+static func generateConvex(from: MeshResource) async throws -> ShapeResource
+Creates a convex shape from the given mesh.
+static func generateStaticMesh(from: MeshAnchor) async throws -> ShapeResource
+Creates a mesh-based collision shape derived from an ARKit Scene Understanding mesh anchor.
+Beta
+static func generateStaticMesh(positions: [SIMD3<Float>], faceIndices: [UInt16]) async throws -> ShapeResource
+Generate a static collision mesh. The triangle mesh is pre-processed into an optimized format before being used by the physics engine. The pre-processing step can take significant time if the position counts are large. To minimize this cost, the position count should be as small as possible. The returned ShapeResource can only be used under the following circumstances:
+Beta
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+Resource
+Sendable
+See Also
+Setting Collision Shapes
+var shapes: [ShapeResource]
+A collection of shape resources that collectively represent the outer dimensions of an entity for the purposes of collision detection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ShapeResource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

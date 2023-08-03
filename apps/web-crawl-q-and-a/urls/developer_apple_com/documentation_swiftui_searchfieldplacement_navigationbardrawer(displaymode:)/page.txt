@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/searchfieldplacement/navigationbardrawer(displaymode:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Managing search interface activation
+Detecting, activating, and dismissing search
+S
+SearchScopeActivation
+M
+func searchScopes<V, S>(Binding<V>, activation: SearchScopeActivation, () -> S) -> some View
+M
+func searchScopes<V, S>(Binding<V>, scopes: () -> S) -> some View
+Scoping a search operation
+Limiting search scope
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+static func navigationBarDrawer(displayMode: SearchFieldPlacement.NavigationBarDrawerDisplayMode) -> SearchFieldPlacement
+P
+static let navigationBarDrawer: SearchFieldPlacement
+P
+static let automatic: SearchFieldPlacement
+Getting a search field placement
+S
+SearchFieldPlacement
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+Beta
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+Beta
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+Beta
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Documentation
+Open Menu
+Swift
+Type Method
+navigationBarDrawer(displayMode:)
+The search field appears in the navigation bar using the specified display mode.
+iOS 15.0+
+iPadOS 15.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+static func navigationBarDrawer(displayMode: SearchFieldPlacement.NavigationBarDrawerDisplayMode) -> SearchFieldPlacement
+Parameters
+displayMode
+A control that indicates whether to hide the search field in response to scrolling.
+Discussion
+The field appears below any navigation bar title. The system can hide the field in response to scrolling, depending on the displayMode that you set.
+See Also
+Getting a search field placement
+static let automatic: SearchFieldPlacement
+SwiftUI places the search field automatically.
+static let navigationBarDrawer: SearchFieldPlacement
+The search field appears in the navigation bar.
+static let sidebar: SearchFieldPlacement
+The search field appears in the sidebar of a navigation view.
+static let toolbar: SearchFieldPlacement
+The search field appears in the toolbar.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigationBarDrawer(displayMode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

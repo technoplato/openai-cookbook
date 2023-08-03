@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/hasperspectivecameraSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+SwiftStrike: Creating a Game with RealityKit
+Happy Beam
+Games
+Runtime Events
+Content synchronization
+Postprocessing effects
+Physics simulation
+Entity Compliance
+S
+GroundingShadowComponent
+Beta
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+Beta
+S
+SpotLightComponent
+C
+SpotLight
+S
+DirectionalLightComponent
+C
+DirectionalLight
+Documentation
+Open Menu
+Swift
+Protocol
+HasPerspectiveCamera
+An interface that enables you to configure a virtual camera that you can use to define the rendering perspective when you’re not in an AR session.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+protocol HasPerspectiveCamera : HasTransform
+Topics
+Getting the Camera
+var camera: PerspectiveCameraComponent
+A camera component for the perspective camera entity.
+struct PerspectiveCameraComponent
+In AR applications, the camera is automatically provided by the system. In non-AR scenarios, the camera needs to be set by the app. (If no camera is provided by the app, the system will use default camera.)
+Relationships
+Inherits From
+HasTransform
+Conforming Types
+PerspectiveCamera
+See Also
+Entity Compliance
+protocol HasPointLight
+An interface that defines a point light source component.
+protocol HasDirectionalLight
+An interface that defines a directional light source component.
+protocol HasSpotLight
+An interface that defines a spot light source component.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is HasPerspectiveCamera
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

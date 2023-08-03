@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/configuration-swift.struct/customdetailspecification-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Properties
+M
+init(checkpointDirectory: URL)
+Beta
+Initializers
+static func == (PhotogrammetrySession.Configuration, PhotogrammetrySession.Configuration) -> Bool
+Operators
+Equatable Implementations
+Default Implementations
+var outputTextureMaps: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+var maximumTextureDimension: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureDimension
+static func == (PhotogrammetrySession.Configuration.CustomDetailSpecification, PhotogrammetrySession.Configuration.CustomDetailSpecification) -> Bool
+Structures
+E
+PhotogrammetrySession.Configuration.FeatureSensitivity
+P
+var featureSensitivity: PhotogrammetrySession.Configuration.FeatureSensitivity
+Configuring Feature Sensitivity
+E
+PhotogrammetrySession.Configuration.SampleOrdering
+P
+var sampleOrdering: PhotogrammetrySession.Configuration.SampleOrdering
+Configuring Sample Ordering
+P
+var isObjectMaskingEnabled: Bool
+Documentation
+Open Menu
+Swift
+Structure
+PhotogrammetrySession.Configuration.CustomDetailSpecification
+A structure for specifying various customizable options on the reconstructed model and textures.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+struct CustomDetailSpecification
+Topics
+Structures
+struct TextureMapOutputs
+Allows specification of the set of output texture maps to be included in the output model.
+Operators
+static func == (PhotogrammetrySession.Configuration.CustomDetailSpecification, PhotogrammetrySession.Configuration.CustomDetailSpecification) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Initializers
+init()
+Instance Properties
+var maximumPolygonCount: UInt
+The upper limit on polygons in the model mesh.
+var maximumTextureDimension: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureDimension
+The maximum dimension of the reconstructed texture maps.
+var outputTextureMaps: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+The set of texture maps to create in the model.
+var textureFormat: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureFormat
+The data type of the texture map.
+Enumerations
+enum TextureDimension
+One of the discrete texture dimensions to specify the size of the model texture maps. For example, a .twoK dimension means the texture map size can be up to size 2048x2048.
+enum TextureFormat
+The output format to use for all textures.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Configuration.CustomDetailSpecification
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

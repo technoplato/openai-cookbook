@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/immersionstyle/mixedSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating an immersive space
+S
+ImmersiveSpace
+Beta
+S
+ImmersiveSpaceContentBuilder
+Beta
+M
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Beta
+r
+P
+ImmersionStyle
+Beta
+Getting built-in styles
+P
+static var automatic: AutomaticImmersionStyle
+P
+static var full: FullImmersionStyle
+M
+func upperLimbVisibility(Visibility) -> some View
+Documents
+Navigation
+Modal presentations
+Toolbars
+Search
+App extensions
+Documentation
+Open Menu
+Swift
+Type Property
+mixed
+An immersion style that displays unbounded content intermixed with other app content, along with passthrough video.
+visionOS 1.0+ Beta
+static var mixed: MixedImmersionStyle { get }
+Available when Self is MixedImmersionStyle.
+See Also
+Getting built-in styles
+static var automatic: AutomaticImmersionStyle
+The default immersion style.
+Available when Self is AutomaticImmersionStyle.
+Beta
+static var full: FullImmersionStyle
+An immersion style that displays unbounded content that obscures pass-through video, except for the user’s hands, if configured accordingly.
+Available when Self is FullImmersionStyle.
+Beta
+static var progressive: ProgressiveImmersionStyle
+An immersion style where content displays with no clipping boundaries applied.
+Available when Self is ProgressiveImmersionStyle.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is mixed
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

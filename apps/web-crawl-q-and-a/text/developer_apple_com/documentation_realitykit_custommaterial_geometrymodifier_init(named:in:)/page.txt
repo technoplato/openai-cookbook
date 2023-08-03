@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/geometrymodifier/init(named:in:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var emissiveColor: CustomMaterial.EmissiveColor
+Adding Light Emission
+S
+CustomMaterial.Normal
+P
+var normal: CustomMaterial.Normal
+Using a Normal Map
+S
+CustomMaterial.CustomMaterialTexture
+S
+CustomMaterial.Custom
+Creating Geometry Modifier Objects
+S
+CustomMaterial.GeometryModifier
+S
+CustomMaterial.SurfaceShader
+Accessing Shader Functions
+E
+CustomMaterial.LightingModel
+P
+var lightingModel: CustomMaterial.LightingModel
+Setting the Lighting Model
+M
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+Documentation
+Open Menu
+Swift
+Initializer
+init(named:in:)
+Creates a geometry modifier object from a named function in a Metal library.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+init(
+    named name: String,
+    in library: MTLLibrary
+)
+Parameters
+name
+The name of the geometry modifier function.
+library
+The Metal library that contains the function.
+Discussion
+To create a geometry modifier function for a custom material, create a Metal file in your Xcode project. Prefix the function with the keyword [[visible]]. The function must take a single parameter of type realitykit::geometry_parameters.
+Here’s what a minimal geometry modifier function looks like:
+#include <metal_stdlib>
+#include <RealityKit/RealityKit.h>
+using namespace metal;
+
+
+[[visible]] void myGeometryModifier(realitykit::geometry_parameters
+params) {
+    // User params.geometry().set_model_position_offset() to move the vertex.
+} ```
+
+
+To create a custom material using this shader, get a reference to
+your app’s Metal library. You can do that like this:
+
+
+```swift
+guard let device = MTLCreateSystemDefaultDevice() else {
+    fatalError("Error creating default metal device.")
+}
+guard let library = maybeDevice.makeDefaultLibrary() else {
+    fatalError("Error creating default metal library")
+}
+Once you’ve got a reference to your Metal library, use it to create the surface shader reference like this:
+let geometryModifier = CustomMaterial.GeometryModifier(
+    named: "myGeometryModifier",
+    in: library)
+Important
+RealityKit loads surface shader functions by name, so the name of your surface shader function must be unique and must exactly match the named parameter.
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+Current page is init(named:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

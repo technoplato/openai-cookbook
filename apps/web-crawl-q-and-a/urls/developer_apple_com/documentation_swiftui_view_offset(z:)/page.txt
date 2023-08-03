@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/view/offset(z:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fixedSize(horizontal: Bool, vertical: Bool) -> some View
+M
+func layoutPriority(Double) -> some View
+Adjusting a view’s position
+Making fine adjustments to a view’s position
+M
+func position(CGPoint) -> some View
+M
+func position(x: CGFloat, y: CGFloat) -> some View
+M
+func offset(CGSize) -> some View
+M
+func offset(x: CGFloat, y: CGFloat) -> some View
+M
+func contentMargins(Edge.Set, EdgeInsets, for: ContentMarginPlacement) -> some View
+S
+ContentMarginPlacement
+Beta
+Staying in the safe areas
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+M
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+M
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+M
+func safeAreaPadding(EdgeInsets) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+offset(z:)
+Brings a view forward in Z by the provided distance in points.
+visionOS 1.0+ Beta
+func offset(z: CGFloat) -> some View
+Parameters
+distance
+The distance to extrude the view forward in Z, in points.
+Return Value
+A view that is extruded forward in Z by distance.
+See Also
+Adjusting a view’s position
+Making fine adjustments to a view’s position
+Shift the position of a view by applying the offset or position modifier.
+func position(CGPoint) -> some View
+Positions the center of this view at the specified point in its parent’s coordinate space.
+func position(x: CGFloat, y: CGFloat) -> some View
+Positions the center of this view at the specified coordinates in its parent’s coordinate space.
+func offset(CGSize) -> some View
+Offset this view by the horizontal and vertical amount specified in the offset parameter.
+func offset(x: CGFloat, y: CGFloat) -> some View
+Offset this view by the specified horizontal and vertical distances.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is offset(z:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

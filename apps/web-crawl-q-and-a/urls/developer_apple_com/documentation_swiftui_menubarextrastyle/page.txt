@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/menubarextrastyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Environment values
+Model data
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+M
+func menuBarExtraStyle<S>(S) -> some Scene
+S
+MenuBarExtra
+Creating a menu bar extra
+S
+SettingsLink
+Beta
+S
+Settings
+Managing a settings window
+E
+ScenePhase
+P
+var scenePhase: ScenePhase
+Documentation
+Open Menu
+Swift
+Protocol
+MenuBarExtraStyle
+A specification for the appearance and behavior of a menu bar extra scene.
+macOS 13.0+
+protocol MenuBarExtraStyle
+Topics
+Getting menu bar extra styles
+static var automatic: AutomaticMenuBarExtraStyle
+The default menu bar extra style.
+Available when Self is AutomaticMenuBarExtraStyle.
+static var menu: PullDownMenuBarExtraStyle
+A menu bar extra style that renders its contents as a menu that pulls down from the icon in the menu bar.
+Available when Self is PullDownMenuBarExtraStyle.
+static var window: WindowMenuBarExtraStyle
+A menu bar extra style that renders its contents in a popover-like window.
+Available when Self is WindowMenuBarExtraStyle.
+Supporting types
+struct AutomaticMenuBarExtraStyle
+The default menu bar extra style. You can also use automatic to construct this style.
+struct PullDownMenuBarExtraStyle
+A menu bar extra style that renders its contents as a menu that pulls down from the icon in the menu bar.
+struct WindowMenuBarExtraStyle
+A menu bar extra style that renders its contents in a popover-like window.
+Relationships
+Conforming Types
+AutomaticMenuBarExtraStyle
+PullDownMenuBarExtraStyle
+WindowMenuBarExtraStyle
+See Also
+Creating a menu bar extra
+struct MenuBarExtra
+A scene that renders itself as a persistent control in the system menu bar.
+func menuBarExtraStyle<S>(S) -> some Scene
+Sets the style for menu bar extra created by this scene.
+Current page is MenuBarExtraStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

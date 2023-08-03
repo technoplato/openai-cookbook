@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/blending-swift.enumSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var anisotropyLevel: PhysicallyBasedMaterial.AnisotropyLevel
+Adding Anisotropy
+S
+PhysicallyBasedMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+S
+PhysicallyBasedMaterial.Clearcoat
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+S
+PhysicallyBasedMaterial.SheenColor
+P
+var blending: PhysicallyBasedMaterial.Blending
+Handling Entity Transparency
+S
+PhysicallyBasedMaterial.Normal
+P
+var normal: PhysicallyBasedMaterial.Normal
+Using a Normal Map
+S
+PhysicallyBasedMaterial.Metallic
+P
+var metallic: PhysicallyBasedMaterial.Metallic
+Specifying Metallic Reflections
+Documentation
+Open Menu
+Swift
+Enumeration
+PhysicallyBasedMaterial.Blending
+The object that defines the transparency of an entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum Blending
+Topics
+Creating Transparency Objects
+init(blending: CustomMaterial.Blending)
+Creates an object from a custom material’s blending property.
+Specifying Opacity
+case opaque
+An opaque surface.
+case transparent(opacity: PhysicallyBasedMaterial.Opacity)
+A surface that’s transparent.
+var opacityThreshold: Float?
+A threshold below which RealityKit ignores opacity.
+struct Opacity
+An object that defines the opacity of an entity.
+See Also
+Handling Entity Transparency
+var blending: PhysicallyBasedMaterial.Blending
+The transparency of an entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhysicallyBasedMaterial.Blending
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/text/speechalwaysincludespunctuation(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func textSelection<S>(S) -> some View
+Selecting text
+S
+TextEditor
+S
+SecureField
+M
+func textFieldStyle<S>(S) -> some View
+S
+TextField
+Getting text input
+M
+func speechAdjustedPitch(Double) -> Text
+Configuring voiceover
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> Text
+Beta
+M
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> Text
+Beta
+Localizing text
+E
+Text.TruncationMode
+S
+Text.Scale
+Beta
+M
+func textScale(Text.Scale, isEnabled: Bool) -> Text
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+speechAlwaysIncludesPunctuation(_:)
+Sets whether VoiceOver should always speak all punctuation in the text view.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func speechAlwaysIncludesPunctuation(_ value: Bool = true) -> Text
+Parameters
+value
+A Boolean value that you set to true if VoiceOver should speak all punctuation in the text. Defaults to true.
+Discussion
+Use this modifier to control whether the system speaks punctuation characters in the text. You might use this for code or other text where the punctuation is relevant, or where you want VoiceOver to speak a verbatim transcription of the text you provide. For example, given the text:
+Text("All the world's a stage, " +
+     "And all the men and women merely players;")
+     .speechAlwaysIncludesPunctuation()
+VoiceOver would speak “All the world apostrophe s a stage comma and all the men and women merely players semicolon”.
+By default, VoiceOver voices punctuation based on surrounding context.
+See Also
+Configuring voiceover
+func speechAdjustedPitch(Double) -> Text
+Raises or lowers the pitch of spoken text.
+func speechAnnouncementsQueued(Bool) -> Text
+Controls whether to queue pending announcements behind existing speech rather than interrupting speech in progress.
+func speechSpellsOutCharacters(Bool) -> Text
+Sets whether VoiceOver should speak the contents of the text view character by character.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is speechAlwaysIncludesPunctuation(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

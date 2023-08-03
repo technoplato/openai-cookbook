@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/jointtransforms/countSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func dropLast(Int) -> Self.SubSequence
+M
+func dropFirst(Int) -> Self.SubSequence
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func distance(from: Self.Index, to: Self.Index) -> Int
+M
+func difference<C>(from: C, by: (C.Element, Self.Element) -> Bool) -> CollectionDifference<Self.Element>
+M
+func difference<C>(from: C) -> CollectionDifference<Self.Element>
+M
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Inspecting Joint Transform Details
+T
+JointTransforms.SubSequence
+T
+JointTransforms.Iterator
+T
+JointTransforms.Indices
+T
+JointTransforms.Index
+T
+JointTransforms.Element
+T
+JointTransforms.ArrayLiteralElement
+Identifying Joint Transforms
+Documentation
+Open Menu
+Swift
+Instance Property
+count
+The number of elements in the collection.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+var count: Int { get }
+See Also
+Inspecting Joint Transform Details
+var first: Self.Element?
+The first joint transform in the collection.
+var indices: DefaultIndices<Self>
+The indices, in ascending order, that map to elements in the collection.
+Available when Indices is DefaultIndices<Self>.
+var startIndex: JointTransforms.Index
+An index to the first joint transform in the collection.
+var endIndex: JointTransforms.Index
+An index to the last joint transform in the collection.
+var isEmpty: Bool
+A Boolean value indicating whether the collection contains any elements.
+var last: Self.Element?
+The last joint transform in the collection.
+var lazy: LazySequence<Self>
+A copy of this sequence that provides lazy maps and filters.
+var publisher: Publishers.Sequence<Self, Never>
+An object that transmits a sequence of joint transforms in real time.
+var underestimatedCount: Int
+A value less than or equal to the number of elements in the collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is count
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

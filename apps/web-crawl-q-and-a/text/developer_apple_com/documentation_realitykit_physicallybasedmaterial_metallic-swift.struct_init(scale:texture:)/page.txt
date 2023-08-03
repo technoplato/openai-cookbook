@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/metallic-swift.struct/init(scale:texture:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+S
+PhysicallyBasedMaterial.SheenColor
+P
+var sheen: PhysicallyBasedMaterial.SheenColor?
+S
+PhysicallyBasedMaterial.Specular
+P
+var specular: PhysicallyBasedMaterial.Specular
+Creating Highlights
+S
+PhysicallyBasedMaterial.AmbientOcclusion
+M
+init(floatLiteral: Float)
+Creating a Metallic Object
+S
+PhysicallyBasedMaterial.Metallic
+P
+var metallic: PhysicallyBasedMaterial.Metallic
+Specifying Metallic Reflections
+S
+PhysicallyBasedMaterial.Roughness
+P
+var roughness: PhysicallyBasedMaterial.Roughness
+Specifying Entity Roughness
+Documentation
+Open Menu
+Swift
+Initializer
+init(scale:texture:)
+Creates an object from a color or texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(
+    scale: Float = 1.0,
+    texture: PhysicallyBasedMaterial.Texture? = nil
+)
+Parameters
+scale
+The reflectiveness value.
+texture
+An optional image texture.
+Discussion
+In PBR rendering, the metallic property represents the reflectiveness of an entity. This initializer creates a new object from a single value to describe the reflectiveness of the entire material. This initializer creates a new object from a single value or a grayscale image texture, or from both.
+If you specify texture, RealityKit calculates the metallic for the entity by UV-mapping texture onto the entity and multiplying the value of each mapped pixel by scale. If you don’t specify texture, then RealityKit uses scale as the entire entity’s reflectiveness. If you provide a color image for texture rather than a grayscale image, RealityKit only uses the intensity of the image’s red channel.
+See Also
+Creating a Metallic Object
+init(floatLiteral: Float)
+Creates an object from single value.
+init(CustomMaterial.Metallic)
+Creates a metallic object from a custom material’s metallic property.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(scale:texture:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

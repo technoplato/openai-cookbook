@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/openwindowaction/callasfunction(id:value:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Toolbars
+Modal presentations
+Navigation
+Documents
+Immersive spaces
+S
+WindowResizability
+M
+func windowResizability(WindowResizability) -> some Scene
+M
+func callAsFunction(id: String)
+Calling the action
+S
+OpenWindowAction
+P
+var openWindow: OpenWindowAction
+P
+var supportsMultipleWindows: Bool
+Presenting windows and spaces
+Opening windows
+r
+P
+WindowToolbarStyle
+Documentation
+Open Menu
+Swift
+Instance Method
+callAsFunction(id:value:)
+Opens a window defined by the window group that presents the specified value type and that’s associated with the specified identifier.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+func callAsFunction<D>(
+    id: String,
+    value: D
+) where D : Decodable, D : Encodable, D : Hashable
+Parameters
+id
+The identifier of the scene to present.
+value
+The value to present.
+Discussion
+Don’t call this method directly. SwiftUI calls it when you call the openWindow action with an identifier and a value:
+openWindow(id: "message", value: message.id)
+For information about how Swift uses the callAsFunction() method to simplify call site syntax, see Methods with Special Names in The Swift Programming Language.
+See Also
+Calling the action
+func callAsFunction(id: String)
+Opens a window that’s associated with the specified identifier.
+func callAsFunction<D>(value: D)
+Opens a window defined by a window group that presents the type of the specified value.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is callAsFunction(id:value:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

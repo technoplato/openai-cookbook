@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/realitykit/multipeerconnectivityserviceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+SwiftStrike: Creating a Game with RealityKit
+Happy Beam
+Games
+Runtime Events
+Loading remote assets in multiplayer apps
+C
+NetworkCompatibilityToken
+M
+func setHandshake(count: UInt32, timeoutMs: UInt32)
+Multipeer synchronization
+r
+P
+HasSynchronization
+S
+SynchronizationComponent
+r
+P
+SynchronizationService
+Entity synchronization
+Content synchronization
+Postprocessing effects
+Physics simulation
+Documentation
+Open Menu
+Swift
+Class
+MultipeerConnectivityService
+A service that provides scene synchronization among all peers in a multipeer connectivity session.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+class MultipeerConnectivityService
+Overview
+RealityKit uses this class to automatically sync scenes with other connected devices running the same app. It leverages the Multipeer Connectivity framework to automatically keep the scenes of all connected devices synchronized. To sync a RealityKit scene, create a MultipeerConnectivityService object initialized with an MCSession and assign it to your scene’s synchronizationService property.
+let peerID = MCPeerID(displayName: UIDevice.current.name)
+let session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
+arView.scene.synchronizationService = try?
+MultipeerConnectivityService(session: self.session)
+For more information on browsing for, and connecting to, other devices, see Multipeer Connectivity.
+Topics
+Creating a Connectivity Service
+init(session: MCSession) throws
+Creates a new connectivity service.
+Getting the Session
+let session: MCSession
+The multipeer connectivity session used by the service.
+Managing Ownership
+func owner(of: Entity) -> (SynchronizationPeerID)?
+Gets the device that owns a given entity.
+func giveOwnership(of: Entity, toPeer: SynchronizationPeerID) -> Bool
+Transfers ownership of the given entity to the named network device.
+protocol SynchronizationPeerID
+A type that represents a peer among a group of networked devices.
+Finding an Entity
+func entity(for: MultipeerConnectivityService.Identifier) -> Entity?
+Gets the entity with the given identifier.
+Pausing and Resuming
+func stopSync()
+Stops multipeer synchronization.
+func startSync()
+Begins multipeer synchronization.
+Configuring the Session
+func setHandshake(count: UInt32, timeoutMs: UInt32)
+Configures handshake and timeout settings.
+Relationships
+Conforms To
+SynchronizationService
+See Also
+Network Synchronization
+protocol SynchronizationService
+An interface that enables entity synchronization among a group of local peers.
+enum SynchronizationEvents
+Events associated with network synchronization of scene information.
+class NetworkCompatibilityToken
+An opaque token used to check the networking compatibility between two peers in a multipeer connection.
+struct NetworkReceiveSystem
+Beta
+struct NetworkSendSystem
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MultipeerConnectivityService
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,146 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func labelStyle<S>(S) -> some View
+Styling views that display text
+S
+ProgressViewStyleConfiguration
+r
+P
+ProgressViewStyle
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+r
+P
+GaugeStyle
+P
+static var button: ButtonToggleStyle
+P
+static var automatic: DefaultToggleStyle
+Getting built-in toggle styles
+r
+P
+ToggleStyle
+M
+func toggleStyle<S>(S) -> some View
+Styling toggles
+S
+MenuStyleConfiguration
+r
+P
+MenuStyle
+Documentation
+Open Menu
+Swift
+Type Property
+checkbox
+A toggle style that displays a checkbox followed by its label.
+macOS 10.15+
+static var checkbox: CheckboxToggleStyle { get }
+Available when Self is CheckboxToggleStyle.
+Discussion
+Apply this style to a Toggle or to a view hierarchy that contains toggles using the toggleStyle(_:) modifier:
+Toggle("Close windows when quitting an app", isOn: $doesClose)
+    .toggleStyle(.checkbox)
+The style produces a label that describes the purpose of the toggle and a checkbox that shows the toggle’s state. To change the toggle’s state, the user clicks the checkbox or its label:
+The style aligns the trailing edge of the checkbox with the leading edge of the label, and takes as much horizontal space as it needs to fit the label, up to the amount offered by the toggle’s parent view.
+This is the default style in macOS in most contexts when you don’t set a style, or when you apply the automatic style. A Form is a convenient way to present a collection of checkboxes with proper spacing and alignment. For guidance on using checkboxes in your user interface, see Checkboxes in the Human Interface Guidelines.
+See Also
+Getting built-in toggle styles
+static var automatic: DefaultToggleStyle
+The default toggle style.
+Available when Self is DefaultToggleStyle.
+static var button: ButtonToggleStyle
+A toggle style that displays as a button with its label as the title.
+Available when Self is ButtonToggleStyle.
+static var `switch`: SwitchToggleStyle
+A toggle style that displays a leading label and a trailing switch.
+Available when Self is SwitchToggleStyle.
+Current page is checkbox
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

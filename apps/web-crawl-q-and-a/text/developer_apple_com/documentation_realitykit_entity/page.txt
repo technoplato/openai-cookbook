@@ -1,0 +1,434 @@
+https://developer.apple.com/documentation/realitykit/entitySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var parent: Entity?
+Establishing a Hierarchy
+P
+var isAnchored: Bool
+P
+var isActive: Bool
+P
+var isEnabledInHierarchy: Bool
+P
+var isEnabled: Bool
+Getting State
+C
+Scene
+RealityKit Systems
+Loading Entities from a File
+Building an Immersive Experience with RealityKit
+Understanding RealityKit’s modular architecture
+Entity Component System
+r
+P
+RealityCoordinateSpaceConverting
+Beta
+S
+SceneRealityCoordinateSpace
+Beta
+Documentation
+Open Menu
+Swift
+Class
+Entity
+An element of a RealityKit scene to which you attach components that provide appearance and behavior characteristics for the entity.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+class Entity
+Overview
+You create and configure entities to embody objects that you want to place in the real world in an AR app. You do this by adding Entity instances to the Scene instance associated with an ARView.
+RealityKit defines a few concrete subclasses of Entity that provide commonly used functionality. For example, you typically start by creating an instance of AnchorEntity to anchor your content, and add the anchor to a scene’s anchors collection. You might then instantiate a ModelEntity to represent a physical object in the scene, and add that as a child entity to the anchor. You can also create custom entities, and add them either to an anchor, or as children of another entity.
+You can load predefined entities or a hierarchy of entities from your app’s bundle, or from a file on disk, using the methods in Stored Entities. Alternatively, you can create entities programmatically.
+Entities contain components (instances conforming to the Component protocol) that provide appearance and behaviors for the entity. For example, the Transform component contains the scale, rotation, and translation information needed to position an entity in space. You store components in the entity’s components collection, which can hold exactly one of any component type. It makes sense to have only a single Transform component, one ModelComponent (specifying the visual appearance of the entity), and so on.
+All entities inherit a few common components from the Entity base class: the Transform component for spatial positioning, and SynchronizationComponent, which enables synchronization of the entity among networked peers. Specific types of entities define additional behaviors. For example, the model entity has components for visual appearance (ModelComponent), collision detection (CollisionComponent), and physics simulations (PhysicsBodyComponent and PhysicsMotionComponent).
+Topics
+Creating an Entity
+init()
+Creates a new entity.
+func clone(recursive: Bool) -> Self
+Duplicates an entity to create a new entity.
+func didClone(from: Entity)
+Tells a newly cloned entity that cloning is complete.
+Loading a Stored Entity
+API Reference
+Stored Entities
+Manage entities stored as assets on disk.
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+API Reference
+Creating USD files for Apple devices
+Generate 3D assets that render as expected.
+Identifying an Entity
+var scene: Scene?
+The scene that owns the entity.
+var name: String
+The name of the entity.
+func findEntity(named: String) -> Entity?
+Recursively searches all descendant entities for one with the given name.
+var id: UInt64
+The stable identity of the entity.
+typealias ID
+A type of unique identifier used for an entity.
+Getting State
+var isEnabled: Bool
+A Boolean that you set to enable or disable the entity and its descendants.
+var isEnabledInHierarchy: Bool
+A Boolean that indicates whether the entity and all of its ancestors are enabled.
+var isActive: Bool
+A Boolean that indicates whether the entity is active.
+var isAnchored: Bool
+A Boolean that indicates whether the entity is anchored.
+Establishing a Hierarchy
+var parent: Entity?
+The parent entity.
+func setParent(Entity?, preservingWorldTransform: Bool)
+Attaches the entity as a child to the specified entity.
+func removeFromParent(preservingWorldTransform: Bool)
+Removes the entity from its current parent or from the scene if it is a root entity.
+var children: Entity.ChildCollection
+The child entities that the entity manages.
+func addChild(Entity, preservingWorldTransform: Bool)
+Adds the given entity to the collection of child entities.
+func removeChild(Entity, preservingWorldTransform: Bool)
+Removes the given child from the entity.
+struct ChildCollection
+A collection of child entities.
+protocol HasHierarchy
+An interface that provides access to a parent entity and child entities.
+Adding Components
+var components: Entity.ComponentSet
+All the components stored on the entity.
+struct ComponentSet
+A set of stored components.
+Positioning Entities in Space
+API Reference
+The Transform Component
+Manipulate the scale, rotation, and position of the entity.
+protocol HasTransform
+An interface that enables manipulating the scale, rotation, and translation of an entity.
+Synchronizing an Entity Among Peers
+var synchronization: SynchronizationComponent?
+The entity’s synchronization component.
+struct SynchronizationComponent
+A component that synchronizes an entity between processes and networked applications.
+var isOwner: Bool
+A Boolean that indicates whether the calling process owns the entity.
+func requestOwnership(timeout: TimeInterval, (SynchronizationComponent.OwnershipTransferCompletionResult) -> Void)
+Requests ownership of the entity.
+func withUnsynchronized(() -> Void)
+Calls the given closure in a way such that component changes that the closure makes don’t trigger synchronization.
+protocol HasSynchronization
+An interface that enables an entity to be synchronized between processes and networked applications.
+protocol TransientComponent
+An interface for components that aren’t saved to file or cloned.
+Finding the Nearest Anchor
+var anchor: (HasAnchoring)?
+The nearest ancestor entity that can act as an anchor.
+Calculating the Collision Shape
+func generateCollisionShapes(recursive: Bool)
+Creates the shape used to detect collisions between two entities that have collision components.
+Playing Animations
+var availableAnimations: [AnimationResource]
+The list of animations associated with the entity.
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, blendLayerOffset: Int, separateAnimatedValue: Bool, startsPaused: Bool, clock: CMClockOrTimebase?) -> AnimationPlaybackController
+Plays an animation with the specified options.
+func stopAllAnimations(recursive: Bool)
+Stops all playing of animations on this entity.
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, startsPaused: Bool) -> AnimationPlaybackController
+Plays the given animation on the entity.
+func playAnimation(named: String, transitionDuration: TimeInterval, startsPaused: Bool, recursive: Bool) -> AnimationPlaybackController
+Plays all the animations with the given name on the entity.
+Deprecated
+var defaultAnimationClock: CMClockOrTimebase
+Returns the default animation clock for this entity.
+Animating an Entity
+struct FromToByAnimation
+An animation that starts, stops, or increments by a specific value.
+struct SampledAnimation
+An animation that cycles through a series of frames at a constant interval.
+struct OrbitAnimation
+An animation that revolves an entity around its origin.
+struct BlendTreeAnimation
+A collection of animations on the same property that the framework blends to a single animation.
+protocol BlendTreeNode
+An interface for a node that’s a member of a blend tree.
+struct BlendTreeBlendNode
+A source node for an animation that mixes several animations to form a single animation.
+struct BlendTreeInvalidNode
+A blend tree node that’s internal only or sources from an invalid definition.
+struct BlendTreeSourceNode
+A blend node that contains an animation.
+enum BlendWeight
+A numerical representation of the impact an animation has on a scene or entity.
+enum TweenMode
+Options that determine whether an animation switches between frames gradually or abruptly.
+var bindableValues: BindableValuesReference
+struct BindPath
+The components of a target’s path that refer to the animation properties of a nested scene or entity.
+enum BindTarget
+A reference to a particular scene, entity, or property that animates.
+protocol BindableData
+An opaque base protocol for bindable data objects.
+struct BindableValue
+The value of a bindable target.
+struct BindableValuesReference
+A reference to a bindable value of an animation.
+struct ParameterSet
+Represents a reference to the parameters for a particular entity.
+var parameters: Entity.ParameterSet
+Represents a reference to the parameters for a particular entity.
+struct InternalBindPath
+A bind target for framework-provided properties.
+Animating and Controlling Characters
+struct CharacterControllerComponent
+A component that manages character movement.
+var characterController: CharacterControllerComponent?
+The character controller component for the entity.
+var characterControllerState: CharacterControllerStateComponent?
+The character controller state for the entity.
+struct CharacterControllerStateComponent
+An object that maintains state for a character controller.
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+Moves the character along a specified vector over a period of time.
+func teleportCharacter(to: SIMD3<Float>, relativeTo: Entity?)
+Moves the character instantly to a new position.
+Playing Audio
+func playAudio(AudioResource) -> AudioPlaybackController
+Plays sound from an audio resource on this entity.
+func prepareAudio(AudioResource) -> AudioPlaybackController
+Prepares an audio resource for playback.
+func stopAllAudio()
+Stops audio playback.
+Describing the Entity
+var debugDescription: String
+A human readable description of the entity.
+Comparing Entities
+static func == (Entity, Entity) -> Bool
+Indicates whether two entities are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two entities are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the entity by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the entity.
+Enabling Accessibility Features
+Improving the Accessibility of RealityKit Apps
+Incorporate assistive technologies in your augmented reality app.
+var isAccessibilityElement: Bool
+A Boolean value indicating whether the receiver is an accessibility element that an assistive application can access.
+var accessibilityLabel: String?
+A succinct label that identifies the purpose of the image.
+Deprecated
+var accessibilityDescription: String?
+A longer description of the entity for use by assistive technologies.
+Deprecated
+Initializers
+convenience init(contentsOf: URL, withName: String?) async throws
+Beta
+convenience init(named: String, in: Bundle?) async throws
+Creates a new entity by asynchronously loading it from a file in a bundle.
+Beta
+Instance Properties
+var accessibilityCustomActions: [LocalizedStringResource]
+An array of custom actions supported by the entity, identified by their localized string key.
+Beta
+var accessibilityCustomContent: [AccessibilityComponent.CustomContent]
+The Custom Content API is useful for delivering accessibility information from complex data sets to your users in measured portions. Using this API allows you to leverage assistive technologies to present only the accessible content your app’s users need, when they need it.
+Beta
+var accessibilityCustomRotors: [AccessibilityComponent.RotorType]
+An array of supported rotors.
+Beta
+var accessibilityLabelKey: LocalizedStringResource?
+A succinct label that identifies the entity, in a localized string key.
+Beta
+var accessibilitySystemActions: AccessibilityComponent.SupportedActions
+The set of supported accessibility actions.
+Beta
+var accessibilityTraits: UIAccessibilityTraits
+The combination of accessibility traits that best characterize the entity.
+Beta
+var accessibilityValue: LocalizedStringResource?
+A localized string key that represents the current value of the entity.
+Beta
+var ambientAudio: AmbientAudioComponent?
+Configure the ambient rendering of sounds from this entity.
+Beta
+var channelAudio: ChannelAudioComponent?
+Configure the channel-based rendering of sounds from this entity.
+Beta
+var spatialAudio: SpatialAudioComponent?
+Configure the spatial rendering of sounds emitted from this entity.
+Beta
+Instance Methods
+func generateCollisionShapes(recursive: Bool, static: Bool)
+Creates the shape used to detect collisions between two entities that have collision components.
+Beta
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, blendLayerOffset: Int, separateAnimatedValue: Bool, startsPaused: Bool, clock: CMClockOrTimebase?, handoffType: AnimationHandoffType) -> AnimationPlaybackController
+Plays an animation with the specified options.
+Beta
+Type Methods
+static func load(named: String, in: Bundle?) async throws -> Entity
+Asynchronously loads an entity from a file in a bundle.
+Deprecated
+static func load(named: String, in: Bundle?) throws -> Entity
+Blocks your app while loading an entity from a file in a bundle.
+static func loadModel(named: String, in: Bundle?) async throws -> ModelEntity
+Asynchronously loads a model entity from a file in a bundle.
+Deprecated
+static func loadModel(named: String, in: Bundle?) throws -> ModelEntity
+Blocks your app while loading a model entity from a file in a bundle.
+Enumerations
+enum ForwardDirection
+Defines the forward direction for an entity.
+Beta
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+Equatable Implementations
+API Reference
+HasHierarchy Implementations
+API Reference
+HasSynchronization Implementations
+API Reference
+HasTransform Implementations
+API Reference
+Hashable Implementations
+API Reference
+Identifiable Implementations
+Relationships
+Inherited By
+AnchorEntity
+BodyTrackedEntity
+DirectionalLight
+HasAnchoring
+HasHierarchy
+HasPhysicsMotion
+HasSceneUnderstanding
+HasSynchronization
+HasTransform
+ModelEntity
+PerspectiveCamera
+PointLight
+SpotLight
+TriggerVolume
+ViewAttachmentEntity
+Conforms To
+CustomDebugStringConvertible
+Equatable
+EventSource
+HasHierarchy
+HasSynchronization
+HasTransform
+Hashable
+Identifiable
+RealityCoordinateSpace
+Sendable
+See Also
+Entity Component System
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+API Reference
+RealityKit Systems
+Apply behaviors and physical effects to the entities in a RealityKit scene.
+class Scene
+A container that holds the collection of entities rendered by an AR view.
+protocol Component
+A representation of a geometry or a behavior that you apply to an entity.
+protocol TransientComponent
+An interface for components that aren’t saved to file or cloned.
+protocol EntityCollection
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Entity
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

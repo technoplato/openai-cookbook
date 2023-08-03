@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/arview/environment-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func entity(at: CGPoint) -> Entity?
+Finding Entities at a Point in the View
+P
+var cameraTransform: Transform
+E
+ARView.CameraMode
+P
+var cameraMode: ARView.CameraMode
+Managing the Camera
+P
+var audioListener: Entity?
+init(background: ARView.Environment.Background, lighting: ARView.Environment.ImageBasedLight, reverb: ARView.Environment.Reverb)
+P
+var environment: ARView.Environment
+Providing Environmental Context
+S
+ARView.RenderCallbacks
+P
+var renderCallbacks: ARView.RenderCallbacks
+S
+ARView.RenderOptions
+P
+var renderOptions: ARView.RenderOptions
+P
+var automaticallyConfigureSession: Bool
+P
+var session: ARSession
+Documentation
+Open Menu
+Swift
+Structure
+ARView.Environment
+A description of background, lighting, and acoustic properties for a view’s content.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+struct Environment
+Topics
+Creating an Environment
+init(background: ARView.Environment.Background, lighting: ARView.Environment.ImageBasedLight, reverb: ARView.Environment.Reverb)
+Creates a new environment description with the given elements.
+Setting a Background
+var background: ARView.Environment.Background
+The background for the environment.
+struct Background
+Content that appears as the background of the scene.
+Lighting the Environment
+var lighting: ARView.Environment.ImageBasedLight
+The lighting used in the environment of a particular scene.
+struct ImageBasedLight
+Lighting properties of an environment.
+Defining Acoustic Properties
+var reverb: ARView.Environment.Reverb
+The amount of reverb in the scene.
+enum Reverb
+Reverb characteristics of an environment.
+Instance Properties
+var sceneUnderstanding: ARView.Environment.SceneUnderstanding
+The scene understanding options for the view.
+See Also
+Providing Environmental Context
+var environment: ARView.Environment
+The view’s background, lighting, and acoustic properties.
+var physicsOrigin: Entity?
+The entity that defines the origin of the scene’s physics simulation.
+var audioListener: Entity?
+The entity that defines the listener position and orientation for spatial audio.
+Current page is ARView.Environment
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

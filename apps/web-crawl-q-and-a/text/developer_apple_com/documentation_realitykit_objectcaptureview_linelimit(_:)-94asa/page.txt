@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/linelimit(_:)-94asaSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func menuOrder(MenuOrder) -> some View
+M
+func menuIndicator(Visibility) -> some View
+M
+func menuActionDismissBehavior(MenuActionDismissBehavior) -> some View
+M
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+M
+func mask<Mask>(alignment: Alignment, () -> Mask) -> some View
+M
+func mask<Mask>(Mask) -> some View
+M
+func luminanceToAlpha() -> some View
+M
+func lineLimit(Int?) -> some View
+M
+func lineLimit(PartialRangeFrom<Int>) -> some View
+M
+func lineLimit(PartialRangeThrough<Int>) -> some View
+M
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+M
+func layoutPriority(Double) -> some View
+M
+func layoutDirectionBehavior(LayoutDirectionBehavior) -> some View
+M
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+M
+func labelsHidden() -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+lineLimit(_:)
+Sets to a closed range the number of lines that text can occupy in this view.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func lineLimit(_ limit: ClosedRange<Int>) -> some View
+Parameters
+limit
+The line limit.
+Discussion
+Use this modifier to specify a closed range of lines that a Text view or a vertical TextField can occupy. When the text of such views occupies more space than the provided limit, a Text view truncates its content while a TextField becomes scrollable.
+Form {
+    TextField("Title", text: $model.title)
+    TextField("Notes", text: $model.notes, axis: .vertical)
+        .lineLimit(1...3)
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is lineLimit(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/newdocumentaction/callasfunction(contenttype:preparedocument:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+FileDocumentWriteConfiguration
+Opening a document programmatically
+P
+var newDocument: NewDocumentAction
+S
+NewDocumentAction
+Calling the action
+M
+func callAsFunction<D>(() -> D)
+M
+func callAsFunction<D>(() -> D)
+M
+func callAsFunction(contentType: UTType)
+Beta
+Model data
+Environment values
+Preferences
+Persistent storage
+Views
+View fundamentals
+View configuration
+Documentation
+Open Menu
+Swift
+Instance Method
+callAsFunction(contentType:prepareDocument:)
+Presents a new document window with preset contents.
+SwiftData
+SwiftUI
+macOS 14.0+ Beta
+func callAsFunction(
+    contentType: UTType,
+    prepareDocument: @escaping (ModelContext) -> Void
+)
+Parameters
+contentType
+The content type of the document.
+prepareDocument
+The closure that accepts ModelContext associated with the new document. Use this closure to set the document’s initial contents before it is displayed: insert preconfigured models in the provided ModelContext.
+Discussion
+Don’t call this method directly. SwiftUI calls it when you call the newDocument action.
+For example, a Todo app might have a way to create a sample prepopulated Todo list as a part of onboarding experience:
+newDocument(contentType: .todoList) { modelContext in
+    let todoList = TodoList(
+        title: "🎬 Movie night",
+        items: [
+            TodoItem(title: "🍿 Buy popcorn"),
+            TodoItem(title: "🍨 Make some ice cream",
+            TodoItem(title: "💡 Hang a string of lights")
+        ]
+    )
+    modelContext.insert(todoList)
+}
+For information about how Swift uses the callAsFunction() method to simplify call site syntax, see Methods with Special Names in The Swift Programming Language.
+See Also
+Calling the action
+func callAsFunction<D>(() -> D)
+Presents a new reference type document window.
+func callAsFunction<D>(() -> D)
+Presents a new document window.
+func callAsFunction(contentType: UTType)
+Presents a new document window.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is callAsFunction(contentType:prepareDocument:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/swiftui/toggle/init(_:systemimage:sources:ison:)-6umtqSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var calendar: Calendar
+S
+MultiDatePicker
+M
+func datePickerStyle<S>(S) -> some View
+S
+DatePicker
+Choosing dates
+S
+PaletteSelectionEffect
+Beta
+M
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+init<C>(LocalizedStringKey, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+M
+init<S>(S, systemImage: String, isOn: Binding<Bool>)
+M
+init(LocalizedStringKey, systemImage: String, isOn: Binding<Bool>)
+Creating a toggle with an system image
+M
+init<S, C>(S, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Beta
+M
+init<C>(LocalizedStringKey, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Beta
+M
+init<S>(S, image: ImageResource, isOn: Binding<Bool>)
+Beta
+M
+init(LocalizedStringKey, image: ImageResource, isOn: Binding<Bool>)
+Beta
+Creating a toggle with an image resource label
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:systemImage:sources:isOn:)
+Creates a toggle representing a collection of values that generates its label from a localized string key and system image.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<C>(
+    _ titleKey: LocalizedStringKey,
+    systemImage: String,
+    sources: C,
+    isOn: KeyPath<C.Element, Binding<Bool>>
+) where C : RandomAccessCollection
+Available when Label is Label<Text, Image>.
+Parameters
+titleKey
+The key for the toggle’s localized title, that describes the purpose of the toggle.
+systemImage
+The name of the image resource to lookup.
+sources
+A collection of values used as the source for rendering the Toggle’s state.
+isOn
+The key path of the values that determines whether the toggle is on, mixed or off.
+Discussion
+This initializer creates a Text view on your behalf, and treats the localized key similar to init(_:tableName:bundle:comment:). See Text for more information about localizing strings.
+The following example creates a single toggle that represents the state of multiple alarms:
+struct Alarm: Hashable, Identifiable {
+    var id = UUID()
+    var isOn = false
+    var name = ""
+}
+
+
+@State private var alarms = [
+    Alarm(isOn: true, name: "Morning"),
+    Alarm(isOn: false, name: "Evening")
+]
+
+
+Toggle("Enable all alarms", sources: $alarms, isOn: \.isOn)
+See Also
+Creating a toggle with an system image
+init(LocalizedStringKey, systemImage: String, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a localized string key and system image.
+Available when Label is Label<Text, Image>.
+init<S>(S, systemImage: String, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a string and system image.
+Available when Label is Label<Text, Image>.
+init<S, C>(S, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a string.
+Available when Label is Label<Text, Image>.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:systemImage:sources:isOn:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

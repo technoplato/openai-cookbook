@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/toolbaritemplacement/accessorybar(id:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static let destructiveAction: ToolbarItemPlacement
+P
+static let navigation: ToolbarItemPlacement
+Getting explicit placement
+P
+static var topBarLeading: ToolbarItemPlacement
+P
+static var topBarTrailing: ToolbarItemPlacement
+P
+static let bottomBar: ToolbarItemPlacement
+P
+static let bottomOrnament: ToolbarItemPlacement
+Beta
+P
+static let keyboard: ToolbarItemPlacement
+Specifying the role of toolbar content
+M
+func toolbarRole(ToolbarRole) -> some View
+S
+ToolbarRole
+Styling a toolbar
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+Documentation
+Open Menu
+Swift
+Type Method
+accessoryBar(id:)
+Creates a unique accessory bar placement.
+macOS 13.0+
+@_backDeploy(before: macOS 14.0)
+static func accessoryBar<ID>(id: ID) -> ToolbarItemPlacement where ID : Hashable
+Parameters
+id
+A unique identifier for this placement.
+Discussion
+On macOS, items with an accessory bar placement are placed in a section below the title bar and toolbar area of the window. Each separate identifier will correspond to a separate accessory bar that is added to this area.
+extension ToolbarItemPlacement {
+    static let favoritesBar = accessoryBar(id: "com.example.favorites")
+}
+...
+BrowserView()
+    .toolbar {
+        ToolbarItem(placement: .favoritesBar) {
+            FavoritesBar()
+        }
+    }
+See Also
+Getting explicit placement
+static var topBarLeading: ToolbarItemPlacement
+Places the item in the leading edge of the top bar.
+static var topBarTrailing: ToolbarItemPlacement
+Places the item in the trailing edge of the top bar.
+static let bottomBar: ToolbarItemPlacement
+Places the item in the bottom toolbar.
+static let bottomOrnament: ToolbarItemPlacement
+Places the item in an ornament under the window.
+Beta
+static let keyboard: ToolbarItemPlacement
+The item is placed in the keyboard section.
+Current page is accessoryBar(id:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

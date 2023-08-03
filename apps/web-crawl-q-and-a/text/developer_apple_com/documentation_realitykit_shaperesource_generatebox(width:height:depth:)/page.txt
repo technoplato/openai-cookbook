@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/realitykit/shaperesource/generatebox(width:height:depth:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+M
+static func generateStaticMesh(positions: [SIMD3<Float>], faceIndices: [UInt16]) async throws -> ShapeResource
+Beta
+M
+static func generateStaticMesh(from: MeshAnchor) async throws -> ShapeResource
+Beta
+M
+static func generateConvex(from: MeshResource) async throws -> ShapeResource
+M
+static func generateConvex(from: [SIMD3<Float>]) async throws -> ShapeResource
+Type Methods
+P
+var bounds: BoundingBox
+M
+static func generateBox(size: SIMD3<Float>) -> ShapeResource
+Generating Boxes
+M
+func offsetBy(rotation: simd_quatf, translation: SIMD3<Float>) -> ShapeResource
+M
+func offsetBy(translation: SIMD3<Float>) -> ShapeResource
+M
+func offsetBy(rotation: simd_quatf) -> ShapeResource
+Transforming a Shape
+C
+ShapeResource
+P
+var shapes: [ShapeResource]
+Documentation
+Open Menu
+Swift
+Type Method
+generateBox(width:height:depth:)
+Creates a box shape with the specified dimensions.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+static func generateBox(
+    width: Float,
+    height: Float,
+    depth: Float
+) -> ShapeResource
+Parameters
+width
+The extent of the box along the x-axis in meters.
+height
+The extent of the box along the y-axis in meters.
+depth
+The extent of the box along the z-axis in meters.
+Return Value
+The new box centered at the local origin and aligned with the local axes.
+See Also
+Generating Boxes
+static func generateBox(size: SIMD3<Float>) -> ShapeResource
+Creates a box shape with the specified extent.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is generateBox(width:height:depth:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

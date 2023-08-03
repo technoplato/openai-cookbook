@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/spring/bouncy(duration:extrabounce:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Calculating forces and durations
+M
+func update<V>(value: inout V, velocity: inout V, target: V, deltaTime: TimeInterval)
+Setting spring state
+M
+func velocity<V>(fromValue: V, toValue: V, initialVelocity: V, time: TimeInterval) -> V
+M
+func velocity<V>(target: V, initialVelocity: V, time: TimeInterval) -> V
+M
+func value<V>(fromValue: V, toValue: V, initialVelocity: V, time: TimeInterval) -> V
+M
+func value<V>(target: V, initialVelocity: V, time: TimeInterval) -> V
+P
+static var bouncy: Spring
+Getting built-in springs
+M
+init(settlingDuration: TimeInterval, dampingRatio: Double, epsilon: Double)
+M
+init(response: Double, dampingRatio: Double)
+M
+init(mass: Double, stiffness: Double, damping: Double, allowOverDamping: Bool)
+M
+init(duration: TimeInterval, bounce: Double)
+Creating a spring
+S
+Spring
+Beta
+Documentation
+Open Menu
+Swift
+Type Method
+bouncy(duration:extraBounce:)
+A spring with a predefined duration and higher amount of bounce that can be tuned.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+static func bouncy(
+    duration: TimeInterval = 0.5,
+    extraBounce: Double = 0.0
+) -> Spring
+Parameters
+duration
+The perceptual duration, which defines the pace of the spring. This is approximately equal to the settling duration, but for very bouncy springs, will be the duration of the period of oscillation for the spring.
+extraBounce
+How much additional bounce should be added to the base bounce of 0.3.
+blendDuration
+The duration in seconds over which to interpolate changes to the duration.
+See Also
+Getting built-in springs
+static var bouncy: Spring
+A spring with a predefined duration and higher amount of bounce.
+Beta
+static var smooth: Spring
+A smooth spring with a predefined duration and no bounce.
+Beta
+static func smooth(duration: TimeInterval, extraBounce: Double) -> Spring
+A smooth spring with a predefined duration and no bounce that can be tuned.
+Beta
+static var snappy: Spring
+A spring with a predefined duration and small amount of bounce that feels more snappy.
+Beta
+static func snappy(duration: TimeInterval, extraBounce: Double) -> Spring
+A spring with a predefined duration and small amount of bounce that feels more snappy and can be tuned.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is bouncy(duration:extraBounce:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

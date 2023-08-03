@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/swiftui/toggle/init(_:systemimage:ison:)-4wc5wSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func datePickerStyle<S>(S) -> some View
+S
+DatePicker
+Choosing dates
+S
+PaletteSelectionEffect
+Beta
+M
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Beta
+P
+var defaultWheelPickerItemHeight: CGFloat
+M
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+Creating a toggle with an system image
+M
+init<S, C>(S, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Beta
+M
+init<C>(LocalizedStringKey, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Beta
+M
+init<S>(S, image: ImageResource, isOn: Binding<Bool>)
+Beta
+M
+init(LocalizedStringKey, image: ImageResource, isOn: Binding<Bool>)
+Beta
+Creating a toggle with an image resource label
+M
+init<C>(LocalizedStringKey, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+M
+init<S, C>(S, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:systemImage:isOn:)
+Creates a toggle that generates its label from a localized string key and system image.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+init(
+    _ titleKey: LocalizedStringKey,
+    systemImage: String,
+    isOn: Binding<Bool>
+)
+Available when Label is Label<Text, Image>.
+Parameters
+titleKey
+The key for the toggle’s localized title, that describes the purpose of the toggle.
+systemImage
+The name of the image resource to lookup.
+isOn
+A binding to a property that indicates whether the toggle is on or off.
+Discussion
+This initializer creates a Text view on your behalf, and treats the localized key similar to init(_:tableName:bundle:comment:). See Text for more information about localizing strings.
+To initialize a toggle with a string variable, use init(_:isOn:) instead.
+See Also
+Creating a toggle with an system image
+init<S>(S, systemImage: String, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a string and system image.
+Available when Label is Label<Text, Image>.
+init<C>(LocalizedStringKey, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a localized string key and system image.
+Available when Label is Label<Text, Image>.
+init<S, C>(S, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a string.
+Available when Label is Label<Text, Image>.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:systemImage:isOn:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

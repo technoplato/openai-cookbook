@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/swiftui/scene/modelcontainer(for:inmemory:isautosaveenabled:isundoenabled:onsetup:)-2ake3Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Styling the scene
+M
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Beta
+M
+func upperLimbVisibility(Visibility) -> some Scene
+Beta
+M
+func windowStyle<S>(S) -> some Scene
+M
+func windowToolbarStyle<S>(S) -> some Scene
+Configuring a data model
+M
+func modelContext(ModelContext) -> some Scene
+Beta
+M
+func modelContainer(ModelContainer) -> some Scene
+Beta
+func modelContainer(for: [PersistentModel.Type], inMemory: Bool, isAutosaveEnabled: Bool, isUndoEnabled: Bool, onSetup: (Result<ModelContainer, Error>) -> Void) -> some Scene
+func modelContainer(for: PersistentModel.Type, inMemory: Bool, isAutosaveEnabled: Bool, isUndoEnabled: Bool, onSetup: (Result<ModelContainer, Error>) -> Void) -> some Scene
+Creating watch notifications
+S
+WKNotificationScene
+Windows
+Immersive spaces
+Documents
+Navigation
+Modal presentations
+Documentation
+Open Menu
+Swift
+Instance Method
+modelContainer(for:inMemory:isAutosaveEnabled:isUndoEnabled:onSetup:)
+Sets the model container in this scene for storing the provided model types, creating a new container if necessary, and also sets a model context for that container in this scene’s environment.
+SwiftData
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+func modelContainer(
+    for modelTypes: [PersistentModel.Type],
+    inMemory: Bool = false,
+    isAutosaveEnabled: Bool = true,
+    isUndoEnabled: Bool = false,
+    onSetup: @escaping (Result<ModelContainer, Error>) -> Void = { _ in }
+) -> some Scene
+Parameters
+modelTypes
+The model types defining the schema used to create the model container.
+inMemory
+Whether the container should store data only in memory.
+isAutosaveEnabled
+true if autosave is enabled.
+isUndoEnabled
+use undoManager in the scene’s environment to manage undo operations for the model container.
+onSetup
+A callback that will be invoked when the creation of the container has has succeeded or failed.
+Discussion
+In this example, RecipesApp sets a shared model container to use for all of its windows, configured to store instances of Recipe and Ingredient:
+@Model class Recipe { ... }
+@Model class Ingredient { ... }
+
+
+@main
+struct RecipesApp: App {
+    var body: some Scene {
+        WindowGroup {
+            RecipesList()
+        }
+        .modelContainer(for: [Recipe.self, Ingredient.self])
+    }
+}
+The environment’s modelContext property will be assigned a new context associated with this container. All implicit model context operations in this scene, such as Query properties, will use the environment’s context.
+By default, the container stores its model data persistently on disk. To only store data in memory for the lifetime of the app’s process, pass true to the inMemory: parameter.
+The container will only be created once. New values that are passed to the modelTypes and inMemory parameters after the view is first created will be ignored.
+See Also
+Configuring a data model
+func modelContext(ModelContext) -> some Scene
+Sets the model context in this scene’s environment.
+Beta
+func modelContainer(ModelContainer) -> some Scene
+Sets the model container and associated model context in this scene’s environment.
+Beta
+func modelContainer(for: PersistentModel.Type, inMemory: Bool, isAutosaveEnabled: Bool, isUndoEnabled: Bool, onSetup: (Result<ModelContainer, Error>) -> Void) -> some Scene
+Sets the model container in this scene for storing the provided model type, creating a new container if necessary, and also sets a model context for that container in this scene’s environment.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is modelContainer(for:inMemory:isAutosaveEnabled:isUndoEnabled:onSetup:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

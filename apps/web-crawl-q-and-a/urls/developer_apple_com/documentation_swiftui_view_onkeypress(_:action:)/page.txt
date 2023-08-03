@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/view/onkeypress(_:action:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var isHoverEffectEnabled: Bool
+Beta
+M
+func defaultHoverEffect(HoverEffect?) -> some View
+Beta
+M
+func hoverEffectDisabled(Bool) -> some View
+Beta
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+Beta
+M
+func onContinuousHover(coordinateSpace: some CoordinateSpaceProtocol, perform: (HoverPhase) -> Void) -> some View
+Beta
+M
+func onHover(perform: (Bool) -> Void) -> some View
+Responding to hover events
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Responding to keyboard input
+Input events
+Gestures
+Event handling
+Scroll views
+View groupings
+Tables
+Lists
+Documentation
+Open Menu
+Swift
+Instance Method
+onKeyPress(_:action:)
+Performs an action if the user presses a key on a hardware keyboard while the view has focus.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func onKeyPress(
+    _ key: KeyEquivalent,
+    action: @escaping () -> KeyPress.Result
+) -> some View
+Parameters
+key
+The key to match against incoming hardware keyboard events.
+action
+The action to perform. Return .handled to consume the event and prevent further dispatch, or .ignored to allow dispatch to continue.
+Return Value
+A modified view that binds hardware keyboard input when focused.
+Discussion
+SwiftUI performs the action for key-down and key-repeat events.
+See Also
+Responding to keyboard input
+func onKeyPress(phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses any key on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses a key on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses one or more keys on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses one or more keys on a hardware keyboard while the view has focus.
+Beta
+struct KeyPress
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onKeyPress(_:action:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

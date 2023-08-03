@@ -1,0 +1,196 @@
+https://developer.apple.com/documentation/swiftui/table/init(of:selection:columncustomization:columns:rows:)-424leSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TableColumnCustomizationBehavior
+Beta
+S
+TableColumnCustomization
+Beta
+M
+func tableColumnHeaders(Visibility) -> some View
+Beta
+Customizing columns
+S
+TableColumnBuilder
+S
+TableColumnAlignment
+Beta
+r
+P
+TableColumnContent
+init<Data, Sort>(Data, children: KeyPath<Data.Element, Data?>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>?, columns: () -> Columns)
+init<Data, Sort>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>?, columns: () -> Columns)
+init<Data, Sort>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>?, columns: () -> Columns)
+init<Data>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<Value.ID?>, columnCustomization: Binding<TableColumnCustomization<Value>>?, columns: () -> Columns)
+init<Data>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<Set<Value.ID>>, columnCustomization: Binding<TableColumnCustomization<Value>>?, columns: () -> Columns)
+init<Data>(Data, children: KeyPath<Value, Data?>, columnCustomization: Binding<TableColumnCustomization<Value>>?, columns: () -> Columns)
+init<Sort>(of: Value.Type, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+init<Sort>(of: Value.Type, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+init<Sort>(of: Value.Type, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+init(of: Value.Type, selection: Binding<Value.ID?>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+init(of: Value.Type, selection: Binding<Set<Value.ID>>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+M
+init(of: Value.Type, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+Beta
+Creating a table with dynamically customizable columns
+M
+init<Data, Sort>(Data, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data, Sort>(Data, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data, Sort>(Data, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data>(Data, selection: Binding<Set<Value.ID>>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data>(Data, selection: Binding<Value.ID?>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data>(Data, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(of:selection:columnCustomization:columns:rows:)
+Creates a table with the given columns and rows that supports selecting multiple rows that generates its data using values of the given type and has dynamically customizable columns.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+init(
+    of valueType: Value.Type,
+    selection: Binding<Set<Value.ID>>,
+    columnCustomization: Binding<TableColumnCustomization<Value>>,
+    @TableColumnBuilder<Value, Never> columns: () -> Columns,
+    @TableRowBuilder<Value> rows: () -> Rows
+)
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Parameters
+valueType
+The type of value used to derive the table’s contents.
+selection
+A binding to a set that identifies the selected rows IDs.
+columnCustomization
+A binding to the state of columns.
+columns
+The columns to display in the table.
+rows
+The rows to display in the table.
+Discussion
+Each column in the table that should participate in customization is required to have an identifier, specified with customizationID(_:).
+See Also
+Creating a table with dynamically customizable columns
+init(of: Value.Type, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+Creates a table with the given columns and rows that generates its contents using values of the given type and has dynamically customizable columns.
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Beta
+init(of: Value.Type, selection: Binding<Value.ID?>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+Creates a table with the given columns and rows that supports selecting zero or one row that generates its data using values of the given type and has dynamically customizable columns.
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Beta
+init<Sort>(of: Value.Type, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+Creates a sortable table with the given columns and rows that supports selecting multiple rows and dynamically customizable columns.
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Beta
+init<Sort>(of: Value.Type, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+Creates a sortable table with the given columns and rows that supports selecting zero or one row and has dynamically customizable columns.
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Beta
+init<Sort>(of: Value.Type, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns, rows: () -> Rows)
+Creates a sortable table with the given columns and rows and has dynamically customizable columns.
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(of:selection:columnCustomization:columns:rows:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

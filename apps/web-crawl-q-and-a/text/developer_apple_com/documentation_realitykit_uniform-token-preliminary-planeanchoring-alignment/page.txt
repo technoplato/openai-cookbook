@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/realitykit/uniform-token-preliminary-planeanchoring-alignmentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+preliminary:anchoring:type
+Properties
+Preliminary_AnchoringAPI
+Placing a Prim in the Real World
+Anchoring
+playbackMode
+autoPlay
+Animation
+Documentation
+Open Menu
+Swift
+Article
+preliminary:planeAnchoring:alignment
+An option that specifies the orientation of a plane.
+Overview
+This property is active only for the preliminary:anchoring:type value plane. The runtime recognizes real-word surfaces such as floors, tables, ceilings as horizontal planes. Vertical planes include walls, doors, and windows.
+Declaration
+uniform token preliminary:planeAnchoring:alignment (
+    allowedTokens = ["horizontal", "vertical", "any"]
+)
+Plane Anchor Types
+horizontal
+Requests that the runtime anchor the prim on a floor, table, ceiling, or other flat surface.
+vertical
+Requests that the runtime anchor the prim on a wall, door, window, or other vertical surface.
+any
+Requests that the runtime anchor the prim on the first horizontal or vertical surface detected.
+Anchor a Cube to a Real-World SurfaceAnchor a Prim to a Horizontal Plane
+The following asset definition requests that the runtime anchor this prim to the first surface the runtime detects that occupies a horizontal orientation in relation to the camera.
+def Cube "PlaneAnchoredCube" (
+    prepend apiSchemas = [ "Preliminary_AnchoringAPI" ]
+)
+{
+    uniform token preliminary:anchoring:type = "plane"
+    uniform token preliminary:planeAnchoring:alignment = "horizontal"
+    ...
+}
+See Also
+Properties
+preliminary:anchoring:type
+A option that specifies the type of anchor.
+preliminary:imageAnchoring:referenceImage
+The characteristics of an image the runtime should scan for in order to attach a prim.
+Current page is preliminary:planeAnchoring:alignment
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

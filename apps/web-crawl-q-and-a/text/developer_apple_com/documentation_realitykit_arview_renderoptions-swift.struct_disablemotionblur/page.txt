@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/arview/renderoptions-swift.struct/disablemotionblurSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func remove(Self.Element) -> Self.Element?
+M
+func update(with: Self.Element) -> Self.Element?
+M
+func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)
+Adding and Removing Options
+M
+func contains(Self) -> Bool
+P
+var isEmpty: Bool
+Testing for Membership in a Render Option Set
+P
+static let disableGroundingShadows: ARView.RenderOptions
+P
+static let disableHDR: ARView.RenderOptions
+P
+static let disableCameraGrain: ARView.RenderOptions
+Disabling Rendering Effects
+S
+ARView.RenderOptions
+P
+var renderOptions: ARView.RenderOptions
+P
+var automaticallyConfigureSession: Bool
+P
+var session: ARSession
+Documentation
+Open Menu
+Swift
+Type Property
+disableMotionBlur
+Disable the motion blur for all virtual content.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+static let disableMotionBlur: ARView.RenderOptions
+Discussion
+A video stream consists of a sequence of images. Each image in the sequence represents a short, but non-zero period of time. Fast-moving, real-world objects captured within a frame can experience a visual smearing, known as motion blur.
+By default, virtual objects that appear in the scene don’t experience motion blur. Instead, they exist at exactly one point in the frame for any given image in the image sequence. RealityKit offers an effect that introduces motion blur for virtual objects, taking into account the relative motion of the camera and the object.
+Because of its computational cost, moion blur is off by default on all but the latest hardware. To enable or disable the effect, you add or remove the disableMotionBlur option to or from the renderOptions set, respectively. If you do enable motion blur, be sure to measure your app’s CPU and GPU utilization to find out how it affects your app’s performance, as described in Improving the Performance of a RealityKit App.
+See Also
+Disabling Rendering Effects
+static let disableCameraGrain: ARView.RenderOptions
+Disable the image noise effect.
+static let disableHDR: ARView.RenderOptions
+Disable the high dynamic range post-processing effect.
+static let disableGroundingShadows: ARView.RenderOptions
+Disable rendering of ambient occlusion and shadows that ground objects in an AR scene.
+static let disableDepthOfField: ARView.RenderOptions
+Disable the depth of field effect for all virtual content.
+static let disableFaceOcclusions: ARView.RenderOptions
+Disable automatic face occlusion.
+Deprecated
+static let disablePersonOcclusion: ARView.RenderOptions
+Disable person segmentation.
+static let disableAREnvironmentLighting: ARView.RenderOptions
+Disable lighting from environment probes.
+static let disableAutomaticLighting: ARView.RenderOptions
+Disable automatic updates of the scene lighting.
+Deprecated
+Current page is disableMotionBlur
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

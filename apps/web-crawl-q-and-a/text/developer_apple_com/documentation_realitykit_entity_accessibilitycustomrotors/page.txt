@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/realitykit/entity/accessibilitycustomrotorsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+HasHierarchy Implementations
+Equatable Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+E
+Entity.ForwardDirection
+Beta
+Enumerations
+M
+static func loadModel(named: String, in: Bundle?) throws -> ModelEntity
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, blendLayerOffset: Int, separateAnimatedValue: Bool, startsPaused: Bool, clock: CMClockOrTimebase?, handoffType: AnimationHandoffType) -> AnimationPlaybackController
+P
+var accessibilityCustomContent: [AccessibilityComponent.CustomContent]
+Beta
+P
+var accessibilityCustomActions: [LocalizedStringResource]
+Beta
+Instance Properties
+M
+convenience init(named: String, in: Bundle?) async throws
+Beta
+M
+convenience init(contentsOf: URL, withName: String?) async throws
+Beta
+Initializers
+P
+var accessibilityDescription: String?
+Deprecated
+P
+var accessibilityLabel: String?
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Property
+accessibilityCustomRotors
+An array of supported rotors.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+@MainActor
+var accessibilityCustomRotors: [AccessibilityComponent.RotorType] { get set }
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityCustomRotors
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

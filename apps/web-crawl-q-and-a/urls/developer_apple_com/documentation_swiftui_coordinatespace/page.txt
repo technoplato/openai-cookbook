@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/swiftui/coordinatespaceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+BlendMode
+E
+ColorRenderingMode
+Measuring a view
+S
+GeometryReader
+S
+GeometryReader3D
+Beta
+S
+GeometryProxy
+S
+GeometryProxy3D
+Beta
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Beta
+S
+Shader
+S
+ShaderFunction
+Beta
+S
+ShaderLibrary
+Beta
+Accessing geometric constructs
+E
+Axis
+S
+Angle
+S
+UnitPoint
+Documentation
+Open Menu
+Swift
+Enumeration
+CoordinateSpace
+A resolved coordinate space created by CoordinateSpaceProtocol.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+enum CoordinateSpace
+Overview
+You don’t typically use CoordinateSpace directly. Instead, use the static properties and functions of CoordinateSpaceProtocol such as .global, .local, and .named(_:).
+Topics
+Getting coordinate spaces
+case global
+The global coordinate space at the root of the view hierarchy.
+case local
+The local coordinate space of the current view.
+case named(AnyHashable)
+A named reference to a view’s local coordinate space.
+Testing a space
+var isGlobal: Bool
+var isLocal: Bool
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Measuring a view
+struct GeometryReader
+A container view that defines its content as a function of its own size and coordinate space.
+struct GeometryReader3D
+A container view that defines its content as a function of its own size and coordinate space.
+Beta
+struct GeometryProxy
+A proxy for access to the size and coordinate space (for anchor resolution) of the container view.
+struct GeometryProxy3D
+A proxy for access to the size and coordinate space of the container view.
+Beta
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Assigns a name to the view’s coordinate space, so other code can operate on dimensions like points and sizes relative to the named space.
+Beta
+protocol CoordinateSpaceProtocol
+A frame of reference within the layout system.
+Beta
+struct PhysicalMetric
+Provides access to a value in points that corresponds to the specified physical measurement.
+Beta
+struct PhysicalMetricsConverter
+A physical metrics converter provides conversion between point values and their extent in 3D space, in the form of physical length measurements.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CoordinateSpace
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

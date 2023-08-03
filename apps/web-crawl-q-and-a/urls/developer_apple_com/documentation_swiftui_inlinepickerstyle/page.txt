@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/inlinepickerstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Styling indicators
+S
+ToggleStyleConfiguration
+r
+P
+ToggleStyle
+M
+func toggleStyle<S>(S) -> some View
+Styling toggles
+S
+MenuStyleConfiguration
+r
+P
+MenuStyle
+S
+DefaultPickerStyle
+Supporting types
+P
+static var wheel: WheelPickerStyle
+P
+static var segmented: SegmentedPickerStyle
+P
+static var radioGroup: RadioGroupPickerStyle
+P
+static var palette: PalettePickerStyle
+Beta
+P
+static var navigationLink: NavigationLinkPickerStyle
+P
+static var menu: MenuPickerStyle
+Documentation
+Open Menu
+Swift
+Structure
+InlinePickerStyle
+A PickerStyle where each option is displayed inline with other views in the current container.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+struct InlinePickerStyle
+Overview
+You can also use inline to construct this style.
+Topics
+Creating the picker style
+init()
+Creates an inline picker style.
+Relationships
+Conforms To
+PickerStyle
+Sendable
+See Also
+Supporting types
+struct DefaultPickerStyle
+The default picker style, based on the picker’s context.
+struct MenuPickerStyle
+A picker style that presents the options as a menu when the user presses a button, or as a submenu when nested within a larger menu.
+struct NavigationLinkPickerStyle
+A picker style represented by a navigation link that presents the options by pushing a List-style picker view.
+struct PalettePickerStyle
+A picker style that presents the options as a row of compact elements.
+Beta
+struct RadioGroupPickerStyle
+A picker style that presents the options as a group of radio buttons.
+struct SegmentedPickerStyle
+A picker style that presents the options in a segmented control.
+struct WheelPickerStyle
+A picker style that presents the options in a scrollable wheel that shows the selected option and a few neighboring options.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is InlinePickerStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

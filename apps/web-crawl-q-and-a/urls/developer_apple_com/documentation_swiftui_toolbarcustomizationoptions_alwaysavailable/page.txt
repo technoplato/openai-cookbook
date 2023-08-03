@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/toolbarcustomizationoptions/alwaysavailableSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+OrnamentAttachmentAnchor
+Beta
+M
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+Beta
+Creating an ornament
+S
+ToolbarTitleMenu
+M
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+Setting the toolbar title menu
+S
+ToolbarTitleDisplayMode
+Getting customization options
+S
+ToolbarCustomizationOptions
+S
+ToolbarCustomizationBehavior
+r
+P
+CustomizableToolbarContent
+M
+func toolbar<Content>(id: String, content: () -> Content) -> some View
+Populating a customizable toolbar
+S
+ToolbarContentBuilder
+r
+P
+ToolbarContent
+Documentation
+Open Menu
+Swift
+Type Property
+alwaysAvailable
+Configures default customizable toolbar content to always be present in the toolbar.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static var alwaysAvailable: ToolbarCustomizationOptions { get }
+Discussion
+In iOS, default customizable toolbar content have the option of always being available in the toolbar regardless of the customization status of the user. These items will always be in the overflow menu of the toolbar. Users can customize whether the items are present as controls in the toolbar itself but will still always be able to access the item if they remove it from the toolbar itself.
+Consider using this for items that users should always be able to access, but may not be important enough to always occupy space in the toolbar itself.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is alwaysAvailable
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

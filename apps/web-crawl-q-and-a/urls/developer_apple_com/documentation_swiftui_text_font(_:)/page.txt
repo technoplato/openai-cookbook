@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/text/font(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Text.LineStyle
+S
+Text.DateStyle
+E
+Text.Case
+M
+func baselineOffset(CGFloat) -> Text
+M
+func tracking(CGFloat) -> Text
+M
+func kerning(CGFloat) -> Text
+M
+func monospacedDigit() -> Text
+Choosing a font
+M
+init(timerInterval: ClosedRange<Date>, pauseTime: Date?, countsDown: Bool, showsHours: Bool)
+Creating a text view with a timer
+M
+init(Image)
+Creating a text view from an image
+M
+init<Subject>(Subject, formatter: Formatter)
+M
+init<Subject>(Subject, formatter: Formatter)
+M
+init<F>(F.FormatInput, format: F)
+Documentation
+Open Menu
+Swift
+Instance Method
+font(_:)
+Sets the default font for text in the view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func font(_ font: Font?) -> Text
+Parameters
+font
+The font to use when displaying this text.
+Return Value
+Text that uses the font you specify.
+Discussion
+Use font(_:) to apply a specific font to an individual Text View, or all of the text views in a container.
+In the example below, the first text field has a font set directly, while the font applied to the following container applies to all of the text views inside that container:
+VStack {
+    Text("Font applied to a text view.")
+        .font(.largeTitle)
+
+
+    VStack {
+        Text("These two text views have the same font")
+        Text("applied to their parent view.")
+    }
+    .font(.system(size: 16, weight: .light, design: .default))
+}
+See Also
+Choosing a font
+func fontWeight(Font.Weight?) -> Text
+Sets the font weight of the text.
+func fontDesign(Font.Design?) -> Text
+Sets the font design of the text.
+func fontWidth(Font.Width?) -> Text
+Sets the font width of the text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is font(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

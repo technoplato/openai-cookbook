@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/shadowoptionsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func border<S>(S, width: CGFloat) -> some View
+Styling content
+S
+Color
+M
+func tint(Color?) -> some View
+M
+func tint<S>(S?) -> some View
+Setting a color
+P
+var environment: EnvironmentValues
+S
+GraphicsContext.BlurOptions
+S
+GraphicsContext.FilterOptions
+S
+GraphicsContext.Filter
+M
+func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)
+Filtering
+S
+GraphicsContext.BlendMode
+P
+var blendMode: GraphicsContext.BlendMode
+P
+var opacity: Double
+Documentation
+Open Menu
+Swift
+Structure
+GraphicsContext.ShadowOptions
+Options that configure the graphics context filter that creates shadows.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@frozen
+struct ShadowOptions
+Overview
+You can use a set of these options when you call shadow(color:radius:x:y:blendMode:options:) to create a GraphicsContext.Filter that adds a drop shadow to an object that you draw into a GraphicsContext.
+Topics
+Getting shadow options
+static var disablesGroup: GraphicsContext.ShadowOptions
+An option that causes the filter to composite the object and its shadow separately in the current layer.
+static var invertsAlpha: GraphicsContext.ShadowOptions
+An option that causes the filter to invert the alpha of the shadow.
+static var shadowAbove: GraphicsContext.ShadowOptions
+An option that causes the filter to draw the shadow above the object, rather than below it.
+static var shadowOnly: GraphicsContext.ShadowOptions
+An option that causes the filter to draw only the shadow, and omit the source object.
+Relationships
+Conforms To
+Equatable
+ExpressibleByArrayLiteral
+OptionSet
+RawRepresentable
+Sendable
+SetAlgebra
+See Also
+Filtering
+func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)
+Adds a filter that applies to subsequent drawing operations.
+struct Filter
+A type that applies image processing operations to rendered content.
+struct FilterOptions
+Options that configure a filter that you add to a graphics context.
+struct BlurOptions
+Options that configure the graphics context filter that creates blur.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GraphicsContext.ShadowOptions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

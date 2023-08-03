@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/realitykit/transientcomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+BlendWeight
+S
+BlendTreeSourceNode
+S
+BlendTreeInvalidNode
+S
+BlendTreeBlendNode
+r
+P
+BlendTreeNode
+S
+BlendTreeAnimation
+S
+OrbitAnimation
+func playAnimation(named: String, transitionDuration: TimeInterval, startsPaused: Bool, recursive: Bool) -> AnimationPlaybackController
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, startsPaused: Bool) -> AnimationPlaybackController
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, blendLayerOffset: Int, separateAnimatedValue: Bool, startsPaused: Bool, clock: CMClockOrTimebase?) -> AnimationPlaybackController
+r
+P
+HasSynchronization
+M
+func withUnsynchronized(() -> Void)
+M
+func requestOwnership(timeout: TimeInterval, (SynchronizationComponent.OwnershipTransferCompletionResult) -> Void)
+P
+var isOwner: Bool
+S
+SynchronizationComponent
+P
+var synchronization: SynchronizationComponent?
+Synchronizing an Entity Among Peers
+r
+P
+HasTransform
+Documentation
+Open Menu
+Swift
+Protocol
+TransientComponent
+An interface for components that aren’t saved to file or cloned.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+protocol TransientComponent : Component
+Overview
+Components that conform to the TransientComponent protocol aren’t included when RealityKit serializes its owning entity to save it to a file. Similarly, when you clone an entity, any transient components on that entity aren’t copied to the clone.
+To ensure that cloned entities, or entities saved to file get a copy of the transient component with default values, create and initialize the component in your entity’s init() method:
+class MyEntity: Entity {
+    required init() {
+        let newComponent = MyComponent()
+        components[MyComponent.self] = newComponent
+        return newComponent
+    }
+}
+Alternatively, you can create a computed property for your component that initializes it to default values the first time your code accesses it.
+class MyEntity: Entity {
+    var myComponent: MyComponent {
+        // If the component exists, return it.
+        if let component = components[MyComponent] as? MyComponent {
+            return component
+        }
+
+
+        // Create a new component and return it.
+        components[MyComponent.self] = MyComponent()
+        return newComponent
+    }
+}
+Use transient components to represent runtime state for an entity. For example, an entity representing a fish in a virtual aquarium might store attributes such as hunger in a transient component.
+In networked AR experiences, RealityKit sends transient components to peers when it sends the entity, if the component also conforms to Codable. If transient components don’t conform, ReaityKit still sends the entity to network peers, but it excludes the transient component.
+Relationships
+Inherits From
+Component
+Conforming Types
+ViewAttachmentComponent
+See Also
+Entity Component System
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+API Reference
+RealityKit Systems
+Apply behaviors and physical effects to the entities in a RealityKit scene.
+class Scene
+A container that holds the collection of entities rendered by an AR view.
+class Entity
+An element of a RealityKit scene to which you attach components that provide appearance and behavior characteristics for the entity.
+protocol Component
+A representation of a geometry or a behavior that you apply to an entity.
+protocol EntityCollection
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TransientComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

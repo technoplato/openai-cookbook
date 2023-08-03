@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/speechspellsoutcharacters(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func textContentType(UITextContentType?) -> some View
+M
+func textCase(Text.Case?) -> some View
+M
+func task(priority: TaskPriority, () async -> Void) -> some View
+M
+func task<T>(id: T, priority: TaskPriority, () async -> Void) -> some View
+M
+func tag<V>(V) -> some View
+M
+func tableStyle<S>(S) -> some View
+M
+func tableColumnHeaders(Visibility) -> some View
+M
+func speechAnnouncementsQueued(Bool) -> some View
+M
+func speechAlwaysIncludesPunctuation(Bool) -> some View
+M
+func speechAdjustedPitch(Double) -> some View
+M
+func simultaneousGesture<T>(T, including: GestureMask) -> some View
+M
+func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+M
+func sheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View
+M
+func sensoryFeedback<T>(trigger: T, (T, T) -> SensoryFeedback?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+speechSpellsOutCharacters(_:)
+Sets whether VoiceOver should speak the contents of the text view character by character.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func speechSpellsOutCharacters(_ value: Bool = true) -> some View
+Parameters
+value
+A Boolean value that when true indicates VoiceOver should speak text as individual characters. Defaults to true.
+Discussion
+Use this modifier when you want VoiceOver to speak text as individual letters, character by character. This is important for text that is not meant to be spoken together, like:
+An acronym that isn’t a word, like APPL, spoken as “A-P-P-L”.
+A number representing a series of digits, like 25, spoken as “two-five” rather than “twenty-five”.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is speechSpellsOutCharacters(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

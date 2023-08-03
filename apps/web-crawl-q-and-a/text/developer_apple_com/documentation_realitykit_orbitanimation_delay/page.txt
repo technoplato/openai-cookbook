@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/orbitanimation/delaySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+TweenMode
+E
+BlendWeight
+S
+BlendTreeSourceNode
+S
+BlendTreeInvalidNode
+S
+BlendTreeBlendNode
+r
+P
+BlendTreeNode
+S
+BlendTreeAnimation
+P
+var speed: Float
+Timing the Animation
+P
+var additive: Bool
+P
+var orientToPath: Bool
+P
+var spinClockwise: Bool
+P
+var rotationCount: Float
+P
+var blendLayer: Int32
+P
+var bindTarget: BindTarget
+Documentation
+Open Menu
+Swift
+Instance Property
+delay
+An amount of time that lapses before the animation plays.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var delay: TimeInterval { get set }
+Discussion
+The default value is 0, which indicates that the animation plays with no delay. If you set a value for this property, the animation plays from its start time after the specified delay lapses.
+During the delayed time, the animation doesn’t update. However, to fill the delayed time with some portion of animation, set a negative trimStart instead and choose a fillMode that displays the desired portion of animation.
+See Also
+Timing the Animation
+var speed: Float
+A factor that changes the animation’s rate of playback.
+var duration: TimeInterval
+The elapsed time for one complete rotation.
+var offset: TimeInterval
+The time, in seconds, at which the animation begins within the duration.
+var trimDuration: TimeInterval?
+An optional duration that overrides the calculated duration.
+var trimStart: TimeInterval?
+The optional time, in seconds, at which the animation plays.
+var trimEnd: TimeInterval?
+The optional time, in seconds, at which the animation stops.
+func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> Self
+Edits the animation duration according to the specified time.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is delay
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

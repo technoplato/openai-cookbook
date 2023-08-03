@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/text/accessibilitytextcontenttype(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func speechAlwaysIncludesPunctuation(Bool) -> Text
+M
+func speechAnnouncementsQueued(Bool) -> Text
+M
+func speechSpellsOutCharacters(Bool) -> Text
+Providing accessibility information
+M
+func accessibilityHeading(AccessibilityHeadingLevel) -> Text
+M
+func accessibilityLabel<S>(S) -> Text
+M
+func accessibilityLabel(Text) -> Text
+M
+func accessibilityLabel(LocalizedStringKey) -> Text
+Setting a font
+Applying custom fonts to text
+M
+func font(Font?) -> some View
+M
+func fontDesign(Font.Design?) -> some View
+M
+func fontWeight(Font.Weight?) -> some View
+M
+func fontWidth(Font.Width?) -> some View
+P
+var font: Font?
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibilityTextContentType(_:)
+Sets an accessibility text content type.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func accessibilityTextContentType(_ value: AccessibilityTextContentType) -> Text
+Parameters
+value
+The accessibility content type from the available AccessibilityTextContentType options.
+Discussion
+Use this modifier to set the content type of this accessibility element. Assistive technologies can use this property to choose an appropriate way to output the text. For example, when encountering a source coding context, VoiceOver could choose to speak all punctuation.
+If you don’t set a value with this method, the default content type is plain.
+See Also
+Providing accessibility information
+func accessibilityHeading(AccessibilityHeadingLevel) -> Text
+Sets the accessibility level of this heading.
+func accessibilityLabel<S>(S) -> Text
+Adds a label to the view that describes its contents.
+func accessibilityLabel(Text) -> Text
+Adds a label to the view that describes its contents.
+func accessibilityLabel(LocalizedStringKey) -> Text
+Adds a label to the view that describes its contents.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityTextContentType(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

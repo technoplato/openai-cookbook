@@ -1,0 +1,337 @@
+https://developer.apple.com/documentation/swiftui/modifiedcontentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityAction<S>(named: S, () -> Void) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityAction(named: LocalizedStringKey, () -> Void) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityAction(named: Text, () -> Void) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityAction(AccessibilityActionKind, () -> Void) -> ModifiedContent<Content, Modifier>
+M
+func accessibility(value: Text) -> ModifiedContent<Content, Modifier>
+Deprecated
+M
+func accessibility(sortPriority: Double) -> ModifiedContent<Content, Modifier>
+Deprecated
+M
+func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Content, Modifier>
+S
+EmptyModifier
+r
+P
+ViewModifier
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Reducing view modifier maintenance
+Configuring views
+Modifying a view
+S
+ViewBuilder
+r
+P
+View
+Documentation
+Open Menu
+Swift
+Structure
+ModifiedContent
+A value with a modifier applied to it.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen
+struct ModifiedContent<Content, Modifier>
+Topics
+Creating a modified content view
+init(content: Content, modifier: Modifier)
+A structure that the defines the content and modifier needed to produce a new view or view modifier.
+var content: Content
+The content that the modifier transforms into a new view or new view modifier.
+var modifier: Modifier
+The view modifier.
+Instance Methods
+func accessibility(activationPoint: CGPoint) -> ModifiedContent<Content, Modifier>
+Specifies the point where activations occur in the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(activationPoint: UnitPoint) -> ModifiedContent<Content, Modifier>
+Specifies the unit point where activations occur in the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Content, Modifier>
+Adds the given traits to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(hidden: Bool) -> ModifiedContent<Content, Modifier>
+Specifies whether to hide this view from system accessibility features.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(hint: Text) -> ModifiedContent<Content, Modifier>
+Communicates to the user what happens after performing the view’s action.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(identifier: String) -> ModifiedContent<Content, Modifier>
+Uses the specified string to identify the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(inputLabels: [Text]) -> ModifiedContent<Content, Modifier>
+Sets alternate input labels with which users identify a view.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(label: Text) -> ModifiedContent<Content, Modifier>
+Adds a label to the view that describes its contents.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Content, Modifier>
+Removes the given traits from this view.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Content, Modifier>
+Sets a selection identifier for this view’s accessibility element.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(sortPriority: Double) -> ModifiedContent<Content, Modifier>
+Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibility(value: Text) -> ModifiedContent<Content, Modifier>
+Adds a textual description of the value that the view contains.
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+func accessibilityAction(AccessibilityActionKind, () -> Void) -> ModifiedContent<Content, Modifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityAction(named: Text, () -> Void) -> ModifiedContent<Content, Modifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityAction(named: LocalizedStringKey, () -> Void) -> ModifiedContent<Content, Modifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityAction<S>(named: S, () -> Void) -> ModifiedContent<Content, Modifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityActivationPoint(CGPoint) -> ModifiedContent<Content, Modifier>
+The activation point for an element is the location assistive technologies use to initiate gestures.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityActivationPoint(UnitPoint) -> ModifiedContent<Content, Modifier>
+The activation point for an element is the location assistive technologies use to initiate gestures.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityAddTraits(AccessibilityTraits) -> ModifiedContent<Content, Modifier>
+Adds the given traits to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityAdjustableAction((AccessibilityAdjustmentDirection) -> Void) -> ModifiedContent<Content, Modifier>
+Adds an accessibility adjustable action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityCustomContent(Text, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Add additional accessibility information to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityCustomContent(LocalizedStringKey, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Add additional accessibility information to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityCustomContent<V>(AccessibilityCustomContentKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Add additional accessibility information to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityCustomContent(AccessibilityCustomContentKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Add additional accessibility information to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityCustomContent(AccessibilityCustomContentKey, Text?, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Add additional accessibility information to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityCustomContent(LocalizedStringKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Add additional accessibility information to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityCustomContent<V>(LocalizedStringKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Add additional accessibility information to the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityDirectTouch(Bool, options: AccessibilityDirectTouchOptions) -> ModifiedContent<Content, Modifier>
+Explicitly set whether this accessibility element is a direct touch area. Direct touch areas passthrough touch events to the app rather than being handled through an assistive technology, such as VoiceOver. The modifier accepts an optional AccessibilityDirectTouchOptions option set to customize the functionality of the direct touch area.
+Available when Modifier is AccessibilityAttachmentModifier.
+Beta
+func accessibilityHeading(AccessibilityHeadingLevel) -> ModifiedContent<Content, Modifier>
+Set the level of this heading.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityHidden(Bool) -> ModifiedContent<Content, Modifier>
+Specifies whether to hide this view from system accessibility features.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityHint(LocalizedStringKey) -> ModifiedContent<Content, Modifier>
+Communicates to the user what happens after performing the view’s action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityHint(Text) -> ModifiedContent<Content, Modifier>
+Communicates to the user what happens after performing the view’s action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityHint<S>(S) -> ModifiedContent<Content, Modifier>
+Communicates to the user what happens after performing the view’s action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityIdentifier(String) -> ModifiedContent<Content, Modifier>
+Uses the string you specify to identify the view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityInputLabels([LocalizedStringKey]) -> ModifiedContent<Content, Modifier>
+Sets alternate input labels with which users identify a view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityInputLabels([Text]) -> ModifiedContent<Content, Modifier>
+Sets alternate input labels with which users identify a view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityInputLabels<S>([S]) -> ModifiedContent<Content, Modifier>
+Sets alternate input labels with which users identify a view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityLabel<S>(S) -> ModifiedContent<Content, Modifier>
+Adds a label to the view that describes its contents.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityLabel(Text) -> ModifiedContent<Content, Modifier>
+Adds a label to the view that describes its contents.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityLabel(LocalizedStringKey) -> ModifiedContent<Content, Modifier>
+Adds a label to the view that describes its contents.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityRemoveTraits(AccessibilityTraits) -> ModifiedContent<Content, Modifier>
+Removes the given traits from this view.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityRespondsToUserInteraction(Bool) -> ModifiedContent<Content, Modifier>
+Explicitly set whether this Accessibility element responds to user interaction and would thus be interacted with by technologies such as Switch Control, Voice Control or Full Keyboard Access.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityScrollAction((Edge) -> Void) -> ModifiedContent<Content, Modifier>
+Adds an accessibility scroll action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilitySortPriority(Double) -> ModifiedContent<Content, Modifier>
+Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Content, Modifier>
+Sets an accessibility text content type.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityValue(Text) -> ModifiedContent<Content, Modifier>
+Adds a textual description of the value that the view contains.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityValue(LocalizedStringKey) -> ModifiedContent<Content, Modifier>
+Adds a textual description of the value that the view contains.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityValue<S>(S) -> ModifiedContent<Content, Modifier>
+Adds a textual description of the value that the view contains.
+Available when Modifier is AccessibilityAttachmentModifier.
+func accessibilityZoomAction((AccessibilityZoomGestureAction) -> Void) -> ModifiedContent<Content, Modifier>
+Adds an accessibility zoom action to the view. Actions allow assistive technologies, such as VoiceOver, to interact with the view by invoking the action.
+Available when Modifier is AccessibilityAttachmentModifier.
+Relationships
+Conforms To
+DynamicTableRowContent
+Conforms when Content conforms to DynamicTableRowContent and Modifier conforms to _TableRowContentModifier.
+DynamicViewContent
+Conforms when Content conforms to DynamicViewContent and Modifier conforms to ViewModifier.
+Equatable
+Scene
+Conforms when Content conforms to Scene and Modifier conforms to _SceneModifier.
+Sendable
+TableRowContent
+Conforms when Content conforms to TableRowContent and Modifier conforms to _TableRowContentModifier.
+View
+Conforms when Content conforms to DynamicViewContent and Modifier conforms to ViewModifier.
+ViewModifier
+Conforms when Content conforms to ViewModifier and Modifier conforms to ViewModifier.
+See Also
+Modifying a view
+Configuring views
+Adjust the characteristics of a view by applying view modifiers.
+Reducing view modifier maintenance
+Bundle view modifiers that you regularly reuse into a custom view modifier.
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Applies a modifier to a view and returns a new view.
+protocol ViewModifier
+A modifier that you apply to a view or another view modifier, producing a different version of the original value.
+Available when Content conforms to ViewModifier and Modifier conforms to ViewModifier.
+struct EmptyModifier
+An empty, or identity, modifier, used during development to switch modifiers at compile time.
+protocol EnvironmentalModifier
+A modifier that must resolve to a concrete modifier in an environment before use.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModifiedContent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

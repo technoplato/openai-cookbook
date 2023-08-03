@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/visionos/incorporating-surroundings-in-an-immersive-experienceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Checking whether your existing app is compatible with visionOS
+Bringing your ARKit app to visionOS
+Bringing your existing apps to visionOS
+iOS migration and compatibility
+Interacting with your app in the visionOS simulator
+Running your app in Simulator or on a device
+Simulator
+Placing content on detected planes
+Setting up access to ARKit data
+Happy Beam
+ARKit
+Designing RealityKit content with Reality Composer Pro
+Understanding RealityKit’s modular architecture
+Diorama
+RealityKit and Reality Composer Pro
+Documentation
+Open Menu
+Article
+Incorporating real-world surroundings in an immersive experience
+Create an immersive experience by making your app’s content respond to the local shape of the world.
+Overview
+Scene reconstruction helps bridge a gap between the rendered 3D content in your app and the person’s surroundings. Use scene reconstruction in ARKit to give your app an idea of the shape of the person’s surroundings and to bring your app experience into their world. Immersive experiences — those that use the mixed space style — are best positioned to incorporate this kind of contextual information: scene reconstruction is only available in spaces and isn’t as relevant for the full space style.
+In addition to providing a 3D mesh of the shape of different nearby objects, ARKit gives a classification to each mesh face it detects. For example, it might classify a face of a mesh as being part of an appliance, a piece of furniture, or structural information about the room like the position of walls and floors.
+Configure a scene reconstruction session
+Scene reconstruction requires the ARKitSession.AuthorizationType.worldSensing authorization type and corresponding usage description that you supply in your app’s Info.plist file. The following creates a session and lists anchors as ARKit updates its reconstruction of the person’s surroundings:
+let session = ARKitSession()
+let sceneInfo = SceneReconstructionProvider(modes: [.classification])
+
+
+Task {
+    try await session.run([sceneInfo])
+    
+    for await update in sceneInfo.anchorUpdates {
+        print("Updated a portion of the scene: ", update.anchor)
+        // Update app with new surroundings.
+    }
+}
+Add real-world interactivity using collision components
+You can make rendered 3D content more lifelike by having it appear to interact physically with objects in the person’s surroundings, like furniture and floors. RealityKit’s collision components and physics support make it possible to provide these interactions in your app. The generateStaticMesh(from:) method bridges between scene reconstruction and RealityKit’s physics simulation.
+Warning
+Be mindful of how much content you include in immersive scenes that use the mixed style. Content that fills a significant portion of the screen, even if that content is partially transparent, can prevent the person from seeing potential hazards in their surroundings. If you want to immerse the person in your content, configure your space with the full style. For more information, see Creating fully immersive experiences in your app.
+Use low-priority tasks to generate meshes, because generating them is a computationally expensive operation. The following creates a mesh entity with collision shapes using scene reconstruction:
+let meshConstructionTask = Task(priority: .low) {
+    let shape = await ShapeResource.generateStaticMesh(from: update.anchor)
+
+
+    // Call synchronous RealityKit methods from the main actor.
+    await MainActor.run {
+        let entity = Entity()
+        entity.components[CollisionComponent.self] = .init(shapes: [shape])
+        entity.components[PhysicsBodyComponent.self] = .init(
+            massProperties: .default,
+            material: nil,
+            mode: .static
+        )
+        rootEntity.addChild(entity)
+    }
+}
+Note
+Scene reconstruction meshes only support the PhysicsBodyMode.static physics body component mode.
+Each object in the scene reconstruction mesh updates its transform information independently and requires a separate static mesh because ARKit subdivides its representation of the world into multiple, distinct sections.
+See Also
+ARKit
+Happy Beam
+Leverage a Full Space to create a fun game using ARKit.
+Setting up access to ARKit data
+Check whether your app can use ARKit and respect people’s privacy.
+Placing content on detected planes
+Detect horizontal surfaces like tables and floors, as well as vertical planes like walls and doors.
+Tracking specific points in world space
+Retrieve the position and orientation of anchors your app stores in ARKit.
+Tracking preregistered images in 3D space
+Place content based on the current position of a known image in a person’s surroundings.
+Current page is Incorporating real-world surroundings in an immersive experience
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

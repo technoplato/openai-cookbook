@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/commandsbuilder/buildblock(_:_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+InspectorCommands
+Beta
+S
+ImportFromDevicesCommands
+S
+ToolbarCommands
+S
+TextFormattingCommands
+S
+TextEditingCommands
+S
+SidebarCommands
+Getting built-in command groups
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> some Commands
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> some Commands
+M
+static func buildBlock<C0, C1>(C0, C1) -> some Commands
+M
+static func buildBlock<C>(C) -> C
+M
+static func buildBlock() -> EmptyCommands
+Building content
+S
+CommandsBuilder
+S
+CommandGroup
+S
+CommandMenu
+r
+P
+Commands
+Documentation
+Open Menu
+Swift
+Type Method
+buildBlock(_:_:_:)
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+static func buildBlock<C0, C1, C2>(
+    _ c0: C0,
+    _ c1: C1,
+    _ c2: C2
+) -> some Commands where C0 : Commands, C1 : Commands, C2 : Commands
+See Also
+Building content
+static func buildBlock() -> EmptyCommands
+Builds an empty command set from a block containing no statements.
+static func buildBlock<C>(C) -> C
+Passes a single command group written as a child group through modified.
+static func buildBlock<C0, C1>(C0, C1) -> some Commands
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> some Commands
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> some Commands
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> some Commands
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> some Commands
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> some Commands
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> some Commands
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> some Commands
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is buildBlock(_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/color/resolved/init(colorspace:red:green:blue:opacity:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(NSColor)
+Deprecated
+M
+init(CGColor)
+Deprecated
+P
+var cgColor: CGColor?
+Deprecated
+Default Implementations
+ShapeStyle Implementations
+Structures
+S
+Color.Resolved
+Beta
+Initializers
+M
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+M
+func backgroundStyle<S>(S) -> some View
+P
+var backgroundStyle: AnyShapeStyle?
+r
+P
+ShapeStyle
+S
+AnyShapeStyle
+S
+Gradient
+S
+AnyGradient
+Documentation
+Open Menu
+Swift
+Initializer
+init(colorSpace:red:green:blue:opacity:)
+Creates a resolved color from red, green, and blue component values.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+init(
+    colorSpace: Color.RGBColorSpace = .sRGB,
+    red: Float,
+    green: Float,
+    blue: Float,
+    opacity: Float = 1
+)
+Parameters
+colorSpace
+The profile that specifies how to interpret the color for display. The default is Color.RGBColorSpace.sRGB.
+red
+The amount of red in the color.
+green
+The amount of green in the color.
+blue
+The amount of blue in the color.
+opacity
+An optional degree of opacity, given in the range 0 to 1. A value of 0 means 100% transparency, while a value of 1 means 100% opacity. The default is 1.
+Discussion
+A standard sRGB color space clamps each color component — red, green, and blue — to a range of 0 to 1, but SwiftUI colors use an extended sRGB color space, so you can use component values outside that range. This makes it possible to create colors using the Color.RGBColorSpace.sRGB or Color.RGBColorSpace.sRGBLinear color space that make full use of the wider gamut of a diplay that supports Color.RGBColorSpace.displayP3.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(colorSpace:red:green:blue:opacity:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

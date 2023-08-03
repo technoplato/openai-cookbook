@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/accessibilitycomponent/rotortypeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+DirectionalLightComponent
+Lighting
+S
+VideoPlayerComponent
+Beta
+S
+SynchronizationComponent
+r
+P
+TransientComponent
+S
+Transform
+S
+OpacityComponent
+P
+var customRotorsRawValue: [AccessibilityComponent.RotorTypeInternal]
+P
+var customRotors: [AccessibilityComponent.RotorType]
+Identifying the next element
+S
+AccessibilityComponent.CustomContent
+P
+var customContent: [AccessibilityComponent.CustomContent]
+P
+var customActions: [LocalizedStringResource]
+Specifying custom data
+S
+AccessibilityComponent.SupportedActions
+Documentation
+Open Menu
+Swift
+Enumeration
+AccessibilityComponent.RotorType
+A context-sensitive event that helps VoiceOver users find the next instance of a related element.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+enum RotorType
+Topics
+Operators
+static func == (AccessibilityComponent.RotorType, AccessibilityComponent.RotorType) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Enumeration Cases
+case custom(LocalizedStringResource)
+case system(UIAccessibilityCustomRotor.SystemRotorType)
+A rotor type provided by the system.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+See Also
+Identifying the next element
+var customRotors: [AccessibilityComponent.RotorType]
+An array of supported rotors.
+Beta
+var customRotorsRawValue: [AccessibilityComponent.RotorTypeInternal]
+An array of supported rotors.
+Beta
+enum RotorTypeInternal
+A context-sensitive event that helps VoiceOver users find the next instance of a related element.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AccessibilityComponent.RotorType
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

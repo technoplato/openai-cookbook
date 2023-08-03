@@ -1,0 +1,187 @@
+https://developer.apple.com/documentation/swiftui/progressviewstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TextEditorStyle
+Beta
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+Beta
+r
+P
+TextFieldStyle
+M
+func textFieldStyle<S>(S) -> some View
+S
+LabelStyleConfiguration
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+r
+P
+GaugeStyle
+M
+func gaugeStyle<S>(S) -> some View
+Styling indicators
+S
+ToggleStyleConfiguration
+r
+P
+ToggleStyle
+M
+func toggleStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Protocol
+ProgressViewStyle
+A type that applies standard interaction behavior to all progress views within a view hierarchy.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+protocol ProgressViewStyle
+Overview
+To configure the current progress view style for a view hierarchy, use the progressViewStyle(_:) modifier.
+Topics
+Getting built-in progress view styles
+static var automatic: DefaultProgressViewStyle
+The default progress view style in the current context of the view being styled.
+Available when Self is DefaultProgressViewStyle.
+static var circular: CircularProgressViewStyle
+The style of a progress view that uses a circular gauge to indicate the partial completion of an activity.
+Available when Self is CircularProgressViewStyle.
+static var linear: LinearProgressViewStyle
+A progress view that visually indicates its progress using a horizontal bar.
+Available when Self is LinearProgressViewStyle.
+Creating custom progress view styles
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creates a view representing the body of a progress view.
+Required
+typealias Configuration
+A type alias for the properties of a progress view instance.
+associatedtype Body : View
+A view representing the body of a progress view.
+Required
+Supporting types
+struct DefaultProgressViewStyle
+The default progress view style in the current context of the view being styled.
+struct CircularProgressViewStyle
+A progress view that uses a circular gauge to indicate the partial completion of an activity.
+struct LinearProgressViewStyle
+A progress view that visually indicates its progress using a horizontal bar.
+Relationships
+Conforming Types
+CircularProgressViewStyle
+DefaultProgressViewStyle
+LinearProgressViewStyle
+See Also
+Styling indicators
+func gaugeStyle<S>(S) -> some View
+Sets the style for gauges within this view.
+protocol GaugeStyle
+Defines the implementation of all gauge instances within a view hierarchy.
+struct GaugeStyleConfiguration
+The properties of a gauge instance.
+func progressViewStyle<S>(S) -> some View
+Sets the style for progress views in this view.
+struct ProgressViewStyleConfiguration
+The properties of a progress view instance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ProgressViewStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

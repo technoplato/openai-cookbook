@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/arview/rendercallbacks-swift.struct/postprocessSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool
+S
+ARView.EntityGestures
+M
+func installGestures(ARView.EntityGestures, for: HasCollision) -> [EntityGestureRecognizer]
+Adding Gesture Recognizers to Entities
+M
+func trackedRaycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment, updateHandler: ([ARRaycastResult]) -> Void) -> ARTrackedRaycast?
+M
+func raycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> [ARRaycastResult]
+M
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+P
+var prepareWithDevice: ((MTLDevice) -> Void)?
+Register Callback Closures
+M
+init()
+Creating a Callback Object
+S
+ARView.RenderCallbacks
+P
+var renderCallbacks: ARView.RenderCallbacks
+S
+ARView.RenderOptions
+P
+var renderOptions: ARView.RenderOptions
+Documentation
+Open Menu
+Swift
+Instance Property
+postProcess
+A callback function for implementing postprocess effects.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var postProcess: ((ARView.PostProcessContext) -> Void)?
+Discussion
+Assign a function or closure to this property to implement postprocessing effects for a RealityKit scene. If this value is non-nil, RealityKit calls the assigned function or closure once every frame before it displays the scene. If you register a postprocess render callback, the callback function must encode the modified frame buffer to the context’s targetColorTexture, or nothing renders.
+A postprocess callback looks like this:
+func myPostProcessCallback(context:ARView.PostProcessContext) {
+   // Handle postprocessing here.
+}
+To register the function so RealityKit begins calling it, assign it to the postProcess property of the view’s renderCallbacks property.
+arView.renderCallbacks.postProcess = myPostProcessCallback
+To stop RealityKit from calling your function, assign nil:
+arView.renderCallbacks.postProcess = nil
+If your app turns postprocessing on and off frequently, another option for disabling postprocess effects is to keep your callback registered, but use an MTLBlitCommandEncoder to encode the unmodified frame directly to the output texture whenever postprocess effects aren’t active.
+func myPostProcessCallback(context:ARView.PostProcessContext) {
+    if (usePostProcessEffects) {
+        handlePostProcessing(context: ARView.PostProcessContext)
+        return
+    }
+
+
+    // If postprocess effects are disabled, copy sourceColorTexture
+    // directly to targetColorTexture.
+    let blitEncoder = context.commandBuffer.makeBlitCommandEncoder()
+    blitEncoder?.copy(from: context.sourceColorTexture, to: context.targetColorTexture)
+    blitEncoder?.endEncoding()
+}
+See Also
+Register Callback Closures
+var prepareWithDevice: ((MTLDevice) -> Void)?
+A callback function for doing initial setup work.
+Current page is postProcess
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

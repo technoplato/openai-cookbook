@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/swiftui/compactmenucontrolgroupstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static var navigation: NavigationControlGroupStyle
+P
+static var palette: PaletteControlGroupStyle
+Beta
+Creating custom control group styles
+M
+func makeBody(configuration: Self.Configuration) -> Self.Body
+T
+ControlGroupStyle.Configuration
+Body
+Supporting types
+S
+AutomaticControlGroupStyle
+M
+func labeledContentStyle<S>(S) -> some View
+r
+P
+LabeledContentStyle
+S
+LabeledContentStyleConfiguration
+Styling windows from a view inside the window
+M
+func presentedWindowStyle<S>(S) -> some View
+M
+func presentedWindowToolbarStyle<S>(S) -> some View
+Animations
+Documentation
+Open Menu
+Swift
+Structure
+CompactMenuControlGroupStyle
+A control group style that presents its content as a compact menu when the user presses the control, or as a submenu when nested within a larger menu.
+iOS 16.4+
+iPadOS 16.4+
+macOS 13.3+
+Mac Catalyst 16.4+
+visionOS 1.0+ Beta
+struct CompactMenuControlGroupStyle
+Overview
+Use compactMenu to construct this style.
+Topics
+Creating the control group style
+init()
+Creates a compact menu control group style.
+Relationships
+Conforms To
+ControlGroupStyle
+Sendable
+See Also
+Supporting types
+struct AutomaticControlGroupStyle
+The default control group style.
+struct MenuControlGroupStyle
+A control group style that presents its content as a menu when the user presses the control, or as a submenu when nested within a larger menu.
+struct NavigationControlGroupStyle
+The navigation control group style.
+struct PaletteControlGroupStyle
+A control group style that presents its content as a palette.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CompactMenuControlGroupStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

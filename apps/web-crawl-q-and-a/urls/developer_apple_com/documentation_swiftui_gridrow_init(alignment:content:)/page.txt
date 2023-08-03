@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/gridrow/init(alignment:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func background(ignoresSafeAreaEdges: Edge.Set) -> some View
+Creating a grid row
+S
+GridRow
+S
+Grid
+Statically arranging views in two dimensions
+S
+PinnedScrollableViews
+S
+LazyVStack
+S
+LazyHStack
+Creating performant scrollable stacks
+Documentation
+Open Menu
+Swift
+Initializer
+init(alignment:content:)
+Creates a horizontal row of child views in a grid.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init(
+    alignment: VerticalAlignment? = nil,
+    @ViewBuilder content: () -> Content
+)
+Parameters
+alignment
+An optional VerticalAlignment for the row. If you don’t specify a value, the row uses the vertical alignment component of the Alignment parameter that you specify in the grid’s init(alignment:horizontalSpacing:verticalSpacing:content:) initializer, which is center by default.
+content
+The builder closure that contains the child views. Each view in the closure implicitly maps to a cell in the grid.
+Discussion
+Use this initializer to create a GridRow inside of a Grid. Provide a content closure that defines the cells of the row, and optionally customize the vertical alignment of content within each cell. The following example customizes the vertical alignment of the cells in the first and third rows:
+Grid(alignment: .trailing) {
+    GridRow(alignment: .top) { // Use top vertical alignment.
+        Text("Top")
+        Color.red.frame(width: 1, height: 50)
+        Color.blue.frame(width: 50, height: 1)
+    }
+    GridRow { // Use the default (center) alignment.
+        Text("Center")
+        Color.red.frame(width: 1, height: 50)
+        Color.blue.frame(width: 50, height: 1)
+    }
+    GridRow(alignment: .bottom) { // Use bottom vertical alignment.
+        Text("Bottom")
+        Color.red.frame(width: 1, height: 50)
+        Color.blue.frame(width: 50, height: 1)
+    }
+}
+The example above specifies trailing alignment for the grid, which is composed of center vertical alignment and trailing horizontal alignment. The middle row relies on the center vertical alignment, but the other two rows specify custom vertical alignments:
+Important
+A grid row behaves like a Group if you create it outside of a grid.
+To override column alignment, use gridColumnAlignment(_:). To override alignment for a single cell, use gridCellAnchor(_:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(alignment:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

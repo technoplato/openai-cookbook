@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/metallic-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PhysicallyBasedMaterial.Specular
+P
+var specular: PhysicallyBasedMaterial.Specular
+Creating Highlights
+S
+PhysicallyBasedMaterial.AmbientOcclusion
+P
+var ambientOcclusion: PhysicallyBasedMaterial.AmbientOcclusion
+Using Ambient Occlusion
+E
+PhysicallyBasedMaterial.Blending
+P
+var metallic: PhysicallyBasedMaterial.Metallic
+Specifying Metallic Reflections
+S
+PhysicallyBasedMaterial.Roughness
+P
+var roughness: PhysicallyBasedMaterial.Roughness
+Specifying Entity Roughness
+S
+PhysicallyBasedMaterial.BaseColor
+P
+var baseColor: PhysicallyBasedMaterial.BaseColor
+Setting the Entity’s Base Color
+Documentation
+Open Menu
+Swift
+Structure
+PhysicallyBasedMaterial.Metallic
+An object that defines the reflectiveness of an entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct Metallic
+Overview
+Use this struct to specify an entity’s metallic property, which specifies the reflectiveness of an entity. For more information, see metallic.
+Topics
+Creating a Metallic Object
+init(floatLiteral: Float)
+Creates an object from single value.
+init(scale: Float, texture: PhysicallyBasedMaterial.Texture?)
+Creates an object from a color or texture.
+init(CustomMaterial.Metallic)
+Creates a metallic object from a custom material’s metallic property.
+Accessing Metallic Data
+var texture: PhysicallyBasedMaterial.Texture?
+The reflectiveness as a UV-mapped image texture.
+static let textureSemantic: TextureResource.Semantic
+The intended use of the object’s texture property.
+var scale: Float
+The reflectiveness for the entire entity.
+typealias FloatLiteralType
+An alias for the metallic type that’s appropriate for this material class.
+Relationships
+Conforms To
+ExpressibleByFloatLiteral
+See Also
+Specifying Metallic Reflections
+var metallic: PhysicallyBasedMaterial.Metallic
+The reflectiveness of an entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhysicallyBasedMaterial.Metallic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

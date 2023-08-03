@@ -1,0 +1,204 @@
+https://developer.apple.com/documentation/swiftui/view/navigationbartitle(_:displaymode:)-5071tSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Deprecated
+M
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Deprecated
+Input and events modifiers
+M
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+Deprecated
+M
+func animation(Animation?) -> some View
+Deprecated
+M
+func mask<Mask>(Mask) -> some View
+Deprecated
+M
+func accentColor(Color?) -> some View
+M
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle<S>(S) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey) -> some View
+Deprecated
+M
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(Text) -> some View
+Deprecated
+Auxiliary view modifiers
+M
+func disableAutocorrection(Bool?) -> some View
+Deprecated
+M
+func autocapitalization(UITextAutocapitalizationType) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+navigationBarTitle(_:displayMode:)
+Sets the title and display mode in the navigation bar for this view.
+iOS 14.0–17.0 Deprecated
+iPadOS 14.0–17.0 Deprecated
+Mac Catalyst 14.0–17.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func navigationBarTitle<S>(
+    _ title: S,
+    displayMode: NavigationBarItem.TitleDisplayMode
+) -> some View where S : StringProtocol
+Deprecated
+Use navigationTitle(_:) with navigationBarTitleDisplayMode(_:).
+Parameters
+title
+A title for this view to display in the navigation bar.
+displayMode
+The way to display the title.
+Discussion
+Use navigationBarTitle(_:, displayMode) to set the title of the navigation bar for this view and specify a display mode for the title from one of the NavigationBarItem.Title.DisplayMode styles. This modifier only takes effect when this view is inside of and visible within a NavigationView.
+In the example below, navigationBarTitle(_:, displayMode) uses a string to provide a title for the navigation bar. Setting the title’s displaymode to .inline places the navigation bar title within the bounds of the navigation bar.
+In the example below, text for the navigation bar title is provided using a string. The navigation bar title’s displayMode is set to .inline which places the navigation bar title in the bounds of the navigation bar.
+struct FlavorView: View {
+    let items = ["Chocolate", "Vanilla", "Strawberry", "Mint Chip",
+                 "Pistachio"]
+    let title = "Today's Flavors"
+    var body: some View {
+        NavigationView {
+            List(items, id: \.self) {
+                Text($0)
+            }
+            .navigationBarTitle(title, displayMode: .inline)
+        }
+    }
+}
+See Also
+Auxiliary view modifiers
+func navigationBarTitle(Text) -> some View
+Sets the title in the navigation bar for this view.
+Deprecated
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarTitle(LocalizedStringKey) -> some View
+Sets the title of this view’s navigation bar with a localized string.
+Deprecated
+func navigationBarTitle<S>(S) -> some View
+Sets the title of this view’s navigation bar with a string.
+Deprecated
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarItems<L>(leading: L) -> some View
+Sets the navigation bar items for this view.
+Deprecated
+func navigationBarItems<L, T>(leading: L, trailing: T) -> some View
+Sets the navigation bar items for this view.
+Deprecated
+func navigationBarItems<T>(trailing: T) -> some View
+Configures the navigation bar items for this view.
+Deprecated
+func navigationBarHidden(Bool) -> some View
+Hides the navigation bar for this view.
+Deprecated
+func statusBar(hidden: Bool) -> some View
+Sets the visibility of the status bar.
+Deprecated
+func contextMenu<MenuItems>(ContextMenu<MenuItems>?) -> some View
+Adds a context menu to the view.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigationBarTitle(_:displayMode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

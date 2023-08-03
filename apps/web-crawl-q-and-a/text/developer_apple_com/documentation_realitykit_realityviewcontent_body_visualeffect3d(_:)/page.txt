@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/visualeffect3d(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+RealityView
+Beta
+Creating a reality view
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+P
+var body: some View
+Working with content
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+S
+RealityViewAttachmentContent
+S
+RealityViewEntityCollection
+Type Aliases
+T
+RealityView.AttachmentContent
+T
+RealityView.Body
+T
+RealityView.DefaultPlaceholder
+Default Implementations
+Documentation
+Open Menu
+Swift
+Instance Method
+visualEffect3D(_:)
+Applies effects to this view, while providing access to layout information via GeometryProxy3D.
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+func visualEffect3D(_ effect: @escaping (EmptyVisualEffect, GeometryProxy3D) -> some VisualEffect) -> some View
+Parameters
+effect
+A closure that returns the effect to be applied. The first argument provided to the closure is a placeholder representing this view. The second argument is a GeometryProxy3D.
+Return Value
+A view with the effect applied.
+Discussion
+You return new effects by calling functions on the first argument provided to the effect closure. In this example, ContentView is offset in Z by its own depth, causing its back face to appear where the front face of the view was originally located:
+ContentView()
+    .visualEffect3D { content, geometryProxy in
+        content.offset(z: geometryProxy.size.depth)
+    }
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is visualEffect3D(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

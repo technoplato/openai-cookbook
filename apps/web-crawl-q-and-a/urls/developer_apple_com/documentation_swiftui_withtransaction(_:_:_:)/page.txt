@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/withtransaction(_:_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AnyTransition
+M
+func contentTransition(ContentTransition) -> some View
+P
+var contentTransition: ContentTransition
+P
+var contentTransitionAddsDrawingGroup: Bool
+S
+ContentTransition
+S
+PlaceholderContentView
+Beta
+Moving an animation to another view
+func withTransaction<Result>(Transaction, () throws -> Result) rethrows -> Result
+Layout fundamentals
+Layout adjustments
+Custom layout
+Lists
+Tables
+View groupings
+Scroll views
+Documentation
+Open Menu
+Swift
+Function
+withTransaction(_:_:_:)
+Executes a closure with the specified transaction key path and value and returns the result.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func withTransaction<R, V>(
+    _ keyPath: WritableKeyPath<Transaction, V>,
+    _ value: V,
+    _ body: () throws -> R
+) rethrows -> R
+Parameters
+keyPath
+A key path that indicates the property of the Transaction structure to update.
+value
+The new value to set for the item specified by keyPath.
+body
+A closure to execute.
+Return Value
+The result of executing the closure with the specified transaction value.
+See Also
+Moving an animation to another view
+func withTransaction<Result>(Transaction, () throws -> Result) rethrows -> Result
+Executes a closure with the specified transaction and returns the result.
+func transaction((inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+func transaction(value: some Equatable, (inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+Beta
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given transaction mutation function to all animations used within the body closure.
+Beta
+struct Transaction
+The context of the current state-processing update.
+protocol TransactionKey
+A key for accessing values in a transaction.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is withTransaction(_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

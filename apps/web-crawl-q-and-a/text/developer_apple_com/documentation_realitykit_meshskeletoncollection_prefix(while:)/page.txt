@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/meshskeletoncollection/prefix(while:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+SynchronizationService
+C
+MultipeerConnectivityService
+Network Synchronization
+E
+VideoPlayerEvents
+Beta
+S
+VideoPlayerComponent
+Beta
+Video Playback
+S
+MeshJointInfluence
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [ArraySlice<Self.Element>]
+M
+func prefix(Int) -> PrefixSequence<Self>
+M
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func map<T>((Self.Element) throws -> T) rethrows -> [T]
+M
+func makeIterator() -> MeshSkeletonCollection.Iterator
+M
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func formatted<S>(S) -> S.FormatOutput
+M
+func forEach((Self.Element) throws -> Void) rethrows
+Documentation
+Open Menu
+Swift
+Instance Method
+prefix(while:)
+Returns a sequence containing the initial, consecutive elements that satisfy the given predicate.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func prefix(while predicate: (Self.Element) throws -> Bool) rethrows -> [Self.Element]
+Parameters
+predicate
+A closure that takes an element of the sequence as its argument and returns a Boolean value indicating whether the element should be included in the result.
+Return Value
+A sequence of the initial, consecutive elements that satisfy predicate.
+Discussion
+The following example uses the prefix(while:) method to find the positive numbers at the beginning of the numbers array. Every element of numbers up to, but not including, the first negative value is included in the result.
+let numbers = [3, 7, 4, -2, 9, -6, 10, 1]
+let positivePrefix = numbers.prefix(while: { $0 > 0 })
+// positivePrefix == [3, 7, 4]
+If predicate matches every element in the sequence, the resulting sequence contains every element of the sequence.
+Complexity
+O(k), where k is the length of the result.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is prefix(while:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

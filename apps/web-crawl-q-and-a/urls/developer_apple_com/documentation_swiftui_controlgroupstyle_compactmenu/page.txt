@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/controlgroupstyle/compactmenuSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func indexViewStyle<S>(S) -> some View
+S
+GroupBoxStyleConfiguration
+r
+P
+GroupBoxStyle
+M
+func groupBoxStyle<S>(S) -> some View
+S
+FormStyleConfiguration
+r
+P
+FormStyle
+M
+func formStyle<S>(S) -> some View
+P
+static var automatic: AutomaticControlGroupStyle
+Getting built-in control group styles
+r
+P
+ControlGroupStyle
+M
+func controlGroupStyle<S>(S) -> some View
+Styling groups
+r
+P
+TabViewStyle
+M
+func tabViewStyle<S>(S) -> some View
+r
+P
+NavigationSplitViewStyle
+Documentation
+Open Menu
+Swift
+Type Property
+compactMenu
+A control group style that presents its content as a compact menu when the user presses the control, or as a submenu when nested within a larger menu.
+iOS 16.4+
+iPadOS 16.4+
+macOS 13.3+
+Mac Catalyst 16.4+
+visionOS 1.0+ Beta
+static var compactMenu: CompactMenuControlGroupStyle { get }
+Available when Self is CompactMenuControlGroupStyle.
+Discussion
+To apply this style to a control group, or to a view that contains control groups, use the controlGroupStyle(_:) modifier.
+See Also
+Getting built-in control group styles
+static var automatic: AutomaticControlGroupStyle
+The default control group style.
+Available when Self is AutomaticControlGroupStyle.
+static var menu: MenuControlGroupStyle
+A control group style that presents its content as a menu when the user presses the control, or as a submenu when nested within a larger menu.
+Available when Self is MenuControlGroupStyle.
+static var navigation: NavigationControlGroupStyle
+The navigation control group style.
+Available when Self is NavigationControlGroupStyle.
+static var palette: PaletteControlGroupStyle
+A control group style that presents its content as a palette.
+Available when Self is PaletteControlGroupStyle.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is compactMenu
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

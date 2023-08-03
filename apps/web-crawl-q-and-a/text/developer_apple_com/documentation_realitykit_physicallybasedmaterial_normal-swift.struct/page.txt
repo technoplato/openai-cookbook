@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/normal-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PhysicallyBasedMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+S
+PhysicallyBasedMaterial.Clearcoat
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+S
+PhysicallyBasedMaterial.SheenColor
+P
+var sheen: PhysicallyBasedMaterial.SheenColor?
+S
+PhysicallyBasedMaterial.Specular
+P
+var normal: PhysicallyBasedMaterial.Normal
+Using a Normal Map
+S
+PhysicallyBasedMaterial.Metallic
+P
+var metallic: PhysicallyBasedMaterial.Metallic
+Specifying Metallic Reflections
+S
+PhysicallyBasedMaterial.Roughness
+P
+var roughness: PhysicallyBasedMaterial.Roughness
+Specifying Entity Roughness
+Documentation
+Open Menu
+Swift
+Structure
+PhysicallyBasedMaterial.Normal
+An object that specifies an entity’s normal map.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct Normal
+Overview
+The normal property of a RealityKit entity holds an optional normal map, which stores fine details about the entity’s surface, using a texture rather than increasing the number of polygons in the model. If you provide a normal map, RealityKit uses the vectors from that normal map when rendering the entity, resulting in greater detail and more accurate highlights, shadows, and reflections.
+Topics
+Creating a Normal Object
+init(texture: PhysicallyBasedMaterial.Texture?)
+Creates an object from a specified texture.
+init(CustomMaterial.Normal)
+Creates a normal object from a custom material’s normal property.
+Accessing the Normal Map
+var texture: PhysicallyBasedMaterial.Texture?
+The material’s normal map.
+static let textureSemantic: TextureResource.Semantic
+The intended use of the object’s texture property.
+See Also
+Using a Normal Map
+var normal: PhysicallyBasedMaterial.Normal
+The normal map for the entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhysicallyBasedMaterial.Normal
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

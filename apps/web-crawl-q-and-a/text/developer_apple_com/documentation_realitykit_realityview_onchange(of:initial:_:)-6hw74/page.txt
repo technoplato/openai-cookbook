@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/realitykit/realityview/onchange(of:initial:_:)-6hw74Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+M
+func onKeyPress(phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+M
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+M
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+M
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+M
+func onAppear(perform: (() -> Void)?) -> some View
+M
+func offset(z: CGFloat) -> some View
+M
+func offset(x: CGFloat, y: CGFloat) -> some View
+M
+func offset(CGSize) -> some View
+M
+func navigationViewStyle<S>(S) -> some View
+M
+func navigationTitle<S>(S) -> some View
+M
+func navigationTitle<V>(() -> V) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+onChange(of:initial:_:)
+Adds a modifier for this view that fires an action when a specific value changes.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func onChange<V>(
+    of value: V,
+    initial: Bool = false,
+    _ action: @escaping (V, V) -> Void
+) -> some View where V : Equatable
+Parameters
+value
+The value to check against when determining whether to run the closure.
+initial
+Whether the action should be run when this view initially appears.
+action
+A closure to run when the value changes.
+oldValue
+The old value that failed the comparison check (or the initial value when requested).
+newValue
+The new value that failed the comparison check.
+Return Value
+A view that fires an action when the specified value changes.
+Discussion
+You can use onChange to trigger a side effect as the result of a value changing, such as an Environment key or a Binding.
+The system may call the action closure on the main actor, so avoid long-running tasks in the closure. If you need to perform such tasks, detach an asynchronous background task.
+When the value changes, the new version of the closure will be called, so any captured values will have their values from the time that the observed value has its new value. The old and new observed values are passed into the closure. In the following code example, PlayerView passes both the old and new values to the model.
+struct PlayerView: View {
+    var episode: Episode
+    @State private var playState: PlayState = .paused
+
+
+    var body: some View {
+        VStack {
+            Text(episode.title)
+            Text(episode.showTitle)
+            PlayButton(playState: $playState)
+        }
+        .onChange(of: playState) { oldState, newState in
+            model.playStateDidChange(from: oldState, to: newState)
+        }
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onChange(of:initial:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

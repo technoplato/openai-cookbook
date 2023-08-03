@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/swiftui/wkextensiondelegateadaptor/init(_:)-2556Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+Model data
+Data and storage
+Creating a delegate adaptor
+S
+WKExtensionDelegateAdaptor
+S
+WKApplicationDelegateAdaptor
+Targeting watchOS
+S
+NSApplicationDelegateAdaptor
+Targeting macOS
+S
+UIApplicationDelegateAdaptor
+O
+property list key UILaunchScreens
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates a WatchKit extension delegate adaptor.
+watchOS 7.0+
+@MainActor
+init(_ delegateType: DelegateType.Type = DelegateType.self)
+Parameters
+delegateType
+The type of extension delegate that you define in your app, which conforms to the WKExtensionDelegate protocol.
+Discussion
+Call this initializer indirectly by creating a property with the WKExtensionDelegateAdaptor property wrapper from inside your App declaration:
+@main
+struct MyApp: App {
+    @WKExtensionDelegateAdaptor private var extensionDelegate: MyExtensionDelegate
+
+
+    var body: some Scene { ... }
+}
+SwiftUI initializes the delegate and manages its lifetime, calling upon it to handle extension delegate callbacks.
+If you want SwiftUI to put the instantiated delegate in the Environment, make sure the delegate class also conforms to the ObservableObject protocol. That causes SwiftUI to invoke the init(_:) initializer rather than this one.
+See Also
+Creating a delegate adaptor
+init(DelegateType.Type)
+Creates a WatchKit extension delegate adaptor using a delegate that’s an observable object.
+Available when DelegateType inherits NSObject, DelegateType conforms to ObservableObject, and DelegateType conforms to WKExtensionDelegate.
+init(DelegateType.Type)
+Creates a WatchKit extension delegate adaptor using an observable delegate.
+Available when DelegateType inherits NSObject, DelegateType conforms to Observable, and DelegateType conforms to WKExtensionDelegate.
+Beta
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

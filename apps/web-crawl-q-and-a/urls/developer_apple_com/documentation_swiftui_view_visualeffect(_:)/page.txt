@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/view/visualeffect(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func colorEffect(Shader, isEnabled: Bool) -> some View
+Beta
+Accessing Metal shaders
+S
+PhysicalMetricsConverter
+Beta
+S
+PhysicalMetric
+Beta
+r
+P
+CoordinateSpaceProtocol
+Beta
+E
+CoordinateSpace
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Applying effects based on geometry
+S
+ColorMatrix
+M
+func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View
+M
+func blur(radius: CGFloat, opaque: Bool) -> some View
+Applying blur and shadows
+M
+func clipShape<S>(S, style: FillStyle) -> some View
+M
+func clipped(antialiased: Bool) -> some View
+M
+func mask<Mask>(alignment: Alignment, () -> Mask) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+visualEffect(_:)
+Applies effects to this view, while providing access to layout information via GeometryProxy.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func visualEffect(_ effect: @escaping (EmptyVisualEffect, GeometryProxy) -> some VisualEffect) -> some View
+Parameters
+effect
+A closure that returns the effect to be applied. The first argument provided to the closure is a placeholder representing this view. The second argument is a GeometryProxy.
+Return Value
+A view with the effect applied.
+Discussion
+You return new effects by calling functions on the first argument provided to the effect closure. In this example, ContentView is offset by its own size, causing its top left corner to appear where the bottom right corner was originally located:
+ContentView()
+    .visualEffect { content, geometryProxy in
+        content.offset(geometryProxy.size)
+    }
+See Also
+Applying effects based on geometry
+func visualEffect3D((EmptyVisualEffect, GeometryProxy3D) -> some VisualEffect) -> some View
+Applies effects to this view, while providing access to layout information via GeometryProxy3D.
+Beta
+protocol VisualEffect
+Visual Effects change the visual appearance of a view without changing its ancestors or descendents.
+Beta
+struct EmptyVisualEffect
+The base visual effect that you apply additional effect to.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is visualEffect(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

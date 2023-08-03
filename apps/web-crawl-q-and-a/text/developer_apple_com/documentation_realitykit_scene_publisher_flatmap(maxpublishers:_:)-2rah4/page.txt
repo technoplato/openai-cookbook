@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/flatmap(maxpublishers:_:)-2rah4Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>
+M
+func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>
+M
+func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>
+M
+func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>
+M
+func merge(with: Self) -> Publishers.MergeMany<Self>
+M
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Publishers.SetFailureType<Self, P.Failure>>
+func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Self.Failure>, Self>
+func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+M
+func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>
+M
+func first() -> Publishers.First<Self>
+M
+func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>
+M
+func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>
+M
+func encode<Coder>(encoder: Coder) -> Publishers.Encode<Self, Coder>
+M
+func dropFirst(Int) -> Publishers.Drop<Self>
+M
+func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>
+M
+func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Self, P>
+Documentation
+Open Menu
+Swift
+Instance Method
+flatMap(maxPublishers:_:)
+Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify.
+RealityKit
+Combine
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func flatMap<P>(
+    maxPublishers: Subscribers.Demand = .unlimited,
+    _ transform: @escaping (Self.Output) -> P
+) -> Publishers.FlatMap<P, Self> where P : Publisher, P.Failure == Never
+Available when Failure is Never.
+Parameters
+maxPublishers
+Specifies the maximum number of concurrent publisher subscriptions, or Combine/Subscribers/Demand/unlimited if unspecified.
+transform
+A closure that takes an element as a parameter and returns a publisher that produces elements of that type.
+Return Value
+A publisher that transforms elements from an upstream publisher into a publisher of that element’s type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is flatMap(maxPublishers:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

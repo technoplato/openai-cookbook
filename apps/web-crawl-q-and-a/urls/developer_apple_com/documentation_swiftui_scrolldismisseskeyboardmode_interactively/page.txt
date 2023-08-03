@@ -1,0 +1,132 @@
+https://developer.apple.com/documentation/swiftui/scrolldismisseskeyboardmode/interactivelySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ScrollBounceBehavior
+Interacting with a software keyboard
+M
+func scrollDismissesKeyboard(ScrollDismissesKeyboardMode) -> some View
+P
+var scrollDismissesKeyboardMode: ScrollDismissesKeyboardMode
+S
+ScrollDismissesKeyboardMode
+Getting modes
+P
+static var automatic: ScrollDismissesKeyboardMode
+P
+static var immediately: ScrollDismissesKeyboardMode
+Framework integration
+AppKit integration
+UIKit integration
+WatchKit integration
+Technology-specific views
+Tool support
+Previews in Xcode
+Documentation
+Open Menu
+Swift
+Type Property
+interactively
+Enable people to interactively dismiss the keyboard as part of the scroll operation.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+static var interactively: ScrollDismissesKeyboardMode { get }
+Discussion
+The software keyboard’s position tracks the gesture that drives the scroll operation if the gesture crosses into the keyboard’s area of the display. People can dismiss the keyboard by scrolling it off the display, or reverse the direction of the scroll to cancel the dismissal.
+See Also
+Getting modes
+static var automatic: ScrollDismissesKeyboardMode
+Determine the mode automatically based on the surrounding context.
+static var immediately: ScrollDismissesKeyboardMode
+Dismiss the keyboard as soon as scrolling starts.
+static var never: ScrollDismissesKeyboardMode
+Never dismiss the keyboard automatically as a result of scrolling.
+Current page is interactively
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

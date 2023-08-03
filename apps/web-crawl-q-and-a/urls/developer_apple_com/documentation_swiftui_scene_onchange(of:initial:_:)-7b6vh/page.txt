@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/swiftui/scene/onchange(of:initial:_:)-7b6vhSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func windowResizability(WindowResizability) -> some Scene
+M
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat, in: UnitLength) -> some Scene
+Beta
+M
+func defaultSize(Size3D, in: UnitLength) -> some Scene
+Beta
+M
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Beta
+M
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+M
+func defaultSize(Size3D) -> some Scene
+Beta
+M
+func defaultSize(CGSize) -> some Scene
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some Scene
+Watching for changes
+Body
+P
+var body: Self.Body
+Creating a scene
+r
+P
+Scene
+Creating scenes
+Scenes
+App organization
+Documentation
+Open Menu
+Swift
+Instance Method
+onChange(of:initial:_:)
+Adds an action to perform when the given value changes.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func onChange<V>(
+    of value: V,
+    initial: Bool = false,
+    _ action: @escaping () -> Void
+) -> some Scene where V : Equatable
+Parameters
+value
+The value to check when determining whether to run the closure. The value must conform to the Equatable protocol.
+initial
+Whether the action should be run when this scene initially appears.
+action
+A closure to run when the value changes.
+Return Value
+A scene that triggers an action in response to a change.
+Discussion
+Use this modifier to trigger a side effect when a value changes, like the value associated with an Environment key or a Binding. For example, you can clear a cache when you notice that a scene moves to the background:
+struct MyScene: Scene {
+    @Environment(\.locale) private var locale
+    @StateObject private var cache = LocalizationDataCache()
+
+
+    var body: some Scene {
+        WindowGroup {
+            MyRootView(cache: cache)
+        }
+        .onChange(of: locale) {
+            cache.empty()
+        }
+    }
+}
+The system may call the action closure on the main actor, so avoid long-running tasks in the closure. If you need to perform such tasks, detach an asynchronous background task:
+.onChange(of: locale) {
+    Task.detached(priority: .background) {
+        // ...
+    }
+}
+When the value changes, the new version of the closure will be called, so any captured values will have their values from the time that the observed value has its new value.
+See Also
+Watching for changes
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some Scene
+Adds an action to perform when the given value changes.
+Beta
+func handlesExternalEvents(matching: Set<String>) -> some Scene
+Specifies a modifier to indicate if this Scene can be used when creating a new Scene for the received External Event.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onChange(of:initial:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

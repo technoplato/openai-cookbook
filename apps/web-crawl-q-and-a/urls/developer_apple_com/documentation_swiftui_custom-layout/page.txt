@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/swiftui/custom-layoutSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View groupings
+Tables
+Lists
+S
+GridLayout
+S
+ZStackLayout
+S
+VStackLayout
+S
+HStackLayout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Documentation
+Open Menu
+Swift
+Custom layout
+Place views in custom arrangements and create animated transitions between layout types.
+Overview
+You can create complex view layouts using the built-in layout containers and layout view modifiers that SwiftUI provides. However, if you need behavior that you can’t achieve with the built-in layout tools, create a custom layout container type using the Layout protocol. A container that you define asks for the sizes of all its subviews, and then indicates where to place the subviews within its own bounds.
+You can also create animated transitions among layout types that conform to the Layout procotol, including both built-in and custom layouts.
+For design guidance, see Layout in the Human Interface Guidelines.
+Topics
+Creating a custom layout container
+Composing custom layouts with SwiftUI
+Arrange views in your app’s interface using layout tools that SwiftUI provides.
+protocol Layout
+A type that defines the geometry of a collection of views.
+struct LayoutSubview
+A proxy that represents one subview of a layout.
+struct LayoutSubviews
+A collection of proxy values that represent the subviews of a layout view.
+Configuring a custom layout
+struct LayoutProperties
+Layout-specific properties of a layout container.
+struct ProposedViewSize
+A proposal for the size of a view.
+struct ViewSpacing
+A collection of the geometric spacing preferences of a view.
+Associating values with views in a custom layout
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+Associates a value with a custom layout property.
+protocol LayoutValueKey
+A key for accessing a layout value of a layout container’s subviews.
+Transitioning between layout types
+struct AnyLayout
+A type-erased instance of the layout protocol.
+struct HStackLayout
+A horizontal container that you can use in conditional layouts.
+struct VStackLayout
+A vertical container that you can use in conditional layouts.
+struct ZStackLayout
+An overlaying container that you can use in conditional layouts.
+struct GridLayout
+A grid that you can use in conditional layouts.
+See Also
+View layout
+API Reference
+Layout fundamentals
+Arrange views inside built-in layout containers like stacks and grids.
+API Reference
+Layout adjustments
+Make fine adjustments to alignment, spacing, padding, and other layout parameters.
+API Reference
+Lists
+Display a structured, scrollable column of information.
+API Reference
+Tables
+Display selectable, sortable data arranged in rows and columns.
+API Reference
+View groupings
+Present views in different kinds of purpose-driven containers, like forms or control groups.
+API Reference
+Scroll views
+Enable people to scroll to content that doesn’t fit in the current display.
+Current page is Custom layout
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

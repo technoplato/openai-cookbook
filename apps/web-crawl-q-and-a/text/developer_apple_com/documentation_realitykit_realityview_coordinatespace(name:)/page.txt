@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/realitykit/realityview/coordinatespace(name:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+M
+func dynamicTypeSize(DynamicTypeSize) -> some View
+M
+func dropDestination<T>(for: T.Type, action: ([T], CGPoint) -> Bool, isTargeted: (Bool) -> Void) -> some View
+M
+func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View
+M
+func draggable<V, T>(() -> T, preview: () -> V) -> some View
+M
+func draggable<T>(() -> T) -> some View
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+M
+func controlSize(ControlSize) -> some View
+M
+func controlGroupStyle<S>(S) -> some View
+M
+func contrast(Double) -> some View
+M
+func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> some View
+M
+func contextMenu<MenuItems>(menuItems: () -> MenuItems) -> some View
+M
+func contextMenu<I, M>(forSelectionType: I.Type, menu: (Set<I>) -> M, primaryAction: ((Set<I>) -> Void)?) -> some View
+M
+func contextMenu<MenuItems>(ContextMenu<MenuItems>?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+coordinateSpace(name:)
+Assigns a name to the view’s coordinate space, so other code can operate on dimensions like points and sizes relative to the named space.
+RealityKit
+SwiftUI
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0–1.0 Deprecated
+func coordinateSpace<T>(name: T) -> some View where T : Hashable
+Parameters
+name
+A name used to identify this coordinate space.
+Discussion
+Use coordinateSpace(name:) to allow another function to find and operate on a view and operate on dimensions relative to that view.
+The example below demonstrates how a nested view can find and operate on its enclosing view’s coordinate space:
+struct ContentView: View {
+    @State private var location = CGPoint.zero
+
+
+    var body: some View {
+        VStack {
+            Color.red.frame(width: 100, height: 100)
+                .overlay(circle)
+            Text("Location: \(Int(location.x)), \(Int(location.y))")
+        }
+        .coordinateSpace(name: "stack")
+    }
+
+
+    var circle: some View {
+        Circle()
+            .frame(width: 25, height: 25)
+            .gesture(drag)
+            .padding(5)
+    }
+
+
+    var drag: some Gesture {
+        DragGesture(coordinateSpace: .named("stack"))
+            .onChanged { info in location = info.location }
+    }
+}
+Here, the VStack in the ContentView named “stack” is composed of a red frame with a custom Circle view View/overlay(_:alignment:) at its center.
+The circle view has an attached DragGesture that targets the enclosing VStack’s coordinate space. As the gesture recognizer’s closure registers events inside circle it stores them in the shared location state variable and the VStack displays the coordinates in a Text view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is coordinateSpace(name:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

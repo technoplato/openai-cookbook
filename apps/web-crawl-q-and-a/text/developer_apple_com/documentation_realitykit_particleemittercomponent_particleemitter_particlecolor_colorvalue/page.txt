@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/realitykit/particleemittercomponent/particleemitter/particlecolor/colorvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var burstCount: Int
+P
+var birthLocation: ParticleEmitterComponent.BirthLocation
+P
+var birthDirection: ParticleEmitterComponent.BirthDirection
+Instance Properties
+M
+init(from: Decoder) throws
+M
+init()
+Initializers
+case random(a: ParticleEmitterComponent.ParticleEmitter.Color, b: ParticleEmitterComponent.ParticleEmitter.Color)
+static func == (ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue, ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue) -> Bool
+Enumerations
+E
+case evolving(start: ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue, end: ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue)
+E
+case constant(ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue)
+Enumeration Cases
+static func == (ParticleEmitterComponent.ParticleEmitter.ParticleColor, ParticleEmitterComponent.ParticleEmitter.ParticleColor) -> Bool
+Operators
+E
+ParticleEmitterComponent.ParticleEmitter.ParticleColor
+E
+ParticleEmitterComponent.ParticleEmitter.OpacityCurve
+Documentation
+Open Menu
+Swift
+Enumeration
+ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue
+Options for specifying whether the particle color is a single color, or if the particle should take a random color in the given range.
+visionOS 1.0+ Beta
+enum ColorValue
+Topics
+Operators
+static func == (ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue, ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Enumeration Cases
+case random(a: ParticleEmitterComponent.ParticleEmitter.Color, b: ParticleEmitterComponent.ParticleEmitter.Color)
+The system will choose a random color for each particle between the given two Colors.
+case single(ParticleEmitterComponent.ParticleEmitter.Color)
+The particle will be the given Color.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ParticleEmitterComponent.ParticleEmitter.ParticleColor.ColorValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

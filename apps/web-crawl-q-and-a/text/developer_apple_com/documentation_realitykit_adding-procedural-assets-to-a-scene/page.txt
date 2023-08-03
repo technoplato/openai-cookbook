@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/adding-procedural-assets-to-a-sceneSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Materials and shaders
+Manipulating Reality Composer Scenes from Code
+Arranging Elements in a Scene
+Configuring Elements in a Scene
+Adding Elements to a 3D Scene
+Loading Reality Composer Files Manually Without Generated Code
+Loading Reality Composer Files Using Generated Code
+Creating 3D Content with Reality Composer
+Scene Creation
+Documentation
+Open Menu
+Swift
+Article
+Adding Procedural Assets to a Scene
+Create procedurally generated shape primitives to your Reality Composer scene.
+Overview
+RealityKit can generate several types of shape primitives, such as cubes, spheres, and planes. Shape primitives are useful for a variety of debugging and development purposes; for example, you might use them as proxies for unfinished assets. You can also use them instead of artist-created assets for some production purposes. You might, for example, use a generated sphere instead of an artist-modeled ball when creating a sports game.
+Generate a Mesh Resource
+Several MeshResource class methods generate instances for different shape primitives. You can use MeshResource instances to create entities for your scene.
+This code shows you how to generate a procedural, 5-centimeter sphere MeshResource using a generator method:
+let sphereResource = MeshResource.generateSphere(radius: 0.05)
+This code shows an example of creating a box MeshResource:
+let boxResource = MeshResource.generateBox(size: 0.08)
+Note
+All MeshResource generator methods require measurement parameters to be expressed in meters.
+Define the Appearance of the Procedural Asset
+Create a Material instance that describes the desired color and other aspects of the procedural asset’s appearance. You typically do so by creating an instance of SimpleMaterial.
+This example shows you how to display a generated shape with a shiny, metallic-blue surface:
+let myMaterial = SimpleMaterial(color: .blue, roughness: 0, isMetallic: true)
+Create an Entity from a Mesh Resource
+You can’t add a generated MeshResource asset directly to a RealityKit scene. Instead, generate a ModelEntity object based on the asset and pass it as a single-element array to specify the material you created in the previous step.
+let myEntity = ModelEntity(mesh: myMeshResource, materials: [itemMaterial])
+Once you’ve created a ModelEntity that represents your procedural object, place it in your scene by adding it as a descendant of any of your scene’s anchors:
+if let anchor = myScene.findEntity(named: "My Anchor Entity") {
+    anchor.addChild(myEntity)
+}
+You can also create a new AnchorEntity to hold your procedural object:
+// Create a new Anchor Entity using Identity Transform.
+let anchorEntity = AnchorEntity(world: Transform())
+
+
+// Add the entity as a child of the new anchor.
+anchorEntity.addChild(myEntity)
+
+
+// Add the anchor to the scene.
+arView.scene.addAnchor(anchorEntity)
+See Also
+Scene Creation
+API Reference
+Creating 3D Content with Reality Composer
+Assemble assets into a dynamic 3D composition that you can add to a scene in your app, or share with AR Quick Look.
+Loading Reality Composer Files Using Generated Code
+Leverage automatically generated code to load scenes from Xcode.
+Loading Reality Composer Files Manually Without Generated Code
+Load Reality Composer files that aren’t part of your Xcode project.
+Adding Elements to a 3D Scene
+Add assets to your scene from Reality Composer’s library, or import custom assets.
+Configuring Elements in a Scene
+Define the appearance and behavior of objects in a scene.
+Arranging Elements in a Scene
+Manipulate objects to complete your Reality Composer scene.
+Manipulating Reality Composer Scenes from Code
+Make programmatic changes to your scenes at runtime.
+Improving the Accessibility of RealityKit Apps
+Incorporate assistive technologies in your augmented reality app.
+Current page is Adding Procedural Assets to a Scene
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

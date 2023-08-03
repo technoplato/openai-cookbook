@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/listrowbackground(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creating a reality view
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+listRowBackground(_:)
+Places a custom background view behind a list row item.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func listRowBackground<V>(_ view: V?) -> some View where V : View
+Parameters
+view
+The View to use as the background behind the list row view.
+Return Value
+A list row view with view as its background view.
+Discussion
+Use listRowBackground(_:) to place a custom background view behind a list row item.
+In the example below, the Flavor enumeration provides content for list items. The SwiftUI ForEach structure computes views for each element of the Flavor enumeration and extracts the raw value of each of its elements using the resulting text to create each list row item. The listRowBackground(_:) modifier then places the view you supply behind each of the list row items:
+struct ContentView: View {
+    enum Flavor: String, CaseIterable, Identifiable {
+        var id: String { self.rawValue }
+        case vanilla, chocolate, strawberry
+    }
+
+
+    var body: some View {
+        List {
+            ForEach(Flavor.allCases) {
+                Text($0.rawValue)
+                    .listRowBackground(Ellipse()
+                                        .background(Color.clear)
+                                        .foregroundColor(.purple)
+                                        .opacity(0.3)
+                    )
+            }
+        }
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is listRowBackground(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

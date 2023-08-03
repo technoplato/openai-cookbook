@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/anisotropyangle-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+PhysicallyBasedMaterial.TriangleFillMode
+Type Aliases
+P
+var triangleFillMode: PhysicallyBasedMaterial.TriangleFillMode
+Instance Properties
+T
+PhysicallyBasedMaterial.Texture
+T
+PhysicallyBasedMaterial.Parameters
+Defining Material Parameter Types
+S
+PhysicallyBasedMaterial.AnisotropyLevel
+P
+var anisotropyLevel: PhysicallyBasedMaterial.AnisotropyLevel
+Adding Anisotropy
+S
+PhysicallyBasedMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+S
+PhysicallyBasedMaterial.Clearcoat
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+S
+PhysicallyBasedMaterial.SheenColor
+Documentation
+Open Menu
+Swift
+Instance Property
+anisotropyAngle
+The anistropy angle.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var anisotropyAngle: PhysicallyBasedMaterial.AnisotropyAngle { get set }
+Discussion
+This property controls the scattering angle for anisotropic objects. If anisotropyLevel is 0.0, this property has no effect. This property takes a value between 0.0 and 1.0 or a UV-mapped grayscale image specifying angles for different parts of the entity. A value of black (0.0) means a rotation of 0° and a value of white (1.0) indicates a rotation of 360°. To determine the anisotropyAngle value from an angle, divide the desired angle in degrees by 360.0 or the desired angle in radians by pi times 2.
+let angleDegrees = Float(125.0)
+let anisotropyAngleFromDegrees = angleDegrees / 360.0
+
+
+let angleRadians = Float(2.181662) let anisotropyAngleFromRadians =
+angleRadians / (Float.pi * Float(2.0))
+The following example shows how to specify anisotropyAngle using single values for the entire material:
+material.anisotropyAngle = .AnisotropyAngle(floatLiteral: 0.25)
+This example shows how to specify anisotropy using a UV-mapped image texture for anisotropyLevel and a separate image for anisotropyAngle:
+if let anisoLevelResource = try? TextureResource.load(named:
+"entity_aniso_level") {
+    let anisoLevelMap = MaterialParameters.Texture(sheenResource)
+    material.anisotropyLevel = .init(texture: anisoLevelMap)
+}
+if let anisoAngleResource = try? TextureResource.load(named:
+"entity_aniso_angle") {
+    let anisoAngleMap = MaterialParameters.Texture(anisoAngleResource)
+    material.anisotropyAngle = .init(texture: anisoAngleMap)
+}
+See Also
+Adding Anisotropy
+var anisotropyLevel: PhysicallyBasedMaterial.AnisotropyLevel
+The degree to which an entity reflects light to create stretched or oblong highlights.
+struct AnisotropyLevel
+An object that defines the degree to which an entity reflects light to create stretched or oblong highlights.
+struct AnisotropyAngle
+An object used to define a material’s anisotropy angle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is anisotropyAngle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

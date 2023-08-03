@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/realitykit/animationgroup/repeated(count:)-80x0gSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+BindableData
+r
+P
+AnimatableData
+Compliance-related protocols
+S
+BlendTreeInvalidNode
+S
+BlendTreeSourceNode
+S
+BlendTreeBlendNode
+r
+P
+BlendTreeNode
+P
+var fillMode: AnimationFillMode
+P
+var repeatMode: AnimationRepeatMode
+Repeating Group Playback
+M
+func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> Self
+P
+var trimEnd: TimeInterval?
+P
+var trimStart: TimeInterval?
+P
+var trimDuration: TimeInterval?
+P
+var offset: TimeInterval
+Documentation
+Open Menu
+Swift
+Instance Method
+repeated(count:)
+Repeats an animation the number of times specified by an irrational number.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func repeated(count: TimeInterval) -> Self
+Parameters
+count
+The number of times the animation repeats before stopping.
+Return Value
+A version of the calling animation repeated the given number of times.
+See Also
+Repeating Group Playback
+var repeatMode: AnimationRepeatMode
+An option that determines how the animations repeat.
+var fillMode: AnimationFillMode
+An option that determines which data displays outside of the normal duration.
+func repeated(count: Int) -> Self
+Repeats an animation the number of times specified by a whole number.
+func repeatingForever() -> Self
+Repeats the animation infinitely.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is repeated(count:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

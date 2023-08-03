@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/nshostingcontrollerSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+NSViewControllerRepresentableContext
+r
+P
+NSViewControllerRepresentable
+S
+NSViewRepresentableContext
+r
+P
+NSViewRepresentable
+Adding AppKit views to SwiftUI view hierarchies
+S
+NSHostingSceneBridgingOptions
+Beta
+S
+NSHostingSizingOptions
+Displaying SwiftUI views in AppKit
+AppKit integration
+Framework integration
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Documentation
+Open Menu
+Swift
+Class
+NSHostingController
+An AppKit view controller that hosts SwiftUI view hierarchy.
+macOS 10.15+
+@MainActor
+class NSHostingController<Content> where Content : View
+Overview
+Create an NSHostingController object when you want to integrate SwiftUI views into an AppKit view hierarchy. At creation time, specify the SwiftUI view you want to use as the root view for this view controller; you can change that view later using the rootView property. Use the hosting controller like you would any other view controller, by presenting it or embedding it as a child view controller in your interface.
+Topics
+Creating a hosting controller object
+init(rootView: Content)
+Creates a hosting controller object that wraps the specified SwiftUI view.
+init?(coder: NSCoder, rootView: Content)
+Creates a hosting controller object from an archive and the specified SwiftUI view.
+init?(coder: NSCoder)
+Creates a hosting controller object from the contents of the specified archive.
+Getting the root view
+var rootView: Content
+The root view of the SwiftUI view hierarchy managed by this view controller.
+var identifier: NSUserInterfaceItemIdentifier?
+Configuring the controller
+func sizeThatFits(in: CGSize) -> CGSize
+Calculates and returns the most appropriate size for the current view.
+var preferredContentSize: NSSize
+var sizingOptions: NSHostingSizingOptions
+The options for how the hosting controller’s view creates and updates constraints based on the size of its SwiftUI content.
+var safeAreaRegions: SafeAreaRegions
+The safe area regions that this view controller adds to its view.
+var sceneBridgingOptions: NSHostingSceneBridgingOptions
+The options for which aspects of the window will be managed by this controller’s hosting view.
+Beta
+Relationships
+Inherits From
+NSViewController
+Conforms To
+CVarArg
+CustomDebugStringConvertible
+CustomStringConvertible
+Equatable
+Hashable
+NSCoding
+NSEditor
+NSExtensionRequestHandling
+NSObjectProtocol
+NSSeguePerforming
+NSStandardKeyBindingResponding
+NSTouchBarProvider
+NSUserActivityRestoring
+NSUserInterfaceItemIdentification
+See Also
+Displaying SwiftUI views in AppKit
+class NSHostingView
+An AppKit view that hosts a SwiftUI view hierarchy.
+struct NSHostingSizingOptions
+Options for how hosting views and controllers reflect their content’s size into Auto Layout constraints.
+struct NSHostingSceneBridgingOptions
+Options for how hosting views and controllers manage aspects of the associated window.
+Beta
+Current page is NSHostingController
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

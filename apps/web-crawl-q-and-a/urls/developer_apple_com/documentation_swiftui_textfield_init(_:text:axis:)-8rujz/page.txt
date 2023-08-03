@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/textfield/init(_:text:axis:)-8rujzSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TextEditor
+S
+SecureField
+M
+func textFieldStyle<S>(S) -> some View
+Deprecated initializers
+Deprecated initializers
+M
+init<F>(value: Binding<F.FormatInput?>, format: F, prompt: Text?, label: () -> Label)
+M
+init<S, F>(S, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+M
+init(LocalizedStringKey, text: Binding<String>, axis: Axis)
+Creating a scrollable text field
+M
+init(text: Binding<String>, prompt: Text?, label: () -> Label)
+M
+init<S>(S, text: Binding<String>, prompt: Text?)
+M
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?)
+M
+init<S>(S, text: Binding<String>)
+M
+init(LocalizedStringKey, text: Binding<String>)
+Creating a text field with a string
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:text:axis:)
+Creates a text field with a preferred axis and a text label generated from a title string.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<S>(
+    _ title: S,
+    text: Binding<String>,
+    axis: Axis
+) where S : StringProtocol
+Available when Label is Text.
+Parameters
+title
+The title of the text view, describing its purpose.
+text
+The text to display and edit.
+axis
+The axis in which to scroll text when it doesn’t fit in the available space.
+Discussion
+Specify a preferred axis in which the text field should scroll its content when it does not fit in the available space. Depending on the style of the field, this axis may not be respected.
+Use the onSubmit(of:_:) modifier to invoke an action whenever the user submits this text field.
+See Also
+Creating a scrollable text field
+init(LocalizedStringKey, text: Binding<String>, axis: Axis)
+Creates a text field with a preferred axis and a text label generated from a localized title string.
+Available when Label is Text.
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?, axis: Axis)
+Creates a text field with a preferred axis and a text label generated from a localized title string.
+Available when Label is Text.
+init<S>(S, text: Binding<String>, prompt: Text?, axis: Axis)
+Creates a text field with a text label generated from a title string.
+Available when Label is Text.
+init(text: Binding<String>, prompt: Text?, axis: Axis, label: () -> Label)
+Creates a text field with a preferred axis and a prompt generated from a Text.
+Available when Label conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:text:axis:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

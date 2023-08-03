@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/insettableshape/strokeborder(_:style:antialiased:)-1mblfSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Focus
+Drag and drop
+Clipboard
+Input events
+Gestures
+Event handling
+Scroll views
+func strokeBorder<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeBorderShapeView<Self, S, EmptyView>
+M
+func strokeBorder(lineWidth: CGFloat, antialiased: Bool) -> some View
+M
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> some View
+M
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeBorderShapeView<Self, S, EmptyView>
+Beta
+Setting the stroke border characteristics
+r
+P
+InsettableShape
+M
+func containerShape<T>(T) -> some View
+Setting a container shape
+S
+TransformedShape
+Documentation
+Open Menu
+Swift
+Instance Method
+strokeBorder(_:style:antialiased:)
+Returns a view that is the result of insetting self by style.lineWidth / 2, stroking the resulting shape with style, and then filling with content.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func strokeBorder<S>(
+    _ content: S = .foreground,
+    style: StrokeStyle,
+    antialiased: Bool = true
+) -> StrokeBorderShapeView<Self, S, EmptyView> where S : ShapeStyle
+See Also
+Setting the stroke border characteristics
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeBorderShapeView<Self, S, EmptyView>
+Returns a view that is the result of filling the lineWidth-sized border (aka inner stroke) of self with content. This is equivalent to insetting self by lineWidth / 2 and stroking the resulting shape with lineWidth as the line-width.
+Beta
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> some View
+Returns a view that is the result of filling the lineWidth-sized border (aka inner stroke) of self with content. This is equivalent to insetting self by lineWidth / 2 and stroking the resulting shape with lineWidth as the line-width.
+func strokeBorder(lineWidth: CGFloat, antialiased: Bool) -> some View
+Returns a view that is the result of filling the lineWidth-sized border (aka inner stroke) of self with the foreground color. This is equivalent to insetting self by lineWidth / 2 and stroking the resulting shape with lineWidth as the line-width.
+func strokeBorder<S>(S, style: StrokeStyle, antialiased: Bool) -> some View
+Returns a view that is the result of insetting self by style.lineWidth / 2, stroking the resulting shape with style, and then filling with content.
+func strokeBorder(style: StrokeStyle, antialiased: Bool) -> some View
+Returns a view that is the result of insetting self by style.lineWidth / 2, stroking the resulting shape with style, and then filling with the foreground color.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is strokeBorder(_:style:antialiased:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

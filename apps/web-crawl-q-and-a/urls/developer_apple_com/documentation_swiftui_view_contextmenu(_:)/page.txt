@@ -1,0 +1,216 @@
+https://developer.apple.com/documentation/swiftui/view/contextmenu(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Deprecated
+M
+func onDrop(of: [String], delegate: DropDelegate) -> some View
+Deprecated
+M
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+Deprecated
+M
+func onPasteCommand(of: [String], perform: ([NSItemProvider]) -> Void) -> some View
+Deprecated
+M
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Deprecated
+M
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Deprecated
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+M
+func statusBar(hidden: Bool) -> some View
+Deprecated
+M
+func navigationBarHidden(Bool) -> some View
+Deprecated
+M
+func navigationBarItems<T>(trailing: T) -> some View
+Deprecated
+M
+func navigationBarItems<L, T>(leading: L, trailing: T) -> some View
+Deprecated
+M
+func navigationBarItems<L>(leading: L) -> some View
+Deprecated
+M
+func navigationBarTitle<S>(S, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle<S>(S) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+contextMenu(_:)
+Adds a context menu to the view.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+watchOS 6.0–7.0 Deprecated
+visionOS 1.0+ Beta
+func contextMenu<MenuItems>(_ contextMenu: ContextMenu<MenuItems>?) -> some View where MenuItems : View
+Deprecated
+Use contextMenu(menuItems:) instead.
+Parameters
+contextMenu
+A context menu container for views that you present as menu items in a context menu.
+Return Value
+A view that can show a context menu.
+Discussion
+Use this method to attach a specified context menu to a view. You can make the context menu unavailable by conditionally passing nil as the value for the contextMenu.
+The example below creates a ContextMenu that contains two items and passes them into the modifier. The Boolean value shouldShowMenu, which defaults to true, controls the context menu availability:
+private let menuItems = ContextMenu {
+    Button {
+        // Add this item to a list of favorites.
+    } label: {
+        Label("Add to Favorites", systemImage: "heart")
+    }
+    Button {
+        // Open Maps and center it on this item.
+    } label: {
+        Label("Show in Maps", systemImage: "mappin")
+    }
+}
+
+
+private struct ContextMenuMenuItems: View {
+    @State private var shouldShowMenu = true
+
+
+    var body: some View {
+        Text("Turtle Rock")
+            .contextMenu(shouldShowMenu ? menuItems : nil)
+    }
+}
+See Also
+Auxiliary view modifiers
+func navigationBarTitle(Text) -> some View
+Sets the title in the navigation bar for this view.
+Deprecated
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarTitle(LocalizedStringKey) -> some View
+Sets the title of this view’s navigation bar with a localized string.
+Deprecated
+func navigationBarTitle<S>(S) -> some View
+Sets the title of this view’s navigation bar with a string.
+Deprecated
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarTitle<S>(S, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarItems<L>(leading: L) -> some View
+Sets the navigation bar items for this view.
+Deprecated
+func navigationBarItems<L, T>(leading: L, trailing: T) -> some View
+Sets the navigation bar items for this view.
+Deprecated
+func navigationBarItems<T>(trailing: T) -> some View
+Configures the navigation bar items for this view.
+Deprecated
+func navigationBarHidden(Bool) -> some View
+Hides the navigation bar for this view.
+Deprecated
+func statusBar(hidden: Bool) -> some View
+Sets the visibility of the status bar.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contextMenu(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

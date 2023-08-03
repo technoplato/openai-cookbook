@@ -1,0 +1,156 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Interacting with your app in the visionOS simulator
+Running your app in Simulator or on a device
+Simulator
+Configuring your app icon
+Creating a performance plan for your visionOS app
+Diagnosing issues in the appearance of a running app
+Diagnosing and resolving bugs in your running app
+Xcode and Instruments
+Documentation
+Open Menu
+Article
+Checking whether your existing app is compatible with visionOS
+Determine whether your existing iOS or iPadOS app runs as is in visionOS or requires modifications to handle platform differences.
+Overview
+visionOS runs compatible iPad and iPhone apps to provide continuous access to existing content right away. visionOS supports most of the same technologies as iOS, so many apps built to run on iPad or iPhone can run unmodified on visionOS devices. When a compatible app runs in visionOS, it retains the same appearance it had in iPadOS or iOS, and its content appears in a window in the person’s surroundings.
+If you have an app in the iOS App Store, try downloading it and running it on Apple Vision Pro. If you run into issues, use Xcode to identify and fix them. If you built your app using the iOS SDK, Xcode 15 and later automatically adds a Designed for iPad runtime destination to your project. Use this destination to run your app and test its compatibility in visionOS. You can test most of your app’s core functionality in Simulator, but some features are available only on a device.
+Determine whether a missing feature impacts your app
+visionOS contains most of the same technologies as iPadOS and iOS, but there are some differences. In some cases, a feature you use in your app might not be available because of hardware differences or because of differences in how people use a visionOS device. As part of your testing, consider the impact of any missing features on your app’s overall experience. Whenever possible, work around missing features by disabling them or providing alternate ways to access the same content.
+The following features aren’t available in compatible iPad and iPhone apps in visionOS. Use framework APIs to determine when the features are available.
+Core Motion services
+Barometer and magnetometer data
+All location services except the standard service
+HealthKit data
+Video or still-photo capture
+Camera features like auto-focus or flash
+Rear-facing (selfie) cameras
+In some cases, a framework or feature behaves differently when your app runs in visionOS. Be prepared to handle these differences when your app runs in visionOS.
+AirPlay. visionOS hides AirPlay sharing buttons in system interfaces, and you can’t use AirPlay features from compatible apps.
+App extensions. visionOS doesn’t load App Clips, device drivers, device activity monitors, keyboard extensions, Messages app extensions, photo-editing app extensions, SMS and call-reporting extensions, or widgets.
+Apple Watch features. visionOS ignores watchOS apps and WatchKit extensions in your iOS or iPadOS app. The Watch Connectivity framework is unavailable. Face sharing in ClockKit does nothing in visionOS.
+Audio and video. visionOS doesn’t support Picture in Picture or AV routing features. Check the availability of video features before using them. Be prepared for audio playback to stop automatically when your app moves to the background.
+Classroom features. Starting a test with Automatic Assessment Configuration reports an error.
+Cellular telephony. Cellular services are unavailable. You can still implement Voice-over-IP (VoIP) services using CallKit and Core Telephony.
+Device management. Calls to the ManagedSettings and ManagedSettingsUI frameworks do nothing.
+Game controllers. visionOS delivers game controller events only when someone is looking at the app.
+Handoff. visionOS doesn’t attempt to hand off user activities to other devices.
+Haptics. visionOS plays sounds instead of haptics.
+HomeKit. You can’t add accessories using a QR code from a visionOS device.
+Metrics. You can use MetricKit to gather on-device diagnostic logs and generate reports, but you can’t gather metrics.
+Multi-Touch. The system reports a maximum of two simultaneous touch inputs — one for each of the person’s hands. All system gesture recognizers handle these inputs correctly, including for zoom and rotation gestures that require multiple fingers. If you have custom gesture recognizers that require more than two points of interaction, update them to support only one or two touches in visionOS.
+Parental controls. Calls to the FamilyControls framework do nothing.
+PencilKit. visionOS doesn’t report touches of type UITouch.TouchType.pencil, but it does report other types of touches.
+Push to Talk. Calls to the Push to Talk framework do nothing.
+Safari Services. Links that present an SFSafariViewController open a Safari scene instead.
+ScreenTime. Calls to the Screen Time framework do nothing.
+Sensor-related features. Calls to the SensorKit framework do nothing.
+Social media. Calls to the Social framework do nothing.
+System interfaces. Authorization prompts, Sign in with Apple prompts, and other system-provided interfaces run asynchronously outside of your app’s process. Because these interfaces don’t run modally in your app, your app might not receive immediate responses.
+Vehicle features. The system doesn’t call your app’s CarPlay code. Calls you make using CarKey do nothing.
+Vision. Data scanners do nothing in VisionKit.
+The version of ARKit in iOS is incompatible with the one in visionOS and visionOS can’t display windows that contain ARKit views. For information about how to bring an ARKit app to visionOS, see Bringing your ARKit app to visionOS.
+For details about how to handle missing features in your code, see Making your existing app compatible with visionOS.
+Test specific scenarios before uploading your app
+The following App Store features for iOS continue to work when your app runs in visionOS:
+In-app purchases and subscriptions
+App capabilities and entitlements
+On-demand resources
+App thinning
+When you use app thinning to optimize your app for different devices and operating systems, the App Store selects the resources and content that offer the best fit for visionOS devices. It then removes any other resources to create a streamlined installation of your app. When you export your app from Xcode 15 or later, you can test the thinning support using the visionOS virtual thinning target.
+When you’re ready to distribute your app, create an archive and export it using the Ad-Hoc or Development distribution method. During the export process, Xcode creates an appropriately signed app for you to distribute to your testers. For more information, see Distributing your app to registered devices.
+See Also
+iOS migration and compatibility
+Bringing your existing apps to visionOS
+Build a version of your iPadOS or iOS app using the visionOS SDK, and update your code for platform differences.
+Bringing your ARKit app to visionOS
+Update an iPadOS or iOS app that uses ARKit, and provide an equivalent experience in visionOS.
+Making your existing app compatible with visionOS
+Modify your iPadOS or iOS app to run successfully in visionOS.
+Current page is Checking whether your existing app is compatible with visionOS
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

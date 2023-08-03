@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/circulargaugestyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+Beta
+r
+P
+TextFieldStyle
+M
+func textFieldStyle<S>(S) -> some View
+S
+LabelStyleConfiguration
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+Styling views that display text
+S
+DefaultGaugeStyle
+Supporting types
+Body
+T
+GaugeStyle.Configuration
+M
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creating custom gauge styles
+P
+static var accessoryLinearCapacity: AccessoryLinearCapacityGaugeStyle
+P
+static var accessoryLinear: AccessoryLinearGaugeStyle
+Documentation
+Open Menu
+Swift
+Structure
+CircularGaugeStyle
+A gauge style that displays an open ring with a marker that appears at a point along the ring to indicate the gauge’s current value.
+watchOS 7.0+
+struct CircularGaugeStyle
+Overview
+Use circular to construct this style.
+Topics
+Creating the gauge style
+init()
+Creates a circular gauge.
+init(tint: Color)
+Creates a circular gauge that draws with a specified color.
+init(tint: Gradient)
+Creates a circular gauge that draws with a specified gradient.
+Relationships
+Conforms To
+GaugeStyle
+Sendable
+See Also
+Supporting types
+struct DefaultGaugeStyle
+The default gauge view style in the current context of the view being styled.
+struct AccessoryCircularGaugeStyle
+A gauge style that displays an open ring with a marker that appears at a point along the ring to indicate the gauge’s current value.
+struct AccessoryCircularCapacityGaugeStyle
+A gauge style that displays a closed ring that’s partially filled in to indicate the gauge’s current value.
+struct LinearGaugeStyle
+A gauge style that displays a bar with a marker that appears at a point along the bar to indicate the gauge’s current value.
+struct LinearCapacityGaugeStyle
+A gauge style that displays bar that fills from leading to trailing edges as the gauge’s current value increases.
+struct AccessoryLinearGaugeStyle
+A gauge style that displays bar with a marker that appears at a point along the bar to indicate the gauge’s current value.
+struct AccessoryLinearCapacityGaugeStyle
+A gauge style that displays bar that fills from leading to trailing edges as the gauge’s current value increases.
+Current page is CircularGaugeStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

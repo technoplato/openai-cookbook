@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/section/collapsible(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<V>(LocalizedStringKey, isExpanded: Binding<Bool>, content: () -> Content)
+Beta
+M
+init(LocalizedStringKey, isExpanded: Binding<Bool>, content: () -> Content)
+Beta
+M
+init(isExpanded: Binding<Bool>, content: () -> Content, header: () -> Parent)
+Beta
+M
+init<V, H>(isExpanded: Binding<Bool>, content: () -> Content, header: () -> H)
+Beta
+Deprecated symbols
+M
+init(header: Parent, content: () -> Content)
+Deprecated
+M
+init(footer: Footer, content: () -> Content)
+Deprecated
+M
+init(header: Parent, footer: Footer, content: () -> Content)
+Deprecated
+P
+var defaultMinListRowHeight: CGFloat
+Configuring separators
+M
+func listRowSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+M
+func listSectionSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+M
+func listRowSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+M
+func listSectionSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+Configuring headers
+Documentation
+Open Menu
+Swift
+Instance Method
+collapsible(_:)
+Sets whether a section can be collapsed by the user.
+macOS 10.15–14.0 Deprecated
+func collapsible(_ collapsible: Bool) -> some View
+Available when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+Deprecated
+To disable collapsibility in macOS 14 and later, use one of the Section initializers that lacks collapsibility.
+Discussion
+This modifier only applies to sections in List views that have the sidebar style.
+See Also
+Deprecated symbols
+init(header: Parent, content: () -> Content)
+Creates a section with a header and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer is EmptyView.
+Deprecated
+init(footer: Footer, content: () -> Content)
+Creates a section with a footer and the provided section content.
+Available when Parent is EmptyView, Content conforms to View, and Footer conforms to View.
+Deprecated
+init(header: Parent, footer: Footer, content: () -> Content)
+Creates a section with a header, footer, and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+Deprecated
+Current page is collapsible(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

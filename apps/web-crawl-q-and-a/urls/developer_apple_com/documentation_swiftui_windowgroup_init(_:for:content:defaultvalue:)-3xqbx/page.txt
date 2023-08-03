@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/windowgroup/init(_:for:content:defaultvalue:)-3xqbxSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<D, C>(for: D.Type, content: (Binding<D?>) -> C)
+M
+init<D, C>(LocalizedStringKey, for: D.Type, content: (Binding<D?>) -> C)
+M
+init<S, D, C>(S, for: D.Type, content: (Binding<D?>) -> C)
+M
+init<D, C>(Text, for: D.Type, content: (Binding<D?>) -> C)
+Providing default data to a window group
+M
+init<D, C>(for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+M
+init<D, C>(LocalizedStringKey, for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+M
+init<S, D, C>(S, for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+M
+func windowStyle<S>(S) -> some Scene
+Styling the associated toolbar
+M
+func windowToolbarStyle<S>(S) -> some Scene
+r
+P
+WindowToolbarStyle
+Opening windows
+Presenting windows and spaces
+P
+var supportsMultipleWindows: Bool
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:for:content:defaultValue:)
+Creates a data-presenting window group with a text view title and a default value.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+init<D, C>(
+    _ title: Text,
+    for type: D.Type = D.self,
+    @ViewBuilder content: @escaping (Binding<D>) -> C,
+    defaultValue: @escaping () -> D
+) where Content == PresentedWindowContent<D, C>, D : Decodable, D : Encodable, D : Hashable, C : View
+Available when Content conforms to View.
+Parameters
+title
+The Text view to use for the group’s title.
+type
+The type of presented data this window group accepts.
+content
+A closure that creates the content for each instance of the group. The closure receives a binding to the value that you pass into the openWindow action when you open the window. SwiftUI automatically persists and restores the value of this binding as part of the state restoration process.
+defaultValue
+A closure that returns a default value to present. SwiftUI calls this closure when it has no data to provide, like when someone opens a new window from the File > New Window menu item.
+Discussion
+The window group uses the given view as a template to form the content of each window in the group.
+The system uses the title to distinguish the window group in the user interface, such as in the name of commands associated with the group.
+Important
+The system ignores any text styling that you apply to the Text view title, like bold or italics. However, you can use the formatting controls that the view offers, like for localization, dates, and numerical representations.
+SwiftUI creates a window from the group when you present a value of the specified type using the openWindow action.
+See Also
+Providing default data to a window group
+init<D, C>(for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+Creates a data-presenting window group with a default value.
+Available when Content conforms to View.
+init<D, C>(LocalizedStringKey, for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+Creates a data-presenting window group with a localized title string and a default value.
+Available when Content conforms to View.
+init<S, D, C>(S, for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+Creates a data-presenting window group with a title string and a default value.
+Available when Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:for:content:defaultValue:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/resultSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+ObjectCaptureSession
+Beta
+S
+ObjectCaptureView
+Beta
+S
+PhotogrammetrySample
+Identifiable Implementations
+Default Implementations
+E
+PhotogrammetrySession.Error
+Beta
+Enumerations
+Obtaining Results
+E
+PhotogrammetrySession.Request
+Creating Requests
+M
+func cancel()
+M
+func process(requests: [PhotogrammetrySession.Request]) throws
+Controlling Object Creation
+E
+PhotogrammetrySession.Output
+P
+var outputs: PhotogrammetrySession.Outputs
+Documentation
+Open Menu
+Swift
+Enumeration
+PhotogrammetrySession.Result
+An object that holds the created 3D object.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+enum Result
+Overview
+When PhotogrammetrySession completes a PhotogrammetrySession.Request, it publishes a PhotogrammetrySession.Output.requestComplete(_:_:) message to output, and includes the created object as the associated value of the result parameter. The result type corresponds to the request type. For example, a PhotogrammetrySession.Request.modelFile(url:detail:geometry:) request results in the session publishing a PhotogrammetrySession.Result.modelFile(_:).
+Topics
+Types of Output
+case modelFile(URL)
+The result of a request for a USDZ file.
+case modelEntity(ModelEntity)
+The result of a request for an in-memory entity.
+case bounds(BoundingBox)
+The result of a request for a bounding box.
+Enumeration Cases
+case pointCloud(PhotogrammetrySession.PointCloud)
+The result of a request for a point cloud.
+case poses(PhotogrammetrySession.Poses)
+Once initial photogrammetric calculations are complete, a data structure mapping each sample ID (or index if a folder was used) to the 6DOF algorithmically estimated pose of that sample is returned.
+Beta
+See Also
+Obtaining Results
+struct PointCloud
+A sparse point cloud data structure output as the payload of a .pointCloud request. A point cloud is an array of PointCloud.Point instances.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Result
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

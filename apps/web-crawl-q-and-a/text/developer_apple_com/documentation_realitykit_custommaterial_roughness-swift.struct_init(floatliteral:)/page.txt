@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/roughness-swift.struct/init(floatliteral:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var opacityThreshold: Float?
+Handling Entity Transparency
+S
+CustomMaterial.EmissiveColor
+P
+var emissiveColor: CustomMaterial.EmissiveColor
+Adding Light Emission
+S
+CustomMaterial.Normal
+P
+var normal: CustomMaterial.Normal
+Creating a Roughness Object
+S
+CustomMaterial.Roughness
+P
+var roughness: CustomMaterial.Roughness
+Specifying Entity Roughness
+S
+CustomMaterial.BaseColor
+P
+var baseColor: CustomMaterial.BaseColor
+Specifying the Entity’s Base Color
+S
+CustomMaterial.GeometryModifier
+Documentation
+Open Menu
+Swift
+Initializer
+init(floatLiteral:)
+Creates an object to specify the amount of roughness, using a single value that applies to the entire material.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(floatLiteral value: Float)
+Parameters
+value
+The roughness value.
+Discussion
+The roughness property represents how much the surface of the entity scatters light that it reflects. A material with a high roughness has a matte appearance, and one with a low roughness has a shiny appearance.
+The following Swift code shows how to specify roughness using a single value for the entire entity:
+material.roughness = PhysicallyBasedMaterial.Roughness(floatLiteral: 0.0)
+With custom materials, the roughness value is available in your surface shader; however, RealityKit doesn’t use it automatically to render the entity. To render an entity with roughness, the material’s lightingModel must be CustomMaterial.LightingModel.lit or CustomMaterial.LightingModel.clearcoat and the custom material’s surface shader function must call params.surface().set_roughness().
+The following Metal code shows how to retrieve the roughness value set using this initializer in your surface shader:
+    // Retrieve the roughness scale from the CustomMaterial.
+    float roughnessScale = params.material_constants().roughness_scale();
+
+
+    // Set the roughness value using the roughness scale.
+    params.surface().set_roughness(roughnessScale);
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+See Also
+Creating a Roughness Object
+init(scale: Float, texture: CustomMaterial.Texture?)
+Creates a roughness object from a color or texture.
+init(PhysicallyBasedMaterial.Roughness)
+Creates a roughness object from a physically based material’s roughness property.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(floatLiteral:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

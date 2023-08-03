@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/view/accessibilityrotor(_:entries:entrylabel:)-2jbaiSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+Replacing system rotors
+M
+func accessibilityRotor<L>(L, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor(Text, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor(LocalizedStringKey, textRanges: [Range<String.Index>]) -> some View
+Creating rotors for text ranges
+M
+func accessibilityRotor<L, EntryModel>(L, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibilityRotor(_:entries:entryLabel:)
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func accessibilityRotor<EntryModel>(
+    _ systemRotor: AccessibilitySystemRotor,
+    entries: [EntryModel],
+    entryLabel: KeyPath<EntryModel, String>
+) -> some View where EntryModel : Identifiable
+Parameters
+systemRotor
+The system-provided Rotor that will be overridden by this custom Rotor.
+entries
+An array of identifiable values that will be used to generate the entries of the Rotor. The identifiers of the Identifiable values must match up with identifiers in a ForEach or explicit id calls within the ScrollView. When the user navigates to entries from this Rotor, SwiftUI will automatically scroll them into place as needed.
+entryLabel
+Key path on the Identifiable type that can be used to get a user-visible label for every Rotor entry. This is used on macOS when the user opens the list of entries for the Rotor.
+Discussion
+An Accessibility Rotor is a shortcut for Accessibility users to quickly navigate to specific elements of the user interface, and optionally specific ranges of text within those elements.
+Using this modifier requires that the Rotor be attached to a ScrollView, or an Accessibility Element directly within a ScrollView, such as a ForEach.
+In the following example, a Message application creates a Rotor allowing users to navigate to the headings in its vertical stack of messages.
+// `messageListItems` is a list of `Identifiable` `MessageListItem`s
+// that are either a `Message` or a heading, containing a `subject`.
+// `headingMessageListItems` is a filtered list of
+// `messageListItems` containing just the headings.
+ScrollView {
+    LazyVStack {
+        ForEach(messageListItems) { messageListItem in
+            switch messageListItem {
+                case .heading(let subject):
+                    Text(subject)
+                case .message(let message):
+                    MessageView(message)
+            }
+        }
+    }
+}
+.accessibilityElement(children: .contain)
+.accessibilityRotor(
+    .heading, entries: headingMessageListItems, label: \.subject)
+See Also
+Replacing system rotors
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor(AccessibilitySystemRotor, textRanges: [Range<String.Index>]) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor. The Rotor will be attached to the current Accessibility element, and each entry will go the specified range of that element.
+struct AccessibilitySystemRotor
+Designates a Rotor that replaces one of the automatic, system-provided Rotors with a developer-provided Rotor.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityRotor(_:entries:entryLabel:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

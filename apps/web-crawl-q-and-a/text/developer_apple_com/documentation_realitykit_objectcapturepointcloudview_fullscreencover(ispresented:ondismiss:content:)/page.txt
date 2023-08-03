@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/fullscreencover(ispresented:ondismiss:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hueRotation(Angle) -> some View
+M
+func hoverEffectDisabled(Bool) -> some View
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+M
+func hoverEffect(HoverEffect) -> some View
+M
+func highPriorityGesture<T>(T, including: GestureMask) -> some View
+M
+func hidden() -> some View
+M
+func help(Text) -> some View
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+M
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+M
+func frame() -> some View
+Deprecated
+M
+func formStyle<S>(S) -> some View
+M
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+M
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+M
+func foregroundStyle<S>(S) -> some View
+M
+func foregroundColor(Color?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+fullScreenCover(isPresented:onDismiss:content:)
+Presents a modal view that covers as much of the screen as possible when binding to a Boolean value you provide is true.
+RealityKit
+SwiftUI
+iOS 14.0+
+iPadOS 14.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func fullScreenCover<Content>(
+    isPresented: Binding<Bool>,
+    onDismiss: (() -> Void)? = nil,
+    @ViewBuilder content: @escaping () -> Content
+) -> some View where Content : View
+Parameters
+isPresented
+A binding to a Boolean value that determines whether to present the sheet.
+onDismiss
+The closure to execute when dismissing the modal view.
+content
+A closure that returns the content of the modal view.
+Discussion
+Use this method to show a modal view that covers as much of the screen as possible. The example below displays a custom view when the user toggles the value of the isPresenting binding:
+struct FullScreenCoverPresentedOnDismiss: View {
+    @State private var isPresenting = false
+    var body: some View {
+        Button("Present Full-Screen Cover") {
+            isPresenting.toggle()
+        }
+        .fullScreenCover(isPresented: $isPresenting,
+                         onDismiss: didDismiss) {
+            VStack {
+                Text("A full-screen modal view.")
+                    .font(.title)
+                Text("Tap to Dismiss")
+            }
+            .onTapGesture {
+                isPresenting.toggle()
+            }
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity,
+                   maxHeight: .infinity)
+            .background(Color.blue)
+            .ignoresSafeArea(edges: .all)
+        }
+    }
+
+
+    func didDismiss() {
+        // Handle the dismissing action.
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is fullScreenCover(isPresented:onDismiss:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

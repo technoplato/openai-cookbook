@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/swiftui/dropinfoSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Framework integration
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+E
+DropOperation
+S
+DropProposal
+r
+P
+DropDelegate
+M
+func onDrop(of: [UTType], delegate: DropDelegate) -> some View
+M
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+M
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+M
+func onDrag(() -> NSItemProvider) -> some View
+M
+func onDrag<V>(() -> NSItemProvider, preview: () -> V) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+DropInfo
+The current state of a drop.
+iOS 13.4+
+iPadOS 13.4+
+macOS 10.15+
+Mac Catalyst 13.4+
+visionOS 1.0+ Beta
+struct DropInfo
+Topics
+Getting the drop location
+var location: CGPoint
+The location of the drag in the coordinate space of the drop view.
+Checking for items
+func hasItemsConforming(to: [UTType]) -> Bool
+Indicates whether at least one item conforms to at least one of the specified uniform type identifiers.
+func itemProviders(for: [UTType]) -> [NSItemProvider]
+Finds item providers that conform to at least one of the specified uniform type identifiers.
+Deprecated symbols
+func hasItemsConforming(to: [String]) -> Bool
+Returns whether at least one item conforms to at least one of the specified uniform type identifiers.
+Deprecated
+func itemProviders(for: [String]) -> [NSItemProvider]
+Returns an array of items that each conform to at least one of the specified uniform type identifiers.
+Deprecated
+Relationships
+Conforms To
+Sendable
+See Also
+Moving items using item providers
+func itemProvider(Optional<() -> NSItemProvider?>) -> some View
+Provides a closure that vends the drag representation to be used for a particular data element.
+func onDrag<V>(() -> NSItemProvider, preview: () -> V) -> some View
+Activates this view as the source of a drag and drop operation.
+func onDrag(() -> NSItemProvider) -> some View
+Activates this view as the source of a drag and drop operation.
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Defines the destination of a drag-and-drop operation that handles the dropped content with a closure that you specify.
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Defines the destination of a drag and drop operation that handles the dropped content with a closure that you specify.
+func onDrop(of: [UTType], delegate: DropDelegate) -> some View
+Defines the destination of a drag and drop operation using behavior controlled by the delegate that you provide.
+protocol DropDelegate
+An interface that you implement to interact with a drop operation in a view modified to accept drops.
+struct DropProposal
+The behavior of a drop.
+enum DropOperation
+Operation types that determine how a drag and drop session resolves when the user drops a drag item.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DropInfo
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

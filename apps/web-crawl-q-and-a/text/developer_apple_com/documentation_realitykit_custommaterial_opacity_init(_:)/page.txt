@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/opacity/init(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var faceCulling: CustomMaterial.FaceCulling
+Culling Unneeded Polygons
+T
+CustomMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+P
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+Modifying Texture Coordinates
+M
+init(scale: Float, texture: CustomMaterial.Texture?)
+M
+init(floatLiteral: Float)
+Creating an Opacity Object
+S
+CustomMaterial.Opacity
+E
+CustomMaterial.Blending
+P
+var blending: CustomMaterial.Blending
+P
+var opacityThreshold: Float?
+Handling Entity Transparency
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates an object from the opacity property of an existing physically based material.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(_ value: PhysicallyBasedMaterial.Opacity)
+Discussion
+This initializer creates a new object by copying values from an existing physically based material’s blending property. All of the copied values, including scale, texture, and opacityThreshold are available to the material’s surface shader function, but RealityKit draws the entity fully opaque unless the surface shader function calls params.surface().set_opacity().
+The following Metal code demonstrates how to emulate the blending logic RealityKit uses to render entities with a PhysicallyBasedMaterial in your custom material’s surface shader function:
+    // Retrieve the opacity scale and threshold from the CustomMaterial.
+    float opacityScale = params.material_constants().opacity_scale();
+    float opacityThreshold = params.material_constants().opacity_threshold();
+
+
+    // Retrieve the entity's texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Entities loaded from USDZ or .reality files use texture coordinates with
+    // a flipped y-axis. This compensates for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Retrieve the opacity texture from the material.
+    auto tex = params.textures();
+
+
+    // Sample the value from the opacity texture.
+    half opacity = tex.opacity().sample(textureSampler, uv).r;
+
+
+    if (opacityThreshold > 0.0) {
+        // If the opacity threshold is greater than 0, use masking
+        // behavior and set the opacity to either 1.0 or 0.0 depending
+        // on the value of the opacity threshold.
+        opacity = (opacity <= opacityThreshold) ? 0.0 : 1.0;
+    } else {
+        // If the opacity threshold is 0, mutiply the opacity by scale.
+        opacity *= opacityScale;
+    }
+
+
+    // Use the calculated value to set the opacity for rendering.
+    params.surface().set_opacity(opacity);
+value: The opacity property from the PhysicallyBasedMaterial’s blending property.
+See Also
+Creating an Opacity Object
+init(floatLiteral: Float)
+Creates an opacity object from a single value.
+init(scale: Float, texture: CustomMaterial.Texture?)
+Creates an object that defines the opacity of an entity using a single value, a UV-mapped image texture, or both.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

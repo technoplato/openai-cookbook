@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/view/touchbar(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Tool support
+Technology-specific views
+WatchKit integration
+UIKit integration
+AppKit integration
+Framework integration
+Accessible navigation
+M
+func touchBar<Content>(content: () -> Content) -> some View
+Managing Touch Bar input
+E
+DigitalCrownRotationalSensitivity
+S
+DigitalCrownEvent
+M
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, by: V.Stride?, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool) -> some View
+M
+func digitalCrownRotation<V>(Binding<V>) -> some View
+M
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+M
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+touchBar(_:)
+Sets the Touch Bar content to be shown in the Touch Bar when applicable.
+macOS 10.15+
+func touchBar<Content>(_ touchBar: TouchBar<Content>) -> some View where Content : View
+Parameters
+touchBar
+A collection of views that the Touch Bar displays.
+Return Value
+A view that contains the Touch Bar content.
+Discussion
+Use touchBar(_:) to provide a static set of views that are displayed by the Touch Bar when appropriate, depending on whether the view has focus.
+The example below provides Touch Bar content in-line, that creates the content the Touch Bar displays:
+func selectHearts() {/* ... */ }
+func selectClubs() { /* ... */ }
+func selectSpades() { /* ... */ }
+func selectDiamonds() { /* ... */ }
+
+
+TextField("TouchBar Demo", text: $placeholder)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .focusable()
+    .touchBar {
+        Button("♥️ - Hearts", action: selectHearts)
+        Button("♣️ - Clubs", action: selectClubs)
+        Button("♠️ - Spades", action: selectSpades)
+        Button("♦️ - Diamonds", action: selectDiamonds)
+    }
+See Also
+Managing Touch Bar input
+func touchBar<Content>(content: () -> Content) -> some View
+Sets the content that the Touch Bar displays.
+func touchBarItemPrincipal(Bool) -> some View
+Sets principal views that have special significance to this Touch Bar.
+func touchBarCustomizationLabel(Text) -> some View
+Sets a user-visible string that identifies the view’s functionality.
+func touchBarItemPresence(TouchBarItemPresence) -> some View
+Sets the behavior of the user-customized view.
+struct TouchBar
+A container for a view that you can show in the Touch Bar.
+enum TouchBarItemPresence
+Options that affect user customization of the Touch Bar.
+Current page is touchBar(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/clearcoat-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+PhysicallyBasedMaterial.FaceCulling
+E
+MaterialParameterTypes.FaceCulling
+P
+var faceCulling: PhysicallyBasedMaterial.FaceCulling
+Culling Unneeded Polygons
+T
+PhysicallyBasedMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: PhysicallyBasedMaterial.TextureCoordinateTransform
+S
+PhysicallyBasedMaterial.SheenColor
+P
+var sheen: PhysicallyBasedMaterial.SheenColor?
+S
+PhysicallyBasedMaterial.Specular
+P
+var specular: PhysicallyBasedMaterial.Specular
+Creating Highlights
+S
+PhysicallyBasedMaterial.AmbientOcclusion
+P
+var ambientOcclusion: PhysicallyBasedMaterial.AmbientOcclusion
+Using Ambient Occlusion
+Documentation
+Open Menu
+Swift
+Instance Property
+clearcoat
+The transparent highlights that simulate a clear, shiny coating on an entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var clearcoat: PhysicallyBasedMaterial.Clearcoat { get set }
+Discussion
+An entity in RealityKit can display a clearcoat, which is a separate layer of transparent specular highlights used to simulate a clear transparent coating, like the paint on a car, or the surface of lacquered objects. By default, materials don’t have clearcoat enabled.
+Use this property to enable clearcoat rendering. Specifying any value greater than 0.0 turns clearcoat rendering on. A value of 1.0 indicates a full clearcoat. RealityKit treats values above 1.0 as if they’re 1.0.
+You can specify clearcoat using a single Float that applies to the entire material, or a UV-mapped grayscale image to provide different values for different parts of an entity.
+The following example specifies clearcoat using a single value:
+material.clearcoat = .init(floatLiteral: 0.8)
+And this example shows how to specify clearcoat using a UV-mapped image texture:
+if let clearcoatResource = try? TextureResource.load(named:"entity_clearcoat") {
+    let clearcoatMap = MaterialParameters.Texture(clearcoatResource)
+    material.clearcoat = .init(texture: clearcoatMap)
+}
+See Also
+Creating Highlights
+var specular: PhysicallyBasedMaterial.Specular
+The specular highlight applied to the entity.
+struct Specular
+An object that defines the specular highlights of an entity.
+var sheen: PhysicallyBasedMaterial.SheenColor?
+The intensity of an entity’s sheen.
+struct SheenColor
+An object that defines the color of an entity’s sheen.
+struct Clearcoat
+An object that defines the intensity of an entity’s clear, shiny coating.
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+The degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+struct ClearcoatRoughness
+An object that defines the degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is clearcoat
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

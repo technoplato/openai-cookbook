@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/realitykit/unlitmaterialSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var tintColor: NSColor
+Instance Properties
+M
+init(color: UIColor, applyPostProcessToneMap: Bool)
+Beta
+M
+init(applyPostProcessToneMap: Bool)
+Initializers
+T
+UnlitMaterial.Blending
+P
+var blending: UnlitMaterial.Blending
+S
+SimpleMaterial
+Basic Materials
+Materials and shaders
+Models, shapes, and meshes
+Hello World
+Scene content
+USD Assets
+Object capture
+Documentation
+Open Menu
+Swift
+Structure
+UnlitMaterial
+A simple material that doesn’t respond to lights in the scene.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+struct UnlitMaterial
+Topics
+Creating an Unlit Material
+init()
+Creates an unlit material.
+init(color: UIColor)
+Creates an unlit material with the given base color.
+init(color: NSColor)
+Creates an unlit material with the given base color.
+Configuring Base Color
+var color: UnlitMaterial.BaseColor
+The material’s base color.
+var baseColor: MaterialColorParameter
+The base color of the material.
+typealias BaseColor
+The type used to represent base color.
+var blending: UnlitMaterial.Blending
+The transparency options for the material.
+typealias Blending
+The type used to represent opacity information.
+var opacityThreshold: Float?
+A threshold below which RealityKit ignores opacity.
+typealias Texture
+The type used to represent textures.
+Controlling Opacity
+var opacityThreshold: Float?
+A threshold below which RealityKit ignores opacity.
+var blending: UnlitMaterial.Blending
+The transparency options for the material.
+typealias Blending
+The type used to represent opacity information.
+Initializers
+init(applyPostProcessToneMap: Bool)
+init(color: UIColor, applyPostProcessToneMap: Bool)
+Beta
+Instance Properties
+var tintColor: NSColor
+A tint color applied to the base color.
+var tintColor: UIColor
+A tint color applied to the base color.
+var triangleFillMode: UnlitMaterial.TriangleFillMode
+The object that controls how RealityKit draws triangles.
+Type Aliases
+typealias TriangleFillMode
+Default Implementations
+API Reference
+Material Implementations
+Relationships
+Conforms To
+Material
+See Also
+Basic Materials
+struct SimpleMaterial
+A basic material that you can apply to meshes.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UnlitMaterial
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

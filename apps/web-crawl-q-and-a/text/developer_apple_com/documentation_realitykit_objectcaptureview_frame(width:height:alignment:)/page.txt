@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/frame(width:height:alignment:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hoverEffectDisabled(Bool) -> some View
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+M
+func hoverEffect(HoverEffect) -> some View
+M
+func highPriorityGesture<T>(T, including: GestureMask) -> some View
+M
+func hidden() -> some View
+M
+func help<S>(S) -> some View
+M
+func help(Text) -> some View
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+M
+func frame() -> some View
+Deprecated
+M
+func formStyle<S>(S) -> some View
+M
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+M
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+M
+func foregroundStyle<S>(S) -> some View
+M
+func foregroundColor(Color?) -> some View
+M
+func fontWidth(Font.Width?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+frame(width:height:alignment:)
+Positions this view within an invisible frame with the specified size.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func frame(
+    width: CGFloat? = nil,
+    height: CGFloat? = nil,
+    alignment: Alignment = .center
+) -> some View
+Parameters
+width
+A fixed width for the resulting view. If width is nil, the resulting view assumes this view’s sizing behavior.
+height
+A fixed height for the resulting view. If height is nil, the resulting view assumes this view’s sizing behavior.
+alignment
+The alignment of this view inside the resulting frame. Note that most alignment values have no apparent effect when the size of the frame happens to match that of this view.
+Return Value
+A view with fixed dimensions of width and height, for the parameters that are non-nil.
+Discussion
+Use this method to specify a fixed size for a view’s width, height, or both. If you only specify one of the dimensions, the resulting view assumes this view’s sizing behavior in the other dimension.
+For example, the following code lays out an ellipse in a fixed 200 by 100 frame. Because a shape always occupies the space offered to it by the layout system, the first ellipse is 200x100 points. The second ellipse is laid out in a frame with only a fixed height, so it occupies that height, and whatever width the layout system offers to its parent.
+VStack {
+    Ellipse()
+        .fill(Color.purple)
+        .frame(width: 200, height: 100)
+    Ellipse()
+        .fill(Color.blue)
+        .frame(height: 100)
+}
+The alignment parameter specifies this view’s alignment within the frame.
+Text("Hello world!")
+    .frame(width: 200, height: 30, alignment: .topLeading)
+    .border(Color.gray)
+In the example above, the text is positioned at the top, leading corner of the frame. If the text is taller than the frame, its bounds may extend beyond the bottom of the frame’s bounds.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is frame(width:height:alignment:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

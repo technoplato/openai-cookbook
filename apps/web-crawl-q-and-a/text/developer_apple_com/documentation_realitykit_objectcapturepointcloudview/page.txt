@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+C
+ObjectCaptureSession
+Beta
+S
+ObjectCaptureView
+Beta
+S
+PhotogrammetrySample
+C
+PhotogrammetrySession
+Using object capture assets in RealityKit
+Creating a Photogrammetry Command-Line App
+Creating 3D objects from photographs
+Capturing photographs for RealityKit Object Capture
+Documentation
+Open Menu
+Swift
+Structure
+ObjectCapturePointCloudView
+An object that renders the current state of the ObjectCaptureSession point cloud.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+@MainActor
+struct ObjectCapturePointCloudView
+Overview
+This view renders a 3D visualization of the current session’s point cloud. It includes a turntable gesture controller. This view allows the user to review the captured 3D model before finishing the capture and beginning object reconstruction.
+Topics
+Initializers
+init(session: ObjectCaptureSession)
+Creates an object capture view from an existing session using the current segment’s point cloud.
+Instance Properties
+var body: some View
+The content and behavior of the view.
+Type Aliases
+typealias Body
+The type of view representing the body of this view.
+Default Implementations
+API Reference
+View Implementations
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Model Creation
+Capturing photographs for RealityKit Object Capture
+Take high-quality images of objects to generate 3D models.
+Creating 3D objects from photographs
+Construct virtual objects to use in your AR experiences.
+class PhotogrammetrySession
+PhotogrammetrySession controls the reconstruction process of a set of images of an object into a 3D model.
+struct PhotogrammetrySample
+An object that represents one image and its corresponding metadata.
+struct ObjectCaptureView
+A view that guides a user through capturing images for object capture.
+Beta
+class ObjectCaptureSession
+A session object that monitors and controls image capture for photogrammetry.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ObjectCapturePointCloudView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

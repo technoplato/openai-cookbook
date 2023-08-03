@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/subscript(_:)-7mwy1Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Data and storage
+Model data
+Environment values
+Accessing environment values
+S
+Environment
+S
+EnvironmentValues
+Creating and accessing values
+M
+init()
+P
+var accessibilityShowButtonShapes: Bool
+P
+var accessibilitySwitchControlEnabled: Bool
+P
+var accessibilityVoiceOverEnabled: Bool
+P
+var legibilityWeight: LegibilityWeight?
+Actions
+P
+var dismiss: DismissAction
+P
+var dismissSearch: DismissSearchAction
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Accesses the environment value associated with a custom key.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+subscript<K>(key: K.Type) -> K.Value where K : EnvironmentKey { get set }
+Overview
+Create custom environment values by defining a key that conforms to the EnvironmentKey protocol, and then using that key with the subscript operator of the EnvironmentValues structure to get and set a value for that key:
+private struct MyEnvironmentKey: EnvironmentKey {
+    static let defaultValue: String = "Default value"
+}
+
+
+extension EnvironmentValues {
+    var myCustomValue: String {
+        get { self[MyEnvironmentKey.self] }
+        set { self[MyEnvironmentKey.self] = newValue }
+    }
+}
+You use custom environment values the same way you use system-provided values, setting a value with the environment(_:_:) view modifier, and reading values with the Environment property wrapper. You can also provide a dedicated view modifier as a convenience for setting the value:
+extension View {
+    func myCustomValue(_ myCustomValue: String) -> some View {
+        environment(\.myCustomValue, myCustomValue)
+    }
+}
+See Also
+Creating and accessing values
+init()
+Creates an environment values instance.
+subscript<T>(T.Type) -> T?
+Reads an observable object of the specified type from the environment.
+Beta
+subscript<K>(K.Type) -> K.Value
+Accesses the environment value associated with a custom key.
+Beta
+var description: String
+A string that represents the contents of the environment values instance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

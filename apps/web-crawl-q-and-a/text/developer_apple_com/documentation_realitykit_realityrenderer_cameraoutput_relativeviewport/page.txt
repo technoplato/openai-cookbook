@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/realitykit/realityrenderer/cameraoutput/relativeviewportSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var cameraSettings: RealityRenderer.CameraSettings
+P
+var activeCamera: Entity?
+Instance Properties
+M
+init() throws
+Initializers
+S
+RealityRenderer.MetalEventAction
+S
+RealityRenderer.ImageBasedLight
+S
+RealityRenderer.CameraOutput.Descriptor
+Structures
+S
+RealityRenderer.CameraOutput
+Structures
+C
+RealityRenderer
+Beta
+S
+RealityView
+Beta
+S
+Model3D
+Beta
+C
+ARView
+Documentation
+Open Menu
+Swift
+Structure
+RealityRenderer.CameraOutput.RelativeViewport
+Structure defining a viewport for rendering with a camera.
+visionOS 1.0+ Beta
+struct RelativeViewport
+Overview
+The units are relative to output texture size. To map normalized-device coordinates to the whole texture:
+viewport = RealityRenderer.CameraOutput.RelativeViewport(originX: 0.0, originY: 0.0, width: 1.0, height: 1.0)
+Assigning values more than 1.0 to CameraOutput.width or CameraOutput.height allows extra stretching in horizontal and vertical directions.
+Assigning values less than 0.0 to CameraOutput.originX or CameraOutput.originY allows shifting viewport into negative X and negative Y direction.
+Topics
+Initializers
+init(originX: Double, originY: Double, width: Double, height: Double)
+Instance Properties
+var height: Double
+var originX: Double
+var originY: Double
+var width: Double
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is RealityRenderer.CameraOutput.RelativeViewport
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

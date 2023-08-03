@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/realityview/finddisabled(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fontWeight(Font.Weight?) -> some View
+M
+func fontDesign(Font.Design?) -> some View
+M
+func font(Font?) -> some View
+M
+func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value?) -> some View
+M
+func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value) -> some View
+M
+func focusedValue<T>(T?) -> some View
+M
+func focusedSceneValue<T>(WritableKeyPath<FocusedValues, T?>, T) -> some View
+M
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+M
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+M
+func fileExporterFilenameLabel(LocalizedStringKey) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+findDisabled(_:)
+Prevents find and replace operations in a text editor.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+func findDisabled(_ isDisabled: Bool = true) -> some View
+Parameters
+isDisabled
+A Boolean value that indicates whether to disable the find and replace interface for a text editor.
+Return Value
+A view that disables the find and replace interface.
+Discussion
+Add this modifier to ensure that people can’t activate the find and replace interface for a TextEditor:
+TextEditor(text: $text)
+    .findDisabled()
+When you disable the find operation, you also implicitly disable the replace operation. If you want to only disable replace, use View/replaceDisabled(_:) instead.
+Using this modifer also prevents programmatic find and replace interface presentation using the View/findNavigator(isPresented:) method. Be sure to place the disabling modifier closer to the text editor for this to work:
+TextEditor(text: $text)
+    .findDisabled(isDisabled)
+    .findNavigator(isPresented: $isPresented)
+If you apply this modifer at multiple levels of a view hierarchy, the call closest to the text editor takes precedence. For example, people can activate find and replace for the first text editor in the following example, but not the second:
+VStack {
+    TextEditor(text: $text1)
+        .findDisabled(false)
+    TextEditor(text: $text2)
+}
+.findDisabled(true)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is findDisabled(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

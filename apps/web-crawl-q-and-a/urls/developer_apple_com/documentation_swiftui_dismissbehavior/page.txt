@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/dismissbehaviorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model data
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+Navigation
+S
+DismissAction
+P
+var dismiss: DismissAction
+S
+DismissWindowAction
+Beta
+P
+var dismissWindow: DismissWindowAction
+Beta
+Closing windows
+S
+OpenWindowAction
+P
+var openWindow: OpenWindowAction
+P
+var supportsMultipleWindows: Bool
+Documentation
+Open Menu
+Swift
+Structure
+DismissBehavior
+Programmatic window dismissal behaviors.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+struct DismissBehavior
+Overview
+Use values of this type to control window dismissal during the current transaction.
+For example, to dismiss windows showing a modal presentation that would otherwise prohibit dismissal, use the destructive behavior:
+struct DismissWindowButton: View {
+    @Environment(\.dismissWindow) private var dismissWindow
+
+
+    var body: some View {
+        Button("Close Auxiliary Window") {
+            withTransaction(\.dismissBehavior, .destructive) {
+                dismissWindow(id: "auxiliary")
+            }
+        }
+    }
+}
+Topics
+Getting behaviors
+static let destructive: DismissBehavior
+The destructive dismiss behavior.
+static let interactive: DismissBehavior
+The interactive dismiss behavior.
+Relationships
+Conforms To
+Sendable
+See Also
+Closing windows
+var dismissWindow: DismissWindowAction
+A window dismissal action stored in a view’s environment.
+Beta
+struct DismissWindowAction
+An action that dismisses a window associated to a particular scene.
+Beta
+var dismiss: DismissAction
+An action that dismisses the current presentation.
+struct DismissAction
+An action that dismisses a presentation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DismissBehavior
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

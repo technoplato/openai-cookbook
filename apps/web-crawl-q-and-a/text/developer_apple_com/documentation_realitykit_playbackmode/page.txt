@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/playbackmodeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Reality Composer
+Object capture
+USD Assets
+Essentials
+Exporting a Reality Composer Scene to USDZ
+USDZ Schemas for AR
+Animation
+autoPlay
+Materials and shaders
+Anchors
+Cameras and lighting
+Scene reconstruction and understanding
+Audio
+Animation
+r
+P
+RealityCoordinateSpace
+Beta
+Documentation
+Open Menu
+Swift
+Article
+playbackMode
+Metadata that controls animation idling until a behavior takes over.
+Overview
+Set the playbackMode metadata on the document’s stage, that is, the outermost container for scene description. For more information about setting stage metadata, see UsdStage > Stage Metadata.
+When an asset specifies playback metadata and a start animation, the animation plays automatically and loops until a trigger executes the StartAnimationAction. After the start animation completes, the asset’s behaviors (Preliminary_Behavior) take control of the animation. If you don’t define a start animation for the asset, this property indicates whether an animation should restart after it finishes playing.
+Declaration
+uniform token playbackMode = "loop" (
+    allowedTokens = ["none","loop"]
+)
+Playback Modes
+none
+Runs a start animation only once until the system fires an animation trigger.
+loop
+Plays a start animation on a loop until the system fires an animation trigger.
+Specify an Initial Idling Animation
+The following metadata demonstrates playbackMode for an asset that defines a StartAnimationAction. This example sets playbackMode to loop, idling the animation in a perpetual replay until a trigger executes the start action.
+#usda 1.0
+(
+    endTimeCode = 300
+    startTimeCode = 1
+    timeCodesPerSecond = 30
+    playbackMode = "loop"
+    upAxis = "Y"
+)
+
+
+def Xform "AnimatedModel"
+{
+    def Xform "body"
+    {
+        double3 xformOp:translate.timeSamples = { ... }
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+        ...
+    }
+    ...
+}
+See Also
+Animation
+autoPlay
+Metadata that specifies whether an animation plays automatically on load.
+Current page is playbackMode
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/audiofileresource/configuration-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func load(contentsOf: URL, withName: String?, configuration: AudioFileResource.Configuration) throws -> AudioFileResource
+Beta
+M
+static func load(contentsOf: URL, withName: String?, configuration: AudioFileResource.Configuration) async throws -> AudioFileResource
+Beta
+Type Methods
+P
+let name: String
+P
+var duration: Duration
+P
+let configuration: AudioFileResource.Configuration
+Instance Properties
+init(loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool, shouldRandomizeStartTime: Bool, normalization: AudioResource.Normalization?, calibration: AudioResource.Calibration?, mixGroupName: String?)
+Structures
+P
+var shouldLoop: Bool
+Controlling Looping
+E
+AudioFileResource.LoadingStrategy
+P
+var loadingStrategy: AudioFileResource.LoadingStrategy
+Specifying a Loading Strategy
+M
+static func loadAsync(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+M
+static func load(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) throws -> AudioFileResource
+Documentation
+Open Menu
+Swift
+Structure
+AudioFileResource.Configuration
+A container for various settings that can be used when loading an RealityFoundation/AudioFileResource.
+visionOS 1.0+ Beta
+struct Configuration
+Topics
+Initializers
+init(loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool, shouldRandomizeStartTime: Bool, normalization: AudioResource.Normalization?, calibration: AudioResource.Calibration?, mixGroupName: String?)
+Initializes a new instance of RealityFoundation/AudioFileResource/Configuration-swift.struct.
+Instance Properties
+var calibration: AudioResource.Calibration?
+Defines calibration options. See RealityFoundation/AudioResource/Calibration for more details.
+var loadingStrategy: AudioFileResource.LoadingStrategy
+Defines how the resource’s data is handled before and during playback. See RealityFoundation/AudioFileResource/LoadingStrategy-swift.enum for more details.
+var mixGroupName: String?
+An arbitrary name that can be used to assign an audio resource to an RealityFoundation/AudioMixGroup. See also RealityFoundation/AudioMixGroupsComponent.
+var normalization: AudioResource.Normalization?
+Defines normalization options. See RealityFoundation/AudioResource/Normalization for more details.
+var shouldLoop: Bool
+Defines whether or not playback infinitely loops until manually stopped or paused.
+var shouldRandomizeStartTime: Bool
+Defines whether or not playback starts from the beginning of the file or from a random position.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AudioFileResource.Configuration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/realitykit/textureresource/drawablequeue-swift.class/mipmapsmodeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) throws
+Beta
+M
+convenience init(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) async throws
+Beta
+M
+convenience init(contentsOf: URL, withName: String?) async throws
+Beta
+Initializers
+S
+TextureResource.Format
+Beta
+S
+TextureResource.Dimensions2D
+Beta
+S
+TextureResource.Contents
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+P
+var height: Int
+P
+var allowsNextDrawableTimeout: Bool
+Instance Properties
+M
+init(TextureResource.DrawableQueue.Descriptor) throws
+Initializers
+S
+TextureResource.DrawableQueue.Descriptor
+Structures
+C
+TextureResource.DrawableQueue
+Documentation
+Open Menu
+Swift
+Instance Property
+mipmapsMode
+Options that determine how mipmaps are handled for each drawable’s textures.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var mipmapsMode: TextureResource.MipmapsMode { get }
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is mipmapsMode
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/shaperoleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Layout fundamentals
+View layout
+Drawing and graphics
+S
+ContainerRelativeShape
+r
+P
+InsettableShape
+M
+func containerShape<T>(T) -> some View
+Setting a container shape
+S
+AnyShape
+r
+P
+Shape
+r
+P
+ShapeView
+Beta
+Defining shape behavior
+S
+Path
+Drawing custom shapes
+S
+Capsule
+S
+Ellipse
+Documentation
+Open Menu
+Swift
+Enumeration
+ShapeRole
+Ways of styling a shape.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+enum ShapeRole
+Topics
+Getting shape roles
+case fill
+Indicates to the shape’s style that SwiftUI fills the shape.
+case stroke
+Indicates to the shape’s style that SwiftUI applies a stroke to the shape’s path.
+case separator
+Indicates to the shape’s style that SwiftUI uses the shape as a separator.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Defining shape behavior
+protocol ShapeView
+A view that provides a shape that you can use for drawing operations.
+Beta
+protocol Shape
+A 2D shape that you can use when drawing a view.
+struct AnyShape
+A type-erased shape value.
+struct StrokeStyle
+The characteristics of a stroke that traces a path.
+struct StrokeShapeView
+A shape provider that strokes its shape.
+Beta
+struct StrokeBorderShapeView
+A shape provider that strokes the border of its shape.
+Beta
+struct FillStyle
+A style for rasterizing vector shapes.
+struct FillShapeView
+A shape provider that fills its shape.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ShapeRole
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

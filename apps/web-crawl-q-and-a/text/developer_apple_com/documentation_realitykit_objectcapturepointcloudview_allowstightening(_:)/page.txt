@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/allowstightening(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func badge(Int) -> some View
+M
+func badge<S>(S?) -> some View
+M
+func backgroundStyle<S>(S) -> some View
+M
+func backgroundPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View
+M
+func backgroundPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+func anchorPreference<A, K>(key: K.Type, value: Anchor<A>.Source, transform: (Anchor<A>) -> K.Value) -> some View
+M
+func allowsHitTesting(Bool) -> some View
+M
+func allowedDynamicRange(Image.DynamicRange?) -> some View
+M
+func alignmentGuide(VerticalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+M
+func alignmentGuide(HorizontalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+M
+func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View
+M
+func alert<E, A, M>(isPresented: Binding<Bool>, error: E?, actions: (E) -> A, message: (E) -> M) -> some View
+M
+func alert<E, A>(isPresented: Binding<Bool>, error: E?, actions: () -> A) -> some View
+M
+func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+allowsTightening(_:)
+Sets whether text in this view can compress the space between characters when necessary to fit text in a line.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func allowsTightening(_ flag: Bool) -> some View
+Parameters
+flag
+A Boolean value that indicates whether the space between characters compresses when necessary.
+Return Value
+A view that can compress the space between characters when necessary to fit text in a line.
+Discussion
+Use allowsTightening(_:) to enable the compression of inter-character spacing of text in a view to try to fit the text in the view’s bounds.
+In the example below, two identically configured text views show the effects of allowsTightening(_:) on the compression of the spacing between characters:
+VStack {
+    Text("This is a wide text element")
+        .font(.body)
+        .frame(width: 200, height: 50, alignment: .leading)
+        .lineLimit(1)
+        .allowsTightening(true)
+
+
+    Text("This is a wide text element")
+        .font(.body)
+        .frame(width: 200, height: 50, alignment: .leading)
+        .lineLimit(1)
+        .allowsTightening(false)
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is allowsTightening(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

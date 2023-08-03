@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/text/init(_:format:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(verbatim: String)
+Creating a text view from an attributed string
+M
+init(AttributedString)
+Creating a text view for a date
+M
+init(ClosedRange<Date>)
+M
+init(DateInterval)
+M
+init(Date, style: Text.DateStyle)
+Creating a text view with formatting
+M
+func bold(Bool) -> Text
+M
+func italic() -> Text
+M
+func italic(Bool) -> Text
+M
+func strikethrough(Bool, color: Color?) -> Text
+M
+func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> Text
+M
+func underline(Bool, color: Color?) -> Text
+M
+func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> Text
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:format:)
+Creates a text view that displays the formatted representation of a nonstring type supported by a corresponding format style.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init<F>(
+    _ input: F.FormatInput,
+    format: F
+) where F : FormatStyle, F.FormatInput : Equatable, F.FormatOutput == String
+Parameters
+input
+The underlying value to display.
+format
+A format style of type F to convert the underlying value of type F.FormatInput to a string representation.
+Discussion
+Use this initializer to create a text view backed by a nonstring value, using a FormatStyle to convert the type to a string representation. Any changes to the value update the string displayed by the text view.
+In the following example, three Text views present a date with different combinations of date and time fields, by using different Date.FormatStyle options.
+@State private var myDate = Date()
+var body: some View {
+    VStack {
+        Text(myDate, format: Date.FormatStyle(date: .numeric, time: .omitted))
+        Text(myDate, format: Date.FormatStyle(date: .complete, time: .complete))
+        Text(myDate, format: Date.FormatStyle().hour(.defaultDigitsNoAMPM).minute())
+    }
+}
+See Also
+Creating a text view with formatting
+init<Subject>(Subject, formatter: Formatter)
+Creates a text view that displays the formatted representation of a reference-convertible value.
+init<Subject>(Subject, formatter: Formatter)
+Creates a text view that displays the formatted representation of a Foundation object.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:format:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

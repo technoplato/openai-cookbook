@@ -1,0 +1,251 @@
+https://developer.apple.com/documentation/swiftui/outlinegroupSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<DataElement>(Data, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Beta
+Initializers
+S
+OutlineSubgroupChildren
+Supporting types
+M
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Beta
+M
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Beta
+M
+init<DataElement>(DataElement, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+init<DataElement>(Data, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Disclosing information progressively
+r
+P
+DynamicViewContent
+S
+ForEach
+Iterating over list content
+S
+Section
+M
+func listStyle<S>(S) -> some View
+S
+List
+Displaying data in lists
+Documentation
+Open Menu
+Swift
+Structure
+OutlineGroup
+A structure that computes views and disclosure groups on demand from an underlying collection of tree-structured, identified data.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct OutlineGroup<Data, ID, Parent, Leaf, Subgroup> where Data : RandomAccessCollection, ID : Hashable
+Overview
+Use an outline group when you need a view that can represent a hierarchy of data by using disclosure views. This allows the user to navigate the tree structure by using the disclosure views to expand and collapse branches.
+In the following example, a tree structure of FileItem data offers a simplified view of a file system. Passing the root of this tree and the key path of its children allows you to quickly create a visual representation of the file system.
+struct FileItem: Hashable, Identifiable, CustomStringConvertible {
+    var id: Self { self }
+    var name: String
+    var children: [FileItem]? = nil
+    var description: String {
+        switch children {
+        case nil:
+            return "📄 \(name)"
+        case .some(let children):
+            return children.isEmpty ? "📂 \(name)" : "📁 \(name)"
+        }
+    }
+}
+
+
+let data =
+  FileItem(name: "users", children:
+    [FileItem(name: "user1234", children:
+      [FileItem(name: "Photos", children:
+        [FileItem(name: "photo001.jpg"),
+         FileItem(name: "photo002.jpg")]),
+       FileItem(name: "Movies", children:
+         [FileItem(name: "movie001.mp4")]),
+          FileItem(name: "Documents", children: [])
+      ]),
+     FileItem(name: "newuser", children:
+       [FileItem(name: "Documents", children: [])
+       ])
+    ])
+
+
+OutlineGroup(data, children: \.children) { item in
+    Text("\(item.description)")
+}
+Type parameters
+Five generic type constraints define a specific OutlineGroup instance:
+Data: The type of a collection containing the children of an element in the tree-shaped data.
+ID: The type of the identifier for an element.
+Parent: The type of the visual representation of an element whose children property is non-nil
+Leaf: The type of the visual representation of an element whose children property is nil.
+Subgroup: A type of a view that groups a parent view and a view representing its children, typically with some mechanism for showing and hiding the children
+Topics
+Creating an outline group
+init<DataElement>(DataElement, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a root data element and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to View, Parent is Leaf, Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>, and Data.Element conforms to Identifiable.
+init<DataElement>(Data, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a collection of root data elements and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to View, Parent is Leaf, Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>, and Data.Element conforms to Identifiable.
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a root data element, the key path to its identifier, and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, Parent conforms to View, Parent is Leaf, and Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>.
+init<DataElement>(Data, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a collection of root data elements, the key path to a data element’s identifier, and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, Parent conforms to View, Parent is Leaf, and Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>.
+Creating an outline group from a binding
+init<C, E>(Binding<E>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)
+Creates an outline group from a binding to a root data element and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to View, Parent is Leaf, Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>, and Data.Element conforms to Identifiable.
+init<C, E>(Binding<C>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)
+Creates an outline group from a binding to a collection of root data elements and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to View, Parent is Leaf, Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>, and Data.Element conforms to Identifiable.
+init<C, E>(Binding<E>, id: KeyPath<E, ID>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)
+Creates an outline group from a binding to a root data element, the key path to its identifier, and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, Parent conforms to View, Parent is Leaf, and Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>.
+init<C, E>(Binding<C>, id: KeyPath<E, ID>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)
+Creates an outline group from a binding to a collection of root data elements, the key path to a data element’s identifier, and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID conforms to Hashable, Parent conforms to View, Parent is Leaf, and Subgroup is DisclosureGroup<Parent, OutlineSubgroupChildren>.
+Creating an outline group in a table
+init<DataElement>(DataElement, children: KeyPath<DataElement, Data?>)
+Creates an outline group from a root data element and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+Beta
+init<DataElement>(Data, children: KeyPath<DataElement, Data?>)
+Creates an outline group from a collection of root data elements and a key path to element’s children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+Beta
+init<DataElement>(Data, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a collection of root data elements and a key path to element’s children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+Beta
+init<DataElement>(DataElement, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a root data element and a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+Beta
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a root data element, a key path to the its identifier, as well as a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+Beta
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a root data element, a key path to the its identifier, as well as a key path to its children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+Beta
+Supporting types
+struct OutlineSubgroupChildren
+A type-erased view representing the children in an outline subgroup.
+Initializers
+init<DataElement>(Data, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Creates an outline group from a collection of root data elements, a key path to the element’s identifier, as well as a key path to element’s children.
+Available when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+Beta
+Relationships
+Conforms To
+Sendable
+TableRowContent
+Conforms when Data conforms to RandomAccessCollection, ID is Data.Element.ID, Parent conforms to TableRowContent, Parent is Leaf, Leaf is Subgroup, and Data.Element is Parent.TableRowValue.
+View
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, Parent conforms to View, Leaf conforms to View, and Subgroup conforms to View.
+See Also
+Disclosing information progressively
+struct DisclosureGroup
+A view that shows or hides another content view, based on the state of a disclosure control.
+func disclosureGroupStyle<S>(S) -> some View
+Sets the style for disclosure groups within this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is OutlineGroup
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

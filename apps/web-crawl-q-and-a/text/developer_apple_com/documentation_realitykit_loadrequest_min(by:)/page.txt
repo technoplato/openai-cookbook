@@ -1,0 +1,177 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/min(by:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>
+M
+func first() -> Publishers.First<Self>
+Selecting Specific Elements
+M
+func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>
+M
+func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>
+M
+func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>
+M
+func prefix(Int) -> Publishers.Output<Self>
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>
+M
+func min() -> Publishers.Comparison<Self>
+M
+func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func max() -> Publishers.Comparison<Self>
+M
+func count() -> Publishers.Count<Self>
+Applying Mathematical Operations on Elements
+M
+func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>
+M
+func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>
+Documentation
+Open Menu
+Swift
+Instance Method
+min(by:)
+Publishes the minimum value received from the upstream publisher, after it finishes.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func min(by areInIncreasingOrder: @escaping (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+Parameters
+areInIncreasingOrder
+A closure that receives two elements and returns true if they’re in increasing order.
+Return Value
+A publisher that publishes the minimum value received from the upstream publisher, after the upstream publisher finishes.
+Discussion
+Use Publisher/min(by:) to determine the minimum value in the stream of elements from an upstream publisher using a comparison operation you specify.
+This operator is useful when the value received from the upstream publisher isn’t Comparable.
+In the example below an array publishes enumeration elements representing playing card ranks. The Publisher/min(by:) operator compares the current and next elements using the rawValue property of each enumeration value in the user supplied closure and prints the minimum value found after publishing all of the elements.
+enum Rank: Int {
+    case ace = 1, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king
+}
+
+
+let cards: [Rank] = [.five, .queen, .ace, .eight, .king]
+cancellable = cards.publisher
+    .min {
+        return  $0.rawValue < $1.rawValue
+    }
+    .sink { print("\($0)") }
+
+
+// Prints: "ace"
+After this publisher receives a request for more than 0 items, it requests unlimited items from its upstream publisher.
+See Also
+Applying Mathematical Operations on Elements
+func count() -> Publishers.Count<Self>
+Publishes the number of elements received from the upstream publisher.
+func max() -> Publishers.Comparison<Self>
+Publishes the maximum value received from the upstream publisher, after it finishes.
+Available when Output conforms to Comparable.
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+Publishes the maximum value received from the upstream publisher, using the provided ordering closure.
+func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+Publishes the maximum value received from the upstream publisher, using the provided error-throwing closure to order the items.
+func min() -> Publishers.Comparison<Self>
+Publishes the minimum value received from the upstream publisher, after it finishes.
+Available when Output conforms to Comparable.
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+Publishes the minimum value received from the upstream publisher, using the provided error-throwing closure to order the items.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is min(by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

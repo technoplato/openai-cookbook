@@ -1,0 +1,248 @@
+https://developer.apple.com/documentation/swiftui/pathSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func addArc(center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool, transform: CGAffineTransform)
+M
+func move(to: CGPoint)
+Drawing a path
+P
+var isEmpty: Bool
+P
+var description: String
+P
+var currentPoint: CGPoint?
+M
+func contains(CGPoint, eoFill: Bool) -> Bool
+Drawing custom shapes
+S
+Capsule
+S
+Ellipse
+S
+Circle
+Creating circular shapes
+S
+RectangleCornerRadii
+S
+UnevenRoundedRectangle
+E
+RoundedCornerStyle
+Documentation
+Open Menu
+Swift
+Structure
+Path
+The outline of a 2D shape.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen
+struct Path
+Topics
+Creating a path
+init()
+Creates an empty path.
+init((inout Path) -> ())
+Creates an empty path, then executes a closure to add its initial elements.
+init(CGMutablePath)
+Creates a path from a copy of a mutable shape path.
+init(CGPath)
+Creates a path from an immutable shape path.
+init?(String)
+Initializes from the result of a previous call to Path.stringRepresentation. Fails if the string does not describe a valid path.
+init(CGRect)
+Creates a path containing a rectangle.
+init(ellipseIn: CGRect)
+Creates a path as an ellipse within the given rectangle.
+init(roundedRect: CGRect, cornerRadius: CGFloat, style: RoundedCornerStyle)
+Creates a path containing a rounded rectangle.
+init(roundedRect: CGRect, cornerSize: CGSize, style: RoundedCornerStyle)
+Creates a path containing a rounded rectangle.
+init(roundedRect: CGRect, cornerRadii: RectangleCornerRadii, style: RoundedCornerStyle)
+Creates a path as the given rounded rectangle, which may have uneven corner radii.
+Getting the path’s characteristics
+var boundingRect: CGRect
+A rectangle containing all path segments.
+var cgPath: CGPath
+An immutable path representing the elements in the path.
+func contains(CGPoint, eoFill: Bool) -> Bool
+Returns true if the path contains a specified point.
+var currentPoint: CGPoint?
+Returns the last point in the path, or nil if the path contains no points.
+var description: String
+A description of the path that may be used to recreate the path via init?(_:).
+var isEmpty: Bool
+A Boolean value indicating whether the path contains zero elements.
+Drawing a path
+func move(to: CGPoint)
+Begins a new subpath at the specified point.
+func addArc(center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool, transform: CGAffineTransform)
+Adds an arc of a circle to the path, specified with a radius and angles.
+func addArc(tangent1End: CGPoint, tangent2End: CGPoint, radius: CGFloat, transform: CGAffineTransform)
+Adds an arc of a circle to the path, specified with a radius and two tangent lines.
+func addCurve(to: CGPoint, control1: CGPoint, control2: CGPoint)
+the curve.
+func addEllipse(in: CGRect, transform: CGAffineTransform)
+Adds an ellipse that fits inside the specified rectangle to the path.
+func addLine(to: CGPoint)
+Appends a straight line segment from the current point to the specified point.
+func addLines([CGPoint])
+Adds a sequence of connected straight-line segments to the path.
+func addPath(Path, transform: CGAffineTransform)
+Appends another path value to this path.
+func addQuadCurve(to: CGPoint, control: CGPoint)
+the curve.
+func addRect(CGRect, transform: CGAffineTransform)
+Adds a rectangular subpath to the path.
+func addRects([CGRect], transform: CGAffineTransform)
+Adds a set of rectangular subpaths to the path.
+func addRelativeArc(center: CGPoint, radius: CGFloat, startAngle: Angle, delta: Angle, transform: CGAffineTransform)
+Adds an arc of a circle to the path, specified with a radius and a difference in angle.
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+Adds a rounded rectangle to the path.
+func closeSubpath()
+Closes and completes the current subpath.
+Transforming the path
+func applying(CGAffineTransform) -> Path
+Returns a path constructed by applying the transform to all points of the path.
+func offsetBy(dx: CGFloat, dy: CGFloat) -> Path
+Returns a path constructed by translating all its points.
+func trimmedPath(from: CGFloat, to: CGFloat) -> Path
+Returns a partial copy of the path.
+Performing operations on the path
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+Adds a rounded rectangle to the path.
+func intersection(Path, eoFill: Bool) -> Path
+Returns a new path with filled regions common to both paths.
+Beta
+func lineIntersection(Path, eoFill: Bool) -> Path
+Returns a new path with a line from this path that overlaps the filled regions of the given path.
+Beta
+func lineSubtraction(Path, eoFill: Bool) -> Path
+Returns a new path with a line from this path that does not overlap the filled region of the given path.
+Beta
+func normalized(eoFill: Bool) -> Path
+Returns a new weakly-simple copy of this path.
+Beta
+func subtracting(Path, eoFill: Bool) -> Path
+Returns a new path with filled regions from this path that are not in the given path.
+Beta
+func symmetricDifference(Path, eoFill: Bool) -> Path
+Returns a new path with filled regions either from this path or the given path, but not in both.
+Beta
+func union(Path, eoFill: Bool) -> Path
+Returns a new path with filled regions in either this path or the given path.
+Beta
+Operating over path elements
+func forEach((Path.Element) -> Void)
+Calls body with each element in the path.
+enum Element
+An element of a path.
+Applying a style
+func strokedPath(StrokeStyle) -> Path
+Returns a stroked copy of the path using style to define how the stroked outline is created.
+Instance Methods
+func addRoundedRect(in: CGRect, cornerRadii: RectangleCornerRadii, style: RoundedCornerStyle, transform: CGAffineTransform)
+Adds a rounded rectangle with uneven corners to the path.
+Relationships
+Conforms To
+Animatable
+CustomStringConvertible
+Equatable
+LosslessStringConvertible
+Sendable
+Shape
+View
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Path
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

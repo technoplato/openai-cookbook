@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/swiftui/path/symmetricdifference(_:eofill:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+RotatedShape
+S
+ScaledShape
+Transforming a shape
+S
+FillShapeView
+Beta
+S
+FillStyle
+S
+StrokeBorderShapeView
+Beta
+S
+StrokeShapeView
+func addRoundedRect(in: CGRect, cornerRadii: RectangleCornerRadii, style: RoundedCornerStyle, transform: CGAffineTransform)
+M
+func subtracting(Path, eoFill: Bool) -> Path
+Beta
+M
+func normalized(eoFill: Bool) -> Path
+Beta
+M
+func lineSubtraction(Path, eoFill: Bool) -> Path
+Beta
+M
+func lineIntersection(Path, eoFill: Bool) -> Path
+Beta
+M
+func intersection(Path, eoFill: Bool) -> Path
+Beta
+M
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+Performing operations on the path
+M
+func trimmedPath(from: CGFloat, to: CGFloat) -> Path
+Documentation
+Open Menu
+Swift
+Instance Method
+symmetricDifference(_:eoFill:)
+Returns a new path with filled regions either from this path or the given path, but not in both.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func symmetricDifference(
+    _ other: Path,
+    eoFill: Bool = false
+) -> Path
+Parameters
+other
+The path to difference.
+eoFill
+Whether to use the even-odd rule for determining which areas to treat as the interior of the paths (if true), or the non-zero rule (if false).
+Return Value
+A new path.
+Discussion
+The filled region of the resulting path is the filled region contained in either this path or other, but not both.
+Any unclosed subpaths in either path are assumed to be closed. The result of filling this path using either even-odd or non-zero fill rules is identical.
+See Also
+Performing operations on the path
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+Adds a rounded rectangle to the path.
+func intersection(Path, eoFill: Bool) -> Path
+Returns a new path with filled regions common to both paths.
+Beta
+func lineIntersection(Path, eoFill: Bool) -> Path
+Returns a new path with a line from this path that overlaps the filled regions of the given path.
+Beta
+func lineSubtraction(Path, eoFill: Bool) -> Path
+Returns a new path with a line from this path that does not overlap the filled region of the given path.
+Beta
+func normalized(eoFill: Bool) -> Path
+Returns a new weakly-simple copy of this path.
+Beta
+func subtracting(Path, eoFill: Bool) -> Path
+Returns a new path with filled regions from this path that are not in the given path.
+Beta
+func union(Path, eoFill: Bool) -> Path
+Returns a new path with filled regions in either this path or the given path.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is symmetricDifference(_:eoFill:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

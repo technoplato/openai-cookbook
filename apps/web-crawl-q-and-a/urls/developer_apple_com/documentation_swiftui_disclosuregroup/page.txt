@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/swiftui/disclosuregroupSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func listRowSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+M
+func listSectionSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+M
+func listRowSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+Configuring separators
+P
+var defaultMinListRowHeight: CGFloat
+S
+ListItemTint
+M
+func listItemTint(ListItemTint?) -> some View
+S
+OutlineGroup
+Disclosing information progressively
+r
+P
+DynamicViewContent
+S
+ForEach
+Iterating over list content
+S
+Section
+M
+func listStyle<S>(S) -> some View
+S
+List
+Documentation
+Open Menu
+Swift
+Structure
+DisclosureGroup
+A view that shows or hides another content view, based on the state of a disclosure control.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct DisclosureGroup<Label, Content> where Label : View, Content : View
+Overview
+A disclosure group view consists of a label to identify the contents, and a control to show and hide the contents. Showing the contents puts the disclosure group into the “expanded” state, and hiding them makes the disclosure group “collapsed”.
+In the following example, a disclosure group contains two toggles and an embedded disclosure group. The top level disclosure group exposes its expanded state with the bound property, topLevelExpanded. By expanding the disclosure group, the user can use the toggles to update the state of the toggleStates structure.
+struct ToggleStates {
+    var oneIsOn: Bool = false
+    var twoIsOn: Bool = true
+}
+@State private var toggleStates = ToggleStates()
+@State private var topExpanded: Bool = true
+
+
+var body: some View {
+    DisclosureGroup("Items", isExpanded: $topExpanded) {
+        Toggle("Toggle 1", isOn: $toggleStates.oneIsOn)
+        Toggle("Toggle 2", isOn: $toggleStates.twoIsOn)
+        DisclosureGroup("Sub-items") {
+            Text("Sub-item 1")
+        }
+    }
+}
+Topics
+Creating a group with a string label
+init<S>(S, content: () -> Content)
+Creates a disclosure group, using a provided string to create a text view for the label.
+Available when Label is Text and Content conforms to View.
+init(LocalizedStringKey, content: () -> Content)
+Creates a disclosure group, using a provided localized string key to create a text view for the label.
+Available when Label is Text and Content conforms to View.
+init(LocalizedStringKey, isExpanded: Binding<Bool>, content: () -> Content)
+Creates a disclosure group, using a provided localized string key to create a text view for the label, and a binding to the expansion state (expanded or collapsed).
+Available when Label is Text and Content conforms to View.
+init<S>(S, isExpanded: Binding<Bool>, content: () -> Content)
+Creates a disclosure group, using a provided string to create a text view for the label, and a binding to the expansion state (expanded or collapsed).
+Available when Label is Text and Content conforms to View.
+Creating a group with a label view
+init(content: () -> Content, label: () -> Label)
+Creates a disclosure group with the given label and content views.
+init(isExpanded: Binding<Bool>, content: () -> Content, label: () -> Label)
+Creates a disclosure group with the given label and content views, and a binding to the expansion state (expanded or collapsed).
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Disclosing information progressively
+struct OutlineGroup
+A structure that computes views and disclosure groups on demand from an underlying collection of tree-structured, identified data.
+func disclosureGroupStyle<S>(S) -> some View
+Sets the style for disclosure groups within this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DisclosureGroup
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

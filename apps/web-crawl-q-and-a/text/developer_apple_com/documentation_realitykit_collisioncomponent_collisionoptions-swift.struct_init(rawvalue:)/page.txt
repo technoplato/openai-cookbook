@@ -1,0 +1,133 @@
+https://developer.apple.com/documentation/realitykit/collisioncomponent/collisionoptions-swift.struct/init(rawvalue:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+P
+var isStatic: Bool
+Beta
+P
+var collisionOptions: CollisionComponent.CollisionOptions
+Beta
+Instance Properties
+M
+init(shapes: [ShapeResource], mode: CollisionComponent.Mode, collisionOptions: CollisionComponent.CollisionOptions, filter: CollisionFilter)
+Beta
+M
+init(shapes: [ShapeResource], isStatic: Bool, filter: CollisionFilter)
+Beta
+Initializers
+Initializers
+S
+CollisionComponent.CollisionOptions
+Beta
+Structures
+static func != (Self, Self) -> Bool
+static func == (CollisionComponent, CollisionComponent) -> Bool
+Comparing Collision Components
+M
+static func registerComponent()
+Registering a Component Type
+Documentation
+Open Menu
+Swift
+Initializer
+init(rawValue:)
+Creates a new option set from the given raw value.
+visionOS 1.0+ Beta
+init(rawValue: UInt)
+Parameters
+rawValue
+The raw value of the option set to create. Each bit of rawValue potentially represents an element of the option set, though raw values may include bits that are not defined as distinct values of the OptionSet type.
+Discussion
+This initializer always succeeds, even if the value passed as rawValue exceeds the static properties declared as part of the option set. This example creates an instance of ShippingOptions with a raw value beyond the highest element, with a bit mask that effectively contains all the declared static members.
+let extraOptions = ShippingOptions(rawValue: 255)
+print(extraOptions.isStrictSuperset(of: .all))
+// Prints "true"
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(rawValue:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

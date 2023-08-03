@@ -1,0 +1,219 @@
+https://developer.apple.com/documentation/realitykit/meshresourceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ResolvedModel3D
+Beta
+Model component
+S
+ModelComponent
+S
+ModelDebugOptionsComponent
+r
+P
+HasModel
+Primitive shapes
+C
+ShapeResource
+Mesh resources
+S
+BoundingBox
+S
+OrientedBoundingBox
+Creating a Box
+M
+static func generateBox(size: Float, cornerRadius: Float) -> MeshResource
+M
+static func generateBox(size: SIMD3<Float>, cornerRadius: Float) -> MeshResource
+M
+static func generateBox(width: Float, height: Float, depth: Float, cornerRadius: Float, splitFaces: Bool) -> MeshResource
+Creating a Plane
+Documentation
+Open Menu
+Swift
+Class
+MeshResource
+A high-level representation of a collection of vertices and edges that define a shape.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+class MeshResource
+Topics
+Creating a Mesh Resource
+static func generate(from: MeshResource.Contents) throws -> MeshResource
+Create a mesh resource from contents.
+static func generate(from: [MeshDescriptor]) throws -> MeshResource
+Create a mesh resource from a list of mesh descriptors.
+static func generateAsync(from: MeshResource.Contents) -> LoadRequest<MeshResource>
+Create a mesh resource from contents asynchronously.
+static func generateAsync(from: [MeshDescriptor]) -> LoadRequest<MeshResource>
+Create a mesh resource from a list of mesh descriptors asynchronously.
+Configuring the Resource
+var expectedMaterialCount: Int
+The number of material entries required to render the mesh resource.
+func replace(with: MeshResource.Contents) throws
+Replace the contents of this mesh resource.
+func replaceAsync(with: MeshResource.Contents) -> LoadRequest<MeshResource>
+Replace the contents of this mesh resource asynchronously.
+Accessing Resource Data
+var contents: MeshResource.Contents
+Get the contents of the mesh asset.
+struct Contents
+Value of the contents of the resource.
+Getting a Bounding Box
+var bounds: BoundingBox
+A box that bounds the mesh.
+struct BoundingBox
+An axis-aligned bounding box (AABB).
+struct OrientedBoundingBox
+Representation for an oriented bounding box. Uses a combination of an axis-aligned bounding box and a rotation vector around the centroid of the said axis-aligned bounding box to represent an oriented bounding box.
+Creating a Box
+static func generateBox(size: Float, cornerRadius: Float) -> MeshResource
+Creates a new box mesh with sides of equal length.
+static func generateBox(size: SIMD3<Float>, cornerRadius: Float) -> MeshResource
+Creates a new box mesh with the given dimensions.
+static func generateBox(width: Float, height: Float, depth: Float, cornerRadius: Float, splitFaces: Bool) -> MeshResource
+Creates a new box mesh with the given dimensions and other characteristics.
+Creating a Plane
+static func generatePlane(width: Float, height: Float, cornerRadius: Float) -> MeshResource
+Creates a new rectangle mesh with the specified dimensions in the entity’s XY-plane.
+static func generatePlane(width: Float, depth: Float, cornerRadius: Float) -> MeshResource
+Creates a new rectangle mesh with the specified dimensions in the entity’s XZ-plane.
+Creating a Sphere
+static func generateSphere(radius: Float) -> MeshResource
+Creates a new sphere mesh with the specified radius.
+Creating Text
+typealias Font
+A platform-specific type that represents a font for use in generating a text mesh.
+Structures
+struct Instance
+An object that transforms a model to a location.
+struct JointInfluences
+A buffer of vertex-joint influences which bind the mesh part’s vertices to a skeleton via a skinning deformation.
+Beta
+struct Model
+A model consists of a list of parts.
+struct Part
+A part of a model consisting of a single material.
+struct Skeleton
+A skeleton consists of a hierarchy of joints. Each joint defines a coordinate space. Portions of a model may be thought of as having a position in a joint’s local space.
+Beta
+Type Methods
+static func generate(from: MeshResource.Contents) async throws -> MeshResource
+static func generate(from: [MeshDescriptor]) async throws -> MeshResource
+static func generateBoxWithRoundedCorners(size: SIMD3<Float>, majorRadius: Float, minorRadius: Float) -> MeshResource
+Creates a new box with rounded corners mesh with the specified extent.
+Beta
+static func generateCone(height: Float, radius: Float) -> MeshResource
+Creates a new cone mesh with the specified dimensions.
+Beta
+static func generateCylinder(height: Float, radius: Float) -> MeshResource
+Creates a new cylinder mesh with the specified dimensions.
+Beta
+static func generateText(String, extrusionDepth: Float, font: MeshResource.Font, containerFrame: CGRect, alignment: CTTextAlignment, lineBreakMode: CTLineBreakMode) -> MeshResource
+Generates a 3D mesh for rendering static text.
+static func generateText(String, extrusionDepth: Float, font: MeshResource.Font, containerFrame: CGRect, alignment: CTTextAlignment, lineBreakMode: CTLineBreakMode) -> MeshResource
+Generates a 3D mesh for rendering static text.
+Relationships
+Conforms To
+Resource
+Sendable
+See Also
+Mesh resources
+struct MeshPartCollection
+An object that holds a collection of mesh parts.
+struct MeshInstanceCollection
+An object that holds a collection of mesh resource instances.
+struct MeshModelCollection
+An object that holds a collection of mesh models.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MeshResource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

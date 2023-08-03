@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/contenttransitionaddsdrawinggroupSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+P
+var contentTransition: ContentTransition
+M
+func contentTransition(ContentTransition) -> some View
+S
+AnyTransition
+S
+AsymmetricTransition
+Beta
+E
+TransitionPhase
+Beta
+S
+TransitionProperties
+Beta
+r
+P
+Transition
+Beta
+M
+func transition(AnyTransition) -> some View
+Documentation
+Open Menu
+Swift
+Instance Property
+contentTransitionAddsDrawingGroup
+A Boolean value that controls whether views that render content transitions use GPU-accelerated rendering.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+var contentTransitionAddsDrawingGroup: Bool { get set }
+Discussion
+Setting this value to true causes SwiftUI to wrap content transitions with a drawingGroup(opaque:colorMode:) modifier.
+See Also
+Defining transitions
+func transition<T>(T) -> some View
+Associates a transition with the view.
+Beta
+func transition(AnyTransition) -> some View
+Associates a transition with the view.
+protocol Transition
+A description of view changes to apply when a view is added to and removed from the view hierarchy.
+Beta
+struct TransitionProperties
+The properties a Transition can have.
+Beta
+enum TransitionPhase
+An indication of which the current stage of a transition.
+Beta
+struct AsymmetricTransition
+A composite Transition that uses a different transition for insertion versus removal.
+Beta
+struct AnyTransition
+A type-erased transition.
+func contentTransition(ContentTransition) -> some View
+Modifies the view to use a given transition as its method of animating changes to the contents of its views.
+var contentTransition: ContentTransition
+The current method of animating the contents of views.
+struct ContentTransition
+A kind of transition that applies to the content within a single view, rather than to the insertion or removal of a view.
+struct PlaceholderContentView
+A placeholder used to construct an inline modifier, transition, or other helper type.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contentTransitionAddsDrawingGroup
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

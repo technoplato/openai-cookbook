@@ -1,0 +1,197 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysessionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Structures
+S
+PhotogrammetrySession.PointCloud
+E
+PhotogrammetrySession.Result
+Obtaining Results
+E
+PhotogrammetrySession.Request
+Creating Requests
+M
+func cancel()
+Using object capture assets in RealityKit
+Creating a Photogrammetry Command-Line App
+Creating 3D objects from photographs
+Capturing photographs for RealityKit Object Capture
+Model Creation
+Object capture
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Documentation
+Open Menu
+Swift
+Class
+PhotogrammetrySession
+PhotogrammetrySession controls the reconstruction process of a set of images of an object into a 3D model.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+class PhotogrammetrySession
+Topics
+Creating the Session
+init(input: URL, configuration: PhotogrammetrySession.Configuration) throws
+Creates a session that will use all images found in the given input directory URL as samples for reconstruction.
+init<S>(input: S, configuration: PhotogrammetrySession.Configuration) throws
+Creates a session that takes a custom sequence of input PhotogrammetrySample objects by iterating the passed in Sequence object lazily.
+static var isSupported: Bool
+Returns true if the current hardware supports Object Capture.
+Configuring the Session
+var configuration: PhotogrammetrySession.Configuration
+Readonly property containing the session configuration set in the construction.
+struct Configuration
+The configuration parameters for a photogrammetry session.
+Monitoring the Session
+var activeRequests: [PhotogrammetrySession.Request]
+The session’s active request objects.
+var isProcessing: Bool
+The session is actively processing requests.
+var outputs: PhotogrammetrySession.Outputs
+Returns the outputs message stream which can be asynchronously iterated on.
+enum Output
+Status updates on the object-creation process.
+Controlling Object Creation
+func process(requests: [PhotogrammetrySession.Request]) throws
+Starts processing of the provided processing requests. Messages begin to be produced to the output publisher.
+func cancel()
+Requests cancellation of any running requests.
+Creating Requests
+enum Request
+An object that configures a photogrammetry session reconstruction request.
+Obtaining Results
+enum Result
+An object that holds the created 3D object.
+struct PointCloud
+A sparse point cloud data structure output as the payload of a .pointCloud request. A point cloud is an array of PointCloud.Point instances.
+Structures
+struct Limits
+Data structure to observe hardware limits for reconstruction. Note that these are specific to the device on which the PhotogrammetrySession is run.
+Beta
+struct Pose
+A 6DOF pose relative to the estimated coordinate system.
+Beta
+struct Poses
+Once initial photogrammetric calculations are complete, a data structure mapping the sample ID (or index if a folder was used) to the 6DOF algorithmically estimated pose of that sample is returned.
+Beta
+Type Properties
+static let limits: PhotogrammetrySession.Limits
+Observer for the device-specific constant hardware limits for reconstruction.
+Beta
+Enumerations
+enum Error
+An error type thrown from various functions if problems in reconstruction are encountered. These should be localized by the app.
+Beta
+Default Implementations
+API Reference
+Identifiable Implementations
+Relationships
+Conforms To
+Identifiable
+See Also
+Model Creation
+Capturing photographs for RealityKit Object Capture
+Take high-quality images of objects to generate 3D models.
+Creating 3D objects from photographs
+Construct virtual objects to use in your AR experiences.
+struct PhotogrammetrySample
+An object that represents one image and its corresponding metadata.
+struct ObjectCaptureView
+A view that guides a user through capturing images for object capture.
+Beta
+class ObjectCaptureSession
+A session object that monitors and controls image capture for photogrammetry.
+Beta
+struct ObjectCapturePointCloudView
+An object that renders the current state of the ObjectCaptureSession point cloud.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

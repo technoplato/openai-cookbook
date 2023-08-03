@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/swiftui/layout/spacing(subviews:cache:)-86z2eSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ZStackLayout
+S
+VStackLayout
+S
+HStackLayout
+S
+AnyLayout
+Transitioning between layout types
+r
+P
+LayoutValueKey
+M
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+M
+func explicitAlignment(of: VerticalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+M
+func explicitAlignment(of: HorizontalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Reporting layout container characteristics
+T
+Layout.Subviews
+M
+func placeSubviews(in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache)
+M
+func sizeThatFits(proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGSize
+Sizing the container and placing subviews
+r
+P
+Layout
+Documentation
+Open Menu
+Swift
+Instance Method
+spacing(subviews:cache:)
+Returns the preferred spacing values of the composite view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func spacing(
+    subviews: Self.Subviews,
+    cache: inout Self.Cache
+) -> ViewSpacing
+Required Default implementation provided.
+Parameters
+subviews
+A collection of proxy instances that represent the views that the container arranges. You can use the proxies in the collection to get information about the subviews as you determine how much spacing the container prefers around it.
+cache
+Optional storage for calculated data that you can share among the methods of your custom layout container. See makeCache(subviews:) for details.
+Return Value
+A ViewSpacing instance that describes the preferred spacing around the container view.
+Discussion
+Implement this method to provide custom spacing preferences for a layout container. The value you return affects the spacing around the container, but it doesn’t affect how the container arranges subviews relative to one another inside the container.
+Create a custom ViewSpacing instance for your container by initializing one with default values, and then merging that with spacing instances of certain subviews. For example, if you define a basic vertical stack that places subviews in a column, you could use the spacing preferences of the subview edges that make contact with the container’s edges:
+extension BasicVStack {
+    func spacing(subviews: Subviews, cache: inout ()) -> ViewSpacing {
+        var spacing = ViewSpacing()
+
+
+        for index in subviews.indices {
+            var edges: Edge.Set = [.leading, .trailing]
+            if index == 0 { edges.formUnion(.top) }
+            if index == subviews.count - 1 { edges.formUnion(.bottom) }
+            spacing.formUnion(subviews[index].spacing, edges: edges)
+        }
+
+
+        return spacing
+    }
+}
+In the above example, the first and last subviews contribute to the spacing above and below the container, respectively, while all subviews affect the spacing on the leading and trailing edges.
+If you don’t implement this method, the protocol provides a default implementation, namely spacing(subviews:cache:), that merges the spacing preferences across all subviews on all edges.
+Default Implementations
+Layout Implementations
+func spacing(subviews: Self.Subviews, cache: inout Self.Cache) -> ViewSpacing
+Returns the union of all subview spacing.
+See Also
+Reporting layout container characteristics
+func explicitAlignment(of: HorizontalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Returns the position of the specified horizontal alignment guide along the x axis.
+Required Default implementations provided.
+func explicitAlignment(of: VerticalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Returns the position of the specified vertical alignment guide along the y axis.
+Required Default implementations provided.
+static var layoutProperties: LayoutProperties
+Properties of a layout container.
+Required Default implementation provided.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is spacing(subviews:cache:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,211 @@
+https://developer.apple.com/documentation/swiftui/view/fileimporter(ispresented:allowedcontenttypes:allowsmultipleselection:oncompletion:oncancellation:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func inspectorColumnWidth(CGFloat) -> some View
+Beta
+M
+func inspector<V>(isPresented: Binding<Bool>, content: () -> V) -> some View
+Beta
+Presenting an inspector
+S
+FileDialogBrowserOptions
+Beta
+M
+func fileDialogURLEnabled(Predicate<URL>) -> some View
+Beta
+M
+func fileDialogMessage(LocalizedStringKey) -> some View
+Beta
+M
+func fileDialogMessage(Text?) -> some View
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Importing from file
+M
+func fileExporterFilenameLabel<S>(S) -> some View
+Beta
+M
+func fileExporterFilenameLabel(Text?) -> some View
+Beta
+M
+func fileExporterFilenameLabel(LocalizedStringKey) -> some View
+Beta
+M
+func fileExporter<C, T>(isPresented: Binding<Bool>, items: C, contentTypes: [UTType], onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Beta
+M
+func fileExporter<T>(isPresented: Binding<Bool>, item: T?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+fileImporter(isPresented:allowedContentTypes:allowsMultipleSelection:onCompletion:onCancellation:)
+Presents a system dialog for allowing the user to import multiple files.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+func fileImporter(
+    isPresented: Binding<Bool>,
+    allowedContentTypes: [UTType],
+    allowsMultipleSelection: Bool,
+    onCompletion: @escaping (Result<[URL], Error>) -> Void,
+    onCancellation: @escaping () -> Void
+) -> some View
+Parameters
+isPresented
+A binding to whether the dialog should be shown.
+allowedContentTypes
+The list of supported content types which can be imported.
+allowsMultipleSelection
+Whether the importer allows the user to select more than one file to import.
+onCompletion
+A callback that will be invoked when the operation has succeeded or failed. The result indicates whether the operation succeeded or failed. To access the received URLs, call startAccessingSecurityScopedResource. When the access is no longer required, call stopAccessingSecurityScopedResource.
+onCancellation
+A callback that will be invoked if the user cancels the operation.
+Discussion
+In order for the dialog to appear, isPresented must be true. When the operation is finished, isPresented will be set to false before onCompletion is called. If the user cancels the operation, isPresented will be set to false and onCompletion will not be called.
+Note
+This dialog provides security-scoped URLs. Call the startAccessingSecurityScopedResource method to access or bookmark the URLs, and the stopAccessingSecurityScopedResource method to release the access.
+For example, a button that allows the user to choose multiple PDF files for the application to combine them later, might look like this:
+   struct PickPDFsButton: View {
+       @State private var showFileImporter = false
+       var handlePickedPDF: (URL) -> Void
+
+
+       var body: some View {
+           Button {
+               showFileImporter = true
+           } label: {
+               Label("Choose PDFs to combine", systemImage: "doc.circle")
+           }
+           .fileImporter(
+               isPresented: $showFileImporter,
+               allowedContentTypes: [.pdf],
+               allowsMultipleSelection: true
+           ) { result in
+               switch result {
+               case .success(let files):
+                   files.forEach { file in
+                       // gain access to the directory
+                       let gotAccess = file.startAccessingSecurityScopedResource()
+                       if !gotAccess { return }
+                       // access the directory URL
+                       // (read templates in the directory, make a bookmark, etc.)
+                       handlePickedPDF(file)
+                       // release access
+                       file.stopAccessingSecurityScopedResource()
+                   }
+               case .failure(let error):
+                   // handle error
+                   print(error)
+               }
+           }
+       }
+   }
+Note
+Changing allowedContentTypes or allowsMultipleSelection while the file importer is presented will have no immediate effect, however will apply the next time it is presented.
+See Also
+Importing from file
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for allowing the user to import multiple files.
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for allowing the user to import an existing file.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is fileImporter(isPresented:allowedContentTypes:allowsMultipleSelection:onCompletion:onCancellation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

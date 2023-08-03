@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/itemprovidertablerowmodifierSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+TableRowBody
+Defining the row value
+TableRowValue
+Managing interaction
+M
+func draggable<T>(() -> T) -> some TableRowContent<Self.TableRowValue>
+Beta
+M
+func dropDestination<T>(for: T.Type, action: ([T]) -> Void) -> some TableRowContent<Self.TableRowValue>
+Beta
+M
+func onHover(perform: (Bool) -> Void) -> some TableRowContent<Self.TableRowValue>
+Beta
+M
+func itemProvider((() -> NSItemProvider?)?) -> ModifiedContent<Self, ItemProviderTableRowModifier>
+func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> ModifiedContent<Self, _ContextMenuPreviewTableRowModifier<M, P>>
+Event handling
+Gestures
+Input events
+Clipboard
+Drag and drop
+Focus
+System events
+Documentation
+Open Menu
+Swift
+Structure
+ItemProviderTableRowModifier
+A table row modifier that associates an item provider with some base row content.
+iOS 16.0+
+iPadOS 16.0+
+macOS 12.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+struct ItemProviderTableRowModifier
+Relationships
+Conforms To
+Sendable
+See Also
+Managing interaction
+func draggable<T>(() -> T) -> some TableRowContent<Self.TableRowValue>
+Activates this row as the source of a drag and drop operation.
+Beta
+func dropDestination<T>(for: T.Type, action: ([T]) -> Void) -> some TableRowContent<Self.TableRowValue>
+Defines the entire row as a destination of a drag and drop operation that handles the dropped content with a closure that you specify.
+Beta
+func onHover(perform: (Bool) -> Void) -> some TableRowContent<Self.TableRowValue>
+Adds an action to perform when the pointer moves onto or away from the entire row.
+Beta
+func itemProvider((() -> NSItemProvider?)?) -> ModifiedContent<Self, ItemProviderTableRowModifier>
+Provides a closure that vends the drag representation for a particular data element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ItemProviderTableRowModifier
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

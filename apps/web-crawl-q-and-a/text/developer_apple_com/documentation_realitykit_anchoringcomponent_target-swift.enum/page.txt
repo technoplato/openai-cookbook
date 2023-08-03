@@ -1,0 +1,182 @@
+https://developer.apple.com/documentation/realitykit/anchoringcomponent/target-swift.enumSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+case hand(AnchoringComponent.Target.Chirality, location: AnchoringComponent.Target.HandLocation)
+Enumeration Cases
+S
+AnchoringComponent.Target.HandLocation
+Structures
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+static func != (Self, Self) -> Bool
+case plane(AnchoringComponent.Target.Alignment, classification: AnchoringComponent.Target.Classification, minimumBounds: SIMD2<Float>)
+P
+let target: AnchoringComponent.Target
+Setting a Target
+M
+init(ARAnchor)
+M
+init(AnchoringComponent.Target)
+Creating the Anchor Component
+S
+AnchoringComponent
+S
+AccessibilityComponent
+Beta
+Essential components
+Documentation
+Open Menu
+Swift
+Enumeration
+AnchoringComponent.Target
+The kinds of real world objects to which an anchor entity can be tethered.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+enum Target
+Topics
+Choosing an Anchor Target
+case camera
+The camera.
+case world(transform: float4x4)
+A fixed position in the scene.
+case anchor(identifier: UUID)
+The AR anchor with a given identifier.
+case plane(AnchoringComponent.Target.Alignment, classification: AnchoringComponent.Target.Classification, minimumBounds: SIMD2<Float>)
+A surface.
+case image(group: String, name: String)
+An image.
+case object(group: String, name: String)
+A specific object.
+case face
+The user’s face.
+case body
+The user’s body.
+Characterizing Surfaces
+struct Alignment
+The alignment of real-world surfaces to seek as targets.
+struct Classification
+Types of real-world surfaces to seek as targets.
+Comparing Targets
+static func == (AnchoringComponent.Target, AnchoringComponent.Target) -> Bool
+Indicates whether two targets are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two targets are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the target by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the target.
+Structures
+struct HandLocation
+Enumeration Cases
+case hand(AnchoringComponent.Target.Chirality, location: AnchoringComponent.Target.HandLocation)
+The entity should be anchor to a user’s hand.
+case head
+The head.
+Enumerations
+enum Chirality
+Defines the chirality of tracked hands to look for.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+See Also
+Setting a Target
+let target: AnchoringComponent.Target
+The kind of real world object to which the anchor entity should anchor.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AnchoringComponent.Target
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

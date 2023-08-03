@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/drop(untiloutputfrom:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>
+M
+func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>
+Combining Elements from Multiple Publishers
+M
+func output<R>(in: R) -> Publishers.Output<Self>
+M
+func output(at: Int) -> Publishers.Output<Self>
+M
+func tryLast(where: (Self.Output) throws -> Bool) -> Publishers.TryLastWhere<Self>
+M
+func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>
+Applying Sequence Operations to Elements
+M
+func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>
+M
+func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>
+M
+func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>
+M
+func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>
+M
+func contains(Self.Output) -> Publishers.Contains<Self>
+Applying Matching Criteria to Elements
+M
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+drop(untilOutputFrom:)
+Ignores elements from the upstream publisher until it receives an element from a second publisher.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func drop<P>(untilOutputFrom publisher: P) -> Publishers.DropUntilOutput<Self, P> where P : Publisher, Self.Failure == P.Failure
+Parameters
+publisher
+A publisher to monitor for its first emitted element.
+Return Value
+A publisher that drops elements from the upstream publisher until the other publisher produces a value.
+Discussion
+Use Publisher/drop(untilOutputFrom:) to ignore elements from the upstream publisher until another, second, publisher delivers its first element. This publisher requests a single value from the second publisher, and it ignores (drops) all elements from the upstream publisher until the second publisher produces a value. After the second publisher produces an element, Publisher/drop(untilOutputFrom:) cancels its subscription to the second publisher, and allows events from the upstream publisher to pass through.
+After this publisher receives a subscription from the upstream publisher, it passes through backpressure requests from downstream to the upstream publisher. If the upstream publisher acts on those requests before the other publisher produces an item, this publisher drops the elements it receives from the upstream publisher.
+In the example below, the pub1 publisher defers publishing its elements until the pub2 publisher delivers its first element:
+let upstream = PassthroughSubject<Int,Never>()
+let second = PassthroughSubject<String,Never>()
+cancellable = upstream
+    .drop(untilOutputFrom: second)
+    .sink { print("\($0)", terminator: " ") }
+
+
+upstream.send(1)
+upstream.send(2)
+second.send("A")
+upstream.send(3)
+upstream.send(4)
+// Prints "3 4"
+See Also
+Applying Sequence Operations to Elements
+func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>
+Omits elements from the upstream publisher until a given closure returns false, before republishing all remaining elements.
+func dropFirst(Int) -> Publishers.Drop<Self>
+Omits the specified number of elements before republishing subsequent elements.
+func tryDrop(while: (Self.Output) throws -> Bool) -> Publishers.TryDropWhile<Self>
+Omits elements from the upstream publisher until an error-throwing closure returns false, before republishing all remaining elements.
+func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>
+Appends a publisher’s output with the specified elements.
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+Prefixes a publisher’s output with the specified values.
+func prefix(Int) -> Publishers.Output<Self>
+Republishes elements up to the specified maximum count.
+func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>
+Republishes elements until another publisher emits an element.
+func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>
+Republishes elements while a predicate closure indicates publishing should continue.
+func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>
+Republishes elements while an error-throwing predicate closure indicates publishing should continue.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is drop(untilOutputFrom:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/model3dphaseSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Postprocessing effects
+Physics simulation
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+r
+P
+Resource
+Common types
+r
+P
+MeshBufferSemantic
+r
+P
+MeshBufferContainer
+S
+AnyMeshBuffer
+S
+MeshDescriptor
+S
+MeshBuffer
+Mutable mesh buffers
+Documentation
+Open Menu
+Swift
+Enumeration
+Model3DPhase
+The current phase of the asynchronous model loading operation.
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+enum Model3DPhase
+Overview
+When you create a Model3D instance with the init(url:transaction:content:) or Model3D/init(named:transaction:content:) initializers, you define the appearance of the view using a content closure. Model3D calls the closure with a phase value at different points during the load operation to indicate the current state. Use the phase to decide what to display. For example, you can display the loaded model if it exists, a view that indicates an error, or a placeholder:
+let url = URL(string: "https://example.com/robot.usdz")!
+Model3D(url: url) { phase in
+    if let model = phase.model {
+        model // Displays the loaded model.
+    } else if phase.error != nil {
+        Color.red // Indicates an error.
+    } else {
+        ProgressView()
+    }
+}
+Topics
+Accessing the model
+var model: ResolvedModel3D?
+The loaded model, if any.
+var error: (Error)?
+The error that occurred when attempting to load a model, if any.
+Obtaining the result
+case empty
+No model is loaded.
+Enumeration Cases
+case failure(Error)
+An model failed to load with an error.
+case success(ResolvedModel3D)
+A model has succesfully loaded.
+See Also
+Common types
+protocol Resource
+A shared resource you use to configure a component, like a material, mesh, or texture.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Model3DPhase
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

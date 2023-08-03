@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/realityview/scaledtofill()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func searchSuggestions(Visibility, for: SearchSuggestionsPlacement.Set) -> some View
+M
+func searchSuggestions<S>(() -> S) -> some View
+M
+func searchScopes<V, S>(Binding<V>, scopes: () -> S) -> some View
+M
+func searchScopes<V, S>(Binding<V>, activation: SearchScopeActivation, () -> S) -> some View
+M
+func searchDictationBehavior(TextInputDictationBehavior) -> some View
+M
+func searchCompletion(String) -> some View
+M
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+M
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some View
+M
+func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View
+M
+func scaleEffect(CGFloat, anchor: UnitPoint3D) -> some View
+M
+func scaleEffect(CGSize, anchor: UnitPoint) -> some View
+M
+func scaleEffect(Size3D, anchor: UnitPoint3D) -> some View
+M
+func scaleEffect(CGFloat, anchor: UnitPoint) -> ModifiedContent<Self, _UniformScaleEffect>
+M
+func scaleEffect(CGFloat, anchor: UnitPoint) -> some View
+M
+func saturation(Double) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+scaledToFill()
+Scales this view to fill its parent.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func scaledToFill() -> some View
+Return Value
+A view that scales this view to fill its parent, maintaining this view’s aspect ratio.
+Discussion
+Use scaledToFill() to scale this view to fill its parent, while maintaining the view’s aspect ratio as the view scales:
+Circle()
+    .fill(Color.pink)
+    .scaledToFill()
+    .frame(width: 300, height: 150)
+    .border(Color(white: 0.75))
+This method is equivalent to calling View/aspectRatio(_:contentMode:)-6j7xz with a nil aspectRatio and a content mode of ContentMode/fill.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is scaledToFill()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

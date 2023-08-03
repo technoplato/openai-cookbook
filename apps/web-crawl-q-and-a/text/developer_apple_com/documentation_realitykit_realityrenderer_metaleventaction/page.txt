@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/realitykit/realityrenderer/metaleventactionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Understanding RealityKit’s modular architecture
+Entity Component System
+r
+P
+RealityCoordinateSpaceConverting
+Beta
+S
+SceneRealityCoordinateSpace
+Beta
+M
+func updateAndRender(deltaTime: TimeInterval, cameraOutput: RealityRenderer.CameraOutput, whenScheduled: ((RealityRenderer) -> Void)?, onComplete: ((RealityRenderer) -> Void)?, actionsBeforeRender: [RealityRenderer.MetalEventAction], actionsAfterRender: [RealityRenderer.MetalEventAction]) throws
+M
+func update(TimeInterval) throws
+M
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+S
+RealityRenderer.ImageBasedLight
+S
+RealityRenderer.EntityCollection
+S
+RealityRenderer.CameraSettings
+S
+RealityRenderer.CameraOutput
+Structures
+C
+RealityRenderer
+Beta
+S
+RealityView
+Beta
+S
+Model3D
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+RealityRenderer.MetalEventAction
+The structure describing an event and value to be signaled or waited for.
+visionOS 1.0+ Beta
+struct MetalEventAction
+Topics
+Instance Properties
+let event: MTLEvent
+The metal event object to be signaled or waited for.
+let value: UInt64
+The value to be signaled or waited for.
+Type Methods
+static func signal(MTLEvent, value: UInt64) -> RealityRenderer.MetalEventAction
+Returns an action that represents signaling event with the value.
+static func wait(for: MTLEvent, value: UInt64) -> RealityRenderer.MetalEventAction
+Returns an action that represents waiting for an event to reach the value.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is RealityRenderer.MetalEventAction
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/realitykit-object-captureSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Materials and shaders
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Diorama
+Asset creation
+r
+P
+EntityCollection
+Beta
+r
+P
+TransientComponent
+r
+P
+Component
+C
+Entity
+Documentation
+Open Menu
+Swift
+Object capture
+Create 3D objects from a series of photographs using photogrammetry.
+Overview
+In iOS 17 and macOS 12 and later, you can create 3D objects from photographs using a process called photogrammetry. You provide RealityKit Object Capture with a series of well-lit photographs taken from many different angles. It analyzes the overlap area between different images to match up landmarks and produces a 3D model of the photographed object.
+Topics
+Model Creation
+Capturing photographs for RealityKit Object Capture
+Take high-quality images of objects to generate 3D models.
+Creating 3D objects from photographs
+Construct virtual objects to use in your AR experiences.
+Creating a Photogrammetry Command-Line App
+Generate 3D objects from images using RealityKit Object Capture.
+Using object capture assets in RealityKit
+Create a chess game using RealityKit and assets created using Object Capture.
+class PhotogrammetrySession
+PhotogrammetrySession controls the reconstruction process of a set of images of an object into a 3D model.
+struct PhotogrammetrySample
+An object that represents one image and its corresponding metadata.
+struct ObjectCaptureView
+A view that guides a user through capturing images for object capture.
+Beta
+class ObjectCaptureSession
+A session object that monitors and controls image capture for photogrammetry.
+Beta
+struct ObjectCapturePointCloudView
+An object that renders the current state of the ObjectCaptureSession point cloud.
+Beta
+See Also
+Asset creation
+API Reference
+Reality Composer
+A visual editor for RealityKit AR scenes.
+API Reference
+USD Assets
+Import and use 3D scenes by importing USD files.
+Current page is Object capture
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/shapestyle/ultrathinmaterialSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func linearGradient(colors: [Color], startPoint: UnitPoint, endPoint: UnitPoint) -> LinearGradient
+M
+static func linearGradient(stops: [Gradient.Stop], startPoint: UnitPoint, endPoint: UnitPoint) -> LinearGradient
+Radial gradients
+M
+static func radialGradient(Gradient, center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+M
+static func radialGradient(AnyGradient, center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> some ShapeStyle
+M
+static func radialGradient(colors: [Color], center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+M
+static func radialGradient(stops: [Gradient.Stop], center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+Materials
+P
+static var tertiary: HierarchicalShapeStyle
+P
+static var quaternary: HierarchicalShapeStyle
+P
+static var quinary: HierarchicalShapeStyle
+Semantic styles
+P
+static var foreground: ForegroundStyle
+P
+static var background: BackgroundStyle
+P
+static var selection: SelectionShapeStyle
+Documentation
+Open Menu
+Swift
+Type Property
+ultraThinMaterial
+A mostly translucent material.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+static var ultraThinMaterial: Material { get }
+Available when Self is Material.
+See Also
+Materials
+static var thinMaterial: Material
+A material that’s more translucent than opaque.
+Available when Self is Material.
+static var regularMaterial: Material
+A material that’s somewhat translucent.
+Available when Self is Material.
+static var thickMaterial: Material
+A material that’s more opaque than translucent.
+Available when Self is Material.
+static var ultraThickMaterial: Material
+A mostly opaque material.
+Available when Self is Material.
+static var bar: Material
+A material matching the style of system toolbars.
+Available when Self is Material.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ultraThinMaterial
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/scenebuilderSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a menu bar extra
+S
+SettingsLink
+Beta
+S
+Settings
+Managing a settings window
+E
+ScenePhase
+P
+var scenePhase: ScenePhase
+Monitoring scene life cycle
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> some Scene
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> some Scene
+r
+P
+Scene
+Creating scenes
+Scenes
+App organization
+App structure
+SwiftUI updates
+Exploring SwiftUI Sample Apps
+Learning SwiftUI
+Documentation
+Open Menu
+Swift
+Structure
+SceneBuilder
+A result builder for composing a collection of scenes into a single composite scene.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+@resultBuilder
+struct SceneBuilder
+Topics
+Building content
+static func buildBlock<Content>(Content) -> Content
+Passes a single scene written as a child scene through unmodified.
+static func buildBlock<C0, C1>(C0, C1) -> some Scene
+static func buildBlock<C0, C1, C2>(C0, C1, C2) -> some Scene
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> some Scene
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> some Scene
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> some Scene
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> some Scene
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> some Scene
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> some Scene
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> some Scene
+static func buildExpression<Content>(Content) -> Content
+Builds an expression within the builder.
+static func buildLimitedAvailability(some Scene) -> Scene & _LimitedAvailabilitySceneMarker
+Provides support for “if” statements with #available() clauses in multi-statement closures, producing conditional content for the “then” branch, i.e. the conditionally-available branch.
+static func buildOptional((Scene & _LimitedAvailabilitySceneMarker)?) -> some Scene
+Provides support for “if” statements in multi-statement closures, producing an optional scene that is visible only when the condition evaluates to true.
+Relationships
+Conforms To
+Sendable
+See Also
+Creating scenes
+protocol Scene
+A part of an app’s user interface with a life cycle managed by the system.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SceneBuilder
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

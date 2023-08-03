@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/realitykit/pointlightcomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+3D Models
+Equatable Implementations
+Component Implementations
+Default Implementations
+M
+init(cgColor: CGColor, intensity: Float, attenuationRadius: Float)
+Initializers
+static func != (Self, Self) -> Bool
+S
+SpotLightComponent
+S
+GroundingShadowComponent
+Beta
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+Beta
+S
+DirectionalLightComponent
+Lighting
+S
+VideoPlayerComponent
+Beta
+S
+SynchronizationComponent
+Documentation
+Open Menu
+Swift
+Structure
+PointLightComponent
+A component that defines a point light source.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+struct PointLightComponent
+Topics
+Creating a Point Light Component
+init(color: PointLightComponent.Color, intensity: Float, attenuationRadius: Float)
+Creates a point light component with the given configuration.
+init(color: PointLightComponent.Color, intensity: Float, attenuationRadius: Float)
+Creates a point light component with the given configuration.
+Setting Color
+var color: PointLightComponent.Color
+A color for the point light.
+var color: PointLightComponent.Color
+A color for the point light.
+typealias Color
+A platform-specific type used to define color for a point light.
+Configuring the Light
+var attenuationRadius: Float
+The point light attenuation radius in meters.
+var intensity: Float
+The intensity of the point light, measured in lumen.
+Registering a Component Type
+static func registerComponent()
+Registers a new component type.
+Comparing Point Light Components
+static func == (PointLightComponent, PointLightComponent) -> Bool
+Indicates whether two point light components are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two point light components are not equal.
+Initializers
+init(cgColor: CGColor, intensity: Float, attenuationRadius: Float)
+Creates a new instance with the specified color, intensity and attenuation.
+Default Implementations
+API Reference
+Component Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Component
+Equatable
+See Also
+Lighting
+struct DirectionalLightComponent
+A component that defines a directional light source.
+struct ImageBasedLightComponent
+Beta
+struct ImageBasedLightReceiverComponent
+Beta
+struct GroundingShadowComponent
+Beta
+struct SpotLightComponent
+A component that defines a spotlight source.
+Current page is PointLightComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/realitykitsceneSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var badgeProminence: BadgeProminence
+Beta
+P
+var contentTransition: ContentTransition
+P
+var contentTransitionAddsDrawingGroup: Bool
+P
+var defaultMinListHeaderHeight: CGFloat?
+P
+var defaultMinListRowHeight: CGFloat
+P
+var isFocusEffectEnabled: Bool
+Beta
+P
+var headerProminence: Prominence
+P
+var physicalMetrics: PhysicalMetricsConverter
+Beta
+S
+PresentationMode
+Creating custom environment values
+r
+P
+EnvironmentKey
+Modifying the environment
+M
+func environment<T>(T?) -> some View
+Beta
+M
+func environment<V>(WritableKeyPath<EnvironmentValues, V>, V) -> some View
+M
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Property
+realityKitScene
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+var realityKitScene: Scene? { get }
+See Also
+View attributes
+var allowedDynamicRange: Image.DynamicRange?
+The allowed dynamic range for the view, or nil.
+Beta
+var backgroundMaterial: Material?
+The material underneath the current view.
+var backgroundProminence: BackgroundProminence
+The prominence of the background underneath views associated with this environment.
+Beta
+var backgroundStyle: AnyShapeStyle?
+An optional style that overrides the default system background style when set.
+var badgeProminence: BadgeProminence
+The prominence to apply to badges associated with this environment.
+Beta
+var contentTransition: ContentTransition
+The current method of animating the contents of views.
+var contentTransitionAddsDrawingGroup: Bool
+A Boolean value that controls whether views that render content transitions use GPU-accelerated rendering.
+var defaultMinListHeaderHeight: CGFloat?
+The default minimum height of a header in a list.
+var defaultMinListRowHeight: CGFloat
+The default minimum height of a row in a list.
+var isFocusEffectEnabled: Bool
+A Boolean value that indicates whether the view associated with this environment allows focus effects to be displayed.
+Beta
+var headerProminence: Prominence
+The prominence to apply to section headers within a view.
+var physicalMetrics: PhysicalMetricsConverter
+The physical metrics associated with a scene.
+Beta
+var redactionReasons: RedactionReasons
+The current redaction reasons applied to the view hierarchy.
+var springLoadingBehavior: SpringLoadingBehavior
+The behavior of spring loaded interactions for the views associated with this environment.
+Beta
+var symbolRenderingMode: SymbolRenderingMode?
+The current symbol rendering mode, or nil denoting that the mode is picked automatically using the current image and foreground style as parameters.
+var symbolVariants: SymbolVariants
+The symbol variant to use in this environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is realityKitScene
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

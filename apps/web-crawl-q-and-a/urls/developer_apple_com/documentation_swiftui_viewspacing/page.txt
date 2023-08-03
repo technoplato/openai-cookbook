@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/viewspacingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Scroll views
+View groupings
+Tables
+Lists
+S
+GridLayout
+S
+ZStackLayout
+S
+VStackLayout
+S
+ProposedViewSize
+S
+LayoutProperties
+Configuring a custom layout
+S
+LayoutSubviews
+S
+LayoutSubview
+r
+P
+Layout
+Composing custom layouts with SwiftUI
+Creating a custom layout container
+Documentation
+Open Menu
+Swift
+Structure
+ViewSpacing
+A collection of the geometric spacing preferences of a view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct ViewSpacing
+Overview
+This type represents how much space a view prefers to have between it and the next view in a layout. The type stores independent values for each of the top, bottom, leading, and trailing edges, and can also record different values for different kinds of adjacent views. For example, it might contain one value for the spacing to the next text view along the top and bottom edges, other values for the spacing to text views on other edges, and yet other values for other kinds of views. Spacing preferences can also vary by platform.
+Your Layout type doesn’t have to take preferred spacing into account, but if it does, you can use the spacing preferences of the subviews in your layout container to:
+Add space between subviews when you implement the placeSubviews(in:proposal:subviews:cache:) method.
+Create a spacing preferences instance for the container view by implementing the spacing(subviews:cache:) method.
+Topics
+Creating spacing instances
+init()
+Initializes an instance with default spacing values.
+static let zero: ViewSpacing
+A view spacing instance that contains zero on all edges.
+Measuring spacing distance
+func distance(to: ViewSpacing, along: Axis) -> CGFloat
+Gets the preferred spacing distance along the specified axis to the view that returns a specified spacing preference.
+Merging spacing instances
+func formUnion(ViewSpacing, edges: Edge.Set)
+Merges the spacing preferences of another spacing instance with this instance for a specified set of edges.
+func union(ViewSpacing, edges: Edge.Set) -> ViewSpacing
+Gets a new value that merges the spacing preferences of another spacing instance with this instance for a specified set of edges.
+Relationships
+Conforms To
+Sendable
+See Also
+Configuring a custom layout
+struct LayoutProperties
+Layout-specific properties of a layout container.
+struct ProposedViewSize
+A proposal for the size of a view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ViewSpacing
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

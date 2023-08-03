@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/view/previewinterfaceorientation(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Naming a preview
+M
+func previewDisplayName(String?) -> some View
+Assigning a device
+M
+func previewDevice(PreviewDevice?) -> some View
+S
+PreviewDevice
+Customizing preview size and orientation
+M
+func previewLayout(PreviewLayout) -> some View
+E
+PreviewLayout
+Graphics and rendering modifiers
+Providing interactivity
+Input and event modifiers
+Search modifiers
+Presentation modifiers
+State modifiers
+Deprecated modifiers
+Documentation
+Open Menu
+Swift
+Instance Method
+previewInterfaceOrientation(_:)
+Overrides the orientation of the preview.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func previewInterfaceOrientation(_ value: InterfaceOrientation) -> some View
+Parameters
+value
+An orientation to use for preview.
+Return Value
+A preview that uses the given orientation.
+Discussion
+By default, device previews appear right side up, using orientation portrait. You can change the orientation of a preview using one of the values in the InterfaceOrientation structure:
+struct CircleImage_Previews: PreviewProvider {
+    static var previews: some View {
+        CircleImage()
+            .previewInterfaceOrientation(.landscapeRight)
+    }
+}
+See Also
+Customizing preview size and orientation
+func previewLayout(PreviewLayout) -> some View
+Overrides the size of the container for the preview.
+struct InterfaceOrientation
+The orientation of the interface from the user’s perspective.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is previewInterfaceOrientation(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/tablerowbuilder/buildeither(first:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7, C8)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7, C8, C9)>
+Building a row from conditionals
+M
+static func buildIf<C>(C?) -> C?
+Accessibility
+Accessibility fundamentals
+Accessible appearance
+Accessible controls
+Accessible descriptions
+Accessible navigation
+Framework integration
+Documentation
+Open Menu
+Swift
+Type Method
+buildEither(first:)
+Creates a row result for the first of two row content alternatives.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+static func buildEither<T, F>(first: T) -> _ConditionalContent<T, F> where Value == T.TableRowValue, T : TableRowContent, F : TableRowContent, T.TableRowValue == F.TableRowValue
+Available when Value conforms to Identifiable.
+Discussion
+This method provides support for “if” statements in multi-statement closures, producing conditional content for the “then” branch.
+See Also
+Building a row from conditionals
+static func buildIf<C>(C?) -> C?
+Creates a row result for conditional statements.
+Available when Value conforms to Identifiable.
+static func buildEither<T, F>(second: F) -> _ConditionalContent<T, F>
+Creates a row result for the second of two row content alternatives.
+Available when Value conforms to Identifiable.
+static func buildExpression<Content>(Content) -> Content
+Builds an expression within the builder.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is buildEither(first:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/scene/defaultsize(_:)-5y8nSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View styles
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+M
+func defaultPosition(UnitPoint) -> some Scene
+Positioning and sizing windows
+Positioning and sizing a window
+S
+DismissBehavior
+Beta
+S
+DismissAction
+P
+var dismiss: DismissAction
+S
+DismissWindowAction
+Beta
+P
+var dismissWindow: DismissWindowAction
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+defaultSize(_:)
+Sets a default size for a window.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 13.0+
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+func defaultSize(_ size: CGSize) -> some Scene
+Parameters
+size
+The default size for new windows created from a scene.
+Return Value
+A scene that uses a default size for new windows.
+Discussion
+Use this scene modifier to indicate a default initial size for a new window that the system creates from a Scene declaration. For example, you can request that new windows that a WindowGroup generates occupy 600 points in the x-dimension and 400 points in the y-dimension:
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        .defaultSize(CGSize(width: 600, height: 400))
+    }
+}
+The size that you specify acts only as a default for when the window first appears. People can later resize the window using interface controls that the system provides. Also, during state restoration, the system restores windows to their most recent size rather than the default size.
+If you specify a default size that’s outside the range of the window’s inherent resizability in one or both dimensions, the system clamps the affected dimension to keep it in range. You can configure the resizability of a scene using the windowResizability(_:) modifier.
+The default size modifier affects any scene type that creates windows in macOS, namely:
+WindowGroup
+Window
+DocumentGroup
+Settings
+If you want to specify the input directly in terms of width and height, use defaultSize(width:height:) instead.
+See Also
+Positioning and sizing a window
+func defaultPosition(UnitPoint) -> some Scene
+Sets a default position for a window.
+func defaultSize(Size3D) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+Sets a default width and height for a window.
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func windowResizability(WindowResizability) -> some Scene
+Sets the kind of resizability to use for a window.
+struct WindowResizability
+The resizability of a window.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is defaultSize(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

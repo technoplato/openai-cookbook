@@ -1,0 +1,336 @@
+https://developer.apple.com/documentation/realitykit/entity/childcollectionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func forEach((Self.Element) throws -> Void) rethrows
+S
+Entity.ChildCollection.IndexingIterator
+Iterating over Collection of Entities
+M
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+M
+func removeChild(Entity, preservingWorldTransform: Bool)
+M
+func addChild(Entity, preservingWorldTransform: Bool)
+P
+var children: Entity.ChildCollection
+M
+func removeFromParent(preservingWorldTransform: Bool)
+M
+func setParent(Entity?, preservingWorldTransform: Bool)
+P
+var parent: Entity?
+Establishing a Hierarchy
+P
+var isAnchored: Bool
+Documentation
+Open Menu
+Swift
+Structure
+Entity.ChildCollection
+A collection of child entities.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+struct ChildCollection
+Topics
+Adding Entities
+func append<S>(contentsOf: S, preservingWorldTransforms: Bool)
+Adds the specified list of entity as children to this entity.
+func append(Entity, preservingWorldTransform: Bool)
+Adds the specified entity as a child to this entity.
+func append(contentsOf: [Entity], preservingWorldTransforms: Bool)
+Adds the specified list of entity as children to this entity.
+Removing Entities
+func remove(Entity, preservingWorldTransform: Bool)
+Removes the specified child from this entity.
+func remove(at: Int, preservingWorldTransform: Bool)
+Removes the specified child from this entity.
+func removeAll(preservingWorldTransforms: Bool)
+func removeAll(keepCapacity: Bool, preservingWorldTransforms: Bool)
+Removes all children from this entity.
+Replacing Entities
+func replaceAll([Entity], preservingWorldTransforms: Bool)
+Removes all children from this entity and adds the specified list of entities as the new children.
+func replaceAll<S>(S, preservingWorldTransforms: Bool)
+Removes all children from this entity and adds the specified list of entities as the new children.
+Comparing Collections
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order.
+Available when Element conforms to Equatable.
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test.
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence.
+Available when Element conforms to Equatable.
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test.
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements.
+Iterating over Collection of Entities
+struct IndexingIterator
+func forEach((Self.Element) throws -> Void) rethrows
+Calls the given closure on each element in the sequence in the same order as a for-in loop.
+func enumerated() -> EnumeratedSequence<Self>
+Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence.
+var underestimatedCount: Int
+A value less than or equal to the number of elements in the collection.
+Finding Entities
+func contains(Self.Element) -> Bool
+Returns a Boolean value indicating whether the sequence contains the given element.
+Available when Element conforms to Equatable.
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func allSatisfy((Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+var first: Self.Element?
+The first element of the collection.
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the first element of the sequence that satisfies the given predicate.
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the maximum element in the sequence, using the given predicate as the comparison between elements.
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the minimum element in the sequence, using the given predicate as the comparison between elements.
+func randomElement() -> Self.Element?
+Returns a random element of the collection.
+func randomElement<T>(using: inout T) -> Self.Element?
+Returns a random element of the collection, using the given generator as a source for randomness.
+Selecting Entities
+subscript(Int) -> Entity
+Accesses the element at the specified position. (See Collection.subscript.)
+func prefix(Int) -> Self.SubSequence
+Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection.
+func prefix(through: Self.Index) -> Self.SubSequence
+Returns a subsequence from the start of the collection through the specified position.
+func prefix(upTo: Self.Index) -> Self.SubSequence
+Returns a subsequence from the start of the collection up to, but not including, the specified position.
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements.
+func suffix(Int) -> Self.SubSequence
+Returns a subsequence, up to the given maximum length, containing the final elements of the collection.
+func suffix(from: Self.Index) -> Self.SubSequence
+Returns a subsequence from the specified position to the end of the collection.
+Transforming Entities
+func map<T>((Self.Element) throws -> T) rethrows -> [T]
+Returns an array containing the results of mapping the given closure over the sequence’s elements.
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+Returns an array containing the concatenated results of calling the given transformation with each element of this sequence.
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Returns an array containing the non-nil results of calling the given transformation with each element of this sequence.
+func reduce<Result>(Result, (Result, Self.Element) throws -> Result) rethrows -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func reduce<Result>(into: Result, (inout Result, Self.Element) throws -> ()) rethrows -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+var lazy: LazySequence<Self>
+A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily.
+Reordering Entities
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+Returns the elements of the sequence, sorted using the given predicate as the comparison between elements.
+func reversed() -> [Self.Element]
+Returns an array containing the elements of this sequence in reverse order.
+func shuffled() -> [Self.Element]
+Returns the elements of the sequence, shuffled.
+func shuffled<T>(using: inout T) -> [Self.Element]
+Returns the elements of the sequence, shuffled using the given generator as a source for randomness.
+Splitting the Collection
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate.
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given element.
+Available when Element conforms to Equatable.
+Describing a Collection
+var description: String
+A textual representation of this instance. (See CustomStringConvertible.)
+Counting Entities
+var count: Int
+The number of elements in the collection.
+var isEmpty: Bool
+A Boolean value indicating whether the collection is empty.
+Excluding Entities
+func dropFirst(Int) -> Self.SubSequence
+Returns a subsequence containing all but the given number of initial elements.
+func dropLast(Int) -> Self.SubSequence
+Returns a subsequence containing all but the specified number of final elements.
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements.
+Accessing Underlying Storage
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+Executes a closure on the sequence’s contiguous storage.
+Manipulating Indices
+func distance(from: Self.Index, to: Self.Index) -> Int
+Returns the distance between two indices.
+var indices: DefaultIndices<Self>
+The indices that are valid for subscripting the collection, in ascending order.
+Available when Indices is DefaultIndices<Self>.
+var startIndex: Int
+The position of the first element in a nonempty collection. (See Collection.startIndex.)
+var endIndex: Int
+TThe collection’s “past the end” position—that is, the position one greater than the last valid subscript argument. (See Collection.endIndex.)
+func firstIndex(of: Self.Element) -> Self.Index?
+Returns the first index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the first index in which an element of the collection satisfies the given predicate.
+func formIndex(inout Self.Index, offsetBy: Int)
+Offsets the given index by the specified distance.
+func formIndex(inout Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Bool
+Offsets the given index by the specified distance, or so that it equals the given limiting index.
+func formIndex(after: inout Self.Index)
+Replaces the given index with its successor.
+func index(Self.Index, offsetBy: Int) -> Self.Index
+Returns an index that is the specified distance from the given index.
+func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?
+Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index.
+func index(after: Int) -> Int
+Returns the position immediately after the given index. (See Collection.index.)
+func index(of: Self.Element) -> Self.Index?
+Returns the first index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+Publishing Changes
+var publisher: Publishers.Sequence<Self, Never>
+Instance Methods
+func append(contentsOf: Entity.ChildCollection, preservingWorldTransforms: Bool)
+Moves all children to be children of this entity.
+func makeIterator() -> Entity.ChildCollection.Iterator
+Returns an iterator over the elements of the collection.
+Type Aliases
+typealias Element
+A type representing the sequence’s elements.
+typealias Index
+A type that represents a position in the collection.
+typealias Indices
+A type that represents the indices that are valid for subscripting the collection, in ascending order.
+typealias Iterator
+A type that provides the collection’s iteration interface and encapsulates its iteration state.
+typealias SubSequence
+A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection.
+Default Implementations
+API Reference
+Collection Implementations
+API Reference
+CustomStringConvertible Implementations
+API Reference
+EntityCollection Implementations
+API Reference
+Sequence Implementations
+Relationships
+Conforms To
+Collection
+CustomStringConvertible
+EntityCollection
+Sendable
+Sequence
+See Also
+Establishing a Hierarchy
+var parent: Entity?
+The parent entity.
+func setParent(Entity?, preservingWorldTransform: Bool)
+Attaches the entity as a child to the specified entity.
+func removeFromParent(preservingWorldTransform: Bool)
+Removes the entity from its current parent or from the scene if it is a root entity.
+var children: Entity.ChildCollection
+The child entities that the entity manages.
+func addChild(Entity, preservingWorldTransform: Bool)
+Adds the given entity to the collection of child entities.
+func removeChild(Entity, preservingWorldTransform: Bool)
+Removes the given child from the entity.
+protocol HasHierarchy
+An interface that provides access to a parent entity and child entities.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Entity.ChildCollection
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

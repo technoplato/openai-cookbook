@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/background(ignoressafeareaedges:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func clipShape<S>(S, style: FillStyle) -> some View
+M
+func buttonStyle<S>(S) -> some View
+M
+func buttonStyle<S>(S) -> some View
+M
+func buttonRepeatBehavior(ButtonRepeatBehavior) -> some View
+M
+func buttonBorderShape(ButtonBorderShape) -> some View
+M
+func brightness(Double) -> some View
+M
+func border<S>(S, width: CGFloat) -> some View
+M
+func background<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func background<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func background<Background>(Background, alignment: Alignment) -> some View
+M
+func autocorrectionDisabled(Bool) -> some View
+M
+func autocapitalization(UITextAutocapitalizationType) -> some View
+M
+func aspectRatio(CGSize, contentMode: ContentMode) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+background(ignoresSafeAreaEdges:)
+Sets the view’s background to the default background style.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func background(ignoresSafeAreaEdges edges: Edge.Set = .all) -> some View
+Parameters
+edges
+The set of edges for which to ignore safe area insets when adding the background. The default value is Edge/Set/all. Specify an empty set to respect safe area insets on all edges.
+Return Value
+A view with the ShapeStyle/background shape style drawn behind it.
+Discussion
+This modifier behaves like View/background(_:ignoresSafeAreaEdges:), except that it always uses the ShapeStyle/background shape style. For example, you can add a background to a Label:
+ZStack {
+    Color.teal
+    Label("Flag", systemImage: "flag.fill")
+        .padding()
+        .background()
+}
+Without the background modifier, the teal color behind the label shows through the label. With the modifier, the label’s text and icon appear backed by a region filled with a color that’s appropriate for light or dark appearance:
+If you want to specify a View or a stack of views as the background, use View/background(alignment:content:) instead. To specify a Shape or InsettableShape, use View/background(_:in:fillStyle:)-89n7j or View/background(_:in:fillStyle:)-20tq5, respectively. To configure the background of a presentation, like a sheet, use View/presentationBackground(_:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is background(ignoresSafeAreaEdges:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

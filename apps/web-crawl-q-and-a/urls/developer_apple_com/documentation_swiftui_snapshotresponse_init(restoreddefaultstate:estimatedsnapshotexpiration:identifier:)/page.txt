@@ -1,0 +1,129 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Framework integration
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+Creating a response
+S
+SnapshotResponse
+S
+SnapshotData
+S
+BackgroundTask
+M
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some Scene
+Handling background tasks
+M
+func onContinueUserActivity(String, perform: (NSUserActivity) -> ()) -> some View
+M
+func userActivity(String, isActive: Bool, (NSUserActivity) -> ()) -> some View
+Documentation
+Open Menu
+Swift
+Initializer
+init(restoredDefaultState:estimatedSnapshotExpiration:identifier:)
+Creates a snapshot response.
+watchOS 9.0+
+init(
+    restoredDefaultState: Bool = false,
+    estimatedSnapshotExpiration: Date? = nil,
+    identifier: String? = nil
+)
+Parameters
+restoredDefaultState
+Pass true if your app has navigated back to its default launch scene.
+estimatedSnapshotExpiration
+The preferred date and time for the next background snapshot refresh task. Use distantFuture if you don’t want to schedule the next refresh.
+identifier
+A custom string to associate with the next background snapshot refresh task. This value is assigned to the next snapshot task’s TaskData userInfo property. Pass nil if you don’t want to associate any identifier with the next task.
+Current page is init(restoredDefaultState:estimatedSnapshotExpiration:identifier:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

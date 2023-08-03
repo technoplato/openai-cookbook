@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/lightingmodel-swift.enum/unlitSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var custom: CustomMaterial.Custom
+Using Custom Values
+S
+CustomMaterial.Metallic
+P
+var metallic: CustomMaterial.Metallic
+Specifying Metallic Reflections
+S
+CustomMaterial.Roughness
+P
+var roughness: CustomMaterial.Roughness
+E
+case clearcoat
+E
+case lit
+Specifying the Lighting Model
+E
+CustomMaterial.LightingModel
+P
+var lightingModel: CustomMaterial.LightingModel
+Setting the Lighting Model
+M
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+M
+init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?) throws
+Documentation
+Open Menu
+Swift
+Case
+CustomMaterial.LightingModel.unlit
+The entity renders with no light or shadow calculations.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+case unlit
+Discussion
+A custom material that uses the unlit lighting model renders much like an entity with an UnlitMaterial. Custom materials using CustomMaterial.LightingModel.unlit don’t respond to lights in the scene. Use this lighting model for user interface elements or other elements where visibility is more important than fitting in to the environment.
+The surface shader for a custom material has access to all of the custom material’s properties as inputs, but only renders based on the value passed to params.surface().set_emissive_color(). RealityKit ignores any other property your shader sets on params.surface().
+See Also
+Specifying the Lighting Model
+case lit
+The entity renders using physically based rendering techniques without a clearcoat.
+case clearcoat
+The entity renders using physically based rendering techniques with a clearcoat.
+Current page is CustomMaterial.LightingModel.unlit
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/materialparametertypesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Postprocessing effects
+Physics simulation
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+r
+P
+Material
+Material fundamentals
+S
+ShaderGraphMaterial
+Beta
+S
+CustomMaterial
+Modifying RealityKit Rendering Using Custom Materials
+Custom materials
+C
+VideoPlaybackController
+S
+VideoMaterial
+Documentation
+Open Menu
+Swift
+Structure
+MaterialParameterTypes
+A set of typesused for material parameters.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct MaterialParameterTypes
+Overview
+This class contains many nested types used to specify various properties of material.
+Many material properties support more than one type of data. For example, you can specify baseColor using either a single Float, or a UV mapped image texture. MaterialParameterTypes and its nested symbols implement the ability to accept different data types for the same property.
+Topics
+Texture Coordinate Transformations
+struct TextureCoordinateTransform
+An object that defines a transformation the framework applies to a material’s UV-mapped textures.
+Face Culling
+enum FaceCulling
+An object that defines how the system removes polygons before rendering a scene.
+Enumerations
+enum TriangleFillMode
+An object that defines how the system rasterizes triangles and triangle strips
+Beta
+See Also
+Material fundamentals
+protocol Material
+A type that describes the material aspects of a mesh, like color and texture.
+struct MaterialParameters
+protocol MaterialFunction
+The abstract superclass for objects representing compute functions for RealityKit custom materials .
+struct PortalMaterial
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MaterialParameterTypes
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

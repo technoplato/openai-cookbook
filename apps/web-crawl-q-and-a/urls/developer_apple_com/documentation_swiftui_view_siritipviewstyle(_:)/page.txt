@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/swiftui/view/siritipviewstyle(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider]) -> some View
+M
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+M
+func importsItemProviders([UTType], onImport: ([NSItemProvider]) -> Bool) -> some View
+M
+func exportableToServices<T>(() -> [T]) -> some View
+M
+func exportableToServices<T>(() -> [T], onEdit: ([T]) -> Bool) -> some View
+M
+func importableFromServices<T>(for: T.Type, action: ([T]) -> Bool) -> some View
+App intents
+M
+func shortcutsLinkStyle(ShortcutsLinkStyle) -> some View
+Reducing view modifier maintenance
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+r
+P
+ViewModifier
+S
+EmptyModifier
+S
+ModifiedContent
+r
+P
+EnvironmentalModifier
+Responding to view life cycle updates
+Documentation
+Open Menu
+Swift
+Instance Method
+siriTipViewStyle(_:)
+Sets the given style for SiriTipView within the view hierarchy
+AppIntents
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+func siriTipViewStyle(_ style: SiriTipViewStyle) -> some View
+Parameters
+style
+The style to set.
+Return Value
+A view that uses the specified style on its child views.
+See Also
+App intents
+func shortcutsLinkStyle(ShortcutsLinkStyle) -> some View
+Sets the given style for ShortcutsLinks within the view hierarchy
+Current page is siriTipViewStyle(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

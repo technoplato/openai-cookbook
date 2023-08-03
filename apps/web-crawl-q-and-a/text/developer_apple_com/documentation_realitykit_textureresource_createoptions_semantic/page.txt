@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/realitykit/textureresource/createoptions/semanticSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TextureResource.Dimensions2D
+Beta
+S
+TextureResource.Contents
+Beta
+Structures
+M
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+M
+func replace(withImage: CGImage, options: TextureResource.CreateOptions) throws
+M
+func replace(withDrawables: TextureResource.DrawableQueue)
+Modifying a Texture
+P
+let mipmapsMode: TextureResource.MipmapsMode
+Texture Resource Creation Options
+M
+init(semantic: TextureResource.Semantic?, mipmapsMode: TextureResource.MipmapsMode)
+Texture Resource Initializers
+S
+TextureResource.CreateOptions
+M
+static func loadAsync(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Deprecated
+M
+static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<TextureResource>
+Deprecated
+M
+static func loadAsync(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Documentation
+Open Menu
+Swift
+Instance Property
+semantic
+The intended use of the texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+Unsupported OS: xros
+let semantic: TextureResource.Semantic?
+iOS, iPadOS, Mac Catalyst, macOS
+var semantic: TextureResource.Semantic?
+See Also
+Texture Resource Creation Options
+let mipmapsMode: TextureResource.MipmapsMode
+Whether the texture resource automatically generates mipmaps.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is semantic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

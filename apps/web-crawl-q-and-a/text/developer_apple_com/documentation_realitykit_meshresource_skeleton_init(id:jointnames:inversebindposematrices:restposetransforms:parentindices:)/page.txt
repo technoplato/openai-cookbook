@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/meshresource/skeleton/init(id:jointnames:inversebindposematrices:restposetransforms:parentindices:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MeshModelCollection
+S
+MeshInstanceCollection
+S
+MeshPartCollection
+M
+static func generateText(String, extrusionDepth: Float, font: MeshResource.Font, containerFrame: CGRect, alignment: CTTextAlignment, lineBreakMode: CTLineBreakMode) -> MeshResource
+M
+static func generateText(String, extrusionDepth: Float, font: MeshResource.Font, containerFrame: CGRect, alignment: CTTextAlignment, lineBreakMode: CTLineBreakMode) -> MeshResource
+M
+static func generateCylinder(height: Float, radius: Float) -> MeshResource
+Beta
+M
+static func generateCone(height: Float, radius: Float) -> MeshResource
+static func generateBoxWithRoundedCorners(size: SIMD3<Float>, majorRadius: Float, minorRadius: Float) -> MeshResource
+init?(id: String, jointNames: [String], inverseBindPoseMatrices: [simd_float4x4], restPoseTransforms: [Transform]?, parentIndices: [Int?]?)
+M
+init(id: String, jointNames: [String], inverseBindPose: [simd_float4x4], localRestPose: [Transform]?, parentIndices: [Int]?) throws
+Initializers
+S
+MeshResource.Skeleton.Joint
+Structures
+S
+MeshResource.Skeleton
+Beta
+S
+MeshResource.Part
+S
+MeshResource.Model
+S
+MeshResource.JointInfluences
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(id:jointNames:inverseBindPoseMatrices:restPoseTransforms:parentIndices:)
+Creates a skeleton from arrays which define its joints. Returns nil if there was an issue converting the parameters to a valid skeleton.
+visionOS 1.0+ Beta
+init?(
+    id: String,
+    jointNames: [String],
+    inverseBindPoseMatrices: [simd_float4x4],
+    restPoseTransforms: [Transform]? = nil,
+    parentIndices: [Int?]? = nil
+)
+Parameters
+id
+The unique name of this skeleton.
+jointNames
+The names of each joint.
+inverseBindPoseMatrices
+The matrix which, for each joint, transforms from model space (bind pose) to the local space of that joint.
+restPoseTransforms
+The transform from each joint’s local space to its parent’s local space, used when the joint is not animated. If not specified, the rest pose is assumed to be the same as the bind pose, and is computed from the inverse bind pose matrices.
+parentIndices
+The index of each joint’s parent, or nil if that joint has no parent. If this array is not provided, the parent of each joint is inferred from its name (e.g. a joint named root/hips_joint is parented to a joint named root).
+Discussion
+Note
+A parent joint must precede all of its child joints. Note: All the arrays passed to this initializer must have the same length.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(id:jointNames:inverseBindPoseMatrices:restPoseTransforms:parentIndices:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

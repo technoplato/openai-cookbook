@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/scene/defaultsize(width:height:depth:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Images
+Text input and output
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+M
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+M
+func defaultSize(Size3D) -> some Scene
+Beta
+M
+func defaultSize(CGSize) -> some Scene
+M
+func defaultPosition(UnitPoint) -> some Scene
+Positioning and sizing windows
+Positioning and sizing a window
+S
+DismissBehavior
+Beta
+S
+DismissAction
+Documentation
+Open Menu
+Swift
+Instance Method
+defaultSize(width:height:depth:)
+Sets a default size for a volumetric window.
+visionOS 1.0+ Beta
+func defaultSize(
+    width: CGFloat,
+    height: CGFloat,
+    depth: CGFloat
+) -> some Scene
+Parameters
+width
+The default width for the created window.
+height
+The default height for the created window.
+depth
+The default depth for the created volumetric window.
+Return Value
+A scene that uses a default size for new windows.
+Discussion
+Use this modifier to indicate the default initial size for a new 3D window created from a Scene using VolumetricWindowStyle:
+WindowGroup {
+    ContentView()
+}
+.windowStyle(.volumetric)
+.defaultSize(width: 600, height: 400, depth: 600)
+Each parameter is specified in points. The size of a volumetric scene is immutable after creation.
+This modifier affects only windows that have the volumetric style in visionOS.
+See Also
+Positioning and sizing a window
+func defaultPosition(UnitPoint) -> some Scene
+Sets a default position for a window.
+func defaultSize(CGSize) -> some Scene
+Sets a default size for a window.
+func defaultSize(Size3D) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+Sets a default width and height for a window.
+func windowResizability(WindowResizability) -> some Scene
+Sets the kind of resizability to use for a window.
+struct WindowResizability
+The resizability of a window.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is defaultSize(width:height:depth:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

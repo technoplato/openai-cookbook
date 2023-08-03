@@ -1,0 +1,185 @@
+https://developer.apple.com/documentation/swiftui/spatialtapgestureSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Event handling
+Gestures
+Essentials
+Adding interactivity with gestures
+Recognizing tap gestures
+M
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+M
+func onTapGesture(count: Int, coordinateSpace: some CoordinateSpaceProtocol, perform: (CGPoint) -> Void) -> some View
+Beta
+S
+TapGesture
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+func onLongTouchGesture(minimumDuration: Double, perform: () -> Void, onTouchingChanged: ((Bool) -> Void)?) -> some View
+S
+SpatialEventGesture
+S
+SpatialEventCollection
+Beta
+Recognizing gestures that change over time
+M
+func gesture<T>(T, including: GestureMask) -> some View
+S
+DragGesture
+S
+MagnifyGesture
+Beta
+S
+RotateGesture
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+SpatialTapGesture
+A gesture that recognizes one or more taps and reports their location.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct SpatialTapGesture
+Overview
+To recognize a tap gesture on a view, create and configure the gesture, and then add it to the view using the gesture(_:including:) modifier. The following code adds a tap gesture to a Circle that toggles the color of the circle based on the tap location:
+struct TapGestureView: View {
+    @State private var location: CGPoint = .zero
+
+
+    var tap: some Gesture {
+        SpatialTapGesture()
+            .onEnded { event in
+                self.location = event.location
+             }
+    }
+
+
+    var body: some View {
+        Circle()
+            .fill(self.location.y > 50 ? Color.blue : Color.red)
+            .frame(width: 100, height: 100, alignment: .center)
+            .gesture(tap)
+    }
+}
+Topics
+Creating a spatial tap gesture
+init(count: Int, coordinateSpace: some CoordinateSpaceProtocol)
+Creates a tap gesture with the number of required taps and the coordinate space of the gesture’s location.
+Beta
+var coordinateSpace: CoordinateSpace
+The coordinate space in which to receive location values.
+var count: Int
+The required number of tap events.
+Getting the gesture’s value
+struct Value
+The attributes of a tap gesture.
+Deprecated initializers
+init(count: Int, coordinateSpace: CoordinateSpace)
+Creates a tap gesture with the number of required taps and the coordinate space of the gesture’s location.
+Deprecated
+Relationships
+Conforms To
+Gesture
+Sendable
+See Also
+Recognizing tap gestures
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a tap gesture.
+func onTapGesture(count: Int, coordinateSpace: some CoordinateSpaceProtocol, perform: (CGPoint) -> Void) -> some View
+Adds an action to perform when this view recognizes a tap gesture, and provides the action with the location of the interaction.
+Beta
+struct TapGesture
+A gesture that recognizes one or more taps.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SpatialTapGesture
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

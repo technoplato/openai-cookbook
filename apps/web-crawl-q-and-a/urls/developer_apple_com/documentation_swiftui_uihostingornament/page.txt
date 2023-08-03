@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/uihostingornamentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Hosting an ornament in UIKit
+r
+P
+UITraitBridgedEnvironmentKey
+Beta
+Sharing configuration information
+S
+UIViewControllerRepresentableContext
+r
+P
+UIViewControllerRepresentable
+S
+UIViewRepresentableContext
+r
+P
+UIViewRepresentable
+Adding UIKit views to SwiftUI view hierarchies
+Documentation
+Open Menu
+Swift
+Class
+UIHostingOrnament
+A model that represents an ornament suitable for being hosted in UIKit.
+visionOS 1.0+ Beta
+class UIHostingOrnament<Content> where Content : View
+Overview
+Use a UIHostingOrnament when you want to add ornaments to a UIKit view controller. For example, the following adds a single bottom ornament to the current view controller:
+self.ornaments = [
+    UIHostingOrnament(sceneAlignment: .bottom) {
+        OrnamentContent()
+    }
+]
+Topics
+Creating a hosting ornament
+init(sceneAlignment: Alignment, contentAlignment: Alignment, content: () -> Content)
+Creates an ornament with the specified alignment and content.
+var rootView: Content
+The root view of the SwiftUI view hierarchy managed by this ornament.
+Setting the alignment
+var contentAlignment: Alignment
+The alignment in the ornament used to position it.
+var sceneAlignment: Alignment
+The guide for aligning the ornament’s content (based on the contentAlignment) with the scene.
+Relationships
+Inherits From
+UIOrnament
+Conforms To
+Sendable
+See Also
+Hosting an ornament in UIKit
+class UIOrnament
+The abstract base class that represents an ornament. You don’t create an instance of this class directly. Instead use UIHostingOrnament.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UIHostingOrnament
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

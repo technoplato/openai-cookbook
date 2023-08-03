@@ -1,0 +1,210 @@
+https://developer.apple.com/documentation/swiftui/toolbarsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+S
+ToolbarRole
+M
+func toolbarRole(ToolbarRole) -> some View
+Specifying the role of toolbar content
+S
+ToolbarPlacement
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Modal presentations
+Navigation
+Documents
+Immersive spaces
+Windows
+Scenes
+App organization
+App structure
+Documentation
+Open Menu
+Swift
+Toolbars
+Provide immediate access to frequently used commands and controls.
+Overview
+The system might present toolbars above or below your app’s content, depending on the platform and the context.
+Add items to a toolbar by applying the toolbar(content:) view modifier to a view in your app. You can also configure the toolbar using view modifiers. For example, you can set the visibility of a toolbar with the toolbar(_:for:) modifier.
+For design guidance, see Toolbars in the Human Interface Guidelines.
+Topics
+Populating a toolbar
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the views you provide.
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the specified items.
+struct ToolbarItem
+A model that represents an item which can be placed in the toolbar or navigation bar.
+struct ToolbarItemGroup
+A model that represents a group of ToolbarItems which can be placed in the toolbar or navigation bar.
+struct ToolbarItemPlacement
+A structure that defines the placement of a toolbar item.
+protocol ToolbarContent
+Conforming types represent items that can be placed in various locations in a toolbar.
+struct ToolbarContentBuilder
+Constructs a toolbar item set from multi-expression closures.
+Populating a customizable toolbar
+func toolbar<Content>(id: String, content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the specified items, allowing for user customization.
+protocol CustomizableToolbarContent
+Conforming types represent items that can be placed in various locations in a customizable toolbar.
+struct ToolbarCustomizationBehavior
+The customization behavior of customizable toolbar content.
+struct ToolbarCustomizationOptions
+Options that influence the default customization behavior of customizable toolbar content.
+Setting toolbar visibility
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Specifies the visibility of a bar managed by SwiftUI.
+struct ToolbarPlacement
+The placement of a toolbar.
+Specifying the role of toolbar content
+func toolbarRole(ToolbarRole) -> some View
+Configures the semantic role for the content populating the toolbar.
+struct ToolbarRole
+The purpose of content that populates the toolbar.
+Styling a toolbar
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Specifies the preferred shape style of the background of a bar managed by SwiftUI.
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+Specifies the preferred visibility of backgrounds on a bar managed by SwiftUI.
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+Specifies the preferred color scheme of a bar managed by SwiftUI.
+func windowToolbarStyle<S>(S) -> some Scene
+Sets the style for the toolbar defined within this scene.
+protocol WindowToolbarStyle
+A specification for the appearance and behavior of a window’s toolbar.
+Configuring the toolbar title display mode
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+Configures the toolbar title display mode for this view.
+Beta
+struct ToolbarTitleDisplayMode
+A type that defines the behavior of title of a toolbar.
+Beta
+Setting the toolbar title menu
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+Configure the title menu of a toolbar.
+struct ToolbarTitleMenu
+The title menu of a toolbar.
+Creating an ornament
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+Presents an ornament.
+Beta
+struct OrnamentAttachmentAnchor
+Beta
+See Also
+App structure
+API Reference
+App organization
+Define the entry point and top-level structure of your app.
+API Reference
+Scenes
+Declare the user interface groupings that make up the parts of your app.
+API Reference
+Windows
+Display user interface content in a window or a collection of windows.
+API Reference
+Immersive spaces
+Display unbounded content in a person’s surroundings.
+API Reference
+Documents
+Enable people to open and manage documents.
+API Reference
+Navigation
+Enable people to move between different parts of your app’s view hierarchy within a scene.
+API Reference
+Modal presentations
+Present content in a separate view that offers focused interaction.
+API Reference
+Search
+Enable people to search for text or other content within your app.
+API Reference
+App extensions
+Extend your app’s basic functionality to other parts of the system, like by adding a Widget.
+Current page is Toolbars
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

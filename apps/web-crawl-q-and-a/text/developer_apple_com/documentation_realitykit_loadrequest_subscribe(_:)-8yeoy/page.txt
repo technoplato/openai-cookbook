@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/subscribe(_:)-8yeoySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Reducing Elements
+M
+func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>
+M
+func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>
+M
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+M
+func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>
+M
+func removeDuplicates() -> Publishers.RemoveDuplicates<Self>
+M
+func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>
+func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+M
+func receive<S>(subscriber: S)
+Deprecated
+Working with Subscribers
+T
+LoadRequest.Failure
+Deprecated
+Declaring Publisher Topography
+P
+var result: Result<Output, Error>?
+Deprecated
+Getting the Result
+C
+LoadRequest
+Deprecated
+Loading Entities from a File
+Documentation
+Open Menu
+Swift
+Instance Method
+subscribe(_:)
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func subscribe<S>(_ subscriber: S) where Output == S.Input, S : Subscriber, S.Failure == Error
+Deprecated
+Use Swift Concurrency based methods instead.
+See Also
+Working with Subscribers
+func receive<S>(subscriber: S)
+Attaches the specified subscriber to this publisher.
+Deprecated
+func subscribe<S>(S)
+Attaches the specified subscriber to this publisher.
+func subscribe<S>(S) -> AnyCancellable
+Attaches the specified subject to this publisher.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscribe(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

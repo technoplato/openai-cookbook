@@ -1,0 +1,201 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/overlay(alignment:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+M
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+M
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+M
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func presentationBackground<S>(S) -> some View
+M
+func preferredColorScheme(ColorScheme?) -> some View
+M
+func preference<K>(key: K.Type, value: K.Value) -> some View
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+M
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+M
+func opacity(Double) -> some View
+M
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+M
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+overlay(alignment:content:)
+Layers the views that you specify in front of this view.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func overlay<V>(
+    alignment: Alignment = .center,
+    @ViewBuilder content: () -> V
+) -> some View where V : View
+Parameters
+alignment
+The alignment that the modifier uses to position the implicit ZStack that groups the foreground views. The default is Alignment/center.
+content
+A ViewBuilder that you use to declare the views to draw in front of this view, stacked in the order that you list them. The last view that you list appears at the front of the stack.
+Return Value
+A view that uses the specified content as a foreground.
+Discussion
+Use this modifier to place one or more views in front of another view. For example, you can place a group of stars on a RoundedRectangle:
+RoundedRectangle(cornerRadius: 8)
+    .frame(width: 200, height: 100)
+    .overlay(alignment: .topLeading) { Star(color: .red) }
+    .overlay(alignment: .topTrailing) { Star(color: .yellow) }
+    .overlay(alignment: .bottomLeading) { Star(color: .green) }
+    .overlay(alignment: .bottomTrailing) { Star(color: .blue) }
+The example above assumes that you’ve defined a Star view with a parameterized color:
+struct Star: View {
+    var color = Color.yellow
+
+
+    var body: some View {
+        Image(systemName: "star.fill")
+            .foregroundStyle(color)
+    }
+}
+By setting different alignment values for each modifier, you make the stars appear in different places on the rectangle:
+If you specify more than one view in the content closure, the modifier collects all of the views in the closure into an implicit ZStack, taking them in order from back to front. For example, you can place a star and a Circle on a field of ShapeStyle/blue:
+Color.blue
+    .frame(width: 200, height: 200)
+    .overlay {
+        Circle()
+            .frame(width: 100, height: 100)
+        Star()
+    }
+Both the overlay modifier and the implicit ZStack composed from the overlay content — the circle and the star — use a default Alignment/center alignment. The star appears centered on the circle, and both appear as a composite view centered in front of the square:
+If you specify an alignment for the overlay, it applies to the implicit stack rather than to the individual views in the closure. You can see this if you add the Alignment/bottom alignment:
+Color.blue
+    .frame(width: 200, height: 200)
+    .overlay(alignment: .bottom) {
+        Circle()
+            .frame(width: 100, height: 100)
+        Star()
+    }
+The circle and the star move down as a unit to align the stack’s bottom edge with the bottom edge of the square, while the star remains centered on the circle:
+To control the placement of individual items inside the content closure, either use a different overlay modifier for each item, as the earlier example of stars in the corners of a rectangle demonstrates, or add an explicit ZStack inside the content closure with its own alignment:
+Color.blue
+    .frame(width: 200, height: 200)
+    .overlay(alignment: .bottom) {
+        ZStack(alignment: .bottom) {
+            Circle()
+                .frame(width: 100, height: 100)
+            Star()
+        }
+    }
+The stack alignment ensures that the star’s bottom edge aligns with the circle’s, while the overlay aligns the composite view with the square:
+You can achieve layering without an overlay modifier by putting both the modified view and the overlay content into a ZStack. This can produce a simpler view hierarchy, but changes the layout priority that SwiftUI applies to the views. Use the overlay modifier when you want the modified view to dominate the layout.
+If you want to specify a ShapeStyle like a Color or a Material as the overlay, use View/overlay(_:ignoresSafeAreaEdges:) instead. To specify a Shape, use View/overlay(_:in:fillStyle:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is overlay(alignment:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

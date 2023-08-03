@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/specular-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+CustomMaterial.FaceCulling
+E
+MaterialParameterTypes.FaceCulling
+P
+var faceCulling: CustomMaterial.FaceCulling
+Culling Unneeded Polygons
+T
+CustomMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+S
+CustomMaterial.AmbientOcclusion
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+Using Ambient Occlusion
+S
+CustomMaterial.Opacity
+E
+CustomMaterial.Blending
+P
+var blending: CustomMaterial.Blending
+Documentation
+Open Menu
+Swift
+Structure
+CustomMaterial.Specular
+An object that defines the specular highlights of an entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct Specular
+Overview
+In physically based rendering (PBR), specular highlights primarily come from the object’s roughness value. RealityKit renders materials that have a low roughness value with specular highlights based on the environment, lighting, and shape of the entity.
+For more information on using specular values in a custom material, see specular.
+Topics
+Creating a Specular Object
+init(floatLiteral: Float)
+Creates an object from a single value.
+init(scale: Float, texture: CustomMaterial.Texture?)
+Creates an object from a single value, a UV-mapped texture, or both.
+init(PhysicallyBasedMaterial.Specular)
+Creates an object from a physically based material’s specular property.
+Accessing Specular Values
+var scale: Float
+The specular value for the entire entity or a multiplier for values sampled from the material’s texture.
+var texture: CustomMaterial.Texture?
+The specular value as a UV-mapped image texture.
+typealias FloatLiteralType
+The type used to specify a single specular value for this material.
+Relationships
+Conforms To
+ExpressibleByFloatLiteral
+See Also
+Creating Highlights
+var specular: CustomMaterial.Specular
+The bright highlights to apply to the entity.
+var clearcoat: CustomMaterial.Clearcoat
+The transparent highlights that simulate a clear, shiny coating on an entity.
+struct Clearcoat
+An object that defines the intensity of an entity’s clear, shiny coating.
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+The degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+struct ClearcoatRoughness
+An object that defines the degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CustomMaterial.Specular
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

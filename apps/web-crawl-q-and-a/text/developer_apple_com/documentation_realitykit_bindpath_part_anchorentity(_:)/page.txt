@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/bindpath/part/anchorentity(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+InternalBindPath
+P
+var parameters: Entity.ParameterSet
+S
+Entity.ParameterSet
+S
+BindableValuesReference
+S
+BindableValue
+r
+P
+BindableData
+E
+BindTarget
+Choosing the Path Component
+E
+BindPath.Part
+P
+var parts: [BindPath.Part]
+Composing a Property Identifier
+S
+BindPath
+P
+var bindableValues: BindableValuesReference
+E
+TweenMode
+E
+BlendWeight
+Documentation
+Open Menu
+Swift
+Case
+BindPath.Part.anchorEntity(_:)
+A path component for the scene’s anchor entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+case anchorEntity(String)
+Discussion
+This path component indicates that another component follows, which either contains or identifies the property of the entity that animates.
+See Also
+Choosing the Path Component
+case entity(String)
+A path component for a nested entity.
+case jointTransforms
+A path component to animate joint transforms.
+case parameter(String)
+A path component to animate a named parameter.
+case scene(String)
+A path component for a nested scene.
+case transform
+A path component to animate a transform.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is BindPath.Part.anchorEntity(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

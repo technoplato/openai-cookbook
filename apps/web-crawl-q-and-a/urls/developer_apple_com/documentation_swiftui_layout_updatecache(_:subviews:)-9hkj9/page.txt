@@ -1,0 +1,153 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View groupings
+Tables
+Lists
+S
+GridLayout
+S
+ZStackLayout
+S
+VStackLayout
+S
+HStackLayout
+M
+func makeCache(subviews: Self.Subviews) -> Self.Cache
+Managing a cache
+P
+static var layoutProperties: LayoutProperties
+M
+func spacing(subviews: Self.Subviews, cache: inout Self.Cache) -> ViewSpacing
+M
+func explicitAlignment(of: VerticalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+M
+func explicitAlignment(of: HorizontalAlignment, in: CGRect, proposal: ProposedViewSize, subviews: Self.Subviews, cache: inout Self.Cache) -> CGFloat?
+Reporting layout container characteristics
+T
+Layout.Subviews
+Documentation
+Open Menu
+Swift
+Instance Method
+updateCache(_:subviews:)
+Updates the layout’s cache when something changes.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func updateCache(
+    _ cache: inout Self.Cache,
+    subviews: Self.Subviews
+)
+Required Default implementation provided.
+Parameters
+cache
+Storage for calculated data that you share among the methods of your custom layout container.
+subviews
+A collection of proxy instances that represent the views arranged by the container. You can use the proxies in the collection to get information about the subviews as you calculate values to store in the cache.
+Discussion
+If your custom layout container creates a cache by implementing the makeCache(subviews:) method, SwiftUI calls the update method when your layout or its subviews change, giving you an opportunity to modify or invalidate the contents of the cache. The method’s default implementation recreates the cache by calling the makeCache(subviews:) method, but you can provide your own implementation to take an incremental approach, if appropriate.
+Default Implementations
+Layout Implementations
+func updateCache(inout Self.Cache, subviews: Self.Subviews)
+Reinitializes a cache to a new value.
+See Also
+Managing a cache
+func makeCache(subviews: Self.Subviews) -> Self.Cache
+Creates and initializes a cache for a layout instance.
+Required Default implementation provided.
+associatedtype Cache = Void
+Cached values associated with the layout instance.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is updateCache(_:subviews:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

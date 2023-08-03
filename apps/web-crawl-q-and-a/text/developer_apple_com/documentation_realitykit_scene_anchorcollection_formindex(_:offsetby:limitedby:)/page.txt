@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/realitykit/scene/anchorcollection/formindex(_:offsetby:limitedby:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CollisionCastHit
+M
+func convexCast(convexShape: ShapeResource, fromPosition: SIMD3<Float>, fromOrientation: simd_quatf, toPosition: SIMD3<Float>, toOrientation: simd_quatf, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+M
+func raycast(from: SIMD3<Float>, to: SIMD3<Float>, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+M
+func raycast(origin: SIMD3<Float>, direction: SIMD3<Float>, length: Float, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+Detecting Intersections
+M
+func performQuery(EntityQuery) -> QueryResult<Entity>
+S
+QueryPredicate
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+M
+func formIndex(inout Self.Index, offsetBy: Int)
+M
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+M
+func index(after: Int) -> Int
+M
+func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?
+M
+func index(Self.Index, offsetBy: Int) -> Self.Index
+P
+var indices: DefaultIndices<Self>
+P
+var endIndex: Int
+P
+var startIndex: Int
+Documentation
+Open Menu
+Swift
+Instance Method
+formIndex(_:offsetBy:limitedBy:)
+Offsets the given index by the specified distance, or so that it equals the given limiting index.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func formIndex(
+    _ i: inout Self.Index,
+    offsetBy distance: Int,
+    limitedBy limit: Self.Index
+) -> Bool
+Parameters
+i
+A valid index of the collection.
+distance
+The distance to offset i. distance must not be negative unless the collection conforms to the BidirectionalCollection protocol.
+limit
+A valid index of the collection to use as a limit. If distance > 0, a limit that is less than i has no effect. Likewise, if distance < 0, a limit that is greater than i has no effect.
+Return Value
+true if i has been offset by exactly distance steps without going beyond limit; otherwise, false. When the return value is false, the value of i is equal to limit.
+Overview
+The value passed as distance must not offset i beyond the bounds of the collection, unless the index passed as limit prevents offsetting beyond those bounds.
+Complexity: O(1) if the collection conforms to RandomAccessCollection; otherwise, O(k), where k is the absolute value of distance.
+See Also
+Manipulating Indices
+typealias Index
+A type that represents a position in the collection.
+typealias Indices
+A type that represents the indices that are valid for subscripting the collection, in ascending order.
+var startIndex: Int
+The position of the first element in a nonempty collection.
+var endIndex: Int
+The position one greater than the last valid subscript argument.
+var indices: DefaultIndices<Self>
+The indices that are valid for subscripting the collection, in ascending order.
+Available when Indices is DefaultIndices<Self>.
+func index(Self.Index, offsetBy: Int) -> Self.Index
+Returns an index that is the specified distance from the given index.
+func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?
+Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index.
+func index(after: Int) -> Int
+Returns the position immediately after the given index.
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the first index in which an element of the collection satisfies the given predicate.
+func formIndex(inout Self.Index, offsetBy: Int)
+Offsets the given index by the specified distance.
+func formIndex(after: inout Self.Index)
+Replaces the given index with its successor.
+func distance(from: Self.Index, to: Self.Index) -> Int
+Returns the distance between two indices.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is formIndex(_:offsetBy:limitedBy:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

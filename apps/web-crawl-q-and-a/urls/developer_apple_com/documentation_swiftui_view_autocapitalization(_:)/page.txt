@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/view/autocapitalization(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func coordinateSpace<T>(name: T) -> some View
+Deprecated
+M
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+Deprecated
+M
+func frame() -> some View
+Deprecated
+Layout modifiers
+M
+func navigationViewStyle<S>(S) -> some View
+Deprecated
+M
+func menuButtonStyle<S>(S) -> some View
+Deprecated
+Style modifiers
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Text modifiers
+M
+func foregroundColor(Color?) -> some View
+Deprecated
+M
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+Deprecated
+M
+func background<Background>(Background, alignment: Alignment) -> some View
+Deprecated
+M
+func listRowPlatterColor(Color?) -> some View
+Deprecated
+M
+func colorScheme(ColorScheme) -> some View
+Deprecated
+Appearance modifiers
+M
+func accessibility(sortPriority: Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+autocapitalization(_:)
+Sets whether to apply auto-capitalization to this view.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func autocapitalization(_ style: UITextAutocapitalizationType) -> some View
+Deprecated
+Use textInputAutocapitalization(_:) instead.
+Parameters
+style
+One of the autocapitalization modes defined in the UITextAutocapitalizationType enumeration.
+Discussion
+Use this method when you need to automatically capitalize words, sentences, or other text like proper nouns.
+In example below, as the user enters text each word is automatically capitalized:
+TextField("Last, First", text: $fullName)
+    .autocapitalization(UITextAutocapitalizationType.words)
+The UITextAutocapitalizationType enumeration defines the available capitalization modes. The default is UITextAutocapitalizationType.sentences.
+See Also
+Text modifiers
+func disableAutocorrection(Bool?) -> some View
+Sets whether to disable autocorrection for this view.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is autocapitalization(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

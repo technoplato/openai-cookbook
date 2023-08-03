@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/swiftui/accessibilitylabeledpairroleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityCustomContent(LocalizedStringKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityCustomContent(Text, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityCustomContent<V>(LocalizedStringKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityCustomContent(AccessibilityCustomContentKey, Text?, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityCustomContent(AccessibilityCustomContentKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adding custom descriptions
+r
+P
+AXChartDescriptorRepresentable
+func accessibilityHeading(AccessibilityHeadingLevel) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityLabeledPair<ID>(role: AccessibilityLabeledPairRole, id: ID, in: Namespace.ID) -> some View
+M
+func accessibilityInputLabels([Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityInputLabels<S>([S]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityInputLabels([LocalizedStringKey]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityLabel(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityLabel(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityLabel<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Applying labels
+Documentation
+Open Menu
+Swift
+Enumeration
+AccessibilityLabeledPairRole
+The role of an accessibility element in a label / content pair.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+@frozen
+enum AccessibilityLabeledPairRole
+Topics
+Getting roles
+case content
+This element represents the content part of the label / content pair.
+case label
+This element represents the label part of the label / content pair.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Applying labels
+func accessibilityLabel<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityLabel(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityLabel(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityInputLabels([LocalizedStringKey]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityInputLabels<S>([S]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityInputLabels([Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityLabeledPair<ID>(role: AccessibilityLabeledPairRole, id: ID, in: Namespace.ID) -> some View
+Pairs an accessibility element representing a label with the element for the matching content.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AccessibilityLabeledPairRole
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

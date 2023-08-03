@@ -1,0 +1,214 @@
+https://developer.apple.com/documentation/swiftui/uihostingcontrollerSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var sizingOptions: UIHostingControllerSizingOptions
+Managing the size
+P
+var isModalInPresentation: Bool
+Checking for modality
+P
+var rootView: Content
+M
+func target(forAction: Selector, withSender: Any?) -> Any?
+M
+func viewWillLayoutSubviews()
+Using SwiftUI with UIKit
+Displaying SwiftUI views in UIKit
+UIKit integration
+AppKit integration
+Framework integration
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Documentation
+Open Menu
+Swift
+Class
+UIHostingController
+A UIKit view controller that manages a SwiftUI view hierarchy.
+iOS 13.0+
+iPadOS 13.0+
+Mac Catalyst 13.0+
+tvOS 13.0+
+visionOS 1.0+ Beta
+@MainActor
+class UIHostingController<Content> where Content : View
+Overview
+Create a UIHostingController object when you want to integrate SwiftUI views into a UIKit view hierarchy. At creation time, specify the SwiftUI view you want to use as the root view for this view controller; you can change that view later using the rootView property. Use the hosting controller like you would any other view controller, by presenting it or embedding it as a child view controller in your interface.
+Topics
+Creating a hosting controller object
+init(rootView: Content)
+Creates a hosting controller object that wraps the specified SwiftUI view.
+init?(coder: NSCoder, rootView: Content)
+Creates a hosting controller object from an archive and the specified SwiftUI view.
+init?(coder: NSCoder)
+Creates a hosting controller object from the contents of the specified archive.
+Responding to view-related events
+func loadView()
+func viewWillAppear(Bool)
+Notifies the view controller that its view is about to be added to a view hierarchy.
+func viewIsAppearing(Bool)
+func viewDidAppear(Bool)
+Notifies the view controller that its view has been added to a view hierarchy.
+func viewWillDisappear(Bool)
+Notifies the view controller that its view will be removed from a view hierarchy.
+func viewDidDisappear(Bool)
+func willMove(toParent: UIViewController?)
+func didMove(toParent: UIViewController?)
+func viewWillTransition(to: CGSize, with: UIViewControllerTransitionCoordinator)
+func viewWillLayoutSubviews()
+func target(forAction: Selector, withSender: Any?) -> Any?
+var rootView: Content
+The root view of the SwiftUI view hierarchy managed by this view controller.
+Checking for modality
+var isModalInPresentation: Bool
+Managing the size
+var sizingOptions: UIHostingControllerSizingOptions
+The options for how the hosting controller tracks changes to the size of its SwiftUI content.
+func preferredContentSizeDidChange(forChildContentContainer: UIContentContainer)
+func sizeThatFits(in: CGSize) -> CGSize
+Calculates and returns the most appropriate size for the current view.
+var safeAreaRegions: SafeAreaRegions
+The safe area regions that this view controller adds to its view.
+Available when Content conforms to View.
+Configuring the status bar
+var preferredStatusBarStyle: UIStatusBarStyle
+The preferred status bar style for the view controller.
+var preferredStatusBarUpdateAnimation: UIStatusBarAnimation
+The animation style to use when hiding or showing the status bar for this view controller.
+var prefersStatusBarHidden: Bool
+A Boolean value that indicates whether the view controller prefers the status bar to be hidden or shown.
+var childForStatusBarStyle: UIViewController?
+var childForStatusBarHidden: UIViewController?
+Configuring the home indicator
+var prefersHomeIndicatorAutoHidden: Bool
+A Boolean value that indicates whether the view controller prefers the home indicator to be hidden or shown.
+var childForHomeIndicatorAutoHidden: UIViewController?
+Configuring the interface appearance
+var preferredUserInterfaceStyle: UIUserInterfaceStyle
+The preferred interface style for this view controller.
+var preferredScreenEdgesDeferringSystemGestures: UIRectEdge
+Sets the screen edge from which you want your gesture to take precedence over the system gesture.
+var childForScreenEdgesDeferringSystemGestures: UIViewController?
+Accessing the available key commands
+var keyCommands: [UIKeyCommand]?
+Managing undo
+var undoManager: UndoManager?
+Relationships
+Inherits From
+UIViewController
+Conforms To
+CVarArg
+CustomDebugStringConvertible
+CustomStringConvertible
+Equatable
+Hashable
+NSCoding
+NSExtensionRequestHandling
+NSObjectProtocol
+NSTouchBarProvider
+UIActivityItemsConfigurationProviding
+UIAppearanceContainer
+UIContentContainer
+UIFocusEnvironment
+UIPasteConfigurationSupporting
+UIResponderStandardEditActions
+UIStateRestoring
+UITraitChangeObservable
+UITraitEnvironment
+UIUserActivityRestoring
+See Also
+Displaying SwiftUI views in UIKit
+struct UIHostingControllerSizingOptions
+Options for how a hosting controller tracks its content’s size.
+struct UIHostingConfiguration
+A content configuration suitable for hosting a hierarchy of SwiftUI views.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UIHostingController
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/state/projectedvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Preferences
+Environment values
+r
+P
+DynamicProperty
+Managing dynamic data
+S
+EnvironmentObject
+M
+func environmentObject<T>(T) -> some View
+Distributing model data throughout your app
+P
+var wrappedValue: Value
+Getting the value
+M
+init()
+M
+init(initialValue: Value)
+M
+init(wrappedValue: Value)
+Creating a state
+S
+State
+Managing user interface state
+Documentation
+Open Menu
+Swift
+Instance Property
+projectedValue
+A binding to the state value.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+var projectedValue: Binding<Value> { get }
+Discussion
+Use the projected value to get a Binding to the stored value. The binding provides a two-way connection to the stored value. To access the projectedValue, prefix the property variable with a dollar sign ($).
+In the following example, PlayerView projects a binding of the state property isPlaying to the PlayButton view using $isPlaying. That enables the play button to both read and write the value:
+struct PlayerView: View {
+    var episode: Episode
+    @State private var isPlaying: Bool = false
+
+
+    var body: some View {
+        VStack {
+            Text(episode.title)
+                .foregroundStyle(isPlaying ? .primary : .secondary)
+            PlayButton(isPlaying: $isPlaying)
+        }
+    }
+}
+See Also
+Getting the value
+var wrappedValue: Value
+The underlying value referenced by the state variable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is projectedValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/padding(_:)-39pa4Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func presentationDetents(Set<PresentationDetent>) -> some View
+M
+func presentationCornerRadius(CGFloat?) -> some View
+M
+func presentationContentInteraction(PresentationContentInteraction) -> some View
+M
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+M
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+M
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+M
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+M
+func overlayPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View
+M
+func overlayPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+M
+func overlay<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+M
+func opacity(Double) -> some View
+M
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+padding(_:)
+Adds a specific padding amount to each edge of this view.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func padding(_ length: CGFloat) -> some View
+Parameters
+length
+The amount, given in points, to pad this view on all edges.
+Return Value
+A view that’s padded by the amount you specify.
+Discussion
+Use this modifier to add padding all the way around a view.
+VStack {
+    Text("Text padded by 10 points on each edge.")
+        .padding(10)
+        .border(.gray)
+    Text("Unpadded text for comparison.")
+        .border(.yellow)
+}
+The order in which you apply modifiers matters. The example above applies the padding before applying the border to ensure that the border encompasses the padded region:
+To independently control the amount of padding for each edge, use View/padding(_:)-6pgqq. To pad a select set of edges by the same amount, use View/padding(_:_:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is padding(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

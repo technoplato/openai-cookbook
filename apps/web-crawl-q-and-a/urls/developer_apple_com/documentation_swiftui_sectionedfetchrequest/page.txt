@@ -1,0 +1,196 @@
+https://developer.apple.com/documentation/swiftui/sectionedfetchrequestSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func defaultAppStorage(UserDefaults) -> some View
+S
+AppStorage
+S
+SceneStorage
+Accessing Core Data
+Loading and Displaying a Large Data Feed
+P
+var managedObjectContext: NSManagedObjectContext
+S
+FetchRequest
+S
+FetchedResults
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+init(entity: NSEntityDescription, sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, animation: Animation?)
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, transaction: Transaction)
+DynamicProperty Implementations
+S
+SectionedFetchResults
+Views
+View fundamentals
+View configuration
+View styles
+Animations
+Documentation
+Open Menu
+Swift
+Structure
+SectionedFetchRequest
+A property wrapper type that retrieves entities, grouped into sections, from a Core Data persistent store.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@MainActor @propertyWrapper
+struct SectionedFetchRequest<SectionIdentifier, Result> where SectionIdentifier : Hashable, Result : NSFetchRequestResult
+Overview
+Use a SectionedFetchRequest property wrapper to declare a SectionedFetchResults property that provides a grouped collection of Core Data managed objects to a SwiftUI view. If you don’t need sectioning, use FetchRequest instead.
+Configure a sectioned fetch request with an optional predicate and sort descriptors, and include a sectionIdentifier parameter to indicate how to group the fetched results. Be sure that you choose sorting and sectioning that work together to avoid discontiguous sections. For example, you can request a list of earthquakes, composed of Quake managed objects that the Loading and Displaying a Large Data Feed sample code project defines to store earthquake data, sorted by time and grouped by date:
+@SectionedFetchRequest<String, Quake>(
+    sectionIdentifier: \.day,
+    sortDescriptors: [SortDescriptor(\.time, order: .reverse)]
+)
+private var quakes: SectionedFetchResults<String, Quake>
+Always declare properties that have a sectioned fetch request wrapper as private. This lets the compiler help you avoid accidentally setting the property from the memberwise initializer of the enclosing view.
+The request infers the entity type from the Result type that you specify, which is Quake in the example above. Indicate a SectionIdentifier type to declare the type found at the fetched object’s sectionIdentifier key path. The section identifier type must conform to the Hashable protocol.
+The example above depends on the Quake type having a day property that’s either a stored or computed string. Be sure to mark any computed property with the @objc attribute for it to function as a section identifier. For best performance with large data sets, use stored properties.
+The sectioned fetch request and its results use the managed object context stored in the environment, which you can access using the managedObjectContext environment value. To support user interface activity, you typically rely on the viewContext property of a shared NSPersistentContainer instance. For example, you can set a context on your top-level content view using a shared container that you define as part of your model:
+ContentView()
+    .environment(
+        \.managedObjectContext,
+        QuakesProvider.shared.container.viewContext)
+When you need to dynamically change the section identifier, predicate, or sort descriptors, access the request’s SectionedFetchRequest.Configuration structure, either directly or with a binding.
+Topics
+Creating a fetch request
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+Creates a sectioned fetch request based on a section identifier, a predicate, and value type sort parameters.
+Available when SectionIdentifier conforms to Hashable and Result inherits NSManagedObject.
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+Creates a sectioned fetch request based on a section identifier, a predicate, and reference type sort parameters.
+Available when SectionIdentifier conforms to Hashable and Result inherits NSManagedObject.
+init(entity: NSEntityDescription, sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+Creates a sectioned fetch request for a specified entity description, based on a section identifier, a predicate, and sort parameters.
+Available when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+Creating a fully configured fetch request
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, animation: Animation?)
+Creates a fully configured sectioned fetch request that uses the specified animation when updating results.
+Available when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, transaction: Transaction)
+Creates a fully configured sectioned fetch request that uses the specified transaction when updating results.
+Available when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+Configuring a request dynamically
+struct Configuration
+The request’s configurable properties.
+var projectedValue: Binding<SectionedFetchRequest<SectionIdentifier, Result>.Configuration>
+A binding to the request’s mutable configuration properties.
+Getting the fetched results
+func update()
+Updates the fetched results.
+Available when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+var wrappedValue: SectionedFetchResults<SectionIdentifier, Result>
+The fetched results of the fetch request.
+Default Implementations
+API Reference
+DynamicProperty Implementations
+Relationships
+Conforms To
+DynamicProperty
+Conforms when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+Sendable
+See Also
+Accessing Core Data
+var managedObjectContext: NSManagedObjectContext
+struct FetchRequest
+A property wrapper type that retrieves entities from a Core Data persistent store.
+struct FetchedResults
+A collection of results retrieved from a Core Data store.
+struct SectionedFetchResults
+A collection of results retrieved from a Core Data persistent store, grouped into sections.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SectionedFetchRequest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

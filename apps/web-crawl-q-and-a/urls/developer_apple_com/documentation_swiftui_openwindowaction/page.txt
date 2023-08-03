@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/swiftui/openwindowactionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Documents
+Immersive spaces
+S
+WindowResizability
+M
+func windowResizability(WindowResizability) -> some Scene
+M
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Beta
+M
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+M
+func defaultSize(Size3D) -> some Scene
+P
+var openWindow: OpenWindowAction
+P
+var supportsMultipleWindows: Bool
+Presenting windows and spaces
+Opening windows
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+Styling the associated toolbar
+M
+func windowStyle<S>(S) -> some Scene
+Documentation
+Open Menu
+Swift
+Structure
+OpenWindowAction
+An action that presents a window.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+struct OpenWindowAction
+Overview
+Use the openWindow environment value to get the instance of this structure for a given Environment. Then call the instance to open a window. You call the instance directly because it defines a callAsFunction(id:) method that Swift calls when you call the instance.
+For example, you can define a button that opens a new mail viewer window:
+@main
+struct Mail: App {
+    var body: some Scene {
+        WindowGroup(id: "mail-viewer") {
+            MailViewer()
+        }
+    }
+}
+
+
+struct NewViewerButton: View {
+    @Environment(\.openWindow) private var openWindow
+
+
+    var body: some View {
+        Button("Open new mail viewer") {
+            openWindow(id: "mail-viewer")
+        }
+    }
+}
+You indicate which scene to open by providing one of the following:
+A string identifier that you pass through the id parameter, as in the above example.
+A value parameter that has a type that matches the type that you specify in the scene’s initializer.
+Both an identifier and a value. This enables you to define multiple window groups that take input values of the same type, like a UUID.
+Use the first option to target either a WindowGroup or a Window scene in your app that has a matching identifier. For a WindowGroup, the system creates a new window for the group. If the window group presents data, the system provides the default value or nil to the window’s root view. If the targeted scene is a Window, the system orders it to the front.
+Use the other two options to target a WindowGroup and provide a value to present. If the interface already has a window from the group that’s presenting the specified value, the system brings the window to the front. Otherwise, the system creates a new window and passes a binding to the specified value.
+Topics
+Calling the action
+func callAsFunction(id: String)
+Opens a window that’s associated with the specified identifier.
+func callAsFunction<D>(id: String, value: D)
+Opens a window defined by the window group that presents the specified value type and that’s associated with the specified identifier.
+func callAsFunction<D>(value: D)
+Opens a window defined by a window group that presents the type of the specified value.
+Relationships
+Conforms To
+Sendable
+See Also
+Opening windows
+var supportsMultipleWindows: Bool
+A Boolean value that indicates whether the current platform supports opening multiple windows.
+var openWindow: OpenWindowAction
+An window presentation action stored in a view’s environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is OpenWindowAction
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/view/buttonrepeatbehavior(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Text input and output
+Images
+Controls and indicators
+Creating buttons
+S
+Button
+M
+func buttonStyle<S>(S) -> some View
+M
+func buttonStyle<S>(S) -> some View
+M
+func buttonBorderShape(ButtonBorderShape) -> some View
+Getting numeric inputs
+S
+Slider
+S
+Stepper
+S
+Toggle
+M
+func toggleStyle<S>(S) -> some View
+Choosing from a set of options
+S
+Picker
+Documentation
+Open Menu
+Swift
+Instance Method
+buttonRepeatBehavior(_:)
+Sets whether buttons in this view should repeatedly trigger their actions on prolonged interactions.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func buttonRepeatBehavior(_ behavior: ButtonRepeatBehavior) -> some View
+Parameters
+behavior
+A value of enabled means that buttons should enable repeating behavior and a value of disabled means that buttons should disallow repeating behavior.
+Discussion
+Apply this to buttons that increment or decrement a value or perform some other inherently iterative operation. Interactions such as pressing-and-holding on the button, holding the button’s keyboard shortcut, or holding down the space key while the button is focused will trigger this repeat behavior.
+Button {
+    playbackSpeed.advance(by: 1)
+} label: {
+    Label("Speed up", systemImage: "hare")
+}
+.buttonRepeatBehavior(.enabled)
+This affects all system button styles, as well as automatically affects custom ButtonStyle conforming types. This does not automatically apply to custom PrimitiveButtonStyle conforming types, and the EnvironmentValues.buttonRepeatBehavior value should be used to adjust their custom gestures as appropriate.
+See Also
+Creating buttons
+struct Button
+A control that initiates an action.
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and standard interaction behavior.
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and custom interaction behavior.
+func buttonBorderShape(ButtonBorderShape) -> some View
+Sets the border shape for buttons in this view.
+var buttonRepeatBehavior: ButtonRepeatBehavior
+Whether buttons with this associated environment should repeatedly trigger their actions on prolonged interactions.
+Beta
+struct ButtonBorderShape
+A shape that is used to draw a button’s border.
+struct ButtonRole
+A value that describes the purpose of a button.
+struct ButtonRepeatBehavior
+The options for controlling the repeatability of button actions.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is buttonRepeatBehavior(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

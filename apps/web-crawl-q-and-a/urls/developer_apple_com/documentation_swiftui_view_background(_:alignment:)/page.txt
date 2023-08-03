@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/swiftui/view/background(_:alignment:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func navigationViewStyle<S>(S) -> some View
+Deprecated
+M
+func menuButtonStyle<S>(S) -> some View
+Deprecated
+Style modifiers
+M
+func contextMenu<MenuItems>(ContextMenu<MenuItems>?) -> some View
+Deprecated
+M
+func statusBar(hidden: Bool) -> some View
+Deprecated
+M
+func navigationBarHidden(Bool) -> some View
+Deprecated
+M
+func navigationBarItems<T>(trailing: T) -> some View
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+M
+func listRowPlatterColor(Color?) -> some View
+Deprecated
+M
+func colorScheme(ColorScheme) -> some View
+Deprecated
+Appearance modifiers
+M
+func accessibility(sortPriority: Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(inputLabels: [Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(activationPoint: CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+background(_:alignment:)
+Layers the given view behind this view.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func background<Background>(
+    _ background: Background,
+    alignment: Alignment = .center
+) -> some View where Background : View
+Deprecated
+Use background(alignment:content:) instead.
+Parameters
+background
+The view to draw behind this view.
+alignment
+The alignment with a default value of center that you use to position the background view.
+Discussion
+Use background(_:alignment:) when you need to place one view behind another, with the background view optionally aligned with a specified edge of the frontmost view.
+The example below creates two views: the Frontmost view, and the DiamondBackground view. The Frontmost view uses the DiamondBackground view for the background of the image element inside the Frontmost view’s VStack.
+struct DiamondBackground: View {
+    var body: some View {
+        VStack {
+            Rectangle()
+                .fill(Color.gray)
+                .frame(width: 250, height: 250, alignment: .center)
+                .rotationEffect(.degrees(45.0))
+        }
+    }
+}
+
+
+struct Frontmost: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "folder")
+                .font(.system(size: 128, weight: .ultraLight))
+                .background(DiamondBackground())
+        }
+    }
+}
+See Also
+Appearance modifiers
+func colorScheme(ColorScheme) -> some View
+Sets this view’s color scheme.
+Deprecated
+func listRowPlatterColor(Color?) -> some View
+Sets the color that the system applies to the row background when this view is placed in a list.
+Deprecated
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+Layers a secondary view in front of this view.
+Deprecated
+func foregroundColor(Color?) -> some View
+Sets the color of the foreground elements displayed by this view.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is background(_:alignment:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/realitykit/entity/childcollection/replaceall(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Playing Animations
+M
+func generateCollisionShapes(recursive: Bool)
+Calculating the Collision Shape
+P
+var anchor: (HasAnchoring)?
+Finding the Nearest Anchor
+r
+P
+TransientComponent
+r
+P
+HasSynchronization
+func requestOwnership(timeout: TimeInterval, (SynchronizationComponent.OwnershipTransferCompletionResult) -> Void)
+M
+func removeAll(where: (Entity) throws -> Bool) rethrows
+Beta
+M
+func removeAll()
+Beta
+M
+func remove(at: Int)
+Beta
+M
+func remove(Entity)
+Beta
+M
+func insert<S>(contentsOf: S, beforeIndex: Int)
+Beta
+M
+func insert(Entity, beforeIndex: Int)
+Beta
+M
+func append<S>(contentsOf: S)
+Beta
+M
+func append(Entity)
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+replaceAll(_:)
+Removes all children from this entity and adds the specified list of entities as the new children.
+visionOS 1.0+ Beta
+@MainActor
+func replaceAll<S>(_ children: S) where S : Sequence, S.Element : Entity
+Parameters
+children
+The list of the new children.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is replaceAll(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

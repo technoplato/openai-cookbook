@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/realitykit/preliminary-imageanchoring-referenceimageSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+preliminary:planeAnchoring:alignment
+preliminary:anchoring:type
+Properties
+Preliminary_AnchoringAPI
+Placing a Prim in the Real World
+Anchoring
+playbackMode
+autoPlay
+Documentation
+Open Menu
+Swift
+Article
+preliminary:imageAnchoring:referenceImage
+The characteristics of an image the runtime should scan for in order to attach a prim.
+Overview
+An asset assigns this property a prim with type Preliminary_ReferenceImage.
+The runtime searches for an image described by this property in the physical environment. If the runtime finds a match, it places a prim at the image’s real-world location. When a runtime places a prim in the physical environment, the prim’s children also attach to that location.
+The runtime employs the information contained in this property only when preliminary:anchoring:type is image.
+Declaration
+rel preliminary:imageAnchoring:referenceImage
+Anchor a Cube to an Image
+The following example demonstrates how an asset defines a reference image (ImageReference) that the runtime should look for in the physical environment. The asset includes a cube that assigns an Preliminary_ReferenceImage to its preliminary:imageAnchoring:referenceImage property, instructing the runtime to anchor it to a real-world object that matches the image criteria.
+def Cube "ImageAnchoredCube" (
+    prepend apiSchemas = [ "Preliminary_AnchoringAPI" ]
+)
+{
+    uniform token preliminary:anchoring:type = "image"
+    rel preliminary:imageAnchoring:referenceImage = <ImageReference>
+    ...
+
+
+    def Preliminary_ReferenceImage "ImageReference"
+    {
+      uniform asset image = @image.png@
+      uniform double physicalWidth = 0.12
+    }
+}
+See Also
+Properties
+preliminary:anchoring:type
+A option that specifies the type of anchor.
+preliminary:planeAnchoring:alignment
+An option that specifies the orientation of a plane.
+Current page is preliminary:imageAnchoring:referenceImage
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

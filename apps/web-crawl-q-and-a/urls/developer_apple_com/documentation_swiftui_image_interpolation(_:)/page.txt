@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/image/interpolation(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Managing symbol effects
+S
+SymbolVariants
+P
+var symbolVariants: SymbolVariants
+M
+func symbolVariant(SymbolVariants) -> some View
+Setting a symbol variant
+E
+AsyncImagePhase
+S
+AsyncImage
+M
+func renderingMode(Image.TemplateRenderingMode?) -> Image
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> Image
+M
+func antialiased(Bool) -> Image
+Specifying rendering behavior
+M
+func resizable(capInsets: EdgeInsets, resizingMode: Image.ResizingMode) -> Image
+Resizing images
+M
+init(size: CGSize, label: Text?, opaque: Bool, colorMode: ColorRenderingMode, renderer: (inout GraphicsContext) -> Void)
+Creating an image from drawing instructions
+Documentation
+Open Menu
+Swift
+Instance Method
+interpolation(_:)
+Specifies the current level of quality for rendering an image that requires interpolation.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func interpolation(_ interpolation: Image.Interpolation) -> Image
+Parameters
+interpolation
+The quality level, expressed as a value of the Interpolation type, that SwiftUI applies when interpolating an image.
+Return Value
+An image with the given interpolation value set.
+Discussion
+See the article Fitting images into available space for examples of using interpolation(_:) when scaling an Image.
+See Also
+Specifying rendering behavior
+func antialiased(Bool) -> Image
+Specifies whether SwiftUI applies antialiasing when rendering the image.
+func symbolRenderingMode(SymbolRenderingMode?) -> Image
+Sets the rendering mode for symbol images within this view.
+func renderingMode(Image.TemplateRenderingMode?) -> Image
+Indicates whether SwiftUI renders an image as-is, or by using a different mode.
+enum TemplateRenderingMode
+A type that indicates how SwiftUI renders images.
+enum Interpolation
+The level of quality for rendering an image that requires interpolation, such as a scaled image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is interpolation(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

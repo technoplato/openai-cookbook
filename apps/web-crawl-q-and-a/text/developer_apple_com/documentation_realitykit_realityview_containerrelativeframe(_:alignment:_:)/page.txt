@@ -1,0 +1,191 @@
+https://developer.apple.com/documentation/realitykit/realityview/containerrelativeframe(_:alignment:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func defaultFocus<V>(FocusState<V>.Binding, V, priority: DefaultFocusEvaluationPriority) -> some View
+M
+func defaultAppStorage(UserDefaults) -> some View
+M
+func datePickerStyle<S>(S) -> some View
+M
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+M
+func coordinateSpace<T>(name: T) -> some View
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+M
+func controlSize(ControlSize) -> some View
+func contextMenu<I, M>(forSelectionType: I.Type, menu: (Set<I>) -> M, primaryAction: ((Set<I>) -> Void)?) -> some View
+func containerRelativeFrame(Axis.Set, count: Int, span: Int, spacing: CGFloat, alignment: Alignment) -> some View
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment) -> some View
+M
+func containerBackground<V>(for: ContainerBackgroundPlacement, alignment: Alignment, content: () -> V) -> some View
+M
+func containerBackground<S>(S, for: ContainerBackgroundPlacement) -> some View
+M
+func confirmationDialog<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+M
+func confirmationDialog<A, M, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+M
+func confirmationDialog<S, A, M, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+M
+func confirmationDialog<S, A, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+M
+func confirmationDialog<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+containerRelativeFrame(_:alignment:_:)
+Positions this view within an invisible frame with a size relative to the nearest container.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func containerRelativeFrame(
+    _ axes: Axis.Set,
+    alignment: Alignment = .center,
+    _ length: @escaping (CGFloat, Axis) -> CGFloat
+) -> some View
+Discussion
+Use the View/containerRelativeFrame(_:alignment:) modifier to specify a size for a view’s width, height, or both that is dependent on the size of the nearest container. Different things can represent a “container” including:
+The window presenting a view on iPadOS or macOS, or the screen of a device on iOS.
+A column of a NavigationSplitView
+A NavigationStack
+A tab of a TabView
+A scrollable view like ScrollView or List
+The size provided to this modifier is the size of a container like the ones listed above subtraacking any safe area insets that might be applied to that container.
+The following example will have each purple rectangle occupy the full size of the screen on iOS:
+ScrollView(.horizontal) {
+    LazyHStack(spacing: 0.0) {
+        ForEach(items) { item in
+            Rectangle()
+                .fill(.purple)
+                .containerRelativeFrame([.horizontal, .vertical])
+        }
+    }
+}
+Use the View/containerRelativeFrame(_:count:spacing:alignment:) modifier to size a view such that multiple views will be visible in the container. When using this modifier, the count refers to the total number of rows or columns that the length of the container size in a particular axis should be divided into. The span refers to the number of rows or columns that the modified view should actually occupy. Thus the size of the element can be described like so:
+let availableWidth = (containerWidth - (spacing * (count - 1)))
+let columnWidth = (availableWidth / count)
+let itemWidth = (columnWidth * span) + ((span - 1) * spacing)
+The following example only uses the nearest container size in the horizontal axis, allowing the vertical axis to be determined using the View/aspectRatio(_:contentMode:)-771ow modifier.
+ScrollView(.horizontal) {
+    LazyHStack(spacing: 10.0) {
+        ForEach(items) { item in
+            Rectangle()
+                .fill(.purple)
+                .aspectRatio(3.0 / 2.0, contentMode: .fit)
+                .containerRelativeFrame(
+                    .horizontal, count: 4, span: 3, spacing: 10.0)
+        }
+    }
+}
+.safeAreaPadding(.horizontal, 20.0)
+Use this modifier to apply your own custom logic to adjust the size of the nearest container for your view. The following example will result in the container frame’s width being divided by 3 and using that value as the width of the purple rectangle.
+Rectangle()
+    .fill(.purple)
+    .aspectRatio(1.0, contentMode: .fill)
+    .containerRelativeFrame(
+        .horizontal, alignment: .topLeading
+    ) { length, axis in
+        if axis == .vertical {
+            return length / 3.0
+        } else {
+            return length / 5.0
+        }
+    }
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is containerRelativeFrame(_:alignment:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

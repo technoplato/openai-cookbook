@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/realitykit/entity/movecharacter(by:deltatime:relativeto:collisionhandler:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Properties
+M
+convenience init(named: String, in: Bundle?) async throws
+Beta
+M
+convenience init(contentsOf: URL, withName: String?) async throws
+Beta
+Initializers
+P
+var accessibilityDescription: String?
+Deprecated
+P
+var accessibilityLabel: String?
+Deprecated
+P
+var isAccessibilityElement: Bool
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+S
+CharacterControllerStateComponent
+P
+var characterControllerState: CharacterControllerStateComponent?
+P
+var characterController: CharacterControllerComponent?
+S
+CharacterControllerComponent
+Animating and Controlling Characters
+S
+InternalBindPath
+P
+var parameters: Entity.ParameterSet
+S
+Entity.ParameterSet
+Documentation
+Open Menu
+Swift
+Instance Method
+moveCharacter(by:deltaTime:relativeTo:collisionHandler:)
+Moves the character along a specified vector over a period of time.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+@discardableResult @MainActor
+func moveCharacter(
+    by moveDelta: SIMD3<Float>,
+    deltaTime: Float,
+    relativeTo referenceEntity: Entity?,
+    collisionHandler: ((CharacterControllerComponent.Collision) -> Void)? = nil
+) -> CharacterControllerComponent.CollisionFlags
+Parameters
+moveDelta
+Delta vector to attempt to move capsule in collision world.
+deltaTime
+Time between last frame and current.
+referenceEntity
+Reference entity that defines the frame of reference of the move delta. Can be nil, which is equivalent to “world space”.
+collisionHandler
+Optional callback when an entity was hit. One call per each hit entity.
+Return Value
+Collision flags that indicate the location of the collision.
+Discussion
+Moves the character in the collision world, with continuous collision checking and response. This will create character collision events. Entity.transform will be updated on the next engine tick. Use CharacterControllerStateComponent to get additional information about the state of the character after the move.
+See Also
+Animating and Controlling Characters
+struct CharacterControllerComponent
+A component that manages character movement.
+var characterController: CharacterControllerComponent?
+The character controller component for the entity.
+var characterControllerState: CharacterControllerStateComponent?
+The character controller state for the entity.
+struct CharacterControllerStateComponent
+An object that maintains state for a character controller.
+func teleportCharacter(to: SIMD3<Float>, relativeTo: Entity?)
+Moves the character instantly to a new position.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is moveCharacter(by:deltaTime:relativeTo:collisionHandler:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

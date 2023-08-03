@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/wkapplicationdelegateadaptorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Preferences
+Environment values
+Model data
+Data and storage
+App extensions
+Search
+Toolbars
+Targeting watchOS
+S
+NSApplicationDelegateAdaptor
+Targeting macOS
+S
+UIApplicationDelegateAdaptor
+O
+property list key UILaunchScreens
+O
+property list key UILaunchScreen
+Targeting iOS and iPadOS
+r
+P
+App
+Documentation
+Open Menu
+Swift
+Structure
+WKApplicationDelegateAdaptor
+A property wrapper that is used in App to provide a delegate from WatchKit.
+watchOS 7.0+
+@MainActor @propertyWrapper
+struct WKApplicationDelegateAdaptor<DelegateType> where DelegateType : NSObject, DelegateType : WKApplicationDelegate
+Topics
+Creating a delegate adaptor
+init(DelegateType.Type)
+Creates an WKApplicationDelegateAdaptor using a WatchKit Application Delegate.
+init(DelegateType.Type)
+Creates an WKApplicationDelegateAdaptor using a WatchKit Application Delegate.
+Available when DelegateType inherits NSObject, DelegateType conforms to ObservableObject, and DelegateType conforms to WKApplicationDelegate.
+init(DelegateType.Type)
+Creates an WKApplicationDelegateAdaptor using a WatchKit Application Delegate.
+Available when DelegateType inherits NSObject, DelegateType conforms to Observable, and DelegateType conforms to WKApplicationDelegate.
+Beta
+Getting the delegate adaptor
+var projectedValue: ObservedObject<DelegateType>.Wrapper
+A projection of the observed object that creates bindings to its properties using dynamic member lookup.
+Available when DelegateType inherits NSObject, DelegateType conforms to ObservableObject, and DelegateType conforms to WKApplicationDelegate.
+var wrappedValue: DelegateType
+The underlying delegate.
+Relationships
+Conforms To
+DynamicProperty
+Sendable
+See Also
+Targeting watchOS
+struct WKExtensionDelegateAdaptor
+A property wrapper type that you use to create a WatchKit extension delegate.
+Current page is WKApplicationDelegateAdaptor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

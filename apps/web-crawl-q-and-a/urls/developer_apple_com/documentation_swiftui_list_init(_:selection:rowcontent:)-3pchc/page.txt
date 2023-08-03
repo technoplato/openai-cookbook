@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/list/init(_:selection:rowcontent:)-3pchcSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, children: WritableKeyPath<Data.Element, Data?>, rowContent: (Binding<Data.Element>) -> RowContent)
+Listing bound, hierarchical data
+M
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, children: WritableKeyPath<Data.Element, Data?>, selection: Binding<SelectionValue>, rowContent: (Binding<Data.Element>) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, rowContent: (Data.Element) -> RowContent)
+init<Data, RowContent>(Binding<Data>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+init<Data, RowContent>(Binding<Data>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, rowContent: (Binding<Data.Element>) -> RowContent)
+init<Data, RowContent>(Data, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+init<Data, RowContent>(Data, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, rowContent: (Data.Element) -> RowContent)
+Listing identifiable data
+M
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, rowContent: (Data.Element) -> RowContent)
+Listing data
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:selection:rowContent:)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select a single row.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+@MainActor
+init<Data, RowContent>(
+    _ data: Data,
+    selection: Binding<SelectionValue?>?,
+    @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent
+) where Content == ForEach<Data, Data.Element.ID, RowContent>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Parameters
+data
+The identifiable data for computing the list.
+selection
+A binding to a selected value.
+rowContent
+A view builder that creates the view for a single row of the list.
+See Also
+Listing identifiable data
+init<Data, RowContent>(Data, rowContent: (Data.Element) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, RowContent>(Data, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Data, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:selection:rowContent:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

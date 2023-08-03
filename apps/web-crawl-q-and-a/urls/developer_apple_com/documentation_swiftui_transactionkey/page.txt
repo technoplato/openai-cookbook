@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/swiftui/transactionkeySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Gestures
+Event handling
+Scroll views
+View groupings
+Tables
+Lists
+Custom layout
+S
+Transaction
+M
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+Beta
+M
+func transaction(value: some Equatable, (inout Transaction) -> Void) -> some View
+Beta
+M
+func transaction((inout Transaction) -> Void) -> some View
+func withTransaction<R, V>(WritableKeyPath<Transaction, V>, V, () throws -> R) rethrows -> R
+func withTransaction<Result>(Transaction, () throws -> Result) rethrows -> Result
+Moving an animation to another view
+S
+PlaceholderContentView
+Beta
+Documentation
+Open Menu
+Swift
+Protocol
+TransactionKey
+A key for accessing values in a transaction.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+protocol TransactionKey
+Overview
+You can create custom transaction values by extending the Transaction structure with new properties. First declare a new transaction key type and specify a value for the required defaultValue property:
+private struct MyTransactionKey: TransactionKey {
+    static let defaultValue = false
+}
+The Swift compiler automatically infers the associated Value type as the type you specify for the default value. Then use the key to define a new transaction value property:
+extension Transaction {
+    var myCustomValue: Bool {
+        get { self[MyTransactionKey.self] }
+        set { self[MyTransactionKey.self] = newValue }
+    }
+}
+Clients of your transaction value never use the key directly. Instead, they use the key path of your custom transaction value property. To set the transaction value for a change, wrap that change in a call to withTransaction:
+withTransaction(\.myCustomValue, true) {
+    isActive.toggle()
+}
+To set it for a view and all its subviews, add the View/transaction(_:_:) view modifier to that view:
+MyView()
+    .transaction(\.myCustomValue, true)
+To use the value from inside MyView or one of its descendants, use the transaction(_:) view modifier:
+MyView()
+    .transaction { transaction in
+        if transaction.myCustomValue {
+            transaction.animation = .default.repeatCount(3)
+        }
+    }
+Topics
+Setting a default value
+static var defaultValue: Self.Value
+The default value for the transaction key.
+Required
+associatedtype Value
+The associated type representing the type of the transaction key’s value.
+Required
+See Also
+Moving an animation to another view
+func withTransaction<Result>(Transaction, () throws -> Result) rethrows -> Result
+Executes a closure with the specified transaction and returns the result.
+func withTransaction<R, V>(WritableKeyPath<Transaction, V>, V, () throws -> R) rethrows -> R
+Executes a closure with the specified transaction key path and value and returns the result.
+func transaction((inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+func transaction(value: some Equatable, (inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+Beta
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given transaction mutation function to all animations used within the body closure.
+Beta
+struct Transaction
+The context of the current state-processing update.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TransactionKey
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

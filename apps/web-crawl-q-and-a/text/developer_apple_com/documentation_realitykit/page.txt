@@ -1,0 +1,313 @@
+https://developer.apple.com/documentation/realitykitSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Object capture
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Diorama
+Asset creation
+r
+P
+EntityCollection
+Beta
+r
+P
+TransientComponent
+Documentation
+Open Menu
+Swift
+Framework
+RealityKit
+Simulate and render 3D content for use in your augmented reality apps.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+Overview
+RealityKit provides high-performance 3D simulation and rendering capabilities you can use to create visionOS apps or to create augmented reality (AR) apps for iOS, macOS, and tvOS. RealityKit is an AR-first 3D framework that leverages ARKit to seamlessly integrate virtual objects into the real world.
+Use RealityKit’s rich functionality to create compelling augmented reality (AR) experiences.
+Create and import full RealityKit scenes with models, animations, and Spatial Audio by using Reality Composer Pro for visionOS.
+Build or modify scenes at runtime by adding 3D models, shape primitives, and sounds from code.
+Have virtual objects interact with objects in the real-world.
+Animate objects, both manually and with physics simulations.
+Respond to user input and changes in a person’s surroundings.
+Synchronize across devices and use SharePlay to enable group AR experiences.
+Topics
+Presentation
+class ARView
+A view that enables you to display an AR experience with RealityKit.
+struct Model3D
+A view that asynchronously loads and displays a 3D model.
+Beta
+struct RealityView
+A SwiftUI view for displaying RealityKit content on visionOS.
+Beta
+class RealityRenderer
+Beta
+struct SceneRealityCoordinateSpace
+The RealityCoordinateSpace representing ARKit world space.
+Beta
+protocol RealityCoordinateSpaceConverting
+A value that can be converted between SwiftUI CoordinateSpaces and
+Beta
+Entity Component System
+Understanding RealityKit’s modular architecture
+Learn how everything fits together in RealityKit.
+Building an Immersive Experience with RealityKit
+Use systems and postprocessing effects to create a realistic underwater scene.
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+API Reference
+RealityKit Systems
+Apply behaviors and physical effects to the entities in a RealityKit scene.
+class Scene
+A container that holds the collection of entities rendered by an AR view.
+class Entity
+An element of a RealityKit scene to which you attach components that provide appearance and behavior characteristics for the entity.
+protocol Component
+A representation of a geometry or a behavior that you apply to an entity.
+protocol TransientComponent
+An interface for components that aren’t saved to file or cloned.
+protocol EntityCollection
+Beta
+Asset creation
+Diorama
+Design scenes for your visionOS app using Reality Composer Pro.
+Designing RealityKit content with Reality Composer Pro
+Design RealityKit scenes for your visionOS app.
+API Reference
+Reality Composer
+A visual editor for RealityKit AR scenes.
+API Reference
+Object capture
+Create 3D objects from a series of photographs using photogrammetry.
+API Reference
+USD Assets
+Import and use 3D scenes by importing USD files.
+Scene content
+Hello World
+Use windows, volumes, and immersive spaces to teach people about the Earth.
+API Reference
+Models, shapes, and meshes
+Use mesh-based models to display virtual objects in your scene.
+API Reference
+Materials and shaders
+Apply textures to the surface of your scene’s 3D objects to give each object a unique appearance.
+API Reference
+Anchors
+Anchor an entity to an item in your scene, and specify the position, rotation, and scale of the entity’s content.
+API Reference
+Cameras and lighting
+Control the lighting and point of view for a scene.
+API Reference
+Scene reconstruction and understanding
+Detect objects in an AR scene or create a detailed 3D reconstruction of the real world environment.
+API Reference
+Audio
+Add immersive spatial audio to your RealityKit content.
+API Reference
+Animation
+Dynamically move, rotate, and scale objects at runtime.
+protocol RealityCoordinateSpace
+A 3D coordinate space that exists within a RealityKit hierarchy. Any RealityCoordinateSpaceConverting can convert spatial data between SwiftUI CoordinateSpaces and RealityCoordinateSpaces.
+Beta
+Runtime modifications
+API Reference
+Transforms: Position, Orientation, and Scale
+Control the placement of virtual objects.
+API Reference
+Body and face tracking
+Track the movement and facial expressions of people in an AR scene
+API Reference
+Collision detection
+Determine when entities collide with each other or the environment.
+API Reference
+Physics simulation
+Simulate physical interactions between entities.
+API Reference
+Postprocessing effects
+Create special rendering effects for your RealityKit scenes.
+API Reference
+Content synchronization
+Synchronize the contents of entities locally or across the network.
+API Reference
+Runtime Events
+Execute code when specific things happen in your RealityKit scene.
+Games
+Happy Beam
+Leverage a Full Space to create a fun game using ARKit.
+SwiftStrike: Creating a Game with RealityKit
+Create a multiplayer game with ARKit, RealityKit, and Swift using the SwiftStrike app as a guide.
+Creating a Game with Reality Composer
+Design your app’s visual look and behaviors in Reality Composer, and complete the gameplay experience by using custom RealityKit code.
+Creating a game with scene understanding
+Create AR games and experiences that interact with real-world objects on LiDAR-equipped iOS devices.
+API Reference
+Character control
+Direct the movements and animation of character models.
+Video Playback
+struct VideoPlayerComponent
+Beta
+enum VideoPlayerEvents
+Events associated with video playback for VideoPlayerComponent.
+Beta
+Network Synchronization
+class MultipeerConnectivityService
+A service that provides scene synchronization among all peers in a multipeer connectivity session.
+protocol SynchronizationService
+An interface that enables entity synchronization among a group of local peers.
+enum SynchronizationEvents
+Events associated with network synchronization of scene information.
+class NetworkCompatibilityToken
+An opaque token used to check the networking compatibility between two peers in a multipeer connection.
+struct NetworkReceiveSystem
+Beta
+struct NetworkSendSystem
+Beta
+Custom Materials and Shader Functions
+Modifying RealityKit Rendering Using Custom Materials
+Write Metal shader functions to implement custom rendering effects.
+struct CustomMaterial
+A material that works with custom Metal shader functions.
+Simulation
+Designing Scene Hierarchies for Efficient Physics Simulation
+Configure your RealityKit scenes to avoid performance bottlenecks.
+Handling Different-Sized Objects in Physics Simulations
+Set up a scene hierarchy for accurate physics simulations.
+Controlling Entity Collisions in RealityKit
+Create collision filters to control which objects collide.
+struct CollisionComponent
+A component that gives an entity the ability to collide with other entities that also have collision components.
+struct CollisionGroup
+A bitmask used to define the collision group to which an entity belongs.
+struct CollisionFilter
+A set of masks that determine whether entities can collide during simulations.
+struct ParticleEmitterComponent
+Beta
+Accessibility
+struct AccessibilityComponent
+Beta
+enum AccessibilityEvents
+Beta
+struct AccessibilityComponent
+Beta
+Improving Performance
+API Reference
+Improving the Performance of a RealityKit App
+Measure CPU and GPU utilization to find ways to improve your app’s performance.
+Reducing GPU Utilization in Your RealityKit App
+Prevent the GPU from limiting your app’s frame rate by reducing the complexity of your render.
+Reducing CPU Utilization in Your RealityKit App
+Target specific CPU metrics with adjustments to your app and its content.
+struct ModelDebugOptionsComponent
+A component that changes how RealityKit renders its entity to help with debugging.
+User Interface
+struct RealityViewAttachments
+The attachments associated with a RealityView.
+Beta
+class ViewAttachmentEntity
+An entity that has a view attachment.
+Beta
+struct HoverEffectComponent
+Adding this component to an Entity will trigger a standard highlight effect when the Entity is gazed at. Note that, just like EntityGesture, a CollisionComponent is required for the Entity to be part of hit-testing.
+Beta
+struct EntityTargetValue
+A value containing an original gesture value along with a targeted entity.
+Beta
+Structures
+struct Contact
+Events associated with collisions.
+Beta
+Enumerations
+enum Audio
+A namespace for types that are used commonly in audio.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is RealityKit
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

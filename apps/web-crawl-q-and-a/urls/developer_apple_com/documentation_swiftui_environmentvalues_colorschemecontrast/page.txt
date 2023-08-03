@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/colorschemecontrastSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Getting the color scheme contrast
+E
+ColorScheme
+P
+var colorScheme: ColorScheme
+M
+func preferredColorScheme(ColorScheme?) -> some View
+Detecting and requesting the light or dark appearance
+E
+GlassBackgroundDisplayMode
+Beta
+M
+func glassBackgroundEffect<S>(in: S, displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+M
+func glassBackgroundEffect(displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+colorSchemeContrast
+The contrast associated with the color scheme of this environment.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+var colorSchemeContrast: ColorSchemeContrast { get }
+Discussion
+Read this environment value from within a view to find out if SwiftUI is currently displaying the view using ColorSchemeContrast.standard or ColorSchemeContrast.increased contrast. The value that you read depends entirely on user settings, and you can’t change it.
+@Environment(\.colorSchemeContrast) private var colorSchemeContrast
+
+
+var body: some View {
+    Text(colorSchemeContrast == .standard ? "Standard" : "Increased")
+}
+When adjusting your app’s user interface to match the contrast, consider also checking the colorScheme property to find out if SwiftUI is displaying the view with a light or dark appearance. For information about using color and contrast in your app, see Color and Contrast.
+Note
+If you only need to provide different colors or images for different color scheme and contrast settings, do that in your app’s Asset Catalog. See Asset management.
+See Also
+Getting the color scheme contrast
+enum ColorSchemeContrast
+The contrast between the app’s foreground and background colors.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is colorSchemeContrast
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

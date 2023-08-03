@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/horizontalscrollindicatorvisibilitySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Clipboard
+Input events
+Gestures
+Event handling
+S
+ScrollDismissesKeyboardMode
+P
+var scrollDismissesKeyboardMode: ScrollDismissesKeyboardMode
+M
+func scrollDismissesKeyboard(ScrollDismissesKeyboardMode) -> some View
+M
+func scrollIndicators(ScrollIndicatorVisibility, axes: Axis.Set) -> some View
+M
+func scrollIndicatorsFlash(trigger: some Equatable) -> some View
+Beta
+M
+func scrollIndicatorsFlash(onAppear: Bool) -> some View
+Beta
+Showing scroll indicators
+S
+ScrollTransitionConfiguration
+Beta
+E
+ScrollTransitionPhase
+Beta
+M
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+M
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+horizontalScrollIndicatorVisibility
+The visibility to apply to scroll indicators of any horizontally scrollable content.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+var horizontalScrollIndicatorVisibility: ScrollIndicatorVisibility { get set }
+See Also
+Showing scroll indicators
+func scrollIndicatorsFlash(onAppear: Bool) -> some View
+Flashes the scroll indicators of a scrollable view when it appears.
+Beta
+func scrollIndicatorsFlash(trigger: some Equatable) -> some View
+Flashes the scroll indicators of scrollable views when a value changes.
+Beta
+func scrollIndicators(ScrollIndicatorVisibility, axes: Axis.Set) -> some View
+Sets the visibility of scroll indicators within this view.
+var verticalScrollIndicatorVisibility: ScrollIndicatorVisibility
+The visiblity to apply to scroll indicators of any vertically scrollable content.
+struct ScrollIndicatorVisibility
+The visibility of scroll indicators of a UI element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is horizontalScrollIndicatorVisibility
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

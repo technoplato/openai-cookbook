@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/menu/init(_:systemimage:content:primaryaction:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ToolbarCommands
+S
+TextFormattingCommands
+S
+TextEditingCommands
+S
+SidebarCommands
+Getting built-in command groups
+S
+CommandGroupPlacement
+S
+CommandsBuilder
+func contextMenu<I, M>(forSelectionType: I.Type, menu: (Set<I>) -> M, primaryAction: ((Set<I>) -> Void)?) -> some View
+M
+init(LocalizedStringKey, systemImage: String, content: () -> Content)
+M
+init<S>(S, systemImage: String, content: () -> Content)
+M
+init(LocalizedStringKey, image: ImageResource, content: () -> Content, primaryAction: () -> Void)
+Beta
+M
+init(LocalizedStringKey, image: ImageResource, content: () -> Content)
+Beta
+M
+init<S>(S, image: ImageResource, content: () -> Content)
+Beta
+Creating a menu with an image label
+M
+init<S>(S, content: () -> Content, primaryAction: () -> Void)
+M
+init(LocalizedStringKey, content: () -> Content, primaryAction: () -> Void)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:systemImage:content:primaryAction:)
+Creates a menu with a custom primary action that generates its label from a localized string key and system image.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+init(
+    _ titleKey: LocalizedStringKey,
+    systemImage: String,
+    @ViewBuilder content: () -> Content,
+    primaryAction: @escaping () -> Void
+)
+Available when Label is Label<Text, Image> and Content conforms to View.
+Parameters
+titleKey
+The key for the link’s localized title, which describes the contents of the menu.
+systemImage
+The name of the image resource to lookup.
+primaryAction
+The action to perform on primary interaction with the menu.
+content
+A group of menu items.
+See Also
+Creating a menu with an image label
+init<S>(S, image: ImageResource, content: () -> Content)
+Creates a menu that generates its label from a string and image resource.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Beta
+init(LocalizedStringKey, image: ImageResource, content: () -> Content)
+Creates a menu that generates its label from a localized string key and image resource.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Beta
+init(LocalizedStringKey, image: ImageResource, content: () -> Content, primaryAction: () -> Void)
+Creates a menu with a custom primary action that generates its label from a localized string key.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Beta
+init<S>(S, systemImage: String, content: () -> Content)
+Creates a menu that generates its label from a string and system image.
+Available when Label is Label<Text, Image> and Content conforms to View.
+init(LocalizedStringKey, systemImage: String, content: () -> Content)
+Creates a menu that generates its label from a localized string key and system image.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:systemImage:content:primaryAction:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

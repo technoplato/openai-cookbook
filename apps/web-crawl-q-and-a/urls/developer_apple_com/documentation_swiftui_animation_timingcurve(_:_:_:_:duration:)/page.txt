@@ -1,0 +1,193 @@
+https://developer.apple.com/documentation/swiftui/animation/timingcurve(_:_:_:_:duration:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Beta
+Controlling the timing and movements of your animations
+Creating phase-based animation
+M
+func animation<V>(Animation?, body: (PlaceholderContentView<Self>) -> V) -> some View
+Beta
+M
+func animation<V>(Animation?, value: V) -> some View
+M
+func animation(Animation?) -> some View
+Adding state-based animation to a view
+static func interactiveSpring(duration: TimeInterval, extraBounce: Double, blendDuration: TimeInterval) -> Animation
+func shouldMerge<V>(previous: Animation, value: V, time: TimeInterval, context: inout AnimationContext<V>) -> Bool
+M
+static func timingCurve(UnitCurve, duration: TimeInterval) -> Animation
+Beta
+M
+init<A>(A)
+Beta
+Creating custom animations
+M
+static func interpolatingSpring(mass: Double, stiffness: Double, damping: Double, initialVelocity: Double) -> Animation
+M
+static func interpolatingSpring(duration: TimeInterval, bounce: Double, initialVelocity: Double) -> Animation
+M
+static func interpolatingSpring(Spring, initialVelocity: Double) -> Animation
+Beta
+P
+static var interpolatingSpring: Animation
+M
+static func interactiveSpring(response: Double, dampingFraction: Double, blendDuration: TimeInterval) -> Animation
+Documentation
+Open Menu
+Swift
+Type Method
+timingCurve(_:_:_:_:duration:)
+An animation created from a cubic Bézier timing curve.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static func timingCurve(
+    _ p1x: Double,
+    _ p1y: Double,
+    _ p2x: Double,
+    _ p2y: Double,
+    duration: TimeInterval = 0.35
+) -> Animation
+Parameters
+p1x
+The x-coordinate of the first control point of the cubic Bézier curve.
+p1y
+The y-coordinate of the first control point of the cubic Bézier curve.
+p2x
+The x-coordinate of the second control point of the cubic Bézier curve.
+p2y
+The y-coordinate of the second control point of the cubic Bézier curve.
+duration
+The length of time, expressed in seconds, the animation takes to complete.
+Return Value
+A cubic Bézier timing curve animation.
+Discussion
+Use this method to create a timing curve based on the control points of a cubic Bézier curve. A cubic Bézier timing curve consists of a line whose starting point is (0, 0) and whose end point is (1, 1). Two additional control points, (p1x, p1y) and (p2x, p2y), define the shape of the curve.
+The slope of the line defines the speed of the animation at that point in time. A steep slopes causes the animation to appear to run faster, while a shallower slope appears to run slower. The following illustration shows a timing curve where the animation starts and finishes fast, but appears slower through the middle section of the animation.
+The following code uses the timing curve from the previous illustration to animate a Circle as its size changes.
+struct ContentView: View {
+    @State private var scale = 1.0
+
+
+    var body: some View {
+        VStack {
+            Circle()
+                .scaleEffect(scale)
+                .animation(
+                    .timingCurve(0.1, 0.75, 0.85, 0.35, duration: 2.0),
+                    value: scale)
+
+
+            Button("Animate") {
+                if scale == 1.0 {
+                    scale = 0.25
+                } else {
+                    scale = 1.0
+                }
+            }
+        }
+    }
+}
+Play
+See Also
+Creating custom animations
+init<A>(A)
+Create an Animation that contains the specified custom animation.
+Beta
+static func timingCurve(UnitCurve, duration: TimeInterval) -> Animation
+Creates a new animation with speed controlled by the given curve.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is timingCurve(_:_:_:_:duration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

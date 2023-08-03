@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/onchange(of:perform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creating a reality view
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+onChange(of:perform:)
+Performs an action when a specified value changes.
+RealityKit
+SwiftUI
+iOS 14.0–17.0 Deprecated
+iPadOS 14.0–17.0 Deprecated
+macOS 11.0–14.0 Deprecated
+Mac Catalyst 14.0–17.0 Deprecated
+tvOS 14.0–17.0 Deprecated
+watchOS 7.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func onChange<V>(
+    of value: V,
+    perform action: @escaping (V) -> Void
+) -> some View where V : Equatable
+Deprecated
+Use `onChange` with a two or zero parameter action closure instead.
+Parameters
+value
+The value to check when determining whether to run the closure. The value must conform to the Equatable protocol.
+action
+A closure to run when the value changes. The closure takes a newValue parameter that indicates the updated value.
+Return Value
+A view that runs an action when the specified value changes.
+Discussion
+Use this modifier to run a closure when a value like an Environment value or a Binding changes. For example, you can clear a cache when you notice that the view’s scene moves to the background:
+struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject private var cache = DataCache()
+
+
+    var body: some View {
+        MyView()
+            .onChange(of: scenePhase) { newScenePhase in
+                if newScenePhase == .background {
+                    cache.empty()
+                }
+            }
+    }
+}
+SwiftUI passes the new value into the closure. You can also capture the previous value to compare it to the new value. For example, in the following code example, PlayerView passes both the old and new values to the model.
+struct PlayerView: View {
+    var episode: Episode
+    @State private var playState: PlayState = .paused
+
+
+    var body: some View {
+        VStack {
+            Text(episode.title)
+            Text(episode.showTitle)
+            PlayButton(playState: $playState)
+        }
+        .onChange(of: playState) { [playState] newState in
+            model.playStateDidChange(from: playState, to: newState)
+        }
+    }
+}
+The system may call the action closure on the main actor, so avoid long-running tasks in the closure. If you need to perform such tasks, detach an asynchronous background task.
+Important: This modifier is deprecated and has been replaced with new versions that include either zero or two parameters within the closure, unlike this version that includes one parameter. This deprecated version and the new versions behave differently with respect to how they execute the action closure, specifically when the closure captures other values. Using the deprecated API, the closure is run with captured values that represent the “old” state. With the replacement API, the closure is run with captured values that represent the “new” state, which makes it easier to correctly perform updates that rely on supplementary values (that may or may not have changed) in addition to the changed value that triggered the action.
+Important
+This modifier is deprecated and has been replaced with new versions that include either zero or two parameters within the closure, unlike this version that includes one parameter. This deprecated version and the new versions behave differently with respect to how they execute the action closure, specifically when the closure captures other values. Using the deprecated API, the closure is run with captured values that represent the “old” state. With the replacement API, the closure is run with captured values that represent the “new” state, which makes it easier to correctly perform updates that rely on supplementary values (that may or may not have changed) in addition to the changed value that triggered the action.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onChange(of:perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

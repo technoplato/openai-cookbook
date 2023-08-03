@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/viewbuilder/buildblock(_:)-6hhuaSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Views
+View fundamentals
+Creating a view
+Declaring a custom view
+r
+P
+View
+S
+ViewBuilder
+Building content
+M
+static func buildBlock() -> EmptyView
+static func buildEither<TrueContent, FalseContent>(first: TrueContent) -> _ConditionalContent<TrueContent, FalseContent>
+static func buildEither<TrueContent, FalseContent>(second: FalseContent) -> _ConditionalContent<TrueContent, FalseContent>
+r
+P
+EnvironmentalModifier
+Responding to view life cycle updates
+M
+func onAppear(perform: (() -> Void)?) -> some View
+M
+func onDisappear(perform: (() -> Void)?) -> some View
+M
+func task(priority: TaskPriority, () async -> Void) -> some View
+M
+func task<T>(id: T, priority: TaskPriority, () async -> Void) -> some View
+Managing the view hierarchy
+Documentation
+Open Menu
+Swift
+Type Method
+buildBlock(_:)
+Passes a single view written as a child view through unmodified.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static func buildBlock<Content>(_ content: Content) -> Content where Content : View
+Discussion
+An example of a single view written as a child view is { Text("Hello") }.
+See Also
+Building content
+static func buildBlock() -> EmptyView
+Builds an empty view from a block containing no statements.
+static func buildBlock<each Content>(repeat each Content) -> TupleView<(repeat each Content)>
+static func buildExpression<Content>(Content) -> Content
+Builds an expression within the builder.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is buildBlock(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/realitykit/realityview/glassbackgroundeffect(in:displaymode:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func indexViewStyle<S>(S) -> some View
+M
+func imageScale(Image.Scale) -> some View
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+M
+func id<ID>(ID) -> some View
+M
+func hueRotation(Angle) -> some View
+M
+func hoverEffectDisabled(Bool) -> some View
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+M
+func glassBackgroundEffect(displayMode: GlassBackgroundDisplayMode) -> some View
+M
+func gesture<T>(T, including: GestureMask) -> some View
+M
+func geometryGroup() -> some View
+M
+func gaugeStyle<S>(S) -> some View
+M
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+M
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+M
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+glassBackgroundEffect(in:displayMode:)
+Sets the view’s glass background to a specified shape filled with the dispalyMode.
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+func glassBackgroundEffect<S>(
+    in shape: S,
+    displayMode: GlassBackgroundDisplayMode = .always
+) -> some View where S : InsettableShape
+Parameters
+shape
+An instance of a type that conforms to InsettableShape that SwiftUI draws behind the view. For unsupported shapes, it will resolve to a rectangle glass material.
+displayMode
+The GlassBackgroundDisplayMode of glass background. The default visibility is .always.
+Discussion
+A volumetric glass material is a 3D object includes thickness, specular, glass blur, shadow, and others. Because of its physical depth attribute, it influences Z-axis layout; the UI content should be generally placed in glass instead of on top of it as .overlay or ZStack. A shape with rounded corners is recommended. If shape style is not supported, it will resolve to a rectangle glass material.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is glassBackgroundEffect(in:displayMode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

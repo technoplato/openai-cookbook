@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/secondarytexturecoordinatetransformSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Modifying RealityKit Rendering Using Custom Materials
+Applying Realistic Material and Lighting Effects to Entities
+S
+MaterialParameterTypes
+E
+MaterialScalarParameter
+E
+MaterialColorParameter
+r
+P
+Material
+S
+VideoMaterial
+P
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+Modifying Texture Coordinates
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+Documentation
+Open Menu
+Swift
+Instance Property
+secondaryTextureCoordinateTransform
+A two-dimensional transformation RealityKit applies to the entity’s secondary texture coordinates.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform { get set }
+Discussion
+An entity’s UV texture coordinates define how RealityKit maps image textures onto an entity. Use this property to transform the secondary texture coordinates and change the way this material maps textures onto an entity. If an entity has multiple materials assigned to it, the transformation doesn’t affect how the other materials map their textures.
+For example, you might change the scale of the UV coordinates to apply a tiled, repeating pattern to the surface of your entity, or continuously rotate or translate the texture coordinates to animate materials and create special effects, such as fire or flowing liquids.
+The following example demonstrates how to set a material’s UV transformation:
+let rotationRadians = Float(45.0) * .pi / 180 // 45 degrees
+converted to radians. secondaryTextureCoordinateTransform =
+.init(offset: SIMD2<Float>(x:0.5, y: 0.5),
+                                            scale: SIMD2<Float>(x:0.5, y: 0.5),
+                                            rotation: rotationRadians)
+The material’s shader function doesn’t have to do anything to apply the transformation. When the shader calls params.geometry().uv1(), RealityKit already transforms the returned coordinates.
+See Also
+Modifying Texture Coordinates
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+A two-dimensional transformation RealityKit applies to the entity’s primary texture coordinates.
+struct TextureCoordinateTransform
+An object that defines a transformation the framework applies to a material’s UV-mapped textures.
+typealias TextureCoordinateTransform
+The object type that custom material use to hold UV texture coordinates.
+Current page is secondaryTextureCoordinateTransform
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

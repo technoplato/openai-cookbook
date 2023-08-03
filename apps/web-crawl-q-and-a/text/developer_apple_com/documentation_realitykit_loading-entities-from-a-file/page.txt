@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/loading-entities-from-a-fileSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+Building an Immersive Experience with RealityKit
+Understanding RealityKit’s modular architecture
+Entity Component System
+r
+P
+RealityCoordinateSpaceConverting
+Beta
+S
+SceneRealityCoordinateSpace
+Beta
+C
+RealityRenderer
+Beta
+S
+RealityView
+Beta
+S
+Model3D
+Beta
+Documentation
+Open Menu
+Swift
+Article
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+Overview
+Use a load method to bring an entity stored in a file into your app. You can load USD files (.usd, .usda, .usdc, .usdz) and Reality files (.reality) this way. You get a Reality file by exporting a project from the Reality Composer app, as described in Creating 3D Content with Reality Composer.
+Load an Entity Hierarchy Synchronously
+Use the load(named:in:) method to load an entity hierarchy from a USD or Reality file stored in a bundle. This method returns only after the operation completes. Omit the bundle parameter from the method call to load from the app’s main bundle:
+let entity = try? Entity.load(named: "MyEntity") 
+To load an entity stored at a specific location in the file system, create a file URL and use the load(contentsOf:withName:) method instead:
+let url = URL(fileURLWithPath: "path/to/MyEntity.usdz")
+let entity = try? Entity.load(contentsOf: url)
+The load methods preserve the entity hierarchy in the loaded file and return the root entity in the scene that the USD or Reality file contains. The entity can have any number of descendant entities that you access using the methods of the HasHierarchy protocol. Accessing entities this way enables you to store and import sophisticated compositions from a single asset.
+Load an Entity Hierarchy Asynchronously
+Synchronous load operations block the thread on which you call them. To maintain a smooth user interface, use an asynchronous load instead. The entity initializer has an asynchronous overload. For example, load from a bundle asynchronously by calling the method:
+_ = try! await Entity(named: "MyEntity")   // From the app's main bundle.
+Call the asynchronous version of these intializers by prefacing the call with the await keyword from asynchronous methods or from inside of a Task These overloads give you access to the full set of features Concurrency provides.
+Load an Anchor Entity
+When you want to load a composition rooted by an anchor entity, you can instead use the loadAnchor(named:in:) method, or one of its siblings. These methods behave like the related load methods, except that they specifically return an AnchorEntity instance that you can add to your scene:
+if let anchor = try? Entity.loadAnchor(named: "MyEntity") {
+    arView.scene.addAnchor(anchor)
+}
+As with the load methods, the load anchor methods preserve the entity hierarchy.
+Note
+The load anchor methods work only for Reality files.
+Load a Flattened Model or Body-Tracked Entity
+To load a model or body-tracked entity with internal structure that you don’t need to access, use the RealityKit/Entity/loadModel(named:in:) or the loadBodyTracked(named:in:) method, respectively. These methods and their siblings flatten the entity hierarchy into a single entity cast either as a ModelEntity or BodyTrackedEntity. A flattened entity can be easier to work with when you don’t need access to the entity’s details.
+Note
+The load model and body-tracked methods work only for USD files.
+See Also
+Entity Component System
+API Reference
+RealityKit Systems
+Apply behaviors and physical effects to the entities in a RealityKit scene.
+class Scene
+A container that holds the collection of entities rendered by an AR view.
+class Entity
+An element of a RealityKit scene to which you attach components that provide appearance and behavior characteristics for the entity.
+protocol Component
+A representation of a geometry or a behavior that you apply to an entity.
+protocol TransientComponent
+An interface for components that aren’t saved to file or cloned.
+protocol EntityCollection
+Beta
+Current page is Loading Entities from a File
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

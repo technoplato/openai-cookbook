@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/menuorder(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View
+M
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+M
+func navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode) -> some View
+M
+func navigationBarTitle<S>(S, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey) -> some View
+M
+func menuIndicator(Visibility) -> some View
+M
+func menuActionDismissBehavior(MenuActionDismissBehavior) -> some View
+M
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+M
+func mask<Mask>(alignment: Alignment, () -> Mask) -> some View
+M
+func mask<Mask>(Mask) -> some View
+M
+func luminanceToAlpha() -> some View
+M
+func listStyle<S>(S) -> some View
+M
+func listSectionSpacing(ListSectionSpacing) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+menuOrder(_:)
+Sets the preferred order of items for menus presented from this view.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func menuOrder(_ order: MenuOrder) -> some View
+Parameters
+order
+The menu item ordering strategy to apply.
+Return Value
+A view that uses the specified menu ordering strategy.
+Discussion
+Use this modifier to override the default menu order. On supported platforms, MenuOrder/priority order keeps the first items closer to the user’s point of interaction, whereas MenuOrder/fixed order always orders items from top to bottom.
+On iOS, the MenuOrder/automatic order resolves to MenuOrder/fixed for menus presented within scrollable content. Pickers that use the PickerStyle/menu style also default to MenuOrder/fixed order. In all other cases, menus default to MenuOrder/priority order.
+On macOS, tvOS and watchOS, the MenuOrder/automatic order always resolves to MenuOrder/fixed order.
+The following example creates a menu that presents its content in a fixed order from top to bottom:
+Menu {
+    Button("Select", action: selectFolders)
+    Button("New Folder", action: createFolder)
+    Picker("Appearance", selection: $appearance) {
+        Label("Icons", systemImage: "square.grid.2x2").tag(Appearance.icons)
+        Label("List", systemImage: "list.bullet").tag(Appearance.list)
+    }
+} label: {
+    Label("Settings", systemImage: "ellipsis.circle")
+}
+.menuOrder(.fixed)
+You can use this modifier on controls that present a menu. For example, the code below creates a Picker using the PickerStyle/menu style with a priority-based order:
+Picker("Flavor", selection: $selectedFlavor) {
+    Text("Chocolate").tag(Flavor.chocolate)
+    Text("Vanilla").tag(Flavor.vanilla)
+    Text("Strawberry").tag(Flavor.strawberry)
+}
+.pickerStyle(.menu)
+.menuOrder(.priority)
+You can also use this modifier on context menus. The example below creates a context menu that presents its content in a fixed order:
+Text("Favorite Card Suit")
+    .padding()
+    .contextMenu {
+        Button("♥️ - Hearts", action: selectHearts)
+        Button("♣️ - Clubs", action: selectClubs)
+        Button("♠️ - Spades", action: selectSpades)
+        Button("♦️ - Diamonds", action: selectDiamonds)
+    }
+    .menuOrder(.fixed)
+The modifier has no effect when applied to a subsection or submenu of a menu.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is menuOrder(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

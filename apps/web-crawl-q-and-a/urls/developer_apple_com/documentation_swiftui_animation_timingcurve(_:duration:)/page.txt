@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/animation/timingcurve(_:duration:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Controlling the timing and movements of your animations
+Creating phase-based animation
+M
+func animation<V>(Animation?, body: (PlaceholderContentView<Self>) -> V) -> some View
+Beta
+M
+func animation<V>(Animation?, value: V) -> some View
+M
+func animation(Animation?) -> some View
+Adding state-based animation to a view
+M
+static func interactiveSpring(duration: TimeInterval, extraBounce: Double, blendDuration: TimeInterval) -> Animation
+func shouldMerge<V>(previous: Animation, value: V, time: TimeInterval, context: inout AnimationContext<V>) -> Bool
+M
+init<A>(A)
+Beta
+Creating custom animations
+M
+static func interpolatingSpring(mass: Double, stiffness: Double, damping: Double, initialVelocity: Double) -> Animation
+M
+static func interpolatingSpring(duration: TimeInterval, bounce: Double, initialVelocity: Double) -> Animation
+M
+static func interpolatingSpring(Spring, initialVelocity: Double) -> Animation
+Beta
+P
+static var interpolatingSpring: Animation
+M
+static func interactiveSpring(response: Double, dampingFraction: Double, blendDuration: TimeInterval) -> Animation
+P
+static var interactiveSpring: Animation
+Documentation
+Open Menu
+Swift
+Type Method
+timingCurve(_:duration:)
+Creates a new animation with speed controlled by the given curve.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+static func timingCurve(
+    _ curve: UnitCurve,
+    duration: TimeInterval
+) -> Animation
+Parameters
+timingCurve
+A curve that describes the speed of the animation over its duration.
+duration
+The duration of the animation, in seconds.
+See Also
+Creating custom animations
+init<A>(A)
+Create an Animation that contains the specified custom animation.
+Beta
+static func timingCurve(Double, Double, Double, Double, duration: TimeInterval) -> Animation
+An animation created from a cubic Bézier timing curve.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is timingCurve(_:duration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

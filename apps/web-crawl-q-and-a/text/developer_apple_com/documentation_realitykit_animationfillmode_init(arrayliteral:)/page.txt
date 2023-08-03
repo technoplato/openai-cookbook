@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/animationfillmode/init(arrayliteral:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Comparing Fill Modes
+M
+func update(with: Self.Element) -> Self.Element?
+M
+func union(Self) -> Self
+M
+func symmetricDifference(Self) -> Self
+M
+func subtracting(Self) -> Self
+M
+func subtract(Self)
+M
+func remove(Self.Element) -> Self.Element?
+M
+init<S>(S)
+M
+init()
+Creating a Fill Mode
+P
+let rawValue: Int8
+P
+static let both: AnimationFillMode
+P
+static let backwards: AnimationFillMode
+P
+static let forwards: AnimationFillMode
+P
+static let none: AnimationFillMode
+Documentation
+Open Menu
+Swift
+Initializer
+init(arrayLiteral:)
+Creates a set containing the elements of the given array literal.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+init(arrayLiteral: Self.Element...)
+Available when ArrayLiteralElement is Self.Element.
+Parameters
+arrayLiteral
+A list of elements of the new set.
+Overview
+You don’t call this initializer directly; the compiler calls it when you use an array literal. For an example, see doc://com.apple.documentation/documentation/swift/set/2945904-init.
+See Also
+Creating a Fill Mode
+init()
+Creates an empty option set.
+Available when RawValue conforms to FixedWidthInteger.
+init<S>(S)
+Creates a new set from the given finite sequence.
+init(rawValue: Int8)
+Creates a fill mode from its backing data type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(arrayLiteral:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

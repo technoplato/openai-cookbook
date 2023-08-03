@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/outlinesubgroupchildrenSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+Prominence
+P
+var headerProminence: Prominence
+M
+func headerProminence(Prominence) -> some View
+Configuring headers
+M
+func listSectionSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+M
+func listRowSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+M
+func listSectionSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+init<DataElement>(Data, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Supporting types
+M
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Beta
+M
+init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Beta
+M
+init<DataElement>(DataElement, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Beta
+M
+init<DataElement>(Data, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)
+Beta
+M
+init<DataElement>(Data, children: KeyPath<DataElement, Data?>)
+Beta
+M
+init<DataElement>(DataElement, children: KeyPath<DataElement, Data?>)
+Beta
+Creating an outline group in a table
+Documentation
+Open Menu
+Swift
+Structure
+OutlineSubgroupChildren
+A type-erased view representing the children in an outline subgroup.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct OutlineSubgroupChildren
+Overview
+OutlineGroup uses this type as a generic constraint for the Content of the DisclosureGroup instances it creates.
+Relationships
+Conforms To
+Sendable
+View
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is OutlineSubgroupChildren
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/swiftui/shapestyle/tintSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AngularGradient
+Supporting types
+P
+var body: _ShapeView<Rectangle, Self>
+Using a shape style as a view
+Resolved
+M
+func resolve(in: EnvironmentValues) -> Self.Resolved
+Beta
+Resolving a shape style in an environment
+P
+static var separator: SeparatorShapeStyle
+P
+static var selection: SelectionShapeStyle
+P
+static var background: BackgroundStyle
+P
+static var foreground: ForegroundStyle
+Semantic styles
+P
+static var quinary: HierarchicalShapeStyle
+P
+static var quaternary: HierarchicalShapeStyle
+P
+static var tertiary: HierarchicalShapeStyle
+Documentation
+Open Menu
+Swift
+Type Property
+tint
+A style that reflects the current tint color.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static var tint: TintShapeStyle { get }
+Available when Self is TintShapeStyle.
+Discussion
+You can set the tint color with the tint(_:) modifier. If no explicit tint is set, the tint is derived from the app’s accent color.
+See Also
+Semantic styles
+static var foreground: ForegroundStyle
+The foreground style in the current context.
+Available when Self is ForegroundStyle.
+static var background: BackgroundStyle
+The background style in the current context.
+Available when Self is BackgroundStyle.
+static var selection: SelectionShapeStyle
+A style used to visually indicate selection following platform conventional colors and behaviors.
+Available when Self is SelectionShapeStyle.
+static var separator: SeparatorShapeStyle
+A style appropriate for foreground separator or border lines.
+Available when Self is SeparatorShapeStyle.
+static var placeholder: PlaceholderTextShapeStyle
+A style appropriate for placeholder text.
+Available when Self is PlaceholderTextShapeStyle.
+Beta
+static var link: LinkShapeStyle
+A style appropriate for links.
+Available when Self is LinkShapeStyle.
+Beta
+static var fill: FillShapeStyle
+An overlay fill style for filling shapes.
+Available when Self is FillShapeStyle.
+Beta
+static var windowBackground: WindowBackgroundShapeStyle
+A style appropriate for elements that should match the background of their containing window.
+Available when Self is WindowBackgroundShapeStyle.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tint
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

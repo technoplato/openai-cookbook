@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/navigationsplitviewcolumnSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func navigationBarBackButtonHidden(Bool) -> some View
+Configuring the navigation bar
+M
+func navigationDocument<D, I1, I2>(D, preview: SharePreview<I1, I2>) -> some View
+M
+func navigationDocument<D>(D, preview: SharePreview<Never, Never>) -> some View
+M
+func navigationDocument<D, I>(D, preview: SharePreview<Never, I>) -> some View
+M
+func navigationDocument<D, I>(D, preview: SharePreview<I, Never>) -> some View
+M
+func navigationDocument(URL) -> some View
+Managing column collapse
+M
+func navigationDestination<D, C>(item: Binding<Optional<D>>, destination: (D) -> C) -> some View
+Beta
+M
+func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View
+M
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+S
+NavigationPath
+S
+NavigationStack
+Stacking views in one column
+S
+NavigationLink
+Documentation
+Open Menu
+Swift
+Structure
+NavigationSplitViewColumn
+A view that represents a column in a navigation split view.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+struct NavigationSplitViewColumn
+Overview
+A NavigationSplitView collapses into a single stack in some contexts, like on iPhone or Apple Watch. Use this type with the preferredCompactColumn parameter to control which column of the navigation split view appears on top of the collapsed stack.
+Topics
+Getting a column
+static var sidebar: NavigationSplitViewColumn
+static var content: NavigationSplitViewColumn
+static var detail: NavigationSplitViewColumn
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is NavigationSplitViewColumn
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

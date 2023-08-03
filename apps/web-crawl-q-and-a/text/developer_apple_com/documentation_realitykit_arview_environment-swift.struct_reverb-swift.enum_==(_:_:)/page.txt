@@ -1,0 +1,130 @@
+https://developer.apple.com/documentation/realitykit/arview/environment-swift.struct/reverb-swift.enum/==(_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+case preset(ARView.Environment.Reverb.Preset)
+Reverb Presets
+P
+static var automatic: ARView.Environment.Reverb
+E
+ARView.Environment.Reverb.Preset
+Default Implementations
+Equatable Implementations
+Operators
+static func != (Self, Self) -> Bool
+M
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+M
+func raycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> [ARRaycastResult]
+M
+func trackedRaycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment, updateHandler: ([ARRaycastResult]) -> Void) -> ARTrackedRaycast?
+Adding Gesture Recognizers to Entities
+M
+func installGestures(ARView.EntityGestures, for: HasCollision) -> [EntityGestureRecognizer]
+S
+ARView.EntityGestures
+M
+func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool
+Documentation
+Open Menu
+Swift
+Operator
+==(_:_:)
+Returns a Boolean value indicating whether two values are equal.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+static func == (a: ARView.Environment.Reverb, b: ARView.Environment.Reverb) -> Bool
+Parameters
+lhs
+A value to compare.
+rhs
+Another value to compare.
+Discussion
+Equality is the inverse of inequality. For any values a and b, a == b implies that a != b is false.
+Current page is ==(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,206 @@
+https://developer.apple.com/documentation/realitykit/collisioncomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(shapes: [ShapeResource], mode: CollisionComponent.Mode, collisionOptions: CollisionComponent.CollisionOptions, filter: CollisionFilter)
+Beta
+M
+init(shapes: [ShapeResource], isStatic: Bool, filter: CollisionFilter)
+Beta
+Initializers
+S
+CollisionComponent.CollisionOptions
+Beta
+Structures
+static func != (Self, Self) -> Bool
+static func == (CollisionComponent, CollisionComponent) -> Bool
+Simulations
+S
+SpatialAudioComponent
+Beta
+S
+ChannelAudioComponent
+Beta
+S
+AudioMixGroupsComponent
+Beta
+S
+AmbientAudioComponent
+Beta
+Sound
+S
+ViewAttachmentComponent
+Beta
+S
+TextComponent
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+CollisionComponent
+A component that gives an entity the ability to collide with other entities that also have collision components.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+struct CollisionComponent
+Overview
+This component holds the entity’s data related to participating in the scene’s physics simulation. It is also used to calculate collision queries, raycasts, and convex shape casts. Entities can participate in the scene simulation in two different modes: as a rigid body or as a trigger. A rigid body fully participates in the collision simulation. It affects the velocity and direction of entities it collides. If configured with a rigid body mode of PhysicsBodyMode.dynamic, it’s own velocity and direction can be affected by other rigid body entities. A trigger entity doesn’t have any impact on the rigid bodies in the scene, but can trigger code or Reality Composer behaviors when a rigid body enity overlaps it.
+Turn an entity into a trigger by adding a CollisionComponent to it and setting its mode to CollisionComponent.Mode.trigger.
+Turn an entity into a rigd body by adding a PhysicsBodyComponent to the entity in addition to a CollisionComponent. The PhysicsBodyComponent defines the physical properties of the entity, such as its mass and collision shape.
+The filter property defines the entity’s collision filter, which determines which other objects the entity collides with. For more information, see doc:controlling-entity-collisions-in-realitykit.
+Note
+If an entity has a PhysicsBodyComponent, the collision component’s mode is ignored. An entity can be a rigid body, or a trigger, but not both at the same time.
+Topics
+Creating the Collision Component
+init(shapes: [ShapeResource], mode: CollisionComponent.Mode, filter: CollisionFilter)
+Creates a collision component with the given collision shape, mode, and filter parameters.
+Setting the Collision Mode
+var mode: CollisionComponent.Mode
+The collision mode.
+enum Mode
+A mode that dictates how much collision data is collected for a given entity.
+Filtering Collisions
+var filter: CollisionFilter
+The collision filter used to segregate entities into different collision groups.
+struct CollisionFilter
+A set of masks that determine whether entities can collide during simulations.
+Setting Collision Shapes
+var shapes: [ShapeResource]
+A collection of shape resources that collectively represent the outer dimensions of an entity for the purposes of collision detection.
+class ShapeResource
+A representation of a shape.
+Registering a Component Type
+static func registerComponent()
+Registers a new component type.
+Comparing Collision Components
+static func == (CollisionComponent, CollisionComponent) -> Bool
+Indicates whether two collision components are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two collision components are not equal.
+Structures
+struct CollisionOptions
+Beta
+Initializers
+init(shapes: [ShapeResource], isStatic: Bool, filter: CollisionFilter)
+Initialize a collision component, making all shapes either static or non-static.
+Beta
+init(shapes: [ShapeResource], mode: CollisionComponent.Mode, collisionOptions: CollisionComponent.CollisionOptions, filter: CollisionFilter)
+Beta
+Instance Properties
+var collisionOptions: CollisionComponent.CollisionOptions
+Beta
+var isStatic: Bool
+Return true if collider is static. When ‘static’ is set to true, the physics engine recognizes that the object is not moving, leading to improved performance.
+Beta
+Default Implementations
+API Reference
+Component Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Component
+Equatable
+See Also
+Simulation
+Designing Scene Hierarchies for Efficient Physics Simulation
+Configure your RealityKit scenes to avoid performance bottlenecks.
+Handling Different-Sized Objects in Physics Simulations
+Set up a scene hierarchy for accurate physics simulations.
+struct CollisionGroup
+A bitmask used to define the collision group to which an entity belongs.
+struct CollisionFilter
+A set of masks that determine whether entities can collide during simulations.
+struct ParticleEmitterComponent
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CollisionComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

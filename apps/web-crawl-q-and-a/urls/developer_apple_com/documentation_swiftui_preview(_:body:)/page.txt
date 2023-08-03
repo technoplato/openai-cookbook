@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/preview(_:body:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func previewContext<C>(C) -> some View
+Setting a context
+S
+InterfaceOrientation
+M
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+E
+PreviewLayout
+M
+func previewLayout(PreviewLayout) -> some View
+Customizing preview size and orientation
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Creating a preview
+Previews in Xcode
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Body
+P
+var body: Self.Body
+Implementing a custom view
+r
+P
+View
+Declaring a custom view
+Documentation
+Open Menu
+Swift
+Macro
+Preview(_:body:)
+Creates a preview of a SwiftUI view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@freestanding(declaration)
+macro Preview(
+    _ name: String? = nil,
+    body: @escaping @MainActor () -> View
+)
+Parameters
+name
+Optional display name for the preview, which appears in the canvas.
+body
+A closure producing a SwiftUI view.
+See Also
+Creating a preview
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Creates a preview of a SwiftUI view.
+Beta
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+Creates a preview of a SwiftUI view with custom preview cameras.
+Beta
+protocol PreviewProvider
+A type that produces view previews in Xcode.
+enum PreviewPlatform
+Platforms that can run the preview.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Preview(_:body:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

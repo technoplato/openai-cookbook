@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/animationgroup/group_Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+BindTarget
+S
+BindPath
+Bindable Animation Targets
+S
+AnimationHandoffType
+Beta
+AnimationDefinition Implementations
+Default Implementations
+M
+func repeatingForever() -> Self
+P
+var additive: Bool
+P
+var blendLayer: Int32
+P
+var bindTarget: BindTarget
+P
+var name: String
+P
+var group: [AnimationDefinition]
+Configuring the Group
+M
+init(group: [AnimationDefinition], name: String, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+Creating an Animation Group
+Documentation
+Open Menu
+Swift
+Instance Property
+group_
+An optional collection of animations to run.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+iOS, iPadOS, Mac Catalyst, macOS
+var group_: [AnimationDefinition]?
+Unsupported OS: xros
+var group_: [AnimationDefinition]? { get set }
+Deprecated
+Use .group variable in AnimationGroup instead
+Discussion
+Don’t use this property. Use group instead.
+See Also
+Configuring the Group
+var group: [AnimationDefinition]
+A collection of animations to run.
+var name: String
+A textual name for the group.
+var bindTarget: BindTarget
+A textual name that refers to a property on which to run the grouped animations.
+var blendLayer: Int32
+The order in which the framework composites the animation.
+var additive: Bool
+A Boolean value that indicates whether the animation builds on the current state of the target entity or resets the state before running.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is group_
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

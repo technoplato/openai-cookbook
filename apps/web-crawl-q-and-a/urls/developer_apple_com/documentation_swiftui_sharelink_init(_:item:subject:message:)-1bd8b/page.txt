@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/sharelink/init(_:item:subject:message:)-1bd8bSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(item: String, subject: Text?, message: Text?)
+M
+init(item: URL, subject: Text?, message: Text?)
+M
+init(item: String, subject: Text?, message: Text?, label: () -> Label)
+M
+init(item: URL, subject: Text?, message: Text?, label: () -> Label)
+Sharing an item with a preview
+M
+init<I>(item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>)
+M
+init<I>(item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>, label: () -> Label)
+Sharing an item with a label
+init<I>(LocalizedStringKey, item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>)
+Sharing items with a preview
+M
+init(items: Data, subject: Text?, message: Text?, preview: (Data.Element) -> SharePreview<PreviewImage, PreviewIcon>)
+M
+init(items: Data, subject: Text?, message: Text?, preview: (Data.Element) -> SharePreview<PreviewImage, PreviewIcon>, label: () -> Label)
+Sharing items with a label
+M
+init<S>(S, items: Data, subject: Text?, message: Text?)
+M
+init<S>(S, items: Data, subject: Text?, message: Text?)
+M
+init(LocalizedStringKey, items: Data, subject: Text?, message: Text?)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:item:subject:message:)
+Creates an instance, with a custom label, that presents the share interface.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<S>(
+    _ title: S,
+    item: URL,
+    subject: Text? = nil,
+    message: Text? = nil
+) where Data == CollectionOfOne<URL>, S : StringProtocol
+Available when Data conforms to RandomAccessCollection, PreviewImage is Never, PreviewIcon is Never, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+Parameters
+title
+The title of the share action.
+item
+The item to share.
+subject
+A title for the item to show when sharing to activities that support a subject field.
+message
+A description of the item to show when sharing to activities that support a message field. Activities may support attributed text or HTML strings.
+See Also
+Sharing an item with a label
+init(LocalizedStringKey, item: URL, subject: Text?, message: Text?)
+Creates an instance, with a custom label, that presents the share interface.
+Available when Data conforms to RandomAccessCollection, PreviewImage is Never, PreviewIcon is Never, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+init(Text, item: String, subject: Text?, message: Text?)
+Creates an instance, with a custom label, that presents the share interface.
+Available when Data conforms to RandomAccessCollection, PreviewImage is Never, PreviewIcon is Never, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+init<S>(S, item: String, subject: Text?, message: Text?)
+Creates an instance, with a custom label, that presents the share interface.
+Available when Data conforms to RandomAccessCollection, PreviewImage is Never, PreviewIcon is Never, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+init(LocalizedStringKey, item: String, subject: Text?, message: Text?)
+Creates an instance, with a custom label, that presents the share interface.
+Available when Data conforms to RandomAccessCollection, PreviewImage is Never, PreviewIcon is Never, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+init(Text, item: URL, subject: Text?, message: Text?)
+Creates an instance, with a custom label, that presents the share interface.
+Available when Data conforms to RandomAccessCollection, PreviewImage is Never, PreviewIcon is Never, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:item:subject:message:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

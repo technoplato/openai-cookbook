@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/geometrygroup()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func imageScale(Image.Scale) -> some View
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+M
+func id<ID>(ID) -> some View
+M
+func hueRotation(Angle) -> some View
+M
+func hoverEffectDisabled(Bool) -> some View
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+M
+func hoverEffect(HoverEffect) -> some View
+M
+func gaugeStyle<S>(S) -> some View
+M
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+M
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+M
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+M
+func frame() -> some View
+Deprecated
+M
+func formStyle<S>(S) -> some View
+M
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+geometryGroup()
+Isolates the geometry (e.g. position and size) of the view from its parent view.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func geometryGroup() -> some View
+Discussion
+By default SwiftUI views push position and size changes down through the view hierarchy, so that only views that draw something (known as leaf views) apply the current animation to their frame rectangle. However in some cases this coalescing behavior can give undesirable results; inserting a geometry group can correct that. A group acts as a barrier between the parent view and its subviews, forcing the position and size values to be resolved and animated by the parent, before being passed down to each subview.
+The example below shows one use of this function: ensuring that the member views of each row in the stack apply (and animate as) a single geometric transform from their ancestor view, rather than letting the effects of the ancestor views be applied separately to each leaf view. If the members of ItemView may be added and removed at different times the group ensures that they stay locked together as animations are applied.
+VStack {
+    ForEach(items) { item in
+        ItemView(item: item)
+            .geometryGroup()
+    }
+}
+Returns: a new view whose geometry is isolated from that of its parent view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is geometryGroup()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

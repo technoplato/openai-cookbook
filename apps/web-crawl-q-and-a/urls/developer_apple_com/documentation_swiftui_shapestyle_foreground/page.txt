@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/shapestyle/foregroundSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var quaternary: some ShapeStyle
+Beta
+P
+var quinary: some ShapeStyle
+Beta
+P
+static var primary: HierarchicalShapeStyle
+P
+static var secondary: HierarchicalShapeStyle
+P
+static var tertiary: HierarchicalShapeStyle
+P
+static var quaternary: HierarchicalShapeStyle
+P
+static var quinary: HierarchicalShapeStyle
+Semantic styles
+M
+static func opacity(Double) -> some ShapeStyle
+M
+static func shadow(ShadowStyle) -> some ShapeStyle
+Mapping to absolute coordinates
+M
+func `in`(CGRect) -> some ShapeStyle
+Resolving a shape style in an environment
+M
+func resolve(in: EnvironmentValues) -> Self.Resolved
+Beta
+Resolved
+Documentation
+Open Menu
+Swift
+Type Property
+foreground
+The foreground style in the current context.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static var foreground: ForegroundStyle { get }
+Available when Self is ForegroundStyle.
+Discussion
+Access this value to get the style SwiftUI uses for foreground elements, like text, symbols, and shapes, in the current context. Use the foregroundStyle(_:) modifier to set a new foreground style for a given view and its child views.
+For information about how to use shape styles, see ShapeStyle.
+See Also
+Semantic styles
+static var background: BackgroundStyle
+The background style in the current context.
+Available when Self is BackgroundStyle.
+static var selection: SelectionShapeStyle
+A style used to visually indicate selection following platform conventional colors and behaviors.
+Available when Self is SelectionShapeStyle.
+static var separator: SeparatorShapeStyle
+A style appropriate for foreground separator or border lines.
+Available when Self is SeparatorShapeStyle.
+static var tint: TintShapeStyle
+A style that reflects the current tint color.
+Available when Self is TintShapeStyle.
+static var placeholder: PlaceholderTextShapeStyle
+A style appropriate for placeholder text.
+Available when Self is PlaceholderTextShapeStyle.
+Beta
+static var link: LinkShapeStyle
+A style appropriate for links.
+Available when Self is LinkShapeStyle.
+Beta
+static var fill: FillShapeStyle
+An overlay fill style for filling shapes.
+Available when Self is FillShapeStyle.
+Beta
+static var windowBackground: WindowBackgroundShapeStyle
+A style appropriate for elements that should match the background of their containing window.
+Available when Self is WindowBackgroundShapeStyle.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is foreground
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

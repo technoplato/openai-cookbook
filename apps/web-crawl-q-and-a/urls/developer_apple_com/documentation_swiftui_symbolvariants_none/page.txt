@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/symbolvariants/noneSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Loading images asynchronously
+S
+AsyncImage
+E
+AsyncImagePhase
+Setting a symbol variant
+M
+func symbolVariant(SymbolVariants) -> some View
+P
+var symbolVariants: SymbolVariants
+S
+SymbolVariants
+Getting symbol variants
+M
+func symbolEffect<T>(T, options: SymbolEffectOptions, isActive: Bool) -> some View
+M
+func symbolEffect<T, U>(T, options: SymbolEffectOptions, value: U) -> some View
+Beta
+M
+func symbolEffectsRemoved(Bool) -> some View
+Beta
+S
+SymbolEffectTransition
+Beta
+Setting symbol rendering modes
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> some View
+P
+var symbolRenderingMode: SymbolRenderingMode?
+Documentation
+Open Menu
+Swift
+Type Property
+none
+No variant for a symbol.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static let none: SymbolVariants
+Discussion
+Using this variant with the symbolVariant(_:) modifier doesn’t have any effect. Instead, to show a symbol that ignores the current variant, directly set the symbolVariants environment value to none using the environment(_:_:) modifer:
+HStack {
+    Image(systemName: "heart")
+    Image(systemName: "heart")
+        .environment(\.symbolVariants, .none)
+}
+.symbolVariant(.fill)
+See Also
+Getting symbol variants
+static let circle: SymbolVariants
+A variant that encapsulates the symbol in a circle.
+static let square: SymbolVariants
+A variant that encapsulates the symbol in a square.
+static let rectangle: SymbolVariants
+A variant that encapsulates the symbol in a rectangle.
+static let fill: SymbolVariants
+A variant that fills the symbol.
+static let slash: SymbolVariants
+A variant that draws a slash through the symbol.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is none
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

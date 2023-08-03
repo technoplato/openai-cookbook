@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/customanimation/animate(value:time:context:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+Synchronizing geometries
+T
+TimelineViewDefaultContext
+r
+P
+TimelineSchedule
+S
+TimelineView
+Updating watchOS apps with timelines
+Updating a view on a schedule
+func shouldMerge<V>(previous: Animation, value: V, time: TimeInterval, context: inout AnimationContext<V>) -> Bool
+Animating a value
+r
+P
+CustomAnimation
+Beta
+Creating custom animations
+S
+SpringKeyframe
+Beta
+S
+MoveKeyframe
+Beta
+S
+LinearKeyframe
+Beta
+S
+CubicKeyframe
+Beta
+r
+P
+KeyframeTrackContent
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+animate(value:time:context:)
+Calculates the value of the animation at the specified time.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func animate<V>(
+    value: V,
+    time: TimeInterval,
+    context: inout AnimationContext<V>
+) -> V? where V : VectorArithmetic
+Required
+Parameters
+value
+The vector to animate towards.
+time
+The elapsed time since the start of the animation.
+context
+An instance of AnimationContext that provides access to state and the animation environment.
+Return Value
+The current value of the animation, or nil if the animation has finished.
+Discussion
+Implement this method to calculate and return the value of the animation at a given point in time. If the animation has finished, return nil as the value. This signals to the system that it can remove the animation.
+If your custom animation needs to maintain state between calls to the animate(value:time:context:) method, store the state data in context. This makes the data available to the method next time the system calls it. To learn more about managing state data in a custom animation, see AnimationContext.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is animate(value:time:context:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

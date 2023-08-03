@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/entity/load(named:in:)-89eulSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var ambientAudio: AmbientAudioComponent?
+Beta
+P
+var channelAudio: ChannelAudioComponent?
+Beta
+P
+var spatialAudio: SpatialAudioComponent?
+Beta
+Instance Methods
+M
+func generateCollisionShapes(recursive: Bool, static: Bool)
+Beta
+M
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, blendLayerOffset: Int, separateAnimatedValue: Bool, startsPaused: Bool, clock: CMClockOrTimebase?, handoffType: AnimationHandoffType) -> AnimationPlaybackController
+Beta
+Type Methods
+M
+static func load(named: String, in: Bundle?) async throws -> Entity
+Beta
+r
+P
+EntityCollection
+Asset creation
+Diorama
+Designing RealityKit content with Reality Composer Pro
+Reality Composer
+Object capture
+USD Assets
+Documentation
+Open Menu
+Swift
+Type Method
+load(named:in:)
+Blocks your app while loading an entity from a file in a bundle.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+static func load(
+    named name: String,
+    in bundle: Bundle? = nil
+) throws -> Entity
+Return Value
+The root entity in the loaded file.
+Discussion
+RealityKit supports loading entities from USD (.usd, .usda, .usdc, .usdz) and Reality files (.reality).
+When building your app, Xcode automatically converts any Reality Composer projects (.rcproject) in the selected target into Reality files, which it then copies into your app’s bundle.
+For more information on loading entities, see Loading Entities from a File.
+name: The base name of the file to load, omitting the file extension.
+bundle: The bundle containing the file. Use nil to search the app’s main bundle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is load(named:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

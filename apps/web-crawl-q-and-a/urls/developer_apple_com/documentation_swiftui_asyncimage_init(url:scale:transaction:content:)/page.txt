@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/asyncimage/init(url:scale:transaction:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+C
+ImageRenderer
+Rendering images from views
+Loading an image in phases
+M
+init<I, P>(url: URL?, scale: CGFloat, content: (Image) -> I, placeholder: () -> P)
+M
+init(url: URL?, scale: CGFloat)
+Loading an image
+S
+AsyncImage
+Loading images asynchronously
+E
+Image.ResizingMode
+E
+Image.Orientation
+Documentation
+Open Menu
+Swift
+Initializer
+init(url:scale:transaction:content:)
+Loads and displays a modifiable image from the specified URL in phases.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init(
+    url: URL?,
+    scale: CGFloat = 1,
+    transaction: Transaction = Transaction(),
+    @ViewBuilder content: @escaping (AsyncImagePhase) -> Content
+)
+Parameters
+url
+The URL of the image to display.
+scale
+The scale to use for the image. The default is 1. Set a different value when loading images designed for higher resolution displays. For example, set a value of 2 for an image that you would name with the @2x suffix if stored in a file on disk.
+transaction
+The transaction to use when the phase changes.
+content
+A closure that takes the load phase as an input, and returns the view to display for the specified phase.
+Discussion
+If you set the asynchronous image’s URL to nil, or after you set the URL to a value but before the load operation completes, the phase is AsyncImagePhase.empty. After the operation completes, the phase becomes either AsyncImagePhase.failure(_:) or AsyncImagePhase.success(_:). In the first case, the phase’s error value indicates the reason for failure. In the second case, the phase’s image property contains the loaded image. Use the phase to drive the output of the content closure, which defines the view’s appearance:
+AsyncImage(url: URL(string: "https://example.com/icon.png")) { phase in
+    if let image = phase.image {
+        image // Displays the loaded image.
+    } else if phase.error != nil {
+        Color.red // Indicates an error.
+    } else {
+        Color.blue // Acts as a placeholder.
+    }
+}
+To add transitions when you change the URL, apply an identifier to the AsyncImage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(url:scale:transaction:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

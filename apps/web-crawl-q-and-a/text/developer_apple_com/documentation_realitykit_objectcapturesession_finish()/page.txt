@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/objectcapturesession/finish()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Methods
+P
+var userCompletedScanPassUpdates: ObjectCaptureSession.Updates<Bool>
+P
+var userCompletedScanPass: Bool
+P
+var stateUpdates: ObjectCaptureSession.Updates<ObjectCaptureSession.CaptureState>
+P
+var numberOfShotsTakenUpdates: ObjectCaptureSession.Updates<Int>
+P
+var numberOfShotsTaken: Int
+P
+var maximumNumberOfInputImages: Int
+M
+func cancel()
+Controlling the Session
+E
+ObjectCaptureSession.Error
+E
+ObjectCaptureSession.CaptureState
+Monitoring the Session
+E
+ObjectCaptureSession.Tracking
+P
+var state: ObjectCaptureSession.CaptureState
+P
+var isPaused: Bool
+Documentation
+Open Menu
+Swift
+Instance Method
+finish()
+Requests that the capture session be stopped and all data saved.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+@MainActor
+func finish()
+Discussion
+Call this method when the user has completed the scan successfully. The session switches to state .finishing while it saves all data and ultimately switches the state to .completed. The session ignores this method call if the current state is any value other than .capturing.
+See Also
+Controlling the Session
+func cancel()
+Requests that the capture session be canceled.
+Beta
+func pause()
+Pauses the automatic capture and other resource-intense algorithms.
+Beta
+func requestImageCapture()
+Requests a manual image capture.
+Beta
+func resume()
+Resumes object tracking algorithms after pause() is called.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is finish()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

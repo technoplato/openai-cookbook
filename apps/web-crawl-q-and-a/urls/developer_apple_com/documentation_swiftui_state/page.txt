@@ -1,0 +1,201 @@
+https://developer.apple.com/documentation/swiftui/stateSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Modal presentations
+Toolbars
+Search
+App extensions
+Data and storage
+Model data
+Creating and sharing view state
+Managing user interface state
+S
+StateObject
+S
+ObservedObject
+r
+P
+ObservableObject
+Responding to data changes
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+Beta
+M
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some View
+Beta
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+State
+A property wrapper type that can read and write a value managed by SwiftUI.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen @propertyWrapper
+struct State<Value>
+Overview
+Use state as the single source of truth for a given value type that you store in a view hierarchy. Create a state value in an App, Scene, or View by applying the @State attribute to a property declaration and providing an initial value. Declare state as private to prevent setting it in a memberwise initializer, which can conflict with the storage management that SwiftUI provides:
+struct PlayButton: View {
+    @State private var isPlaying: Bool = false // Create the state.
+
+
+    var body: some View {
+        Button(isPlaying ? "Pause" : "Play") { // Read the state.
+            isPlaying.toggle() // Write the state.
+        }
+    }
+}
+SwiftUI manages the property’s storage. When the value changes, SwiftUI updates the parts of the view hierarchy that depend on the value. To access a state’s underlying value, you use its wrappedValue property. However, as a shortcut Swift enables you to access the wrapped value by referring directly to the state instance. The above example reads and writes the isPlaying state property’s wrapped value by referring to the property directly.
+Declare state as private in the highest view in the view hierarchy that needs access to the value. Then share the state with any subviews that also need access, either directly for read-only access, or as a binding for read-write access. You can safely mutate state properties from any thread.
+Note
+If you need to store a reference type, like an instance of a class, use a StateObject instead.
+Share state with subviews
+If you pass a state property to a subview, SwiftUI updates the subview any time the value changes in the container view, but the subview can’t modify the value. To enable the subview to modify the state’s stored value, pass a Binding instead. You can get a binding to a state value by accessing the state’s projectedValue, which you get by prefixing the property name with a dollar sign ($).
+For example, you can remove the isPlaying state from the play button in the above example, and instead make the button take a binding:
+struct PlayButton: View {
+    @Binding var isPlaying: Bool // Play button now receives a binding.
+
+
+    var body: some View {
+        Button(isPlaying ? "Pause" : "Play") {
+            isPlaying.toggle()
+        }
+    }
+}
+Then you can define a player view that declares the state and creates a binding to the state using the dollar sign prefix:
+struct PlayerView: View {
+    @State private var isPlaying: Bool = false // Create the state here now.
+
+
+    var body: some View {
+        VStack {
+            PlayButton(isPlaying: $isPlaying) // Pass a binding.
+
+
+            // ...
+        }
+    }
+}
+Like you do for a StateObject, declare State as private to prevent setting it in a memberwise initializer, which can conflict with the storage management that SwiftUI provides. Unlike a state object, always initialize state by providing a default value in the state’s declaration, as in the above examples. Use state only for storage that’s local to a view and its subviews.
+Topics
+Creating a state
+init(wrappedValue: Value)
+Creates a state property that stores an initial wrapped value.
+init(initialValue: Value)
+Creates a state property that stores an initial value.
+init()
+Creates a state property without an initial value.
+Available when Value conforms to ExpressibleByNilLiteral.
+Getting the value
+var wrappedValue: Value
+The underlying value referenced by the state variable.
+var projectedValue: Binding<Value>
+A binding to the state value.
+Relationships
+Conforms To
+DynamicProperty
+Sendable
+See Also
+Creating and sharing view state
+Managing user interface state
+Encapsulate view-specific data within your app’s view hierarchy to make your views reusable.
+struct Bindable
+A property wrapper type that supports creating bindings to the mutable properties of observable objects.
+Beta
+struct Binding
+A property wrapper type that can read and write a value owned by a source of truth.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is State
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

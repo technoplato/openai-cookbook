@@ -1,0 +1,130 @@
+https://developer.apple.com/documentation/swiftui/snapshotdata/snapshotreason/returntodefaultstateSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+M
+func handlesExternalEvents(preferring: Set<String>, allowing: Set<String>) -> some View
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+E
+case prelaunch
+E
+case complicationUpdate
+E
+case appScheduled
+E
+case appBackgrounded
+Getting the snapshot reasons
+E
+SnapshotData.SnapshotReason
+P
+let reason: SnapshotData.SnapshotReason
+P
+let identifier: String?
+Documentation
+Open Menu
+Swift
+Case
+SnapshotData.SnapshotReason.returnToDefaultState
+It has been more than an hour since the user’s last interaction with the app; the app’s snapshot should return to its default state.
+watchOS 9.0+
+case returnToDefaultState
+See Also
+Getting the snapshot reasons
+case appBackgrounded
+The app transitioned from the foreground to the background.
+case appScheduled
+The app scheduled this snapshot.
+case complicationUpdate
+The app updated the complication timeline.
+case prelaunch
+The system needs a snapshot for the dock, but the app has not been launched yet.
+Current page is SnapshotData.SnapshotReason.returnToDefaultState
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

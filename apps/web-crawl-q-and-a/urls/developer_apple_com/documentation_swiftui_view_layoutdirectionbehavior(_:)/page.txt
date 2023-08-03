@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/swiftui/view/layoutdirectionbehavior(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View groupings
+Tables
+Lists
+Custom layout
+S
+EdgeInsets3D
+Beta
+S
+EdgeInsets
+E
+VerticalEdge
+Setting a layout direction
+S
+SafeAreaRegions
+M
+func safeAreaPadding(Edge.Set, CGFloat?) -> some View
+Beta
+M
+func safeAreaPadding(CGFloat) -> some View
+Beta
+M
+func safeAreaPadding(EdgeInsets) -> some View
+Beta
+M
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+M
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+layoutDirectionBehavior(_:)
+Sets the behavior of this view for different layout directions.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func layoutDirectionBehavior(_ behavior: LayoutDirectionBehavior) -> some View
+Parameters
+behavior
+A LayoutDirectionBehavior value that indicates whether this view should mirror in a particular layout direction. By default, views will adjust their layouts automatically in a right-to-left context and do not need to be mirrored.
+Return Value
+A view that conditionally mirrors its contents horizontally in a given layout direction.
+Discussion
+Use layoutDirectionBehavior(_:) when you need the system to horizontally mirror the contents of the view when presented in a layout direction.
+To override the layout direction for a specific view, use the environment(_:_:) view modifier to explicitly override the layoutDirection environment value for the view.
+See Also
+Setting a layout direction
+enum LayoutDirectionBehavior
+A description of what should happen when the layout direction changes.
+Beta
+var layoutDirection: LayoutDirection
+The layout direction associated with the current environment.
+enum LayoutDirection
+A direction in which SwiftUI can lay out content.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is layoutDirectionBehavior(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

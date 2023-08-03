@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/textureresource/createoptions/init(semantic:mipmapsmode:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+M
+func replace(withImage: CGImage, options: TextureResource.CreateOptions) throws
+M
+func replace(withDrawables: TextureResource.DrawableQueue)
+Modifying a Texture
+M
+func copyAsync(to: MTLTexture, completionHandler: ((Error)?) -> Void)
+M
+func copy(to: MTLTexture) throws
+Copying the Texture
+Texture Resource Initializers
+S
+TextureResource.CreateOptions
+M
+static func loadAsync(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Deprecated
+M
+static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<TextureResource>
+Deprecated
+M
+static func loadAsync(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+M
+static func loadAsync(named: String, in: Bundle?) -> LoadRequest<TextureResource>
+M
+static func load(contentsOf: URL, withName: String?) throws -> TextureResource
+M
+static func load(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) throws -> TextureResource
+Documentation
+Open Menu
+Swift
+Initializer
+init(semantic:mipmapsMode:)
+Creates a new texture creation options structure.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(
+    semantic: TextureResource.Semantic?,
+    mipmapsMode: TextureResource.MipmapsMode = .allocateAndGenerateAll
+)
+Parameters
+semantic
+The intended use of the texture resource.
+mipmapsMode
+Whether to automatically allocate or generate mipmaps.
+Discussion
+The semantic value you pass tells RealityKit how you plan to use the texture data from this resource. For example, passing TextureResource.Semantic.color lets RealityKit know you’re using the texture to pass perceptual color information to the shaders, such as for providing a UV-mapped base color for physically based rendering materials. Passing TextureResource.Semantic.raw tells RealityKit to pass the pixel values with as little processing as possible.
+If semantic is nil, RealityKit tries to infer a semantic from the texture’s source data. If it’s unable to determine a semantic from the texture source data, it will infer a semantic from the texture’s usage. Providing a value for semantic ensures that RealityKit passes the texture resource exactly as you intend.
+Note
+RealityKit only takes embedded color space data into account when rendering a texture if you pass TextureResource.Semantic.color for semantic.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(semantic:mipmapsMode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

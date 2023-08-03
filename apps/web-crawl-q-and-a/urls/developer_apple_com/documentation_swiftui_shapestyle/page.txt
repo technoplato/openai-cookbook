@@ -1,0 +1,495 @@
+https://developer.apple.com/documentation/swiftui/shapestyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func angularGradient(colors: [Color], center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+M
+static func angularGradient(AnyGradient, center: UnitPoint, startAngle: Angle, endAngle: Angle) -> some ShapeStyle
+M
+static func angularGradient(Gradient, center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+Angular gradients
+P
+static var yellow: Color
+P
+static var white: Color
+P
+static var teal: Color
+P
+var backgroundStyle: AnyShapeStyle?
+M
+func backgroundStyle<S>(S) -> some View
+M
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+M
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+M
+func foregroundStyle<S>(S) -> some View
+M
+func border<S>(S, width: CGFloat) -> some View
+Styling content
+S
+Color
+Documentation
+Open Menu
+Swift
+Protocol
+ShapeStyle
+A color or pattern to use when rendering a shape.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+protocol ShapeStyle : Sendable
+Overview
+You create custom shape styles by declaring a type that conforms to the ShapeStyle protocol and implementing the required resolve function to return a shape style that represents the desired appearance based on the current environment.
+For example this shape style reads the current color scheme from the environment to choose the blend mode its color will be composited with:
+struct MyShapeStyle: ShapeStyle {
+    func resolve(in environment: EnvironmentValues) -> some ShapeStyle {
+        if environment.colorScheme == .light {
+            return Color.red.blendMode(.lighten)
+        } else {
+            return Color.red.blendMode(.darken)
+        }
+    }
+}
+In addition to creating a custom shape style, you can also use one of the concrete styles that SwiftUI defines. To indicate a specific color or pattern, you can use Color or the style returned by image(_:sourceRect:scale:), or one of the gradient types, like the one returned by radialGradient(_:center:startRadius:endRadius:). To set a color that’s appropriate for a given context on a given platform, use one of the semantic styles, like background or primary.
+You can use a shape style by:
+Filling a shape with a style with the Shape/fill(_:style:) modifier:
+Path { path in
+    path.move(to: .zero)
+    path.addLine(to: CGPoint(x: 50, y: 0))
+    path.addArc(
+        center: .zero,
+        radius: 50,
+        startAngle: .zero,
+        endAngle: .degrees(90),
+        clockwise: false)
+}
+.fill(.radial(
+    Gradient(colors: [.yellow, .red]),
+    center: .topLeading,
+    startRadius: 15,
+    endRadius: 80))
+Tracing the outline of a shape with a style with either the stroke(_:lineWidth:) or the stroke(_:style:) modifier:
+RoundedRectangle(cornerRadius: 10)
+    .stroke(.mint, lineWidth: 10)
+    .frame(width: 200, height: 50)
+Styling the foreground elements in a view with the foregroundStyle(_:) modifier:
+VStack(alignment: .leading) {
+    Text("Primary")
+        .font(.title)
+    Text("Secondary")
+        .font(.caption)
+        .foregroundStyle(.secondary)
+}
+Topics
+System colors
+static var black: Color
+A black color suitable for use in UI elements.
+Available when Self is Color.
+static var blue: Color
+A context-dependent blue color suitable for use in UI elements.
+Available when Self is Color.
+static var brown: Color
+A context-dependent brown color suitable for use in UI elements.
+Available when Self is Color.
+static var clear: Color
+A clear color suitable for use in UI elements.
+Available when Self is Color.
+static var cyan: Color
+A context-dependent cyan color suitable for use in UI elements.
+Available when Self is Color.
+static var gray: Color
+A context-dependent gray color suitable for use in UI elements.
+Available when Self is Color.
+static var green: Color
+A context-dependent green color suitable for use in UI elements.
+Available when Self is Color.
+static var indigo: Color
+A context-dependent indigo color suitable for use in UI elements.
+Available when Self is Color.
+static var mint: Color
+A context-dependent mint color suitable for use in UI elements.
+Available when Self is Color.
+static var orange: Color
+A context-dependent orange color suitable for use in UI elements.
+Available when Self is Color.
+static var pink: Color
+A context-dependent pink color suitable for use in UI elements.
+Available when Self is Color.
+static var purple: Color
+A context-dependent purple color suitable for use in UI elements.
+Available when Self is Color.
+static var red: Color
+A context-dependent red color suitable for use in UI elements.
+Available when Self is Color.
+static var teal: Color
+A context-dependent teal color suitable for use in UI elements.
+Available when Self is Color.
+static var white: Color
+A white color suitable for use in UI elements.
+Available when Self is Color.
+static var yellow: Color
+A context-dependent yellow color suitable for use in UI elements.
+Available when Self is Color.
+Angular gradients
+static func angularGradient(Gradient, center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+An angular gradient, which applies the color function as the angle changes between the start and end angles, and anchored to a relative center point within the filled shape.
+Available when Self is AngularGradient.
+static func angularGradient(AnyGradient, center: UnitPoint, startAngle: Angle, endAngle: Angle) -> some ShapeStyle
+An angular gradient, which applies the color function as the angle changes between the start and end angles, and anchored to a relative center point within the filled shape.
+Available when Self is AngularGradient.
+static func angularGradient(colors: [Color], center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+An angular gradient defined by a collection of colors.
+Available when Self is AngularGradient.
+static func angularGradient(stops: [Gradient.Stop], center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+An angular gradient defined by a collection of color stops.
+Available when Self is AngularGradient.
+Conic gradients
+static func conicGradient(Gradient, center: UnitPoint, angle: Angle) -> AngularGradient
+A conic gradient that completes a full turn, optionally starting from a given angle and anchored to a relative center point within the filled shape.
+Available when Self is AngularGradient.
+static func conicGradient(AnyGradient, center: UnitPoint, angle: Angle) -> some ShapeStyle
+A conic gradient that completes a full turn, optionally starting from a given angle and anchored to a relative center point within the filled shape.
+Available when Self is AngularGradient.
+static func conicGradient(colors: [Color], center: UnitPoint, angle: Angle) -> AngularGradient
+A conic gradient defined by a collection of colors that completes a full turn.
+Available when Self is AngularGradient.
+static func conicGradient(stops: [Gradient.Stop], center: UnitPoint, angle: Angle) -> AngularGradient
+A conic gradient defined by a collection of color stops that completes a full turn.
+Available when Self is AngularGradient.
+Elliptical gradients
+static func ellipticalGradient(Gradient, center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> EllipticalGradient
+A radial gradient that draws an ellipse.
+Available when Self is EllipticalGradient.
+static func ellipticalGradient(AnyGradient, center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> some ShapeStyle
+A radial gradient that draws an ellipse.
+Available when Self is EllipticalGradient.
+static func ellipticalGradient(colors: [Color], center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> EllipticalGradient
+A radial gradient that draws an ellipse defined by a collection of colors.
+Available when Self is EllipticalGradient.
+static func ellipticalGradient(stops: [Gradient.Stop], center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> EllipticalGradient
+A radial gradient that draws an ellipse defined by a collection of color stops.
+Available when Self is EllipticalGradient.
+Linear gradients
+static func linearGradient(Gradient, startPoint: UnitPoint, endPoint: UnitPoint) -> LinearGradient
+A linear gradient.
+Available when Self is LinearGradient.
+static func linearGradient(AnyGradient, startPoint: UnitPoint, endPoint: UnitPoint) -> some ShapeStyle
+A linear gradient.
+Available when Self is LinearGradient.
+static func linearGradient(colors: [Color], startPoint: UnitPoint, endPoint: UnitPoint) -> LinearGradient
+A linear gradient defined by a collection of colors.
+Available when Self is LinearGradient.
+static func linearGradient(stops: [Gradient.Stop], startPoint: UnitPoint, endPoint: UnitPoint) -> LinearGradient
+A linear gradient defined by a collection of color stops.
+Available when Self is LinearGradient.
+Radial gradients
+static func radialGradient(Gradient, center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+A radial gradient.
+Available when Self is RadialGradient.
+static func radialGradient(AnyGradient, center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> some ShapeStyle
+A radial gradient.
+Available when Self is RadialGradient.
+static func radialGradient(colors: [Color], center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+A radial gradient defined by a collection of colors.
+Available when Self is RadialGradient.
+static func radialGradient(stops: [Gradient.Stop], center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+A radial gradient defined by a collection of color stops.
+Available when Self is RadialGradient.
+Materials
+static var ultraThinMaterial: Material
+A mostly translucent material.
+Available when Self is Material.
+static var thinMaterial: Material
+A material that’s more translucent than opaque.
+Available when Self is Material.
+static var regularMaterial: Material
+A material that’s somewhat translucent.
+Available when Self is Material.
+static var thickMaterial: Material
+A material that’s more opaque than translucent.
+Available when Self is Material.
+static var ultraThickMaterial: Material
+A mostly opaque material.
+Available when Self is Material.
+static var bar: Material
+A material matching the style of system toolbars.
+Available when Self is Material.
+Image paint styles
+static func image(Image, sourceRect: CGRect, scale: CGFloat) -> ImagePaint
+A shape style that fills a shape by repeating a region of an image.
+Available when Self is ImagePaint.
+Hierarchical styles
+var secondary: some ShapeStyle
+Returns the second level of this shape style.
+Beta
+var tertiary: some ShapeStyle
+Returns the third level of this shape style.
+Beta
+var quaternary: some ShapeStyle
+Returns the fourth level of this shape style.
+Beta
+var quinary: some ShapeStyle
+Returns the fifth level of this shape style.
+Beta
+static var primary: HierarchicalShapeStyle
+A shape style that maps to the first level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+static var secondary: HierarchicalShapeStyle
+A shape style that maps to the second level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+static var tertiary: HierarchicalShapeStyle
+A shape style that maps to the third level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+static var quaternary: HierarchicalShapeStyle
+A shape style that maps to the fourth level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+static var quinary: HierarchicalShapeStyle
+A shape style that maps to the fifth level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+Semantic styles
+static var foreground: ForegroundStyle
+The foreground style in the current context.
+Available when Self is ForegroundStyle.
+static var background: BackgroundStyle
+The background style in the current context.
+Available when Self is BackgroundStyle.
+static var selection: SelectionShapeStyle
+A style used to visually indicate selection following platform conventional colors and behaviors.
+Available when Self is SelectionShapeStyle.
+static var separator: SeparatorShapeStyle
+A style appropriate for foreground separator or border lines.
+Available when Self is SeparatorShapeStyle.
+static var tint: TintShapeStyle
+A style that reflects the current tint color.
+Available when Self is TintShapeStyle.
+static var placeholder: PlaceholderTextShapeStyle
+A style appropriate for placeholder text.
+Available when Self is PlaceholderTextShapeStyle.
+Beta
+static var link: LinkShapeStyle
+A style appropriate for links.
+Available when Self is LinkShapeStyle.
+Beta
+static var fill: FillShapeStyle
+An overlay fill style for filling shapes.
+Available when Self is FillShapeStyle.
+Beta
+static var windowBackground: WindowBackgroundShapeStyle
+A style appropriate for elements that should match the background of their containing window.
+Available when Self is WindowBackgroundShapeStyle.
+Beta
+Modifying a shape style
+func blendMode(BlendMode) -> some ShapeStyle
+Returns a new style based on self that applies the specified blend mode when drawing.
+func opacity(Double) -> some ShapeStyle
+Returns a new style based on self that multiplies by the specified opacity when drawing.
+func shadow(ShadowStyle) -> some ShapeStyle
+Applies the specified shadow effect to the shape style.
+Configuring the default shape style
+static func blendMode(BlendMode) -> some ShapeStyle
+Returns a new style based on the current style that uses mode as its blend mode when drawing.
+Available when Self is AnyShapeStyle.
+static func opacity(Double) -> some ShapeStyle
+Returns a new style based on the current style that multiplies by opacity when drawing.
+Available when Self is AnyShapeStyle.
+static func shadow(ShadowStyle) -> some ShapeStyle
+Returns a shape style that applies the specified shadow style to the current style.
+Available when Self is AnyShapeStyle.
+Mapping to absolute coordinates
+func `in`(CGRect) -> some ShapeStyle
+Maps a shape style’s unit-space coordinates to the absolute coordinates of a given rectangle.
+Resolving a shape style in an environment
+func resolve(in: EnvironmentValues) -> Self.Resolved
+Evaluate to a resolved shape style given the current environment.
+Required Default implementation provided.
+Beta
+associatedtype Resolved : ShapeStyle = Never
+The type of shape style this will resolve to.
+Required
+Using a shape style as a view
+var body: _ShapeView<Rectangle, Self>
+A rectangular view that’s filled with the shape style.
+Available when Self conforms to View and Body is _ShapeView<Rectangle, Self>.
+Supporting types
+Construct instances of these styles using the properties and methods of the shape style protocol.
+struct AngularGradient
+An angular gradient.
+struct EllipticalGradient
+A radial gradient that draws an ellipse.
+struct LinearGradient
+A linear gradient.
+struct RadialGradient
+A radial gradient.
+struct Material
+A background material type.
+struct ImagePaint
+A shape style that fills a shape by repeating a region of an image.
+struct HierarchicalShapeStyle
+A shape style that maps to one of the numbered content styles.
+struct HierarchicalShapeStyleModifier
+Styles that you can apply to hierarchical shapes.
+Beta
+struct ForegroundStyle
+The foreground style in the current context.
+struct BackgroundStyle
+The background style in the current context.
+struct SelectionShapeStyle
+A style used to visually indicate selection following platform conventional colors and behaviors.
+struct SeparatorShapeStyle
+A style appropriate for foreground separator or border lines.
+struct TintShapeStyle
+A style that reflects the current tint color.
+struct FillShapeStyle
+A shape style that displays one of the overlay fills.
+Beta
+struct LinkShapeStyle
+A style appropriate for links.
+Beta
+struct PlaceholderTextShapeStyle
+A style appropriate for placeholder text.
+Beta
+struct WindowBackgroundShapeStyle
+A style appropriate for elements that should match the background of their containing window.
+Beta
+Relationships
+Inherits From
+Sendable
+Conforming Types
+AngularGradient
+AnyGradient
+AnyShapeStyle
+BackgroundStyle
+Color
+Color.Resolved
+EllipticalGradient
+FillShapeStyle
+ForegroundStyle
+Gradient
+HierarchicalShapeStyle
+HierarchicalShapeStyleModifier
+ImagePaint
+LinearGradient
+LinkShapeStyle
+Material
+PlaceholderTextShapeStyle
+RadialGradient
+SelectionShapeStyle
+SeparatorShapeStyle
+Shader
+TintShapeStyle
+WindowBackgroundShapeStyle
+See Also
+Styling content
+func border<S>(S, width: CGFloat) -> some View
+Adds a border to this view with the specified style and width.
+func foregroundStyle<S>(S) -> some View
+Sets a view’s foreground elements to use a given style.
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+Sets the primary and secondary levels of the foreground style in the child view.
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+Sets the primary, secondary, and tertiary levels of the foreground style.
+func backgroundStyle<S>(S) -> some View
+Sets the specified style to render backgrounds within the view.
+var backgroundStyle: AnyShapeStyle?
+An optional style that overrides the default system background style when set.
+struct AnyShapeStyle
+A type-erased ShapeStyle value.
+struct Gradient
+A color gradient represented as an array of color stops, each having a parametric location value.
+struct AnyGradient
+A color gradient.
+struct ShadowStyle
+A style to use when rendering shadows.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ShapeStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

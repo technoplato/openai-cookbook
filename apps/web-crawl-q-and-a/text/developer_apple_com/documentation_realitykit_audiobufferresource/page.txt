@@ -1,0 +1,197 @@
+https://developer.apple.com/documentation/realitykit/audiobufferresourceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+S
+AudioMixGroupsComponent
+Beta
+S
+AudioMixGroup
+C
+AudioFileGroupResource
+Beta
+C
+AudioFileResource
+C
+AudioResource
+Audio Resources
+E
+AudioEvents
+C
+AudioPlaybackController
+Playback
+S
+ChannelAudioComponent
+Beta
+Documentation
+Open Menu
+Swift
+Class
+AudioBufferResource
+A resource that contains audio data in memory.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+class AudioBufferResource
+Overview
+This class contains in-memory audio data that the framework plays for the app. When your app dictates using text-to-speech, the system provides an audio buffer that the framework plays using this class. You can also load and play arbitrary audio data from disk.
+The following code creates an instance of this class and passes in an audio buffer from disk.
+// Create a URL for a file name.
+let audioFileUrl = URL(fileURLWithPath: "testFile.aif")
+
+
+// Enable spatial playback. var options =
+AudioBufferResource.CreateOptions() options.spatialMode = .spatial
+options.mixGroupName = "MySpatialMixGroup1"
+
+
+// Create an audio buffer and load in the file.
+let audioFileRead = try AVAudioFile(forReading: audioFileUrl)
+let audioFormat = audioFileRead.processingFormat
+let audioFrameCount = UInt32(audioFileRead.length)
+let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat,
+    frameCapacity: audioFrameCount)
+
+
+try audioFileRead.read(into: audioFileBuffer!)
+
+
+// Create an instance of this class from the audio buffer.
+let createdAudioBuffer = try AudioBufferResource(buffer: audioFileBuffer!,
+    options: options)
+Topics
+Creating an Audio Buffer Resource
+init(buffer: AVAudioBuffer, inputMode: AudioResource.InputMode, shouldLoop: Bool) throws
+Creates an audio resource from the given buffer that optionally plays with a 3D effect or restarts from the beginning after it finishes.
+Looping an Audio Buffer Resource
+var shouldLoop: Bool
+A Boolean value that indicates whether the audio restarts from the beginning after it finishes.
+Structures
+struct Configuration
+Beta
+Initializers
+init(buffer: AVAudioBuffer, configuration: AudioBufferResource.Configuration) throws
+Creates an AudioBufferResource with the given AVAudioBuffer and configuration.
+Instance Properties
+let configuration: AudioBufferResource.Configuration
+The configuration for this AudioBufferResource.
+var duration: Duration
+The duration of this AudioBufferResource.
+Beta
+Default Implementations
+API Reference
+Hashable Implementations
+Relationships
+Inherits From
+AudioResource
+Conforms To
+Equatable
+Hashable
+Resource
+Sendable
+See Also
+Audio Resources
+class AudioResource
+A playable audio resource
+class AudioFileResource
+An audio resource that you load from a file or from a URL.
+class AudioFileGroupResource
+An audio file group.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AudioBufferResource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,154 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+DismissImmersiveSpaceAction
+Beta
+P
+var dismissImmersiveSpace: DismissImmersiveSpaceAction
+Beta
+Closing the immersive space
+S
+OpenImmersiveSpaceAction
+Beta
+P
+var openImmersiveSpace: OpenImmersiveSpaceAction
+Beta
+Opening an immersive space
+r
+P
+ImmersionStyle
+Creating a data-driven immersive space
+M
+init<V>(id: String, content: () -> V)
+M
+init(id: String, content: () -> Content)
+Identifying an immersive space
+M
+init<V>(content: () -> V)
+M
+init(content: () -> Content)
+Creating an immersive space
+S
+ImmersiveSpace
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(for:content:)
+Creates the immersive space for a specified type of presented data.
+visionOS 1.0+ Beta
+init(
+    for type: Data.Type,
+    @ImmersiveSpaceContentBuilder content: @escaping (Binding<Data?>) -> Content
+)
+Parameters
+type
+The type of presented data this space accepts.
+content
+An immersive space content builder that defines the content of the space. The closure receives a binding to the value passed via openImmersiveSpace. The value of this binding will be persisted and restored during state restoration of the space.
+Discussion
+The space uses the specified content builder to form the content.
+Your app invokes this initializer when it presents a value of the specified type using the openImmersiveSpace action.
+See Also
+Creating a data-driven immersive space
+init<V>(for: Data.Type, content: (Binding<Data?>) -> V)
+A convenience for creating an immersive space using view-based content. Creates the immersive space for a specified type of presented data.
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+Beta
+init(id: String, for: Data.Type, content: (Binding<Data?>) -> Content)
+Creates the immersive space associated with an identifier for a specified type of presented data.
+Beta
+init<V>(id: String, for: Data.Type, content: (Binding<Data?>) -> V)
+A convenience for creating an immersive space using view-based content. Creates the immersive space associated with an identifier for a specified type of presented data.
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(for:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/nshostingview/scenebridgingoptionsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Bridging with SwiftUI
+M
+func isAccessibilityElement() -> Bool
+M
+func accessibilitySubrole() -> NSAccessibility.Subrole?
+M
+func accessibilityRole() -> NSAccessibility.Role?
+M
+func accessibilityHitTest(NSPoint) -> Any?
+M
+func accessibilityChildrenInNavigationOrder() -> [NSAccessibilityElementProtocol]?
+M
+func accessibilityChildren() -> [Any]?
+P
+var accessibilityFocusedUIElement: Any?
+Documentation
+Open Menu
+Swift
+Instance Property
+sceneBridgingOptions
+The options for which aspects of the window will be managed by this hosting view.
+macOS 14.0+ Beta
+@MainActor
+var sceneBridgingOptions: NSHostingSceneBridgingOptions { get set }
+Discussion
+NSHostingView will populate certain aspects of its associated window, depending on which options are specified.
+For example, a hosting view can manage its window’s toolbar by including the .toolbars option:
+struct RootView: View {
+    var body: some View {
+        ContentView()
+            .toolbar {
+                MyToolbarContent()
+            }
+    }
+}
+
+
+let view = NSHostingView(rootView: RootView())
+view.sceneBridgingOptions = [.toolbars]
+When this hosting view is set as the contentView for a window, the default value for this property will be .all, which includes the options for .toolbars and .title. Otherwise, the default value is [].
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sceneBridgingOptions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

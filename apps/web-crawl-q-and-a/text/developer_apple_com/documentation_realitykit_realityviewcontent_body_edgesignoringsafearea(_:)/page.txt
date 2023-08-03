@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/edgesignoringsafearea(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creating a reality view
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+edgesIgnoringSafeArea(_:)
+Changes the view’s proposed area to extend outside the screen’s safe areas.
+RealityKit
+SwiftUI
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0–1.0 Deprecated
+func edgesIgnoringSafeArea(_ edges: Edge.Set) -> some View
+Parameters
+edges
+The set of the edges in which to expand the size requested for this view.
+Return Value
+A view that may extend outside of the screen’s safe area on the edges specified by edges.
+Discussion
+Use edgesIgnoringSafeArea(_:) to change the area proposed for this view so that — were the proposal accepted — this view could extend outside the safe area to the bounds of the screen for the specified edges.
+For example, you can propose that a text view ignore the safe area’s top inset:
+VStack {
+    Text("This text is outside of the top safe area.")
+        .edgesIgnoringSafeArea([.top])
+        .border(Color.purple)
+    Text("This text is inside VStack.")
+        .border(Color.yellow)
+}
+.border(Color.gray)
+Depending on the surrounding view hierarchy, SwiftUI may not honor an edgesIgnoringSafeArea(_:) request. This can happen, for example, if the view is inside a container that respects the screen’s safe area. In that case you may need to apply edgesIgnoringSafeArea(_:) to the container instead.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is edgesIgnoringSafeArea(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

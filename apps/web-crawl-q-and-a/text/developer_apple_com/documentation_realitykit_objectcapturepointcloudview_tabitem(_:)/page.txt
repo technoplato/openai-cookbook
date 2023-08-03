@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/tabitem(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbar<Content>(id: String, content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toggleStyle<S>(S) -> some View
+M
+func symbolVariant(SymbolVariants) -> some View
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> some View
+M
+func symbolEffectsRemoved(Bool) -> some View
+M
+func symbolEffect<T, U>(T, options: SymbolEffectOptions, value: U) -> some View
+M
+func symbolEffect<T>(T, options: SymbolEffectOptions, isActive: Bool) -> some View
+M
+func swipeActions<T>(edge: HorizontalEdge, allowsFullSwipe: Bool, content: () -> T) -> some View
+M
+func submitScope(Bool) -> some View
+M
+func submitLabel(SubmitLabel) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+tabItem(_:)
+Sets the tab bar item associated with this view.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func tabItem<V>(@ViewBuilder _ label: () -> V) -> some View where V : View
+Parameters
+label
+The tab bar item to associate with this view.
+Discussion
+Use tabItem(_:) to configure a view as a tab bar item in a TabView. The example below adds two views as tabs in a TabView:
+struct View1: View {
+    var body: some View {
+        Text("View 1")
+    }
+}
+
+
+struct View2: View {
+    var body: some View {
+        Text("View 2")
+    }
+}
+
+
+struct TabItem: View {
+    var body: some View {
+        TabView {
+            View1()
+                .tabItem {
+                    Label("Menu", systemImage: "list.dash")
+                }
+
+
+            View2()
+                .tabItem {
+                    Label("Order", systemImage: "square.and.pencil")
+                }
+        }
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tabItem(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

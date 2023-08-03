@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/swiftui/tablestyle/inset(alternatesrowbackgrounds:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func groupBoxStyle<S>(S) -> some View
+S
+FormStyleConfiguration
+r
+P
+FormStyle
+M
+func formStyle<S>(S) -> some View
+S
+ControlGroupStyleConfiguration
+r
+P
+ControlGroupStyle
+M
+func controlGroupStyle<S>(S) -> some View
+Deprecated styles
+Body
+T
+TableStyle.Configuration
+M
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creating custom table styles
+P
+static var bordered: BorderedTableStyle
+P
+static var inset: InsetTableStyle
+P
+static var automatic: AutomaticTableStyle
+Documentation
+Open Menu
+Swift
+Type Method
+inset(alternatesRowBackgrounds:)
+The table style that describes the behavior and appearance of a table with its content and selection inset from the table edges.
+macOS 12.0–14.0 Deprecated
+static func inset(alternatesRowBackgrounds: Bool) -> InsetTableStyle
+Available when Self is InsetTableStyle.
+Deprecated
+Use the inset style and add the alternatingRowBackgrounds(_:) view modifier instead.
+Parameters
+alternatesRowBackgrounds
+Whether the rows should alternate their backgrounds to help visually distinguish them from each other.
+See Also
+Deprecated styles
+static func bordered(alternatesRowBackgrounds: Bool) -> BorderedTableStyle
+The table style that describes the behavior and appearance of a table with standard border.
+Available when Self is BorderedTableStyle.
+Deprecated
+Current page is inset(alternatesRowBackgrounds:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

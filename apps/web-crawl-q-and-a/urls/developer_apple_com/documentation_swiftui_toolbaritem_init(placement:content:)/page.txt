@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/toolbaritem/init(placement:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Navigation
+Modal presentations
+Toolbars
+Populating a toolbar
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+S
+ToolbarItem
+Creating a toolbar item
+Specifying the role of toolbar content
+M
+func toolbarRole(ToolbarRole) -> some View
+S
+ToolbarRole
+Styling a toolbar
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+Documentation
+Open Menu
+Swift
+Initializer
+init(placement:content:)
+Creates a toolbar item with the specified placement and content.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+init(
+    placement: ToolbarItemPlacement = .automatic,
+    @ViewBuilder content: () -> Content
+)
+Available when ID is () and Content conforms to View.
+Parameters
+placement
+Which section of the toolbar the item should be placed in.
+content
+The content of the item.
+See Also
+Creating a toolbar item
+init(id: String, placement: ToolbarItemPlacement, content: () -> Content)
+Creates a toolbar item with the specified placement and content, which allows for user customization.
+Available when ID is String and Content conforms to View.
+init(id: String, placement: ToolbarItemPlacement, showsByDefault: Bool, content: () -> Content)
+Creates a toolbar item with the specified placement and content, which allows for user customization.
+Available when ID is String and Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(placement:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/colorschemeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View styles
+S
+RedactionReasons
+P
+var redactionReasons: RedactionReasons
+M
+func unredacted() -> some View
+M
+func redacted(reason: RedactionReasons) -> some View
+M
+func privacySensitive(Bool) -> some View
+Designing your app for the Always On state
+P
+var colorScheme: ColorScheme
+M
+func preferredColorScheme(ColorScheme?) -> some View
+Detecting and requesting the light or dark appearance
+E
+GlassBackgroundDisplayMode
+Beta
+M
+func glassBackgroundEffect<S>(in: S, displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+M
+func glassBackgroundEffect(displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+Adding a glass background
+M
+func help(Text) -> some View
+Documentation
+Open Menu
+Swift
+Enumeration
+ColorScheme
+The possible color schemes, corresponding to the light and dark appearances.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+enum ColorScheme
+Overview
+You receive a color scheme value when you read the colorScheme environment value. The value tells you if a light or dark appearance currently applies to the view. SwiftUI updates the value whenever the appearance changes, and redraws views that depend on the value. For example, the following Text view automatically updates when the user enables Dark Mode:
+@Environment(\.colorScheme) private var colorScheme
+
+
+var body: some View {
+    Text(colorScheme == .dark ? "Dark" : "Light")
+}
+Set a preferred appearance for a particular view hierarchy to override the user’s Dark Mode setting using the preferredColorScheme(_:) view modifier.
+Topics
+Getting color schemes
+case light
+The color scheme that corresponds to a light appearance.
+case dark
+The color scheme that corresponds to a dark appearance.
+Creating a color scheme
+init?(UIUserInterfaceStyle)
+Creates a color scheme from its user interface style equivalent.
+Supporting types
+struct PreferredColorSchemeKey
+A key for specifying the preferred color scheme.
+Relationships
+Conforms To
+CaseIterable
+Equatable
+Hashable
+Sendable
+See Also
+Detecting and requesting the light or dark appearance
+func preferredColorScheme(ColorScheme?) -> some View
+Sets the preferred color scheme for this presentation.
+var colorScheme: ColorScheme
+The color scheme of this environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ColorScheme
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

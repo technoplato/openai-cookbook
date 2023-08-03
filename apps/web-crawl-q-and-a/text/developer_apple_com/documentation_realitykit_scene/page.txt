@@ -1,0 +1,247 @@
+https://developer.apple.com/documentation/realitykit/sceneSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CollisionGroup
+E
+CollisionCastQueryType
+S
+CollisionCastHit
+M
+func convexCast(convexShape: ShapeResource, fromPosition: SIMD3<Float>, fromOrientation: simd_quatf, toPosition: SIMD3<Float>, toOrientation: simd_quatf, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+M
+func raycast(from: SIMD3<Float>, to: SIMD3<Float>, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+M
+func raycast(origin: SIMD3<Float>, direction: SIMD3<Float>, length: Float, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+Detecting Intersections
+P
+var scene: Scene
+Working with the Scene
+M
+convenience init(frame: CGRect, cameraMode: ARView.CameraMode)
+Deprecated
+T
+ARViewBase
+M
+init?(coder: NSCoder)
+M
+init(frame: CGRect, cameraMode: ARView.CameraMode, automaticallyConfigureSession: Bool)
+M
+init(frame: CGRect)
+Creating a View
+Documentation
+Open Menu
+Swift
+Class
+Scene
+A container that holds the collection of entities rendered by an AR view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+class Scene
+Overview
+You don’t create a Scene instance directly. Instead, you get the one and only scene associated with a view from the scene property of an ARView instance.
+To add content to the view’s scene, you first create and add one or more AnchorEntity instances to the scene’s anchors collection. Anchors tell RealityKit how to pin virtual content to real world objects, like flat surfaces or images. You then add a hierarchy of other Entity instances to each anchor to indicate the geometry and behaviors that RealityKit should render at a given anchor point.
+Topics
+Identifying the Scene
+var name: String
+A name for the scene.
+var id: UInt64
+The stable identity of the scene.
+var id: UInt64
+The stable identity of the scene.
+typealias ID
+A type representing the stable identity of the entity associated with an instance.
+Adding and Removing Anchors
+var anchors: Scene.AnchorCollection
+The collection of anchors contained in the scene.
+func addAnchor(HasAnchoring)
+Adds an anchor to the scene’s list of anchors.
+func removeAnchor(HasAnchoring)
+Removes the specified anchor from the scene.
+struct AnchorCollection
+A collection of anchor entities.
+Finding Entities
+func findEntity(named: String) -> Entity?
+Searches the scene’s anchor entity hierarchies for an entity with the given name.
+struct QueryPredicate
+An object that defines the criteria for an entity query.
+func performQuery(EntityQuery) -> QueryResult<Entity>
+Returns all entities of the scene which pass the QueryPredicate of the query.
+Detecting Intersections
+func raycast(origin: SIMD3<Float>, direction: SIMD3<Float>, length: Float, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+Performs a convex ray cast against all the geometry in the scene for a ray of a given origin, direction, and length.
+func raycast(from: SIMD3<Float>, to: SIMD3<Float>, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+Performs a convex ray cast against all the geometry in the scene for a ray between two end points.
+func convexCast(convexShape: ShapeResource, fromPosition: SIMD3<Float>, fromOrientation: simd_quatf, toPosition: SIMD3<Float>, toOrientation: simd_quatf, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+Performs a convex shape cast against all the geometry in the scene.
+struct CollisionCastHit
+A hit result of a collision cast.
+enum CollisionCastQueryType
+The kinds of ray and convex shape cast queries that you can make.
+struct CollisionGroup
+A bitmask used to define the collision group to which an entity belongs.
+Synchronizing Entities Between Devices
+var synchronizationService: (SynchronizationService)?
+The service to use for network synchronization.
+protocol SynchronizationService
+An interface that enables entity synchronization among a group of local peers.
+Getting and Sending Events
+func publisher<E>(for: E.Type, on: (EventSource)?) -> Scene.Publisher<E>
+Generates a publisher for events of the specified type.
+func subscribe<E>(to: E.Type, on: (EventSource)?, (E) -> Void) -> Cancellable
+Receives events of the given type.
+func publisher<E>(for: E.Type, on: (EventSource)?, componentType: (Component.Type)?) -> Scene.Publisher<E>
+Returns a Publisher for events of the specified type in a Scene.
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> Cancellable
+Receive events of type E.
+struct Publisher
+A publisher for the given event type in the scene.
+enum SceneEvents
+Events the scene triggers.
+enum AnimationEvents
+Notable milestones that the framework signals during animation playback.
+enum AudioEvents
+Events associated with audio playback.
+enum CollisionEvents
+Events associated with collisions.
+protocol Event
+A type that can be sent as an event.
+protocol EventSource
+A type on which events can be published and subscribed.
+Comparing Scenes
+static func == (Scene, Scene) -> Bool
+Indicates whether two scenes are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two scenes are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the scene by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the scene.
+Instance Properties
+var timebase: CMTimebase
+The default timebase for the scene, useful for driving custom times managed by the user which are derived from the scene time.
+Beta
+Instance Methods
+func findEntity(id: Entity.ID) -> Entity?
+Returns Entity with the given Entity.ID in the Scene.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+API Reference
+Identifiable Implementations
+Relationships
+Conforms To
+Equatable
+EventSource
+Hashable
+Identifiable
+Sendable
+See Also
+Entity Component System
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+API Reference
+RealityKit Systems
+Apply behaviors and physical effects to the entities in a RealityKit scene.
+class Entity
+An element of a RealityKit scene to which you attach components that provide appearance and behavior characteristics for the entity.
+protocol Component
+A representation of a geometry or a behavior that you apply to an entity.
+protocol TransientComponent
+An interface for components that aren’t saved to file or cloned.
+protocol EntityCollection
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Scene
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

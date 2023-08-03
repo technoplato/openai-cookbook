@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/swiftui/shader/argument/float2(_:)-725xiSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Shader.Argument
+Creating argument values
+P
+static var boundingRect: Shader.Argument
+M
+static func color(Color) -> Shader.Argument
+M
+static func colorArray([Color]) -> Shader.Argument
+M
+static func data(Data) -> Shader.Argument
+M
+static func float<T>(T) -> Shader.Argument
+M
+static func float2(CGVector) -> Shader.Argument
+E
+Axis
+S
+Angle
+S
+UnitPoint
+S
+UnitPoint3D
+Beta
+S
+Anchor
+View layout
+Layout fundamentals
+Documentation
+Open Menu
+Swift
+Type Method
+float2(_:)
+Returns an argument value representing the MSL value float2(point.x, point.y).
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+static func float2(_ point: CGPoint) -> Shader.Argument
+See Also
+Creating argument values
+static var boundingRect: Shader.Argument
+Returns an argument value representing the bounding rect of the shape or view that the shader is attached to, as float4(x, y, width, height). This value is undefined for shaders that do not have a natural bounding rect (e.g. filter effects drawn into GraphicsContext).
+Beta
+static func color(Color) -> Shader.Argument
+Returns an argument value representing color. When passed to a MSL function it will convert to a half4 value, as a premultiplied color in the target color space.
+Beta
+static func colorArray([Color]) -> Shader.Argument
+Returns an argument value defined by the provided array of color values. When passed to an MSL function it will convert to a device const half4 *ptr, int count pair of parameters.
+Beta
+static func data(Data) -> Shader.Argument
+Returns an argument value defined by the provided data value. When passed to an MSL function it will convert to a device const void *ptr, int size_in_bytes pair of parameters.
+Beta
+static func float<T>(T) -> Shader.Argument
+Returns an argument value representing the MSL value float(x).
+Beta
+static func float2(CGVector) -> Shader.Argument
+Returns an argument value representing the MSL value float2(vector.dx, vector.dy).
+Beta
+static func float2(CGSize) -> Shader.Argument
+Returns an argument value representing the MSL value float2(size.width, size.height).
+Beta
+static func float2<T>(T, T) -> Shader.Argument
+Returns an argument value representing the MSL value float2(x, y).
+Beta
+static func float3<T>(T, T, T) -> Shader.Argument
+Returns an argument value representing the MSL value float3(x, y, z).
+Beta
+static func float4<T>(T, T, T, T) -> Shader.Argument
+Returns an argument value representing the MSL value float4(x, y, z, w).
+Beta
+static func floatArray([Float]) -> Shader.Argument
+Returns an argument value defined by the provided array of floating point numbers. When passed to an MSL function it will convert to a device const float *ptr, int count pair of parameters.
+Beta
+static func image(Image) -> Shader.Argument
+Returns an argument value defined by the provided image. When passed to an MSL function it will convert to a texture2d<half> value. Currently only one image parameter is supported per Shader instance.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is float2(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

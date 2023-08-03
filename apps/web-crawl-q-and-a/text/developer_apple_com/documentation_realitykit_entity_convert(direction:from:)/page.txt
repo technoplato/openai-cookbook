@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/realitykit/entity/convert(direction:from:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+HasSynchronization Implementations
+HasTransform Implementations
+Instance Properties
+P
+var orientation: simd_quatf
+P
+var position: SIMD3<Float>
+P
+var scale: SIMD3<Float>
+P
+var transform: Transform
+Instance Methods
+func look(at: SIMD3<Float>, from: SIMD3<Float>, upVector: SIMD3<Float>, relativeTo: Entity?, forward: Entity.ForwardDirection)
+func move(to: float4x4, relativeTo: Entity?, duration: TimeInterval, timingFunction: AnimationTimingFunction) -> AnimationPlaybackController
+func move(to: Transform, relativeTo: Entity?, duration: TimeInterval, timingFunction: AnimationTimingFunction) -> AnimationPlaybackController
+M
+func position(relativeTo: Entity?) -> SIMD3<Float>
+M
+func scale(relativeTo: Entity?) -> SIMD3<Float>
+M
+func setOrientation(simd_quatf, relativeTo: Entity?)
+M
+func setPosition(SIMD3<Float>, relativeTo: Entity?)
+M
+func setScale(SIMD3<Float>, relativeTo: Entity?)
+M
+func setTransformMatrix(float4x4, relativeTo: Entity?)
+M
+func transformMatrix(relativeTo: Entity?) -> float4x4
+Documentation
+Open Menu
+Swift
+Instance Method
+convert(direction:from:)
+Converts a direction vector from the local space of a reference entity to the local space of the entity on which you called this method.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+func convert(
+    direction: SIMD3<Float>,
+    from referenceEntity: Entity?
+) -> SIMD3<Float>
+Parameters
+direction
+The direction vector specified relative to referenceEntity.
+referenceEntity
+The entity that defines a frame of reference. Set this to nil to indicate world space.
+Return Value
+The direction vector given in the local space of the entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is convert(direction:from:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

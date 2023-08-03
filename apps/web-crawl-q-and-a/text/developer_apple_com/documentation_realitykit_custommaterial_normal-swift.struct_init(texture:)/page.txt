@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/normal-swift.struct/init(texture:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+Creating a Normal Object
+S
+CustomMaterial.Normal
+P
+var normal: CustomMaterial.Normal
+Using a Normal Map
+S
+CustomMaterial.CustomMaterialTexture
+S
+CustomMaterial.Custom
+P
+var custom: CustomMaterial.Custom
+Using Custom Values
+Documentation
+Open Menu
+Swift
+Initializer
+init(texture:)
+Create an object from a specified texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(texture: CustomMaterial.Texture? = nil)
+Parameters
+texture
+The image’s texture.
+Discussion
+This initializer creates an object from a normal map texture. Normal mapping is a real-time rendering technique that captures fine surface details for a model using a texture instead of increasing the number of polygons in the model. It works by storing surface normals, which are vectors perpendicular to the surface of the model, from a much higher-resolution version of the same 3D object. A normal map stores each vector in the image by storing the vectors’ X, Y, and Z values as the R, G, and B components of the corresponding pixel in the UV-mapped image.
+To render an entity using a normal map, lightingModel you must set CustomMaterial.LightingModel.lit or CustomMaterial.LightingModel.clearcoat and the custom material’s surface shader function must call params.surface().set_normal(). The following Metal code demonstrates how to sample and use a value from the normal map in your surface shader function:
+    // Retrieve the entity's UV texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Models loaded from USDZ or Reality Composer use UVs that are flipped
+    // on the y-axis. This compensates for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample the normal map texture based on the resulting UV coordinates.
+    auto tex = params.textures();
+    float3 normal = (float3)tex.normal().sample(textureSampler, uv).rgb;
+
+
+    // Set the sampled value as this pixel's normal.
+    params.surface().set_normal(normal);
+See Also
+Creating a Normal Object
+init(PhysicallyBasedMaterial.Normal)
+Creates an object containing surface details for an entity from a custom material’s normal property.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(texture:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

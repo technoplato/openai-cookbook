@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/widgetconfiguration/configurationdisplayname(_:)-4v9qSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Managing placement in the Dynamic Island
+M
+func widgetAccentable(Bool) -> some View
+Controlling the accented group
+M
+func widgetLabel<Label>(label: () -> Label) -> some View
+M
+func widgetLabel(LocalizedStringKey) -> some View
+M
+func widgetLabel<S>(S) -> some View
+Labeling a widget
+func onBackgroundURLSessionEvents(matching: String, (String, () -> Void) -> Void) -> some WidgetConfiguration
+func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration
+M
+func configurationDisplayName(Text) -> some WidgetConfiguration
+M
+func configurationDisplayName<S>(S) -> some WidgetConfiguration
+Setting a name
+Body
+P
+var body: Self.Body
+Implementing a widget
+r
+P
+WidgetConfiguration
+S
+LimitedAvailabilityConfiguration
+Documentation
+Open Menu
+Swift
+Instance Method
+configurationDisplayName(_:)
+Sets the localized name shown for a widget when a user adds or edits the widget.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func configurationDisplayName(_ displayNameKey: LocalizedStringKey) -> some WidgetConfiguration
+Parameters
+displayName
+The key for the localized name to display.
+Return Value
+A widget configuration that includes a descriptive name for the widget.
+See Also
+Setting a name
+func configurationDisplayName<S>(S) -> some WidgetConfiguration
+Sets the name shown for a widget when a user adds or edits it using the specified string.
+func configurationDisplayName(Text) -> some WidgetConfiguration
+Sets the name shown for a widget when a user adds or edits it using the contents of a text view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is configurationDisplayName(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

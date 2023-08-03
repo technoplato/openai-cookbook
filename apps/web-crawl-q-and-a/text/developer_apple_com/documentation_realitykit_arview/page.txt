@@ -1,0 +1,348 @@
+https://developer.apple.com/documentation/realitykit/arviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var physicsOrigin: Entity?
+S
+ARView.Environment
+P
+var environment: ARView.Environment
+Providing Environmental Context
+S
+ARView.RenderCallbacks
+P
+var renderCallbacks: ARView.RenderCallbacks
+S
+ARView.RenderOptions
+Documentation
+Open Menu
+Swift
+Class
+ARView
+A view that enables you to display an AR experience with RealityKit.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+@MainActor @objc
+class ARView
+Overview
+Use an ARView instance to display rendered 3D graphics to the user. You typically add a single view to your app’s storyboard, and then provide an outlet for that view in your code. Alternatively, you can create and add a view to your view hierarchy programmatically at runtime, as you would any other view.
+A view has a single Scene instance that you access through the read-only scene property. To the view’s Scene instance you add one or more AnchorEntity instances that tell the view’s AR session how to tether content to something in the real world. To each anchor, you attach a hierarchy of other Entity instances that make up the content of the scene.
+Additionally, you can use the view to:
+Configure render options, environmental characteristics, and the camera mode.
+Handle platform-appropriate user interaction in the form of mouse, keyboard, or gesture input.
+Find entities at a given point in the view.
+Access statistics and visualizations that help you debug your app.
+Topics
+Creating a View
+init(frame: CGRect)
+Creates an AR view with the specified dimensions, camera mode, and session configuration state.
+init(frame: CGRect, cameraMode: ARView.CameraMode, automaticallyConfigureSession: Bool)
+Creates an AR view with the specified dimensions, camera mode, and session configuration state.
+init?(coder: NSCoder)
+Creates an AR view initialized from data in a given decoder.
+typealias ARViewBase
+convenience init(frame: CGRect, cameraMode: ARView.CameraMode)
+Creates an AR view with the specified dimensions and camera mode.
+Deprecated
+Working with the Scene
+var scene: Scene
+The scene that the view renders and simulates.
+class Scene
+A container that holds the collection of entities rendered by an AR view.
+Configuring the AR Session
+var session: ARSession
+The AR session that supports the view’s rendering.
+var automaticallyConfigureSession: Bool
+An indication of whether to use an automatically configured AR session.
+var renderOptions: ARView.RenderOptions
+The render options that configure the view’s AR session.
+struct RenderOptions
+The available rendering options that you use to selectively disable certain rendering effects.
+var renderCallbacks: ARView.RenderCallbacks
+A container that holds the view’s render callbacks.
+struct RenderCallbacks
+A container that holds the view’s render callbacks.
+Providing Environmental Context
+var environment: ARView.Environment
+The view’s background, lighting, and acoustic properties.
+struct Environment
+A description of background, lighting, and acoustic properties for a view’s content.
+var physicsOrigin: Entity?
+The entity that defines the origin of the scene’s physics simulation.
+var audioListener: Entity?
+The entity that defines the listener position and orientation for spatial audio.
+Managing the Camera
+var cameraMode: ARView.CameraMode
+A setting that chooses between the AR session’s camera and a virtual one.
+enum CameraMode
+The available camera modes.
+var cameraTransform: Transform
+The transform of the currently active camera.
+Finding Entities at a Point in the View
+func entity(at: CGPoint) -> Entity?
+Finds the entity in the AR scene closest to the specified point.
+func entities(at: CGPoint) -> [Entity]
+Finds the collection of entities at the specified point in the scene.
+func hitTest(CGPoint, query: CollisionCastQueryType, mask: CollisionGroup) -> [CollisionCastHit]
+Searches for objects corresponding to a point in the view based on a query and a collision mask.
+func hitTest(CGPoint, types: ARHitTestResult.ResultType) -> [ARHitTestResult]
+Searches for objects corresponding to a point in the view based on a set of result types.
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+Creates a ray-cast query originating from a point in the view, centered on the camera’s field of view.
+func raycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> [ARRaycastResult]
+Performs a ray cast, where a ray is cast into the scene from the center of the camera through a point in the view, and the results are immediately returned.
+func trackedRaycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment, updateHandler: ([ARRaycastResult]) -> Void) -> ARTrackedRaycast?
+Performs a tracked ray cast, where a ray is cast into the scene from the center of the camera through a point in the view.
+Adding Gesture Recognizers to Entities
+func installGestures(ARView.EntityGestures, for: HasCollision) -> [EntityGestureRecognizer]
+Installs standard gestures onto the given entity, configured to be recognized simultaneously.
+struct EntityGestures
+The set of possible entity gesture recognizers.
+func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool
+Determines whether two gesture recognizers should simultaneously recognize a gesture.
+class EntityRotationGestureRecognizer
+A gesture recognizer that uses rotation gestures involving two touches to rotate a given entity.
+class EntityScaleGestureRecognizer
+A gesture recognizer that uses a pinch gesture to scale or zoom an entity.
+class EntityTranslationGestureRecognizer
+A gesture recognizer that uses a pan gesture to move an entity.
+protocol EntityGestureRecognizer
+A gesture recognizer that works on entities.
+Mapping Between Coordinate Spaces
+func project(SIMD3<Float>) -> CGPoint?
+Projects a point from the 3D world coordinate system of the scene to the 2D pixel coordinate system of the view.
+func unproject(CGPoint, ontoPlane: float4x4, relativeToCamera: Bool) -> SIMD3<Float>?
+Unproject a 2D point from the view onto a plane in 3D world coordinates.
+func unproject(CGPoint, ontoPlane: float4x4) -> SIMD3<Float>?
+Maps a 2D point from the view’s coordinate system onto the given plane in 3D space.
+func unproject(CGPoint, viewport: CGRect) -> SIMD3<Float>?
+Maps a 2D point from the pixel coordinate system of a viewport into a 3D coordinate space.
+func ray(through: CGPoint) -> (origin: SIMD3<Float>, direction: SIMD3<Float>)?
+Determines the position and direction of a ray through the given point in the 2D space of the view.
+Handling Touch Input
+func touchesBegan(Set<UITouch>, with: UIEvent?)
+Tells the view that one or more new touches occurred.
+func touchesMoved(Set<UITouch>, with: UIEvent?)
+Tells the view when one or more touches associated with an event changed.
+func touchesEnded(Set<UITouch>, with: UIEvent?)
+Tells the view when one or more fingers are raised from the view.
+func touchesCancelled(Set<UITouch>, with: UIEvent?)
+Tells the view when a system event (such as a system alert) cancels a touch sequence.
+Handling Keyboard Input
+var acceptsFirstResponder: Bool
+A Boolean value that indicates whether the view accepts first responder status.
+func keyDown(with: NSEvent)
+Informs the view that the user has pressed a key.
+func keyUp(with: NSEvent)
+Informs the view that the user has released a key.
+Handling Mouse Input
+func mouseDown(with: NSEvent)
+Informs the view that the user has pressed the left mouse button.
+func mouseDragged(with: NSEvent)
+Informs the view that the user has moved the mouse with the left button pressed.
+func mouseUp(with: NSEvent)
+Informs the view that the user has released the left mouse button.
+func mouseMoved(with: NSEvent)
+Informs the view that the mouse has moved.
+func rightMouseDown(with: NSEvent)
+Informs the view that the user has pressed the right mouse button.
+func rightMouseDragged(with: NSEvent)
+Informs the view that the user has moved the mouse with the right button pressed.
+func rightMouseUp(with: NSEvent)
+Informs the view that the user has released the right mouse button.
+func otherMouseDown(with: NSEvent)
+Informs the view that the user has pressed a mouse button other than the left or right one.
+func otherMouseDragged(with: NSEvent)
+Informs the view that the user has moved the mouse with a button other than the left or right button pressed.
+func otherMouseUp(with: NSEvent)
+Informs the view that the user has released a mouse button other than the left or right button.
+func scrollWheel(with: NSEvent)
+Informs the view that the mouse’s scroll wheel has moved.
+Managing the View
+var frame: NSRect
+The frame rectangle, which describes the view’s location and size in the coordinate system of the view’s superview.
+var contentScaleFactor: CGFloat
+The scale factor of the content in the view.
+func didMoveToSuperview()
+Tells the view that its superview changed.
+func didMoveToWindow()
+Tells the view that its window property is set to a new value.
+func layoutSubviews()
+Lays out subviews.
+func layout()
+class var layerClass: AnyClass
+The class used to create the layer for view instances.
+func makeBackingLayer() -> CALayer
+Creates the view’s backing layer.
+func viewDidChangeBackingProperties()
+Tells the view when its backing store properties change.
+func viewDidMoveToSuperview()
+Tells the view that it has a new superview or that the view’s superview has been removed.
+struct ModelSortGroup
+An object that defines a model sort group. Can only be configured on initialization. Once it is created, it cannot be modified.
+Beta
+struct Model3DPlaceholderContent
+A container view that presents either a ResolvedModel3D or a placeholder view.
+Beta
+Taking a Snapshot
+func snapshot(saveToHDR: Bool, completion: (ARView.Image?) -> Void)
+Takes a screenshot.
+func snapshot(saveToHDR: Bool, completion: (ARView.Image?) -> Void)
+Takes a screenshot.
+typealias Image
+Debugging the Session
+API Reference
+Improving the Performance of a RealityKit App
+Measure CPU and GPU utilization to find ways to improve your app’s performance.
+var debugOptions: ARView.DebugOptions
+The current debugging options.
+struct DebugOptions
+Options for drawing overlay content in a scene that can aid in debugging.
+Default Implementations
+API Reference
+ARSessionProviding Implementations
+API Reference
+UIGestureRecognizerDelegate Implementations
+Relationships
+Inherits From
+NSView
+UIView
+Conforms To
+ARSessionProviding
+CALayerDelegate
+CVarArg
+CustomDebugStringConvertible
+CustomStringConvertible
+Equatable
+Hashable
+NSAccessibilityElementProtocol
+NSAccessibilityProtocol
+NSAnimatablePropertyContainer
+NSAppearanceCustomization
+NSCoding
+NSDraggingDestination
+NSObjectProtocol
+NSStandardKeyBindingResponding
+NSTouchBarProvider
+NSUserActivityRestoring
+NSUserInterfaceItemIdentification
+UIAccessibilityIdentification
+UIActivityItemsConfigurationProviding
+UIAppearance
+UIAppearanceContainer
+UICoordinateSpace
+UIDynamicItem
+UIFocusEnvironment
+UIFocusItem
+UIFocusItemContainer
+UIGestureRecognizerDelegate
+UILargeContentViewerItem
+UIPasteConfigurationSupporting
+UIPopoverPresentationControllerSourceItem
+UIResponderStandardEditActions
+UITraitChangeObservable
+UITraitEnvironment
+UIUserActivityRestoring
+See Also
+Presentation
+struct Model3D
+A view that asynchronously loads and displays a 3D model.
+Beta
+struct RealityView
+A SwiftUI view for displaying RealityKit content on visionOS.
+Beta
+class RealityRenderer
+Beta
+struct SceneRealityCoordinateSpace
+The RealityCoordinateSpace representing ARKit world space.
+Beta
+protocol RealityCoordinateSpaceConverting
+A value that can be converted between SwiftUI CoordinateSpaces and
+Beta
+Current page is ARView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

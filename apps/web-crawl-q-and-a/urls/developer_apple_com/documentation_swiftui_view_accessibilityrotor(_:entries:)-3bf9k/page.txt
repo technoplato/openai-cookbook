@@ -1,0 +1,177 @@
+https://developer.apple.com/documentation/swiftui/view/accessibilityrotor(_:entries:)-3bf9kSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityRotor(AccessibilitySystemRotor, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+Replacing system rotors
+M
+func accessibilityRotor<L>(L, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor(Text, textRanges: [Range<String.Index>]) -> some View
+func accessibilityRotor<L, EntryModel>(L, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+func accessibilityRotor<EntryModel>(Text, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+func accessibilityRotor<EntryModel>(LocalizedStringKey, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+func accessibilityRotor<L, EntryModel, ID>(L, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+func accessibilityRotor<EntryModel, ID>(Text, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+func accessibilityRotor<EntryModel, ID>(LocalizedStringKey, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<Content>(LocalizedStringKey, entries: () -> Content) -> some View
+Creating rotors
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibilityRotor(_:entries:)
+Create an Accessibility Rotor with the specified user-visible label, and entries generated from the content closure.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func accessibilityRotor<Content>(
+    _ label: Text,
+    @AccessibilityRotorContentBuilder entries: @escaping () -> Content
+) -> some View where Content : AccessibilityRotorContent
+Parameters
+label
+Localized label identifying this Rotor to the user.
+entries
+Content used to generate Rotor entries. This can include AccessibilityRotorEntry structs, as well as constructs such as if and ForEach.
+Discussion
+An Accessibility Rotor is a shortcut for Accessibility users to quickly navigate to specific elements of the user interface, and optionally specific ranges of text within those elements.
+In the following example, a Message application creates a Rotor allowing users to navigate to specifically the messages originating from VIPs.
+// `messages` is a list of `Identifiable` `Message`s.
+
+
+ScrollView {
+    LazyVStack {
+        ForEach(messages) { message in
+            MessageView(message)
+        }
+    }
+}
+.accessibilityElement(children: .contain)
+.accessibilityRotor("VIPs") {
+    // Not all the MessageViews are generated at once, the model knows
+    // about all the messages.
+    ForEach(messages) { message in
+        // If the Message is from a VIP, make a Rotor entry for it.
+        if message.isVIP {
+            AccessibilityRotorEntry(message.subject, id: message.id)
+        }
+    }
+}
+See Also
+Creating rotors
+func accessibilityRotor<Content>(LocalizedStringKey, entries: () -> Content) -> some View
+Create an Accessibility Rotor with the specified user-visible label, and entries generated from the content closure.
+func accessibilityRotor<L, Content>(L, entries: () -> Content) -> some View
+Create an Accessibility Rotor with the specified user-visible label, and entries generated from the content closure.
+protocol AccessibilityRotorContent
+Content within an accessibility rotor.
+struct AccessibilityRotorContentBuilder
+Result builder you use to generate rotor entry content.
+struct AccessibilityRotorEntry
+A struct representing an entry in an Accessibility Rotor.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityRotor(_:entries:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

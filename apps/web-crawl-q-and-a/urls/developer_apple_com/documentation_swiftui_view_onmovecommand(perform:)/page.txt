@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/view/onmovecommand(perform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+DigitalCrownEvent
+M
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, by: V.Stride?, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool) -> some View
+M
+func digitalCrownRotation<V>(Binding<V>) -> some View
+M
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+M
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+M
+func digitalCrownRotation<V>(Binding<V>, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+M
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Responding to commands
+S
+SubmitLabel
+M
+func submitLabel(SubmitLabel) -> some View
+Labeling a submission event
+S
+SubmitTriggers
+M
+func submitScope(Bool) -> some View
+M
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+Responding to submission events
+Documentation
+Open Menu
+Swift
+Instance Method
+onMoveCommand(perform:)
+Adds an action to perform in response to a move command, like when the user presses an arrow key on a Mac keyboard, or taps the edge of the Siri Remote when controlling an Apple TV.
+macOS 10.15+
+tvOS 13.0+
+func onMoveCommand(perform action: ((MoveCommandDirection) -> Void)?) -> some View
+See Also
+Responding to commands
+func onDeleteCommand(perform: (() -> Void)?) -> some View
+Adds an action to perform in response to the system’s Delete command, or pressing either the ⌫ (backspace) or ⌦ (forward delete) keys while the view has focus.
+func pageCommand<V>(value: Binding<V>, in: ClosedRange<V>, step: V) -> some View
+Steps a value through a range in response to page up or page down commands.
+func onExitCommand(perform: (() -> Void)?) -> some View
+Sets up an action that triggers in response to receiving the exit command while the view has focus.
+func onPlayPauseCommand(perform: (() -> Void)?) -> some View
+Adds an action to perform in response to the system’s Play/Pause command.
+func onCommand(Selector, perform: (() -> Void)?) -> some View
+Adds an action to perform in response to the given selector.
+enum MoveCommandDirection
+Specifies the direction of an arrow key movement.
+Current page is onMoveCommand(perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

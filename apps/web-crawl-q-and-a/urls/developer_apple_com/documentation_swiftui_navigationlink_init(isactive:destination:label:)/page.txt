@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/navigationlink/init(isactive:destination:label:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<P>(value: P?, label: () -> Label)
+Configuring the link
+M
+func isDetailLink(Bool) -> some View
+Deprecated symbols
+Deprecated symbols
+Creating links with view builders
+M
+init(LocalizedStringKey, isActive: Binding<Bool>, destination: () -> Destination)
+Deprecated
+M
+init<S>(S, isActive: Binding<Bool>, destination: () -> Destination)
+Deprecated
+M
+init<V>(LocalizedStringKey, destination: Destination, tag: V, selection: Binding<V?>)
+M
+init<S, V>(S, destination: Destination, tag: V, selection: Binding<V?>)
+Deprecated
+M
+init<V>(destination: Destination, tag: V, selection: Binding<V?>, label: () -> Label)
+Deprecated
+Stacking views in one column
+S
+NavigationStack
+S
+NavigationPath
+M
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+Documentation
+Open Menu
+Swift
+Initializer
+init(isActive:destination:label:)
+Creates a navigation link that presents the destination view when active.
+iOS 13.0–16.0 Deprecated
+iPadOS 13.0–16.0 Deprecated
+macOS 10.15–13.0 Deprecated
+Mac Catalyst 13.0–16.0 Deprecated
+tvOS 13.0–16.0 Deprecated
+watchOS 6.0–9.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+init(
+    isActive: Binding<Bool>,
+    @ViewBuilder destination: () -> Destination,
+    @ViewBuilder label: () -> Label
+)
+Deprecated
+Use init(value:label:) inside a NavigationStack or NavigationSplitView. For more information, see Migrating to new navigation types.
+Parameters
+isActive
+A binding to a Boolean value that indicates whether destination is currently presented.
+destination
+A view for the navigation link to present.
+label
+A view builder to produce a label describing the destination to present.
+See Also
+Creating links with view builders
+init(LocalizedStringKey, isActive: Binding<Bool>, destination: () -> Destination)
+Creates a navigation link that presents a destination view when active, with a text label that the link generates from a localized string key.
+Available when Label is Text and Destination conforms to View.
+Deprecated
+init<S>(S, isActive: Binding<Bool>, destination: () -> Destination)
+Creates a navigation link that presents a destination view when active, with a text label that the link generates from a title string.
+Available when Label is Text and Destination conforms to View.
+Deprecated
+init<V>(LocalizedStringKey, tag: V, selection: Binding<V?>, destination: () -> Destination)
+Creates a navigation link that presents a destination view when a bound selection variable matches a value you provide, using a text label that the link generates from a localized string key.
+Available when Label is Text and Destination conforms to View.
+Deprecated
+init<S, V>(S, tag: V, selection: Binding<V?>, destination: () -> Destination)
+Creates a navigation link that presents a destination view when a bound selection variable matches a value you provide, using a text label that the link generates from a title string.
+Available when Label is Text and Destination conforms to View.
+Deprecated
+init<V>(tag: V, selection: Binding<V?>, destination: () -> Destination, label: () -> Label)
+Creates a navigation link that presents the destination view when a bound selection variable equals a given tag value.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(isActive:destination:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

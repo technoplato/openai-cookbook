@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/realitykit/realityview/drawinggroup(opaque:colormode:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+M
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+M
+func fileDialogURLEnabled(Predicate<URL>) -> some View
+M
+func fileDialogMessage<S>(S) -> some View
+M
+func fileDialogMessage(LocalizedStringKey) -> some View
+M
+func draggable<V, T>(() -> T, preview: () -> V) -> some View
+M
+func draggable<T>(() -> T) -> some View
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+M
+func disclosureGroupStyle<S>(S) -> some View
+M
+func disabled(Bool) -> some View
+M
+func disableAutocorrection(Bool?) -> some View
+M
+func dialogSuppressionToggle(isSuppressed: Binding<Bool>) -> some View
+M
+func dialogSuppressionToggle(LocalizedStringKey, isSuppressed: Binding<Bool>) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+drawingGroup(opaque:colorMode:)
+Composites this view’s contents into an offscreen image before final display.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func drawingGroup(
+    opaque: Bool = false,
+    colorMode: ColorRenderingMode = .nonLinear
+) -> some View
+Parameters
+opaque
+A Boolean value that indicates whether the image is opaque. The default is false; if set to true, the alpha channel of the image must be 1.
+colorMode
+One of the working color space and storage formats defined in ColorRenderingMode. The default is ColorRenderingMode/nonLinear.
+Return Value
+A view that composites this view’s contents into an offscreen image before display.
+Discussion
+The drawingGroup(opaque:colorMode:) modifier flattens a subtree of views into a single view before rendering it.
+In the example below, the contents of the view are composited to a single bitmap; the bitmap is then displayed in place of the view:
+VStack {
+    ZStack {
+        Text("DrawingGroup")
+            .foregroundColor(.black)
+            .padding(20)
+            .background(Color.red)
+        Text("DrawingGroup")
+            .blur(radius: 2)
+    }
+    .font(.largeTitle)
+    .compositingGroup()
+    .opacity(1.0)
+}
+ .background(Color.white)
+ .drawingGroup()
+Note
+Views backed by native platform views may not render into the image. Instead, they log a warning and display a placeholder image to highlight the error.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is drawingGroup(opaque:colorMode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

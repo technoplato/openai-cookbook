@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/pastebutton/init(supportedcontenttypes:validator:payloadaction:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Choosing dates
+S
+PaletteSelectionEffect
+Beta
+M
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Beta
+P
+var defaultWheelPickerItemHeight: CGFloat
+M
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+M
+func horizontalRadioGroupLayout() -> some View
+M
+func pickerStyle<S>(S) -> some View
+init<Payload>(supportedContentTypes: [UTType], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+M
+init<Payload>(supportedTypes: [String], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+Deprecated
+M
+init(supportedTypes: [String], payloadAction: ([NSItemProvider]) -> Void)
+Deprecated
+Deprecated initializers
+M
+init<T>(payloadType: T.Type, onPaste: ([T]) -> Void)
+M
+init(supportedContentTypes: [UTType], payloadAction: ([NSItemProvider]) -> Void)
+Creating a paste button
+S
+PasteButton
+S
+EditButton
+Documentation
+Open Menu
+Swift
+Initializer
+init(supportedContentTypes:validator:payloadAction:)
+Creates a Paste button that accepts specific types of data from the pasteboard, performing a custom validation of the data before sending it to your app.
+macOS 11.0–14.0 Deprecated
+@MainActor
+init<Payload>(
+    supportedContentTypes: [UTType],
+    validator: @escaping ([NSItemProvider]) -> Payload?,
+    payloadAction: @escaping (Payload) -> Void
+)
+Deprecated
+Use init(payloadType:onPaste:) instead.
+Parameters
+supportedContentTypes
+The exact uniform type identifiers supported by the button. If the pasteboard doesn’t contain any of the supported types, the button becomes disabled.
+validator
+A handler that receives those contents of the pasteboard that conform to supportedContentTypes. Load and inspect these items to determine whether to validate the button. If you load a valid item, return it from this closure. If the pasteboard doesn’t contain any valid items, return nil to invalidate the button.
+payloadAction
+The handler called when the user clicks the button. This closure receives the preprocessed result of validator.
+Discussion
+Set the contents of supportedContentTypes in order of your app’s preference for its supported types. The Paste button takes the most-preferred type that the pasteboard source supports and delivers this to the validator closure.
+See Also
+Deprecated initializers
+init(supportedTypes: [String], payloadAction: ([NSItemProvider]) -> Void)
+Creates a Paste button that accepts specific types of data from the pasteboard.
+Deprecated
+init<Payload>(supportedTypes: [String], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+Creates a Paste button that accepts specific types of data from the pasteboard, performing a custom validation of the data before sending it to your app.
+Deprecated
+Current page is init(supportedContentTypes:validator:payloadAction:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

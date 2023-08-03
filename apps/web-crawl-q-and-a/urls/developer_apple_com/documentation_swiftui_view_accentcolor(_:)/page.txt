@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/swiftui/view/accentcolor(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Search modifiers
+M
+func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View
+Deprecated
+M
+func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View
+Deprecated
+M
+func actionSheet<T>(item: Binding<T?>, content: (T) -> ActionSheet) -> some View
+Deprecated
+M
+func actionSheet(isPresented: Binding<Bool>, content: () -> ActionSheet) -> some View
+Deprecated
+View presentation modifiers
+M
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Graphics and rendering modifiers
+M
+func coordinateSpace<T>(name: T) -> some View
+Deprecated
+M
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+Deprecated
+M
+func frame() -> some View
+Deprecated
+Layout modifiers
+M
+func navigationViewStyle<S>(S) -> some View
+Deprecated
+M
+func menuButtonStyle<S>(S) -> some View
+Deprecated
+Style modifiers
+Documentation
+Open Menu
+Swift
+Instance Method
+accentColor(_:)
+Sets the accent color for this view and the views it contains.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func accentColor(_ accentColor: Color?) -> some View
+Deprecated
+Use the asset catalog’s accent color or tint(_:) instead.
+Parameters
+accentColor
+The color to use as an accent color. Set the value to nil to use the inherited accent color.
+Discussion
+Use accentColor(_:) when you want to apply a broad theme color to your app’s user interface. Some styles of controls use the accent color as a default tint color.
+Note
+In macOS, SwiftUI applies customization of the accent color only if the user chooses Multicolor under General > Accent color in System Preferences.
+In the example below, the outer VStack contains two child views. The first is a button with the default accent color. The second is a VStack that contains a button and a slider, both of which adopt the purple accent color of their containing view. Note that the Text element used as a label alongside the Slider retains its default color.
+VStack(spacing: 20) {
+    Button(action: {}) {
+        Text("Regular Button")
+    }
+    VStack {
+        Button(action: {}) {
+            Text("Accented Button")
+        }
+        HStack {
+            Text("Accented Slider")
+            Slider(value: $sliderValue, in: -100...100, step: 0.1)
+        }
+    }
+    .accentColor(.purple)
+}
+See Also
+Graphics and rendering modifiers
+func mask<Mask>(Mask) -> some View
+Masks this view using the alpha channel of the given view.
+Deprecated
+func animation(Animation?) -> some View
+Applies the given animation to all animatable values within this view.
+Deprecated
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+Clips this view to its bounding frame, with the specified corner radius.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accentColor(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

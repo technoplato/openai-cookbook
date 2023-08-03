@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/swiftui/toggle/init(sources:ison:label:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Picker
+Choosing from a set of options
+M
+func toggleStyle<S>(S) -> some View
+M
+init<S>(S, isOn: Bool, intent: some AppIntent)
+Beta
+M
+init(LocalizedStringKey, isOn: Bool, intent: some AppIntent)
+Beta
+M
+init<I>(isOn: Bool, intent: I, label: () -> Label)
+Creating a toggle for an App Intent
+Creating a toggle for a collection
+M
+init<S>(S, isOn: Binding<Bool>)
+M
+init(LocalizedStringKey, isOn: Binding<Bool>)
+M
+init(isOn: Binding<Bool>, label: () -> Label)
+Creating a toggle
+S
+Toggle
+S
+Stepper
+S
+Slider
+Documentation
+Open Menu
+Swift
+Initializer
+init(sources:isOn:label:)
+Creates a toggle representing a collection of values with a custom label.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<C>(
+    sources: C,
+    isOn: KeyPath<C.Element, Binding<Bool>>,
+    @ViewBuilder label: () -> Label
+) where C : RandomAccessCollection
+Parameters
+sources
+A collection of values used as the source for rendering the Toggle’s state.
+isOn
+The key path of the values that determines whether the toggle is on, mixed or off.
+label
+A view that describes the purpose of the toggle.
+Discussion
+The following example creates a single toggle that represents the state of multiple alarms:
+struct Alarm: Hashable, Identifiable {
+    var id = UUID()
+    var isOn = false
+    var name = ""
+}
+
+
+@State private var alarms = [
+    Alarm(isOn: true, name: "Morning"),
+    Alarm(isOn: false, name: "Evening")
+]
+
+
+Toggle(sources: $alarms, isOn: \.isOn) {
+    Text("Enable all alarms")
+}
+See Also
+Creating a toggle for a collection
+init<S, C>(S, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a string.
+Available when Label is Text.
+init<C>(LocalizedStringKey, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a localized string key.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(sources:isOn:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

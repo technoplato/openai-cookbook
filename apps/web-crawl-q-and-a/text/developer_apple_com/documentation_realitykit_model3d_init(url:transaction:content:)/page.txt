@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/realitykit/model3d/init(url:transaction:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Asset creation
+r
+P
+EntityCollection
+Beta
+r
+P
+TransientComponent
+r
+P
+Component
+C
+Entity
+C
+Scene
+RealityKit Systems
+M
+init<Model, Placeholder>(url: URL, content: (ResolvedModel3D) -> Model, placeholder: () -> Placeholder)
+M
+init(url: URL)
+M
+init(named: String, bundle: Bundle?, transaction: Transaction, content: (Model3DPhase) -> Content)
+M
+init<Model, Placeholder>(named: String, bundle: Bundle?, content: (ResolvedModel3D) -> Model, placeholder: () -> Placeholder)
+M
+init(named: String, bundle: Bundle?)
+Creating a Model3D
+S
+Model3D
+Beta
+C
+ARView
+Documentation
+Open Menu
+Swift
+Initializer
+init(url:transaction:content:)
+Loads and displays a modifiable model from the specified URL in phases.
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+init(
+    url: URL,
+    transaction: Transaction = Transaction(),
+    @ViewBuilder content: @escaping (Model3DPhase) -> Content
+)
+Parameters
+url
+The URL of the image to display.
+transaction
+The transaction to use when the phase changes.
+content
+A closure that takes the load phase as an input, and returns the view to display for the specified phase.
+Discussion
+If you set the asynchronous model’s URL to nil, or after you set the URL to a value but before the load operation completes, the phase is Model3DPhase.empty. After the operation completes, the phase becomes either Model3DPhase.failure(_:) or Model3DPhase.success(_:). In the first case, the phase’s error value indicates the reason for failure. In the second case, the phase’s model property contains the loaded model. Use the phase to drive the output of the content closure, which defines the view’s appearance:
+let url = URL(string: "https://example.com/robot.usdz")!
+Model3D(url: url) { phase in
+    if let model = phase.model {
+        model // Displays the loaded model.
+    } else if phase.error != nil {
+        Color.red // Indicates an error.
+    } else {
+        Color.blue // Acts as a placeholder.
+    }
+}
+To add transitions when you change the URL, apply an identifier to the Model3D.
+See Also
+Creating a Model3D
+init(named: String, bundle: Bundle?)
+Loads and displays a model by name, by searching through the specified Foundation/Bundle.
+Beta
+init<Model, Placeholder>(named: String, bundle: Bundle?, content: (ResolvedModel3D) -> Model, placeholder: () -> Placeholder)
+Loads and displays a modifiable model by name, by searching through the specified Bundle, using a custom placeholder until the model loads.
+Beta
+init(named: String, bundle: Bundle?, transaction: Transaction, content: (Model3DPhase) -> Content)
+Loads and displays a modifiable model by name, by searching through the specified Bundle, in phases.
+Beta
+init(url: URL)
+Loads and displays a model from the specified URL.
+Beta
+init<Model, Placeholder>(url: URL, content: (ResolvedModel3D) -> Model, placeholder: () -> Placeholder)
+Loads and displays a modifiable model from the specified URL using a custom placeholder until the model loads.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(url:transaction:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

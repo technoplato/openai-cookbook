@@ -1,0 +1,177 @@
+https://developer.apple.com/documentation/swiftui/accessibilitysystemrotorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityRotor(LocalizedStringKey, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor(Text, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor<L>(L, textRanges: [Range<String.Index>]) -> some View
+Replacing system rotors
+M
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+M
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor(AccessibilitySystemRotor, textRanges: [Range<String.Index>]) -> some View
+P
+static var landmarks: AccessibilitySystemRotor
+P
+static var lists: AccessibilitySystemRotor
+P
+static var tables: AccessibilitySystemRotor
+Configuring rotors
+M
+func accessibilityRotorEntry<ID>(id: ID, in: Namespace.ID) -> some View
+M
+func accessibilityLinkedGroup<ID>(id: ID, in: Namespace.ID) -> some View
+M
+func accessibilitySortPriority(Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Documentation
+Open Menu
+Swift
+Structure
+AccessibilitySystemRotor
+Designates a Rotor that replaces one of the automatic, system-provided Rotors with a developer-provided Rotor.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct AccessibilitySystemRotor
+Topics
+Iterating through text
+static var textFields: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all text fields.
+static var boldText: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all the ranges of bolded text.
+static var italicText: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all the ranges of italicized text.
+static var underlineText: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all the ranges of underlined text.
+static var misspelledWords: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all the ranges of mis-spelled words.
+Iterating through headings
+static var headings: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all headings.
+static func headings(level: AccessibilityHeadingLevel) -> AccessibilitySystemRotor
+System Rotors allowing users to iterate through all headings, of various heading levels.
+Iterating through links
+static var links: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all links.
+static func links(visited: Bool) -> AccessibilitySystemRotor
+System Rotors allowing users to iterate through links or visited links.
+Iterating through other elements
+static var images: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all images.
+static var landmarks: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all landmarks.
+static var lists: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all lists.
+static var tables: AccessibilitySystemRotor
+System Rotor allowing users to iterate through all tables.
+Relationships
+Conforms To
+Sendable
+See Also
+Replacing system rotors
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor(AccessibilitySystemRotor, textRanges: [Range<String.Index>]) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor. The Rotor will be attached to the current Accessibility element, and each entry will go the specified range of that element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AccessibilitySystemRotor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

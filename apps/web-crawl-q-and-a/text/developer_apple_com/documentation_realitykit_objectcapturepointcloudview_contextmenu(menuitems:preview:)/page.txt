@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/contextmenu(menuitems:preview:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+M
+func disclosureGroupStyle<S>(S) -> some View
+M
+func disabled(Bool) -> some View
+M
+func disableAutocorrection(Bool?) -> some View
+M
+func dialogSuppressionToggle(isSuppressed: Binding<Bool>) -> some View
+M
+func dialogSuppressionToggle(LocalizedStringKey, isSuppressed: Binding<Bool>) -> some View
+M
+func dialogSuppressionToggle(Text, isSuppressed: Binding<Bool>) -> some View
+M
+func contextMenu<MenuItems>(menuItems: () -> MenuItems) -> some View
+M
+func contextMenu<I, M>(forSelectionType: I.Type, menu: (Set<I>) -> M, primaryAction: ((Set<I>) -> Void)?) -> some View
+M
+func contextMenu<MenuItems>(ContextMenu<MenuItems>?) -> some View
+M
+func contentTransition(ContentTransition) -> some View
+M
+func contentShape<S>(S, eoFill: Bool) -> some View
+M
+func contentShape<S>(ContentShapeKinds, S, eoFill: Bool) -> some View
+M
+func contentMargins(CGFloat, for: ContentMarginPlacement) -> some View
+M
+func contentMargins(Edge.Set, CGFloat?, for: ContentMarginPlacement) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+contextMenu(menuItems:preview:)
+Adds a context menu with a preview to a view.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func contextMenu<M, P>(
+    @ViewBuilder menuItems: () -> M,
+    @ViewBuilder preview: () -> P
+) -> some View where M : View, P : View
+Parameters
+menuItems
+A closure that produces the menu’s contents. You can deactivate the context menu by returning nothing from the closure.
+preview
+A view that the system displays along with the menu.
+Return Value
+A view that can display a context menu with a preview.
+Discussion
+When you use this modifer to add a context menu to a view in your app’s user interface, the system shows a preview beside the menu. Compose the menu by returning controls like Button, Toggle, and Picker from the menuItems closure. You can also use Menu to define submenus or Section to group items.
+Define the preview by returning a view from the preview closure. The system sizes the preview to match the size of its content. For example, you can add a two button context menu to a Text view, and include an Image as a preview:
+Text("Turtle Rock")
+    .padding()
+    .contextMenu {
+        Button {
+            // Add this item to a list of favorites.
+        } label: {
+            Label("Add to Favorites", systemImage: "heart")
+        }
+        Button {
+            // Open Maps and center it on this item.
+        } label: {
+            Label("Show in Maps", systemImage: "mappin")
+        }
+    } preview: {
+        Image("turtlerock") // Loads the image from an asset catalog.
+    }
+When someone activates the context menu with an action like touch and hold in iOS or iPadOS, the system displays the image and the menu:
+Note
+This view modifier produces a context menu on macOS, but that platform doesn’t display the preview.
+If you don’t need a preview, use View/contextMenu(menuItems:) instead. If you want to add a context menu to a container that supports selection, like a List or a Table, and you want to distinguish between menu activation on a selection and activation in an empty area of the container, use View/contextMenu(forSelectionType:menu:primaryAction:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contextMenu(menuItems:preview:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

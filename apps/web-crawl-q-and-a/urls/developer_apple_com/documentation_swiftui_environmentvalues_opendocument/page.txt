@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/opendocumentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View styles
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+S
+NewDocumentAction
+P
+var newDocument: NewDocumentAction
+Opening a document programmatically
+S
+FileDocumentWriteConfiguration
+S
+FileDocumentReadConfiguration
+Reading and writing documents
+S
+DocumentConfiguration
+Beta
+P
+var documentConfiguration: DocumentConfiguration?
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+openDocument
+An action in the environment that presents an existing document.
+macOS 13.0+
+var openDocument: OpenDocumentAction { get }
+Discussion
+Use the openDocument environment value to get the instance of the OpenDocumentAction structure for a given Environment. Then call the instance to present an existing document. You call the instance directly because it defines a callAsFunction(at:) method that Swift calls when you call the instance.
+For example, you can create a button that opens the document at the specified URL:
+struct OpenDocumentButton: View {
+    var url: URL
+    @Environment(\.openDocument) private var openDocument
+
+
+    var body: some View {
+        Button(url.deletingPathExtension().lastPathComponent) {
+            Task {
+                do {
+                    try await openDocument(at: url)
+                } catch {
+                    // Handle error
+                }
+            }
+        }
+    }
+}
+The above example uses a do-catch statement to handle any errors that the open document action might throw. It also places the action inside a task and awaits the result because the action operates asynchronously.
+To present an existing document, your app must define a DocumentGroup that handles the content type of the specified file. For a document that’s already open, the system brings the existing window to the front. Otherwise, the system opens a new window.
+See Also
+Opening a document programmatically
+var newDocument: NewDocumentAction
+An action in the environment that presents a new document.
+struct NewDocumentAction
+An action that presents a new document.
+struct OpenDocumentAction
+An action that presents an existing document.
+Current page is openDocument
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

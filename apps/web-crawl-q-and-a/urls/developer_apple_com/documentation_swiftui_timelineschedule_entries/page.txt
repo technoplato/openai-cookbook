@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/timelineschedule/entriesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+TransitionPhase
+Beta
+S
+TransitionProperties
+Beta
+r
+P
+Transition
+Beta
+M
+func transition(AnyTransition) -> some View
+M
+func transition<T>(T) -> some View
+Beta
+Defining transitions
+M
+func geometryGroup() -> some View
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+M
+func entries(from: Date, mode: Self.Mode) -> Self.Entries
+Getting a sequence of dates
+M
+static func periodic(from: Date, by: TimeInterval) -> PeriodicTimelineSchedule
+M
+static func explicit<S>(S) -> ExplicitTimelineSchedule<S>
+P
+static var everyMinute: EveryMinuteTimelineSchedule
+M
+static func animation(minimumInterval: Double?, paused: Bool) -> AnimationTimelineSchedule
+P
+static var animation: AnimationTimelineSchedule
+Getting built-in schedules
+Documentation
+Open Menu
+Swift
+Associated Type
+Entries
+The sequence of dates within a schedule.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+associatedtype Entries : Sequence where Self.Entries.Element == Date
+Required
+Discussion
+The entries(from:mode:) method returns a value of this type, which is a Sequence of dates in ascending order. A TimelineView that you create with a schedule updates its content at the moments in time corresponding to the dates included in the sequence.
+See Also
+Getting a sequence of dates
+func entries(from: Date, mode: Self.Mode) -> Self.Entries
+Provides a sequence of dates starting around a given date.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Entries
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

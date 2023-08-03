@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/realitykit/bindpath/partSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Entity.ParameterSet
+S
+BindableValuesReference
+S
+BindableValue
+r
+P
+BindableData
+E
+BindTarget
+Equatable Implementations
+Default Implementations
+P
+var parts: [BindPath.Part]
+Composing a Property Identifier
+S
+BindPath
+P
+var bindableValues: BindableValuesReference
+E
+TweenMode
+E
+BlendWeight
+S
+BlendTreeSourceNode
+S
+BlendTreeInvalidNode
+Documentation
+Open Menu
+Swift
+Enumeration
+BindPath.Part
+An individual piece of a larger path that refers to the target of an animation.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum Part
+Overview
+Path-based instances of bindTarget, or those identified by the BindTarget.path(_:) call, consist of one or more components identified by these enumeration options.
+For example, the succession of BindPath.Part calls in the following code results in a path with a parts array that contains three components: entityA, entityB, and myInt.
+let target3: BindTarget = .entity("entityA").entity("entityB").parameter("myInt")
+Topics
+Choosing the Path Component
+case anchorEntity(String)
+A path component for the scene’s anchor entity.
+case entity(String)
+A path component for a nested entity.
+case jointTransforms
+A path component to animate joint transforms.
+case parameter(String)
+A path component to animate a named parameter.
+case scene(String)
+A path component for a nested scene.
+case transform
+A path component to animate a transform.
+Comparing Bind Parts
+static func == (BindPath.Part, BindPath.Part) -> Bool
+Returns a Boolean value that indicates whether two components of a bind path are equal.
+static func != (Self, Self) -> Bool
+Returns a Boolean value that indicates whether two components of a bind path aren’t equal.
+Enumeration Cases
+case material(Int)
+case materialParameter(String)
+case opacity
+An path component to animate an opacity. Requires that the entity has an OpacityComponent
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+See Also
+Composing a Property Identifier
+var parts: [BindPath.Part]
+An array of the individual components of a complete bind path.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is BindPath.Part
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

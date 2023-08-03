@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/swiftui/section/init(content:header:)-72lqzSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func disclosureGroupStyle<S>(S) -> some View
+S
+DisclosureGroup
+S
+OutlineGroup
+Disclosing information progressively
+r
+P
+DynamicViewContent
+S
+ForEach
+Iterating over list content
+M
+init(content: () -> Content, header: () -> Parent)
+Adding headers and footers
+M
+init<V>(LocalizedStringKey, content: () -> Content)
+M
+init<V, S>(S, content: () -> Content)
+M
+init<S>(S, content: () -> Content)
+M
+init(LocalizedStringKey, content: () -> Content)
+M
+init(content: () -> Content)
+M
+init<V>(content: () -> Content)
+Documentation
+Open Menu
+Swift
+Initializer
+init(content:header:)
+Creates a section with a header and the provided section content.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+init<V, H>(
+    @TableRowBuilder<V> content: () -> Content,
+    @ViewBuilder header: () -> H
+) where Parent == TableHeaderRowContent<V, H>, Footer == EmptyTableRowContent<V>, V == Content.TableRowValue, H : View
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+Parameters
+content
+The section’s content.
+header
+A view to use as the section’s header.
+See Also
+Adding headers and footers
+init(content: () -> Content, header: () -> Parent)
+Creates a section with a header and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer is EmptyView.
+init(content: () -> Content, footer: () -> Footer)
+Creates a section with a footer and the provided section content.
+Available when Parent is EmptyView, Content conforms to View, and Footer conforms to View.
+init(content: () -> Content, header: () -> Parent, footer: () -> Footer)
+Creates a section with a header, footer, and the provided section content.
+Available when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(content:header:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

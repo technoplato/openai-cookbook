@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/realitykit/&&(_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+AudioEvents
+E
+AnimationEvents
+E
+SceneEvents
+S
+Scene.Publisher
+M
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> Cancellable
+M
+func publisher<E>(for: E.Type, on: (EventSource)?, componentType: (Component.Type)?) -> Scene.Publisher<E>
+M
+func subscribe<E>(to: E.Type, on: (EventSource)?, (E) -> Void) -> Cancellable
+func convexCast(convexShape: ShapeResource, fromPosition: SIMD3<Float>, fromOrientation: simd_quatf, toPosition: SIMD3<Float>, toOrientation: simd_quatf, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+func raycast(from: SIMD3<Float>, to: SIMD3<Float>, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+func raycast(origin: SIMD3<Float>, direction: SIMD3<Float>, length: Float, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+func ! <Value>(QueryPredicate<Value>) -> QueryPredicate<Value>
+Comparing Predicates
+M
+static func has<T>(T.Type) -> QueryPredicate<Entity>
+Creating Predicates
+S
+QueryPredicate
+M
+func findEntity(named: String) -> Entity?
+Finding Entities
+S
+Scene.AnchorCollection
+Documentation
+Open Menu
+Swift
+Operator
+&&(_:_:)
+Returns a predicate which evaluates to true if left AND right evaluate to true.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func && <Value>(left: QueryPredicate<Value>, right: QueryPredicate<Value>) -> QueryPredicate<Value>
+See Also
+Comparing Predicates
+func ! <Value>(QueryPredicate<Value>) -> QueryPredicate<Value>
+Returns a predicate which evaluates to true if operand evaluates to false.
+func || <Value>(QueryPredicate<Value>, QueryPredicate<Value>) -> QueryPredicate<Value>
+Returns a predicate which evaluates to true if left OR right evaluates to true.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is &&(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/filter(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func min() -> Publishers.Comparison<Self>
+M
+func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func max() -> Publishers.Comparison<Self>
+M
+func count() -> Publishers.Count<Self>
+Applying Mathematical Operations on Elements
+M
+func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+Filtering Elements
+M
+func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<Self, E>
+M
+func tryScan<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryScan<Self, T>
+M
+func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>
+M
+func replaceNil<T>(with: T) -> Publishers.Map<Self, T>
+M
+func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>
+M
+func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+M
+func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>
+Documentation
+Open Menu
+Swift
+Instance Method
+filter(_:)
+Republishes all elements that match a provided closure.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func filter(_ isIncluded: @escaping (Self.Output) -> Bool) -> Publishers.Filter<Self>
+Parameters
+isIncluded
+A closure that takes one element and returns a Boolean value indicating whether to republish the element.
+Return Value
+A publisher that republishes all elements that satisfy the closure.
+Discussion
+Combine’s filter(_:) operator performs an operation similar to that of doc://com.apple.documentation/documentation/Swift/Sequence/3018365-filter in the Swift Standard Library: it uses a closure to test each element to determine whether to republish the element to the downstream subscriber.
+The following example, uses a filter operation that receives an Int and only republishes a value if it’s even.
+let numbers: [Int] = [1, 2, 3, 4, 5]
+cancellable = numbers.publisher
+    .filter { $0 % 2 == 0 }
+    .sink { print("\($0)", terminator: " ") }
+
+
+// Prints: "2 4"
+See Also
+Filtering Elements
+func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>
+Republishes all elements that match a provided error-throwing closure.
+func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>
+Calls a closure with each received element and publishes any returned optional that has a value.
+func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>
+Calls an error-throwing closure with each received element and publishes any returned optional that has a value.
+func removeDuplicates() -> Publishers.RemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element.
+Available when Output conforms to Equatable.
+func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element, as evaluated by a provided closure.
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element, as evaluated by a provided error-throwing closure.
+func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>
+Replaces an empty stream with the provided element.
+func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>
+Replaces any errors in the stream with the provided element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is filter(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

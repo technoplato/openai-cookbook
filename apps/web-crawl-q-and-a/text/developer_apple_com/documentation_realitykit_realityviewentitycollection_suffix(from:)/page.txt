@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/realitykit/realityviewentitycollection/suffix(from:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Loading Entities from a File
+Building an Immersive Experience with RealityKit
+Understanding RealityKit’s modular architecture
+Entity Component System
+r
+P
+RealityCoordinateSpaceConverting
+Beta
+S
+SceneRealityCoordinateSpace
+Beta
+C
+RealityRenderer
+M
+func suffix(Int) -> Self.SubSequence
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func ranges<C>(of: C) -> [Range<Self.Index>]
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func prefix(upTo: Self.Index) -> Self.SubSequence
+Documentation
+Open Menu
+Swift
+Instance Method
+suffix(from:)
+Returns a subsequence from the specified position to the end of the collection.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func suffix(from start: Self.Index) -> Self.SubSequence
+Parameters
+start
+The index at which to start the resulting subsequence. start must be a valid index of the collection.
+Return Value
+A subsequence starting at the start position.
+Discussion
+The following example searches for the index of the number 40 in an array of integers, and then prints the suffix of the array starting at that index:
+let numbers = [10, 20, 30, 40, 50, 60]
+if let i = numbers.firstIndex(of: 40) {
+    print(numbers.suffix(from: i))
+}
+// Prints "[40, 50, 60]"
+Passing the collection’s endIndex as the start parameter results in an empty subsequence.
+print(numbers.suffix(from: numbers.endIndex))
+// Prints "[]"
+Using the suffix(from:) method is equivalent to using a partial range from the index as the collection’s subscript. The subscript notation is preferred over suffix(from:).
+if let i = numbers.firstIndex(of: 40) {
+    print(numbers[i...])
+}
+// Prints "[40, 50, 60]"
+Complexity
+O(1)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is suffix(from:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

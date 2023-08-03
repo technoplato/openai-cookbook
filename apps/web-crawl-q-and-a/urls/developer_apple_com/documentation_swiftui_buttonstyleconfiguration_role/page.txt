@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/buttonstyleconfiguration/roleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GaugeStyleConfiguration
+r
+P
+GaugeStyle
+M
+func gaugeStyle<S>(S) -> some View
+Styling indicators
+S
+ToggleStyleConfiguration
+r
+P
+ToggleStyle
+M
+func toggleStyle<S>(S) -> some View
+Defining the button’s purpose
+P
+let isPressed: Bool
+Configuring a button’s interaction state
+S
+ButtonStyleConfiguration.Label
+P
+let label: ButtonStyleConfiguration.Label
+Configuring a button’s label
+S
+ButtonStyleConfiguration
+r
+P
+ButtonStyle
+Documentation
+Open Menu
+Swift
+Instance Property
+role
+An optional semantic role that describes the button’s purpose.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+let role: ButtonRole?
+Discussion
+A value of nil means that the Button doesn’t have an assigned role. If the button does have a role, use it to make adjustments to the button’s appearance. The following example shows a custom style that uses bold text when the role is cancel, red text when the role is destructive, and adds no special styling otherwise:
+struct MyButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(
+                configuration.role == .cancel ? .title2.bold() : .title2)
+            .foregroundColor(
+                configuration.role == .destructive ? Color.red : nil)
+    }
+}
+You can create one of each button using this style to see the effect:
+VStack(spacing: 20) {
+    Button("Cancel", role: .cancel) {}
+    Button("Delete", role: .destructive) {}
+    Button("Continue") {}
+}
+.buttonStyle(MyButtonStyle())
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is role
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

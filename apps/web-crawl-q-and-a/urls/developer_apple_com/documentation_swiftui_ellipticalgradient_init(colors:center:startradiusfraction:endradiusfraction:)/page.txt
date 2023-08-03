@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/ellipticalgradient/init(colors:center:startradiusfraction:endradiusfraction:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Transforming colors
+S
+ShadowStyle
+S
+AnyGradient
+S
+Gradient
+S
+AnyShapeStyle
+S
+WindowBackgroundShapeStyle
+Beta
+S
+PlaceholderTextShapeStyle
+M
+init(gradient: Gradient, center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat)
+Creating an elliptical gradient
+S
+EllipticalGradient
+S
+AngularGradient
+Supporting types
+P
+var body: _ShapeView<Rectangle, Self>
+Using a shape style as a view
+Resolved
+Documentation
+Open Menu
+Swift
+Initializer
+init(colors:center:startRadiusFraction:endRadiusFraction:)
+Creates an elliptical gradient from a collection of colors.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init(
+    colors: [Color],
+    center: UnitPoint = .center,
+    startRadiusFraction: CGFloat = 0,
+    endRadiusFraction: CGFloat = 0.5
+)
+Discussion
+For example, an elliptical gradient centered on the top-leading corner of the view:
+EllipticalGradient(
+    colors: [.blue, .green],
+    center: .topLeading,
+    startRadiusFraction: 0,
+    endRadiusFraction: 1)
+colors: The colors, evenly distributed throughout the gradient.
+center: The center of the circle, in [0, 1] coordinates.
+startRadiusFraction: The start radius value, as a fraction between zero and one. Zero maps to the center point, one maps to the diameter of the unit circle.
+endRadiusFraction: The end radius value, as a fraction between zero and one. Zero maps to the center point, one maps to the diameter of the unit circle.
+See Also
+Creating an elliptical gradient
+init(gradient: Gradient, center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat)
+Creates an elliptical gradient.
+init(stops: [Gradient.Stop], center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat)
+Creates an elliptical gradient from a collection of color stops.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(colors:center:startRadiusFraction:endRadiusFraction:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

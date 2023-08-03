@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/configuration-swift.struct/customdetailspecification-swift.struct/texturedimension/rawvalue-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var outputs: PhotogrammetrySession.Outputs
+P
+var isProcessing: Bool
+P
+var activeRequests: [PhotogrammetrySession.Request]
+Monitoring the Session
+Equatable Implementations
+Default Implementations
+P
+var customDetailSpecification: PhotogrammetrySession.Configuration.CustomDetailSpecification
+Instance Properties
+M
+init?(rawValue: UInt)
+Initializers
+E
+case twoK
+E
+case oneK
+E
+case fourK
+E
+case eightK
+Enumeration Cases
+Documentation
+Open Menu
+Swift
+Instance Property
+rawValue
+The corresponding value of the raw type.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+var rawValue: UInt { get }
+Discussion
+A new instance initialized with rawValue will be equivalent to this instance. For example:
+enum PaperSize: String {
+    case A4, A5, Letter, Legal
+}
+
+
+let selectedSize = PaperSize.Letter
+print(selectedSize.rawValue)
+// Prints "Letter"
+
+
+print(selectedSize == PaperSize(rawValue: selectedSize.rawValue)!)
+// Prints "true"
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is rawValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

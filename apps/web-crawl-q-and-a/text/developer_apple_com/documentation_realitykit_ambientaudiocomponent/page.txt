@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/realitykit/ambientaudiocomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TransientComponent
+S
+PerspectiveCameraComponent
+S
+ParticleEmitterComponent
+Beta
+S
+PhysicsSimulationComponent
+Beta
+S
+PhysicsMotionComponent
+S
+PhysicsBodyComponent
+S
+CollisionComponent
+Sound
+S
+ViewAttachmentComponent
+Beta
+S
+TextComponent
+Beta
+S
+InputTargetComponent
+Beta
+S
+WorldComponent
+Beta
+S
+PortalComponent
+Beta
+S
+HoverEffectComponent
+Beta
+User Interface
+Documentation
+Open Menu
+Swift
+Structure
+AmbientAudioComponent
+Configure ambient rendering of sounds from an entity.
+visionOS 1.0+ Beta
+struct AmbientAudioComponent
+Overview
+Ambient audio sources emit each channel of an audio resource from an angle projected from the entity, without reverberation. Ambient audio sources take into account the relative orientation of the source and the listener. Position is not taken into account; the channels do not get louder as the user moves toward them.
+The audio resource’s front channels (e.g., mono, center) are projected into the entity’s -Z direction, with the rear channels projected into +Z. The left channels are laid out in -X and the right channels are laid out in +X.
+let entity = Entity()
+let resource = try AudioFileResource.load(named: "MyAudioFile")
+entity.ambientAudio = AmbientAudioComponent()
+entity.playAudio(resource)
+The AmbientAudioComponent allows you to set the overall level of all sounds played from the entity with the gain property, in relative Decibels, in the range -.infinity ... .zero where -infinity is silent and .zero is nominal.
+entity.ambientAudio?.gain = -10
+Ambient audio sources are well suited to play back multichannel content which captures the acoustics of its originating environment in the recording process (e.g., multichannel field recordings of outdoor environments).
+Topics
+Initializers
+init(gain: Audio.Decibel)
+Configure the behavior of an ambient audio source.
+Instance Properties
+var gain: Audio.Decibel
+The overall level for all sounds emitted from an entity. In relative Decibels, in the range -.infinity ... .zero where .zero is the default.
+Default Implementations
+API Reference
+Component Implementations
+API Reference
+Decodable Implementations
+API Reference
+Encodable Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+Relationships
+Conforms To
+Component
+Decodable
+Encodable
+Equatable
+Hashable
+See Also
+Sound
+struct AudioMixGroupsComponent
+Beta
+struct ChannelAudioComponent
+Configure channel-based rendering of sounds from an entity.
+Beta
+struct SpatialAudioComponent
+Configure how sounds are emitted from an entity into the user’s environment.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AmbientAudioComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

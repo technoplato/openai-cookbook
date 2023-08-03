@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/contains(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>
+M
+func last() -> Publishers.Last<Self>
+M
+func tryFirst(where: (Self.Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>
+M
+func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>
+M
+func first() -> Publishers.First<Self>
+Selecting Specific Elements
+M
+func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>
+Applying Matching Criteria to Elements
+M
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func min() -> Publishers.Comparison<Self>
+M
+func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func max() -> Publishers.Comparison<Self>
+M
+func count() -> Publishers.Count<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+contains(_:)
+Publishes a Boolean value upon receiving an element equal to the argument.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func contains(_ output: Self.Output) -> Publishers.Contains<Self>
+Available when Output conforms to Equatable.
+Parameters
+output
+An element to match against.
+Return Value
+A publisher that emits the Boolean value true when the upstream publisher emits a matching value.
+Discussion
+Use contains(_:) to find the first element in an upstream that’s equal to the supplied argument. The contains publisher consumes all received elements until the upstream publisher produces a matching element. Upon finding the first match, it emits true and finishes normally. If the upstream finishes normally without producing a matching element, this publisher emits false and finishes.
+In the example below, the contains(_:) operator emits true the first time it receives the value 5 from the numbers.publisher, and then finishes normally.
+let numbers = [-1, 5, 10, 5]
+numbers.publisher
+    .contains(5)
+    .sink { print("\($0)") }
+
+
+// Prints: "true"
+See Also
+Applying Matching Criteria to Elements
+func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>
+Publishes a Boolean value upon receiving an element that satisfies the predicate closure.
+func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>
+Publishes a Boolean value upon receiving an element that satisfies the throwing predicate closure.
+func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>
+Publishes a single Boolean value that indicates whether all received elements pass a given predicate.
+func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>
+Publishes a single Boolean value that indicates whether all received elements pass a given error-throwing predicate.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contains(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

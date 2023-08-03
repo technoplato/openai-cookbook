@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/emissivecolor-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+CustomMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+P
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+Modifying Texture Coordinates
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+Adding Light Emission
+S
+CustomMaterial.Normal
+P
+var normal: CustomMaterial.Normal
+Using a Normal Map
+S
+CustomMaterial.CustomMaterialTexture
+S
+CustomMaterial.Custom
+P
+var custom: CustomMaterial.Custom
+Using Custom Values
+Documentation
+Open Menu
+Swift
+Instance Property
+emissiveColor
+The color of light this material emits.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var emissiveColor: CustomMaterial.EmissiveColor { get set }
+Discussion
+With physically based rendering (PBR), you can give entities in RealityKit the appearance of emitting light. Use this property to simulate real-world objects that glow, such as objects with LEDs or computer screens. To enable light emission from a material, set emissiveIntensity to a value greater than zero, then specify a color (other than black) using this property. You can specify a single emissive color for the entire material, or use a UV-mapped image texture to use different colors for different parts of the entity.
+With custom materials, RealityKit doesn’t use emissiveColor automatically to render your entity. Your surface shader must call params.surface().set_emissive_color(), otherwise RealityKit renders no light emission.
+The following example assigns a tint color to the emissiveColor property, without a texture:
+self.emissiveColor = PhysicallyBasedMaterial.EmissiveColor(color: .red)
+This next example uses a texture to specify the emissiveColor property:
+if let emissiveResource = try? TextureResource.load(named: "entity_emissive") {
+    let emissiveMap = MaterialParameters.Texture(emissiveResource)
+    material.emissiveColor = .init(texture: emissiveMap)
+}
+This Metal code shows how to access the emissive color tint in your shader functions:
+half3 emissiveTint = (half3)params.material_constants().emissive_color();
+The following Metal code demonstrates how to sample the emissive color texture for the current fragment:
+// Get the entity's primary texture coordinates.
+float2 uv =
+params.geometry().uv0();
+
+
+// Flip the y-axis. You only need to do this for entities you load from
+// USDZ or .reality files. uv.y = 1.0 - uv.y;
+
+
+// Sample the emissive color texture to get the value for this fragment.
+auto tex = params.textures(); half3 emissiveColor =
+(half3)tex.emissive_color().sample(textureSampler, uv).rgb;
+See Also
+Adding Light Emission
+struct EmissiveColor
+An object that defines the color of the light an entity emits.
+Current page is emissiveColor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

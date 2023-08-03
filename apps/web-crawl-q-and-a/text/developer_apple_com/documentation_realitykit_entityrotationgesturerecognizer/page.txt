@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/realitykit/entityrotationgesturerecognizerSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Handling Keyboard Input
+M
+func touchesCancelled(Set<UITouch>, with: UIEvent?)
+M
+func touchesEnded(Set<UITouch>, with: UIEvent?)
+M
+func touchesMoved(Set<UITouch>, with: UIEvent?)
+M
+func touchesBegan(Set<UITouch>, with: UIEvent?)
+Handling Touch Input
+M
+func ray(through: CGPoint) -> (origin: SIMD3<Float>, direction: SIMD3<Float>)?
+M
+func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool
+S
+ARView.EntityGestures
+M
+func installGestures(ARView.EntityGestures, for: HasCollision) -> [EntityGestureRecognizer]
+Adding Gesture Recognizers to Entities
+M
+func trackedRaycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment, updateHandler: ([ARRaycastResult]) -> Void) -> ARTrackedRaycast?
+M
+func raycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> [ARRaycastResult]
+M
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+M
+func hitTest(CGPoint, types: ARHitTestResult.ResultType) -> [ARHitTestResult]
+Documentation
+Open Menu
+Swift
+Class
+EntityRotationGestureRecognizer
+A gesture recognizer that uses rotation gestures involving two touches to rotate a given entity.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+@MainActor @objc
+class EntityRotationGestureRecognizer
+Topics
+Creating a Recognizer
+init(target: Any?, action: Selector?)
+Using the Recognizer
+var entity: (HasCollision)?
+The entity the receiver is associated with
+func canPrevent(UIGestureRecognizer) -> Bool
+func touchesBegan(Set<UITouch>, with: UIEvent)
+Sent to the gesture recognizer when one or more fingers touch down on the associated entity.
+Relationships
+Inherits From
+UIRotationGestureRecognizer
+Conforms To
+CVarArg
+CustomDebugStringConvertible
+CustomStringConvertible
+EntityGestureRecognizer
+Equatable
+Hashable
+NSObjectProtocol
+See Also
+Adding Gesture Recognizers to Entities
+func installGestures(ARView.EntityGestures, for: HasCollision) -> [EntityGestureRecognizer]
+Installs standard gestures onto the given entity, configured to be recognized simultaneously.
+struct EntityGestures
+The set of possible entity gesture recognizers.
+func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool
+Determines whether two gesture recognizers should simultaneously recognize a gesture.
+class EntityScaleGestureRecognizer
+A gesture recognizer that uses a pinch gesture to scale or zoom an entity.
+class EntityTranslationGestureRecognizer
+A gesture recognizer that uses a pan gesture to move an entity.
+protocol EntityGestureRecognizer
+A gesture recognizer that works on entities.
+Current page is EntityRotationGestureRecognizer
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

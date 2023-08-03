@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/dropdelegate/dropupdated(info:)-8hjzjSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onDrag(() -> NSItemProvider) -> some View
+M
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+M
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+M
+func onDrop(of: [UTType], delegate: DropDelegate) -> some View
+r
+P
+DropDelegate
+Receiving drop information
+M
+func dropEntered(info: DropInfo)
+M
+func dropExited(info: DropInfo)
+Accessible controls
+Accessible descriptions
+Accessible navigation
+Framework integration
+AppKit integration
+UIKit integration
+WatchKit integration
+Documentation
+Open Menu
+Swift
+Instance Method
+dropUpdated(info:)
+Tells the delegate that a validated drop moved inside the modified view.
+iOS 13.4+
+iPadOS 13.4+
+macOS 10.15+
+Mac Catalyst 13.4+
+visionOS 1.0+ Beta
+@MainActor
+func dropUpdated(info: DropInfo) -> DropProposal?
+Required Default implementation provided.
+Discussion
+Use this method to return a drop proposal containing the operation the delegate intends to perform at the drop location. The default implementation of this method returns nil, which tells the drop to use the last valid returned value or else DropOperation.copy.
+Default Implementations
+DropDelegate Implementations
+func dropUpdated(info: DropInfo) -> DropProposal?
+Tells the delegate that a validated drop moved inside the modified view.
+See Also
+Receiving drop information
+func dropEntered(info: DropInfo)
+Tells the delegate a validated drop has entered the modified view.
+Required Default implementation provided.
+func dropExited(info: DropInfo)
+Tells the delegate a validated drop operation has exited the modified view.
+Required Default implementation provided.
+func validateDrop(info: DropInfo) -> Bool
+Tells the delegate that a drop containing items conforming to one of the expected types entered a view that accepts drops.
+Required Default implementation provided.
+func performDrop(info: DropInfo) -> Bool
+Tells the delegate it can request the item provider data from the given information.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is dropUpdated(info:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/view/glassbackgroundeffect(displaymode:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animations
+View styles
+S
+RedactionReasons
+P
+var redactionReasons: RedactionReasons
+M
+func unredacted() -> some View
+M
+func redacted(reason: RedactionReasons) -> some View
+M
+func privacySensitive(Bool) -> some View
+Adding a glass background
+M
+func help(Text) -> some View
+M
+func help<S>(S) -> some View
+M
+func help(LocalizedStringKey) -> some View
+Providing contextual help
+M
+func invalidatableContent(Bool) -> some View
+Beta
+M
+func interactionActivityTrackingTag(String) -> some View
+P
+var isEnabled: Bool
+Documentation
+Open Menu
+Swift
+Instance Method
+glassBackgroundEffect(displayMode:)
+Sets the view’s glass background to displayMode, filling the view’s container relative rounded corner shape.
+visionOS 1.0+ Beta
+func glassBackgroundEffect(displayMode: GlassBackgroundDisplayMode = .always) -> some View
+Parameters
+displayMode
+The GlassBackgroundDisplayMode of glass background. The default visibility is .always.
+Discussion
+A volumetric glass material is a 3D object that includes thickness, specular, glass blur, shadow, and others. Because of its physical depth attribute, it influences Z-axis layout; the UI content should be generally placed within the glass background, instead of on top of it as when using layouts like View/overlay or ZStack.
+See Also
+Adding a glass background
+func glassBackgroundEffect<S>(in: S, displayMode: GlassBackgroundDisplayMode) -> some View
+Sets the view’s glass background to a specified shape filled with the dispalyMode.
+Beta
+enum GlassBackgroundDisplayMode
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is glassBackgroundEffect(displayMode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

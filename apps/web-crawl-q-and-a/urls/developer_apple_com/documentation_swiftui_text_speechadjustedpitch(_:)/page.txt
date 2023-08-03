@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/text/speechadjustedpitch(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Fitting text into available space
+M
+func textScale(Text.Scale, isEnabled: Bool) -> Text
+Beta
+S
+Text.Scale
+Beta
+E
+Text.TruncationMode
+Localizing text
+M
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> Text
+Beta
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> Text
+Beta
+Configuring voiceover
+M
+func labelStyle<S>(S) -> some View
+Getting text input
+S
+TextField
+M
+func textFieldStyle<S>(S) -> some View
+S
+SecureField
+S
+TextEditor
+Selecting text
+Documentation
+Open Menu
+Swift
+Instance Method
+speechAdjustedPitch(_:)
+Raises or lowers the pitch of spoken text.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func speechAdjustedPitch(_ value: Double) -> Text
+Parameters
+value
+The amount to raise or lower the pitch. Values between -1 and 0 result in a lower pitch while values between 0 and 1 result in a higher pitch. The method clamps values to the range -1 to 1.
+Discussion
+Use this modifier when you want to change the pitch of spoken text. The value indicates how much higher or lower to change the pitch.
+See Also
+Configuring voiceover
+func speechAlwaysIncludesPunctuation(Bool) -> Text
+Sets whether VoiceOver should always speak all punctuation in the text view.
+func speechAnnouncementsQueued(Bool) -> Text
+Controls whether to queue pending announcements behind existing speech rather than interrupting speech in progress.
+func speechSpellsOutCharacters(Bool) -> Text
+Sets whether VoiceOver should speak the contents of the text view character by character.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is speechAdjustedPitch(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

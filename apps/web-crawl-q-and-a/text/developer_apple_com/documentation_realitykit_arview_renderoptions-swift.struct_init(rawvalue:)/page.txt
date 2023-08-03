@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/realitykit/arview/renderoptions-swift.struct/init(rawvalue:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func isSubset(of: Self) -> Bool
+static func != (Self, Self) -> Bool
+Comparing Options
+M
+func formSymmetricDifference(Self)
+M
+func symmetricDifference(Self) -> Self
+M
+func formIntersection(Self)
+M
+func intersection(Self) -> Self
+T
+ARView.RenderOptions.ArrayLiteralElement
+T
+ARView.RenderOptions.Element
+M
+init(arrayLiteral: Self.Element...)
+M
+init<S>(S)
+M
+init()
+Creating an Option Set
+P
+static let disableAutomaticLighting: ARView.RenderOptions
+Deprecated
+P
+static let disableAREnvironmentLighting: ARView.RenderOptions
+Documentation
+Open Menu
+Swift
+Initializer
+init(rawValue:)
+Creates a new option set from the given raw value.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+init(rawValue: UInt)
+Parameters
+rawValue
+The raw value of the option set to create. Each bit of rawValue potentially represents an element of the option set, though raw values may include bits that are not defined as distinct values of the OptionSet type.
+Discussion
+This initializer always succeeds, even if the value passed as rawValue exceeds the static properties declared as part of the option set. This example creates an instance of ShippingOptions with a raw value beyond the highest element, with a bit mask that effectively contains all the declared static members.
+let extraOptions = ShippingOptions(rawValue: 255)
+print(extraOptions.isStrictSuperset(of: .all))
+// Prints "true"
+See Also
+Creating an Option Set
+init()
+Creates an empty option set.
+Available when RawValue conforms to FixedWidthInteger.
+init<S>(S)
+Creates a new set from a finite sequence of items.
+init(arrayLiteral: Self.Element...)
+Creates a set containing the elements of the given array literal.
+Available when ArrayLiteralElement is Self.Element.
+typealias Element
+The element type of the option set.
+typealias ArrayLiteralElement
+The type of the elements of an array literal.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+let rawValue: UInt
+The corresponding value of the raw type.
+Current page is init(rawValue:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

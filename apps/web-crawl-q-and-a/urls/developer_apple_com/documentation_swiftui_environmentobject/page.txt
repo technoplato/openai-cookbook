@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/environmentobjectSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+M
+func environmentObject<T>(T) -> some View
+Distributing model data throughout your app
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+M
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some View
+Beta
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+Beta
+Responding to data changes
+r
+P
+ObservableObject
+S
+ObservedObject
+Documentation
+Open Menu
+Swift
+Structure
+EnvironmentObject
+A property wrapper type for an observable object that a parent or ancestor view supplies.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen @propertyWrapper
+struct EnvironmentObject<ObjectType> where ObjectType : ObservableObject
+Overview
+An environment object invalidates the current view whenever the observable object that conforms to ObservableObject changes. If you declare a property as an environment object, be sure to set a corresponding model object on an ancestor view by calling its environmentObject(_:) modifier.
+Note
+If your observable object conforms to the doc://com.apple.documentation/documentation/Observation/Observable-swift.protocol protocol, use Environment instead of EnvironmentObject and set the model object in an ancestor view by calling its environment(_:) or environment(_:_:) modifiers.
+Topics
+Creating an environment object
+init()
+Creates an environment object.
+Getting the value
+var wrappedValue: ObjectType
+The underlying value referenced by the environment object.
+var projectedValue: EnvironmentObject<ObjectType>.Wrapper
+A projection of the environment object that creates bindings to its properties using dynamic member lookup.
+struct Wrapper
+A wrapper of the underlying environment object that can create bindings to its properties using dynamic member lookup.
+Relationships
+Conforms To
+DynamicProperty
+Sendable
+See Also
+Distributing model data throughout your app
+func environmentObject<T>(T) -> some View
+Supplies an observable object to a view’s hierarchy.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is EnvironmentObject
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

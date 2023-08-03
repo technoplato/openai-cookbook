@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/axchartdescriptorrepresentableSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Configuring VoiceOver
+M
+func accessibilityHint<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityHint(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityHint(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Offering hints
+S
+AccessibilityTraits
+M
+func accessibilityRemoveTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityCustomContent(LocalizedStringKey, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityCustomContent<V>(AccessibilityCustomContentKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityCustomContent(LocalizedStringKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityCustomContent(Text, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityCustomContent<V>(LocalizedStringKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityCustomContent(AccessibilityCustomContentKey, Text?, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityCustomContent(AccessibilityCustomContentKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityChartDescriptor<R>(R) -> some View
+Describing charts
+S
+AccessibilityTextContentType
+E
+AccessibilityHeadingLevel
+M
+func accessibilityHeading(AccessibilityHeadingLevel) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Describing content
+M
+func accessibilityValue(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Documentation
+Open Menu
+Swift
+Protocol
+AXChartDescriptorRepresentable
+A type to generate an AXChartDescriptor object that you use to provide information about a chart and its data for an accessible experience in VoiceOver or other assistive technologies.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+protocol AXChartDescriptorRepresentable
+Overview
+Note that you may use the @Environment property wrapper inside the implementation of your AXChartDescriptorRepresentable, in which case you should implement updateChartDescriptor, which will be called when the Environment changes.
+For example, to provide accessibility for a view that represents a chart, you would first declare your chart descriptor representable type:
+struct MyChartDescriptorRepresentable: AXChartDescriptorRepresentable {
+    func makeChartDescriptor() -> AXChartDescriptor {
+        // Build and return your `AXChartDescriptor` here.
+    }
+
+
+    func updateChartDescriptor(_ descriptor: AXChartDescriptor) {
+        // Update your chart descriptor with any new values.
+    }
+}
+Then, provide an instance of your AXChartDescriptorRepresentable type to your view using the accessibilityChartDescriptor modifier:
+var body: some View {
+    MyChartView()
+        .accessibilityChartDescriptor(MyChartDescriptorRepresentable())
+}
+Topics
+Managing a descriptor
+func makeChartDescriptor() -> AXChartDescriptor
+Create the AXChartDescriptor for this view, and return it.
+Required
+func updateChartDescriptor(AXChartDescriptor)
+Update the existing AXChartDescriptor for your view, based on changes in your view or in the Environment.
+Required Default implementation provided.
+See Also
+Describing charts
+func accessibilityChartDescriptor<R>(R) -> some View
+Adds a descriptor to a View that represents a chart to make the chart’s contents accessible to all users.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AXChartDescriptorRepresentable
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

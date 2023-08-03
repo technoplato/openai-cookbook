@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/accessibilityprefersheadanchoralternativeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var resetFocus: ResetFocusAction
+P
+var rename: RenameAction?
+P
+var refresh: RefreshAction?
+P
+var purchase: PurchaseAction
+Beta
+P
+var openWindow: OpenWindowAction
+P
+var openURL: OpenURLAction
+P
+var openDocument: OpenDocumentAction
+P
+var accessibilityPlayAnimatedImages: Bool
+Beta
+P
+var accessibilityLargeContentViewerEnabled: Bool
+P
+var accessibilityInvertColors: Bool
+P
+var accessibilityEnabled: Bool
+P
+var accessibilityDifferentiateWithoutColor: Bool
+P
+var accessibilityDimFlashingLights: Bool
+Beta
+Accessibility
+P
+var description: String
+Documentation
+Open Menu
+Swift
+Instance Property
+accessibilityPrefersHeadAnchorAlternative
+Whether the system setting to prefer alternatives to head-anchored content is on.
+visionOS 1.0+ Beta
+var accessibilityPrefersHeadAnchorAlternative: Bool { get }
+Discussion
+If this property’s value is true, alternate anchors should be used for most head-anchored UI, such as world anchors.
+See Also
+Accessibility
+var accessibilityDimFlashingLights: Bool
+Whether the setting to reduce flashing or strobing lights in video content is on. This setting can also be used to determine if UI in playback controls should be shown to indicate upcoming content that includes flashing or strobing lights.
+Beta
+var accessibilityDifferentiateWithoutColor: Bool
+Whether the system preference for Differentiate without Color is enabled.
+var accessibilityEnabled: Bool
+A Boolean value that indicates whether the user has enabled an assistive technology.
+var accessibilityInvertColors: Bool
+Whether the system preference for Invert Colors is enabled.
+var accessibilityLargeContentViewerEnabled: Bool
+Whether the Large Content Viewer is enabled.
+var accessibilityPlayAnimatedImages: Bool
+Whether the setting for playing animations in an animated image is on. When this value is false, any presented image that contains animation should not play automatically.
+Beta
+var accessibilityQuickActionsEnabled: Bool
+A Boolean that indicates whether the quick actions feature is enabled.
+var accessibilityReduceMotion: Bool
+Whether the system preference for Reduce Motion is enabled.
+var accessibilityReduceTransparency: Bool
+Whether the system preference for Reduce Transparency is enabled.
+var accessibilityShowButtonShapes: Bool
+Whether the system preference for Show Button Shapes is enabled.
+var accessibilitySwitchControlEnabled: Bool
+A Boolean value that indicates whether the Switch Control motor accessibility feature is in use.
+var accessibilityVoiceOverEnabled: Bool
+A Boolean value that indicates whether the VoiceOver screen reader is in use.
+var legibilityWeight: LegibilityWeight?
+The font weight to apply to text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityPrefersHeadAnchorAlternative
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

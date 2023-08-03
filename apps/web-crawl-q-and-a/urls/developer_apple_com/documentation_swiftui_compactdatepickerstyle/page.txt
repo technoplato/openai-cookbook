@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/compactdatepickerstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ProgressViewStyleConfiguration
+r
+P
+ProgressViewStyle
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+r
+P
+GaugeStyle
+M
+func gaugeStyle<S>(S) -> some View
+Styling indicators
+S
+DefaultDatePickerStyle
+Suporting types
+Body
+T
+DatePickerStyle.Configuration
+S
+DatePickerStyleConfiguration
+M
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creating custom date picker styles
+P
+static var wheel: WheelDatePickerStyle
+Documentation
+Open Menu
+Swift
+Structure
+CompactDatePickerStyle
+A date picker style that displays the components in a compact, textual format.
+iOS 14.0+
+iPadOS 14.0+
+macOS 10.15.4+
+Mac Catalyst 13.4+
+visionOS 1.0+ Beta
+struct CompactDatePickerStyle
+Overview
+You can also use compact to construct this style.
+Topics
+Creating the date picker style
+init()
+Creates an instance of the compact date picker style.
+Relationships
+Conforms To
+DatePickerStyle
+Sendable
+See Also
+Suporting types
+struct DefaultDatePickerStyle
+The default style for date pickers.
+struct FieldDatePickerStyle
+A date picker style that displays the components in an editable field.
+struct GraphicalDatePickerStyle
+A date picker style that displays an interactive calendar or clock.
+struct StepperFieldDatePickerStyle
+A system style that displays the components in an editable field, with adjoining stepper that can increment/decrement the selected component.
+struct WheelDatePickerStyle
+A date picker style that displays each component as columns in a scrollable wheel.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CompactDatePickerStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

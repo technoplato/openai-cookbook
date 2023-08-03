@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/gaugestyle/accessorycircularSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+S
+AccessoryLinearCapacityGaugeStyle
+S
+AccessoryLinearGaugeStyle
+S
+LinearCapacityGaugeStyle
+S
+LinearGaugeStyle
+S
+AccessoryCircularCapacityGaugeStyle
+P
+static var circular: CircularGaugeStyle
+Getting circular gauge styles
+P
+static var automatic: DefaultGaugeStyle
+Getting the automatic style
+r
+P
+GaugeStyle
+M
+func gaugeStyle<S>(S) -> some View
+Styling indicators
+S
+ToggleStyleConfiguration
+Documentation
+Open Menu
+Swift
+Type Property
+accessoryCircular
+A gauge style that displays an open ring with a marker that appears at a point along the ring to indicate the gauge’s current value.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static var accessoryCircular: AccessoryCircularGaugeStyle { get }
+Available when Self is AccessoryCircularGaugeStyle.
+Discussion
+Apply this style to a Gauge or to a view hierarchy that contains gauges using the gaugeStyle(_:) modifier:
+Gauge(value: batteryLevel, in: 0...100) {
+    Text("Battery Level")
+}
+.gaugeStyle(.accessoryCircular)
+This style displays the gauge’s currentValueLabel value at the center of the gauge. If you provide minimumValueLabel and maximumValueLabel parameters when you create the gauge, they appear in the opening at the bottom of the ring. Otherwise, the gauge places its label in that location.
+See Also
+Getting circular gauge styles
+static var circular: CircularGaugeStyle
+A gauge style that displays an open ring with a marker that appears at a point along the ring to indicate the gauge’s current value.
+Available when Self is CircularGaugeStyle.
+static var accessoryCircularCapacity: AccessoryCircularCapacityGaugeStyle
+A gauge style that displays a closed ring that’s partially filled in to indicate the gauge’s current value.
+Available when Self is AccessoryCircularCapacityGaugeStyle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessoryCircular
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

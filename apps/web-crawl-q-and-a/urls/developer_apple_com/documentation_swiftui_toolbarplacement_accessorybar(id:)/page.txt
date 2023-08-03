@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/toolbarplacement/accessorybar(id:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+Setting the toolbar title menu
+S
+ToolbarTitleDisplayMode
+Beta
+M
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+Beta
+Configuring the toolbar title display mode
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+P
+static var automatic: ToolbarPlacement
+Getting placements
+S
+ToolbarPlacement
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Setting toolbar visibility
+S
+ToolbarCustomizationOptions
+S
+ToolbarCustomizationBehavior
+r
+P
+CustomizableToolbarContent
+Documentation
+Open Menu
+Swift
+Type Method
+accessoryBar(id:)
+Creates a unique accessory bar placement.
+macOS 13.0+
+@_backDeploy(before: macOS 14.0)
+static func accessoryBar<ID>(id: ID) -> ToolbarPlacement where ID : Hashable
+Parameters
+id
+A unique identifier for this placement.
+Discussion
+On macOS, accessory bars are in a section below the title bar and toolbar area of the window. Each separate identifier will correspond to a separate accessory bar that is added to this area.
+Use a custom placement to control the appearance of the containing bar for items using a custom ToolbarItemPlacement with the same identifier.
+private let favoritesBarID = "com.example.favoritesBar"
+extension ToolbarItemPlacement {
+    static let favoritesBar = accessoryBar(id: favoritesBarID)
+}
+extension ToolbarPlacement {
+    static let favoritesBar = accessoryBar(id: favoritesBarID)
+}
+...
+BrowserView()
+    .toolbar {
+        ToolbarItem(placement: .favoritesBar) {
+            FavoritesBar()
+        }
+    }
+    .toolbar(.hidden, for: .favoritesBar)
+See Also
+Getting placements
+static var automatic: ToolbarPlacement
+The primary toolbar.
+static var bottomBar: ToolbarPlacement
+The bottom toolbar of an app.
+static var bottomOrnament: ToolbarPlacement
+The bottom ornament of an app.
+Beta
+static var navigationBar: ToolbarPlacement
+The navigation bar of an app.
+static var tabBar: ToolbarPlacement
+The tab bar of an app.
+static var windowToolbar: ToolbarPlacement
+The window toolbar of an app.
+Current page is accessoryBar(id:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

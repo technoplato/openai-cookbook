@@ -1,0 +1,133 @@
+https://developer.apple.com/documentation/swiftui/spatialtapgesture/value/location3dSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+SequenceGesture
+M
+func simultaneousGesture<T>(T, including: GestureMask) -> some View
+Composing SwiftUI gestures
+Combining gestures
+S
+GestureMask
+S
+RotateGesture3D
+Beta
+S
+RotateGesture
+func onLongTouchGesture(minimumDuration: Double, perform: () -> Void, onTouchingChanged: ((Bool) -> Void)?) -> some View
+func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+P
+var location: CGPoint
+Getting the tap location
+S
+SpatialTapGesture.Value
+Getting the gesture’s value
+P
+var count: Int
+P
+var coordinateSpace: CoordinateSpace
+M
+init(count: Int, coordinateSpace: some CoordinateSpaceProtocol)
+Beta
+Creating a spatial tap gesture
+Documentation
+Open Menu
+Swift
+Instance Property
+location3D
+The 3D location of the tap.
+visionOS 1.0+ Beta
+var location3D: Point3D { get }
+See Also
+Getting the tap location
+var location: CGPoint
+The location of the tap gesture’s current event.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is location3D
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,205 @@
+https://developer.apple.com/documentation/realitykit/modeldebugoptionscomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AmbientAudioComponent
+Beta
+Sound
+S
+ViewAttachmentComponent
+Beta
+S
+TextComponent
+Beta
+S
+InputTargetComponent
+Beta
+S
+WorldComponent
+Beta
+S
+PortalComponent
+S
+ModelComponent
+3D Models
+S
+PointLightComponent
+S
+SpotLightComponent
+S
+GroundingShadowComponent
+Beta
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+Beta
+S
+DirectionalLightComponent
+Documentation
+Open Menu
+Swift
+Structure
+ModelDebugOptionsComponent
+A component that changes how RealityKit renders its entity to help with debugging.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct ModelDebugOptionsComponent
+Overview
+Attaching a ModelDebugOptionsComponent to a ModelEntity tells RealityKit to change the way it renders that entity based on a specified visualizationMode. This component isolates individual parts of the rendering process, such as the entity’s transparency or roughness, and displays surface color to help identify visual anomalies.
+To use this component, create a ModelDebugOptionsComponent and set its visualizationMode to the desired value. Then, set the component as the entity’s modelDebugOptions property:
+if let robot = anchor.findEntity(named: "Robot") as? ModelEntity {
+    let component = ModelDebugOptionsComponent(visualizationMode: .normal)
+    robot.modelDebugOptions = component
+}
+For more information on the visualization modes supported by ModelDebugOptionsComponent, see ModelDebugOptionsComponent.VisualizationMode.
+Attach a Debug Component to an Entity
+To attach a debug component to a particular entity, traverse the entity tree while passing the component to each child:
+// Traverse the entity tree to attach a certain debug mode through components.
+func attachDebug(entity: Entity, debug:
+ModelDebugOptionsComponent) {
+    entity.components.set(debug)
+    for child in entity.children {
+        attachDebug(entity: child, debug: debug)
+    }
+}
+// Respond to a button or UI element. func
+debugLightingDiffuseButtonCallback() {
+    let debugComponent = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
+    attachDebug(entity: model, debug: debugComponent)
+}
+Attach a Debug Component to a Trait
+To attach a debug component based on a trait, traverse the entity tree while checking for HasModel adoption:
+func attachDebug(entity: Entity, debug: ModelDebugOptionsComponent)
+{
+    if let model = entity as? ModelEntity {
+        model.visualizationMode = debug
+    }
+    for child in entity.children {
+        attachDebug(entity: child, debug: debug)
+    }
+}
+// Respond to a button or UI element. func
+debugLightingDiffuseButtonCallback() {
+    let debugComponent = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
+    attachDebug(entity: model, debug: debugComponent)
+}
+Topics
+Creating Model Debug Options Components
+init(visualizationMode: ModelDebugOptionsComponent.VisualizationMode)
+Creates a component that isolates a portion of the rendering process and displays it as the entity’s surface texture.
+Setting the Visualization Mode
+var visualizationMode: ModelDebugOptionsComponent.VisualizationMode
+The part of the rendering process to display as the entity’s surface texture.
+enum VisualizationMode
+A mode that specifies the portion of the rendering process to isolate and display for debugging.
+Registering the Component
+static func registerComponent()
+Registers a new component type.
+Default Implementations
+API Reference
+Component Implementations
+Relationships
+Conforms To
+Component
+See Also
+Improving Performance
+API Reference
+Improving the Performance of a RealityKit App
+Measure CPU and GPU utilization to find ways to improve your app’s performance.
+Reducing GPU Utilization in Your RealityKit App
+Prevent the GPU from limiting your app’s frame rate by reducing the complexity of your render.
+Reducing CPU Utilization in Your RealityKit App
+Target specific CPU metrics with adjustments to your app and its content.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModelDebugOptionsComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

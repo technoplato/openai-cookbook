@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/emissivecolor-swift.struct/init(color:texture:)-xkh3Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Modifying Texture Coordinates
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+M
+init(PhysicallyBasedMaterial.EmissiveColor)
+Creating an Emissive Color Object
+S
+CustomMaterial.EmissiveColor
+P
+var emissiveColor: CustomMaterial.EmissiveColor
+Adding Light Emission
+S
+CustomMaterial.Normal
+P
+var normal: CustomMaterial.Normal
+Using a Normal Map
+Documentation
+Open Menu
+Swift
+Initializer
+init(color:texture:)
+Creates a color of emitted light in macOS.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+init(
+    color: NSColor = .black,
+    texture: CustomMaterial.Texture? = nil
+)
+Parameters
+color
+The color of the emitted light. Defaults to black.
+texture
+An optional UV-mapped image texture.
+See Also
+Creating an Emissive Color Object
+init(PhysicallyBasedMaterial.EmissiveColor)
+Creates a color of emitted light based on the emissive color property from a physically based material.
+init(color: UIColor, texture: CustomMaterial.Texture?)
+Creates a color of emitted light in macOS.
+Current page is init(color:texture:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

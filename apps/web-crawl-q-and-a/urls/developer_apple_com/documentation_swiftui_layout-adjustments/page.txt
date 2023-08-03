@@ -1,0 +1,303 @@
+https://developer.apple.com/documentation/swiftui/layout-adjustmentsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func containerRelativeFrame(Axis.Set, count: Int, span: Int, spacing: CGFloat, alignment: Alignment) -> some View
+Beta
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment, (CGFloat, Axis) -> CGFloat) -> some View
+Beta
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment) -> some View
+Beta
+M
+func frame(minDepth: CGFloat?, idealDepth: CGFloat?, maxDepth: CGFloat?, alignment: DepthAlignment) -> some View
+Beta
+M
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+M
+func frame(depth: CGFloat?, alignment: DepthAlignment) -> some View
+Beta
+M
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Documentation
+Open Menu
+Swift
+Layout adjustments
+Make fine adjustments to alignment, spacing, padding, and other layout parameters.
+Overview
+Layout containers like stacks and grids provide a great starting point for arranging views in your app’s user interface. When you need to make fine adjustments, use layout view modifiers. You can adjust or constrain the size, position, and alignment of a view. You can also add padding around a view, and indicate how the view interacts with system-defined safe areas.
+To get started with a basic layout, see Layout fundamentals. For design guidance, see Layout in the Human Interface Guidelines.
+Topics
+Finetuning a layout
+Laying out a simple view
+Create a view layout by adjusting the size of views.
+Inspecting view layout
+Determine the position and extent of a view using Xcode previews or by adding temporary borders.
+Adding padding around a view
+func padding(CGFloat) -> some View
+Adds a specific padding amount to each edge of this view.
+func padding(Edge.Set, CGFloat?) -> some View
+Adds an equal padding amount to specific edges of this view.
+func padding(EdgeInsets) -> some View
+Adds a different padding amount to each edge of this view.
+func padding3D(CGFloat) -> some View
+Pads this view along all edge insets by the amount you specify.
+Beta
+func padding3D(EdgeInsets3D) -> some View
+Pads this view using the edge insets you specify.
+Beta
+func padding3D(Edge3D.Set, CGFloat?) -> some View
+Pads this view using the edge insets you specify.
+Beta
+func scenePadding(Edge.Set) -> some View
+Adds padding to the specified edges of this view using an amount that’s appropriate for the current scene.
+func scenePadding(ScenePadding, edges: Edge.Set) -> some View
+Adds a specified kind of padding to the specified edges of this view using an amount that’s appropriate for the current scene.
+struct ScenePadding
+The padding used to space a view from its containing scene.
+Influencing a view’s size
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+Positions this view within an invisible frame with the specified size.
+func frame(depth: CGFloat?, alignment: DepthAlignment) -> some View
+Positions this view within an invisible frame with the specified depth.
+Beta
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+Positions this view within an invisible frame having the specified size constraints.
+func frame(minDepth: CGFloat?, idealDepth: CGFloat?, maxDepth: CGFloat?, alignment: DepthAlignment) -> some View
+Positions this view within an invisible frame having the specified depth constraints.
+Beta
+func containerRelativeFrame(Axis.Set, alignment: Alignment) -> some View
+Positions this view within an invisible frame with a size relative to the nearest container.
+Beta
+func containerRelativeFrame(Axis.Set, alignment: Alignment, (CGFloat, Axis) -> CGFloat) -> some View
+Positions this view within an invisible frame with a size relative to the nearest container.
+Beta
+func containerRelativeFrame(Axis.Set, count: Int, span: Int, spacing: CGFloat, alignment: Alignment) -> some View
+Positions this view within an invisible frame with a size relative to the nearest container.
+Beta
+func fixedSize() -> some View
+Fixes this view at its ideal size.
+func fixedSize(horizontal: Bool, vertical: Bool) -> some View
+Fixes this view at its ideal size in the specified dimensions.
+func layoutPriority(Double) -> some View
+Sets the priority by which a parent layout should apportion space to this child.
+Adjusting a view’s position
+Making fine adjustments to a view’s position
+Shift the position of a view by applying the offset or position modifier.
+func position(CGPoint) -> some View
+Positions the center of this view at the specified point in its parent’s coordinate space.
+func position(x: CGFloat, y: CGFloat) -> some View
+Positions the center of this view at the specified coordinates in its parent’s coordinate space.
+func offset(CGSize) -> some View
+Offset this view by the horizontal and vertical amount specified in the offset parameter.
+func offset(x: CGFloat, y: CGFloat) -> some View
+Offset this view by the specified horizontal and vertical distances.
+func offset(z: CGFloat) -> some View
+Brings a view forward in Z by the provided distance in points.
+Beta
+Aligning views
+Aligning views within a stack
+Position views inside a stack using alignment guides.
+Aligning views across stacks
+Create a custom alignment and use it to align views across multiple stacks.
+func alignmentGuide(HorizontalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+Sets the view’s horizontal alignment.
+func alignmentGuide(VerticalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+Sets the view’s vertical alignment.
+struct Alignment
+An alignment in both axes.
+struct HorizontalAlignment
+An alignment position along the horizontal axis.
+struct VerticalAlignment
+An alignment position along the vertical axis.
+struct DepthAlignment
+An alignment position along the depth axis.
+Beta
+protocol AlignmentID
+A type that you use to create custom alignment guides.
+struct ViewDimensions
+A view’s size and alignment guides in its own coordinate space.
+Setting margins
+func contentMargins(CGFloat, for: ContentMarginPlacement) -> some View
+Configures the content margin for a provided placement.
+Beta
+func contentMargins(Edge.Set, CGFloat?, for: ContentMarginPlacement) -> some View
+Configures the content margin for a provided placement.
+Beta
+func contentMargins(Edge.Set, EdgeInsets, for: ContentMarginPlacement) -> some View
+Configures the content margin for a provided placement.
+Beta
+struct ContentMarginPlacement
+The placement of margins.
+Beta
+Staying in the safe areas
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+Expands the view out of its safe area.
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content beside the modified view.
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content above or below the modified view.
+func safeAreaPadding(EdgeInsets) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func safeAreaPadding(CGFloat) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func safeAreaPadding(Edge.Set, CGFloat?) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+struct SafeAreaRegions
+A set of symbolic safe area regions.
+Setting a layout direction
+func layoutDirectionBehavior(LayoutDirectionBehavior) -> some View
+Sets the behavior of this view for different layout directions.
+Beta
+enum LayoutDirectionBehavior
+A description of what should happen when the layout direction changes.
+Beta
+var layoutDirection: LayoutDirection
+The layout direction associated with the current environment.
+enum LayoutDirection
+A direction in which SwiftUI can lay out content.
+Reacting to interface characteristics
+var isLuminanceReduced: Bool
+A Boolean value that indicates whether the display or environment currently requires reduced luminance.
+var displayScale: CGFloat
+The display scale of this environment.
+var pixelLength: CGFloat
+The size of a pixel on the screen.
+var horizontalSizeClass: UserInterfaceSizeClass?
+The horizontal size class of this environment.
+var verticalSizeClass: UserInterfaceSizeClass?
+The vertical size class of this environment.
+enum UserInterfaceSizeClass
+A set of values that indicate the visual size available to the view.
+Accessing edges and regions
+enum Edge
+An enumeration to indicate one edge of a rectangle.
+enum Edge3D
+An edge or face of a 3D volume.
+Beta
+enum HorizontalEdge
+An edge on the horizontal axis.
+enum VerticalEdge
+An edge on the vertical axis.
+struct EdgeInsets
+The inset distances for the sides of a rectangle.
+struct EdgeInsets3D
+The inset distances for the faces of a 3D volume.
+Beta
+See Also
+View layout
+API Reference
+Layout fundamentals
+Arrange views inside built-in layout containers like stacks and grids.
+API Reference
+Custom layout
+Place views in custom arrangements and create animated transitions between layout types.
+API Reference
+Lists
+Display a structured, scrollable column of information.
+API Reference
+Tables
+Display selectable, sortable data arranged in rows and columns.
+API Reference
+View groupings
+Present views in different kinds of purpose-driven containers, like forms or control groups.
+API Reference
+Scroll views
+Enable people to scroll to content that doesn’t fit in the current display.
+Current page is Layout adjustments
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

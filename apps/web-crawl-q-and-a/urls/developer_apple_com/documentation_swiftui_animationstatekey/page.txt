@@ -1,0 +1,206 @@
+https://developer.apple.com/documentation/swiftui/animationstatekeySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func geometryGroup() -> some View
+Beta
+S
+Namespace
+r
+P
+GeometryEffect
+S
+MatchedGeometryProperties
+M
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+Synchronizing geometries
+T
+TimelineViewDefaultContext
+S
+AnimationState
+Beta
+S
+AnimationContext
+Beta
+r
+P
+CustomAnimation
+Beta
+Creating custom animations
+S
+SpringKeyframe
+Beta
+S
+MoveKeyframe
+Beta
+S
+LinearKeyframe
+Beta
+S
+CubicKeyframe
+Beta
+Documentation
+Open Menu
+Swift
+Protocol
+AnimationStateKey
+A key for accessing animation state values.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+protocol AnimationStateKey
+Overview
+To access animation state from an AnimationContext in a custom animation, create an AnimationStateKey. For example, the following code creates an animation state key named PausableState and sets the value for the required defaultValue property. The code also defines properties for state values that the custom animation needs when calculating animation values. Keeping the state values in the animation state key makes it more convenient to read and write those values in the implementation of a CustomAnimation.
+private struct PausableState<Value: VectorArithmetic>: AnimationStateKey {
+    var paused = false
+    var pauseTime: TimeInterval = 0.0
+
+
+    static var defaultValue: Self { .init() }
+}
+To make accessing the value of the animation state key more convenient, define a property for it by extending AnimationContext:
+extension AnimationContext {
+    fileprivate var pausableState: PausableState<Value> {
+        get { state[PausableState<Value>.self] }
+        set { state[PausableState<Value>.self] = newValue }
+    }
+}
+Then, you can read and write your state in an instance of CustomAnimation using the AnimationContext:
+struct PausableAnimation: CustomAnimation {
+    let base: Animation
+
+
+    func animate<V>(value: V, time: TimeInterval, context: inout AnimationContext<V>) -> V? where V : VectorArithmetic {
+        let paused = context.environment.animationPaused
+
+
+        let pausableState = context.pausableState
+        var pauseTime = pausableState.pauseTime
+        if pausableState.paused != paused {
+            pauseTime = time - pauseTime
+            context.pausableState = PausableState(paused: paused, pauseTime: pauseTime)
+        }
+
+
+        let effectiveTime = paused ? pauseTime : time - pauseTime
+        let result = base.animate(value: value, time: effectiveTime, context: &context)
+        return result
+    }
+}
+Topics
+Setting the default value
+static var defaultValue: Self.Value
+The default value for the animation state key.
+Required
+associatedtype Value
+The associated type representing the type of the animation state key’s value.
+Required
+See Also
+Creating custom animations
+protocol CustomAnimation
+A type that defines how an animatable value changes over time.
+Beta
+struct AnimationContext
+Contextual values that a custom animation can use to manage state and access a view’s environment.
+Beta
+struct AnimationState
+A container that stores the state for a custom animation.
+Beta
+struct UnitCurve
+A function defined by a two-dimensional curve that maps an input progress in the range [0,1] to an output progress that is also in the range [0,1]. By changing the shape of the curve, the effective speed of an animation or other interpolation can be changed.
+Beta
+struct Spring
+A representation of a spring’s motion.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AnimationStateKey
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

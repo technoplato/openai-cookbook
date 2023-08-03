@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/view/tint(_:)-23xyqSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hueRotation(Angle) -> some View
+M
+func grayscale(Double) -> some View
+M
+func saturation(Double) -> some View
+M
+func colorMultiply(Color) -> some View
+M
+func colorInvert() -> some View
+M
+func contrast(Double) -> some View
+M
+func brightness(Double) -> some View
+M
+func tint<S>(S?) -> some View
+Setting a color
+S
+GraphicsContext
+S
+Canvas
+Add Rich Graphics to Your SwiftUI App
+Immediate mode drawing
+Drawing and graphics
+Shapes
+Documentation
+Open Menu
+Swift
+Instance Method
+tint(_:)
+Sets the tint color within this view.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func tint(_ tint: Color?) -> some View
+Parameters
+tint
+The tint Color to apply.
+Discussion
+Use this method to override the default accent color for this view. Unlike an app’s accent color, which can be overridden by user preference, the tint color is always respected and should be used as a way to provide additional meaning to the control.
+This example shows Answer and Decline buttons with green and red tint colors, respectively.
+struct ControlTint: View {
+    var body: some View {
+        HStack {
+            Button {
+                // Answer the call
+            } label: {
+                Label("Answer", systemImage: "phone")
+            }
+            .tint(.green)
+            Button {
+                // Decline the call
+            } label: {
+                Label("Decline", systemImage: "phone.down")
+            }
+            .tint(.red)
+        }
+        .padding()
+    }
+}
+See Also
+Setting a color
+func tint<S>(S?) -> some View
+Sets the tint within this view.
+struct Color
+A representation of a color that adapts to a given context.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tint(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

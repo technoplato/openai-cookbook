@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/localizedstringkey/init(stringinterpolation:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Event handling
+Scroll views
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Creating a key from an interpolation
+M
+init(stringLiteral: String)
+M
+init(String)
+Creating a key from a literal value
+S
+LocalizedStringKey
+Preparing views for localization
+Localizing text
+M
+func typeSelectEquivalent<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Initializer
+init(stringInterpolation:)
+Creates a localized string key from the given string interpolation.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+init(stringInterpolation: LocalizedStringKey.StringInterpolation)
+Parameters
+stringInterpolation
+The string interpolation to use as the localization key.
+Discussion
+To create a localized string key from a string interpolation, use the \() string interpolation syntax. Swift matches the parameter types in the expression to one of the appendInterpolation methods in LocalizedStringKey.StringInterpolation. The interpolated types can include numeric values, Foundation types, and SwiftUI Text and Image instances.
+The following example uses a string interpolation with two arguments: an unlabeled Date and a Text.DateStyle labeled style. The compiler maps these to the method appendInterpolation(_:style:) as it builds the string that it creates the LocalizedStringKey with.
+let key = LocalizedStringKey("Date is \(company.foundedDate, style: .offset)")
+let text = Text(key) // Text contains "Date is +45 years"
+You can write this example more concisely, implicitly creating a LocalizedStringKey as the parameter to the Text initializer:
+let text = Text("Date is \(company.foundedDate, style: .offset)")
+See Also
+Creating a key from an interpolation
+struct StringInterpolation
+Represents the contents of a string literal with interpolations while it’s being built, for use in creating a localized string key.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(stringInterpolation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/realitykit/materialparametertypes/facecullingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+VideoMaterial
+S
+OcclusionMaterial
+S
+UnlitMaterial
+Material Implementations
+Default Implementations
+E
+CustomMaterialError
+T
+CustomMaterial.Texture
+P
+var faceCulling: CustomMaterial.FaceCulling
+Culling Unneeded Polygons
+T
+CustomMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+P
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+Modifying Texture Coordinates
+S
+CustomMaterial.ClearcoatRoughness
+Documentation
+Open Menu
+Swift
+Enumeration
+MaterialParameterTypes.FaceCulling
+An object that defines how the system removes polygons before rendering a scene.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum FaceCulling
+Overview
+To improve performance, RealityKit culls polygons, or faces, that it determines won’t be visible. Discarding faces that aren’t part of the final render elimininates the need to do any calculations for those faces. Use this object to specify what kind of polygons RealityKit culls.
+Topics
+Face Culling
+case front
+The system culls front-facing polygons.
+case back
+The system culls back-facing polygons.
+case none
+The system doesn’t cull polygons.
+Comparisons
+var hashValue: Int
+The hashed value of the case.
+func hash(into: inout Hasher)
+Hashes the raw value by feeding it into the given hash function.
+static func == (MaterialParameterTypes.FaceCulling, MaterialParameterTypes.FaceCulling) -> Bool
+A Boolean value that indicates whether two instances are equal.
+static func != (Self, Self) -> Bool
+A Boolean value that indicates whether two instances aren’t equal.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+See Also
+Culling Unneeded Polygons
+var faceCulling: CustomMaterial.FaceCulling
+A process in which the system specifies polygons to remove before rendering a scene.
+typealias FaceCulling
+The type of object used to control the removal of polygons that aren’t visible to the user.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MaterialParameterTypes.FaceCulling
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/output/invalidsample(id:reason:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Obtaining Results
+E
+PhotogrammetrySession.Request
+Creating Requests
+M
+func cancel()
+M
+func process(requests: [PhotogrammetrySession.Request]) throws
+Controlling Object Creation
+E
+PhotogrammetrySession.Output.ProcessingStage
+case requestProgressInfo(PhotogrammetrySession.Request, PhotogrammetrySession.Output.ProgressInfo)
+Monitoring Data Ingestion
+E
+case requestError(PhotogrammetrySession.Request, Error)
+E
+case requestComplete(PhotogrammetrySession.Request, PhotogrammetrySession.Result)
+E
+case requestProgress(PhotogrammetrySession.Request, fractionComplete: Double)
+Monitoring Request Status
+E
+case processingCancelled
+E
+case processingComplete
+E
+case inputComplete
+Documentation
+Open Menu
+Swift
+Case
+PhotogrammetrySession.Output.invalidSample(id:reason:)
+A provided sample was invalid.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+case invalidSample(
+    id: Int,
+    reason: String
+)
+Parameters
+id
+The sample ID.
+reason
+The reason the sample is invalid.
+See Also
+Monitoring Data Ingestion
+case automaticDownsampling
+The session reduced the image size because of memory constraints.
+case skippedSample(id: Int)
+The type of element used for Object Capture updates. The PhotogrammetrySample with the id indicated was not able to be used for reconstruction.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Output.invalidSample(id:reason:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

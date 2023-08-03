@@ -1,0 +1,117 @@
+https://developer.apple.com/documentation/swiftui/wkhostingcontroller/setneedsbodyupdate()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+M
+func updateBodyIfNeeded()
+Updating the root view
+P
+var body: Body
+Getting the root view
+M
+init()
+Creating a hosting controller object
+C
+WKHostingController
+Displaying SwiftUI views in WatchKit
+Documentation
+Open Menu
+Swift
+Instance Method
+setNeedsBodyUpdate()
+Invalidates the current SwiftUI views and triggers an update during the next cycle.
+watchOS 6.0+
+@MainActor
+func setNeedsBodyUpdate()
+Discussion
+Call this method to mark the views of the hosting controller as needing an update. During the next update cycle, the hosting controller fetches an updated set of views from its body property.
+See Also
+Updating the root view
+func updateBodyIfNeeded()
+Updates the interface controller’s set of views immediately, if updates are pending.
+Current page is setNeedsBodyUpdate()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

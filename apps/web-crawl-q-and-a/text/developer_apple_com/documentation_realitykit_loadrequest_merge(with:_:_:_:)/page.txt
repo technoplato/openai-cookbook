@@ -1,0 +1,220 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/merge(with:_:_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating Reference-type Publishers
+M
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+M
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+M
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+M
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+M
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+Controlling Timing
+func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>
+func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>
+M
+func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>
+M
+func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>
+M
+func merge(with: Self) -> Publishers.MergeMany<Self>
+M
+func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Self, P, Q, R>
+M
+func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>
+M
+func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Self, P, Q>
+M
+func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>
+M
+func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>
+Documentation
+Open Menu
+Swift
+Instance Method
+merge(with:_:_:_:)
+Combines elements from this publisher with those from four other publishers, delivering an interleaved sequence of elements.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func merge<B, C, D, E>(
+    with b: B,
+    _ c: C,
+    _ d: D,
+    _ e: E
+) -> Publishers.Merge5<Self, B, C, D, E> where B : Publisher, C : Publisher, D : Publisher, E : Publisher, Self.Failure == B.Failure, Self.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output
+Parameters
+b
+A second publisher.
+c
+A third publisher.
+d
+A fourth publisher.
+e
+A fifth publisher.
+Return Value
+A publisher that emits an event when any upstream publisher emits an event.
+Discussion
+Use Publisher/merge(with:_:_:_:) when you want to receive a new element whenever any of the upstream publishers emits an element. To receive tuples of the most-recent value from all the upstream publishers whenever any of them emit a value, use Publisher/combineLatest(_:_:_:)-48buc. To combine elements from multiple upstream publishers, use Publisher/zip(_:_:_:)-16rcy.
+In this example, as Publisher/merge(with:_:_:_:) receives input from the upstream publishers, it republishes the interleaved elements to the downstream:
+ let pubA = PassthroughSubject<Int, Never>()
+ let pubB = PassthroughSubject<Int, Never>()
+ let pubC = PassthroughSubject<Int, Never>()
+ let pubD = PassthroughSubject<Int, Never>()
+ let pubE = PassthroughSubject<Int, Never>()
+
+
+ cancellable = pubA
+     .merge(with: pubB, pubC, pubD, pubE)
+     .sink { print("\($0)", terminator: " " ) }
+
+
+ pubA.send(1)
+ pubB.send(40)
+ pubC.send(90)
+ pubD.send(-1)
+ pubE.send(33)
+ pubA.send(2)
+ pubB.send(50)
+ pubC.send(100)
+ pubD.send(-2)
+ pubE.send(33)
+
+
+ // Prints: "1 40 90 -1 33 2 50 100 -2 33"
+The merged publisher continues to emit elements until all upstream publishers finish. If an upstream publisher produces an error, the merged publisher fails with that error.
+See Also
+Combining Elements from Multiple Publishers
+func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>
+Subscribes to an additional publisher and invokes a closure upon receiving output from either publisher.
+func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>
+Subscribes to an additional publisher and publishes a tuple upon receiving output from either publisher.
+func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>
+Subscribes to two additional publishers and invokes a closure upon receiving output from any of the publishers.
+func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Self, P, Q>
+Subscribes to two additional publishers and publishes a tuple upon receiving output from any of the publishers.
+func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>
+Subscribes to three additional publishers and invokes a closure upon receiving output from any of the publishers.
+func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Self, P, Q, R>
+Subscribes to three additional publishers and publishes a tuple upon receiving output from any of the publishers.
+func merge(with: Self) -> Publishers.MergeMany<Self>
+Combines elements from this publisher with those from another publisher of the same type, delivering an interleaved sequence of elements.
+func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>
+Combines elements from this publisher with those from two other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>
+Combines elements from this publisher with those from three other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>
+Combines elements from this publisher with those from five other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>
+Combines elements from this publisher with those from six other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>
+Combines elements from this publisher with those from seven other publishers, delivering an interleaved sequence of elements.
+func zip<P>(P) -> Publishers.Zip<Self, P>
+Combines elements from another publisher and deliver pairs of elements as tuples.
+func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>
+Combines elements from another publisher and delivers a transformed output.
+func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>
+Combines elements from two other publishers and delivers groups of elements as tuples.
+func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>
+Combines elements from two other publishers and delivers a transformed output.
+func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Self, P, Q, R>
+Combines elements from three other publishers and delivers groups of elements as tuples.
+func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>
+Combines elements from three other publishers and delivers a transformed output.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is merge(with:_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

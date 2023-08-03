@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/texteditor/init(text:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func italic(Bool) -> some View
+M
+func bold(Bool) -> some View
+Controlling text style
+S
+ScaledMetric
+E
+DynamicTypeSize
+P
+var dynamicTypeSize: DynamicTypeSize
+M
+func dynamicTypeSize(DynamicTypeSize) -> some View
+Creating a text editor
+S
+TextEditor
+S
+SecureField
+M
+func textFieldStyle<S>(S) -> some View
+S
+TextField
+Getting text input
+M
+func labelStyle<S>(S) -> some View
+S
+Label
+Documentation
+Open Menu
+Swift
+Initializer
+init(text:)
+Creates a plain text editor.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+init(text: Binding<String>)
+Parameters
+text
+A Binding to the variable containing the text to edit.
+Discussion
+Use a TextEditor instance to create a view in which users can enter and edit long-form text.
+In this example, the text editor renders gray text using the 13 point Helvetica Neue font with 5 points of spacing between each line:
+struct TextEditingView: View {
+    @State private var fullText: String = "This is some editable text..."
+
+
+    var body: some View {
+        TextEditor(text: $fullText)
+            .foregroundColor(Color.gray)
+            .font(.custom("HelveticaNeue", size: 13))
+            .lineSpacing(5)
+    }
+}
+You can define the styling for the text within the view, including the text color, font, and line spacing. You define these styles by applying standard view modifiers to the view.
+The default text editor doesn’t support rich text, such as styling of individual elements within the editor’s view. The styles you set apply globally to all text in the view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(text:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

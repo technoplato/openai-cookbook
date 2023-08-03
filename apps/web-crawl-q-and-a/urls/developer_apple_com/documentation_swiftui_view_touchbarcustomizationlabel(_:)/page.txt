@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/view/touchbarcustomizationlabel(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Xcode library customization
+Previews in Xcode
+Tool support
+Technology-specific views
+WatchKit integration
+UIKit integration
+AppKit integration
+M
+func touchBarItemPrincipal(Bool) -> some View
+M
+func touchBar<Content>(TouchBar<Content>) -> some View
+M
+func touchBar<Content>(content: () -> Content) -> some View
+Managing Touch Bar input
+E
+DigitalCrownRotationalSensitivity
+S
+DigitalCrownEvent
+M
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, by: V.Stride?, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool) -> some View
+M
+func digitalCrownRotation<V>(Binding<V>) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+touchBarCustomizationLabel(_:)
+Sets a user-visible string that identifies the view’s functionality.
+macOS 10.15+
+func touchBarCustomizationLabel(_ label: Text) -> some View
+Parameters
+label
+A Text view containing the customization label.
+Return Value
+A Touch Bar element with a set customization label.
+Discussion
+This string is visible during user customization.
+TextField("TouchBar Demo", text: $placeholder)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .focusable()
+    .touchBar {
+        Button("♥️", action: selectHearts)
+            .touchBarCustomizationLabel(Text("Hearts"))
+        Button("♣️", action: selectClubs)
+            .touchBarCustomizationLabel(Text("Clubs"))
+        Button("♠️", action: selectSpades)
+            .touchBarCustomizationLabel(Text("Spades"))
+        Button("♦️", action: selectDiamonds)
+            .touchBarCustomizationLabel(Text("Diamonds"))
+    }
+See Also
+Managing Touch Bar input
+func touchBar<Content>(content: () -> Content) -> some View
+Sets the content that the Touch Bar displays.
+func touchBar<Content>(TouchBar<Content>) -> some View
+Sets the Touch Bar content to be shown in the Touch Bar when applicable.
+func touchBarItemPrincipal(Bool) -> some View
+Sets principal views that have special significance to this Touch Bar.
+func touchBarItemPresence(TouchBarItemPresence) -> some View
+Sets the behavior of the user-customized view.
+struct TouchBar
+A container for a view that you can show in the Touch Bar.
+enum TouchBarItemPresence
+Options that affect user customization of the Touch Bar.
+Current page is touchBarCustomizationLabel(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

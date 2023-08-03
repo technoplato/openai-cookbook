@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/realityview/zindex(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Hello World
+Scene content
+USD Assets
+Object capture
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Diorama
+M
+func visualEffect3D((EmptyVisualEffect, GeometryProxy3D) -> some VisualEffect) -> some View
+M
+func visualEffect((EmptyVisualEffect, GeometryProxy) -> some VisualEffect) -> some View
+M
+func userActivity(String, isActive: Bool, (NSUserActivity) -> ()) -> some View
+M
+func userActivity<P>(String, element: P?, (P, NSUserActivity) -> ()) -> some View
+M
+func upperLimbVisibility(Visibility) -> some View
+M
+func unredacted() -> some View
+M
+func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+zIndex(_:)
+Controls the display order of overlapping views.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func zIndex(_ value: Double) -> some View
+Parameters
+value
+A relative front-to-back ordering for this view; the default is 0.
+Discussion
+Use zIndex(_:) when you want to control the front-to-back ordering of views.
+In this example there are two overlapping rotated rectangles. The frontmost is represented by the larger index value.
+VStack {
+    Rectangle()
+        .fill(Color.yellow)
+        .frame(width: 100, height: 100, alignment: .center)
+        .zIndex(1) // Top layer.
+
+
+    Rectangle()
+        .fill(Color.red)
+        .frame(width: 100, height: 100, alignment: .center)
+        .rotationEffect(.degrees(45))
+        // Here a zIndex of 0 is the default making
+        // this the bottom layer.
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is zIndex(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

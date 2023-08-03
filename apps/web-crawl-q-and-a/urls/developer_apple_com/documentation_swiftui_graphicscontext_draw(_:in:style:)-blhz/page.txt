@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/draw(_:in:style:)-blhzSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func clipToLayer(opacity: Double, options: GraphicsContext.ClipOptions, content: (inout GraphicsContext) throws -> Void) rethrows
+M
+func clip(to: Path, style: FillStyle, options: GraphicsContext.ClipOptions)
+Masking
+M
+func drawLayer(content: (inout GraphicsContext) throws -> Void) rethrows
+Drawing into a new layer
+S
+GraphicsContext.ResolvedSymbol
+M
+func resolveSymbol<ID>(id: ID) -> GraphicsContext.ResolvedSymbol?
+M
+func draw(Image, at: CGPoint, anchor: UnitPoint)
+Drawing an image
+S
+GraphicsContext.GradientOptions
+S
+GraphicsContext.Shading
+M
+func resolve(GraphicsContext.Shading) -> GraphicsContext.Shading
+M
+func fill(Path, with: GraphicsContext.Shading, style: FillStyle)
+M
+func stroke(Path, with: GraphicsContext.Shading, style: StrokeStyle)
+M
+func stroke(Path, with: GraphicsContext.Shading, lineWidth: CGFloat)
+Documentation
+Open Menu
+Swift
+Instance Method
+draw(_:in:style:)
+Draws an image into the context, using the specified rectangle as a layout frame.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func draw(
+    _ image: Image,
+    in rect: CGRect,
+    style: FillStyle = FillStyle()
+)
+Parameters
+image
+The Image to draw. Before drawing, the method converts the image to a GraphicsContext.ResolvedImage by calling resolve(_:).
+rect
+The rectangle in the current user space to draw the image in.
+style
+A fill style to use when rasterizing the image.
+Discussion
+The current context state defines the full drawing operation. For example, the current transformation and clip shapes affect how SwiftUI draws the image.
+See Also
+Drawing an image
+func draw(Image, at: CGPoint, anchor: UnitPoint)
+Draws an image into the context, aligning an anchor within the image to a point in the context.
+func draw(GraphicsContext.ResolvedImage, at: CGPoint, anchor: UnitPoint)
+Draws a resolved image into the context, aligning an anchor within the image to a point in the context.
+func draw(GraphicsContext.ResolvedImage, in: CGRect, style: FillStyle)
+Draws a resolved image into the context, using the specified rectangle as a layout frame.
+func resolve(Image) -> GraphicsContext.ResolvedImage
+Gets a version of an image that’s fixed with the current values of the graphics context’s environment.
+struct ResolvedImage
+An image resolved to a particular environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is draw(_:in:style:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

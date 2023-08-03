@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/lazyhstackSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func background<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func background<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func zIndex(Double) -> some View
+S
+ZStack
+Adding a background to your view
+Layering views
+S
+GridItem
+init(alignment: VerticalAlignment, spacing: CGFloat?, pinnedViews: PinnedScrollableViews, content: () -> Content)
+Creating performant scrollable stacks
+Grouping data with lazy stack views
+Dynamically arranging views in one dimension
+S
+VStack
+S
+HStack
+Building layouts with stack views
+Statically arranging views in one dimension
+Picking container views for your content
+Documentation
+Open Menu
+Swift
+Structure
+LazyHStack
+A view that arranges its children in a line that grows horizontally, creating items only as needed.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+struct LazyHStack<Content> where Content : View
+Overview
+The stack is “lazy,” in that the stack view doesn’t create items until it needs to render them onscreen.
+In the following example, a ScrollView contains a LazyHStack that consists of a horizontal row of text views. The stack aligns to the top of the scroll view and uses 10-point spacing between each text view.
+ScrollView(.horizontal) {
+    LazyHStack(alignment: .top, spacing: 10) {
+        ForEach(1...100, id: \.self) {
+            Text("Column \($0)")
+        }
+    }
+}
+Topics
+Creating a lazy-loading horizontal stack
+init(alignment: VerticalAlignment, spacing: CGFloat?, pinnedViews: PinnedScrollableViews, content: () -> Content)
+Creates a lazy horizontal stack view with the given spacing, vertical alignment, pinning behavior, and content.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Dynamically arranging views in one dimension
+Grouping data with lazy stack views
+Split content into logical sections inside lazy stack views.
+Creating performant scrollable stacks
+Display large numbers of repeated views efficiently with scroll views, stack views, and lazy stacks.
+struct LazyVStack
+A view that arranges its children in a line that grows vertically, creating items only as needed.
+struct PinnedScrollableViews
+A set of view types that may be pinned to the bounds of a scroll view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is LazyHStack
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

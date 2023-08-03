@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/collisioncastquerytype/==(_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+EventSource
+r
+P
+Event
+E
+CollisionEvents
+E
+AudioEvents
+E
+AnimationEvents
+E
+SceneEvents
+S
+Scene.Publisher
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> Cancellable
+func publisher<E>(for: E.Type, on: (EventSource)?, componentType: (Component.Type)?) -> Scene.Publisher<E>
+Comparing Collision Cast Queries
+E
+case any
+E
+case all
+E
+case nearest
+Collision Cast Queries
+E
+CollisionCastQueryType
+S
+CollisionCastHit
+M
+func convexCast(convexShape: ShapeResource, fromPosition: SIMD3<Float>, fromOrientation: simd_quatf, toPosition: SIMD3<Float>, toOrientation: simd_quatf, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]
+Documentation
+Open Menu
+Swift
+Operator
+==(_:_:)
+Indicates whether two cast queries are equal.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+static func == (a: CollisionCastQueryType, b: CollisionCastQueryType) -> Bool
+Parameters
+a
+The first cast query to compare.
+b
+The second cast query to compare.
+Return Value
+A Boolean value set to true if the two cast queries are equal.
+See Also
+Comparing Collision Cast Queries
+static func != (Self, Self) -> Bool
+Indicates whether two cast queries are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the cast query by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the cast query.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ==(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/realitykit/audioresource/normalizationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Postprocessing effects
+Physics simulation
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+S
+AudioResource.Calibration
+Beta
+Structures
+E
+AudioResource.InputMode
+P
+var inputMode: AudioResource.InputMode
+Specifying an Input Mode
+C
+AudioResource
+Audio Resources
+E
+AudioEvents
+Documentation
+Open Menu
+Swift
+Structure
+AudioResource.Normalization
+Normalization adjusts the level of an audio file or buffer to be at a defined target.
+visionOS 1.0+ Beta
+struct Normalization
+Overview
+Audio files produced in a production environment where dynamics are already being processed may not need normalization.
+Normalization has a CPU cost on load for audio file resources that have a loading strategy of RealityFoundation/AudioFileResource/LoadingStrategy-swift.enum/preload and a CPU cost on playback for audio files that have a loading strategy of RealityFoundation/AudioFileResource/LoadingStrategy-swift.enum/stream.
+Topics
+Type Properties
+static let dynamic: AudioResource.Normalization
+Performs dynamic compression to normalize the audio source material to a level of -12dBLUFS in real-time.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AudioResource.Normalization
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

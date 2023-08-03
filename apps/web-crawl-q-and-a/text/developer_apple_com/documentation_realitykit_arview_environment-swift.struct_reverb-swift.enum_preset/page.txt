@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/realitykit/arview/environment-swift.struct/reverb-swift.enum/presetSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var physicsOrigin: Entity?
+P
+var sceneUnderstanding: ARView.Environment.SceneUnderstanding
+Instance Properties
+Hashable Implementations
+Equatable Implementations
+Default Implementations
+Equatable Implementations
+P
+static var automatic: ARView.Environment.Reverb
+Reverb Presets
+E
+case preset(ARView.Environment.Reverb.Preset)
+E
+case noReverb
+Available Reverb Settings
+E
+ARView.Environment.Reverb
+P
+var reverb: ARView.Environment.Reverb
+Defining Acoustic Properties
+Documentation
+Open Menu
+Swift
+Enumeration
+ARView.Environment.Reverb.Preset
+Available reverb preset values.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+enum Preset
+Topics
+Reverb Presets
+case cathedral
+Reverb that sounds like the inside of a cathedral.
+case largeHall
+Reverb that sounds like the inside of a large hall.
+case largeRoom
+Reverb that sounds like the inside of a large room.
+case mediumHall
+Reverb that sounds like the inside of a medium hall.
+case mediumRoom
+Reverb that sounds like the inside of a medium room.
+case smallRoom
+Reverb that sounds like the inside of a small room.
+Comparing Reverb Presets
+static func == (ARView.Environment.Reverb.Preset, ARView.Environment.Reverb.Preset) -> Bool
+Indicates whether two reverb choices are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two reverb choices are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the reverb choice by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the reverb choice.
+Default Implementations
+API Reference
+CaseIterable Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+CaseIterable
+Equatable
+Hashable
+See Also
+Reverb Presets
+static var automatic: ARView.Environment.Reverb
+The default reverb preset.
+Current page is ARView.Environment.Reverb.Preset
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

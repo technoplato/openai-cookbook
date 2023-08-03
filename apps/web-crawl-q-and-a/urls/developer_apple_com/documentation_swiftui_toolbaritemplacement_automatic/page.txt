@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/toolbaritemplacement/automaticSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+ToolbarContent
+P
+static let navigationBarTrailing: ToolbarItemPlacement
+Deprecated
+P
+static let navigationBarLeading: ToolbarItemPlacement
+Deprecated
+M
+init<ID>(id: ID)
+Deprecated
+Deprecated symbols
+M
+static func accessoryBar<ID>(id: ID) -> ToolbarItemPlacement
+P
+static let keyboard: ToolbarItemPlacement
+Getting semantic placement
+S
+ToolbarItemPlacement
+S
+ToolbarItemGroup
+S
+ToolbarItem
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+Populating a toolbar
+Toolbars
+Documentation
+Open Menu
+Swift
+Type Property
+automatic
+The system places the item automatically, depending on many factors including the platform, size class, or presence of other items.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+static let automatic: ToolbarItemPlacement
+Discussion
+In macOS and in Mac Catalyst apps, the system places items in the current toolbar section in order of leading to trailing. On watchOS, only the first item appears, pinned beneath the navigation bar.
+In iPadOS, the system places items in the center of the navigation bar if the navigation bar supports customization. Otherwise, it places items in the trailing position of the navigation bar.
+In iOS, and tvOS, the system places items in the trailing position of the navigation bar.
+In iOS, iPadOS, and macOS, the system uses the space available to the toolbar when determining how many items to render in the toolbar. If not all items fit in the available space, an overflow menu may be created and remaining items placed in that menu.
+See Also
+Getting semantic placement
+static let principal: ToolbarItemPlacement
+The system places the item in the principal item section.
+static let status: ToolbarItemPlacement
+The item represents a change in status for the current context.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is automatic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

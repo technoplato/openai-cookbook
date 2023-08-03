@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/swiftui/app-extensionsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Environment values
+Model data
+Data and storage
+M
+func dynamicIsland(verticalPlacement: DynamicIslandExpandedRegionVerticalPlacement) -> some View
+Managing placement in the Dynamic Island
+M
+func widgetAccentable(Bool) -> some View
+Controlling the accented group
+Search
+Toolbars
+Modal presentations
+Navigation
+Documents
+Immersive spaces
+Windows
+Scenes
+Documentation
+Open Menu
+Swift
+App extensions
+Extend your app’s basic functionality to other parts of the system, like by adding a Widget.
+Overview
+Use SwiftUI along with WidgetKit to add widgets to your app.
+Widgets provide quick access to relevant content from your app. Define a structure that conforms to the Widget protocol, and declare a view hierarchy for the widget. Configure the views inside the widget as you do other SwiftUI views, using view modifiers, including a few widget-specific modifiers.
+For design guidance, see Widgets in the Human Interface Guidelines.
+Topics
+Creating widgets
+Building Widgets Using WidgetKit and SwiftUI
+Create widgets to show your app’s content on the Home screen, with custom intents for user-customizable settings.
+Creating a widget extension
+Display your app’s content in a convenient, informative widget on various devices.
+Keeping a widget up to date
+Plan your widget’s timeline to show timely, relevant information using dynamic views, and update the timeline when things change.
+Making a configurable widget
+Give people the option to customize their widgets by adding a custom app intent to your project.
+protocol Widget
+The configuration and content of a widget to display on the Home screen or in Notification Center.
+protocol WidgetBundle
+A container used to expose multiple widgets from a single widget extension.
+struct LimitedAvailabilityConfiguration
+A type-erased widget configuration.
+protocol WidgetConfiguration
+A type that describes a widget’s content.
+struct EmptyWidgetConfiguration
+An empty widget configuration.
+Labeling a widget
+func widgetLabel<S>(S) -> some View
+Returns a text label that displays additional content outside the accessory family widget’s main SwiftUI view.
+func widgetLabel(LocalizedStringKey) -> some View
+Returns a localized text label that displays additional content outside the accessory family widget’s main SwiftUI view.
+func widgetLabel<Label>(label: () -> Label) -> some View
+Creates a label for displaying additional content outside an accessory family widget’s main SwiftUI view.
+Controlling the accented group
+func widgetAccentable(Bool) -> some View
+Adds the view and all of its subviews to the accented group.
+Managing placement in the Dynamic Island
+func dynamicIsland(verticalPlacement: DynamicIslandExpandedRegionVerticalPlacement) -> some View
+Specifies the vertical placement for a view of an expanded Live Activity that appears in the Dynamic Island.
+See Also
+App structure
+API Reference
+App organization
+Define the entry point and top-level structure of your app.
+API Reference
+Scenes
+Declare the user interface groupings that make up the parts of your app.
+API Reference
+Windows
+Display user interface content in a window or a collection of windows.
+API Reference
+Immersive spaces
+Display unbounded content in a person’s surroundings.
+API Reference
+Documents
+Enable people to open and manage documents.
+API Reference
+Navigation
+Enable people to move between different parts of your app’s view hierarchy within a scene.
+API Reference
+Modal presentations
+Present content in a separate view that offers focused interaction.
+API Reference
+Toolbars
+Provide immediate access to frequently used commands and controls.
+API Reference
+Search
+Enable people to search for text or other content within your app.
+Current page is App extensions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

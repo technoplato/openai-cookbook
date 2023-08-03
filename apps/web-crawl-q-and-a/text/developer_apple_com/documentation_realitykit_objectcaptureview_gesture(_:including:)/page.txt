@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/gesture(_:including:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func indexViewStyle<S>(S) -> some View
+M
+func imageScale(Image.Scale) -> some View
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+M
+func id<ID>(ID) -> some View
+M
+func hueRotation(Angle) -> some View
+M
+func hoverEffectDisabled(Bool) -> some View
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+M
+func geometryGroup() -> some View
+M
+func gaugeStyle<S>(S) -> some View
+M
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+M
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+M
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+M
+func frame() -> some View
+Deprecated
+M
+func formStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+gesture(_:including:)
+Attaches a gesture to the view with a lower precedence than gestures defined by the view.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func gesture<T>(
+    _ gesture: T,
+    including mask: GestureMask = .all
+) -> some View where T : Gesture
+Parameters
+gesture
+A gesture to attach to the view.
+mask
+A value that controls how adding this gesture to the view affects other gestures recognized by the view and its subviews. Defaults to SwiftUI/GestureMask/all.
+Discussion
+Use this method when you need to attach a gesture to a view. The example below defines a custom gesture that prints a message to the console and attaches it to the view’s VStack. Inside the VStack a red heart Image defines its own TapGesture handler that also prints a message to the console, and blue rectangle with no custom gesture handlers. Tapping or clicking the image prints a message to the console from the tap gesture handler on the image, while tapping or clicking the rectangle inside the VStack prints a message in the console from the enclosing vertical stack gesture handler.
+struct GestureExample: View {
+    @State private var message = "Message"
+    let newGesture = TapGesture().onEnded {
+        print("Tap on VStack.")
+    }
+
+
+    var body: some View {
+        VStack(spacing:25) {
+            Image(systemName: "heart.fill")
+                .resizable()
+                .frame(width: 75, height: 75)
+                .padding()
+                .foregroundColor(.red)
+                .onTapGesture {
+                    print("Tap on image.")
+                }
+            Rectangle()
+                .fill(Color.blue)
+        }
+        .gesture(newGesture)
+        .frame(width: 200, height: 200)
+        .border(Color.purple)
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is gesture(_:including:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

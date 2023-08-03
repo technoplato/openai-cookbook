@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/view/brightness(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some View
+Beta
+M
+func rotationEffect(Angle, anchor: UnitPoint) -> some View
+M
+func aspectRatio(CGSize, contentMode: ContentMode) -> some View
+M
+func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View
+M
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some View
+Beta
+M
+func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View
+M
+func scaleEffect(CGFloat, anchor: UnitPoint) -> ModifiedContent<Self, _UniformScaleEffect>
+Transforming colors
+S
+ShadowStyle
+S
+AnyGradient
+S
+Gradient
+S
+AnyShapeStyle
+r
+P
+ShapeStyle
+P
+var backgroundStyle: AnyShapeStyle?
+M
+func backgroundStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+brightness(_:)
+Brightens this view by the specified amount.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func brightness(_ amount: Double) -> some View
+Parameters
+amount
+A value between 0 (no effect) and 1 (full white brightening) that represents the intensity of the brightness effect.
+Return Value
+A view that brightens this view by the specified amount.
+Discussion
+Use brightness(_:) to brighten the intensity of the colors in a view. The example below shows a series of red squares, with their brightness increasing from 0 (fully red) to 100% (white) in 20% increments.
+struct Brightness: View {
+    var body: some View {
+        HStack {
+            ForEach(0..<6) {
+                Color.red.frame(width: 60, height: 60, alignment: .center)
+                    .brightness(Double($0) * 0.2)
+                    .overlay(Text("\(Double($0) * 0.2 * 100, specifier: "%.0f")%"),
+                             alignment: .bottom)
+                    .border(Color.gray)
+            }
+        }
+    }
+}
+See Also
+Transforming colors
+func contrast(Double) -> some View
+Sets the contrast and separation between similar colors in this view.
+func colorInvert() -> some View
+Inverts the colors in this view.
+func colorMultiply(Color) -> some View
+Adds a color multiplication effect to this view.
+func saturation(Double) -> some View
+Adjusts the color saturation of this view.
+func grayscale(Double) -> some View
+Adds a grayscale effect to this view.
+func hueRotation(Angle) -> some View
+Applies a hue rotation effect to this view.
+func luminanceToAlpha() -> some View
+Adds a luminance to alpha effect to this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is brightness(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

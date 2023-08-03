@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/realitykit/realityview/overlay(_:alignment:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func position(x: CGFloat, y: CGFloat) -> some View
+M
+func position(CGPoint) -> some View
+M
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+M
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+M
+func pickerStyle<S>(S) -> some View
+M
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+M
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+M
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+M
+func opacity(Double) -> some View
+M
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+M
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+M
+func onPreferenceChange<K>(K.Type, perform: (K.Value) -> Void) -> some View
+M
+func onOpenURL(perform: (URL) -> ()) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+overlay(_:alignment:)
+Layers a secondary view in front of this view.
+RealityKit
+SwiftUI
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0–1.0 Deprecated
+func overlay<Overlay>(
+    _ overlay: Overlay,
+    alignment: Alignment = .center
+) -> some View where Overlay : View
+Parameters
+overlay
+The view to layer in front of this view.
+alignment
+The alignment for overlay in relation to this view.
+Return Value
+A view that layers overlay in front of the view.
+Discussion
+When you apply an overlay to a view, the original view continues to provide the layout characteristics for the resulting view. In the following example, the heart image is shown overlaid in front of, and aligned to the bottom of the folder image.
+Image(systemName: "folder")
+    .font(.system(size: 55, weight: .thin))
+    .overlay(Text("❤️"), alignment: .bottom)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is overlay(_:alignment:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

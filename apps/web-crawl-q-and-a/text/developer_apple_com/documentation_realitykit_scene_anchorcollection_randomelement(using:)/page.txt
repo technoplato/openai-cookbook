@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/realitykit/scene/anchorcollection/randomelement(using:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+Scene.AnchorCollection.Index
+Manipulating Indices
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+Splitting the Collection
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func dropLast(Int) -> Self.SubSequence
+M
+func dropFirst(Int) -> Self.SubSequence
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func randomElement() -> Self.Element?
+M
+func suffix(from: Self.Index) -> Self.SubSequence
+M
+func suffix(Int) -> Self.SubSequence
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func prefix(upTo: Self.Index) -> Self.SubSequence
+M
+func prefix(through: Self.Index) -> Self.SubSequence
+M
+func prefix(Int) -> Self.SubSequence
+Selecting Anchors
+Documentation
+Open Menu
+Swift
+Instance Method
+randomElement(using:)
+Returns a random element of the collection, using the given generator as a source for randomness.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func randomElement<T>(using generator: inout T) -> Self.Element? where T : RandomNumberGenerator
+Parameters
+generator
+The random number generator to use when choosing a random element.
+Return Value
+A random element from the collection. If the collection is empty, the method returns nil.
+Overview
+Call randomElement(using:) to select a random element from an array or another collection when you are using a custom random number generator. This example picks a name at random from an array:
+let names = ["Zoey", "Chloe", "Amani", "Amaia"]
+let randomName = names.randomElement(using: &myGenerator)!
+// randomName == "Amani"
+Complexity: O(1) if the collection conforms to RandomAccessCollection; otherwise, O(n), where n is the length of the collection.
+Note
+The algorithm used to select a random element may change in a future version of Swift. If you’re passing a generator that results in the same sequence of elements each time you run your program, that sequence may change when your program is compiled using a different version of Swift.
+See Also
+Selecting Anchors
+func prefix(Int) -> Self.SubSequence
+Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection.
+func prefix(through: Self.Index) -> Self.SubSequence
+Returns a subsequence from the start of the collection through the specified position.
+func prefix(upTo: Self.Index) -> Self.SubSequence
+Returns a subsequence from the start of the collection up to, but not including, the specified position.
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements.
+func suffix(Int) -> Self.SubSequence
+Returns a subsequence, up to the given maximum length, containing the final elements of the collection.
+func suffix(from: Self.Index) -> Self.SubSequence
+Returns a subsequence from the specified position to the end of the collection.
+func randomElement() -> Self.Element?
+Returns a random element of the collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is randomElement(using:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,278 @@
+https://developer.apple.com/documentation/swiftui/view-graphics-and-renderingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some View
+Beta
+M
+func rotationEffect(Angle, anchor: UnitPoint) -> some View
+Rotation and transformation
+M
+func aspectRatio(CGSize, contentMode: ContentMode) -> some View
+M
+func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View
+M
+func imageScale(Image.Scale) -> some View
+M
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some View
+Layout modifiers
+Style modifiers
+Drawing views
+Chart view modifiers
+Auxiliary view modifiers
+Text and symbol modifiers
+Appearance modifiers
+Accessibility modifiers
+Documentation
+Open Menu
+Swift
+Graphics and rendering modifiers
+Affect the way the system draws a view, for example by scaling or masking a view, or by applying graphical effects.
+Overview
+Use these view modifiers to apply many of the rendering effects typically associated with a graphics context, like adding masks and creating composites. You can apply these effects to graphical views, like Shapes, as well as any other SwiftUI view.
+When you do need the flexibility of immediate mode drawing in a graphics context, use a Canvas view instead. This can be particularly helpful when you want to draw an extremely large number of dynamic shapes — for example, to create particle effects.
+For more information about using these effects in your app, see Drawing and graphics.
+Topics
+Masks and clipping
+func mask<Mask>(alignment: Alignment, () -> Mask) -> some View
+Masks this view using the alpha channel of the given view.
+func clipped(antialiased: Bool) -> some View
+Clips this view to its bounding rectangular frame.
+func clipShape<S>(S, style: FillStyle) -> some View
+Sets a clipping shape for this view.
+func containerShape<T>(T) -> some View
+Sets the container shape to use for any container relative shape within this view.
+Scale
+func scaledToFill() -> some View
+Scales this view to fill its parent.
+func scaledToFit() -> some View
+Scales this view to fit its parent.
+func scaleEffect(CGFloat, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given amount in both the horizontal and vertical directions, relative to an anchor point.
+func scaleEffect(CGSize, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given vertical and horizontal size amounts, relative to an anchor point.
+func scaleEffect(CGFloat, anchor: UnitPoint3D) -> some View
+Scales this view uniformly by the specified factor.
+Beta
+func scaleEffect(Size3D, anchor: UnitPoint3D) -> some View
+Scales this view uniformly by the specified size in each dimension.
+Beta
+func scaleEffect(CGFloat, anchor: UnitPoint) -> ModifiedContent<Self, _UniformScaleEffect>
+Scales this view’s rendered output by the given amount in both the horizontal and vertical directions, relative to an anchor point.
+func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given horizontal and vertical amounts, relative to an anchor point.
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some View
+Scales this view by the specified horizontal, vertical, and depth factors.
+Beta
+func imageScale(Image.Scale) -> some View
+Scales images within the view according to one of the relative sizes available including small, medium, and large images sizes.
+func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View
+Constrains this view’s dimensions to the specified aspect ratio.
+func aspectRatio(CGSize, contentMode: ContentMode) -> some View
+Constrains this view’s dimensions to the aspect ratio of the given size.
+Rotation and transformation
+func rotationEffect(Angle, anchor: UnitPoint) -> some View
+Rotates this view’s rendered output around the specified point.
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some View
+Rotates this view by a specific amount.
+Beta
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Rotates this view’s rendered output in three dimensions around the given axis of rotation.
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D) -> some View
+Rotates this view by the specified angle about an axis and anchor point.
+Beta
+func rotation3DEffect(Angle, axis: RotationAxis3D, anchor: UnitPoint3D) -> some View
+Rotates this view by the specified angle about an axis and anchor point.
+Beta
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Rotates this view’s rendered output in three dimensions around the given axis of rotation.
+Beta
+func projectionEffect(ProjectionTransform) -> some View
+Applies a projection transformation to this view’s rendered output.
+func transformEffect(CGAffineTransform) -> some View
+Applies an affine transformation to this view’s rendered output.
+func transform3DEffect(AffineTransform3D) -> some View
+Applies a 3D transformation to the receiver.
+Beta
+Graphical effects
+func blur(radius: CGFloat, opaque: Bool) -> some View
+Applies a Gaussian blur to this view.
+func opacity(Double) -> some View
+Sets the transparency of this view.
+func brightness(Double) -> some View
+Brightens this view by the specified amount.
+func contrast(Double) -> some View
+Sets the contrast and separation between similar colors in this view.
+func colorInvert() -> some View
+Inverts the colors in this view.
+func colorMultiply(Color) -> some View
+Adds a color multiplication effect to this view.
+func saturation(Double) -> some View
+Adjusts the color saturation of this view.
+func grayscale(Double) -> some View
+Adds a grayscale effect to this view.
+func hueRotation(Angle) -> some View
+Applies a hue rotation effect to this view.
+func luminanceToAlpha() -> some View
+Adds a luminance to alpha effect to this view.
+func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View
+Adds a shadow to this view.
+func visualEffect((EmptyVisualEffect, GeometryProxy) -> some VisualEffect) -> some View
+Applies effects to this view, while providing access to layout information via GeometryProxy.
+Beta
+func visualEffect3D((EmptyVisualEffect, GeometryProxy3D) -> some VisualEffect) -> some View
+Applies effects to this view, while providing access to layout information via GeometryProxy3D.
+Beta
+Shaders
+func colorEffect(Shader, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a filter effect on the color of each pixel.
+Beta
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a geometric distortion effect on the location of each pixel.
+Beta
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a filter on the raster layer created from self.
+Beta
+Composites
+func blendMode(BlendMode) -> some View
+Sets the blend mode for compositing this view with overlapping views.
+func compositingGroup() -> some View
+Wraps this view in a compositing group.
+func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View
+Composites this view’s contents into an offscreen image before final display.
+Animations
+func animation(Animation?) -> some View
+Applies the given animation to this view when this view changes.
+Available when Self conforms to Equatable.
+func animation<V>(Animation?, value: V) -> some View
+Applies the given animation to this view when the specified value changes.
+func animation<V>(Animation?, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given animation to all animatable values within the body closure.
+Beta
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Loops the given keyframes continuously, updating the view using the modifiers you apply in body.
+Beta
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Plays the given keyframes when the given trigger value changes, updating the view using the modifiers you apply in body.
+Beta
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Cycles through the given phases continuously, updating the content using the view builder closure that you supply.
+Beta
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Cycles through the given phases when the trigger value changes, updating the view using the modifiers you apply in body.
+Beta
+func contentTransition(ContentTransition) -> some View
+Modifies the view to use a given transition as its method of animating changes to the contents of its views.
+func transition<T>(T) -> some View
+Associates a transition with the view.
+Beta
+func transition(AnyTransition) -> some View
+Associates a transition with the view.
+func transaction((inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+func transaction(value: some Equatable, (inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+Beta
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given transaction mutation function to all animations used within the body closure.
+Beta
+func contentTransition(ContentTransition) -> some View
+Modifies the view to use a given transition as its method of animating changes to the contents of its views.
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+Defines a group of views with synchronized geometry using an identifier and namespace that you provide.
+func geometryGroup() -> some View
+Isolates the geometry (e.g. position and size) of the view from its parent view.
+Beta
+See Also
+Drawing views
+API Reference
+Style modifiers
+Apply built-in styles to different types of views.
+API Reference
+Layout modifiers
+Tell a view how to arrange itself within a view hierarchy by adjusting its size, position, alignment, padding, and so on.
+Current page is Graphics and rendering modifiers
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

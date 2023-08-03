@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/gridcellcolumns(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creating a reality view
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+gridCellColumns(_:)
+Tells a view that acts as a cell in a grid to span the specified number of columns.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func gridCellColumns(_ count: Int) -> some View
+Parameters
+count
+The number of columns that the view should consume when placed in a grid row.
+Return Value
+A view that occupies the specified number of columns in a grid row.
+Discussion
+By default, each view that you put into the content closure of a GridRow corresponds to exactly one column of the grid. Apply the gridCellColumns(_:) modifier to a view that you want to span more than one column, as in the following example of a typical macOS configuration view:
+Grid(alignment: .leadingFirstTextBaseline) {
+    GridRow {
+        Text("Regular font:")
+            .gridColumnAlignment(.trailing)
+        Text("Helvetica 12")
+        Button("Select...") { }
+    }
+    GridRow {
+        Text("Fixed-width font:")
+        Text("Menlo Regular 11")
+        Button("Select...") { }
+    }
+    GridRow {
+        Color.clear
+            .gridCellUnsizedAxes([.vertical, .horizontal])
+        Toggle("Use fixed-width font for new documents", isOn: $isOn)
+            .gridCellColumns(2) // Span two columns.
+    }
+}
+The Toggle in the example above spans the column that contains the font names and the column that contains the buttons:
+Important
+When you tell a cell to span multiple columns, the grid changes the merged cell to use anchor alignment, rather than the usual alignment guides. For information about the behavior of anchor alignment, see View/gridCellAnchor(_:).
+As a convenience you can cause a view to span all of the Grid columns by placing the view directly in the content closure of the Grid, outside of a GridRow, and omitting the modifier. To do the opposite and include more than one view in a cell, group the views using an appropriate layout container, like an HStack, so that they act as a single view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is gridCellColumns(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

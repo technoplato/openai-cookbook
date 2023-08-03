@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/realitykit/realityview/invalidatablecontent(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func lineLimit(Int?) -> some View
+M
+func lineLimit(PartialRangeFrom<Int>) -> some View
+M
+func lineLimit(ClosedRange<Int>) -> some View
+M
+func lineLimit(PartialRangeThrough<Int>) -> some View
+M
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+M
+func layoutPriority(Double) -> some View
+M
+func layoutDirectionBehavior(LayoutDirectionBehavior) -> some View
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+M
+func interactiveDismissDisabled(Bool) -> some View
+M
+func interactionActivityTrackingTag(String) -> some View
+M
+func indexViewStyle<S>(S) -> some View
+M
+func imageScale(Image.Scale) -> some View
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+M
+func id<ID>(ID) -> some View
+M
+func hueRotation(Angle) -> some View
+M
+func hoverEffectDisabled(Bool) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+invalidatableContent(_:)
+Mark the receiver as their content might be invalidated.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func invalidatableContent(_ invalidatable: Bool = true) -> some View
+Parameters
+invalidatable
+Whether the receiver content might be invalidated.
+Discussion
+Use this modifier to annotate views that display values that are derived from the current state of your data and might be invalidated in response of, for example, user interaction.
+The view will change its appearance when RedactionReasons.invalidated is present in the environment.
+In an interactive widget a view is invalidated from the moment the user interacts with a control on the widget to the moment when a new timeline update has been presented.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is invalidatableContent(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

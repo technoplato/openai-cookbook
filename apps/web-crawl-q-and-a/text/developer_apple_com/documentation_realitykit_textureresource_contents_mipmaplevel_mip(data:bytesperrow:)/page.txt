@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/realitykit/textureresource/contents/mipmaplevel/mip(data:bytesperrow:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func replace(withDrawables: TextureResource.DrawableQueue)
+M
+func replace(withImage: CGImage, options: TextureResource.CreateOptions) throws
+M
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Structures
+S
+TextureResource.Contents
+Beta
+Structures
+S
+TextureResource.Contents.MipmapLevel
+Type Methods
+static func mip(unsafeBuffer: MTLBuffer, offset: Int, size: Int, bytesPerRow: Int) -> TextureResource.Contents.MipmapLevel
+convenience init(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) async throws
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) throws
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) async throws
+Comparing Material Color Parameters
+static func == (MaterialColorParameter, MaterialColorParameter) -> Bool
+static func != (Self, Self) -> Bool
+M
+func hash(into: inout Hasher)
+P
+var hashValue: Int
+Enumeration Cases
+E
+case color(UIColor)
+Documentation
+Open Menu
+Swift
+Type Method
+mip(data:bytesPerRow:)
+Specifies a single mipmap level of a texture resource with pixel data copied from a byte buffer.
+visionOS 1.0+ Beta
+static func mip(
+    data: Data,
+    bytesPerRow: Int
+) -> TextureResource.Contents.MipmapLevel
+Parameters
+data
+The source buffer.
+bytesPerRow
+The stride in bytes between rows of texture data stored in the source buffer. The value must be a multiple of the destination texture’s pixel size, in bytes.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is mip(data:bytesPerRow:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

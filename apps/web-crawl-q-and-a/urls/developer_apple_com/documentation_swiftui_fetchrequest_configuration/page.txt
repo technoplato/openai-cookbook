@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/fetchrequest/configurationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Images
+Text input and output
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+Configuring a request dynamically
+M
+init(fetchRequest: NSFetchRequest<Result>, transaction: Transaction)
+M
+init(fetchRequest: NSFetchRequest<Result>, animation: Animation?)
+Creating a fully configured fetch request
+M
+init(entity: NSEntityDescription, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+Creating a fetch request
+Documentation
+Open Menu
+Swift
+Structure
+FetchRequest.Configuration
+The request’s configurable properties.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct Configuration
+Overview
+You initialize a FetchRequest with an optional predicate and sort descriptors, either explicitly or using a configured NSFetchRequest. Later, you can dynamically update the predicate and sort parameters using the request’s configuration structure.
+You access or bind to a request’s configuration components through properties on the associated FetchedResults instance.
+Configure using a binding
+Get a Binding to a fetch request’s configuration structure by accessing the request’s projectedValue, which you do by using the dollar sign ($) prefix on the associated results property. For example, you can create a request for Quake entities — a managed object type that the Loading and Displaying a Large Data Feed sample code project defines — that initially sorts the results by time:
+@FetchRequest(sortDescriptors: [SortDescriptor(\.time, order: .reverse)])
+private var quakes: FetchedResults<Quake>
+Then you can bind the request’s sort descriptors, which you access through the quakes result, to those of a Table instance:
+Table(quakes, sortOrder: $quakes.sortDescriptors) {
+    TableColumn("Place", value: \.place)
+    TableColumn("Time", value: \.time) { quake in
+        Text(quake.time, style: .time)
+    }
+}
+A user who clicks on a table column header initiates the following sequence of events:
+The table updates the sort descriptors through the binding.
+The modified sort descriptors reconfigure the request.
+The reconfigured request fetches new results.
+SwiftUI redraws the table in response to new results.
+Set configuration directly
+If you need to access the fetch request’s configuration elements directly, use the nsPredicate and sortDescriptors or nsSortDescriptors properties of the FetchedResults instance. Continuing the example above, to enable the user to dynamically update the predicate, declare a State property to hold a query string:
+@State private var query = ""
+Then add an onChange(of:perform:) modifier to the Table that sets a new predicate any time the query changes:
+.onChange(of: query) { value in
+    quakes.nsPredicate = query.isEmpty
+        ? nil
+        : NSPredicate(format: "place CONTAINS %@", value)
+}
+To give the user control over the string, add a TextField in your user interface that’s bound to the query state:
+TextField("Filter", text: $query)
+When the user types into the text field, the predicate updates, the request fetches new results, and SwiftUI redraws the table.
+Topics
+Setting a predicate
+var nsPredicate: NSPredicate?
+The request’s predicate.
+Setting sort descriptors
+var sortDescriptors: [SortDescriptor<Result>]
+The request’s sort descriptors, accessed as value types.
+Available when Result inherits NSManagedObject.
+var nsSortDescriptors: [NSSortDescriptor]
+The request’s sort descriptors, accessed as reference types.
+Relationships
+Conforms To
+Sendable
+See Also
+Configuring a request dynamically
+var projectedValue: Binding<FetchRequest<Result>.Configuration>
+A binding to the request’s mutable configuration properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is FetchRequest.Configuration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

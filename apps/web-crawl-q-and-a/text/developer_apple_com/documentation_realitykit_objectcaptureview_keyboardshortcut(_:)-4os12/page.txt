@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/keyboardshortcut(_:)-4os12Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func listItemTint(Color?) -> some View
+M
+func listItemTint(ListItemTint?) -> some View
+M
+func lineSpacing(CGFloat) -> some View
+M
+func lineLimit(Int, reservesSpace: Bool) -> some View
+M
+func lineLimit(ClosedRange<Int>) -> some View
+M
+func lineLimit(Int?) -> some View
+M
+func lineLimit(PartialRangeFrom<Int>) -> some View
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+M
+func kerning(CGFloat) -> some View
+M
+func itemProvider(Optional<() -> NSItemProvider?>) -> some View
+M
+func italic(Bool) -> some View
+M
+func invalidatableContent(Bool) -> some View
+M
+func interactiveDismissDisabled(Bool) -> some View
+M
+func interactionActivityTrackingTag(String) -> some View
+M
+func inspectorColumnWidth(min: CGFloat?, ideal: CGFloat, max: CGFloat?) -> some View
+M
+func inspectorColumnWidth(CGFloat) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+keyboardShortcut(_:)
+Assigns an optional keyboard shortcut to the modified control.
+RealityKit
+SwiftUI
+iOS 15.4+
+iPadOS 15.4+
+macOS 12.3+
+Mac Catalyst 15.4+
+visionOS 1.0+ Beta
+func keyboardShortcut(_ shortcut: KeyboardShortcut?) -> some View
+Discussion
+Pressing the control’s shortcut while the control is anywhere in the frontmost window or scene, or anywhere in the macOS main menu, is equivalent to direct interaction with the control to perform its primary action.
+The target of a keyboard shortcut is resolved in a leading-to-trailing traversal of one or more view hierarchies. On macOS, the system looks in the key window first, then the main window, and then the command groups; on other platforms, the system looks in the active scene, and then the command groups.
+If multiple controls are associated with the same shortcut, the first one found is used. If the provided shortcut is nil, the modifier will have no effect.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is keyboardShortcut(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

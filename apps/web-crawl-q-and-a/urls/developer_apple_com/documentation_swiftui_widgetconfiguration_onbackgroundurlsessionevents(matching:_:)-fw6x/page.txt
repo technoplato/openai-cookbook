@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/widgetconfiguration/onbackgroundurlsessionevents(matching:_:)-fw6xSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Images
+Text input and output
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+func onBackgroundURLSessionEvents(matching: String, (String, () -> Void) -> Void) -> some WidgetConfiguration
+M
+func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration
+M
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some WidgetConfiguration
+Managing background tasks
+M
+func containerBackgroundRemovable(Bool) -> some WidgetConfiguration
+M
+func disfavoredLocations([WidgetLocation], for: [WidgetFamily]) -> some WidgetConfiguration
+Beta
+M
+func contentMarginsDisabled() -> some WidgetConfiguration
+M
+func supportedFamilies([WidgetFamily]) -> some WidgetConfiguration
+Setting the appearance
+Documentation
+Open Menu
+Swift
+Instance Method
+onBackgroundURLSessionEvents(matching:_:)
+Adds an action to perform when events related to a URL session with a matching identifier are waiting to be processed.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func onBackgroundURLSessionEvents(
+    matching matchingString: String,
+    _ urlSessionEvent: @escaping (String, @escaping () -> Void) -> Void
+) -> some WidgetConfiguration
+Parameters
+matchingString
+The identifier of a URL session to monitor for events.
+urlSessionEvent
+A closure that takes a string parameter called identifier and a closure called completion.
+Return Value
+A widget that triggers urlSessionEvent when events are generated for a URLSession with the specified identifier.
+Discussion
+When a widget initiates a background network request, the system delivers events related to the request directly to the widget extension instead of the containing app. To process the events, do the following:
+Use the identifier parameter to determine if a corresponding URLSession object exists. If the system has not terminated your widget extension, maintain a reference to the same URLSession object you used for the original background network request. If the system has terminated your widget extension, use the identifier to create a new URLSession object so it can receive the events. You might consider lazily initializing, and caching, the URLSession objects in a central location so that your code works regardless of whether your extension remains active, is suspended, or is terminated.
+Store a reference to the completion handler to invoke after all events have been delivered.
+After the system calls the URLSession delegate’s urlSessionDidFinishEvents(forBackgroundURLSession:) method, invoke the completion handler.
+See Also
+Managing background tasks
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some WidgetConfiguration
+Runs the given action when the system provides a background task.
+func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration
+Adds an action to perform when events related to a URL session identified by a closure are waiting to be processed.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onBackgroundURLSessionEvents(matching:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

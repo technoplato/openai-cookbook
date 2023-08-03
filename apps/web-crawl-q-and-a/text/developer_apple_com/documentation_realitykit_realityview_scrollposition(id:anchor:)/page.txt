@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/realitykit/realityview/scrollposition(id:anchor:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+M
+func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+M
+func searchable<S>(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S) -> some View
+M
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+M
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+M
+func scrollIndicatorsFlash(trigger: some Equatable) -> some View
+M
+func scrollIndicatorsFlash(onAppear: Bool) -> some View
+M
+func scrollIndicators(ScrollIndicatorVisibility, axes: Axis.Set) -> some View
+M
+func scrollDisabled(Bool) -> some View
+M
+func scrollContentBackground(Visibility) -> some View
+M
+func scrollClipDisabled(Bool) -> some View
+M
+func scrollBounceBehavior(ScrollBounceBehavior, axes: Axis.Set) -> some View
+M
+func scenePadding(ScenePadding, edges: Edge.Set) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+scrollPosition(id:anchor:)
+Associates a binding to be updated when a scroll view within this view scrolls.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func scrollPosition(
+    id: Binding<(some Hashable)?>,
+    anchor: UnitPoint? = nil
+) -> some View
+Discussion
+Use this modifier along with the View/scrollTargetLayout() modifier to know the identity of the view that is actively scrolled. As the scroll view scrolls, the binding will be updated with the identity of the leading-most / top-most view.
+Use the View/scrollTargetLayout() modifier to configure which the layout that contains your scroll targets. In the following example, the top-most ItemView will update with the scrolledID binding as the scroll view scrolls.
+@Binding var items: [Item]
+@Binding var scrolledID: Item.ID?
+
+
+ScrollView {
+    LazyVStack {
+        ForEach(items) { item in
+            ItemView(item)
+        }
+    }
+    .scrollTargetLayout()
+}
+.scrollPosition(id: $scrolledID)
+You can write to the binding to scroll to the view with the provided identity.
+@Binding var items: [Item]
+@Binding var scrolledID: Item.ID?
+
+
+ScrollView {
+    // ...
+}
+.scrollPosition(id: $scrolledID)
+.toolbar {
+    Button("Scroll to Top") {
+        scrolledID = items.first
+    }
+}
+SwiftUI will attempt to keep the view with the identity specified in the provided binding when events occur that might cause it to be scrolled out of view by the system. Some examples of these include:
+The data backing the content of a scroll view is re-ordered.
+The size of the scroll view changes, like when a window is resized on macOS or during a rotation on iOS.
+The scroll view initially lays out it content defaulting to the top most view, but the binding has a different view’s identity.
+You can provide an anchor to this modifier to both:
+Influence which view the system chooses as the view whose identity value will update the providing binding as the scroll view scrolls.
+Control the alignment of the view when scrolling to a view when writing a new binding value.
+For example, providing a value of UnitPoint/bottom will prefer to have the bottom-most view chosen and prefer to scroll to views aligned to the bottom.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is scrollPosition(id:anchor:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,216 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/zip(_:_:_:)-4ww2mSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+M
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+M
+func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>
+Identifying Properties with Key Paths
+M
+func encode<Coder>(encoder: Coder) -> Publishers.Encode<Self, Coder>
+M
+func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Self, Item, Coder>
+Encoding and Decoding
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>
+M
+func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>
+M
+func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>
+M
+func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>
+M
+func zip<P>(P) -> Publishers.Zip<Self, P>
+M
+func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>
+M
+func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>
+M
+func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>
+M
+func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>
+Documentation
+Open Menu
+Swift
+Instance Method
+zip(_:_:_:)
+Combines elements from three other publishers and delivers groups of elements as tuples.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func zip<P, Q, R>(
+    _ publisher1: P,
+    _ publisher2: Q,
+    _ publisher3: R
+) -> Publishers.Zip4<Self, P, Q, R> where P : Publisher, Q : Publisher, R : Publisher, Self.Failure == P.Failure, P.Failure == Q.Failure, Q.Failure == R.Failure
+Parameters
+publisher1
+A second publisher.
+publisher2
+A third publisher.
+publisher3
+A fourth publisher.
+Return Value
+A publisher that emits groups of elements from the upstream publishers as tuples.
+Discussion
+Use Publisher/zip(_:_:_:)-16rcy to return a new publisher that combines the elements from three other publishers to publish a tuple to the downstream subscriber. The returned publisher waits until all four publishers have emitted an event, then delivers the oldest unconsumed event from each publisher as a tuple to the subscriber.
+In this example, several PassthroughSubject instances emit values; Publisher/zip(_:_:_:)-16rcy receives the oldest unconsumed value from each publisher and combines them into a tuple that it republishes to the downstream:
+let numbersPub = PassthroughSubject<Int, Never>()
+let lettersPub = PassthroughSubject<String, Never>()
+let emojiPub = PassthroughSubject<String, Never>()
+let fractionsPub  = PassthroughSubject<Double, Never>()
+
+
+cancellable = numbersPub
+    .zip(lettersPub, emojiPub, fractionsPub)
+    .sink { print("\($0)") }
+numbersPub.send(1)         // numbersPub: 1       lettersPub:        emojiPub:       fractionsPub:         zip output: <none>
+numbersPub.send(2)         // numbersPub: 1,2     lettersPub:        emojiPub:       fractionsPub:         zip output: <none>
+numbersPub.send(3)         // numbersPub: 1,2,3   lettersPub:        emojiPub:       fractionsPub:         zip output: <none>
+fractionsPub.send(0.1)     // numbersPub: 1,2,3   lettersPub: "A"    emojiPub:       fractionsPub: 0.1     zip output: <none>
+lettersPub.send("A")       // numbersPub: 1,2,3   lettersPub: "A"    emojiPub:       fractionsPub: 0.1     zip output: <none>
+emojiPub.send("😀")        // numbersPub: 2,3     lettersPub: "A"    emojiPub: "😀"  fractionsPub: 0.1     zip output: (1, "A", "😀", 0.1)
+lettersPub.send("B")       // numbersPub: 2,3     lettersPub: "B"    emojiPub:       fractionsPub:         zip output: <none>
+fractionsPub.send(0.8)     // numbersPub: 2,3     lettersPub: "B"    emojiPub:       fractionsPub: 0.8     zip output: <none>
+emojiPub.send("🥰")        // numbersPub: 3       lettersPub: "B"    emojiPub:       fractionsPub: 0.8     zip output: (2, "B", "🥰", 0.8)
+// Prints:
+//  (1, "A", "😀", 0.1)
+//  (2, "B", "🥰", 0.8)
+If any upstream publisher finishes successfully or fails with an error, so too does the zipped publisher.
+See Also
+Combining Elements from Multiple Publishers
+func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>
+Subscribes to an additional publisher and invokes a closure upon receiving output from either publisher.
+func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>
+Subscribes to an additional publisher and publishes a tuple upon receiving output from either publisher.
+func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>
+Subscribes to two additional publishers and invokes a closure upon receiving output from any of the publishers.
+func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Self, P, Q>
+Subscribes to two additional publishers and publishes a tuple upon receiving output from any of the publishers.
+func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>
+Subscribes to three additional publishers and invokes a closure upon receiving output from any of the publishers.
+func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Self, P, Q, R>
+Subscribes to three additional publishers and publishes a tuple upon receiving output from any of the publishers.
+func merge(with: Self) -> Publishers.MergeMany<Self>
+Combines elements from this publisher with those from another publisher of the same type, delivering an interleaved sequence of elements.
+func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>
+Combines elements from this publisher with those from two other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>
+Combines elements from this publisher with those from three other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>
+Combines elements from this publisher with those from four other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>
+Combines elements from this publisher with those from five other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>
+Combines elements from this publisher with those from six other publishers, delivering an interleaved sequence of elements.
+func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>
+Combines elements from this publisher with those from seven other publishers, delivering an interleaved sequence of elements.
+func zip<P>(P) -> Publishers.Zip<Self, P>
+Combines elements from another publisher and deliver pairs of elements as tuples.
+func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>
+Combines elements from another publisher and delivers a transformed output.
+func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>
+Combines elements from two other publishers and delivers groups of elements as tuples.
+func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>
+Combines elements from two other publishers and delivers a transformed output.
+func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>
+Combines elements from three other publishers and delivers a transformed output.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is zip(_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

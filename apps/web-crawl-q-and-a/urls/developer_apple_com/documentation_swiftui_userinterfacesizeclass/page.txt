@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/userinterfacesizeclassSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var layoutDirection: LayoutDirection
+E
+LayoutDirection
+Reacting to interface characteristics
+P
+var isLuminanceReduced: Bool
+P
+var displayScale: CGFloat
+P
+var pixelLength: CGFloat
+P
+var horizontalSizeClass: UserInterfaceSizeClass?
+P
+var verticalSizeClass: UserInterfaceSizeClass?
+Tables
+View groupings
+Scroll views
+Event handling
+Gestures
+Input events
+Clipboard
+Documentation
+Open Menu
+Swift
+Enumeration
+UserInterfaceSizeClass
+A set of values that indicate the visual size available to the view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+enum UserInterfaceSizeClass
+Overview
+You receive a size class value when you read either the horizontalSizeClass or verticalSizeClass environment value. The value tells you about the amount of space available to your views in a given direction. You can read the size class like any other of the EnvironmentValues, by creating a property with the Environment property wrapper:
+@Environment(\.horizontalSizeClass) private var horizontalSizeClass
+@Environment(\.verticalSizeClass) private var verticalSizeClass
+SwiftUI sets the size class based on several factors, including:
+The current device type.
+The orientation of the device.
+The appearance of Slide Over and Split View on iPad.
+Several built-in views change their behavior based on the size class. For example, a NavigationView presents a multicolumn view when the horizontal size class is UserInterfaceSizeClass.regular, but a single column otherwise. You can also adjust the appearance of custom views by reading the size class and conditioning your views. If you do, be prepared to handle size class changes while your app runs, because factors like device orientation can change at runtime.
+Topics
+Getting size classes
+case compact
+The compact size class.
+case regular
+The regular size class.
+Creating a size class
+init?(UIUserInterfaceSizeClass)
+Creates a SwiftUI size class from the specified UIKit size class.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Reacting to interface characteristics
+var isLuminanceReduced: Bool
+A Boolean value that indicates whether the display or environment currently requires reduced luminance.
+var displayScale: CGFloat
+The display scale of this environment.
+var pixelLength: CGFloat
+The size of a pixel on the screen.
+var horizontalSizeClass: UserInterfaceSizeClass?
+The horizontal size class of this environment.
+var verticalSizeClass: UserInterfaceSizeClass?
+The vertical size class of this environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UserInterfaceSizeClass
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/entitytranslationgesturerecognizer/touchescancelled(_:with:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(target: Any?, action: Selector?)
+Using the Recognizer
+P
+var entity: (HasCollision)?
+M
+func canPrevent(UIGestureRecognizer) -> Bool
+M
+func location(in: Entity?) -> SIMD3<Float>?
+M
+func reset()
+M
+func setTranslation(SIMD3<Float>, in: Entity?)
+M
+func touchesBegan(Set<UITouch>, with: UIEvent)
+M
+func touchesBegan(Set<UITouch>, with: UIEvent?)
+M
+func touchesMoved(Set<UITouch>, with: UIEvent?)
+M
+func touchesEnded(Set<UITouch>, with: UIEvent?)
+M
+func touchesCancelled(Set<UITouch>, with: UIEvent?)
+Handling Keyboard Input
+P
+var acceptsFirstResponder: Bool
+M
+func keyDown(with: NSEvent)
+Documentation
+Open Menu
+Swift
+Instance Method
+touchesCancelled(_:with:)
+Sent to the gesture recognizer when a system event (such as an incoming phone call) cancels a touch event.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+@MainActor
+override dynamic func touchesCancelled(
+    _ touches: Set<UITouch>,
+    with event: UIEvent
+)
+Parameters
+touches
+A set of UITouch instances in the event represented by event that represent the touches in the UITouch.Phase.cancelled phase.
+event
+A UIEvent object representing the event to which the touches belong.
+See Also
+Using the Recognizer
+var entity: (HasCollision)?
+The entity the receiver is associated with
+func canPrevent(UIGestureRecognizer) -> Bool
+func location(in: Entity?) -> SIMD3<Float>?
+Returns the unprojected location of the gesture represented by the receiver in the space of the given entity.
+func reset()
+Overridden to reset internal state when a gesture recognition attempt completes.
+func setTranslation(SIMD3<Float>, in: Entity?)
+Sets the translation of the receiver in the entity’s coordinate space
+func touchesBegan(Set<UITouch>, with: UIEvent)
+Sent to the gesture recognizer when one or more fingers touch down on the associated entity.
+func touchesEnded(Set<UITouch>, with: UIEvent)
+Sent to the gesture recognizer when one or more fingers lift from the associated view.
+func touchesMoved(Set<UITouch>, with: UIEvent)
+Sent to the gesture recognizer when one or more fingers move in the associated view.
+func translation(in: Entity?) -> SIMD3<Float>?
+The translation of the gesture in the space of the specified entity.
+func velocity(in: Entity?) -> SIMD3<Float>
+The velocity of the translation gesture in the space of the specified entity.
+Current page is touchesCancelled(_:with:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

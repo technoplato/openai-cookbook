@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/shapestyle/primarySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func opacity(Double) -> some ShapeStyle
+M
+static func blendMode(BlendMode) -> some ShapeStyle
+Configuring the default shape style
+M
+func shadow(ShadowStyle) -> some ShapeStyle
+M
+func opacity(Double) -> some ShapeStyle
+M
+func blendMode(BlendMode) -> some ShapeStyle
+Modifying a shape style
+P
+var quinary: some ShapeStyle
+Beta
+P
+var quaternary: some ShapeStyle
+Beta
+P
+var tertiary: some ShapeStyle
+Beta
+P
+var secondary: some ShapeStyle
+Beta
+Hierarchical styles
+M
+static func image(Image, sourceRect: CGRect, scale: CGFloat) -> ImagePaint
+Image paint styles
+P
+static var bar: Material
+Documentation
+Open Menu
+Swift
+Type Property
+primary
+A shape style that maps to the first level of the current content style.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static var primary: HierarchicalShapeStyle { get }
+Available when Self is HierarchicalShapeStyle.
+Discussion
+This hierarchical style maps to the first level of the current foreground style, or to the first level of the default foreground style if you haven’t set a foreground style in the view’s environment. You typically set a foreground style by supplying a non-hierarchical style to the foregroundStyle(_:) modifier.
+For information about how to use shape styles, see ShapeStyle.
+See Also
+Hierarchical styles
+var secondary: some ShapeStyle
+Returns the second level of this shape style.
+Beta
+var tertiary: some ShapeStyle
+Returns the third level of this shape style.
+Beta
+var quaternary: some ShapeStyle
+Returns the fourth level of this shape style.
+Beta
+var quinary: some ShapeStyle
+Returns the fifth level of this shape style.
+Beta
+static var secondary: HierarchicalShapeStyle
+A shape style that maps to the second level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+static var tertiary: HierarchicalShapeStyle
+A shape style that maps to the third level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+static var quaternary: HierarchicalShapeStyle
+A shape style that maps to the fourth level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+static var quinary: HierarchicalShapeStyle
+A shape style that maps to the fifth level of the current content style.
+Available when Self is HierarchicalShapeStyle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is primary
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

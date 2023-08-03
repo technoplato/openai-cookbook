@@ -1,0 +1,187 @@
+https://developer.apple.com/documentation/swiftui/view/accessibility(activationpoint:)-2hj37Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessibility modifiers
+M
+func accessibility(label: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(value: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(hidden: Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(identifier: String) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(hint: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+M
+func accessibility(activationPoint: UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+func accessibility(activationPoint: CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func navigationBarTitle(Text) -> some View
+M
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey) -> some View
+Deprecated
+M
+func navigationBarTitle<S>(S) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle<S>(S, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarItems<L>(leading: L) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibility(activationPoint:)
+Specifies the point where activations occur in the view.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func accessibility(activationPoint: CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Deprecated
+Use accessibilityActivationPoint(_:) instead.
+See Also
+Accessibility modifiers
+func accessibility(label: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+Deprecated
+func accessibility(value: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+Deprecated
+func accessibility(hidden: Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Specifies whether to hide this view from system accessibility features.
+Deprecated
+func accessibility(identifier: String) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Uses the specified string to identify the view.
+Deprecated
+func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets a selection identifier for this view’s accessibility element.
+Deprecated
+func accessibility(hint: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+Deprecated
+func accessibility(activationPoint: UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Specifies the unit point where activations occur in the view.
+Deprecated
+func accessibility(inputLabels: [Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+Deprecated
+func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds the given traits to the view.
+Deprecated
+func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Removes the given traits from this view.
+Deprecated
+func accessibility(sortPriority: Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibility(activationPoint:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

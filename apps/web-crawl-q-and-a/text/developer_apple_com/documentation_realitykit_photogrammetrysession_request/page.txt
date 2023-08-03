@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/requestSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+PhotogrammetrySession.Result
+Obtaining Results
+Equatable Implementations
+Default Implementations
+E
+case poses
+Beta
+E
+case pointCloud
+Enumeration Cases
+case modelEntity(detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)
+case modelFile(url: URL, detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)
+Creating Requests
+M
+func cancel()
+M
+func process(requests: [PhotogrammetrySession.Request]) throws
+Controlling Object Creation
+E
+PhotogrammetrySession.Output
+P
+var outputs: PhotogrammetrySession.Outputs
+P
+var isProcessing: Bool
+P
+var activeRequests: [PhotogrammetrySession.Request]
+Documentation
+Open Menu
+Swift
+Enumeration
+PhotogrammetrySession.Request
+An object that configures a photogrammetry session reconstruction request.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+enum Request
+Overview
+Create a PhotogrammetrySession.Request for each 3D object you want to construct from the same set of photographs. You might, for example, create a session with two requests, one to generate a low-resolution preview object in memory, and a second to generate a high-resolution final object saved to the file system.
+Before creating an instance of this class, check isSupported to ensure object capture is available on the current device.
+For more information on using PhotogrammetrySession, see Creating 3D objects from photographs.
+Topics
+Creating the Request
+init(modelFile: URL)
+Creates an instance based on the contents of a USDZ file.
+Specifying the Output
+case modelFile(url: URL, detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)
+An object-creation request saved to a USDZ file or a folder (for OBJ output).
+case modelEntity(detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)
+An object-creation request stored in-memory for immediate display.
+case bounds
+An object-creation request that returns a box the same size as the created model.
+enum Detail
+Supported levels of detail for a request.
+Comparing Values
+var hashValue: Int
+The hashed value.
+func hash(into: inout Hasher)
+Hashes the enumeration value by feeding it into the given hash function.
+static func != (Self, Self) -> Bool
+Indicates whether two enumeration values aren’t equal.
+static func == (PhotogrammetrySession.Request, PhotogrammetrySession.Request) -> Bool
+Indicates whether two enumeration values are equal.
+Transforming the Created Model
+struct Geometry
+An object that holds a bounding box and transformation data for a request.
+Enumeration Cases
+case pointCloud
+The raw detected points from the pictures with no polygons connecting them.
+case poses
+Requests the estimated pose of the camera in each shot (relative to the common estimated coordinate system shared with the .bounds request).
+Beta
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Request
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/swiftui/view/navigationdocument(_:)-6ivu7Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Modal presentations
+S
+NavigationView
+Deprecated
+Deprecated Types
+S
+VSplitView
+S
+HSplitView
+Displaying views in multiple panes
+M
+func tabItem<V>(() -> V) -> some View
+M
+func navigationDocument<D>(D) -> some View
+M
+func navigationSubtitle(LocalizedStringKey) -> some View
+M
+func navigationSubtitle(Text) -> some View
+M
+func navigationSubtitle<S>(S) -> some View
+M
+func navigationTitle(Binding<String>) -> some View
+M
+func navigationTitle<V>(() -> V) -> some View
+M
+func navigationTitle<S>(S) -> some View
+M
+func navigationTitle(Text) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+navigationDocument(_:)
+Configures the view’s document for purposes of navigation.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func navigationDocument(_ url: URL) -> some View
+Parameters
+document
+The URL content associated to the navigation title.
+preview
+The preview of the document to use when sharing.
+Discussion
+In iOS, iPadOS, this populates the title menu with a header previewing the document. In macOS, this populates a proxy icon.
+Refer to the Configure your apps navigation titles article for more information on navigation document modifiers.
+See Also
+Setting titles for navigation content
+func navigationTitle(LocalizedStringKey) -> some View
+Configures the view’s title for purposes of navigation, using a localized string.
+func navigationTitle(Text) -> some View
+Configures the view’s title for purposes of navigation.
+func navigationTitle<S>(S) -> some View
+Configures the view’s title for purposes of navigation, using a string.
+func navigationTitle<V>(() -> V) -> some View
+Configures the view’s title for purposes of navigation, using a custom view.
+func navigationTitle(Binding<String>) -> some View
+Configures the view’s title for purposes of navigation, using a string binding.
+func navigationSubtitle<S>(S) -> some View
+Configures the view’s subtitle for purposes of navigation, using a string.
+func navigationSubtitle(Text) -> some View
+Configures the view’s subtitle for purposes of navigation.
+func navigationSubtitle(LocalizedStringKey) -> some View
+Configures the view’s subtitle for purposes of navigation, using a localized string.
+func navigationDocument<D>(D) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D, I>(D, preview: SharePreview<I, Never>) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D, I>(D, preview: SharePreview<Never, I>) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D>(D, preview: SharePreview<Never, Never>) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D, I1, I2>(D, preview: SharePreview<I1, I2>) -> some View
+Configures the view’s document for purposes of navigation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigationDocument(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

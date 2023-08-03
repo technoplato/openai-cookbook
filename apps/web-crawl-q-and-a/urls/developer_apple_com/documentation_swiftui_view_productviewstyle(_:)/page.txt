@@ -1,0 +1,221 @@
+https://developer.apple.com/documentation/swiftui/view/productviewstyle(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Previews in Xcode
+Tool support
+M
+func healthDataAccessRequest(store: HKHealthStore, shareTypes: Set<HKSampleType>, readTypes: Set<HKObjectType>?, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+Beta
+M
+func healthDataAccessRequest(store: HKHealthStore, readTypes: Set<HKObjectType>, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+Beta
+M
+func healthDataAccessRequest(store: HKHealthStore, objectType: HKObjectType, predicate: NSPredicate?, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+Beta
+Accessing health data
+M
+func subscriptionStoreControlBackground(some ShapeStyle) -> some View
+func subscriptionStorePolicyDestination(for: SubscriptionStorePolicyKind, destination: () -> some View) -> some View
+func subscriptionStatusTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<[Product.SubscriptionInfo.Status]>) async -> ()) -> some View
+func storeProductsTask(for: some Collection<String> & Equatable & Sendable, priority: TaskPriority, action: (Product.CollectionTaskState) async -> ()) -> some View
+func storeProductTask(for: Product.ID, priority: TaskPriority, action: (Product.TaskState) async -> ()) -> some View
+M
+func productIconBorder() -> some View
+Beta
+M
+func onInAppPurchaseStart(perform: ((Product) async -> ())?) -> some View
+Beta
+M
+func onInAppPurchaseCompletion(perform: ((Product, Result<Product.PurchaseResult, Error>) async -> ())?) -> some View
+Beta
+M
+func manageSubscriptionsSheet(isPresented: Binding<Bool>, subscriptionGroupID: String) -> some View
+Beta
+M
+func inAppPurchaseOptions(((Product) async -> Set<Product.PurchaseOption>)?) -> some View
+Beta
+M
+func currentEntitlementTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<VerificationResult<Transaction>?>) async -> ()) -> some View
+Beta
+M
+func musicSubscriptionOffer(isPresented: Binding<Bool>, options: MusicSubscriptionOffer.Options, onLoadCompletion: ((Error)?) -> Void) -> some View
+M
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+productViewStyle(_:)
+Sets the style for in-app store products within a view.
+StoreKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func productViewStyle(_ style: some ProductViewStyle) -> some View
+Discussion
+This modifier styles any ProductView or StoreView instances within a view.
+See Also
+Interacting with the App Store and Apple Music
+func appStoreOverlay(isPresented: Binding<Bool>, configuration: () -> SKOverlay.Configuration) -> some View
+Presents a StoreKit overlay when a given condition is true.
+func manageSubscriptionsSheet(isPresented: Binding<Bool>) -> some View
+func refundRequestSheet(for: Transaction.ID, isPresented: Binding<Bool>, onDismiss: ((Result<Transaction.RefundRequestStatus, Transaction.RefundRequestError>) -> ())?) -> some View
+Display the refund request sheet for the given transaction.
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+Presents a sheet that enables users to redeem subscription offer codes that you configure in App Store Connect.
+func musicSubscriptionOffer(isPresented: Binding<Bool>, options: MusicSubscriptionOffer.Options, onLoadCompletion: ((Error)?) -> Void) -> some View
+Initiates the process of presenting a sheet with subscription offers for Apple Music when the isPresented binding is true.
+func currentEntitlementTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<VerificationResult<Transaction>?>) async -> ()) -> some View
+Declares the view as dependent on the entitlement of an in-app purchase product for productID and returns a modified view.
+Beta
+func inAppPurchaseOptions(((Product) async -> Set<Product.PurchaseOption>)?) -> some View
+Add a function to call before initiating a purchase from an in-app store within view, providing a set of options for the purchase.
+Beta
+func manageSubscriptionsSheet(isPresented: Binding<Bool>, subscriptionGroupID: String) -> some View
+Beta
+func onInAppPurchaseCompletion(perform: ((Product, Result<Product.PurchaseResult, Error>) async -> ())?) -> some View
+Add an action to perform when a purchase initiated from an in-app store within this view completes.
+Beta
+func onInAppPurchaseStart(perform: ((Product) async -> ())?) -> some View
+Add an action to perform when a user triggers the purchase button on an in-app store within this view.
+Beta
+func productIconBorder() -> some View
+Adds a standard border to an icon used by an ProductView .
+Beta
+func storeButton(Visibility, for: StoreButtonKind...) -> some View
+Specifies the visibility of certain kinds of auxiliary buttons used by StoreView or SubscriptionStoreView instances within the view.
+Beta
+func storeProductTask(for: Product.ID, priority: TaskPriority, action: (Product.TaskState) async -> ()) -> some View
+Declares the view as dependent on the in-app purchase product for id and returns a modified view.
+Beta
+func storeProductsTask(for: some Collection<String> & Equatable & Sendable, priority: TaskPriority, action: (Product.CollectionTaskState) async -> ()) -> some View
+Declares the view as dependent on a collection of in-app purchase products and returns a modified view.
+Beta
+func subscriptionStatusTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<[Product.SubscriptionInfo.Status]>) async -> ()) -> some View
+Declares the view as dependent on the status of an auto-renewable subscription group for groupID and returns a modified view.
+Beta
+func subscriptionStoreButtonLabel(SubscriptionStoreButtonLabel) -> some View
+Configures in-app subscription store instances within a view to use a certain button label.
+Beta
+func subscriptionStoreControlIcon(icon: (Product, Product.SubscriptionInfo) -> some View) -> some View
+Set a view to use to decorate individual subscription options within a SubscriptionStoreView.
+Beta
+func subscriptionStoreControlStyle(some SubscriptionStoreControlStyle) -> some View
+Sets the control style for in-app subscription stores within a view.
+Beta
+func subscriptionStorePickerItemBackground(some ShapeStyle) -> some View
+Sets the background style for picker items of SubscriptionStoreView instances within this view.
+Beta
+func subscriptionStorePolicyDestination(for: SubscriptionStorePolicyKind, destination: () -> some View) -> some View
+Configures a view as the destination when someone chooses to view the corresponding policy in a SubscriptionStoreView within this view.
+Beta
+func subscriptionStorePolicyDestination(url: URL, for: SubscriptionStorePolicyKind) -> some View
+Configures a URL as the destination when someone chooses to view the corresponding policy in a SubscriptionStoreView within this view.
+Beta
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle) -> some View
+Sets the style for terms of service or privacy policy buttons created by SubscriptionStoreView within a view.
+Beta
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle, some ShapeStyle) -> some View
+Sets the style for terms of service and privacy policy buttons created by SubscriptionStoreView within a view.
+Beta
+func subscriptionStoreSignInAction((() -> ())?) -> some View
+Add an action to perform when someone triggers the sign in button on a SubscriptionStoreView within this view.
+Beta
+func subscriptionStoreControlBackground(SubscriptionStoreControlBackground) -> some View
+Set the control background style for SubscriptionStoreView instances within the view.
+Beta
+func subscriptionStoreControlBackground(some ShapeStyle) -> some View
+Set the control background style for SubscriptionStoreView instances within the view.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is productViewStyle(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

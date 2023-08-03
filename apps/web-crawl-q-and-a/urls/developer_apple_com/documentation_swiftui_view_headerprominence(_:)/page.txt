@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/view/headerprominence(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var badgeProminence: BadgeProminence
+Beta
+M
+func badgeProminence(BadgeProminence) -> some View
+Beta
+M
+func badge(Int) -> some View
+M
+func badge(LocalizedStringKey?) -> some View
+M
+func badge<S>(S?) -> some View
+M
+func badge(Text?) -> some View
+Displaying a badge on a list item
+Configuring headers
+M
+func listSectionSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+M
+func listRowSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+M
+func listSectionSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+M
+func listRowSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+Configuring separators
+P
+var defaultMinListRowHeight: CGFloat
+S
+ListItemTint
+Documentation
+Open Menu
+Swift
+Instance Method
+headerProminence(_:)
+Sets the header prominence for this view.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func headerProminence(_ prominence: Prominence) -> some View
+Parameters
+prominence
+The prominence to apply.
+Discussion
+In the following example, the section header appears with increased prominence:
+List {
+    Section(header: Text("Header")) {
+        Text("Row")
+    }
+    .headerProminence(.increased)
+}
+.listStyle(.insetGrouped)
+See Also
+Configuring headers
+var headerProminence: Prominence
+The prominence to apply to section headers within a view.
+enum Prominence
+A type indicating the prominence of a view hierarchy.
+var defaultMinListHeaderHeight: CGFloat?
+The default minimum height of a header in a list.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is headerProminence(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

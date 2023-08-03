@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/view/digitalcrownrotation(_:onchange:onidle:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, by: V.Stride?, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool) -> some View
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+func digitalCrownRotation<V>(Binding<V>, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+M
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+M
+func digitalCrownAccessory<Content>(content: () -> Content) -> some View
+M
+func digitalCrownAccessory(Visibility) -> some View
+Interacting with the Digital Crown
+S
+ContentShapeKinds
+M
+func contentShape<S>(ContentShapeKinds, S, eoFill: Bool) -> some View
+M
+func contentShape<S>(S, eoFill: Bool) -> some View
+M
+func allowsTightening(Bool) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+digitalCrownRotation(_:onChange:onIdle:)
+Tracks Digital Crown rotations by updating the specified binding.
+watchOS 9.0+
+func digitalCrownRotation<V>(
+    _ binding: Binding<V>,
+    onChange: @escaping (DigitalCrownEvent) -> Void = { _ in },
+    onIdle: @escaping () -> Void = { }
+) -> some View where V : BinaryFloatingPoint
+Parameters
+binding
+A binding to a value that updates as the user rotates the Digital Crown. The implicit range is (-infinity, +infinity).
+onChange
+A block that is called as the Digital Crown is rotated.
+onIdle
+A block that is called when the Digital Crown has settled to an idle state.
+Discussion
+Use this method to receive values on a binding you provide as the user turns the Digital Crown on Apple Watch. The example below receives changes to the binding value, starting at 0.0 and incrementing or decrementing depending on the direction that the user turns the Digital Crown:
+struct DigitalCrown: View {
+    @State private var crownValue = 0.0
+
+
+    var body: some View {
+        Text("Received Value:\(crownValue, specifier: "%.1f")")
+            .focusable()
+            .digitalCrownRotation($crownValue)
+    }
+}
+See Also
+Interacting with the Digital Crown
+func digitalCrownAccessory(Visibility) -> some View
+Specifies the visibility of Digital Crown accessory Views on Apple Watch.
+func digitalCrownAccessory<Content>(content: () -> Content) -> some View
+Places an accessory View next to the Digital Crown on Apple Watch.
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(Binding<V>) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, by: V.Stride?, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+struct DigitalCrownEvent
+An event emitted when the user rotates the Digital Crown.
+enum DigitalCrownRotationalSensitivity
+The amount of Digital Crown rotation needed to move between two integer numbers.
+Current page is digitalCrownRotation(_:onChange:onIdle:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

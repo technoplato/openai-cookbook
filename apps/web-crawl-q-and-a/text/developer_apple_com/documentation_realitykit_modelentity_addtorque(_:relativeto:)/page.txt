@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/realitykit/modelentity/addtorque(_:relativeto:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+HasPhysicsMotion Implementations
+HasPhysicsBody Implementations
+HasModel Implementations
+HasCollision Implementations
+Default Implementations
+S
+SynchronizationComponent
+Synchronizing an Entity Among Peers
+M
+func addForce(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+M
+func addForce(SIMD3<Float>, relativeTo: Entity?)
+S
+PhysicsBodyComponent
+P
+var physicsBody: PhysicsBodyComponent?
+Simulating Forces and Impulses
+r
+P
+HasCollision
+E
+CollisionEvents
+S
+CollisionComponent
+Documentation
+Open Menu
+Swift
+Instance Method
+addTorque(_:relativeTo:)
+Applies a torque to the physics body at its center of mass.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+func addTorque(
+    _ torque: SIMD3<Float>,
+    relativeTo referenceEntity: Entity?
+)
+Parameters
+torque
+A torque in newton meters per radian.
+Discussion
+The physics simulator applies the added torque until the end of the frame interval. To continue exerting the torque after that time, add the torque again with another call to the method. Handle the SceneEvents.Update event to receive an indication of when the frame interval ends. For an app that renders at 60 frames per second (fps), this event occurs about once per 16 milliseconds.
+referenceEntity: The reference entity that defines the coordinate space in which torque is defined.
+See Also
+Simulating Forces and Impulses
+var physicsBody: PhysicsBodyComponent?
+A component that is used for physics simulations of the model entity in accordance with the laws of Newtonian mechanics.
+struct PhysicsBodyComponent
+A component that defines an entity’s behavior in physics body simulations.
+func addForce(SIMD3<Float>, relativeTo: Entity?)
+Applies a force to the physics body at its center of mass.
+func addForce(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+Applies a force to the physics body at the specified position.
+func clearForcesAndTorques()
+Clears all forces previously added to the physics body.
+func applyLinearImpulse(SIMD3<Float>, relativeTo: Entity?)
+Applies an impulse to the physics body at its center of mass.
+func applyAngularImpulse(SIMD3<Float>, relativeTo: Entity?)
+Applies an angular (torque) impulse to the physics body at its center of mass.
+func applyImpulse(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+Applies an impulse to the physics body at the specified position.
+func resetPhysicsTransform(recursive: Bool)
+Resets the position, orientation, and velocities of the simulated physics body.
+func resetPhysicsTransform(Transform, recursive: Bool)
+Resets the position and velocities of the simulated physics body.
+Deprecated
+protocol HasPhysicsBody
+An interface that enables physics simulations based on the rules of Newtonian mechanics.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is addTorque(_:relativeTo:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/visualeffect/blur(radius:opaque:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func colorEffect(Shader, isEnabled: Bool) -> some View
+Beta
+Accessing Metal shaders
+S
+PhysicalMetricsConverter
+Beta
+S
+PhysicalMetric
+Beta
+r
+P
+CoordinateSpaceProtocol
+Beta
+E
+CoordinateSpace
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Applying other effects
+M
+func transformEffect(ProjectionTransform) -> some VisualEffect
+M
+func transformEffect(CGAffineTransform) -> some VisualEffect
+M
+func transform3DEffect(AffineTransform3D) -> some VisualEffect
+Applying a transform
+M
+func offset(z: CGFloat) -> some VisualEffect
+M
+func offset(x: CGFloat, y: CGFloat) -> some VisualEffect
+M
+func offset(CGSize) -> some VisualEffect
+Documentation
+Open Menu
+Swift
+Instance Method
+blur(radius:opaque:)
+Applies a Gaussian blur to the view.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func blur(
+    radius: CGFloat,
+    opaque: Bool = false
+) -> some VisualEffect
+Parameters
+radius
+The radial size of the blur. A blur is more diffuse when its radius is large.
+opaque
+A Boolean value that indicates whether the blur renderer permits transparency in the blur output. Set to true to create an opaque blur, or set to false to permit transparency.
+Return Value
+An effect that blurs the view.
+Discussion
+Use blur(radius:opaque:) to apply a gaussian blur effect to the rendering of the view.
+See Also
+Applying other effects
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some VisualEffect
+Returns a new visual effect that applies shader to self as a geometric distortion effect on the location of each pixel.
+Beta
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some VisualEffect
+Returns a new visual effect that applies shader to self as a filter on the raster layer created from self.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is blur(radius:opaque:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

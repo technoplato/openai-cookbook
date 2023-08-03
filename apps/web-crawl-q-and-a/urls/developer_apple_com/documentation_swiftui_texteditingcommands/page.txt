@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/texteditingcommandsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ContextMenu
+Deprecated
+T
+PullDownButton
+Deprecated
+S
+MenuButton
+Deprecated
+Deprecated types
+S
+MenuOrder
+P
+var menuOrder: MenuOrder
+M
+func menuOrder(MenuOrder) -> some View
+S
+SidebarCommands
+Getting built-in command groups
+S
+CommandGroupPlacement
+S
+CommandsBuilder
+S
+CommandGroup
+S
+CommandMenu
+r
+P
+Commands
+M
+func commandsReplaced<Content>(content: () -> Content) -> some Scene
+Documentation
+Open Menu
+Swift
+Structure
+TextEditingCommands
+A built-in group of commands for searching, editing, and transforming selections of text.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct TextEditingCommands
+Overview
+These commands are optional and can be explicitly requested by passing a value of this type to the Scene.commands(_:) modifier.
+Topics
+Creating the command group
+init()
+A new value describing the built-in text-editing commands.
+Relationships
+Conforms To
+Commands
+Sendable
+See Also
+Getting built-in command groups
+struct SidebarCommands
+A built-in set of commands for manipulating window sidebars.
+struct TextFormattingCommands
+A built-in set of commands for transforming the styles applied to selections of text.
+struct ToolbarCommands
+A built-in set of commands for manipulating window toolbars.
+struct ImportFromDevicesCommands
+A built-in set of commands that enables importing content from nearby devices.
+struct InspectorCommands
+A built-in set of commands for manipulating inspectors.
+Beta
+struct EmptyCommands
+An empty group of commands.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TextEditingCommands
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

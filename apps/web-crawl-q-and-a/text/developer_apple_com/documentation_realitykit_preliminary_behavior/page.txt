@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/realitykit/preliminary_behaviorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+SpinAction
+OrbitAction
+LookAtCameraAction
+ImpulseAction
+GroupAction
+EmphasizeAction
+ChangeSceneAction
+Essentials
+Actions and Triggers
+Behaviors
+Preliminary_ReferenceImage
+Preliminary_AnchoringAPI
+Placing a Prim in the Real World
+Anchoring
+playbackMode
+Documentation
+Open Menu
+Swift
+Preliminary_Behavior
+A typed schema that combines one or more triggers with associated actions.
+Overview
+Because it inherits Typed, this schema declares a Preliminary_Behavior as a type of prim. For more information about typed schemas, see USD Specification > Typed.
+To run actions based on a trigger, an asset defines a prim of this type and sets its triggers and actions.
+Declaration
+class Preliminary_Behavior "Preliminary_Behavior" (
+    inherits = </Typed>
+)
+Trigger Animation for a Tapped Cube
+The following example demonstrates a behavior that applies an EmphasizeAction to a cube to flip it. Because the cube defines a tap trigger, the runtime performs the flip when a user taps the cube in an AR experience.
+#usda 1.0
+
+
+def Preliminary_Behavior "TapAndFlip"
+{
+    rel triggers = [ <Tap> ]
+    rel actions = [ <Entry> ]
+
+
+    def Preliminary_Trigger "Tap" ( inherits = </TapGestureTrigger> )
+    {
+        rel affectedObjects = [ </Cube> ]
+    }
+
+
+    def Preliminary_Action "Entry" ( inherits = </GroupAction> )
+    {
+        uniform token type = "parallel"
+        rel actions = [ <Flip> ]
+    }
+
+
+    def Preliminary_Action "Flip" ( inherits = </EmphasizeAction> )
+    {
+        rel affectedObjects = [ </Cube> ]
+        uniform token motionType = "flip"
+    }
+}
+
+
+def Cube "Cube" { }
+Topics
+Properties
+triggers
+A list of prims that execute a behavior’s actions.
+actions
+A list of prims that a behavior’s triggers invoke.
+exclusive
+A Boolean value that determines if a behavior executes exclusively.
+Current page is Preliminary_Behavior
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

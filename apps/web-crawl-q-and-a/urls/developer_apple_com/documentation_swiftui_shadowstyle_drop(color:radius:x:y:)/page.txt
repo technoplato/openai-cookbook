@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/shadowstyle/drop(color:radius:x:y:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func backgroundStyle<S>(S) -> some View
+P
+var backgroundStyle: AnyShapeStyle?
+r
+P
+ShapeStyle
+S
+AnyShapeStyle
+S
+Gradient
+S
+AnyGradient
+S
+ShadowStyle
+Getting shadow styles
+M
+func scaleEffect(CGSize, anchor: UnitPoint) -> some View
+M
+func scaleEffect(CGFloat, anchor: UnitPoint3D) -> some View
+Beta
+M
+func scaleEffect(Size3D, anchor: UnitPoint3D) -> some View
+Beta
+M
+func scaleEffect(CGFloat, anchor: UnitPoint) -> ModifiedContent<Self, _UniformScaleEffect>
+M
+func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View
+M
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some View
+Beta
+M
+func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View
+Documentation
+Open Menu
+Swift
+Type Method
+drop(color:radius:x:y:)
+Creates a custom drop shadow style.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static func drop(
+    color: Color = .init(.sRGBLinear, white: 0, opacity: 0.33),
+    radius: CGFloat,
+    x: CGFloat = 0,
+    y: CGFloat = 0
+) -> ShadowStyle
+Parameters
+color
+The shadow’s color.
+radius
+The shadow’s size.
+x
+A horizontal offset you use to position the shadow relative to this view.
+y
+A vertical offset you use to position the shadow relative to this view.
+Return Value
+A new shadow style.
+Discussion
+Drop shadows draw behind the source content by blurring, tinting and offsetting its per-pixel alpha values.
+See Also
+Getting shadow styles
+static func inner(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> ShadowStyle
+Creates a custom inner shadow style.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is drop(color:radius:x:y:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

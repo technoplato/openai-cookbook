@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/paletteselectioneffectSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Providing haptic feedback
+S
+ContentUnavailableView
+Beta
+Indicating missing content
+S
+DefaultDateProgressLabel
+M
+func progressViewStyle<S>(S) -> some View
+S
+ProgressView
+M
+func gaugeStyle<S>(S) -> some View
+M
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Beta
+P
+var defaultWheelPickerItemHeight: CGFloat
+M
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+M
+func horizontalRadioGroupLayout() -> some View
+M
+func pickerStyle<S>(S) -> some View
+S
+Picker
+Choosing from a set of options
+M
+func toggleStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+PaletteSelectionEffect
+The selection effect to apply to a palette item.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+struct PaletteSelectionEffect
+Overview
+You can configure the selection effect of a palette item by using the paletteSelectionEffect(_:) view modifier.
+Topics
+Getting palette selection effects
+static var automatic: PaletteSelectionEffect
+Applies the system’s default effect when selected.
+static var custom: PaletteSelectionEffect
+Does not apply any system effect when selected.
+static func symbolVariant(SymbolVariants) -> PaletteSelectionEffect
+Applies the specified symbol variant when selected.
+Relationships
+Conforms To
+Equatable
+Sendable
+See Also
+Choosing from a set of options
+struct Picker
+A control for selecting from a set of mutually exclusive values.
+func pickerStyle<S>(S) -> some View
+Sets the style for pickers within this view.
+func horizontalRadioGroupLayout() -> some View
+Sets the style for radio group style pickers within this view to be horizontally positioned with the radio buttons inside the layout.
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+Sets the default wheel-style picker item height.
+var defaultWheelPickerItemHeight: CGFloat
+The default height of an item in a wheel-style picker, such as a date picker.
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Specifies the selection effect to apply to a palette item.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PaletteSelectionEffect
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

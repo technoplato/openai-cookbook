@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/subscribe(on:options:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func loadModel(contentsOf: URL, withName: String?) throws -> ModelEntity
+Loading a Flattened Model Entity
+M
+static func loadAnchorAsync(contentsOf: URL, withName: String?) -> LoadRequest<AnchorEntity>
+M
+static func loadAnchorAsync(named: String, in: Bundle?) -> LoadRequest<AnchorEntity>
+M
+static func loadAnchor(contentsOf: URL, withName: String?) throws -> AnchorEntity
+M
+static func loadAnchor(named: String, in: Bundle?) throws -> AnchorEntity
+Loading an Anchor Entity
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+Specifying Schedulers
+M
+func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>
+Performing Type Erasure
+M
+func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>
+Buffering Elements
+M
+func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>
+M
+func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>
+Working with Multiple Subscribers
+Documentation
+Open Menu
+Swift
+Instance Method
+subscribe(on:options:)
+Specifies the scheduler on which to perform subscribe, cancel, and request operations.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func subscribe<S>(
+    on scheduler: S,
+    options: S.SchedulerOptions? = nil
+) -> Publishers.SubscribeOn<Self, S> where S : Scheduler
+Parameters
+scheduler
+The scheduler used to send messages to upstream publishers.
+options
+Options that customize the delivery of elements.
+Return Value
+A publisher which performs upstream operations on the specified scheduler.
+Discussion
+In contrast with Publisher/receive(on:options:), which affects downstream messages, Publisher/subscribe(on:options:) changes the execution context of upstream messages.
+In the following example, the Publisher/subscribe(on:options:) operator causes ioPerformingPublisher to receive requests on backgroundQueue, while the Publisher/receive(on:options:) causes uiUpdatingSubscriber to receive elements and completion on RunLoop.main.
+let ioPerformingPublisher == // Some publisher.
+let uiUpdatingSubscriber == // Some subscriber that updates the UI.
+
+
+ioPerformingPublisher
+    .subscribe(on: backgroundQueue)
+    .receive(on: RunLoop.main)
+    .subscribe(uiUpdatingSubscriber)
+Using Publisher/subscribe(on:options:) also causes the upstream publisher to perform Cancellable/cancel() using the specfied scheduler.
+See Also
+Specifying Schedulers
+func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>
+Specifies the scheduler on which to receive elements from the publisher.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscribe(on:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

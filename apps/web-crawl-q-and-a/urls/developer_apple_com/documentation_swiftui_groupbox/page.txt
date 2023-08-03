@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/groupboxSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Gestures
+Event handling
+Scroll views
+M
+func controlGroupStyle<S>(S) -> some View
+S
+ControlGroup
+Presenting a group of controls
+M
+func labeledContentStyle<S>(S) -> some View
+Grouping views into a box
+S
+Group
+Collecting views into a unit
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Documentation
+Open Menu
+Swift
+Structure
+GroupBox
+A stylized view, with an optional label, that visually collects a logical grouping of content.
+iOS 14.0+
+iPadOS 14.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct GroupBox<Label, Content> where Label : View, Content : View
+Overview
+Use a group box when you want to visually distinguish a portion of your user interface with an optional title for the boxed content.
+The following example sets up a GroupBox with the label “End-User Agreement”, and a long agreementText string in a Text view wrapped by a ScrollView. The box also contains a Toggle for the user to interact with after reading the text.
+var body: some View {
+    GroupBox(label:
+        Label("End-User Agreement", systemImage: "building.columns")
+    ) {
+        ScrollView(.vertical, showsIndicators: true) {
+            Text(agreementText)
+                .font(.footnote)
+        }
+        .frame(height: 100)
+        Toggle(isOn: $userAgreed) {
+            Text("I agree to the above terms")
+        }
+    }
+}
+Topics
+Creating a group box
+init(content: () -> Content)
+Creates an unlabeled group box with the provided view content.
+Available when Label is EmptyView and Content conforms to View.
+init(content: () -> Content, label: () -> Label)
+Creates a group box with the provided label and view content.
+init(LocalizedStringKey, content: () -> Content)
+Creates a group box with the provided view content and title.
+Available when Label is Text and Content conforms to View.
+init<S>(S, content: () -> Content)
+Creates a group box with the provided view content.
+Available when Label is Text and Content conforms to View.
+Creating a group box from a configuration
+init(GroupBoxStyleConfiguration)
+Creates a group box based on a style configuration.
+Available when Label is GroupBoxStyleConfiguration.Label and Content is GroupBoxStyleConfiguration.Content.
+Deprecated initializers
+init(label: Label, content: () -> Content)
+Available when Label conforms to View and Content conforms to View.
+Deprecated
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Grouping views into a box
+func groupBoxStyle<S>(S) -> some View
+Sets the style for group boxes within this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GroupBox
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

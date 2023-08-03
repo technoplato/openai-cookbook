@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/realityview/defaulthovereffect(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fileDialogConfirmationLabel(LocalizedStringKey) -> some View
+M
+func fileDialogBrowserOptions(FileDialogBrowserOptions) -> some View
+M
+func environmentObject<T>(T) -> some View
+M
+func environment<V>(WritableKeyPath<EnvironmentValues, V>, V) -> some View
+M
+func environment<T>(T?) -> some View
+M
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+M
+func dynamicTypeSize(DynamicTypeSize) -> some View
+M
+func defaultFocus<V>(FocusState<V>.Binding, V, priority: DefaultFocusEvaluationPriority) -> some View
+M
+func defaultAppStorage(UserDefaults) -> some View
+M
+func datePickerStyle<S>(S) -> some View
+M
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+M
+func coordinateSpace<T>(name: T) -> some View
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+M
+func controlSize(ControlSize) -> some View
+M
+func controlGroupStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+defaultHoverEffect(_:)
+Sets the default hover effect to use for views within this view.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func defaultHoverEffect(_ effect: HoverEffect?) -> some View
+Parameters
+effect
+The default hover effect to use for views within this view.
+Return Value
+A view that uses this effect as the default hover effect.
+Discussion
+Use this modifier to set a specific hover effect for all views with the View/hoverEffect(_:) modifier applied within a view. The default effect is typically used when no HoverEffect was provided or if HoverEffect/automatic is specified.
+For example, this view uses HoverEffect/highlight for both the red and green Color views:
+HStack {
+    Color.red.hoverEffect()
+    Color.green.hoverEffect()
+}
+.defaultHoverEffect(.highlight)
+This also works for customizing the default hover effect in views like Buttons when using a SwiftUI-defined style like ButtonStyle/bordered, which can provide a hover effect by default. For example, this view replaces the hover effect for a Button with HoverEffect/highlight:
+Button("Next") {}
+    // perform action
+}
+.buttonStyle(.bordered)
+.defaultHoverEffect(.highlight)
+Use a nil effect to indicate that the default hover effect should not be modified.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is defaultHoverEffect(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

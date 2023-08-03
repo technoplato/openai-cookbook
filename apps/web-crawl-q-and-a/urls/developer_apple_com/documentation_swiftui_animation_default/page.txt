@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/swiftui/animation/defaultSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func spring(duration: TimeInterval, bounce: Double, blendDuration: Double) -> Animation
+M
+static func spring(Spring, blendDuration: TimeInterval) -> Animation
+Beta
+P
+static var spring: Animation
+Customizing spring animations
+M
+static func snappy(duration: TimeInterval, extraBounce: Double) -> Animation
+P
+static var snappy: Animation
+M
+static func smooth(duration: TimeInterval, extraBounce: Double) -> Animation
+Getting the default animation
+S
+Animation
+S
+AnimationCompletionCriteria
+Beta
+func withAnimation<Result>(Animation?, completionCriteria: AnimationCompletionCriteria, () throws -> Result, completion: () -> Void) rethrows -> Result
+Beta
+func withAnimation<Result>(Animation?, () throws -> Result) rethrows -> Result
+Adding state-based animation to an action
+Animations
+View styles
+Documentation
+Open Menu
+Swift
+Type Property
+default
+A default animation instance.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static let `default`: Animation
+Discussion
+The default animation is spring(response:dampingFraction:blendDuration:) with:
+response equal to 0.55
+dampingFraction equal to 1.0
+blendDuration equal to 0.0
+Prior to iOS 17, macOS 14, tvOS 17, and watchOS 10, the default animation is easeInOut.
+The global function withAnimation(_:_:) uses the default animation if you don’t provide one. For instance, the following code listing shows an example of using the default animation to flip the text “Hello” each time someone clicks the Animate button.
+struct ContentView: View {
+    @State private var degrees = Double.zero
+
+
+    var body: some View {
+        VStack {
+            Spacer()
+            Text("Hello")
+                .font(.largeTitle)
+                .rotation3DEffect(.degrees(degrees), axis: (x: 0, y: 1, z: 0))
+
+
+            Spacer()
+            Button("Animate") {
+                withAnimation {
+                    degrees = (degrees == .zero) ? 180 : .zero
+                }
+            }
+        }
+    }
+}
+Play
+To use the default animation when adding the animation(_:value:) view modifier, specify it explicitly as the animation type. For instance, the following code shows an example of the default animation to spin the text “Hello” each time someone clicks the Animate button.
+struct ContentView: View {
+    @State private var degrees = Double.zero
+
+
+    var body: some View {
+        VStack {
+            Spacer()
+            Text("Hello")
+                .font(.largeTitle)
+                .rotationEffect(.degrees(degrees))
+                .animation(.default, value: degrees)
+
+
+            Spacer()
+            Button("Animate") {
+                degrees = (degrees == .zero) ? 360 : .zero
+            }
+        }
+    }
+}
+Play
+A default animation instance is only equal to other default animation instances (using ==), and not equal to other animation instances even when the animations are identical. For example, if you create an animation using the spring(response:dampingFraction:blendDuration:) modifier with the same parameter values that default uses, the animation isn’t equal to default. This behavior lets you differentiate between animations that you intentionally choose and those that use the default animation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is default
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

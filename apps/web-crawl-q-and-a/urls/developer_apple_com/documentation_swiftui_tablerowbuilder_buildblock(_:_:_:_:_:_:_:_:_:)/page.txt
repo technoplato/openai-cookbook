@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/tablerowbuilder/buildblock(_:_:_:_:_:_:_:_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7, C8, C9)>
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7, C8)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5)>
+M
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4)>
+M
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> TupleTableRowContent<Value, (C0, C1, C2, C3)>
+M
+static func buildBlock<C0, C1, C2>(C0, C1, C2) -> TupleTableRowContent<Value, (C0, C1, C2)>
+M
+static func buildBlock<C0, C1>(C0, C1) -> TupleTableRowContent<Value, (C0, C1)>
+M
+static func buildBlock<C>(C) -> C
+Documentation
+Open Menu
+Swift
+Type Method
+buildBlock(_:_:_:_:_:_:_:_:_:)
+Creates a row result from nine sources.
+iOS 16.0+
+iPadOS 16.0+
+macOS 12.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(
+    _ c0: C0,
+    _ c1: C1,
+    _ c2: C2,
+    _ c3: C3,
+    _ c4: C4,
+    _ c5: C5,
+    _ c6: C6,
+    _ c7: C7,
+    _ c8: C8
+) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7, C8)> where Value == C0.TableRowValue, C0 : TableRowContent, C1 : TableRowContent, C2 : TableRowContent, C3 : TableRowContent, C4 : TableRowContent, C5 : TableRowContent, C6 : TableRowContent, C7 : TableRowContent, C8 : TableRowContent, C0.TableRowValue == C1.TableRowValue, C1.TableRowValue == C2.TableRowValue, C2.TableRowValue == C3.TableRowValue, C3.TableRowValue == C4.TableRowValue, C4.TableRowValue == C5.TableRowValue, C5.TableRowValue == C6.TableRowValue, C6.TableRowValue == C7.TableRowValue, C7.TableRowValue == C8.TableRowValue
+Available when Value conforms to Identifiable.
+See Also
+Building a row from sources
+static func buildBlock<C>(C) -> C
+Creates a single row result.
+static func buildBlock<C0, C1>(C0, C1) -> TupleTableRowContent<Value, (C0, C1)>
+Creates a row result from two sources.
+Available when Value conforms to Identifiable.
+static func buildBlock<C0, C1, C2>(C0, C1, C2) -> TupleTableRowContent<Value, (C0, C1, C2)>
+Creates a row result from three sources.
+Available when Value conforms to Identifiable.
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> TupleTableRowContent<Value, (C0, C1, C2, C3)>
+Creates a row result from four sources.
+Available when Value conforms to Identifiable.
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4)>
+Creates a row result from five sources.
+Available when Value conforms to Identifiable.
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5)>
+Creates a row result from six sources.
+Available when Value conforms to Identifiable.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6)>
+Creates a row result from seven sources.
+Available when Value conforms to Identifiable.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7)>
+Creates a row result from eight sources.
+Available when Value conforms to Identifiable.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> TupleTableRowContent<Value, (C0, C1, C2, C3, C4, C5, C6, C7, C8, C9)>
+Creates a row result from ten sources.
+Available when Value conforms to Identifiable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is buildBlock(_:_:_:_:_:_:_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

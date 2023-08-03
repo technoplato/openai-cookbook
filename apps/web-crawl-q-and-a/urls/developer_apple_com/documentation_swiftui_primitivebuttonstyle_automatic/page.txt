@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/primitivebuttonstyle/automaticSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+LinkButtonStyle
+S
+CardButtonStyle
+S
+BorderlessButtonStyle
+S
+BorderedProminentButtonStyle
+S
+BorderedButtonStyle
+S
+AccessoryBarActionButtonStyle
+Beta
+S
+AccessoryBarButtonStyle
+Getting built-in button styles
+r
+P
+PrimitiveButtonStyle
+M
+func buttonStyle<S>(S) -> some View
+S
+ButtonStyleConfiguration
+r
+P
+ButtonStyle
+M
+func buttonStyle<S>(S) -> some View
+Styling buttons
+View styles
+Documentation
+Open Menu
+Swift
+Type Property
+automatic
+The default button style, based on the button’s context.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static var automatic: DefaultButtonStyle { get }
+Available when Self is DefaultButtonStyle.
+Discussion
+If you create a button directly on a blank canvas, the style varies by platform. iOS uses the borderless button style by default, whereas macOS, tvOS, and watchOS use the bordered button style.
+If you create a button inside a container, like a List, the style resolves to the recommended style for buttons inside that container for that specific platform.
+You can override a button’s style. To apply the default style to a button, or to a view that contains buttons, use the buttonStyle(_:) modifier.
+See Also
+Getting built-in button styles
+static var accessoryBar: AccessoryBarButtonStyle
+A button style that is typically used in the context of an accessory toolbar (sometimes refererred to as a “scope bar”), for buttons that narrow the focus of a search or other operation.
+Available when Self is AccessoryBarButtonStyle.
+Beta
+static var accessoryBarAction: AccessoryBarActionButtonStyle
+A button style that you use for extra actions in an accessory toolbar.
+Available when Self is AccessoryBarActionButtonStyle.
+Beta
+static var bordered: BorderedButtonStyle
+A button style that applies standard border artwork based on the button’s context.
+Available when Self is BorderedButtonStyle.
+static var borderedProminent: BorderedProminentButtonStyle
+A button style that applies standard border prominent artwork based on the button’s context.
+Available when Self is BorderedProminentButtonStyle.
+static var borderless: BorderlessButtonStyle
+A button style that doesn’t apply a border.
+Available when Self is BorderlessButtonStyle.
+static var card: CardButtonStyle
+A button style that doesn’t pad the content, and applies a motion effect when a button has focus.
+Available when Self is CardButtonStyle.
+static var link: LinkButtonStyle
+A button style for buttons that emulate links.
+Available when Self is LinkButtonStyle.
+static var plain: PlainButtonStyle
+A button style that doesn’t style or decorate its content while idle, but may apply a visual effect to indicate the pressed, focused, or enabled state of the button.
+Available when Self is PlainButtonStyle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is automatic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

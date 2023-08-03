@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/view/tabitem(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Images
+Text input and output
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+M
+func tabViewStyle<S>(S) -> some View
+S
+TabView
+Presenting views in tabs
+E
+SidebarRowSize
+P
+var sidebarRowSize: SidebarRowSize
+Configuring the sidebar
+S
+NavigationBarItem
+M
+func navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+tabItem(_:)
+Sets the tab bar item associated with this view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func tabItem<V>(@ViewBuilder _ label: () -> V) -> some View where V : View
+Parameters
+label
+The tab bar item to associate with this view.
+Discussion
+Use tabItem(_:) to configure a view as a tab bar item in a TabView. The example below adds two views as tabs in a TabView:
+struct View1: View {
+    var body: some View {
+        Text("View 1")
+    }
+}
+
+
+struct View2: View {
+    var body: some View {
+        Text("View 2")
+    }
+}
+
+
+struct TabItem: View {
+    var body: some View {
+        TabView {
+            View1()
+                .tabItem {
+                    Label("Menu", systemImage: "list.dash")
+                }
+
+
+            View2()
+                .tabItem {
+                    Label("Order", systemImage: "square.and.pencil")
+                }
+        }
+    }
+}
+See Also
+Presenting views in tabs
+struct TabView
+A view that switches between multiple child views using interactive user interface elements.
+func tabViewStyle<S>(S) -> some View
+Sets the style for the tab view within the current environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tabItem(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

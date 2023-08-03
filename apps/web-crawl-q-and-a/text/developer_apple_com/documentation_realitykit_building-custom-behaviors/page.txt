@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/realitykit/building-custom-behaviorsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Selecting an Anchor for a Reality Composer Scene
+Anchors
+Improving the Accessibility of RealityKit Apps
+Adding Procedural Assets to a Scene
+Manipulating Reality Composer Scenes from Code
+Arranging Elements in a Scene
+Configuring Elements in a Scene
+Adding Elements to a 3D Scene
+Documentation
+Open Menu
+Swift
+Building Custom Behaviors
+Create custom behaviors to control objects in your scene.
+Overview
+Behaviors are composed of two parts: a trigger and an action sequence. A behavior’s trigger defines how and when it fires, and the action sequence defines what actually happens when it does. Common triggers include an object being tapped by the user, coming into proximity with another object in the scene, or receiving a notification sent from code. Common actions include showing, hiding, and moving objects, and playing sounds.
+Behaviors give you a versatile way to add interactivity to a Reality Composer scene. To create your own new behavior, select the Custom option when adding a behavior. The behavior is added to your scene with no defined trigger or action sequence.
+Define a Trigger
+Every behavior must contain a trigger, which defines how and when that behavior fires. See Creating a Trigger.
+Build an Action Sequence
+A behavior’s action sequence defines what actually happens when the behavior fires. The sequence can consist of one or more actions that you configure to run sequentially or concurrently. See Adding Interactivity to Behaviors.
+Add Actions
+To add the first action to a sequence, tap or click the plus button next to the Action Sequence title, or in the dotted box below it, and choose one of the available actions from the popover that appears. If objects in your scene are selected when you add an action, the new action is automatically configured to affect the selected objects.
+If no objects are selected when you create the action, specify the objects that you want it to affect by using the Affected Object section at the top of the action. Tap or click the Choose button to go into selection mode, then click or tap the object or objects you want the action to affect. If an object is already selected, clicking or tapping it removes it from being affected by the action. When you’re finished, press the Done button to finalize your selection.
+For more information about using Reality Composer’s Actions, see Adding Interactivity to Behaviors.
+Configure Multiple Actions to Run Concurrently
+For many behaviors, a single action is all you’ll need, but you can also create complex action sequences by combining multiple actions in one sequence. By default, when you add another action to a sequence, it runs sequentially after the existing actions finish.
+Sometimes, you want two or more actions to run at the same time instead of running one after the other. For example, you might want one object to flip at the same time that a sound plays. To make multiple actions in a sequence run concurrently, drag one of the actions onto the other. The two actions’ boxes then combine into a single larger box, as shown in the following figure, indicating that they now run at the same time. To run additional actions simultaneously, drag more actions onto the larger box. To make concurrent actions sequential again, drag individual actions outside of the joined box.
+Topics
+Custom Behaviors
+Creating a Trigger
+Define when and how a behavior fires.
+Adding Interactivity to Behaviors
+Define what a behavior does by using actions.
+See Also
+Anchors
+Selecting an Anchor for a Reality Composer Scene
+Decide which anchor is right for your scenes.
+Current page is Building Custom Behaviors
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

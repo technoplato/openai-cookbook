@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/referencefiledocument/filewrapper(snapshot:configuration:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+RenameAction
+P
+var rename: RenameAction?
+M
+func renameAction(() -> Void) -> some View
+M
+func renameAction(FocusState<Bool>.Binding) -> some View
+S
+RenameButton
+Renaming a document
+S
+OpenDocumentAction
+func fileWrapper(snapshot: Self.Snapshot, configuration: Self.WriteConfiguration) throws -> FileWrapper
+Writing a document
+Snapshot
+M
+func snapshot(contentType: UTType) throws -> Self.Snapshot
+Getting a snapshot
+T
+ReferenceFileDocument.ReadConfiguration
+P
+static var readableContentTypes: [UTType]
+M
+init(configuration: Self.ReadConfiguration) throws
+Reading a document
+Documentation
+Open Menu
+Swift
+Instance Method
+fileWrapper(snapshot:configuration:)
+Serializes a document snapshot to a file wrapper.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+func fileWrapper(
+    snapshot: Self.Snapshot,
+    configuration: Self.WriteConfiguration
+) throws -> FileWrapper
+Required
+Parameters
+snapshot
+The document snapshot to save.
+configuration
+Information about a file that already exists for the document, if any.
+Return Value
+The destination to serialize the document contents to. The value can be a newly created FileWrapper or an update of the one provided in the configuration input.
+Discussion
+To store a document — for example, in response to a Save command — SwiftUI begins by calling the snapshot(contentType:) method to get a copy of the document data in its current state. Then SwiftUI passes that snapshot to this method, where you serialize it and create or modify a file wrapper with the serialized data:
+func fileWrapper(snapshot: Snapshot, configuration: WriteConfiguration) throws -> FileWrapper {
+    let data = try JSONEncoder().encode(snapshot)
+    return FileWrapper(regularFileWithContents: data)
+}
+SwiftUI disables document edits during the snapshot to ensure that the document’s data remains coherent, but reenables edits during the serialization operation.
+Note
+SwiftUI calls this method on a background thread. Don’t make user interface changes from that thread.
+See Also
+Writing a document
+static var writableContentTypes: [UTType]
+The file types that the document supports saving or exporting to.
+Required Default implementation provided.
+typealias WriteConfiguration
+The configuration for writing document contents.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is fileWrapper(snapshot:configuration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

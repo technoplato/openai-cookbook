@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/realitykit/collisionfilterSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func != (Self, Self) -> Bool
+static func == (CollisionComponent, CollisionComponent) -> Bool
+Comparing Collision Components
+M
+static func registerComponent()
+Registering a Component Type
+C
+ShapeResource
+P
+var shapes: [ShapeResource]
+P
+var filter: CollisionFilter
+Filtering Collisions
+E
+CollisionComponent.Mode
+P
+var mode: CollisionComponent.Mode
+Setting the Collision Mode
+M
+init(shapes: [ShapeResource], mode: CollisionComponent.Mode, filter: CollisionFilter)
+Creating the Collision Component
+S
+CollisionComponent
+Documentation
+Open Menu
+Swift
+Structure
+CollisionFilter
+A set of masks that determine whether entities can collide during simulations.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+struct CollisionFilter
+Overview
+Use Collision filters in combination with collision groups to define which entities collide with which other entities in a scene. For more information on using collision filters, see CollisionGroup
+Topics
+Creating a Collision Filter
+init(group: CollisionGroup, mask: CollisionGroup)
+Creates a collision filter.
+static let `default`: CollisionFilter
+The default collision filter.
+static let sensor: CollisionFilter
+A collision filter for an entity that collides with everything.
+Customizing Groups
+var group: CollisionGroup
+The collision group or groups, stored as a bit mask, to which the entity belongs.
+var mask: CollisionGroup
+The collision group or groups, stored as a bitmask, with which the entity can collide.
+struct CollisionGroup
+A bitmask used to define the collision group to which an entity belongs.
+Comparing Collision Filters
+static func == (CollisionFilter, CollisionFilter) -> Bool
+Indicates whether two collision filters are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two collision filters are not equal.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+See Also
+Simulation
+Designing Scene Hierarchies for Efficient Physics Simulation
+Configure your RealityKit scenes to avoid performance bottlenecks.
+Handling Different-Sized Objects in Physics Simulations
+Set up a scene hierarchy for accurate physics simulations.
+struct CollisionComponent
+A component that gives an entity the ability to collide with other entities that also have collision components.
+struct CollisionGroup
+A bitmask used to define the collision group to which an entity belongs.
+struct ParticleEmitterComponent
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CollisionFilter
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

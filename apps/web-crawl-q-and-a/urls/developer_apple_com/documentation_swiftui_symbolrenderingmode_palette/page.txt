@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/symbolrenderingmode/paletteSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+System events
+Focus
+Drag and drop
+Clipboard
+Input events
+Gestures
+Event handling
+P
+static let multicolor: SymbolRenderingMode
+P
+static let monochrome: SymbolRenderingMode
+P
+static let hierarchical: SymbolRenderingMode
+Getting symbol rendering modes
+S
+SymbolRenderingMode
+P
+var symbolRenderingMode: SymbolRenderingMode?
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> some View
+Setting symbol rendering modes
+Documentation
+Open Menu
+Swift
+Type Property
+palette
+A mode that renders symbols as multiple layers, with different styles applied to the layers.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static let palette: SymbolRenderingMode
+Discussion
+In this mode SwiftUI maps each successively defined layer in the image to the next of the primary, secondary, and tertiary variants of the foreground style. You can specify these styles explicitly using the foregroundStyle(_:_:) and foregroundStyle(_:_:_:) modifiers. If you only specify a primary foreground style, SwiftUI automatically derives the others from that style. For example, you can render a filled exclamation mark triangle with yellow as the tint color for the exclamation mark, and fill the triangle with cyan:
+Image(systemName: "exclamationmark.triangle.fill")
+    .symbolRenderingMode(.palette)
+    .foregroundStyle(Color.yellow, Color.cyan)
+You can also omit the symbol rendering mode, as specifying multiple foreground styles implies switching to palette rendering mode:
+Image(systemName: "exclamationmark.triangle.fill")
+    .foregroundStyle(Color.yellow, Color.cyan)
+See Also
+Getting symbol rendering modes
+static let hierarchical: SymbolRenderingMode
+A mode that renders symbols as multiple layers, with different opacities applied to the foreground style.
+static let monochrome: SymbolRenderingMode
+A mode that renders symbols as a single layer filled with the foreground style.
+static let multicolor: SymbolRenderingMode
+A mode that renders symbols as multiple layers with their inherit styles.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is palette
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

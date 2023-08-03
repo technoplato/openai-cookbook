@@ -1,0 +1,203 @@
+https://developer.apple.com/documentation/realitykit/boundingboxSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func intersects(BoundingBox) -> Bool
+M
+func contains(SIMD3<Float>) -> Bool
+M
+func contains(BoundingBox) -> Bool
+Checking for Overlap
+M
+func formUnion(SIMD3<Float>)
+M
+func union(SIMD3<Float>) -> BoundingBox
+M
+func formUnion(BoundingBox)
+P
+var bounds: BoundingBox
+Getting a Bounding Box
+S
+MeshResource.Contents
+P
+var contents: MeshResource.Contents
+Accessing Resource Data
+M
+func replaceAsync(with: MeshResource.Contents) -> LoadRequest<MeshResource>
+M
+func replace(with: MeshResource.Contents) throws
+P
+var expectedMaterialCount: Int
+Documentation
+Open Menu
+Swift
+Structure
+BoundingBox
+An axis-aligned bounding box (AABB).
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@frozen
+struct BoundingBox
+Topics
+Creating a Bounding Box
+init()
+Creates an empty bounding box.
+init(min: SIMD3<Float>, max: SIMD3<Float>)
+Creates a bounding box with the given settings.
+Getting an Empty Box
+static let empty: BoundingBox
+An empty bounding box.
+var isEmpty: Bool
+A Boolean that indicates whether the bounding box is empty.
+Getting the Box Characteristics
+var max: SIMD3<Float>
+The position of the maximum corner of the box.
+var min: SIMD3<Float>
+The position of the minimum corner of the box.
+var center: SIMD3<Float>
+The center of the bounding box.
+var extents: SIMD3<Float>
+The extents of the bounding box.
+var boundingRadius: Float
+The radius of a bounding sphere that encompasses the bounding box.
+Expanding Boxes
+func union(BoundingBox) -> BoundingBox
+Creates a bounding box containing the current bounds and the specified bounds.
+func formUnion(BoundingBox)
+Expands the bounding box to contain the specified bounds.
+func union(SIMD3<Float>) -> BoundingBox
+Creates a bounding box containing the current bounds and the specified point.
+func formUnion(SIMD3<Float>)
+Expands the bounding box to contain the specified point.
+Checking for Overlap
+func contains(BoundingBox) -> Bool
+Checks whether the bounding box contains the specified bounds.
+func contains(SIMD3<Float>) -> Bool
+Checks whether the bounding box contains the specified point.
+func intersects(BoundingBox) -> Bool
+Checks whether the bounding box intersects the specified bounds.
+Checking for Separation
+func distanceSquared(toPoint: SIMD3<Float>) -> Float
+Calculates the distance from a point to the bounding box.
+Transforming a Bounding Box
+func transform(by: float4x4)
+Transforms the bounding box.
+func transformed(by: float4x4) -> BoundingBox
+Transforms the bounding box and finds the bounds of the result.
+Comparing Bounding Boxes
+static func == (BoundingBox, BoundingBox) -> Bool
+Indicates whether two bounding boxes are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two bounding boxes are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the bounding box by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the bounding box.
+Initializers
+init(Rect3D)
+Beta
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Getting a Bounding Box
+var bounds: BoundingBox
+A box that bounds the mesh.
+struct OrientedBoundingBox
+Representation for an oriented bounding box. Uses a combination of an axis-aligned bounding box and a rotation vector around the centroid of the said axis-aligned bounding box to represent an oriented bounding box.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is BoundingBox
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

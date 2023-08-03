@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/swiftui/immersive-spacesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+Navigation
+Documents
+Windows
+Scenes
+App organization
+App structure
+SwiftUI updates
+Exploring SwiftUI Sample Apps
+Learning SwiftUI
+Introducing SwiftUI
+Documentation
+Open Menu
+Swift
+Immersive spaces
+Display unbounded content in a person’s surroundings.
+Overview
+Use an immersive space to present SwiftUI views outside of any containers. You can include any views in a space, although you typically use a RealityView to present RealityKit content.
+You can request one of three styles of spaces with the immersionStyle(selection:in:) scene modifier:
+The mixed style blends your content with passthrough. This enables you to place virtual objects in a person’s surroundings.
+The full style displays only your content, with passthrough turned off. This enables you to completely control the visual experience, like when you want to transport people to a new world.
+The progressive style completely replaces passthrough in a portion of the display. You might use this style to keep people grounded in the real world while displaying a view into another world.
+When you open an immersive space, the system continues to display all of your app’s windows, but hides windows from other apps. The system supports displaying only one space at a time across all apps, so your app can only open a space if one isn’t already open.
+Topics
+Creating an immersive space
+struct ImmersiveSpace
+A scene that presents its content in an unbounded space.
+Beta
+struct ImmersiveSpaceContentBuilder
+A result builder for composing a collection of immersive space elements.
+Beta
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Sets the allowed styles for the immersive space.
+Beta
+protocol ImmersionStyle
+The styles that an immersive space can have.
+Beta
+Opening an immersive space
+var openImmersiveSpace: OpenImmersiveSpaceAction
+An action that presents an immersive space.
+Beta
+struct OpenImmersiveSpaceAction
+An action that presents an immersive space.
+Beta
+Closing the immersive space
+var dismissImmersiveSpace: DismissImmersiveSpaceAction
+An immersive space dismissal action stored in a view’s environment.
+Beta
+struct DismissImmersiveSpaceAction
+An action that dismisses an immersive space.
+Beta
+Hiding upper limbs during immersion
+func upperLimbVisibility(Visibility) -> some Scene
+Sets the preferred visibility of the user’s upper limbs, while an ImmersiveSpace scene is presented.
+Beta
+func upperLimbVisibility(Visibility) -> some View
+Sets the preferred visibility of the user’s upper limbs, while an ImmersiveSpace scene is presented.
+Beta
+See Also
+App structure
+API Reference
+App organization
+Define the entry point and top-level structure of your app.
+API Reference
+Scenes
+Declare the user interface groupings that make up the parts of your app.
+API Reference
+Windows
+Display user interface content in a window or a collection of windows.
+API Reference
+Documents
+Enable people to open and manage documents.
+API Reference
+Navigation
+Enable people to move between different parts of your app’s view hierarchy within a scene.
+API Reference
+Modal presentations
+Present content in a separate view that offers focused interaction.
+API Reference
+Toolbars
+Provide immediate access to frequently used commands and controls.
+API Reference
+Search
+Enable people to search for text or other content within your app.
+API Reference
+App extensions
+Extend your app’s basic functionality to other parts of the system, like by adding a Widget.
+Current page is Immersive spaces
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

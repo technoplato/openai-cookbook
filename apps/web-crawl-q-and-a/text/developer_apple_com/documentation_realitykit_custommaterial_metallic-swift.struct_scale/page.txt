@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/metallic-swift.struct/scaleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Specifying Metallic Reflections
+P
+var metallic: CustomMaterial.Metallic
+S
+CustomMaterial.Metallic
+Creating a Metallic Object
+M
+init(floatLiteral: Float)
+M
+init(scale: Float, texture: CustomMaterial.Texture?)
+M
+init(PhysicallyBasedMaterial.Metallic)
+Accessing Metallic Data
+P
+var blending: CustomMaterial.Blending
+E
+CustomMaterial.Blending
+S
+CustomMaterial.Opacity
+Using Ambient Occlusion
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+S
+CustomMaterial.AmbientOcclusion
+Creating Highlights
+Documentation
+Open Menu
+Swift
+Instance Property
+scale
+The reflectiveness value for the entire entity or a multiplier for the metallic texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var scale: Float
+Discussion
+This property is an input to your material’s surface shader. Although you can choose how to use the scale value in your shader, RealityKit provides this property to control the reflectiveness of the entire entity when there’s no texture, or to function as a multiplier to the values you sample from the texture.
+See Also
+Accessing Metallic Data
+var texture: CustomMaterial.Texture?
+The reflectiveness as a UV-mapped image texture.
+typealias FloatLiteralType
+An alias for the metallic type that’s appropriate for this material class.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is scale
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

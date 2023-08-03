@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/swiftui/view/navigationbartitledisplaymode(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func navigationDocument<D>(D) -> some View
+M
+func navigationDocument(URL) -> some View
+M
+func navigationDocument<D, I>(D, preview: SharePreview<I, Never>) -> some View
+M
+func navigationDocument<D, I>(D, preview: SharePreview<Never, I>) -> some View
+M
+func navigationDocument<D>(D, preview: SharePreview<Never, Never>) -> some View
+M
+func navigationDocument<D, I1, I2>(D, preview: SharePreview<I1, I2>) -> some View
+Configuring the navigation bar
+M
+func navigationBarBackButtonHidden(Bool) -> some View
+Toolbars
+Search
+App extensions
+Data and storage
+Model data
+Environment values
+Preferences
+Documentation
+Open Menu
+Swift
+Instance Method
+navigationBarTitleDisplayMode(_:)
+Configures the title display mode for this view.
+iOS 14.0+
+iPadOS 14.0+
+Mac Catalyst 14.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func navigationBarTitleDisplayMode(_ displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Parameters
+displayMode
+The style to use for displaying the title.
+See Also
+Configuring the navigation bar
+func navigationBarBackButtonHidden(Bool) -> some View
+Hides the navigation bar back button for the view.
+struct NavigationBarItem
+A configuration for a navigation bar that represents a view at the top of a navigation stack.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigationBarTitleDisplayMode(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

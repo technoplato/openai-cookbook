@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/swiftui/view/task(id:priority:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+Images
+M
+func task(priority: TaskPriority, () async -> Void) -> some View
+M
+func onDisappear(perform: (() -> Void)?) -> some View
+M
+func onAppear(perform: (() -> Void)?) -> some View
+Responding to view life cycle updates
+r
+P
+EnvironmentalModifier
+S
+ModifiedContent
+S
+EmptyModifier
+r
+P
+ViewModifier
+Documentation
+Open Menu
+Swift
+Instance Method
+task(id:priority:_:)
+Adds a task to perform before this view appears or when a specified value changes.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func task<T>(
+    id value: T,
+    priority: TaskPriority = .userInitiated,
+    _ action: @escaping () async -> Void
+) -> some View where T : Equatable
+Parameters
+id
+The value to observe for changes. The value must conform to the Equatable protocol.
+priority
+The task priority to use when creating the asynchronous task. The default priority is doc://com.apple.documentation/documentation/Swift/TaskPriority/3851283-userInitiated.
+action
+A closure that SwiftUI calls as an asynchronous task before the view appears. SwiftUI can automatically cancel the task after the view disappears before the action completes. If the id value changes, SwiftUI cancels and restarts the task.
+Return Value
+A view that runs the specified action asynchronously before the view appears, or restarts the task with the id value changes.
+Discussion
+This method behaves like task(priority:_:), except that it also cancels and recreates the task when a specified value changes. To detect a change, the modifier tests whether a new value for the id parameter equals the previous value. For this to work, the value’s type must conform to the Equatable protocol.
+For example, if you define an equatable Server type that posts custom notifications whenever its state changes — for example, from signed out to signed in — you can use the task modifier to update the contents of a Text view to reflect the state of the currently selected server:
+Text(status ?? "Signed Out")
+    .task(id: server) {
+        let sequence = NotificationCenter.default.notifications(
+            named: .didChangeStatus,
+            object: server)
+        for try await notification in sequence {
+            status = notification.userInfo["status"] as? String
+        }
+    }
+This example uses the notifications(named:object:) method to wait indefinitely for an asynchronous sequence of notifications, given by an AsyncSequence instance.
+Elsewhere, the server defines a custom didUpdateStatus notification:
+extension NSNotification.Name {
+    static var didUpdateStatus: NSNotification.Name {
+        NSNotification.Name("didUpdateStatus")
+    }
+}
+The server then posts a notification of this type whenever its status changes, like after the user signs in:
+let notification = Notification(
+    name: .didUpdateStatus,
+    object: self,
+    userInfo: ["status": "Signed In"])
+NotificationCenter.default.post(notification)
+The task attached to the Text view gets and displays the status value from the notification’s user information dictionary. When the user chooses a different server, SwiftUI cancels the task and creates a new one, which then starts waiting for notifications from the new server.
+See Also
+Responding to view life cycle updates
+func onAppear(perform: (() -> Void)?) -> some View
+Adds an action to perform before this view appears.
+func onDisappear(perform: (() -> Void)?) -> some View
+Adds an action to perform after this view disappears.
+func task(priority: TaskPriority, () async -> Void) -> some View
+Adds an asynchronous task to perform before this view appears.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is task(id:priority:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

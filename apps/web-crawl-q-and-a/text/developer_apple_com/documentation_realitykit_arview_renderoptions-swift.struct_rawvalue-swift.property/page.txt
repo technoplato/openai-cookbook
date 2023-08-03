@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/realitykit/arview/renderoptions-swift.struct/rawvalue-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func isSuperset(of: Self) -> Bool
+M
+func isStrictSubset(of: Self) -> Bool
+M
+func isSubset(of: Self) -> Bool
+static func != (Self, Self) -> Bool
+Comparing Options
+M
+func formSymmetricDifference(Self)
+M
+func symmetricDifference(Self) -> Self
+T
+ARView.RenderOptions.RawValue
+M
+init(rawValue: UInt)
+T
+ARView.RenderOptions.ArrayLiteralElement
+T
+ARView.RenderOptions.Element
+M
+init(arrayLiteral: Self.Element...)
+M
+init<S>(S)
+M
+init()
+Creating an Option Set
+Documentation
+Open Menu
+Swift
+Instance Property
+rawValue
+The corresponding value of the raw type.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+let rawValue: UInt
+Discussion
+A new instance initialized with rawValue will be equivalent to this instance. For example:
+enum PaperSize: String {
+    case A4, A5, Letter, Legal
+}
+
+
+let selectedSize = PaperSize.Letter
+print(selectedSize.rawValue)
+// Prints "Letter"
+
+
+print(selectedSize == PaperSize(rawValue: selectedSize.rawValue)!)
+// Prints "true"
+See Also
+Creating an Option Set
+init()
+Creates an empty option set.
+Available when RawValue conforms to FixedWidthInteger.
+init<S>(S)
+Creates a new set from a finite sequence of items.
+init(arrayLiteral: Self.Element...)
+Creates a set containing the elements of the given array literal.
+Available when ArrayLiteralElement is Self.Element.
+typealias Element
+The element type of the option set.
+typealias ArrayLiteralElement
+The type of the elements of an array literal.
+init(rawValue: UInt)
+Creates a new option set from the given raw value.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+Current page is rawValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

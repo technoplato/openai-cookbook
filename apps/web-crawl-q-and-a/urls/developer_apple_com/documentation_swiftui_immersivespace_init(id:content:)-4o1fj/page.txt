@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/swiftui/immersivespace/init(id:content:)-4o1fjSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Immersive spaces
+Creating an immersive space
+S
+ImmersiveSpace
+Beta
+Creating an immersive space
+M
+init(content: () -> Content)
+M
+init<V>(content: () -> V)
+Identifying an immersive space
+M
+init(id: String, content: () -> Content)
+S
+ImmersiveSpaceContentBuilder
+M
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Beta
+r
+P
+ImmersionStyle
+Beta
+Opening an immersive space
+P
+var openImmersiveSpace: OpenImmersiveSpaceAction
+Beta
+S
+OpenImmersiveSpaceAction
+Beta
+Closing the immersive space
+Documentation
+Open Menu
+Swift
+Initializer
+init(id:content:)
+visionOS 1.0+ Beta
+init<V>(
+    id: String,
+    @ViewBuilder content: () -> V
+) where Content == ImmersiveSpaceViewContent<V>, Data == NoImmersiveSpaceData, V : View
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+See Also
+Identifying an immersive space
+init(id: String, content: () -> Content)
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(id:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

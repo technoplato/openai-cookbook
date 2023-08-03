@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/jointtransforms/partition(by:)-7kzocSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+M
+func index(of: Self.Element) -> Self.Index?
+Default Implementations
+BidirectionalCollection Implementations
+Collection Implementations
+Equatable Implementations
+MutableCollection Implementations
+Instance Methods
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+Games
+Happy Beam
+SwiftStrike: Creating a Game with RealityKit
+Creating a Game with Reality Composer
+Creating a game with scene understanding
+Character control
+Video Playback
+Documentation
+Open Menu
+Swift
+Instance Method
+partition(by:)
+Reorders the elements of the collection such that all the elements that match the given predicate are after all the elements that don’t match.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+mutating func partition(by belongsInSecondPartition: (Self.Element) throws -> Bool) rethrows -> Self.Index
+Available when Self conforms to BidirectionalCollection.
+Parameters
+belongsInSecondPartition
+A predicate used to partition the collection. All elements satisfying this predicate are ordered after all elements not satisfying it.
+Return Value
+The index of the first element in the reordered collection that matches belongsInSecondPartition. If no elements in the collection match belongsInSecondPartition, the returned index is equal to the collection’s endIndex.
+Discussion
+After partitioning a collection, there is a pivot index p where no element before p satisfies the belongsInSecondPartition predicate and every element at or after p satisfies belongsInSecondPartition. This operation isn’t guaranteed to be stable, so the relative ordering of elements within the partitions might change.
+In the following example, an array of numbers is partitioned by a predicate that matches elements greater than 30.
+var numbers = [30, 40, 20, 30, 30, 60, 10]
+let p = numbers.partition(by: { $0 > 30 })
+// p == 5
+// numbers == [30, 10, 20, 30, 30, 60, 40]
+The numbers array is now arranged in two partitions. The first partition, numbers[..<p], is made up of the elements that are not greater than 30. The second partition, numbers[p...], is made up of the elements that are greater than 30.
+let first = numbers[..<p]
+// first == [30, 10, 20, 30, 30]
+let second = numbers[p...]
+// second == [60, 40]
+Note that the order of elements in both partitions changed. That is, 40 appears before 60 in the original collection, but, after calling partition(by:), 60 appears before 40.
+Complexity
+O(n), where n is the length of the collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is partition(by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

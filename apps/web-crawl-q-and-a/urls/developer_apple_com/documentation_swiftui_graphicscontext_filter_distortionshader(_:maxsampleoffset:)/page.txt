@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/filter/distortionshader(_:maxsampleoffset:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func foregroundStyle<S>(S) -> some View
+M
+func border<S>(S, width: CGFloat) -> some View
+Styling content
+S
+Color
+M
+func tint(Color?) -> some View
+M
+func tint<S>(S?) -> some View
+Setting a color
+M
+static func colorShader(Shader) -> GraphicsContext.Filter
+Beta
+Using a custom Metal shader
+M
+static func projectionTransform(ProjectionTransform) -> GraphicsContext.Filter
+Adding a transformation
+M
+static func alphaThreshold(min: Double, max: Double, color: Color) -> GraphicsContext.Filter
+P
+static var luminanceToAlpha: GraphicsContext.Filter
+Adjusting opacity
+M
+static func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat, blendMode: GraphicsContext.BlendMode, options: GraphicsContext.ShadowOptions) -> GraphicsContext.Filter
+Documentation
+Open Menu
+Swift
+Type Method
+distortionShader(_:maxSampleOffset:)
+Returns a filter that applies shader as a geometric distortion effect on the location of each pixel.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+static func distortionShader(
+    _ shader: Shader,
+    maxSampleOffset: CGSize
+) -> GraphicsContext.Filter
+Parameters
+shader
+The shader to apply as a distortion effect.
+maxSampleOffset
+The maximum distance in each axis between the returned source pixel position and the destination pixel position, for all source pixels.
+Return Value
+A new filter that applies the shader as a distortion effect.
+Discussion
+For a shader function to act as a distortion effect it must have a function signature matching:
+[[ stitchable ]] float2 name(float2 position, args...)
+where position is the user-space coordinates of the destination pixel applied to the shader. args... should be compatible with the uniform arguments bound to shader. The function should return the user-space coordinates of the corresponding source pixel.
+See Also
+Using a custom Metal shader
+static func colorShader(Shader) -> GraphicsContext.Filter
+Returns a filter that applies shader to the color of each source pixel.
+Beta
+static func layerShader(Shader, maxSampleOffset: CGSize) -> GraphicsContext.Filter
+Returns a filter that applies shader to the contents of the source layer.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is distortionShader(_:maxSampleOffset:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

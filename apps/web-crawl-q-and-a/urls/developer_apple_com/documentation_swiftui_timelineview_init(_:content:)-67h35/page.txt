@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/timelineview/init(_:content:)-67h35Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PlaceholderContentView
+Beta
+S
+ContentTransition
+P
+var contentTransitionAddsDrawingGroup: Bool
+P
+var contentTransition: ContentTransition
+M
+func contentTransition(ContentTransition) -> some View
+S
+AnyTransition
+S
+AsymmetricTransition
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+Deprecated symbols
+S
+TimelineView.Context
+M
+init(Schedule, content: (TimelineViewDefaultContext) -> Content)
+Creating a timeline
+S
+TimelineView
+Updating watchOS apps with timelines
+Updating a view on a schedule
+S
+EmptyAnimatableData
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:content:)
+Creates a new timeline view that uses the given schedule.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init(
+    _ schedule: Schedule,
+    @ViewBuilder content: @escaping (TimelineView<Schedule, Content>.Context) -> Content
+)
+Available when Schedule conforms to TimelineSchedule and Content conforms to View.
+Deprecated
+Use init(_:content:) instead. The replacement initializer’s context closure takes a TimelineViewDefaultContext as its input rather than a TimelineView.Context to prevent introducing an unnecessary generic parameter dependency on the context type.
+Parameters
+schedule
+A schedule that produces a sequence of dates that indicate the instances when the view should update. Use a type that conforms to TimelineSchedule, like everyMinute, or a custom timeline schedule that you define.
+content
+A closure that generates view content at the moments indicated by the schedule. The closure takes an input of type TimelineView.Context that includes the date from the schedule that prompted the update, as well as a TimelineView.Context.Cadence value that the view can use to customize its appearance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

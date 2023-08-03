@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/springloadingbehavior(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+M
+func textContentType(UITextContentType?) -> some View
+M
+func textCase(Text.Case?) -> some View
+M
+func task(priority: TaskPriority, () async -> Void) -> some View
+M
+func task<T>(id: T, priority: TaskPriority, () async -> Void) -> some View
+M
+func tag<V>(V) -> some View
+M
+func tableStyle<S>(S) -> some View
+M
+func speechSpellsOutCharacters(Bool) -> some View
+M
+func speechAnnouncementsQueued(Bool) -> some View
+M
+func speechAlwaysIncludesPunctuation(Bool) -> some View
+M
+func speechAdjustedPitch(Double) -> some View
+M
+func simultaneousGesture<T>(T, including: GestureMask) -> some View
+M
+func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+M
+func sheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+springLoadingBehavior(_:)
+Sets the spring loading behavior this view.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func springLoadingBehavior(_ behavior: SpringLoadingBehavior) -> some View
+Parameters
+behavior
+Whether spring loading is enabled or not. If unspecified, the default behavior is .automatic.
+Discussion
+Spring loading refers to a view being activated during a drag and drop interaction. On iOS this can occur when pausing briefly on top of a view with dragged content. On macOS this can occur with similar brief pauses or on pressure-sensitive systems by “force clicking” during the drag. This has no effect on tvOS or watchOS.
+This is commonly used with views that have a navigation or presentation effect, allowing the destination to be revealed without pausing the drag interaction. For example, a button that reveals a list of folders that a dragged item can be dropped onto.
+Button {
+    showFolders = true
+} label: {
+    Label("Show Folders", systemImage: "folder")
+}
+.springLoadingBehavior(.enabled)
+Unlike disabled(_:), this modifier overrides the value set by an ancestor view rather than being unioned with it. For example, the below button would allow spring loading:
+HStack {
+    Button {
+        showFolders = true
+    } label: {
+        Label("Show Folders", systemImage: "folder")
+    }
+    .springLoadingBehavior(.enabled)
+
+
+    ...
+}
+.springLoadingBehavior(.disabled)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is springLoadingBehavior(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

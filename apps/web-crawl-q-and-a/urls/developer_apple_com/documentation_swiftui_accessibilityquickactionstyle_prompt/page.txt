@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/swiftui/accessibilityquickactionstyle/promptSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+UIKit integration
+AppKit integration
+Framework integration
+Accessible navigation
+Accessible descriptions
+M
+func accessibilityRespondsToUserInteraction(Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Managing interactivity
+func accessibilityZoomAction((AccessibilityZoomGestureAction) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityDirectTouch(Bool, options: AccessibilityDirectTouchOptions) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+P
+static var outline: AccessibilityQuickActionOutlineStyle
+Getting built-in menu styles
+r
+P
+AccessibilityQuickActionStyle
+M
+func accessibilityQuickAction<Style, Content>(style: Style, isActive: Binding<Bool>, content: () -> Content) -> some View
+M
+func accessibilityQuickAction<Style, Content>(style: Style, content: () -> Content) -> some View
+Offering Quick Actions to people
+E
+AccessibilityAdjustmentDirection
+S
+AccessibilityActionKind
+Documentation
+Open Menu
+Swift
+Type Property
+prompt
+A presentation style that displays a prompt to the user when the accessibility quick action is active.
+watchOS 9.0+
+static var prompt: AccessibilityQuickActionPromptStyle { get }
+Available when Self is AccessibilityQuickActionPromptStyle.
+Discussion
+The following example shows how to add an accessibilityQuickAction(style:content:) to pause and resume a workout.
+@State private var isPaused = false
+
+
+var body: some View {
+    WorkoutView(isPaused: $isPaused)
+        .accessibilityQuickAction(style: .prompt) {
+            Button(isPaused ? "Resume" : "Pause") {
+                isPaused.toggle()
+            }
+        }
+}
+See Also
+Getting built-in menu styles
+static var outline: AccessibilityQuickActionOutlineStyle
+A presentation style that animates an outline around the view when the accessibility quick action is active.
+Available when Self is AccessibilityQuickActionOutlineStyle.
+Current page is prompt
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

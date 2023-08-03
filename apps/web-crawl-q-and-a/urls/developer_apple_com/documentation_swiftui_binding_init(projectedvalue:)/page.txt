@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/binding/init(projectedvalue:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Managing user interface state
+S
+State
+S
+Bindable
+Beta
+S
+Binding
+Creating a binding
+M
+init?(Binding<Value?>)
+M
+init<V>(Binding<V>)
+M
+init<V>(Binding<V>)
+Creating model data
+Managing model data in your app
+Migrating from the Observable Object protocol to the Observable macro
+#
+macro Observable()
+Beta
+Monitoring data changes in your app
+S
+StateObject
+S
+ObservedObject
+Documentation
+Open Menu
+Swift
+Initializer
+init(projectedValue:)
+Creates a binding from the value of another binding.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+init(projectedValue: Binding<Value>)
+See Also
+Creating a binding
+init?(Binding<Value?>)
+Creates a binding by projecting the base value to an unwrapped value.
+init<V>(Binding<V>)
+Creates a binding by projecting the base value to an optional value.
+init<V>(Binding<V>)
+Creates a binding by projecting the base value to a hashable value.
+init(get: () -> Value, set: (Value, Transaction) -> Void)
+Creates a binding with a closure that reads from the binding value, and a closure that applies a transaction when writing to the binding value.
+init(get: () -> Value, set: (Value) -> Void)
+Creates a binding with closures that read and write the binding value.
+static func constant(Value) -> Binding<Value>
+Creates a binding with an immutable value.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(projectedValue:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

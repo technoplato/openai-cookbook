@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/realitykit/directionallightcomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+Beta
+Equatable Implementations
+Component Implementations
+Default Implementations
+static func != (Self, Self) -> Bool
+static func == (DirectionalLightComponent, DirectionalLightComponent) -> Bool
+Lighting
+S
+VideoPlayerComponent
+Beta
+S
+SynchronizationComponent
+r
+P
+TransientComponent
+S
+Transform
+S
+OpacityComponent
+Beta
+S
+BodyTrackingComponent
+S
+AdaptiveResolutionComponent
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+DirectionalLightComponent
+A component that defines a directional light source.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+struct DirectionalLightComponent
+Overview
+A directional light shines in the entithy’s forward direction (0, 0, -1). To orient a directional light, use HasTransform.look(at:from:upVector:).
+A directional light source can cast shadows. To enable shadows, create a DirectionalLightComponent.Shadow and assign it to HasDirectionalLight.shadow. To disable shadows set HasDirectionalLight.shadow to nil.
+Topics
+Creating a Directional Light
+init(color: DirectionalLightComponent.Color, intensity: Float, isRealWorldProxy: Bool)
+Creates a directional light with the given configuration.
+init(color: DirectionalLightComponent.Color, intensity: Float, isRealWorldProxy: Bool)
+Creates a directional light with the given configuration.
+Setting the Color
+var color: DirectionalLightComponent.Color
+A color for the directional light.
+var color: DirectionalLightComponent.Color
+A color for the directional light.
+typealias Color
+A platform-specific type used to define color for a directional light.
+Setting Intensity and Shadows
+var intensity: Float
+The intensity of the directional light, measured in lumen per square meter.
+struct Shadow
+Defines shadow characteristics for a directional light.
+var isRealWorldProxy: Bool
+A Boolean that you use to control whether the directional light operates as a proxy for a real-world light.
+Registering a Component Type
+static func registerComponent()
+Registers a new component type.
+Comparing Directional Light Components
+static func == (DirectionalLightComponent, DirectionalLightComponent) -> Bool
+Indicates whether two directional light components are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two directional light components are not equal.
+Default Implementations
+API Reference
+Component Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Component
+Equatable
+See Also
+Lighting
+struct ImageBasedLightComponent
+Beta
+struct ImageBasedLightReceiverComponent
+Beta
+struct GroundingShadowComponent
+Beta
+struct SpotLightComponent
+A component that defines a spotlight source.
+struct PointLightComponent
+A component that defines a point light source.
+Current page is DirectionalLightComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

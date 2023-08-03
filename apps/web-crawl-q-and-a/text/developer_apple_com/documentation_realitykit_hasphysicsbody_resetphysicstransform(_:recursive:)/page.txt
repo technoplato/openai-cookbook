@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/hasphysicsbody/resetphysicstransform(_:recursive:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+NetworkSendSystem
+Beta
+S
+NetworkReceiveSystem
+Beta
+C
+NetworkCompatibilityToken
+E
+SynchronizationEvents
+r
+P
+SynchronizationService
+C
+MultipeerConnectivityService
+Network Synchronization
+M
+func resetPhysicsTransform(recursive: Bool)
+Resetting Physics Simulations
+M
+func applyImpulse(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+M
+func applyAngularImpulse(SIMD3<Float>, relativeTo: Entity?)
+M
+func applyLinearImpulse(SIMD3<Float>, relativeTo: Entity?)
+Applying Impulses
+M
+func clearForcesAndTorques()
+M
+func addTorque(SIMD3<Float>, relativeTo: Entity?)
+Documentation
+Open Menu
+Swift
+Instance Method
+resetPhysicsTransform(_:recursive:)
+Resets the position and velocities of the simulated physics body.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+func resetPhysicsTransform(
+    _ transform: Transform,
+    recursive: Bool = true
+)
+Deprecated
+Will be hidden in RealityKit 2019.
+Discussion
+Call this method to change the transform applied to a body by physics simulation. This only matters for dynamic rigid bodies, with a mode of PhysicsBodyMode.dynamic. This is the only kind of body that’s affected by physics simulations. For all others, modify the entity’s transform property directly.
+Conversely, directly modifying the transform of a dynamic body has no effect because the physics simulation overwrites it on every frame.
+transform: The new transform to inject into the dynamic physics simulation of the entity.
+recursive: Apply the reset to child entities.
+See Also
+Resetting Physics Simulations
+func resetPhysicsTransform(recursive: Bool)
+Resets the position, orientation, and velocities of the simulated physics body.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is resetPhysicsTransform(_:recursive:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

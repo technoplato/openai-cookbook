@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/paletteselectioneffect(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func previewContext<C>(C) -> some View
+M
+func presentationDragIndicator(Visibility) -> some View
+M
+func presentationDetents(Set<PresentationDetent>, selection: Binding<PresentationDetent>) -> some View
+M
+func presentationDetents(Set<PresentationDetent>) -> some View
+M
+func presentationCornerRadius(CGFloat?) -> some View
+M
+func presentationContentInteraction(PresentationContentInteraction) -> some View
+M
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+M
+func padding(Edge.Set, CGFloat?) -> some View
+M
+func padding(CGFloat) -> some View
+M
+func padding(EdgeInsets) -> some View
+M
+func overlayPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View
+M
+func overlayPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+M
+func overlay<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+paletteSelectionEffect(_:)
+Specifies the selection effect to apply to a palette item.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+func paletteSelectionEffect(_ effect: PaletteSelectionEffect) -> some View
+Parameters
+effect
+The type of effect to apply when a palette item is selected.
+Discussion
+PaletteSelectionEffect/automatic applies the system’s default appearance when selected. When using un-tinted SF Symbols or template images, the current tint color is applied to the selected items’ image. If the provided SF Symbols have custom tints, a stroke is drawn around selected items.
+If you wish to provide a specific image (or SF Symbol) to indicate selection, use PaletteSelectionEffect/custom to forgo the system’s default selection appearance allowing the provided image to solely indicate selection instead.
+The following example creates a palette picker that disables the system selection behavior:
+Menu {
+    Picker("Palettes", selection: $selection) {
+        ForEach(palettes) { palette in
+            Label(palette.title, image: selection == palette ?
+                  "selected-palette" : "palette")
+            .tint(palette.tint)
+            .tag(palette)
+        }
+    }
+    .pickerStyle(.palette)
+    .paletteSelectionEffect(.custom)
+} label: {
+    ...
+}
+If a specific SF Symbol variant is preferable instead, use PaletteSelectionEffect/symbolVariant(_:).
+Menu {
+    ControlGroup {
+        ForEach(ColorTags.allCases) { colorTag in
+            Toggle(isOn: $selectedColorTags[colorTag]) {
+                Label(colorTag.name, systemImage: "circle")
+            }
+            .tint(colorTag.color)
+        }
+    }
+    .controlGroupStyle(.palette)
+    .paletteSelectionEffect(.symbolVariant(.fill))
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is paletteSelectionEffect(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

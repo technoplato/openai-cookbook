@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/arview/ray(through:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func scrollWheel(with: NSEvent)
+M
+func otherMouseUp(with: NSEvent)
+M
+func otherMouseDragged(with: NSEvent)
+M
+func otherMouseDown(with: NSEvent)
+M
+func rightMouseUp(with: NSEvent)
+M
+func rightMouseDragged(with: NSEvent)
+M
+func rightMouseDown(with: NSEvent)
+M
+func unproject(CGPoint, viewport: CGRect) -> SIMD3<Float>?
+M
+func unproject(CGPoint, ontoPlane: float4x4) -> SIMD3<Float>?
+M
+func unproject(CGPoint, ontoPlane: float4x4, relativeToCamera: Bool) -> SIMD3<Float>?
+M
+func project(SIMD3<Float>) -> CGPoint?
+Mapping Between Coordinate Spaces
+r
+P
+EntityGestureRecognizer
+C
+EntityTranslationGestureRecognizer
+C
+EntityScaleGestureRecognizer
+Documentation
+Open Menu
+Swift
+Instance Method
+ray(through:)
+Determines the position and direction of a ray through the given point in the 2D space of the view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+@MainActor
+func ray(through screenPoint: CGPoint) -> (origin: SIMD3<Float>, direction: SIMD3<Float>)?
+Parameters
+screenPoint
+A point in the view’s coordinate system.
+Return Value
+A tuple that represents a ray in AR coordinates that goes from the camera origin through the specified point on the screen.
+See Also
+Mapping Between Coordinate Spaces
+func project(SIMD3<Float>) -> CGPoint?
+Projects a point from the 3D world coordinate system of the scene to the 2D pixel coordinate system of the view.
+func unproject(CGPoint, ontoPlane: float4x4, relativeToCamera: Bool) -> SIMD3<Float>?
+Unproject a 2D point from the view onto a plane in 3D world coordinates.
+func unproject(CGPoint, ontoPlane: float4x4) -> SIMD3<Float>?
+Maps a 2D point from the view’s coordinate system onto the given plane in 3D space.
+func unproject(CGPoint, viewport: CGRect) -> SIMD3<Float>?
+Maps a 2D point from the pixel coordinate system of a viewport into a 3D coordinate space.
+Current page is ray(through:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

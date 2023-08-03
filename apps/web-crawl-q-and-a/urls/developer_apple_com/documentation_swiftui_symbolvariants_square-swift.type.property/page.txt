@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/symbolvariants/square-swift.type.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Rendering images from views
+S
+SymbolRenderingMode
+P
+var symbolRenderingMode: SymbolRenderingMode?
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> some View
+Setting symbol rendering modes
+S
+SymbolEffectTransition
+Beta
+M
+func symbolEffectsRemoved(Bool) -> some View
+P
+static let circle: SymbolVariants
+P
+static let none: SymbolVariants
+Getting symbol variants
+S
+SymbolVariants
+P
+var symbolVariants: SymbolVariants
+M
+func symbolVariant(SymbolVariants) -> some View
+Setting a symbol variant
+E
+AsyncImagePhase
+Documentation
+Open Menu
+Swift
+Type Property
+square
+A variant that encapsulates the symbol in a square.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static let square: SymbolVariants
+Discussion
+Use this variant with a call to the symbolVariant(_:) modifier to draw symbols in a square, for those symbols that have a square variant:
+VStack(spacing: 20) {
+    HStack(spacing: 20) {
+        Image(systemName: "flag")
+        Image(systemName: "heart")
+        Image(systemName: "bolt")
+        Image(systemName: "star")
+    }
+    HStack(spacing: 20) {
+        Image(systemName: "flag")
+        Image(systemName: "heart")
+        Image(systemName: "bolt")
+        Image(systemName: "star")
+    }
+    .symbolVariant(.square)
+}
+See Also
+Getting symbol variants
+static let none: SymbolVariants
+No variant for a symbol.
+static let circle: SymbolVariants
+A variant that encapsulates the symbol in a circle.
+static let rectangle: SymbolVariants
+A variant that encapsulates the symbol in a rectangle.
+static let fill: SymbolVariants
+A variant that fills the symbol.
+static let slash: SymbolVariants
+A variant that draws a slash through the symbol.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is square
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

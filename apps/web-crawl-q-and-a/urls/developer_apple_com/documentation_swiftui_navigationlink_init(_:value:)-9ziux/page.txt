@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/navigationlink/init(_:value:)-9ziuxSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func navigationSubtitle(Text) -> some View
+M
+func navigationSubtitle<S>(S) -> some View
+M
+func navigationTitle(Binding<String>) -> some View
+M
+func navigationTitle<V>(() -> V) -> some View
+M
+func navigationTitle<S>(S) -> some View
+M
+func navigationTitle(Text) -> some View
+M
+func navigationTitle(LocalizedStringKey) -> some View
+M
+init<P>(LocalizedStringKey, value: P?)
+Presenting a codable value
+M
+init<P>(value: P?, label: () -> Label)
+M
+init<S, P>(S, value: P?)
+M
+init<P>(LocalizedStringKey, value: P?)
+Presenting a data value
+M
+init(destination: () -> Destination, label: () -> Label)
+M
+init<S>(S, destination: () -> Destination)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:value:)
+Creates a navigation link that presents the view corresponding to a codable value, with a text label that the link generates from a title string.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<S, P>(
+    _ title: S,
+    value: P?
+) where Label == Text, S : StringProtocol, P : Decodable, P : Encodable, P : Hashable
+Available when Label conforms to View and Destination is Never.
+Parameters
+title
+A string that describes the view that this link presents.
+value
+An optional value to present. When the user selects the link, SwiftUI stores a copy of the value. Pass a nil value to disable the link.
+Discussion
+When someone activates the navigation link that this initializer creates, SwiftUI looks for a nearby navigationDestination(for:destination:) view modifier with a data input parameter that matches the type of this initializer’s value input, with one of the following outcomes:
+If SwiftUI finds a matching modifier within the view hierarchy of an enclosing NavigationStack, it pushes the modifier’s corresponding destination view onto the stack.
+If SwiftUI finds a matching modifier in the view hierarchy of a stack that’s in a later column of a NavigationSplitView, it puts the modifier’s destination view as the first and only item onto the stack while preserving the stack’s root view.
+If there’s no matching modifier, but the link appears in a List with selection inside a leading column of a navigation split view, the link updates the selection, which might affect the appearance of a trailing view. For an example of this, see NavigationLink.
+In other cases, the link doesn’t do anything.
+Because this initializer takes a value that conforms to the Codable protocol, you ensure that a NavigationPath that includes this link can produce a non-nil value for its codable property. This helps to make the path serializable.
+See Also
+Presenting a codable value
+init<P>(LocalizedStringKey, value: P?)
+Creates a navigation link that presents the view corresponding to a codable value, with a text label that the link generates from a localized string key.
+Available when Label conforms to View and Destination is Never.
+init<P>(value: P?, label: () -> Label)
+Creates a navigation link that presents the view corresponding to a codable value.
+Available when Label conforms to View and Destination is Never.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:value:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

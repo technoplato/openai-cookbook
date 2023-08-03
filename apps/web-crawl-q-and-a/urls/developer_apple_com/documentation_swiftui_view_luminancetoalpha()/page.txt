@@ -1,0 +1,186 @@
+https://developer.apple.com/documentation/swiftui/view/luminancetoalpha()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func projectionEffect(ProjectionTransform) -> some View
+M
+func transform3DEffect(AffineTransform3D) -> some View
+Beta
+M
+func transformEffect(CGAffineTransform) -> some View
+M
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Beta
+M
+func rotation3DEffect(Angle, axis: RotationAxis3D, anchor: UnitPoint3D) -> some View
+Beta
+M
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D) -> some View
+Beta
+M
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+M
+func hueRotation(Angle) -> some View
+M
+func grayscale(Double) -> some View
+M
+func saturation(Double) -> some View
+M
+func colorMultiply(Color) -> some View
+M
+func colorInvert() -> some View
+M
+func contrast(Double) -> some View
+M
+func brightness(Double) -> some View
+Transforming colors
+Documentation
+Open Menu
+Swift
+Instance Method
+luminanceToAlpha()
+Adds a luminance to alpha effect to this view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func luminanceToAlpha() -> some View
+Return Value
+A view with the luminance to alpha effect applied.
+Discussion
+Use this modifier to create a semitransparent mask, with the opacity of each part of the modified view controlled by the luminance of the corresponding part of the original view. Regions of lower luminance become more transparent, while higher luminance yields greater opacity.
+In particular, the modifier maps the red, green, and blue components of each input pixel’s color to a grayscale value, and that value becomes the alpha component of a black pixel in the output. This modifier produces an effect that’s equivalent to using the feColorMatrix filter primitive with the luminanceToAlpha type attribute, as defined by the Scalable Vector Graphics (SVG) 2 specification.
+The example below defines a Palette view as a series of rectangles, each composed as a Color with a particular white value, and then displays two versions of the palette over a blue background:
+struct Palette: View {
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(0..<10) { index in
+                Color(white: Double(index) / Double(9))
+                    .frame(width: 20, height: 40)
+            }
+        }
+    }
+}
+
+
+struct LuminanceToAlphaExample: View {
+    var body: some View {
+        VStack(spacing: 20) {
+            Palette()
+
+
+            Palette()
+                .luminanceToAlpha()
+        }
+        .padding()
+        .background(.blue)
+    }
+}
+The unmodified version of the palette contains rectangles that range from solid black to solid white, thus with increasing luminance. The second version of the palette, which has the luminanceToAlpha() modifier applied, allows the background to show through in an amount that corresponds inversely to the luminance of the input.
+See Also
+Transforming colors
+func brightness(Double) -> some View
+Brightens this view by the specified amount.
+func contrast(Double) -> some View
+Sets the contrast and separation between similar colors in this view.
+func colorInvert() -> some View
+Inverts the colors in this view.
+func colorMultiply(Color) -> some View
+Adds a color multiplication effect to this view.
+func saturation(Double) -> some View
+Adjusts the color saturation of this view.
+func grayscale(Double) -> some View
+Adds a grayscale effect to this view.
+func hueRotation(Angle) -> some View
+Applies a hue rotation effect to this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is luminanceToAlpha()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

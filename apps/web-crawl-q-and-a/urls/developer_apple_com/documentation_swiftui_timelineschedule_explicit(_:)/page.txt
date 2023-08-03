@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/timelineschedule/explicit(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func transition<T>(T) -> some View
+Beta
+Defining transitions
+M
+func geometryGroup() -> some View
+Beta
+S
+Namespace
+r
+P
+GeometryEffect
+S
+MatchedGeometryProperties
+M
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+P
+static var everyMinute: EveryMinuteTimelineSchedule
+M
+static func animation(minimumInterval: Double?, paused: Bool) -> AnimationTimelineSchedule
+P
+static var animation: AnimationTimelineSchedule
+Getting built-in schedules
+r
+P
+TimelineSchedule
+S
+TimelineView
+Updating watchOS apps with timelines
+Updating a view on a schedule
+Documentation
+Open Menu
+Swift
+Type Method
+explicit(_:)
+A schedule for updating a timeline view at explicit points in time.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static func explicit<S>(_ dates: S) -> ExplicitTimelineSchedule<S> where Self == ExplicitTimelineSchedule<S>, S : Sequence, S.Element == Date
+Parameters
+dates
+The sequence of dates at which a timeline view updates. Use a monotonically increasing sequence of dates, and ensure that at least one is in the future.
+Discussion
+Initialize a TimelineView with an explicit timeline schedule when you want to schedule view updates at particular points in time:
+let dates = [
+    Date(timeIntervalSinceNow: 10), // Update ten seconds from now,
+    Date(timeIntervalSinceNow: 12) // and a few seconds later.
+]
+
+
+struct MyView: View {
+    var body: some View {
+        TimelineView(.explicit(dates)) { context in
+            Text(context.date.description)
+        }
+    }
+}
+The timeline view updates its content on exactly the dates that you specify, until it runs out of dates, after which it stops changing. If the dates you provide are in the past, the timeline view updates exactly once with the last entry. If you only provide dates in the future, the timeline view renders with the current date until the first date arrives. If you provide one or more dates in the past and one or more in the future, the view renders the most recent past date, refreshing normally on all subsequent dates.
+See Also
+Getting built-in schedules
+static var animation: AnimationTimelineSchedule
+A pausable schedule of dates updating at a frequency no more quickly than the provided interval.
+Available when Self is AnimationTimelineSchedule.
+static func animation(minimumInterval: Double?, paused: Bool) -> AnimationTimelineSchedule
+A pausable schedule of dates updating at a frequency no more quickly than the provided interval.
+Available when Self is AnimationTimelineSchedule.
+static var everyMinute: EveryMinuteTimelineSchedule
+A schedule for updating a timeline view at the start of every minute.
+Available when Self is EveryMinuteTimelineSchedule.
+static func periodic(from: Date, by: TimeInterval) -> PeriodicTimelineSchedule
+A schedule for updating a timeline view at regular intervals.
+Available when Self is PeriodicTimelineSchedule.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is explicit(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

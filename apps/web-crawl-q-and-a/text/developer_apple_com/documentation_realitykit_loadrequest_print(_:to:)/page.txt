@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/print(_:to:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Loading Entities from a File
+M
+static func loadBodyTrackedAsync(contentsOf: URL, withName: String?) -> LoadRequest<BodyTrackedEntity>
+M
+static func loadBodyTrackedAsync(named: String, in: Bundle?) -> LoadRequest<BodyTrackedEntity>
+M
+static func loadBodyTracked(contentsOf: URL, withName: String?) throws -> BodyTrackedEntity
+M
+static func loadBodyTracked(named: String, in: Bundle?) throws -> BodyTrackedEntity
+Loading a Flattened Body-Tracked Entity
+M
+static func loadModelAsync(contentsOf: URL, withName: String?) -> LoadRequest<ModelEntity>
+M
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+M
+func breakpointOnError() -> Publishers.Breakpoint<Self>
+M
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+Debugging
+M
+func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+Connecting Simple Subscribers
+M
+func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>
+M
+func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>
+Documentation
+Open Menu
+Swift
+Instance Method
+print(_:to:)
+Prints log messages for all publishing events.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func print(
+    _ prefix: String = "",
+    to stream: (TextOutputStream)? = nil
+) -> Publishers.Print<Self>
+Parameters
+prefix
+A string —- which defaults to empty -— with which to prefix all log messages.
+stream
+A stream for text output that receives messages, and which directs output to the console by default. A custom stream can be used to log messages to other destinations.
+Return Value
+A publisher that prints log messages for all publishing events.
+Discussion
+Use Publisher/print(_:to:) to log messages the console.
+In the example below, log messages are printed on the console:
+let integers = (1...2)
+cancellable = integers.publisher
+   .print("Logged a message", to: nil)
+   .sink { _ in }
+
+
+// Prints:
+//  Logged a message: receive subscription: (1..<2)
+//  Logged a message: request unlimited
+//  Logged a message: receive value: (1)
+//  Logged a message: receive finished
+See Also
+Debugging
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+Raises a debugger signal when a provided closure needs to stop the process in the debugger.
+func breakpointOnError() -> Publishers.Breakpoint<Self>
+Raises a debugger signal upon receiving a failure.
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+Performs the specified closures when publisher events occur.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is print(_:to:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

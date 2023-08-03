@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/swiftui/snapshotresponseSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Restoring Your App’s State with SwiftUI
+M
+func userActivity<P>(String, element: P?, (P, NSUserActivity) -> ()) -> some View
+M
+func userActivity(String, isActive: Bool, (NSUserActivity) -> ()) -> some View
+M
+func onContinueUserActivity(String, perform: (NSUserActivity) -> ()) -> some View
+Handling background tasks
+M
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some Scene
+S
+BackgroundTask
+S
+SnapshotData
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+Handling external events
+M
+func handlesExternalEvents(preferring: Set<String>, allowing: Set<String>) -> some View
+Accessibility
+Accessibility fundamentals
+Accessible appearance
+Accessible controls
+Accessible descriptions
+Documentation
+Open Menu
+Swift
+Structure
+SnapshotResponse
+Your appplication’s response to a snapshot background task.
+watchOS 9.0+
+struct SnapshotResponse
+Topics
+Creating a response
+init(restoredDefaultState: Bool, estimatedSnapshotExpiration: Date?, identifier: String?)
+Creates a snapshot response.
+Relationships
+Conforms To
+Sendable
+See Also
+Handling background tasks
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some Scene
+Runs the specified action when the system provides a background task.
+struct BackgroundTask
+The kinds of background tasks that your app or extension can handle.
+struct SnapshotData
+The associated data of a snapshot background task.
+Current page is SnapshotResponse
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

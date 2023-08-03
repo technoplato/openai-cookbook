@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/accessibilitycomponent/supportedactions/optionset-implementationsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var customRotorsRawValue: [AccessibilityComponent.RotorTypeInternal]
+P
+var customRotors: [AccessibilityComponent.RotorType]
+Identifying the next element
+S
+AccessibilityComponent.CustomContent
+P
+var customContent: [AccessibilityComponent.CustomContent]
+P
+var customActions: [LocalizedStringResource]
+Specifying custom data
+Equatable Implementations
+Default Implementations
+P
+static let increment: AccessibilityComponent.SupportedActions
+P
+static let decrement: AccessibilityComponent.SupportedActions
+P
+static let activate: AccessibilityComponent.SupportedActions
+Type Properties
+T
+AccessibilityComponent.SupportedActions.RawValue
+T
+AccessibilityComponent.SupportedActions.Element
+Documentation
+Open Menu
+Swift
+OptionSet Implementations
+Topics
+Initializers
+init()
+Creates an empty option set.
+Available when RawValue conforms to FixedWidthInteger.
+Instance Methods
+func contains(Self) -> Bool
+Returns a Boolean value that indicates whether a given element is a member of the option set.
+Available when Self is Self.Element.
+func formIntersection(Self)
+Removes all elements of this option set that are not also present in the given set.
+Available when RawValue conforms to FixedWidthInteger.
+func formSymmetricDifference(Self)
+Replaces this set with a new set containing all elements contained in either this set or the given set, but not in both.
+Available when RawValue conforms to FixedWidthInteger.
+func formUnion(Self)
+Inserts the elements of another set into this option set.
+Available when RawValue conforms to FixedWidthInteger.
+func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)
+Adds the given element to the option set if it is not already a member.
+Available when Self is Self.Element.
+func intersection(Self) -> Self
+Returns a new option set with only the elements contained in both this set and the given set.
+func remove(Self.Element) -> Self.Element?
+Removes the given element and all elements subsumed by it.
+Available when Self is Self.Element.
+func symmetricDifference(Self) -> Self
+Returns a new option set with the elements contained in this set or in the given set, but not in both.
+func union(Self) -> Self
+Returns a new option set of the elements contained in this set, in the given set, or in both.
+func update(with: Self.Element) -> Self.Element?
+Inserts the given element into the set.
+Available when Self is Self.Element.
+Current page is OptionSet Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

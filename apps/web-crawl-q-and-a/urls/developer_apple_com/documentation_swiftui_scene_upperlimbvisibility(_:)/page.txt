@@ -1,0 +1,133 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+View configuration
+Hiding upper limbs during immersion
+S
+DismissImmersiveSpaceAction
+Beta
+P
+var dismissImmersiveSpace: DismissImmersiveSpaceAction
+Beta
+Closing the immersive space
+S
+OpenImmersiveSpaceAction
+Beta
+P
+var openImmersiveSpace: OpenImmersiveSpaceAction
+Beta
+Opening an immersive space
+r
+P
+ImmersionStyle
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+upperLimbVisibility(_:)
+Sets the preferred visibility of the user’s upper limbs, while an ImmersiveSpace scene is presented.
+visionOS 1.0+ Beta
+func upperLimbVisibility(_ preferredVisibility: Visibility) -> some Scene
+Discussion
+The system can show the user’s upper limbs during fully immersive experiences, but you can also hide them, for example, in order to display virtual hands instead.
+Note that this modifier only sets a preference and ultimately the system will decide if it will honor it or not. The system may by unable to honor the preference if the immersive space is currently not visible.
+See Also
+Hiding upper limbs during immersion
+func upperLimbVisibility(Visibility) -> some View
+Sets the preferred visibility of the user’s upper limbs, while an ImmersiveSpace scene is presented.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is upperLimbVisibility(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

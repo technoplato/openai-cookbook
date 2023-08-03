@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/presentationbackgroundinteractionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PresentationDetent
+r
+P
+CustomPresentationDetent
+S
+PresentationContentInteraction
+Styling a sheet and its background
+M
+func presentationCornerRadius(CGFloat?) -> some View
+M
+func presentationBackground<S>(S) -> some View
+M
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+func alert<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+M
+func alert<S, A, M>(S, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+M
+func alert<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+M
+func alert<A, M>(Text, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+M
+func alert<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+M
+func alert<A, M, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+M
+func alert<S, A, M, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+M
+func alert<E, A, M>(isPresented: Binding<Bool>, error: E?, actions: (E) -> A, message: (E) -> M) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+PresentationBackgroundInteraction
+The kinds of interaction available to views behind a presentation.
+iOS 16.4+
+iPadOS 16.4+
+macOS 13.3+
+Mac Catalyst 16.4+
+tvOS 16.4+
+watchOS 9.4+
+visionOS 1.0+ Beta
+struct PresentationBackgroundInteraction
+Overview
+Use values of this type with the presentationBackgroundInteraction(_:) modifier.
+Topics
+Getting interaction types
+static var automatic: PresentationBackgroundInteraction
+The default background interaction for the presentation.
+static var disabled: PresentationBackgroundInteraction
+People can’t interact with the view behind a presentation.
+static var enabled: PresentationBackgroundInteraction
+People can interact with the view behind a presentation.
+static func enabled(upThrough: PresentationDetent) -> PresentationBackgroundInteraction
+People can interact with the view behind a presentation up through a specified detent.
+Relationships
+Conforms To
+Sendable
+See Also
+Styling a sheet and its background
+func presentationCornerRadius(CGFloat?) -> some View
+Requests that the presentation have a specific corner radius.
+func presentationBackground<S>(S) -> some View
+Sets the presentation background of the enclosing sheet using a shape style.
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+Sets the presentation background of the enclosing sheet to a custom view.
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+Controls whether people can interact with the view behind a presentation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PresentationBackgroundInteraction
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

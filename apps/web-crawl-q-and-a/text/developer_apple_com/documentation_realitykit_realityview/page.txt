@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/realitykit/realityviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+S
+RealityViewDefaultPlaceholder
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+Documentation
+Open Menu
+Swift
+Structure
+RealityView
+A SwiftUI view for displaying RealityKit content on visionOS.
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+struct RealityView<Content> where Content : View
+Overview
+Use RealityView to display rich 3D content using RealityKit in your visionOS app, including RealityKit content authored in Reality Composer Pro. RealityView passes a structure that conforms to RealityViewContentProtocol to its make and update closures, which you can use to add and remove RealityKit entities to your view.
+Here is a simple example showing how you can display a custom ModelEntity using RealityView:
+struct ModelExample: View {
+    var body: some View {
+        RealityView { content in
+            if let robot = try? await ModelEntity(named: "robot") {
+                content.add(robot)
+            }
+            Task {
+                // Asynchronously perform any additional work to configure
+                // the content after the system renders the view.
+            }
+        }
+    }
+}
+Note that the closure used in the example above is async, and can be used to load contents from your app’s bundle or from any URL in the background. While your content is loading, RealityView will automatically display a placeholder view, which you can customize using the optional placeholder parameter. It is strongly recommended to load your content asynchronously to avoid introducing a hang in your app. You can also use the optional update closure on your RealityView to update your RealityKit content in response to changes in your view’s state. On visionOS, RealityView displays your RealityKit content inline in true 3D space, occupying the available space in your app’s 3D bounds. This is represented by the RealityViewContent content type.
+RealityView has a flexible size by default, and does not size itself based on the RealityKit content it is displaying. For more advanced uses of RealityKit, such as subscribing to RealityKit events, performing coordinate conversions, or working with AR capabilities, refer to the RealityViewContentProtocol types.
+Topics
+Creating a reality view
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creates a RealityView.
+Available when Content conforms to View.
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+Creates a RealityView.
+Available when Content conforms to View.
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+Creates a RealityView.
+Available when Content conforms to View.
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+Creates a RealityView.
+Available when Content conforms to View.
+var body: some View
+The content and behavior of the view.
+Working with content
+struct RealityViewContent
+The content of a RealityView that is displayed inline.
+protocol RealityViewContentProtocol
+A protocol representing the content of a RealityView.
+struct RealityViewEntityCollection
+A collection of entities in a RealityView.
+struct RealityViewAttachmentContent
+A view that represents the contents of a RealityView with attachments.
+struct RealityViewDefaultPlaceholder
+A view that represents the default placeholder for a RealityView.
+struct RealityViewAttachmentContent
+A view that represents the contents of a RealityView with attachments.
+struct RealityViewEntityCollection
+A collection of entities in a RealityView.
+Type Aliases
+typealias AttachmentContent
+Available when Content conforms to View.
+typealias Body
+The type of view representing the body of this view.
+typealias DefaultPlaceholder
+Available when Content conforms to View.
+Default Implementations
+API Reference
+View Implementations
+Relationships
+Conforms To
+View
+See Also
+Presentation
+class ARView
+A view that enables you to display an AR experience with RealityKit.
+struct Model3D
+A view that asynchronously loads and displays a 3D model.
+Beta
+class RealityRenderer
+Beta
+struct SceneRealityCoordinateSpace
+The RealityCoordinateSpace representing ARKit world space.
+Beta
+protocol RealityCoordinateSpaceConverting
+A value that can be converted between SwiftUI CoordinateSpaces and
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is RealityView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

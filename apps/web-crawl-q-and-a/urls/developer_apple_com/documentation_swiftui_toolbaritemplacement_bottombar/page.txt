@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/toolbaritemplacement/bottombarSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static let secondaryAction: ToolbarItemPlacement
+P
+static let confirmationAction: ToolbarItemPlacement
+P
+static let cancellationAction: ToolbarItemPlacement
+P
+static let destructiveAction: ToolbarItemPlacement
+P
+static let navigation: ToolbarItemPlacement
+Getting explicit placement
+P
+static var topBarLeading: ToolbarItemPlacement
+P
+static var topBarTrailing: ToolbarItemPlacement
+Setting toolbar visibility
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+S
+ToolbarPlacement
+Specifying the role of toolbar content
+M
+func toolbarRole(ToolbarRole) -> some View
+S
+ToolbarRole
+Styling a toolbar
+Documentation
+Open Menu
+Swift
+Type Property
+bottomBar
+Places the item in the bottom toolbar.
+iOS 14.0+
+iPadOS 14.0+
+Mac Catalyst 14.0+
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+static let bottomBar: ToolbarItemPlacement
+See Also
+Getting explicit placement
+static var topBarLeading: ToolbarItemPlacement
+Places the item in the leading edge of the top bar.
+static var topBarTrailing: ToolbarItemPlacement
+Places the item in the trailing edge of the top bar.
+static let bottomOrnament: ToolbarItemPlacement
+Places the item in an ornament under the window.
+Beta
+static let keyboard: ToolbarItemPlacement
+The item is placed in the keyboard section.
+static func accessoryBar<ID>(id: ID) -> ToolbarItemPlacement
+Creates a unique accessory bar placement.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is bottomBar
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

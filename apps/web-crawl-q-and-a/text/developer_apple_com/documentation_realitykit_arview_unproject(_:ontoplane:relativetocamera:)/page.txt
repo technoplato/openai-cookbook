@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/arview/unproject(_:ontoplane:relativetocamera:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func otherMouseDown(with: NSEvent)
+M
+func rightMouseUp(with: NSEvent)
+M
+func rightMouseDragged(with: NSEvent)
+M
+func rightMouseDown(with: NSEvent)
+M
+func mouseMoved(with: NSEvent)
+M
+func mouseUp(with: NSEvent)
+M
+func mouseDragged(with: NSEvent)
+M
+func project(SIMD3<Float>) -> CGPoint?
+Mapping Between Coordinate Spaces
+r
+P
+EntityGestureRecognizer
+C
+EntityTranslationGestureRecognizer
+C
+EntityScaleGestureRecognizer
+C
+EntityRotationGestureRecognizer
+M
+func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool
+S
+ARView.EntityGestures
+Documentation
+Open Menu
+Swift
+Instance Method
+unproject(_:ontoPlane:relativeToCamera:)
+Unproject a 2D point from the view onto a plane in 3D world coordinates.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+@MainActor
+func unproject(
+    _ point: CGPoint,
+    ontoPlane planeTransform: float4x4,
+    relativeToCamera: Bool
+) -> SIMD3<Float>?
+Parameters
+point
+A point in the view’s coordinate system.
+planeTransform
+The transform used to define the coordinate system of the plane. The coordinate system’s positive Y axis is assumed to be the normal of the plane.
+realtiveToCamera
+If the plane transform is relative to camera space or world space.
+Return Value
+3D position in world coordinates or nil if unprojection is not possible.
+Discussion
+A 2D point in the view’s coordinate space can refer to any point along a line segment in the 3D coordinate space. Unprojecting gets the 3D position of the point along this line segment that intersects the provided plane.
+See Also
+Mapping Between Coordinate Spaces
+func project(SIMD3<Float>) -> CGPoint?
+Projects a point from the 3D world coordinate system of the scene to the 2D pixel coordinate system of the view.
+func unproject(CGPoint, ontoPlane: float4x4) -> SIMD3<Float>?
+Maps a 2D point from the view’s coordinate system onto the given plane in 3D space.
+func unproject(CGPoint, viewport: CGRect) -> SIMD3<Float>?
+Maps a 2D point from the pixel coordinate system of a viewport into a 3D coordinate space.
+func ray(through: CGPoint) -> (origin: SIMD3<Float>, direction: SIMD3<Float>)?
+Determines the position and direction of a ray through the given point in the 2D space of the view.
+Current page is unproject(_:ontoPlane:relativeToCamera:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

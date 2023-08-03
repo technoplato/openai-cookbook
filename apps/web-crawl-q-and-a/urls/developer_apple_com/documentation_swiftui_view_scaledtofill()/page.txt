@@ -1,0 +1,198 @@
+https://developer.apple.com/documentation/swiftui/view/scaledtofill()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+ContentMode
+S
+ProjectionTransform
+M
+func projectionEffect(ProjectionTransform) -> some View
+M
+func transform3DEffect(AffineTransform3D) -> some View
+Beta
+M
+func transformEffect(CGAffineTransform) -> some View
+M
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Beta
+M
+func rotation3DEffect(Angle, axis: RotationAxis3D, anchor: UnitPoint3D) -> some View
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Scaling, rotating, or transforming a view
+M
+func luminanceToAlpha() -> some View
+M
+func hueRotation(Angle) -> some View
+M
+func grayscale(Double) -> some View
+M
+func saturation(Double) -> some View
+M
+func colorMultiply(Color) -> some View
+M
+func colorInvert() -> some View
+M
+func contrast(Double) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+scaledToFill()
+Scales this view to fill its parent.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func scaledToFill() -> some View
+Return Value
+A view that scales this view to fill its parent, maintaining this view’s aspect ratio.
+Discussion
+Use scaledToFill() to scale this view to fill its parent, while maintaining the view’s aspect ratio as the view scales:
+Circle()
+    .fill(Color.pink)
+    .scaledToFill()
+    .frame(width: 300, height: 150)
+    .border(Color(white: 0.75))
+This method is equivalent to calling aspectRatio(_:contentMode:) with a nil aspectRatio and a content mode of ContentMode.fill.
+See Also
+Scaling, rotating, or transforming a view
+func scaledToFit() -> some View
+Scales this view to fit its parent.
+func scaleEffect(CGFloat, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given amount in both the horizontal and vertical directions, relative to an anchor point.
+func scaleEffect(CGSize, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given vertical and horizontal size amounts, relative to an anchor point.
+func scaleEffect(CGFloat, anchor: UnitPoint3D) -> some View
+Scales this view uniformly by the specified factor.
+Beta
+func scaleEffect(Size3D, anchor: UnitPoint3D) -> some View
+Scales this view uniformly by the specified size in each dimension.
+Beta
+func scaleEffect(CGFloat, anchor: UnitPoint) -> ModifiedContent<Self, _UniformScaleEffect>
+Scales this view’s rendered output by the given amount in both the horizontal and vertical directions, relative to an anchor point.
+func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given horizontal and vertical amounts, relative to an anchor point.
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some View
+Scales this view by the specified horizontal, vertical, and depth factors.
+Beta
+func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View
+Constrains this view’s dimensions to the specified aspect ratio.
+func aspectRatio(CGSize, contentMode: ContentMode) -> some View
+Constrains this view’s dimensions to the aspect ratio of the given size.
+func rotationEffect(Angle, anchor: UnitPoint) -> some View
+Rotates this view’s rendered output around the specified point.
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some View
+Rotates this view by a specific amount.
+Beta
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Rotates this view’s rendered output in three dimensions around the given axis of rotation.
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D) -> some View
+Rotates this view by the specified angle about an axis and anchor point.
+Beta
+func rotation3DEffect(Angle, axis: RotationAxis3D, anchor: UnitPoint3D) -> some View
+Rotates this view by the specified angle about an axis and anchor point.
+Beta
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Rotates this view’s rendered output in three dimensions around the given axis of rotation.
+Beta
+func transformEffect(CGAffineTransform) -> some View
+Applies an affine transformation to this view’s rendered output.
+func transform3DEffect(AffineTransform3D) -> some View
+Applies a 3D transformation to the receiver.
+Beta
+func projectionEffect(ProjectionTransform) -> some View
+Applies a projection transformation to this view’s rendered output.
+struct ProjectionTransform
+enum ContentMode
+Constants that define how a view’s content fills the available space.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is scaledToFill()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

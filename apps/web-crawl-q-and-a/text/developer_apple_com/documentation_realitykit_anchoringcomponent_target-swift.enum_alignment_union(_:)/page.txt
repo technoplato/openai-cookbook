@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/realitykit/anchoringcomponent/target-swift.enum/alignment/union(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Registering a Component Type
+Equatable Implementations
+Default Implementations
+E
+AnchoringComponent.Target.Chirality
+Enumerations
+E
+case head
+E
+case hand(AnchoringComponent.Target.Chirality, location: AnchoringComponent.Target.HandLocation)
+M
+func symmetricDifference(Self) -> Self
+M
+func subtracting(Self) -> Self
+M
+func subtract(Self)
+M
+func remove(Self.Element) -> Self.Element?
+M
+func isSuperset(of: Self) -> Bool
+M
+func isSubset(of: Self) -> Bool
+M
+func isStrictSuperset(of: Self) -> Bool
+M
+func isStrictSubset(of: Self) -> Bool
+Documentation
+Open Menu
+Swift
+Instance Method
+union(_:)
+Returns a new option set of the elements contained in this set, in the given set, or in both.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func union(_ other: Self) -> Self
+Parameters
+other
+An option set.
+Return Value
+A new option set made up of the elements contained in this set, in other, or in both.
+Overview
+This example uses the union(_:) method to add two more shipping options to the default set.
+let defaultShipping = ShippingOptions.standard
+let memberShipping = defaultShipping.union([.secondDay, .priority])
+print(memberShipping.contains(.priority))
+// Prints "true"
+See Also
+Option Set Conformance
+static func != (Self, Self) -> Bool
+typealias ArrayLiteralElement
+The type of the elements of an array literal.
+typealias Element
+The element type of the option set.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+var isEmpty: Bool
+A Boolean value that indicates whether the set has no elements.
+let rawValue: UInt8
+The corresponding value of the raw type.
+func contains(Self) -> Bool
+Returns a Boolean value that indicates whether a given element is a member of the option set.
+Available when Self is Self.Element.
+func formIntersection(Self)
+Removes all elements of this option set that are not also present in the given set.
+Available when RawValue conforms to FixedWidthInteger.
+func formSymmetricDifference(Self)
+Replaces this set with a new set containing all elements contained in either this set or the given set, but not in both.
+Available when RawValue conforms to FixedWidthInteger.
+func formUnion(Self)
+Inserts the elements of another set into this option set.
+Available when RawValue conforms to FixedWidthInteger.
+func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)
+Adds the given element to the option set if it is not already a member.
+Available when Self is Self.Element.
+func intersection(Self) -> Self
+Returns a new option set with only the elements contained in both this set and the given set.
+func isDisjoint(with: Self) -> Bool
+Returns a Boolean value that indicates whether the set has no members in common with the given set.
+func isStrictSubset(of: Self) -> Bool
+Returns a Boolean value that indicates whether this set is a strict subset of the given set.
+func isStrictSuperset(of: Self) -> Bool
+Returns a Boolean value that indicates whether this set is a strict superset of the given set.
+func isSubset(of: Self) -> Bool
+Returns a Boolean value that indicates whether the set is a subset of another set.
+func isSuperset(of: Self) -> Bool
+Returns a Boolean value that indicates whether the set is a superset of the given set.
+func remove(Self.Element) -> Self.Element?
+Removes the given element and all elements subsumed by it.
+Available when Self is Self.Element.
+func subtract(Self)
+Removes the elements of the given set from this set.
+func subtracting(Self) -> Self
+Returns a new set containing the elements of this set that do not occur in the given set.
+func symmetricDifference(Self) -> Self
+Returns a new option set with the elements contained in this set or in the given set, but not in both.
+func update(with: Self.Element) -> Self.Element?
+Inserts the given element into the set.
+Available when Self is Self.Element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is union(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

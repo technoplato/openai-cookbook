@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/swiftui/viewbuilderSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onDisappear(perform: (() -> Void)?) -> some View
+M
+func onAppear(perform: (() -> Void)?) -> some View
+Responding to view life cycle updates
+r
+P
+EnvironmentalModifier
+S
+ModifiedContent
+S
+EmptyModifier
+r
+P
+ViewModifier
+static func buildEither<TrueContent, FalseContent>(second: FalseContent) -> _ConditionalContent<TrueContent, FalseContent>
+static func buildEither<TrueContent, FalseContent>(first: TrueContent) -> _ConditionalContent<TrueContent, FalseContent>
+r
+P
+View
+Declaring a custom view
+Creating a view
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+Documentation
+Open Menu
+Swift
+Structure
+ViewBuilder
+A custom parameter attribute that constructs views from closures.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@resultBuilder
+struct ViewBuilder
+Overview
+You typically use ViewBuilder as a parameter attribute for child view-producing closure parameters, allowing those closures to provide multiple child views. For example, the following contextMenu function accepts a closure that produces one or more views via the view builder.
+func contextMenu<MenuItems: View>(
+    @ViewBuilder menuItems: () -> MenuItems
+) -> some View
+Clients of this function can use multiple-statement closures to provide several child views, as shown in the following example:
+myView.contextMenu {
+    Text("Cut")
+    Text("Copy")
+    Text("Paste")
+    if isSymbol {
+        Text("Jump to Definition")
+    }
+}
+Topics
+Building content
+static func buildBlock() -> EmptyView
+Builds an empty view from a block containing no statements.
+static func buildBlock<Content>(Content) -> Content
+Passes a single view written as a child view through unmodified.
+static func buildBlock<each Content>(repeat each Content) -> TupleView<(repeat each Content)>
+static func buildExpression<Content>(Content) -> Content
+Builds an expression within the builder.
+Conditionally building content
+static func buildEither<TrueContent, FalseContent>(first: TrueContent) -> _ConditionalContent<TrueContent, FalseContent>
+Provides support for “if” statements in multi-statement closures, producing conditional content for the “then” branch.
+static func buildEither<TrueContent, FalseContent>(second: FalseContent) -> _ConditionalContent<TrueContent, FalseContent>
+Provides support for “if-else” statements in multi-statement closures, producing conditional content for the “else” branch.
+static func buildIf<Content>(Content?) -> Content?
+Provides support for “if” statements in multi-statement closures, producing an optional view that is visible only when the condition evaluates to true.
+static func buildLimitedAvailability<Content>(Content) -> AnyView
+Provides support for “if” statements with #available() clauses in multi-statement closures, producing conditional content for the “then” branch, i.e. the conditionally-available branch.
+Relationships
+Conforms To
+Sendable
+See Also
+Creating a view
+Declaring a custom view
+Define views and assemble them into a view hierarchy.
+protocol View
+A type that represents part of your app’s user interface and provides modifiers that you use to configure views.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ViewBuilder
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

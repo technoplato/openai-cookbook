@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/swiftui/text/strikethrough(_:color:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func speechAlwaysIncludesPunctuation(Bool) -> Text
+M
+func speechAdjustedPitch(Double) -> Text
+Configuring voiceover
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> Text
+Beta
+M
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> Text
+Beta
+Localizing text
+E
+Text.TruncationMode
+M
+func italic(Bool) -> Text
+M
+func italic() -> Text
+M
+func bold(Bool) -> Text
+M
+func bold() -> Text
+M
+func foregroundStyle<S>(S) -> Text
+Beta
+Styling the view’s text
+M
+func fontWidth(Font.Width?) -> Text
+M
+func fontDesign(Font.Design?) -> Text
+Documentation
+Open Menu
+Swift
+Instance Method
+strikethrough(_:color:)
+Applies a strikethrough to the text.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func strikethrough(
+    _ isActive: Bool = true,
+    color: Color? = nil
+) -> Text
+Parameters
+isActive
+A Boolean value that indicates whether the text has a strikethrough applied.
+color
+The color of the strikethrough. If color is nil, the strikethrough uses the default foreground color.
+Return Value
+Text with a line through its center.
+See Also
+Styling the view’s text
+func foregroundStyle<S>(S) -> Text
+Sets the style of the text displayed by this view.
+Beta
+func bold() -> Text
+Applies a bold font weight to the text.
+func bold(Bool) -> Text
+Applies a bold font weight to the text.
+func italic() -> Text
+Applies italics to the text.
+func italic(Bool) -> Text
+Applies italics to the text.
+func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> Text
+Applies a strikethrough to the text.
+func underline(Bool, color: Color?) -> Text
+Applies an underline to the text.
+func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> Text
+Applies an underline to the text.
+func monospaced(Bool) -> Text
+Modifies the font of the text to use the fixed-width variant of the current font, if possible.
+func monospacedDigit() -> Text
+Modifies the text view’s font to use fixed-width digits, while leaving other characters proportionally spaced.
+func kerning(CGFloat) -> Text
+Sets the spacing, or kerning, between characters.
+func tracking(CGFloat) -> Text
+Sets the tracking for the text.
+func baselineOffset(CGFloat) -> Text
+Sets the vertical offset for the text relative to its baseline.
+enum Case
+A scheme for transforming the capitalization of characters within text.
+struct DateStyle
+A predefined style used to display a Date.
+struct LineStyle
+Description of the style used to draw the line for StrikethroughStyleAttribute and UnderlineStyleAttribute.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is strikethrough(_:color:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

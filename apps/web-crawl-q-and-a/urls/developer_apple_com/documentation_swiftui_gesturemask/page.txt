@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/gesturemaskSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Deprecated gestures
+S
+GestureStateGesture
+S
+GestureState
+Managing gesture state
+S
+HandActivationBehavior
+Beta
+S
+AnyGesture
+r
+P
+Gesture
+S
+RotateGesture3D
+Beta
+S
+RotateGesture
+Beta
+S
+MagnifyGesture
+Beta
+S
+DragGesture
+M
+func gesture<T>(T, including: GestureMask) -> some View
+Recognizing gestures that change over time
+S
+SpatialEventCollection
+Beta
+S
+SpatialEventGesture
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+GestureMask
+Options that control how adding a gesture to a view affects other gestures recognized by the view and its subviews.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen
+struct GestureMask
+Topics
+Getting gesture options
+static let all: GestureMask
+Enable both the added gesture as well as all other gestures on the view and its subviews.
+static let gesture: GestureMask
+Enable the added gesture but disable all gestures in the subview hierarchy.
+static let subviews: GestureMask
+Enable all gestures in the subview hierarchy but disable the added gesture.
+static let none: GestureMask
+Disable all gestures in the subview hierarchy, including the added gesture.
+Relationships
+Conforms To
+Equatable
+ExpressibleByArrayLiteral
+OptionSet
+RawRepresentable
+Sendable
+SetAlgebra
+See Also
+Recognizing gestures that change over time
+func gesture<T>(T, including: GestureMask) -> some View
+Attaches a gesture to the view with a lower precedence than gestures defined by the view.
+struct DragGesture
+A dragging motion that invokes an action as the drag-event sequence changes.
+struct MagnifyGesture
+A gesture that recognizes a magnification motion and tracks the amount of magnification.
+Beta
+struct RotateGesture
+A gesture that recognizes a rotation motion and tracks the angle of the rotation.
+Beta
+struct RotateGesture3D
+A gesture that recognizes 3D rotation motion and tracks the angle and axis of the rotation.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GestureMask
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

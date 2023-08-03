@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/shadow(color:radius:x:y:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+RealityView
+Beta
+Creating a reality view
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+P
+var body: some View
+Working with content
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+S
+RealityViewAttachmentContent
+S
+RealityViewEntityCollection
+Type Aliases
+T
+RealityView.AttachmentContent
+T
+RealityView.Body
+T
+RealityView.DefaultPlaceholder
+Default Implementations
+Documentation
+Open Menu
+Swift
+Instance Method
+shadow(color:radius:x:y:)
+Adds a shadow to this view.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func shadow(
+    color: Color = Color(.sRGBLinear, white: 0, opacity: 0.33),
+    radius: CGFloat,
+    x: CGFloat = 0,
+    y: CGFloat = 0
+) -> some View
+Parameters
+color
+The shadow’s color.
+radius
+A measure of how much to blur the shadow. Larger values result in more blur.
+x
+An amount to offset the shadow horizontally from the view.
+y
+An amount to offset the shadow vertically from the view.
+Return Value
+A view that adds a shadow to this view.
+Discussion
+Use this modifier to add a shadow of a specified color behind a view. You can offset the shadow from its view independently in the horizontal and vertical dimensions using the x and y parameters. You can also blur the edges of the shadow using the radius parameter. Use a radius of zero to create a sharp shadow. Larger radius values produce softer shadows.
+The example below creates a grid of boxes with varying offsets and blur. Each box displays its radius and offset values for reference.
+struct Shadow: View {
+    let steps = [0, 5, 10]
+
+
+    var body: some View {
+        VStack(spacing: 50) {
+            ForEach(steps, id: \.self) { offset in
+                HStack(spacing: 50) {
+                    ForEach(steps, id: \.self) { radius in
+                        Color.blue
+                            .shadow(
+                                color: .primary,
+                                radius: CGFloat(radius),
+                                x: CGFloat(offset), y: CGFloat(offset))
+                            .overlay {
+                                VStack {
+                                    Text("\(radius)")
+                                    Text("(\(offset), \(offset))")
+                                }
+                            }
+                    }
+                }
+            }
+        }
+    }
+}
+The example above uses Color/primary as the color to make the shadow easy to see for the purpose of illustration. In practice, you might prefer something more subtle, like Color/gray-8j2b. If you don’t specify a color, the method uses a semi-transparent black.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is shadow(color:radius:x:y:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

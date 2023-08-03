@@ -1,0 +1,208 @@
+https://developer.apple.com/documentation/swiftui/groupSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Scroll views
+M
+func controlGroupStyle<S>(S) -> some View
+S
+ControlGroup
+Presenting a group of controls
+M
+func labeledContentStyle<S>(S) -> some View
+S
+LabeledContent
+M
+func formStyle<S>(S) -> some View
+Collecting views into a unit
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Documentation
+Open Menu
+Swift
+Structure
+Group
+A type that collects multiple instances of a content type — like views, scenes, or commands — into a single unit.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen
+struct Group<Content>
+Overview
+Use a group to collect multiple views into a single instance, without affecting the layout of those views, like an HStack, VStack, or Section would. After creating a group, any modifier you apply to the group affects all of that group’s members. For example, the following code applies the headline font to three views in a group.
+Group {
+    Text("SwiftUI")
+    Text("Combine")
+    Text("Swift System")
+}
+.font(.headline)
+Because you create a group of views with a ViewBuilder, you can use the group’s initializer to produce different kinds of views from a conditional, and then optionally apply modifiers to them. The following example uses a Group to add a navigation bar title, regardless of the type of view the conditional produces:
+Group {
+    if isLoggedIn {
+        WelcomeView()
+    } else {
+        LoginView()
+    }
+}
+.navigationBarTitle("Start")
+The modifier applies to all members of the group — and not to the group itself. For example, if you apply onAppear(perform:) to the above group, it applies to all of the views produced by the if isLoggedIn conditional, and it executes every time isLoggedIn changes.
+Because a group of views itself is a view, you can compose a group within other view builders, including nesting within other groups. This allows you to add large numbers of views to different view builder containers. The following example uses a Group to collect 10 Text instances, meaning that the vertical stack’s view builder returns only two views — the group, plus an additional Text:
+var body: some View {
+    VStack {
+        Group {
+            Text("1")
+            Text("2")
+            Text("3")
+            Text("4")
+            Text("5")
+            Text("6")
+            Text("7")
+            Text("8")
+            Text("9")
+            Text("10")
+        }
+        Text("11")
+    }
+}
+You can initialize groups with several types other than View, such as Scene and ToolbarContent. The closure you provide to the group initializer uses the corresponding builder type (SceneBuilder, ToolbarContentBuilder, and so on), and the capabilities of these builders vary between types. For example, you can use groups to return large numbers of scenes or toolbar content instances, but not to return different scenes or toolbar content based on conditionals.
+Topics
+Creating a group
+init(content: () -> Content)
+Creates a group of views.
+Available when Content conforms to View.
+init(content: () -> Content)
+Creates a group of scenes.
+Available when Content conforms to Scene.
+init(content: () -> Content)
+Creates a group of commands.
+Available when Content conforms to Commands.
+init(content: () -> Content)
+Creates a group of toolbar content instances.
+Available when Content conforms to ToolbarContent.
+init(content: () -> Content)
+Creates a group of customizable toolbar content instances.
+Available when Content conforms to CustomizableToolbarContent.
+init<R>(content: () -> Content)
+Creates a group of table rows.
+Available when Content conforms to TableRowContent.
+init<R, C>(content: () -> Content)
+Creates a group of table columns.
+Available when Content conforms to TableColumnContent.
+init(content: () -> Content)
+Creates an instance that generates Rotor content by combining, in order, all the Rotor content specified in the passed-in result builder.
+Available when Content conforms to AccessibilityRotorContent.
+Relationships
+Conforms To
+AccessibilityRotorContent
+Conforms when Content conforms to AccessibilityRotorContent.
+Commands
+Conforms when Content conforms to Commands.
+CustomizableToolbarContent
+Conforms when Content conforms to CustomizableToolbarContent.
+Scene
+Conforms when Content conforms to Scene.
+Sendable
+TableColumnContent
+Conforms when Content conforms to TableColumnContent.
+TableRowContent
+Conforms when Content conforms to TableRowContent.
+ToolbarContent
+Conforms when Content conforms to ToolbarContent.
+View
+Conforms when Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Group
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/newdocumentactionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Environment values
+Model data
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+P
+var newDocument: NewDocumentAction
+Opening a document programmatically
+S
+FileDocumentWriteConfiguration
+S
+FileDocumentReadConfiguration
+Reading and writing documents
+S
+DocumentConfiguration
+Beta
+P
+var documentConfiguration: DocumentConfiguration?
+Beta
+Accessing document configuration
+Documentation
+Open Menu
+Swift
+Structure
+NewDocumentAction
+An action that presents a new document.
+macOS 13.0+
+struct NewDocumentAction
+Overview
+Use the newDocument environment value to get the instance of this structure for a given Environment. Then call the instance to present a new document. You call the instance directly because it defines a callAsFunction(_:) method that Swift calls when you call the instance.
+For example, you can define a button that creates a new document from the selected text:
+struct NewDocumentFromSelection: View {
+    @FocusedBinding(\.selectedText) private var selectedText: String?
+    @Environment(\.newDocument) private var newDocument
+
+
+    var body: some View {
+        Button("New Document With Selection") {
+            newDocument(TextDocument(text: selectedText))
+        }
+        .disabled(selectedText?.isEmpty != false)
+    }
+}
+The above example assumes that you define a TextDocument that conforms to the FileDocument or ReferenceFileDocument protocol, and a DocumentGroup that handles the associated file type.
+Topics
+Calling the action
+func callAsFunction<D>(() -> D)
+Presents a new reference type document window.
+func callAsFunction<D>(() -> D)
+Presents a new document window.
+func callAsFunction(contentType: UTType)
+Presents a new document window.
+Beta
+func callAsFunction(contentType: UTType, prepareDocument: (ModelContext) -> Void)
+Presents a new document window with preset contents.
+Beta
+Relationships
+Conforms To
+Sendable
+See Also
+Opening a document programmatically
+var newDocument: NewDocumentAction
+An action in the environment that presents a new document.
+var openDocument: OpenDocumentAction
+An action in the environment that presents an existing document.
+struct OpenDocumentAction
+An action that presents an existing document.
+Current page is NewDocumentAction
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

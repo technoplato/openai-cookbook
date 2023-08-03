@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/uihostingconfiguration/background(content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Xcode library customization
+Previews in Xcode
+Tool support
+Technology-specific views
+WatchKit integration
+C
+UIOrnament
+Beta
+C
+UIHostingOrnament
+M
+func background<S>(S) -> UIHostingConfiguration<Content, _UIHostingConfigurationBackgroundView<S>>
+Setting the background
+M
+init(content: () -> Content)
+Creating and updating a configuration
+S
+UIHostingConfiguration
+S
+UIHostingControllerSizingOptions
+C
+UIHostingController
+Using SwiftUI with UIKit
+Documentation
+Open Menu
+Swift
+Instance Method
+background(content:)
+Sets the background contents for the hosting configuration’s enclosing cell.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func background<B>(@ViewBuilder content: () -> B) -> UIHostingConfiguration<Content, B> where B : View
+Parameters
+background
+The contents of the SwiftUI hierarchy to be shown inside the background of the cell.
+Discussion
+The following example sets a custom view to the background of the cell:
+UIHostingConfiguration {
+    Text("My Contents")
+}
+.background {
+    MyBackgroundView()
+}
+See Also
+Setting the background
+func background<S>(S) -> UIHostingConfiguration<Content, _UIHostingConfigurationBackgroundView<S>>
+Sets the background contents for the hosting configuration’s enclosing cell.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is background(content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

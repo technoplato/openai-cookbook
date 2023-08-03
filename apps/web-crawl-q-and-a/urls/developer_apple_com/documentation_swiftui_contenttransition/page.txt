@@ -1,0 +1,199 @@
+https://developer.apple.com/documentation/swiftui/contenttransitionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Images
+Text input and output
+r
+P
+AnimatableModifier
+Deprecated
+Deprecated types
+r
+P
+TransactionKey
+Beta
+S
+Transaction
+M
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+P
+var contentTransitionAddsDrawingGroup: Bool
+P
+var contentTransition: ContentTransition
+M
+func contentTransition(ContentTransition) -> some View
+S
+AnyTransition
+S
+AsymmetricTransition
+Beta
+E
+TransitionPhase
+Beta
+S
+TransitionProperties
+Beta
+r
+P
+Transition
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+ContentTransition
+A kind of transition that applies to the content within a single view, rather than to the insertion or removal of a view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct ContentTransition
+Overview
+Set the behavior of content transitions within a view with the contentTransition(_:) modifier, passing in one of the defined transitions, such as opacity or interpolate as the parameter.
+Tip
+Content transitions only take effect within transactions that apply an Animation to the views inside the contentTransition(_:) modifier.
+Content transitions only take effect within the context of an Animation block.
+Topics
+Getting content transitions
+static let identity: ContentTransition
+The identity content transition, which indicates that content changes shouldn’t animate.
+static let interpolate: ContentTransition
+A content transition that indicates the views attempt to interpolate their contents during transitions, where appropriate.
+static func numericText(countsDown: Bool) -> ContentTransition
+Creates a content transition intended to be used with Text views displaying numeric text. In certain environments changes to the text will enable a nonstandard transition tailored to numeric characters that count up or down.
+static func numericText(value: Double) -> ContentTransition
+Creates a content transition intended to be used with Text views displaying numbers.
+Beta
+static let opacity: ContentTransition
+A content transition that indicates content fades from transparent to opaque on insertion, and from opaque to transparent on removal.
+static var symbolEffect: ContentTransition
+A content transition that applies the default symbol effect transition to symbol images within the inserted or removed view hierarchy. Other views are unaffected by this transition.
+Beta
+static func symbolEffect<T>(T, options: SymbolEffectOptions) -> ContentTransition
+Creates a content transition that applies the symbol Replace animation to symbol images that it is applied to.
+Beta
+Relationships
+Conforms To
+Equatable
+Sendable
+See Also
+Defining transitions
+func transition<T>(T) -> some View
+Associates a transition with the view.
+Beta
+func transition(AnyTransition) -> some View
+Associates a transition with the view.
+protocol Transition
+A description of view changes to apply when a view is added to and removed from the view hierarchy.
+Beta
+struct TransitionProperties
+The properties a Transition can have.
+Beta
+enum TransitionPhase
+An indication of which the current stage of a transition.
+Beta
+struct AsymmetricTransition
+A composite Transition that uses a different transition for insertion versus removal.
+Beta
+struct AnyTransition
+A type-erased transition.
+func contentTransition(ContentTransition) -> some View
+Modifies the view to use a given transition as its method of animating changes to the contents of its views.
+var contentTransition: ContentTransition
+The current method of animating the contents of views.
+var contentTransitionAddsDrawingGroup: Bool
+A Boolean value that controls whether views that render content transitions use GPU-accelerated rendering.
+struct PlaceholderContentView
+A placeholder used to construct an inline modifier, transition, or other helper type.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ContentTransition
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

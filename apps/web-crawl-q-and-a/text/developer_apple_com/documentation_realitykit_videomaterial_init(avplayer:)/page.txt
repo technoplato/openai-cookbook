@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/realitykit/videomaterial/init(avplayer:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MaterialParameters
+S
+MaterialParameterTypes
+r
+P
+Material
+Material fundamentals
+S
+ShaderGraphMaterial
+Beta
+S
+CustomMaterial
+Modifying RealityKit Rendering Using Custom Materials
+Creating a Video Material
+S
+VideoMaterial
+Video materials
+S
+PhysicallyBasedMaterial
+Applying Realistic Material and Lighting Effects to Entities
+Realistic materials
+S
+OcclusionMaterial
+Object Occlusion
+Documentation
+Open Menu
+Swift
+Initializer
+init(avPlayer:)
+Creates a new video material.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+init(avPlayer: AVPlayer)
+Discussion
+To create a video material, first create an AVPlayer instance initialized with a URL that points to the movie file you want the video material to play, then pass that to this initializer. The following code demonstrates this process.
+// Create a URL that points to the movie file.
+if let url = Bundle.main.url(forResource: "MyMovie", withExtension: "mp4") {
+
+
+    // Create an AVPlayer instance to control playback of that movie.
+    let player = AVPlayer(url: url)
+
+
+    // Instantiate and configure the video material.
+    let material = VideoMaterial(avPlayer: player)
+
+
+    // Configure audio playback mode. This is optional for movie
+    // files that contain sound.
+    material.controller.audioInputMode = .spatial
+
+
+    // Create a new model entity using the video material.
+    let modelEntity = ModelEntity(mesh: cube, materials: [material])
+
+
+    // Start playing the video.
+    player.play()
+}
+avPlayer: An AVPlayer instance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(avPlayer:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/binding/wrappedvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+M
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some View
+Beta
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+Beta
+Responding to data changes
+r
+P
+ObservableObject
+S
+ObservedObject
+S
+StateObject
+Getting the value
+M
+static func constant(Value) -> Binding<Value>
+M
+init(get: () -> Value, set: (Value) -> Void)
+M
+init(get: () -> Value, set: (Value, Transaction) -> Void)
+M
+init(projectedValue: Binding<Value>)
+M
+init<V>(Binding<V>)
+M
+init<V>(Binding<V>)
+M
+init?(Binding<Value?>)
+Documentation
+Open Menu
+Swift
+Instance Property
+wrappedValue
+The underlying value referenced by the binding variable.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+var wrappedValue: Value { get nonmutating set }
+Discussion
+This property provides primary access to the value’s data. However, you don’t access wrappedValue directly. Instead, you use the property variable created with the Binding attribute. In the following code example, the binding variable isPlaying returns the value of wrappedValue:
+struct PlayButton: View {
+    @Binding var isPlaying: Bool
+
+
+    var body: some View {
+        Button(isPlaying ? "Pause" : "Play") {
+            isPlaying.toggle()
+        }
+    }
+}
+When a mutable binding value changes, the new value is immediately available. However, updates to a view displaying the value happens asynchronously, so the view may not show the change immediately.
+See Also
+Getting the value
+var projectedValue: Binding<Value>
+A projection of the binding value that returns a binding.
+subscript<Subject>(dynamicMember _: WritableKeyPath<Value, Subject>) -> Binding<Subject>
+Returns a binding to the resulting value of a given key path.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is wrappedValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/progressviewstyle/makebody(configuration:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TableStyle
+M
+func tableStyle<S>(S) -> some View
+r
+P
+ListStyle
+M
+func listStyle<S>(S) -> some View
+Styling collection views
+S
+TextEditorStyleConfiguration
+Beta
+r
+P
+TextEditorStyle
+Creating custom progress view styles
+P
+static var linear: LinearProgressViewStyle
+P
+static var circular: CircularProgressViewStyle
+P
+static var automatic: DefaultProgressViewStyle
+Getting built-in progress view styles
+r
+P
+ProgressViewStyle
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+Documentation
+Open Menu
+Swift
+Instance Method
+makeBody(configuration:)
+Creates a view representing the body of a progress view.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+@ViewBuilder
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Required
+Parameters
+configuration
+The properties of the progress view being created.
+configuration
+The properties of the progress view, such as its preferred progress type.
+Discussion
+The view hierarchy calls this method for each progress view where this style is the current progress view style.
+See Also
+Creating custom progress view styles
+typealias Configuration
+A type alias for the properties of a progress view instance.
+associatedtype Body : View
+A view representing the body of a progress view.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is makeBody(configuration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

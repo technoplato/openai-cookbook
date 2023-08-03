@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/trymax(by:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Selecting Specific Elements
+M
+func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>
+M
+func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>
+M
+func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>
+M
+func prefix(Int) -> Publishers.Output<Self>
+M
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+M
+func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func max() -> Publishers.Comparison<Self>
+M
+func count() -> Publishers.Count<Self>
+Applying Mathematical Operations on Elements
+M
+func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>
+M
+func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>
+M
+func ignoreOutput() -> Publishers.IgnoreOutput<Self>
+M
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+Documentation
+Open Menu
+Swift
+Instance Method
+tryMax(by:)
+Publishes the maximum value received from the upstream publisher, using the provided error-throwing closure to order the items.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func tryMax(by areInIncreasingOrder: @escaping (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+Parameters
+areInIncreasingOrder
+A throwing closure that receives two elements and returns true if they’re in increasing order. If this closure throws, the publisher terminates with a Subscribers/Completion/failure(_:).
+Return Value
+A publisher that publishes the maximum value received from the upstream publisher, after the upstream publisher finishes.
+Discussion
+Use tryMax(by:) to determine the maximum value of elements received from the upstream publisher using an error-throwing closure you specify.
+In the example below, an array publishes elements. The tryMax(by:) operator executes the error-throwing closure that throws when the first element is an odd number, terminating the publisher.
+struct IllegalValueError: Error {}
+
+
+let numbers: [Int]  = [0, 10, 6, 13, 22, 22]
+cancellable = numbers.publisher
+    .tryMax { first, second -> Bool in
+        if (first % 2 != 0) {
+            throw IllegalValueError()
+        }
+        return first > second
+    }
+    .sink(
+        receiveCompletion: { print ("completion: \($0)") },
+        receiveValue: { print ("value: \($0)") }
+    )
+
+
+// Prints: completion: failure(IllegalValueError())
+After this publisher receives a request for more than 0 items, it requests unlimited items from its upstream publisher.
+See Also
+Applying Mathematical Operations on Elements
+func count() -> Publishers.Count<Self>
+Publishes the number of elements received from the upstream publisher.
+func max() -> Publishers.Comparison<Self>
+Publishes the maximum value received from the upstream publisher, after it finishes.
+Available when Output conforms to Comparable.
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+Publishes the maximum value received from the upstream publisher, using the provided ordering closure.
+func min() -> Publishers.Comparison<Self>
+Publishes the minimum value received from the upstream publisher, after it finishes.
+Available when Output conforms to Comparable.
+func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+Publishes the minimum value received from the upstream publisher, after it finishes.
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+Publishes the minimum value received from the upstream publisher, using the provided error-throwing closure to order the items.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tryMax(by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

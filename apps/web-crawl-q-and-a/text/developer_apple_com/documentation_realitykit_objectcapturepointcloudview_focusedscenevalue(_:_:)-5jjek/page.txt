@@ -1,0 +1,191 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/focusedscenevalue(_:_:)-5jjekSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func gesture<T>(T, including: GestureMask) -> some View
+M
+func geometryGroup() -> some View
+M
+func gaugeStyle<S>(S) -> some View
+M
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+M
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+M
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+M
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+M
+func focusedSceneObject<T>(T) -> some View
+M
+func focusedSceneObject<T>(T?) -> some View
+M
+func focusedObject<T>(T) -> some View
+M
+func focusedObject<T>(T?) -> some View
+M
+func focused<Value>(FocusState<Value>.Binding, equals: Value) -> some View
+M
+func focused(FocusState<Bool>.Binding) -> some View
+M
+func focusable(Bool, interactions: FocusInteractions) -> some View
+M
+func focusable(Bool) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+focusedSceneValue(_:_:)
+Modifies this view by injecting a value that you provide for use by other views whose state depends on the focused scene.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func focusedSceneValue<T>(
+    _ keyPath: WritableKeyPath<FocusedValues, T?>,
+    _ value: T
+) -> some View
+Parameters
+keyPath
+The key path to associate value with when adding it to the existing table of published focus values.
+value
+The focus value to publish.
+Return Value
+A modified representation of this view.
+Discussion
+Use this method instead of View/focusedValue(_:_:) for values that must be visible regardless of where focus is located in the active scene. For example, if an app needs a command for moving focus to a particular text field in the sidebar, it could use this modifier to publish a button action that’s visible to command views as long as the scene is active, and regardless of where focus happens to be in it.
+struct Sidebar: View {
+    @FocusState var isFiltering: Bool
+
+
+    var body: some View {
+        VStack {
+            TextField(...)
+                .focused(when: $isFiltering)
+                .focusedSceneValue(\.filterAction) {
+                    isFiltering = true
+                }
+        }
+    }
+}
+
+
+struct NavigationCommands: Commands {
+    @FocusedValue(\.filterAction) var filterAction
+
+
+    var body: some Commands {
+        CommandMenu("Navigate") {
+            Button("Filter in Sidebar") {
+                filterAction?()
+            }
+        }
+        .disabled(filterAction == nil)
+    }
+}
+
+
+struct FilterActionKey: FocusedValuesKey {
+    typealias Value = () -> Void
+}
+
+
+extension FocusedValues {
+    var filterAction: (() -> Void)? {
+        get { self[FilterActionKey.self] }
+        set { self[FilterActionKey.self] = newValue }
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is focusedSceneValue(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

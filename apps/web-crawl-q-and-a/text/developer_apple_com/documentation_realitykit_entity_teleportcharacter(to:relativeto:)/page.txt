@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/entity/teleportcharacter(to:relativeto:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var accessibilityCustomActions: [LocalizedStringResource]
+Beta
+Instance Properties
+M
+convenience init(named: String, in: Bundle?) async throws
+Beta
+M
+convenience init(contentsOf: URL, withName: String?) async throws
+Beta
+Initializers
+P
+var accessibilityDescription: String?
+Deprecated
+P
+var accessibilityLabel: String?
+M
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+S
+CharacterControllerStateComponent
+P
+var characterControllerState: CharacterControllerStateComponent?
+P
+var characterController: CharacterControllerComponent?
+S
+CharacterControllerComponent
+Animating and Controlling Characters
+S
+InternalBindPath
+P
+var parameters: Entity.ParameterSet
+Documentation
+Open Menu
+Swift
+Instance Method
+teleportCharacter(to:relativeTo:)
+Moves the character instantly to a new position.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+@MainActor
+func teleportCharacter(
+    to position: SIMD3<Float>,
+    relativeTo referenceEntity: Entity?
+)
+Parameters
+newPosition
+The position, relative to relativeTo to move the character.
+relativeTo
+Reference Entity which defines the frame of reference of the new position. Can be nil, which is equivalent to “world space”.
+Discussion
+This method moves the character to a location specified relative to another entity. Pass nil in relativeTo to specify a position in world coordinates. A teleport move happens instantly. RealityKit does no collision checking when it moves the entity.
+See Also
+Animating and Controlling Characters
+struct CharacterControllerComponent
+A component that manages character movement.
+var characterController: CharacterControllerComponent?
+The character controller component for the entity.
+var characterControllerState: CharacterControllerStateComponent?
+The character controller state for the entity.
+struct CharacterControllerStateComponent
+An object that maintains state for a character controller.
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+Moves the character along a specified vector over a period of time.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is teleportCharacter(to:relativeTo:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

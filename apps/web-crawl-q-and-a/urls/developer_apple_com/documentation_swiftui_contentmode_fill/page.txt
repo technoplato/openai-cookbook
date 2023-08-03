@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/contentmode/fillSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Measuring a view
+E
+ColorRenderingMode
+E
+BlendMode
+M
+func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View
+M
+func compositingGroup() -> some View
+M
+func blendMode(BlendMode) -> some View
+Compositing views
+Getting content modes
+E
+ContentMode
+S
+ProjectionTransform
+M
+func projectionEffect(ProjectionTransform) -> some View
+M
+func transform3DEffect(AffineTransform3D) -> some View
+Beta
+M
+func transformEffect(CGAffineTransform) -> some View
+M
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Beta
+M
+func rotation3DEffect(Angle, axis: RotationAxis3D, anchor: UnitPoint3D) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Case
+ContentMode.fill
+An option that resizes the content so it occupies all available space, both vertically and horizontally.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+case fill
+Discussion
+This mode preserves the content’s aspect ratio. If the content doesn’t have the same aspect ratio as the available space, the content becomes the same size as the available space on one axis, and larger on the other axis.
+See Also
+Getting content modes
+case fit
+An option that resizes the content so it’s all within the available space, both vertically and horizontally.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ContentMode.fill
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,175 @@
+https://developer.apple.com/documentation/swiftui/view-style-modifiersSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func tabViewStyle<S>(S) -> some View
+M
+func navigationSplitViewStyle<S>(S) -> some View
+Presentation
+M
+func disclosureGroupStyle<S>(S) -> some View
+M
+func tableStyle<S>(S) -> some View
+M
+func listStyle<S>(S) -> some View
+Collections
+Drawing views
+Chart view modifiers
+Auxiliary view modifiers
+Text and symbol modifiers
+Appearance modifiers
+Accessibility modifiers
+Configuring view elements
+Previews in Xcode
+Documentation
+Open Menu
+Swift
+Style modifiers
+Apply built-in styles to different types of views.
+Overview
+SwiftUI defines built-in styles for certain kinds of views, and chooses the appropriate style for a particular presentation context. For example, a Label might appear as an icon, a string title, or both, depending on factors like the platform, whether the view appears in a toolbar, and so on.
+You can override the automatic style by using one of the style modifiers. These modifiers typically propagate through container views, so you can wrap an entire view hierarchy in a style modifier to affect all the views of the given type within the hierarchy. Some view types enable you to create custom styles, which you also apply using style modifiers.
+For more information about styling views, see View styles.
+Topics
+Controls
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and custom interaction behavior.
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and standard interaction behavior.
+func datePickerStyle<S>(S) -> some View
+Sets the style for date pickers within this view.
+func menuStyle<S>(S) -> some View
+Sets the style for menus within this view.
+func pickerStyle<S>(S) -> some View
+Sets the style for pickers within this view.
+func toggleStyle<S>(S) -> some View
+Sets the style for toggles in a view hierarchy.
+Indicators
+func gaugeStyle<S>(S) -> some View
+Sets the style for gauges within this view.
+func progressViewStyle<S>(S) -> some View
+Sets the style for progress views in this view.
+Text
+func labelStyle<S>(S) -> some View
+Sets the style for labels within this view.
+func textFieldStyle<S>(S) -> some View
+Sets the style for text fields within this view.
+func textEditorStyle(some TextEditorStyle) -> some View
+Sets the style for text editors within this view.
+Beta
+Collections
+func listStyle<S>(S) -> some View
+Sets the style for lists within this view.
+func tableStyle<S>(S) -> some View
+Sets the style for tables within this view.
+func disclosureGroupStyle<S>(S) -> some View
+Sets the style for disclosure groups within this view.
+Presentation
+func navigationSplitViewStyle<S>(S) -> some View
+Sets the style for navigation split views within this view.
+func tabViewStyle<S>(S) -> some View
+Sets the style for the tab view within the current environment.
+func presentedWindowStyle<S>(S) -> some View
+Sets the style for windows created by interacting with this view.
+func presentedWindowToolbarStyle<S>(S) -> some View
+Sets the style for the toolbar in windows created by interacting with this view.
+Groups
+func controlGroupStyle<S>(S) -> some View
+Sets the style for control groups within this view.
+func groupBoxStyle<S>(S) -> some View
+Sets the style for group boxes within this view.
+func indexViewStyle<S>(S) -> some View
+Sets the style for the index view within the current environment.
+See Also
+Drawing views
+API Reference
+Layout modifiers
+Tell a view how to arrange itself within a view hierarchy by adjusting its size, position, alignment, padding, and so on.
+API Reference
+Graphics and rendering modifiers
+Affect the way the system draws a view, for example by scaling or masking a view, or by applying graphical effects.
+Current page is Style modifiers
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

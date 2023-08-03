@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/swiftui/windowtoolbarstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+OrnamentAttachmentAnchor
+Beta
+M
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+Beta
+Creating an ornament
+S
+ToolbarTitleMenu
+M
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+Setting the toolbar title menu
+S
+ToolbarTitleDisplayMode
+M
+func windowToolbarStyle<S>(S) -> some Scene
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+S
+ToolbarRole
+M
+func toolbarRole(ToolbarRole) -> some View
+Specifying the role of toolbar content
+Documentation
+Open Menu
+Swift
+Protocol
+WindowToolbarStyle
+A specification for the appearance and behavior of a window’s toolbar.
+macOS 11.0+
+protocol WindowToolbarStyle
+Topics
+Getting built-in window toolbar styles
+static var automatic: DefaultWindowToolbarStyle
+The automatic window toolbar style.
+Available when Self is DefaultWindowToolbarStyle.
+static var expanded: ExpandedWindowToolbarStyle
+A window toolbar style which displays its title bar area above the toolbar.
+Available when Self is ExpandedWindowToolbarStyle.
+static var unified: UnifiedWindowToolbarStyle
+A window toolbar style which displays its toolbar and title bar inline.
+Available when Self is UnifiedWindowToolbarStyle.
+static func unified(showsTitle: Bool) -> UnifiedWindowToolbarStyle
+A window toolbar style which displays its toolbar and title bar inline.
+Available when Self is UnifiedWindowToolbarStyle.
+static var unifiedCompact: UnifiedCompactWindowToolbarStyle
+A window toolbar style similar to unified, but with a more compact vertical sizing.
+Available when Self is UnifiedCompactWindowToolbarStyle.
+static func unifiedCompact(showsTitle: Bool) -> UnifiedCompactWindowToolbarStyle
+A window toolbar style similar to unified, but with a more compact vertical sizing.
+Available when Self is UnifiedCompactWindowToolbarStyle.
+Supporting types
+struct DefaultWindowToolbarStyle
+The default window toolbar style.
+struct ExpandedWindowToolbarStyle
+A window toolbar style which displays its title bar area above the toolbar.
+struct UnifiedWindowToolbarStyle
+A window toolbar style which displays its toolbar and title bar inline.
+struct UnifiedCompactWindowToolbarStyle
+A window toolbar style similar to unified, but with a more compact vertical sizing.
+Relationships
+Conforming Types
+DefaultWindowToolbarStyle
+ExpandedWindowToolbarStyle
+UnifiedCompactWindowToolbarStyle
+UnifiedWindowToolbarStyle
+See Also
+Styling a toolbar
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Specifies the preferred shape style of the background of a bar managed by SwiftUI.
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+Specifies the preferred visibility of backgrounds on a bar managed by SwiftUI.
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+Specifies the preferred color scheme of a bar managed by SwiftUI.
+func windowToolbarStyle<S>(S) -> some Scene
+Sets the style for the toolbar defined within this scene.
+Current page is WindowToolbarStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

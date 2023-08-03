@@ -1,0 +1,307 @@
+https://developer.apple.com/documentation/realitykit/fromtobyanimationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var fromValue: SIMD4<Float>?
+P
+var fromValue: SIMD3<Float>?
+P
+var fromValue: SIMD2<Float>?
+P
+var fromValue: simd_quatf?
+P
+var fromValue: Float?
+P
+var fromValue: Double?
+P
+var fromValue: Transform?
+init(jointNames: [String], name: String, isScaleAnimated: Bool, isRotationAnimated: Bool, isTranslationAnimated: Bool, from: Value?, to: Value?, by: Value?, duration: TimeInterval, timing: AnimationTimingFunction, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+init(name: String, from: Value?, to: Value?, by: Value?, duration: TimeInterval, timing: AnimationTimingFunction, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+Animating an Entity
+P
+var defaultAnimationClock: CMClockOrTimebase
+M
+func playAnimation(named: String, transitionDuration: TimeInterval, startsPaused: Bool, recursive: Bool) -> AnimationPlaybackController
+Deprecated
+M
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, startsPaused: Bool) -> AnimationPlaybackController
+M
+func stopAllAnimations(recursive: Bool)
+M
+func playAnimation(AnimationResource, transitionDuration: TimeInterval, blendLayerOffset: Int, separateAnimatedValue: Bool, startsPaused: Bool, clock: CMClockOrTimebase?) -> AnimationPlaybackController
+P
+var availableAnimations: [AnimationResource]
+Playing Animations
+Documentation
+Open Menu
+Swift
+Structure
+FromToByAnimation
+An animation that starts, stops, or increments by a specific value.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct FromToByAnimation<Value> where Value : AnimatableData
+Overview
+To animate an entity or scene, this structure gradually changes a parameter’s value over time. You can specify a from value, which represents the animated property’s initial value at the beginning of the animation. You can also specify a to value, which determines the value of the property at the end of the animation. Alternatively, you can set a by value. The framework adds the by value to the property’s initial state to calculate the value at the end of the animation.
+To specify the property that this struct animates, define bindTarget in the intializer,
+init(name:from:to:by:duration:timing:isAdditive:bindTarget:blendLayer:repeatMode:fillMode:trimStart:trimEnd:trimDuration:offset:delay:speed:).
+Configure the Animation Inputs
+This animation supports varying input combinations, which exhibit the following behavior. When you specify:
+A from and to value
+The animation interpolates between from and to, and ignores the by value.
+A from and by value
+The animation interpolates between from and the sum of from and by.
+Only a from value
+The animation interpolates between from and the default source value.
+Only a to value
+The animation interpolates between the default source value and to.
+A to and by value
+The animation starts at by subtracted from _to _and completes at to.
+Only a by value
+The animation interpolates between the default source value and the sum of default source value and by.
+No from, to, or by value
+The animation interpolates between the default source value and the default target value.
+The default source value is the base value of the of animated property. If multiple animations target the property, then the framework observes the output of the previous animation as the subsequent animation’s default source value. The default target value is the base value of the animated property.
+Topics
+Creating an Animation
+init(name: String, from: Value?, to: Value?, by: Value?, duration: TimeInterval, timing: AnimationTimingFunction, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+Creates an animation that interpolates between two values for a property of the target entity.
+init(jointNames: [String], name: String, isScaleAnimated: Bool, isRotationAnimated: Bool, isTranslationAnimated: Bool, from: Value?, to: Value?, by: Value?, duration: TimeInterval, timing: AnimationTimingFunction, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+Creates an animation that interpolates between two configurations of the given joints.
+Available when Value is JointTransforms.
+Configuring the Animation
+var name: String
+A textual name for the animation.
+var bindTarget: BindTarget
+A textual name that identifies the particular property that animates.
+var blendLayer: Int32
+The order in which the framework composites the animation.
+var jointNames: [String]
+Joint names that define the joints in the skeletal pose.
+Available when Value is JointTransforms.
+var isScaleAnimated: Bool
+A Boolean value that indicates whether that animation interpolates changes to the target’s size.
+Available when Value is JointTransforms.
+var isRotationAnimated: Bool
+A Boolean value that indicates whether the animation interpolates rotational changes.
+Available when Value is JointTransforms.
+var isTranslationAnimated: Bool
+A Boolean value that indicates whether the animation interpolates changes to the target object’s position.
+Available when Value is JointTransforms.
+var isAdditive: Bool
+A Boolean value that indicates whether the animation blends additively with concurrent animations.
+Defining a Start Value
+var fromValue: JointTransforms?
+Available when Value is JointTransforms.
+var fromValue: Transform?
+Available when Value is Transform.
+var fromValue: Double?
+Available when Value is Double.
+var fromValue: Float?
+Available when Value is Float.
+var fromValue: simd_quatf?
+Available when Value is simd_quatf.
+var fromValue: SIMD2<Float>?
+Available when Value is SIMD2<Float>.
+var fromValue: SIMD3<Float>?
+Available when Value is SIMD3<Float>.
+var fromValue: SIMD4<Float>?
+Available when Value is SIMD4<Float>.
+Defining an Incremental Value
+var byValue: JointTransforms?
+Available when Value is JointTransforms.
+var byValue: Transform?
+Available when Value is Transform.
+var byValue: Double?
+Available when Value is Double.
+var byValue: Float?
+Available when Value is Float.
+var byValue: simd_quatf?
+Available when Value is simd_quatf.
+var byValue: SIMD2<Float>?
+Available when Value is SIMD2<Float>.
+var byValue: SIMD3<Float>?
+Available when Value is SIMD3<Float>.
+var byValue: SIMD4<Float>?
+Available when Value is SIMD4<Float>.
+Defining an End Value
+var toValue: JointTransforms?
+Available when Value is JointTransforms.
+var toValue: Transform?
+Available when Value is Transform.
+var toValue: Double?
+Available when Value is Double.
+var toValue: Float?
+Available when Value is Float.
+var toValue: simd_quatf?
+Available when Value is simd_quatf.
+var toValue: SIMD2<Float>?
+Available when Value is SIMD2<Float>.
+var toValue: SIMD3<Float>?
+Available when Value is SIMD3<Float>.
+var toValue: SIMD4<Float>?
+Available when Value is SIMD4<Float>.
+Timing the Animation
+var speed: Float
+A factor that increases or decreases the animation’s rate of playback.
+var delay: TimeInterval
+An amount of time that lapses before the animation plays.
+var duration: TimeInterval
+The total playback time of the animation.
+var offset: TimeInterval
+The time, in seconds, at which the animation begins within the duration.
+var timing: AnimationTimingFunction
+An option that determines the animation’s pace over time.
+var trimDuration: TimeInterval?
+An optional duration that overrides the calculated duration.
+var trimStart: TimeInterval?
+The time, in seconds, at which the animation plays.
+var trimEnd: TimeInterval?
+The time, in seconds, at which the animation stops.
+func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> Self
+Edits the animation duration according to the specified time.
+Repeating Animation Playback
+var repeatMode: AnimationRepeatMode
+An option that determines how the animation repeats.
+var fillMode: AnimationFillMode
+An option that determines which data displays outside of the normal duration.
+func repeated(count: TimeInterval) -> Self
+Repeats an animation the number of times specified by an irrational number.
+func repeated(count: Int) -> Self
+Repeats an animation the number of times specified by a whole number.
+func repeatingForever() -> Self
+Repeats the animation infinitely.
+Default Implementations
+API Reference
+AnimationDefinition Implementations
+Relationships
+Conforms To
+AnimationDefinition
+See Also
+Animating an Entity
+struct SampledAnimation
+An animation that cycles through a series of frames at a constant interval.
+struct OrbitAnimation
+An animation that revolves an entity around its origin.
+struct BlendTreeAnimation
+A collection of animations on the same property that the framework blends to a single animation.
+protocol BlendTreeNode
+An interface for a node that’s a member of a blend tree.
+struct BlendTreeBlendNode
+A source node for an animation that mixes several animations to form a single animation.
+struct BlendTreeInvalidNode
+A blend tree node that’s internal only or sources from an invalid definition.
+struct BlendTreeSourceNode
+A blend node that contains an animation.
+enum BlendWeight
+A numerical representation of the impact an animation has on a scene or entity.
+enum TweenMode
+Options that determine whether an animation switches between frames gradually or abruptly.
+var bindableValues: BindableValuesReference
+struct BindPath
+The components of a target’s path that refer to the animation properties of a nested scene or entity.
+enum BindTarget
+A reference to a particular scene, entity, or property that animates.
+protocol BindableData
+An opaque base protocol for bindable data objects.
+struct BindableValue
+The value of a bindable target.
+struct BindableValuesReference
+A reference to a bindable value of an animation.
+struct ParameterSet
+Represents a reference to the parameters for a particular entity.
+var parameters: Entity.ParameterSet
+Represents a reference to the parameters for a particular entity.
+struct InternalBindPath
+A bind target for framework-provided properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is FromToByAnimation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/blendmode-swift.struct/destinationatopSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Color
+M
+func tint(Color?) -> some View
+M
+func tint<S>(S?) -> some View
+Setting a color
+P
+var environment: EnvironmentValues
+Accessing the environment
+M
+func withCGContext(content: (CGContext) throws -> Void) rethrows
+P
+static var destinationOut: GraphicsContext.BlendMode
+P
+static var destinationIn: GraphicsContext.BlendMode
+P
+static var destinationOver: GraphicsContext.BlendMode
+P
+static var sourceAtop: GraphicsContext.BlendMode
+P
+static var sourceOut: GraphicsContext.BlendMode
+P
+static var sourceIn: GraphicsContext.BlendMode
+P
+static var copy: GraphicsContext.BlendMode
+P
+static var clear: GraphicsContext.BlendMode
+Documentation
+Open Menu
+Swift
+Type Property
+destinationAtop
+A mode that you use to paint the source image under the background, while erasing any of the background not matched by opaque pixels from the source image.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static var destinationAtop: GraphicsContext.BlendMode { get }
+Discussion
+This mode implements the equation R = S*(1 - Da) + D*Sa where
+R is the composite image.
+S is the source image.
+D is the background.
+Sa is the source image’s alpha value.
+Da is the source background’s alpha value.
+See Also
+Accessing porter-duff modes
+static var clear: GraphicsContext.BlendMode
+A mode that clears any pixels that the source image overwrites.
+static var copy: GraphicsContext.BlendMode
+A mode that replaces background image samples with source image samples.
+static var sourceIn: GraphicsContext.BlendMode
+A mode that you use to paint the source image, including its transparency, onto the opaque parts of the background.
+static var sourceOut: GraphicsContext.BlendMode
+A mode that you use to paint the source image onto the transparent parts of the background, while erasing the background.
+static var sourceAtop: GraphicsContext.BlendMode
+A mode that you use to paint the opaque parts of the source image onto the opaque parts of the background.
+static var destinationOver: GraphicsContext.BlendMode
+A mode that you use to paint the source image under the background.
+static var destinationIn: GraphicsContext.BlendMode
+A mode that you use to erase any of the background that isn’t covered by opaque source pixels.
+static var destinationOut: GraphicsContext.BlendMode
+A mode that you use to erase any of the background that is covered by opaque source pixels.
+static var xor: GraphicsContext.BlendMode
+A mode that you use to clear pixels where both the source and background images are opaque.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is destinationAtop
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

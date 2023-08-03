@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/sharelink/init(_:item:subject:message:preview:)-5wsbrSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+DefaultShareLinkLabel
+Supporting types
+M
+init(Text, items: Data, subject: Text?, message: Text?, preview: (Data.Element) -> SharePreview<PreviewImage, PreviewIcon>)
+M
+init(LocalizedStringKey, items: Data, subject: Text?, message: Text?, preview: (Data.Element) -> SharePreview<PreviewImage, PreviewIcon>)
+M
+init<S>(S, items: Data, subject: Text?, message: Text?, preview: (Data.Element) -> SharePreview<PreviewImage, PreviewIcon>)
+Sharing items with a label and preview
+M
+init(Text, items: Data, subject: Text?, message: Text?)
+init(items: Data, subject: Text?, message: Text?, preview: (Data.Element) -> SharePreview<PreviewImage, PreviewIcon>, label: () -> Label)
+init(items: Data, subject: Text?, message: Text?, preview: (Data.Element) -> SharePreview<PreviewImage, PreviewIcon>)
+init<I>(LocalizedStringKey, item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>)
+M
+init<I>(Text, item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>)
+M
+init<S, I>(S, item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>)
+Sharing an item with a label and a preview
+M
+init(Text, item: URL, subject: Text?, message: Text?)
+M
+init(LocalizedStringKey, item: String, subject: Text?, message: Text?)
+M
+init<S>(S, item: String, subject: Text?, message: Text?)
+M
+init(Text, item: String, subject: Text?, message: Text?)
+M
+init(LocalizedStringKey, item: URL, subject: Text?, message: Text?)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:item:subject:message:preview:)
+Creates an instance, with a custom label, that presents the share interface.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<I>(
+    _ titleKey: LocalizedStringKey,
+    item: I,
+    subject: Text? = nil,
+    message: Text? = nil,
+    preview: SharePreview<PreviewImage, PreviewIcon>
+) where Data == CollectionOfOne<I>, I : Transferable
+Available when Data conforms to RandomAccessCollection, PreviewImage conforms to Transferable, PreviewIcon conforms to Transferable, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+Parameters
+titleKey
+A key identifying the title of the share action.
+item
+The item to share.
+subject
+A title for the item to show when sharing to activities that support a subject field.
+message
+A description of the item to show when sharing to activities that support a message field. Activities may support attributed text or HTML strings.
+preview
+A representation of the item to render in a preview.
+See Also
+Sharing an item with a label and a preview
+init<S, I>(S, item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>)
+Creates an instance, with a custom label, that presents the share interface.
+Available when Data conforms to RandomAccessCollection, PreviewImage conforms to Transferable, PreviewIcon conforms to Transferable, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+init<I>(Text, item: I, subject: Text?, message: Text?, preview: SharePreview<PreviewImage, PreviewIcon>)
+Creates an instance, with a custom label, that presents the share interface.
+Available when Data conforms to RandomAccessCollection, PreviewImage conforms to Transferable, PreviewIcon conforms to Transferable, Label is DefaultShareLinkLabel, and Data.Element conforms to Transferable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:item:subject:message:preview:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

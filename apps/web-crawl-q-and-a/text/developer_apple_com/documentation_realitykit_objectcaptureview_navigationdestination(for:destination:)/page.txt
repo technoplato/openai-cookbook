@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/navigationdestination(for:destination:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some View
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+M
+func onAppear(perform: (() -> Void)?) -> some View
+M
+func offset(x: CGFloat, y: CGFloat) -> some View
+M
+func offset(CGSize) -> some View
+M
+func navigationViewStyle<S>(S) -> some View
+M
+func navigationTitle<S>(S) -> some View
+M
+func navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode) -> some View
+M
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle<S>(S, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(LocalizedStringKey) -> some View
+M
+func navigationBarTitle(Text) -> some View
+M
+func navigationBarTitle<S>(S) -> some View
+M
+func navigationBarItems<T>(trailing: T) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+navigationDestination(for:destination:)
+Associates a destination view with a presented data type for use within a navigation stack.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func navigationDestination<D, C>(
+    for data: D.Type,
+    @ViewBuilder destination: @escaping (D) -> C
+) -> some View where D : Hashable, C : View
+Parameters
+data
+The type of data that this destination matches.
+destination
+A view builder that defines a view to display when the stack’s navigation state contains a value of type data. The closure takes one argument, which is the value of the data to present.
+Discussion
+Add this view modifer to a view inside a NavigationStack to describe the view that the stack displays when presenting a particular kind of data. Use a NavigationLink to present the data. For example, you can present a ColorDetail view for each presentation of a Color instance:
+NavigationStack {
+    List {
+        NavigationLink("Mint", value: Color.mint)
+        NavigationLink("Pink", value: Color.pink)
+        NavigationLink("Teal", value: Color.teal)
+    }
+    .navigationDestination(for: Color.self) { color in
+        ColorDetail(color: color)
+    }
+    .navigationTitle("Colors")
+}
+You can add more than one navigation destination modifier to the stack if it needs to present more than one kind of data.
+Do not put a navigation destination modifier inside a “lazy” container, like List or LazyVStack. These containers create child views only when needed to render on screen. Add the navigation destination modifier outside these containers so that the navigation stack can always see the destination.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigationDestination(for:destination:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

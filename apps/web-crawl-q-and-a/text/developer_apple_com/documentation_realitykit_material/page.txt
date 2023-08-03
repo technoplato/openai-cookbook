@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/realitykit/materialSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+S
+PortalMaterial
+Material fundamentals
+S
+ShaderGraphMaterial
+Beta
+S
+CustomMaterial
+Modifying RealityKit Rendering Using Custom Materials
+Custom materials
+C
+VideoPlaybackController
+S
+VideoMaterial
+Video materials
+Documentation
+Open Menu
+Swift
+Protocol
+Material
+A type that describes the material aspects of a mesh, like color and texture.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+protocol Material
+Overview
+In RealityKit, a material defines the surface properties of a 3D model. It specifies how RealityKit renders the entity, including its color and whether it’s shiny or reflective. A ModelEntity may have one material that defines the way RealityKit renders the entire entity, or it may have several that define the look of different parts of the model.
+RealityKit provides several different material structures for different types of rendering, including PhysicallyBasedMaterial, which is a versatile material capable of simulating real-world objects in a highly realistic manner, and UnlitMaterial, which RealityKit draws with no lighting effects or shadows.
+If you import a model from a USDZ file, RealityKit automatically creates one or more PhysicallyBasedMaterial instances from the material properties contained in the file.
+Topics
+Specifying Color
+typealias Color
+An alias for the color type that’s appropriate for the current platform.
+Configuring Materials
+struct ParameterSet
+A reference to general-purpose entity parameters for animations.
+struct MaterialParameters
+protocol MaterialFunction
+The abstract superclass for objects representing compute functions for RealityKit custom materials .
+enum MaterialColorParameter
+The color parameter applied to a material.
+enum MaterialScalarParameter
+The scalar parameter applied to a material.
+typealias Parameters
+The parameter type that custom materials uses for properties the framework passes to shader functions.
+Instance Properties
+var name: String?
+Name exported with USDz or Reality File asset
+Beta
+Relationships
+Conforming Types
+CustomMaterial
+OcclusionMaterial
+PhysicallyBasedMaterial
+PortalMaterial
+ShaderGraphMaterial
+SimpleMaterial
+UnlitMaterial
+VideoMaterial
+See Also
+Material fundamentals
+struct MaterialParameterTypes
+A set of typesused for material parameters.
+struct MaterialParameters
+protocol MaterialFunction
+The abstract superclass for objects representing compute functions for RealityKit custom materials .
+struct PortalMaterial
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Material
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

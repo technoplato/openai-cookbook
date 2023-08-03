@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/swiftui/texteditorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Controlling text style
+S
+ScaledMetric
+E
+DynamicTypeSize
+P
+var dynamicTypeSize: DynamicTypeSize
+M
+func dynamicTypeSize(DynamicTypeSize) -> some View
+M
+func dynamicTypeSize<T>(T) -> some View
+M
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+S
+SecureField
+M
+func textFieldStyle<S>(S) -> some View
+S
+TextField
+Getting text input
+M
+func labelStyle<S>(S) -> some View
+S
+Label
+S
+Text
+Displaying text
+Documentation
+Open Menu
+Swift
+Structure
+TextEditor
+A view that can display and edit long-form text.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct TextEditor
+Overview
+A text editor view allows you to display and edit multiline, scrollable text in your app’s user interface. By default, the text editor view styles the text using characteristics inherited from the environment, like font(_:), foregroundColor(_:), and multilineTextAlignment(_:).
+You create a text editor by adding a TextEditor instance to the body of your view, and initialize it by passing in a Binding to a string variable in your app:
+struct TextEditingView: View {
+    @State private var fullText: String = "This is some editable text..."
+
+
+    var body: some View {
+        TextEditor(text: $fullText)
+    }
+}
+To style the text, use the standard view modifiers to configure a system font, set a custom font, or change the color of the view’s text.
+In this example, the view renders the editor’s text in gray with a custom font:
+struct TextEditingView: View {
+    @State private var fullText: String = "This is some editable text..."
+
+
+    var body: some View {
+        TextEditor(text: $fullText)
+            .foregroundColor(Color.gray)
+            .font(.custom("HelveticaNeue", size: 13))
+    }
+}
+If you want to change the spacing or font scaling aspects of the text, you can use modifiers like lineLimit(_:), lineSpacing(_:), and minimumScaleFactor(_:) to configure how the view displays text depending on the space constraints. For example, here the lineSpacing(_:) modifier sets the spacing between lines to 5 points:
+struct TextEditingView: View {
+    @State private var fullText: String = "This is some editable text..."
+
+
+    var body: some View {
+        TextEditor(text: $fullText)
+            .foregroundColor(Color.gray)
+            .font(.custom("HelveticaNeue", size: 13))
+            .lineSpacing(5)
+    }
+}
+Topics
+Creating a text editor
+init(text: Binding<String>)
+Creates a plain text editor.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Getting text input
+struct TextField
+A control that displays an editable text interface.
+func textFieldStyle<S>(S) -> some View
+Sets the style for text fields within this view.
+struct SecureField
+A control into which the user securely enters private text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TextEditor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

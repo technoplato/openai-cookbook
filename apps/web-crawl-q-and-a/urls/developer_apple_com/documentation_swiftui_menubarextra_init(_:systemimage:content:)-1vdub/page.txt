@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/menubarextra/init(_:systemimage:content:)-1vdubSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+Navigation
+Documents
+Creating a menu bar extra with a system image
+M
+init<S>(S, image: String, isInserted: Binding<Bool>, content: () -> Content)
+M
+init<S>(S, image: String, content: () -> Content)
+M
+init(LocalizedStringKey, image: String, isInserted: Binding<Bool>, content: () -> Content)
+M
+init(LocalizedStringKey, image: String, content: () -> Content)
+Creating a menu bar extra with a named image
+M
+init(isInserted: Binding<Bool>, content: () -> Content, label: () -> Label)
+M
+init<S>(S, isInserted: Binding<Bool>, content: () -> Content)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:systemImage:content:)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+macOS 13.0+
+init(
+    _ titleKey: LocalizedStringKey,
+    systemImage: String,
+    @ViewBuilder content: () -> Content
+)
+Available when Label is Label<Text, Image> and Content conforms to View.
+Parameters
+titleKey
+The localized string key to use for the accessibility label of the item.
+systemImage
+The name of a system image to use as the label.
+content
+A View to display when the user selects the item.
+Discussion
+The item defines the primary scene of an App.
+When this item is removed from the system menu bar by the user, the application will be automatically quit. As such, it should not be used in conjunction with other scene types in your App.
+See Also
+Creating a menu bar extra with a system image
+init(LocalizedStringKey, systemImage: String, isInserted: Binding<Bool>, content: () -> Content)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+Available when Label is Label<Text, Image> and Content conforms to View.
+init<S>(S, systemImage: String, content: () -> Content)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+Available when Label is Label<Text, Image> and Content conforms to View.
+init<S>(S, systemImage: String, isInserted: Binding<Bool>, content: () -> Content)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Current page is init(_:systemImage:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

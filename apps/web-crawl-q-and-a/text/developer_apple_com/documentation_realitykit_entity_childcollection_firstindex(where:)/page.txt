@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/realitykit/entity/childcollection/firstindex(where:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomStringConvertible Implementations
+Collection Implementations
+Default Implementations
+T
+Entity.ChildCollection.SubSequence
+T
+Entity.ChildCollection.Iterator
+T
+Entity.ChildCollection.Indices
+T
+Entity.ChildCollection.Index
+M
+func firstIndex(of: Self.Element) -> Self.Index?
+P
+var endIndex: Int
+P
+var startIndex: Int
+P
+var indices: DefaultIndices<Self>
+M
+func distance(from: Self.Index, to: Self.Index) -> Int
+Manipulating Indices
+M
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+Accessing Underlying Storage
+Documentation
+Open Menu
+Swift
+Instance Method
+firstIndex(where:)
+Returns the first index in which an element of the collection satisfies the given predicate.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func firstIndex(where predicate: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Parameters
+predicate
+A closure that takes an element as its argument and returns a Boolean value that indicates whether the passed element represents a match.
+Return Value
+The index of the first element for which predicate returns true. If no elements in the collection satisfy the given predicate, returns nil.
+Overview
+You can use the predicate to find an element of a type that doesn’t conform to the Equatable protocol or to find an element that matches particular criteria. Here’s an example that finds a student name that begins with the letter “A”:
+let students = ["Kofi", "Abena", "Peter", "Kweku", "Akosua"]
+if let i = students.firstIndex(where: { $0.hasPrefix("A") }) {
+    print("\(students[i]) starts with 'A'!")
+}
+// Prints "Abena starts with 'A'!"
+Complexity: O(n), where n is the length of the collection.
+See Also
+Manipulating Indices
+func distance(from: Self.Index, to: Self.Index) -> Int
+Returns the distance between two indices.
+var indices: DefaultIndices<Self>
+The indices that are valid for subscripting the collection, in ascending order.
+Available when Indices is DefaultIndices<Self>.
+var startIndex: Int
+The position of the first element in a nonempty collection. (See Collection.startIndex.)
+var endIndex: Int
+TThe collection’s “past the end” position—that is, the position one greater than the last valid subscript argument. (See Collection.endIndex.)
+func firstIndex(of: Self.Element) -> Self.Index?
+Returns the first index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func formIndex(inout Self.Index, offsetBy: Int)
+Offsets the given index by the specified distance.
+func formIndex(inout Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Bool
+Offsets the given index by the specified distance, or so that it equals the given limiting index.
+func formIndex(after: inout Self.Index)
+Replaces the given index with its successor.
+func index(Self.Index, offsetBy: Int) -> Self.Index
+Returns an index that is the specified distance from the given index.
+func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?
+Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index.
+func index(after: Int) -> Int
+Returns the position immediately after the given index. (See Collection.index.)
+func index(of: Self.Element) -> Self.Index?
+Returns the first index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is firstIndex(where:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/textfieldlink/init(_:prompt:onsubmit:)-35nibSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+RenameButton
+Linking to other content
+S
+Link
+S
+ShareLink
+S
+SharePreview
+S
+TextFieldLink
+Creating a text field link
+M
+init(LocalizedStringKey, prompt: Text?, onSubmit: (String) -> Void)
+S
+PaletteSelectionEffect
+Choosing dates
+S
+DatePicker
+M
+func datePickerStyle<S>(S) -> some View
+S
+MultiDatePicker
+P
+var calendar: Calendar
+P
+var timeZone: TimeZone
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:prompt:onSubmit:)
+Creates a TextFieldLink which when pressed will request text input from the user.
+watchOS 9.0+
+init<S>(
+    _ title: S,
+    prompt: Text? = nil,
+    onSubmit: @escaping (String) -> Void
+) where S : StringProtocol
+Available when Label is Text.
+Parameters
+titleKey
+A key for the TextFieldLink’s localized title, that describes the purpose of requesting text input.
+prompt
+Text which describes the reason for requesting text input.
+onSubmit
+An action to perform when text input has been accepted and dismissed
+See Also
+Creating a text field link
+init(LocalizedStringKey, prompt: Text?, onSubmit: (String) -> Void)
+Creates a TextFieldLink which when pressed will request text input from the user.
+Available when Label is Text.
+init(prompt: Text?, label: () -> Label, onSubmit: (String) -> Void)
+Creates a TextFieldLink which when pressed will request text input from the user.
+Available when Label conforms to View.
+Current page is init(_:prompt:onSubmit:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

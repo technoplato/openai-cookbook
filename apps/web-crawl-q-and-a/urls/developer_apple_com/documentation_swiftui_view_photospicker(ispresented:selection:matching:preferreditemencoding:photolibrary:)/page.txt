@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/view/photospicker(ispresented:selection:matching:preferreditemencoding:photolibrary:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func currentEntitlementTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<VerificationResult<Transaction>?>) async -> ()) -> some View
+Beta
+M
+func musicSubscriptionOffer(isPresented: Binding<Bool>, options: MusicSubscriptionOffer.Options, onLoadCompletion: ((Error)?) -> Void) -> some View
+M
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+M
+func refundRequestSheet(for: Transaction.ID, isPresented: Binding<Bool>, onDismiss: ((Result<Transaction.RefundRequestStatus, Transaction.RefundRequestError>) -> ())?) -> some View
+M
+func manageSubscriptionsSheet(isPresented: Binding<Bool>) -> some View
+M
+func appStoreOverlay(isPresented: Binding<Bool>, configuration: () -> SKOverlay.Configuration) -> some View
+Interacting with the App Store and Apple Music
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+S
+PhotosPicker
+Selecting photos
+S
+VideoPlayer
+S
+NowPlayingView
+S
+CameraView
+Displaying media
+S
+Map
+Documentation
+Open Menu
+Swift
+Instance Method
+photosPicker(isPresented:selection:matching:preferredItemEncoding:photoLibrary:)
+Presents a Photos picker that selects a PhotosPickerItem from a given photo library.
+PhotosUI
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+func photosPicker(
+    isPresented: Binding<Bool>,
+    selection: Binding<PhotosPickerItem?>,
+    matching filter: PHPickerFilter? = nil,
+    preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy = .automatic,
+    photoLibrary: PHPhotoLibrary
+) -> some View
+Parameters
+isPresented
+The binding to whether the Photos picker should be shown.
+selection
+The item being shown and selected in the Photos picker.
+filter
+Types of items that can be shown. Default is nil. Setting it to nil means all supported types can be shown.
+preferredItemEncoding
+The encoding disambiguation policy of the selected item. Default is .automatic. Setting it to .automatic means the best encoding determined by the system will be used.
+photoLibrary
+The photo library to choose from.
+Discussion
+The user explicitly grants access only to items they choose, so photo library access authorization is not needed.
+See Also
+Selecting photos
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+Presents a Photos picker that selects a PhotosPickerItem.
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+Presents a Photos picker that selects a collection of PhotosPickerItem.
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+Presents a Photos picker that selects a collection of PhotosPickerItem from a given photo library.
+func photosPickerAccessoryVisibility(Visibility, edges: Edge.Set) -> some View
+Sets the accessory visibility of the Photos picker. Accessories include anything between the content and the edge, like the navigation bar or the sidebar.
+Beta
+func photosPickerDisabledCapabilities(PHPickerCapabilities) -> some View
+Disables capabilities of the Photos picker.
+Beta
+func photosPickerStyle(PhotosPickerStyle) -> some View
+Sets the mode of the Photos picker.
+Beta
+Current page is photosPicker(isPresented:selection:matching:preferredItemEncoding:photoLibrary:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

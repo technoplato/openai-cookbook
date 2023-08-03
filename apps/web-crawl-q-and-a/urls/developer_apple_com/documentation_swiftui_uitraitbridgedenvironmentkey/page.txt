@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/swiftui/uitraitbridgedenvironmentkeySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Sharing configuration information
+S
+UIViewControllerRepresentableContext
+r
+P
+UIViewControllerRepresentable
+S
+UIViewRepresentableContext
+r
+P
+UIViewRepresentable
+Adding UIKit views to SwiftUI view hierarchies
+S
+UIHostingConfiguration
+S
+UIHostingControllerSizingOptions
+Documentation
+Open Menu
+Swift
+Protocol
+UITraitBridgedEnvironmentKey
+An environment key that is bridged to a UIKit trait.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+protocol UITraitBridgedEnvironmentKey : EnvironmentKey
+Overview
+Use this protocol to allow the same underlying data to be accessed using an environment key in SwiftUI and trait in UIKit. As the bridging is bidirectional, values written to the trait in UIKit can be read using the environment key in SwiftUI, and values written to the environment key in SwiftUI can be read from the trait in UIKit.
+Given a custom UIKit trait named MyTrait with myTrait properties on both UITraitCollection and UIMutableTraits:
+struct MyTrait: UITraitDefinition {
+    static let defaultValue = "Default value"
+}
+
+
+extension UITraitCollection {
+    var myTrait: String {
+        self[MyTrait.self]
+    }
+}
+
+
+extension UIMutableTraits {
+    var myTrait: String {
+        get { self[MyTrait.self] }
+        set { self[MyTrait.self] = newValue }
+    }
+}
+You can declare an environment key to represent the same data:
+struct MyEnvironmentKey: EnvironmentKey {
+    static let defaultValue = "Default value"
+}
+Bridge the environment key and the trait by conforming to the UITraitBridgedEnvironmentKey protocol, providing implementations of read(from:) and write(to:value:) to losslessly convert the environment value from and to the corresponding trait value:
+extension MyEnvironmentKey: UITraitBridgedEnvironmentKey {
+    static func read(
+        from traitCollection: UITraitCollection
+    ) -> String {
+        traitCollection.myTrait
+    }
+
+
+    static func write(
+        to mutableTraits: inout UIMutableTraits, value: String
+    ) {
+        mutableTraits.myTrait = value
+    }
+}
+Topics
+Managing the keys
+static func read(from: UITraitCollection) -> Self.Value
+Reads the trait value from the trait collection, and returns the equivalent environment value.
+Required
+static func write(to: inout UIMutableTraits, value: Self.Value)
+Required
+Relationships
+Inherits From
+EnvironmentKey
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UITraitBridgedEnvironmentKey
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

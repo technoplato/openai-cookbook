@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/stroke(_:with:linewidth:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func draw(GraphicsContext.ResolvedSymbol, at: CGPoint, anchor: UnitPoint)
+Drawing a child view
+S
+GraphicsContext.ResolvedText
+M
+func resolve(Text) -> GraphicsContext.ResolvedText
+M
+func draw(GraphicsContext.ResolvedText, in: CGRect)
+M
+func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)
+M
+func draw(Text, in: CGRect)
+Drawing a path
+S
+GraphicsContext
+S
+Canvas
+Add Rich Graphics to Your SwiftUI App
+Immediate mode drawing
+Drawing and graphics
+Shapes
+Menus and commands
+Documentation
+Open Menu
+Swift
+Instance Method
+stroke(_:with:lineWidth:)
+Draws a path into the context with a specified line width.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func stroke(
+    _ path: Path,
+    with shading: GraphicsContext.Shading,
+    lineWidth: CGFloat = 1
+)
+Parameters
+path
+The path to outline.
+shading
+The color or pattern to use when outlining the path.
+lineWidth
+The width of the stroke, which defaults to 1.
+Discussion
+When you call this method, all StrokeStyle properties other than lineWidth take their default values. To control other style properties, use stroke(_:with:style:) instead.
+See Also
+Drawing a path
+func stroke(Path, with: GraphicsContext.Shading, style: StrokeStyle)
+Draws a path into the context with a specified stroke style.
+func fill(Path, with: GraphicsContext.Shading, style: FillStyle)
+Draws a path into the context and fills the outlined region.
+func resolve(GraphicsContext.Shading) -> GraphicsContext.Shading
+Returns a version of a shading resolved with the current values of the graphics context’s environment.
+struct Shading
+A color or pattern that you can use to outline or fill a path.
+struct GradientOptions
+Options that affect the rendering of color gradients.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is stroke(_:with:lineWidth:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

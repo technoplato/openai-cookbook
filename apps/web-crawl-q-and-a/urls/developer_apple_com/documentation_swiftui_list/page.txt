@@ -1,0 +1,480 @@
+https://developer.apple.com/documentation/swiftui/listSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Listing bound data
+M
+init<Data, RowContent>(Data, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, rowContent: (Data.Element) -> RowContent)
+Listing identifiable data
+M
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, rowContent: (Data.Element) -> RowContent)
+Displaying data in lists
+Creating a list
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Documentation
+Open Menu
+Swift
+Structure
+List
+A container that presents rows of data arranged in a single column, optionally providing the ability to select one or more members.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@MainActor
+struct List<SelectionValue, Content> where SelectionValue : Hashable, Content : View
+Overview
+In its simplest form, a List creates its contents statically, as shown in the following example:
+var body: some View {
+    List {
+        Text("A List Item")
+        Text("A Second List Item")
+        Text("A Third List Item")
+    }
+}
+More commonly, you create lists dynamically from an underlying collection of data. The following example shows how to create a simple list from an array of an Ocean type which conforms to Identifiable:
+struct Ocean: Identifiable {
+    let name: String
+    let id = UUID()
+}
+
+
+private var oceans = [
+    Ocean(name: "Pacific"),
+    Ocean(name: "Atlantic"),
+    Ocean(name: "Indian"),
+    Ocean(name: "Southern"),
+    Ocean(name: "Arctic")
+]
+
+
+var body: some View {
+    List(oceans) {
+        Text($0.name)
+    }
+}
+Supporting selection in lists
+To make members of a list selectable, provide a binding to a selection variable. Binding to a single instance of the list data’s Identifiable.ID type creates a single-selection list. Binding to a Set creates a list that supports multiple selections. The following example shows how to add multiselect to the previous example:
+struct Ocean: Identifiable, Hashable {
+    let name: String
+    let id = UUID()
+}
+
+
+private var oceans = [
+    Ocean(name: "Pacific"),
+    Ocean(name: "Atlantic"),
+    Ocean(name: "Indian"),
+    Ocean(name: "Southern"),
+    Ocean(name: "Arctic")
+]
+
+
+@State private var multiSelection = Set<UUID>()
+
+
+var body: some View {
+    NavigationView {
+        List(oceans, selection: $multiSelection) {
+            Text($0.name)
+        }
+        .navigationTitle("Oceans")
+        .toolbar { EditButton() }
+    }
+    Text("\(multiSelection.count) selections")
+}
+When people make a single selection by tapping or clicking, the selected cell changes its appearance to indicate the selection. To enable multiple selections with tap gestures, put the list into edit mode by either modifying the editMode value, or adding an EditButton to your app’s interface. When you put the list into edit mode, the list shows a circle next to each list item. The circle contains a checkmark when the user selects the associated item. The example above uses an Edit button, which changes its title to Done while in edit mode:
+People can make multiple selections without needing to enter edit mode on devices that have a keyboard and mouse or trackpad, like Mac and iPad.
+Refreshing the list content
+To make the content of the list refreshable using the standard refresh control, use the refreshable(action:) modifier.
+The following example shows how to add a standard refresh control to a list. When the user drags the top of the list downward, SwiftUI reveals the refresh control and executes the specified action. Use an await expression inside the action closure to refresh your data. The refresh indicator remains visible for the duration of the awaited operation.
+struct Ocean: Identifiable, Hashable {
+     let name: String
+     let id = UUID()
+     let stats: [String: String]
+ }
+
+
+ class OceanStore: ObservableObject {
+     @Published var oceans = [Ocean]()
+     func loadStats() async {}
+ }
+
+
+ @EnvironmentObject var store: OceanStore
+
+
+ var body: some View {
+     NavigationView {
+         List(store.oceans) { ocean in
+             HStack {
+                 Text(ocean.name)
+                 StatsSummary(stats: ocean.stats) // A custom view for showing statistics.
+             }
+         }
+         .refreshable {
+             await store.loadStats()
+         }
+         .navigationTitle("Oceans")
+     }
+ }
+Supporting multidimensional lists
+To create two-dimensional lists, group items inside Section instances. The following example creates sections named after the world’s oceans, each of which has Text views named for major seas attached to those oceans. The example also allows for selection of a single list item, identified by the id of the example’s Sea type.
+struct ContentView: View {
+    struct Sea: Hashable, Identifiable {
+        let name: String
+        let id = UUID()
+    }
+
+
+    struct OceanRegion: Identifiable {
+        let name: String
+        let seas: [Sea]
+        let id = UUID()
+    }
+
+
+    private let oceanRegions: [OceanRegion] = [
+        OceanRegion(name: "Pacific",
+                    seas: [Sea(name: "Australasian Mediterranean"),
+                           Sea(name: "Philippine"),
+                           Sea(name: "Coral"),
+                           Sea(name: "South China")]),
+        OceanRegion(name: "Atlantic",
+                    seas: [Sea(name: "American Mediterranean"),
+                           Sea(name: "Sargasso"),
+                           Sea(name: "Caribbean")]),
+        OceanRegion(name: "Indian",
+                    seas: [Sea(name: "Bay of Bengal")]),
+        OceanRegion(name: "Southern",
+                    seas: [Sea(name: "Weddell")]),
+        OceanRegion(name: "Arctic",
+                    seas: [Sea(name: "Greenland")])
+    ]
+
+
+    @State private var singleSelection: UUID?
+
+
+    var body: some View {
+        NavigationView {
+            List(selection: $singleSelection) {
+                ForEach(oceanRegions) { region in
+                    Section(header: Text("Major \(region.name) Ocean Seas")) {
+                        ForEach(region.seas) { sea in
+                            Text(sea.name)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Oceans and Seas")
+        }
+    }
+}
+Because this example uses single selection, people can make selections outside of edit mode on all platforms.
+Note
+In iOS 15, iPadOS 15, and tvOS 15 and earlier, lists support selection only in edit mode, even for single selections.
+Creating hierarchical lists
+You can also create a hierarchical list of arbitrary depth by providing tree-structured data and a children parameter that provides a key path to get the child nodes at any level. The following example uses a deeply-nested collection of a custom FileItem type to simulate the contents of a file system. The list created from this data uses collapsing cells to allow the user to navigate the tree structure.
+struct ContentView: View {
+    struct FileItem: Hashable, Identifiable, CustomStringConvertible {
+        var id: Self { self }
+        var name: String
+        var children: [FileItem]? = nil
+        var description: String {
+            switch children {
+            case nil:
+                return "📄 \(name)"
+            case .some(let children):
+                return children.isEmpty ? "📂 \(name)" : "📁 \(name)"
+            }
+        }
+    }
+    let fileHierarchyData: [FileItem] = [
+      FileItem(name: "users", children:
+        [FileItem(name: "user1234", children:
+          [FileItem(name: "Photos", children:
+            [FileItem(name: "photo001.jpg"),
+             FileItem(name: "photo002.jpg")]),
+           FileItem(name: "Movies", children:
+             [FileItem(name: "movie001.mp4")]),
+              FileItem(name: "Documents", children: [])
+          ]),
+         FileItem(name: "newuser", children:
+           [FileItem(name: "Documents", children: [])
+           ])
+        ]),
+        FileItem(name: "private", children: nil)
+    ]
+    var body: some View {
+        List(fileHierarchyData, children: \.children) { item in
+            Text(item.description)
+        }
+    }
+}
+Styling lists
+SwiftUI chooses a display style for a list based on the platform and the view type in which it appears. Use the listStyle(_:) modifier to apply a different ListStyle to all lists within a view. For example, adding .listStyle(.plain) to the example shown in the “Creating Multidimensional Lists” topic applies the plain style, the following screenshot shows:
+Topics
+Creating a list with arbitrary content
+init(content: () -> Content)
+Creates a list with the given content.
+Available when SelectionValue is Never and Content conforms to View.
+init(selection: Binding<SelectionValue>, content: () -> Content)
+Creates a list with the given content that supports selecting a single row that cannot be deselcted.
+init(selection: Binding<SelectionValue?>?, content: () -> Content)
+Creates a list with the given content that supports selecting a single row.
+init(selection: Binding<Set<SelectionValue>>?, content: () -> Content)
+Creates a list with the given content that supports selecting multiple rows.
+Creating a list from a range
+init<RowContent>(Range<Int>, rowContent: (Int) -> RowContent)
+Creates a list that computes its views on demand over a constant range.
+Available when SelectionValue is Never and Content conforms to View.
+init<RowContent>(Range<Int>, selection: Binding<SelectionValue>, rowContent: (Int) -> RowContent)
+Creates a list that computes its views on demand over a constant range and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<RowContent>(Range<Int>, selection: Binding<SelectionValue?>?, rowContent: (Int) -> RowContent)
+Creates a list that computes its views on demand over a constant range, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<RowContent>(Range<Int>, selection: Binding<Set<SelectionValue>>?, rowContent: (Int) -> RowContent)
+Creates a list that computes its views on demand over a constant range, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Listing data
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, rowContent: (Data.Element) -> RowContent)
+Creates a list that identifies its rows based on a key path to the identifier of the underlying data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+Creates a list that identifies its rows based on a key path to the identifier of the underlying data and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+Creates a list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+Creates a list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Listing identifiable data
+init<Data, RowContent>(Data, rowContent: (Data.Element) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, RowContent>(Data, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Data, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Data, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Listing bound data
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that identifies its rows based on a key path to the identifier of the underlying data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Listing bound, identifiable data
+init<Data, RowContent>(Binding<Data>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Listing hierarchical data
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, children: WritableKeyPath<Data.Element, Data?>, selection: Binding<SelectionValue>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from an underlying collection of identifiable data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from an underlying collection of identifiable data and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Data, children: KeyPath<Data.Element, Data?>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from an underlying collection of identifiable data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Listing bound, hierarchical data
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, children: WritableKeyPath<Data.Element, Data?>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, children: KeyPath<Data.Element, Data?>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, children: WritableKeyPath<Data.Element, Data?>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, children: WritableKeyPath<Data.Element, Data?>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that identifies its rows based on a key path to the identifier of the underlying data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, children: WritableKeyPath<Data.Element, Data?>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from a binding to an underlying collection of identifiable data.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, children: WritableKeyPath<Data.Element, Data?>, selection: Binding<SelectionValue>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from a binding to an underlying collection of identifiable data and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, children: WritableKeyPath<Data.Element, Data?>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from a binding to an underlying collection of identifiable data, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, children: WritableKeyPath<Data.Element, Data?>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a hierarchical list that computes its rows on demand from a binding to an underlying collection of identifiable data, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Listing editable data
+init<Data, RowContent>(Binding<Data>, editActions: EditActions<Data>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data and allows to edit the collection.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, editActions: EditActions<Data>, selection: Binding<SelectionValue>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, allows to edit the collection, and requires a selection of a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, editActions: EditActions<Data>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, allows to edit the collection, and optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, RowContent>(Binding<Data>, editActions: EditActions<Data>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable, allows to edit the collection, and optionally allows users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, editActions: EditActions<Data>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data and allows to edit the collection.
+Available when SelectionValue is Never and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, editActions: EditActions<Data>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable, allows to edit the collection, and optionally allows users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, editActions: EditActions<Data>, selection: Binding<SelectionValue>, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable, allows to edit the collection, and requires a selection of a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, editActions: EditActions<Data>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+Creates a list that computes its rows on demand from an underlying collection of identifiable data, allows to edit the collection, and optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Supporting types
+var body: some View
+The content of the list.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Creating a list
+Displaying data in lists
+Visualize collections of data with platform-appropriate appearance.
+func listStyle<S>(S) -> some View
+Sets the style for lists within this view.
+struct Section
+A container view that you can use to add hierarchy to certain collection views.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is List
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

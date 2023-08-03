@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/backgroundstyle(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func colorScheme(ColorScheme) -> some View
+M
+func colorMultiply(Color) -> some View
+M
+func colorInvert() -> some View
+M
+func colorEffect(Shader, isEnabled: Bool) -> some View
+M
+func clipped(antialiased: Bool) -> some View
+M
+func clipShape<S>(S, style: FillStyle) -> some View
+M
+func buttonStyle<S>(S) -> some View
+M
+func backgroundPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View
+M
+func backgroundPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background(ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func background<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+backgroundStyle(_:)
+Sets the specified style to render backgrounds within the view.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func backgroundStyle<S>(_ style: S) -> some View where S : ShapeStyle
+Discussion
+The following example uses this modifier to set the EnvironmentValues/backgroundStyle environment value to a ShapeStyle/blue color that includes a subtle Color/gradient. SwiftUI fills the Circle shape that acts as a background element with this style:
+Image(systemName: "swift")
+    .padding()
+    .background(in: Circle())
+    .backgroundStyle(.blue.gradient)
+To restore the default background style, set the EnvironmentValues/backgroundStyle environment value to nil using the View/environment(_:_:) modifer:
+.environment(\.backgroundStyle, nil)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is backgroundStyle(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

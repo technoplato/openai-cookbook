@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/toolbaritemplacement/navigationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ToolbarPlacement
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Setting toolbar visibility
+S
+ToolbarCustomizationOptions
+S
+ToolbarCustomizationBehavior
+r
+P
+CustomizableToolbarContent
+M
+func toolbar<Content>(id: String, content: () -> Content) -> some View
+P
+static let destructiveAction: ToolbarItemPlacement
+P
+static let cancellationAction: ToolbarItemPlacement
+P
+static let confirmationAction: ToolbarItemPlacement
+P
+static let secondaryAction: ToolbarItemPlacement
+P
+static let primaryAction: ToolbarItemPlacement
+Getting placement for specific actions
+P
+static let status: ToolbarItemPlacement
+P
+static let principal: ToolbarItemPlacement
+Documentation
+Open Menu
+Swift
+Type Property
+navigation
+The item represents a navigation action.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+static let navigation: ToolbarItemPlacement
+Discussion
+Navigation actions allow the user to move between contexts. For example, the forward and back buttons of a web browser are navigation actions.
+In macOS and in Mac Catalyst apps, the system places navigation items in the leading edge of the toolbar ahead of the inline title if that is present in the toolbar.
+In iOS, iPadOS, and tvOS, navigation items appear in the leading edge of the navigation bar. If a system navigation item such as a back button is present in a compact width, it instead appears in the primaryAction placement.
+See Also
+Getting placement for specific actions
+static let primaryAction: ToolbarItemPlacement
+The item represents a primary action.
+static let secondaryAction: ToolbarItemPlacement
+The item represents a secondary action.
+static let confirmationAction: ToolbarItemPlacement
+The item represents a confirmation action for a modal interface.
+static let cancellationAction: ToolbarItemPlacement
+The item represents a cancellation action for a modal interface.
+static let destructiveAction: ToolbarItemPlacement
+The item represents a destructive action for a modal interface.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

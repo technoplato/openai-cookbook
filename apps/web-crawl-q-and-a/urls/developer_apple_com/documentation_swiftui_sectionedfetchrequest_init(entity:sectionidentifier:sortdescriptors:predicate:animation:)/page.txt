@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/swiftui/sectionedfetchrequest/init(entity:sectionidentifier:sortdescriptors:predicate:animation:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+View configuration
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, transaction: Transaction)
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, animation: Animation?)
+init(entity: NSEntityDescription, sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+Creating a fetch request
+S
+SectionedFetchRequest
+S
+FetchedResults
+S
+FetchRequest
+P
+var managedObjectContext: NSManagedObjectContext
+Loading and Displaying a Large Data Feed
+Documentation
+Open Menu
+Swift
+Initializer
+init(entity:sectionIdentifier:sortDescriptors:predicate:animation:)
+Creates a sectioned fetch request for a specified entity description, based on a section identifier, a predicate, and sort parameters.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@MainActor
+init(
+    entity: NSEntityDescription,
+    sectionIdentifier: KeyPath<Result, SectionIdentifier>,
+    sortDescriptors: [NSSortDescriptor],
+    predicate: NSPredicate? = nil,
+    animation: Animation? = nil
+)
+Available when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+Parameters
+entity
+The description of the Core Data entity to fetch.
+sectionIdentifier
+A key path that SwiftUI applies to the Result type to get an object’s section identifier.
+sortDescriptors
+An array of sort descriptors that define the sort order of the fetched results.
+predicate
+An NSPredicate instance that defines logical conditions used to filter the fetched results.
+animation
+The animation to use for user interface changes that result from changes to the fetched results.
+Discussion
+Use this initializer if you need to explicitly specify the entity type for the request. If you specify a placeholder Result type in the request declaration, use the init(sectionIdentifier:sortDescriptors:predicate:animation:) initializer to let the request infer the entity type. If you need more control over the fetch request configuration, use init(fetchRequest:sectionIdentifier:animation:).
+See Also
+Creating a fetch request
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+Creates a sectioned fetch request based on a section identifier, a predicate, and value type sort parameters.
+Available when SectionIdentifier conforms to Hashable and Result inherits NSManagedObject.
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+Creates a sectioned fetch request based on a section identifier, a predicate, and reference type sort parameters.
+Available when SectionIdentifier conforms to Hashable and Result inherits NSManagedObject.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(entity:sectionIdentifier:sortDescriptors:predicate:animation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

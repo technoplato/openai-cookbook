@@ -1,0 +1,1461 @@
+https://developer.apple.com/documentation/realitykit/realityview/view-implementationsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityActivationPoint(UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityActions<Content>(() -> Content) -> some View
+M
+func accessibilityAction(named: LocalizedStringKey, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityAction(named: Text, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityAction<S>(named: S, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityAction<Label>(action: () -> Void, label: () -> Label) -> some View
+M
+func accessibilityAction(AccessibilityActionKind, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+S
+RealityViewDefaultPlaceholder
+Documentation
+Open Menu
+Swift
+View Implementations
+Topics
+Instance Methods
+func accentColor(Color?) -> some View
+Sets the accent color for this view and the views it contains.
+func accessibility(activationPoint: UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Specifies the unit point where activations occur in the view.
+func accessibility(activationPoint: CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Specifies the point where activations occur in the view.
+func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds the given traits to the view.
+func accessibility(hidden: Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Specifies whether to hide this view from system accessibility features.
+func accessibility(hint: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+func accessibility(identifier: String) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Uses the specified string to identify the view.
+func accessibility(inputLabels: [Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibility(label: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Removes the given traits from this view.
+func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets a selection identifier for this view’s accessibility element.
+Deprecated
+func accessibility(sortPriority: Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
+func accessibility(value: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+func accessibilityAction(AccessibilityActionKind, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+func accessibilityAction<Label>(action: () -> Void, label: () -> Label) -> some View
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+func accessibilityAction<S>(named: S, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+func accessibilityAction(named: Text, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+func accessibilityAction(named: LocalizedStringKey, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds an accessibility action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+func accessibilityActions<Content>(() -> Content) -> some View
+Adds multiple accessibility actions to the view.
+func accessibilityActivationPoint(UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+The activation point for an element is the location assistive technologies use to initiate gestures.
+func accessibilityActivationPoint(CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+The activation point for an element is the location assistive technologies use to initiate gestures.
+func accessibilityAddTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds the given traits to the view.
+func accessibilityAdjustableAction((AccessibilityAdjustmentDirection) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds an accessibility adjustable action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+func accessibilityChartDescriptor<R>(R) -> some View
+Adds a descriptor to a View that represents a chart to make the chart’s contents accessible to all users.
+func accessibilityChildren<V>(children: () -> V) -> some View
+Replaces the existing accessibility element’s children with one or more new synthetic accessibility elements.
+func accessibilityCustomContent<L, V>(L, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+Deprecated
+func accessibilityCustomContent(Text, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent<V>(LocalizedStringKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(AccessibilityCustomContentKey, Text?, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(LocalizedStringKey, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent<V>(AccessibilityCustomContentKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(LocalizedStringKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(AccessibilityCustomContentKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityDirectTouch(Bool, options: AccessibilityDirectTouchOptions) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Explicitly set whether this accessibility element is a direct touch area. Direct touch areas passthrough touch events to the app rather than being handled through an assistive technology, such as VoiceOver. The modifier accepts an optional AccessibilityDirectTouchOptions option set to customize the functionality of the direct touch area.
+Beta
+func accessibilityElement(children: AccessibilityChildBehavior) -> some View
+Creates a new accessibility element, or modifies the AccessibilityChildBehavior of the existing accessibility element.
+func accessibilityFocused(AccessibilityFocusState<Bool>.Binding) -> some View
+Modifies this view by binding its accessibility element’s focus state to the given boolean state value.
+func accessibilityFocused<Value>(AccessibilityFocusState<Value>.Binding, equals: Value) -> some View
+Modifies this view by binding its accessibility element’s focus state to the given state value.
+func accessibilityHeading(AccessibilityHeadingLevel) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets the accessibility level of this heading.
+func accessibilityHidden(Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Specifies whether to hide this view from system accessibility features.
+func accessibilityHint<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+func accessibilityHint(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+func accessibilityHint(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+func accessibilityIdentifier(String) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Uses the string you specify to identify the view.
+func accessibilityIgnoresInvertColors(Bool) -> some View
+Sets whether this view should ignore the system Smart Invert setting.
+func accessibilityInputLabels<S>([S]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityInputLabels([Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityInputLabels([LocalizedStringKey]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityLabel(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityLabel(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityLabel<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityLabeledPair<ID>(role: AccessibilityLabeledPairRole, id: ID, in: Namespace.ID) -> some View
+Pairs an accessibility element representing a label with the element for the matching content.
+func accessibilityLinkedGroup<ID>(id: ID, in: Namespace.ID) -> some View
+Links multiple accessibility elements so that the user can quickly navigate from one element to another, even when the elements are not near each other in the accessibility hierarchy.
+func accessibilityRemoveTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Removes the given traits from this view.
+func accessibilityRepresentation<V>(representation: () -> V) -> some View
+Replaces one or more accessibility elements for this view with new accessibility elements.
+func accessibilityRespondsToUserInteraction(Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Explicitly set whether this Accessibility element responds to user interaction and would thus be interacted with by technologies such as Switch Control, Voice Control or Full Keyboard Access.
+func accessibilityRotor<Content>(LocalizedStringKey, entries: () -> Content) -> some View
+Create an Accessibility Rotor with the specified user-visible label, and entries generated from the content closure.
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<L, Content>(L, entries: () -> Content) -> some View
+Create an Accessibility Rotor with the specified user-visible label, and entries generated from the content closure.
+func accessibilityRotor<Content>(Text, entries: () -> Content) -> some View
+Create an Accessibility Rotor with the specified user-visible label, and entries generated from the content closure.
+func accessibilityRotor<EntryModel, ID>(Text, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries.
+func accessibilityRotor<L, EntryModel, ID>(L, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries.
+func accessibilityRotor<EntryModel, ID>(LocalizedStringKey, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries.
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<EntryModel>(Text, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries.
+func accessibilityRotor<EntryModel>(LocalizedStringKey, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries.
+func accessibilityRotor<L, EntryModel>(L, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries.
+func accessibilityRotor(LocalizedStringKey, textRanges: [Range<String.Index>]) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries for each of the specified ranges. The Rotor will be attached to the current Accessibility element, and each entry will go the specified range of that element.
+func accessibilityRotor(Text, textRanges: [Range<String.Index>]) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries for each of the specified ranges. The Rotor will be attached to the current Accessibility element, and each entry will go the specified range of that element.
+func accessibilityRotor<L>(L, textRanges: [Range<String.Index>]) -> some View
+Create an Accessibility Rotor with the specified user-visible label and entries for each of the specified ranges. The Rotor will be attached to the current Accessibility element, and each entry will go the specified range of that element.
+func accessibilityRotor(AccessibilitySystemRotor, textRanges: [Range<String.Index>]) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor. The Rotor will be attached to the current Accessibility element, and each entry will go the specified range of that element.
+func accessibilityRotorEntry<ID>(id: ID, in: Namespace.ID) -> some View
+Defines an explicit identifier tying an Accessibility element for this view to an entry in an Accessibility Rotor.
+func accessibilityScrollAction((Edge) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds an accessibility scroll action to the view. Actions allow assistive technologies, such as the VoiceOver, to interact with the view by invoking the action.
+func accessibilityShowsLargeContentViewer() -> some View
+Adds a default large content view to be shown by the large content viewer.
+func accessibilityShowsLargeContentViewer<V>(() -> V) -> some View
+Adds a custom large content view to be shown by the large content viewer.
+func accessibilitySortPriority(Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
+func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets an accessibility text content type.
+func accessibilityValue<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+func accessibilityValue(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+func accessibilityValue(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+func accessibilityZoomAction((AccessibilityZoomGestureAction) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds an accessibility zoom action to the view. Actions allow assistive technologies, such as VoiceOver, to interact with the view by invoking the action.
+func actionSheet(isPresented: Binding<Bool>, content: () -> ActionSheet) -> some View
+Presents an action sheet when a given condition is true.
+func actionSheet<T>(item: Binding<T?>, content: (T) -> ActionSheet) -> some View
+Presents an action sheet using the given item as a data source for the sheet’s content.
+func alert<A>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presents an alert when a given condition is true, using a localized string key for the title.
+func alert<A>(Text, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presents an alert when a given condition is true, using a text view for the title.
+func alert<S, A>(S, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presents an alert when a given condition is true, using a string variable as a title.
+func alert<A, M>(Text, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+Presents an alert with a message when a given condition is true using a text view as a title.
+func alert<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+Presents an alert with a message when a given condition is true, using a localized string key for a title.
+func alert<S, A, M>(S, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+Presents an alert with a message when a given condition is true using a string variable as a title.
+func alert<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+Presents an alert using the given data to produce the alert’s content and a localized string key for a title.
+func alert<A, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+Presents an alert using the given data to produce the alert’s content and a text view as a title.
+func alert<S, A, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+Presents an alert using the given data to produce the alert’s content and a string variable as a title.
+func alert<S, A, M, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents an alert with a message using the given data to produce the alert’s content and a string variable as a title.
+func alert<A, M, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents an alert with a message using the given data to produce the alert’s content and a text view for a title.
+func alert<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents an alert with a message using the given data to produce the alert’s content and a localized string key for a title.
+func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View
+Presents an alert to the user.
+func alert<E, A>(isPresented: Binding<Bool>, error: E?, actions: () -> A) -> some View
+Presents an alert when an error is present.
+func alert<E, A, M>(isPresented: Binding<Bool>, error: E?, actions: (E) -> A, message: (E) -> M) -> some View
+Presents an alert with a message when an error is present.
+func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View
+Presents an alert to the user.
+func alignmentGuide(HorizontalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+Sets the view’s horizontal alignment.
+func alignmentGuide(VerticalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+Sets the view’s vertical alignment.
+func allowedDynamicRange(Image.DynamicRange?) -> some View
+Returns a new view configured with the specified allowed dynamic range.
+Beta
+func allowsHitTesting(Bool) -> some View
+Configures whether this view participates in hit test operations.
+func allowsTightening(Bool) -> some View
+Sets whether text in this view can compress the space between characters when necessary to fit text in a line.
+func anchorPreference<A, K>(key: K.Type, value: Anchor<A>.Source, transform: (Anchor<A>) -> K.Value) -> some View
+Sets a value for the specified preference key, the value is a function of a geometry value tied to the current coordinate space, allowing readers of the value to convert the geometry to their local coordinates.
+func animation(Animation?) -> some View
+Applies the given animation to all animatable values within this view.
+Deprecated
+func animation<V>(Animation?, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given animation to all animatable values within the body closure.
+Beta
+func animation<V>(Animation?, value: V) -> some View
+Applies the given animation to this view when the specified value changes.
+func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View
+Constrains this view’s dimensions to the specified aspect ratio.
+func aspectRatio(CGSize, contentMode: ContentMode) -> some View
+Constrains this view’s dimensions to the aspect ratio of the given size.
+func autocapitalization(UITextAutocapitalizationType) -> some View
+Sets whether to apply auto-capitalization to this view.
+func autocorrectionDisabled(Bool) -> some View
+Sets whether to disable autocorrection for this view.
+func background<Background>(Background, alignment: Alignment) -> some View
+Layers the given view behind this view.
+func background<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+Sets the view’s background to a style.
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+Sets the view’s background to an insettable shape filled with a style.
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+Sets the view’s background to a shape filled with a style.
+func background<V>(alignment: Alignment, content: () -> V) -> some View
+Layers the views that you specify behind this view.
+func background(ignoresSafeAreaEdges: Edge.Set) -> some View
+Sets the view’s background to the default background style.
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+Sets the view’s background to an insettable shape filled with the default background style.
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+Sets the view’s background to a shape filled with the default background style.
+func backgroundPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+Reads the specified preference value from the view, using it to produce a second view that is applied as the background of the original view.
+func backgroundPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View
+Reads the specified preference value from the view, using it to produce a second view that is applied as the background of the original view.
+func backgroundStyle<S>(S) -> some View
+Sets the specified style to render backgrounds within the view.
+func badge(LocalizedStringKey?) -> some View
+Generates a badge for the view from a localized string key.
+func badge(Text?) -> some View
+Generates a badge for the view from a text view.
+func badge(Int) -> some View
+Generates a badge for the view from an integer value.
+func badge<S>(S?) -> some View
+Generates a badge for the view from a string.
+func badgeProminence(BadgeProminence) -> some View
+Specifies the prominence of badges created by this view.
+Beta
+func baselineOffset(CGFloat) -> some View
+Sets the vertical offset for the text relative to its baseline in this view.
+func blendMode(BlendMode) -> some View
+Sets the blend mode for compositing this view with overlapping views.
+func blur(radius: CGFloat, opaque: Bool) -> some View
+Applies a Gaussian blur to this view.
+func bold(Bool) -> some View
+Applies a bold font weight to the text in this view.
+func border<S>(S, width: CGFloat) -> some View
+Adds a border to this view with the specified style and width.
+func brightness(Double) -> some View
+Brightens this view by the specified amount.
+func buttonBorderShape(ButtonBorderShape) -> some View
+Sets the border shape for buttons in this view.
+func buttonRepeatBehavior(ButtonRepeatBehavior) -> some View
+Sets whether buttons in this view should repeatedly trigger their actions on prolonged interactions.
+Beta
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and standard interaction behavior.
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and custom interaction behavior.
+func clipShape<S>(S, style: FillStyle) -> some View
+Sets a clipping shape for this view.
+func clipped(antialiased: Bool) -> some View
+Clips this view to its bounding rectangular frame.
+func colorEffect(Shader, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a filter effect on the color of each pixel.
+Beta
+func colorInvert() -> some View
+Inverts the colors in this view.
+func colorMultiply(Color) -> some View
+Adds a color multiplication effect to this view.
+func colorScheme(ColorScheme) -> some View
+Sets this view’s color scheme.
+func compositingGroup() -> some View
+Wraps this view in a compositing group.
+func confirmationDialog<S, A>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+Presents a confirmation dialog when a given condition is true, using a string variable as a title.
+func confirmationDialog<A>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+Presents a confirmation dialog when a given condition is true, using a text view for the title.
+func confirmationDialog<A>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+Presents a confirmation dialog when a given condition is true, using a localized string key for the title.
+func confirmationDialog<S, A, M>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+Presents a confirmation dialog with a message when a given condition is true, using a string variable for the title.
+func confirmationDialog<A, M>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+Presents a confirmation dialog with a message when a given condition is true, using a text view for the title.
+func confirmationDialog<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+Presents a confirmation dialog with a message when a given condition is true, using a localized string key for the title.
+func confirmationDialog<A, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+Presents a confirmation dialog using data to produce the dialog’s content and a text view for the title.
+func confirmationDialog<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+Presents a confirmation dialog using data to produce the dialog’s content and a localized string key for the title.
+func confirmationDialog<S, A, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+Presents a confirmation dialog using data to produce the dialog’s content and a string variable for the title.
+func confirmationDialog<S, A, M, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents a confirmation dialog with a message using data to produce the dialog’s content and a string variable for the title.
+func confirmationDialog<A, M, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents a confirmation dialog with a message using data to produce the dialog’s content and a text view for the message.
+func confirmationDialog<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents a confirmation dialog with a message using data to produce the dialog’s content and a localized string key for the title.
+func containerBackground<S>(S, for: ContainerBackgroundPlacement) -> some View
+Sets the container background of the enclosing container using a view.
+Beta
+func containerBackground<V>(for: ContainerBackgroundPlacement, alignment: Alignment, content: () -> V) -> some View
+Sets the container background of the enclosing container using a view.
+Beta
+func containerRelativeFrame(Axis.Set, alignment: Alignment) -> some View
+Positions this view within an invisible frame with a size relative to the nearest container.
+Beta
+func containerRelativeFrame(Axis.Set, alignment: Alignment, (CGFloat, Axis) -> CGFloat) -> some View
+Positions this view within an invisible frame with a size relative to the nearest container.
+Beta
+func containerRelativeFrame(Axis.Set, count: Int, span: Int, spacing: CGFloat, alignment: Alignment) -> some View
+Positions this view within an invisible frame with a size relative to the nearest container.
+Beta
+func containerShape<T>(T) -> some View
+Sets the container shape to use for any container relative shape within this view.
+func contentMargins(Edge.Set, EdgeInsets, for: ContentMarginPlacement) -> some View
+Configures the content margin for a provided placement.
+Beta
+func contentMargins(Edge.Set, CGFloat?, for: ContentMarginPlacement) -> some View
+Configures the content margin for a provided placement.
+Beta
+func contentMargins(CGFloat, for: ContentMarginPlacement) -> some View
+Configures the content margin for a provided placement.
+Beta
+func contentShape<S>(ContentShapeKinds, S, eoFill: Bool) -> some View
+Sets the content shape for this view.
+func contentShape<S>(S, eoFill: Bool) -> some View
+Defines the content shape for hit testing.
+func contentTransition(ContentTransition) -> some View
+Modifies the view to use a given transition as its method of animating changes to the contents of its views.
+func contextMenu<MenuItems>(ContextMenu<MenuItems>?) -> some View
+Adds a context menu to the view.
+func contextMenu<I, M>(forSelectionType: I.Type, menu: (Set<I>) -> M, primaryAction: ((Set<I>) -> Void)?) -> some View
+Adds an item-based context menu to a view.
+func contextMenu<MenuItems>(menuItems: () -> MenuItems) -> some View
+Adds a context menu to a view.
+func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> some View
+Adds a context menu with a preview to a view.
+func contrast(Double) -> some View
+Sets the contrast and separation between similar colors in this view.
+func controlGroupStyle<S>(S) -> some View
+Sets the style for control groups within this view.
+func controlSize(ControlSize) -> some View
+Sets the size for controls within this view.
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Assigns a name to the view’s coordinate space, so other code can operate on dimensions like points and sizes relative to the named space.
+Beta
+func coordinateSpace<T>(name: T) -> some View
+Assigns a name to the view’s coordinate space, so other code can operate on dimensions like points and sizes relative to the named space.
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+Clips this view to its bounding frame, with the specified corner radius.
+func datePickerStyle<S>(S) -> some View
+Sets the style for date pickers within this view.
+func defaultAppStorage(UserDefaults) -> some View
+The default store used by AppStorage contained within the view.
+func defaultFocus<V>(FocusState<V>.Binding, V, priority: DefaultFocusEvaluationPriority) -> some View
+Defines a region of the window in which default focus is evaluated by assigning a value to a given focus state binding.
+func defaultHoverEffect(HoverEffect?) -> some View
+Sets the default hover effect to use for views within this view.
+Beta
+func defaultScrollAnchor(UnitPoint?) -> some View
+Associates an anchor to control which part of the scroll view’s content should be rendered by default.
+Beta
+func deleteDisabled(Bool) -> some View
+Adds a condition for whether the view’s view hierarchy is deletable.
+func dialogSuppressionToggle<S>(S, isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a custom suppression message on macOS. Unused on other platforms.
+Beta
+func dialogSuppressionToggle(Text, isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a custom suppression message on macOS. Unused on other platforms.
+Beta
+func dialogSuppressionToggle(LocalizedStringKey, isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a custom suppression message on macOS. Unused on other platforms.
+Beta
+func dialogSuppressionToggle(isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a default suppression message on macOS. Unused on other platforms.
+Beta
+func disableAutocorrection(Bool?) -> some View
+Sets whether to disable autocorrection for this view.
+func disabled(Bool) -> some View
+Adds a condition that controls whether users can interact with this view.
+func disclosureGroupStyle<S>(S) -> some View
+Sets the style for disclosure groups within this view.
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a geometric distortion effect on the location of each pixel.
+Beta
+func draggable<T>(() -> T) -> some View
+Activates this view as the source of a drag and drop operation.
+func draggable<V, T>(() -> T, preview: () -> V) -> some View
+Activates this view as the source of a drag and drop operation.
+func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View
+Composites this view’s contents into an offscreen image before final display.
+func dropDestination<T>(for: T.Type, action: ([T], CGPoint) -> Bool, isTargeted: (Bool) -> Void) -> some View
+Defines the destination of a drag and drop operation that handles the dropped content with a closure that you specify.
+func dynamicTypeSize(DynamicTypeSize) -> some View
+Sets the Dynamic Type size within the view to the given value.
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+Changes the view’s proposed area to extend outside the screen’s safe areas.
+func environment<T>(T?) -> some View
+Sets an observable object of the environment to the given value.
+Beta
+func environment<V>(WritableKeyPath<EnvironmentValues, V>, V) -> some View
+Sets the environment value of the specified key path to the given value.
+func environmentObject<T>(T) -> some View
+Supplies an observable object to a view’s hierarchy.
+func fileDialogBrowserOptions(FileDialogBrowserOptions) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover to provide a refined URL search experience: include or exclude hidden files, allow searching by tag, etc.
+Beta
+func fileDialogConfirmationLabel(LocalizedStringKey) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom confirmation button label.
+Beta
+func fileDialogConfirmationLabel(Text?) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with custom text as a confirmation button label.
+Beta
+func fileDialogConfirmationLabel<S>(S) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom confirmation button label.
+Beta
+func fileDialogCustomizationID(String) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover to persist and restore the file dialog configuration.
+Beta
+func fileDialogDefaultDirectory(URL?) -> some View
+Configures the fileExporter, fileImporter, or fileMover to open with the specified default directory.
+Beta
+func fileDialogImportsUnresolvedAliases(Bool) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover behavior when a user chooses an alias.
+Beta
+func fileDialogMessage(Text?) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom text that is presented to the user, similar to a title.
+Beta
+func fileDialogMessage(LocalizedStringKey) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom message that is presented to the user, similar to a title.
+Beta
+func fileDialogMessage<S>(S) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom message that is presented to the user, similar to a title.
+Beta
+func fileDialogURLEnabled(Predicate<URL>) -> some View
+On macOS, configures the the fileImporter or fileMover to conditionally disable presented URLs.
+Beta
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for exporting a document that’s stored in a value type, like a structure, to a file on disk.
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for exporting a document that’s stored in a reference type, like a class, to a file on disk.
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system interface for allowing the user to export a FileDocument to a file on disk.
+Beta
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to export a ReferenceFileDocument to a file on disk.
+Beta
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentType: UTType, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for exporting a collection of value type documents to files on disk.
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentType: UTType, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for exporting a collection of reference type documents to files on disk.
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentTypes: [UTType], onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to export a collection of documents that conform to FileDocument to files on disk.
+Beta
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentTypes: [UTType], onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to export a collection of documents that conform to ReferenceFileDocument to files on disk.
+Beta
+func fileExporter<T>(isPresented: Binding<Bool>, item: T?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system interface allowing the user to export a Transferable item to file on disk.
+Beta
+func fileExporter<C, T>(isPresented: Binding<Bool>, items: C, contentTypes: [UTType], onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system interface allowing the user to export a collection of items to files on disk.
+Beta
+func fileExporterFilenameLabel<S>(S) -> some View
+On macOS, configures the fileExporter with a label for the file name field.
+Beta
+func fileExporterFilenameLabel(Text?) -> some View
+On macOS, configures the fileExporter with a text to use as a label for the file name field.
+Beta
+func fileExporterFilenameLabel(LocalizedStringKey) -> some View
+On macOS, configures the fileExporter with a label for the file name field.
+Beta
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for allowing the user to import multiple files.
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to import multiple files.
+Beta
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for allowing the user to import an existing file.
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for allowing the user to move an existing file to a new location.
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to move an existing file to a new location.
+Beta
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for allowing the user to move a collection of existing files to a new location.
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to move a collection of existing files to a new location.
+Beta
+func findDisabled(Bool) -> some View
+Prevents find and replace operations in a text editor.
+func findNavigator(isPresented: Binding<Bool>) -> some View
+Programmatically presents the find and replace interface for text editor views.
+func fixedSize() -> some View
+Fixes this view at its ideal size.
+func fixedSize(horizontal: Bool, vertical: Bool) -> some View
+Fixes this view at its ideal size in the specified dimensions.
+func flipsForRightToLeftLayoutDirection(Bool) -> some View
+Sets whether this view mirrors its contents horizontally when the layout direction is right-to-left.
+func focusEffectDisabled(Bool) -> some View
+Adds a condition that controls whether this view can display focus effects, such as a default focus ring or hover effect.
+Beta
+func focusable(Bool) -> some View
+Specifies if the view is focusable.
+func focusable(Bool, interactions: FocusInteractions) -> some View
+Specifies if the view is focusable, and if so, what focus-driven interactions it supports.
+Beta
+func focused(FocusState<Bool>.Binding) -> some View
+Modifies this view by binding its focus state to the given Boolean state value.
+func focused<Value>(FocusState<Value>.Binding, equals: Value) -> some View
+Modifies this view by binding its focus state to the given state value.
+func focusedObject<T>(T?) -> some View
+Creates a new view that exposes the provided object to other views whose state depends on the focused view hierarchy.
+func focusedObject<T>(T) -> some View
+Creates a new view that exposes the provided object to other views whose whose state depends on the focused view hierarchy.
+func focusedSceneObject<T>(T?) -> some View
+Creates a new view that exposes the provided object to other views whose whose state depends on the active scene.
+func focusedSceneObject<T>(T) -> some View
+Creates a new view that exposes the provided object to other views whose whose state depends on the active scene.
+func focusedSceneValue<T>(WritableKeyPath<FocusedValues, T?>, T?) -> some View
+Creates a new view that exposes the provided value to other views whose state depends on the active scene.
+func focusedSceneValue<T>(WritableKeyPath<FocusedValues, T?>, T) -> some View
+Modifies this view by injecting a value that you provide for use by other views whose state depends on the focused scene.
+func focusedValue<T>(T?) -> some View
+Sets the focused value for the given object type.
+Beta
+func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value) -> some View
+Modifies this view by injecting a value that you provide for use by other views whose state depends on the focused view hierarchy.
+func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value?) -> some View
+Creates a new view that exposes the provided value to other views whose state depends on the focused view hierarchy.
+func font(Font?) -> some View
+Sets the default font for text in this view.
+func fontDesign(Font.Design?) -> some View
+Sets the font design of the text in this view.
+func fontWeight(Font.Weight?) -> some View
+Sets the font weight of the text in this view.
+func fontWidth(Font.Width?) -> some View
+Sets the font width of the text in this view.
+func foregroundColor(Color?) -> some View
+Sets the color of the foreground elements displayed by this view.
+func foregroundStyle<S>(S) -> some View
+Sets a view’s foreground elements to use a given style.
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+Sets the primary and secondary levels of the foreground style in the child view.
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+Sets the primary, secondary, and tertiary levels of the foreground style.
+func formStyle<S>(S) -> some View
+Sets the style for forms in a view hierarchy.
+func frame() -> some View
+Positions this view within an invisible frame.
+Deprecated
+func frame(depth: CGFloat?, alignment: DepthAlignment) -> some View
+Positions this view within an invisible frame with the specified depth.
+Beta
+func frame(minDepth: CGFloat?, idealDepth: CGFloat?, maxDepth: CGFloat?, alignment: DepthAlignment) -> some View
+Positions this view within an invisible frame having the specified depth constraints.
+Beta
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+Positions this view within an invisible frame having the specified size constraints.
+func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View
+Positions this view within an invisible frame with the specified size.
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+Presents a modal view that covers as much of the screen as possible when binding to a Boolean value you provide is true.
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+Presents a modal view that covers as much of the screen as possible using the binding you provide as a data source for the sheet’s content.
+func gaugeStyle<S>(S) -> some View
+Sets the style for gauges within this view.
+func geometryGroup() -> some View
+Isolates the geometry (e.g. position and size) of the view from its parent view.
+Beta
+func gesture<T>(T, including: GestureMask) -> some View
+Attaches a gesture to the view with a lower precedence than gestures defined by the view.
+func glassBackgroundEffect(displayMode: GlassBackgroundDisplayMode) -> some View
+Sets the view’s glass background to displayMode, filling the view’s container relative rounded corner shape.
+Beta
+func glassBackgroundEffect<S>(in: S, displayMode: GlassBackgroundDisplayMode) -> some View
+Sets the view’s glass background to a specified shape filled with the dispalyMode.
+Beta
+func grayscale(Double) -> some View
+Adds a grayscale effect to this view.
+func gridCellAnchor(UnitPoint) -> some View
+Specifies a custom alignment anchor for a view that acts as a grid cell.
+func gridCellColumns(Int) -> some View
+Tells a view that acts as a cell in a grid to span the specified number of columns.
+func gridCellUnsizedAxes(Axis.Set) -> some View
+Asks grid layouts not to offer the view extra size in the specified axes.
+func gridColumnAlignment(HorizontalAlignment) -> some View
+Overrides the default horizontal alignment of the grid column that the view appears in.
+func groupBoxStyle<S>(S) -> some View
+Sets the style for group boxes within this view.
+func handlesExternalEvents(preferring: Set<String>, allowing: Set<String>) -> some View
+Specifies a modifier indicating the Scene this View is in can handle matching incoming External Events.
+func headerProminence(Prominence) -> some View
+Sets the header prominence for this view.
+func help(Text) -> some View
+Adds help text to a view using a text view that you provide.
+func help<S>(S) -> some View
+Adds help text to a view using a string that you provide.
+func help(LocalizedStringKey) -> some View
+Adds help text to a view using a localized string that you provide.
+func hidden() -> some View
+Hides this view unconditionally.
+func highPriorityGesture<T>(T, including: GestureMask) -> some View
+Attaches a gesture to the view with a higher precedence than gestures defined by the view.
+func hoverEffect(HoverEffect) -> some View
+Applies a hover effect to this view.
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+Applies a hover effect to this view.
+Beta
+func hoverEffectDisabled(Bool) -> some View
+Adds a condition that controls whether this view can display hover effects.
+Beta
+func hueRotation(Angle) -> some View
+Applies a hue rotation effect to this view.
+func id<ID>(ID) -> some View
+Binds a view’s identity to the given proxy value.
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+Expands the view out of its safe area.
+func imageScale(Image.Scale) -> some View
+Scales images within the view according to one of the relative sizes available including small, medium, and large images sizes.
+func indexViewStyle<S>(S) -> some View
+Sets the style for the index view within the current environment.
+func interactionActivityTrackingTag(String) -> some View
+Sets a tag that you use for tracking interactivity.
+func interactiveDismissDisabled(Bool) -> some View
+Conditionally prevents interactive dismissal of presentations like popovers, sheets, and inspectors.
+func invalidatableContent(Bool) -> some View
+Mark the receiver as their content might be invalidated.
+Beta
+func italic(Bool) -> some View
+Applies italics to the text in this view.
+func itemProvider(Optional<() -> NSItemProvider?>) -> some View
+Provides a closure that vends the drag representation to be used for a particular data element.
+func kerning(CGFloat) -> some View
+Sets the spacing, or kerning, between characters for the text in this view.
+func keyboardShortcut(KeyboardShortcut?) -> some View
+Assigns an optional keyboard shortcut to the modified control.
+func keyboardShortcut(KeyboardShortcut) -> some View
+Assigns a keyboard shortcut to the modified control.
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers) -> some View
+Defines a keyboard shortcut and assigns it to the modified control.
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+Defines a keyboard shortcut and assigns it to the modified control.
+func keyboardType(UIKeyboardType) -> some View
+Sets the keyboard type for this view.
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Loops the given keyframes continuously, updating the view using the modifiers you apply in body.
+Beta
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Plays the given keyframes when the given trigger value changes, updating the view using the modifiers you apply in body.
+Beta
+func labelStyle<S>(S) -> some View
+Sets the style for labels within this view.
+func labeledContentStyle<S>(S) -> some View
+Sets a style for labeled content.
+func labelsHidden() -> some View
+Hides the labels of any controls contained within this view.
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a filter on the raster layer created from self.
+Beta
+func layoutDirectionBehavior(LayoutDirectionBehavior) -> some View
+Sets the behavior of this view for different layout directions.
+Beta
+func layoutPriority(Double) -> some View
+Sets the priority by which a parent layout should apportion space to this child.
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+Associates a value with a custom layout property.
+func lineLimit(PartialRangeThrough<Int>) -> some View
+Sets to a partial range the number of lines that text can occupy in this view.
+func lineLimit(ClosedRange<Int>) -> some View
+Sets to a closed range the number of lines that text can occupy in this view.
+func lineLimit(PartialRangeFrom<Int>) -> some View
+Sets to a partial range the number of lines that text can occupy in this view.
+func lineLimit(Int?) -> some View
+Sets the maximum number of lines that text can occupy in this view.
+func lineLimit(Int, reservesSpace: Bool) -> some View
+Sets a limit for the number of lines text can occupy in this view.
+func lineSpacing(CGFloat) -> some View
+Sets the amount of space between lines of text in this view.
+func listItemTint(Color?) -> some View
+Sets a fixed tint color associated with specific content in a list.
+func listItemTint(ListItemTint?) -> some View
+Sets the tint effect associated with specific content in a list.
+func listRowBackground<V>(V?) -> some View
+Places a custom background view behind a list row item.
+func listRowHoverEffect(HoverEffect?) -> some View
+Requests that the containing list row use the provided hover effect.
+Beta
+func listRowHoverEffectDisabled(Bool) -> some View
+Requests that the containing list row have its hover effect disabled.
+Beta
+func listRowInsets(EdgeInsets?) -> some View
+Applies an inset to the rows in a list.
+func listRowSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+Sets the display mode for the separator associated with this specific row.
+func listRowSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+Sets the tint color associated with a row.
+func listRowSpacing(CGFloat?) -> some View
+Sets the vertical spacing between two adjacent rows in a List.
+func listSectionSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+Sets whether to hide the separator associated with a list section.
+func listSectionSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+Sets the tint color associated with a section.
+func listSectionSpacing(ListSectionSpacing) -> some View
+Sets the spacing between adjacent sections in a List.
+Beta
+func listSectionSpacing(CGFloat) -> some View
+Sets the spacing to a custom value between adjacent sections in a List.
+Beta
+func listStyle<S>(S) -> some View
+Sets the style for lists within this view.
+func luminanceToAlpha() -> some View
+Adds a luminance to alpha effect to this view.
+func mask<Mask>(Mask) -> some View
+Masks this view using the alpha channel of the given view.
+func mask<Mask>(alignment: Alignment, () -> Mask) -> some View
+Masks this view using the alpha channel of the given view.
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+Defines a group of views with synchronized geometry using an identifier and namespace that you provide.
+func menuActionDismissBehavior(MenuActionDismissBehavior) -> some View
+Tells a menu whether to dismiss after performing an action.
+func menuIndicator(Visibility) -> some View
+Sets the menu indicator visibility for controls within this view.
+func menuOrder(MenuOrder) -> some View
+Sets the preferred order of items for menus presented from this view.
+func menuStyle<S>(S) -> some View
+Sets the style for menus within this view.
+func minimumScaleFactor(CGFloat) -> some View
+Sets the minimum amount that text in this view scales down to fit in the available space.
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Applies a modifier to a view and returns a new view.
+func monospaced(Bool) -> some View
+Modifies the fonts of all child views to use the fixed-width variant of the current font, if possible.
+func monospacedDigit() -> some View
+Modifies the fonts of all child views to use fixed-width digits, if possible, while leaving other characters proportionally spaced.
+func moveDisabled(Bool) -> some View
+Adds a condition for whether the view’s view hierarchy is movable.
+func multilineTextAlignment(TextAlignment) -> some View
+Sets the alignment of a text view that contains multiple lines of text.
+func navigationBarBackButtonHidden(Bool) -> some View
+Hides the navigation bar back button for the view.
+func navigationBarHidden(Bool) -> some View
+Hides the navigation bar for this view.
+func navigationBarItems<L>(leading: L) -> some View
+func navigationBarItems<L, T>(leading: L, trailing: T) -> some View
+func navigationBarItems<T>(trailing: T) -> some View
+func navigationBarTitle(LocalizedStringKey) -> some View
+Sets the title of this view’s navigation bar with a localized string.
+func navigationBarTitle(Text) -> some View
+Sets the title in the navigation bar for this view.
+func navigationBarTitle<S>(S) -> some View
+Sets the title of this view’s navigation bar with a string.
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarTitle<S>(S, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Sets the title and display mode in the navigation bar for this view.
+Deprecated
+func navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode) -> some View
+Configures the title display mode for this view.
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+Associates a destination view with a presented data type for use within a navigation stack.
+func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View
+Associates a destination view with a binding that can be used to push the view onto a NavigationStack.
+func navigationDestination<D, C>(item: Binding<Optional<D>>, destination: (D) -> C) -> some View
+Associates a destination view with a bound value for use within a navigation stack or navigation split view
+Beta
+func navigationDocument(URL) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D, I>(D, preview: SharePreview<Never, I>) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D, I1, I2>(D, preview: SharePreview<I1, I2>) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D, I>(D, preview: SharePreview<I, Never>) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationDocument<D>(D, preview: SharePreview<Never, Never>) -> some View
+Configures the view’s document for purposes of navigation.
+func navigationSplitViewColumnWidth(CGFloat) -> some View
+Sets a fixed, preferred width for the column containing this view.
+func navigationSplitViewColumnWidth(min: CGFloat?, ideal: CGFloat, max: CGFloat?) -> some View
+Sets a flexible, preferred width for the column containing this view.
+func navigationSplitViewStyle<S>(S) -> some View
+Sets the style for navigation split views within this view.
+func navigationTitle(LocalizedStringKey) -> some View
+Configures the view’s title for purposes of navigation, using a localized string.
+func navigationTitle(Text) -> some View
+Configures the view’s title for purposes of navigation.
+func navigationTitle(Binding<String>) -> some View
+Configures the view’s title for purposes of navigation, using a string binding.
+func navigationTitle<V>(() -> V) -> some View
+Configures the view’s title for purposes of navigation, using a custom view.
+func navigationTitle<S>(S) -> some View
+Configures the view’s title for purposes of navigation, using a string.
+func navigationViewStyle<S>(S) -> some View
+Sets the style for navigation views within this view.
+func offset(CGSize) -> some View
+Offset this view by the horizontal and vertical amount specified in the offset parameter.
+func offset(x: CGFloat, y: CGFloat) -> some View
+Offset this view by the specified horizontal and vertical distances.
+func offset(z: CGFloat) -> some View
+Brings a view forward in Z by the provided distance in points.
+Beta
+func onAppear(perform: (() -> Void)?) -> some View
+Adds an action to perform before this view appears.
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+Adds a modifier for this view that fires an action when a specific value changes.
+Beta
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some View
+Adds a modifier for this view that fires an action when a specific value changes.
+Beta
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Performs an action when a specified value changes.
+Deprecated
+func onContinueUserActivity(String, perform: (NSUserActivity) -> ()) -> some View
+Registers a handler to invoke when the view receives the specified activity type for the scene or window the view is in.
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+func onDisappear(perform: (() -> Void)?) -> some View
+Adds an action to perform after this view disappears.
+func onDrag(() -> NSItemProvider) -> some View
+Activates this view as the source of a drag and drop operation.
+func onDrag<V>(() -> NSItemProvider, preview: () -> V) -> some View
+Activates this view as the source of a drag and drop operation.
+func onDrop(of: [String], delegate: DropDelegate) -> some View
+Defines the destination for a drag and drop operation with the same size and position as this view, with behavior controlled by the given delegate.
+Deprecated
+func onDrop(of: [UTType], delegate: DropDelegate) -> some View
+Defines the destination of a drag and drop operation using behavior controlled by the delegate that you provide.
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Defines the destination for a drag and drop operation, using the same size and position as this view, handling dropped content with the given closure.
+Deprecated
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Defines the destination for a drag and drop operation with the same size and position as this view, handling dropped content and the drop location with the given closure.
+Deprecated
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Defines the destination of a drag and drop operation that handles the dropped content with a closure that you specify.
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Defines the destination of a drag-and-drop operation that handles the dropped content with a closure that you specify.
+func onHover(perform: (Bool) -> Void) -> some View
+Adds an action to perform when the user moves the pointer over or away from the view’s frame.
+func onKeyPress(KeyEquivalent, action: () -> KeyPress.Result) -> some View
+Performs an action if the user presses a key on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses a key on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses one or more keys on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses one or more keys on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses any key on a hardware keyboard while the view has focus.
+Beta
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+func onOpenURL(perform: (URL) -> ()) -> some View
+Registers a handler to invoke when the view receives a url for the scene or window the view is in.
+func onPreferenceChange<K>(K.Type, perform: (K.Value) -> Void) -> some View
+Adds an action to perform when the specified preference key’s value changes.
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+Adds an action to perform when this view detects data emitted by the given publisher.
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+Adds an action to perform when the user submits a value to this view.
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Adds an action to perform when this view recognizes a tap gesture, and provides the action with the location of the interaction.
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a tap gesture.
+func opacity(Double) -> some View
+Sets the transparency of this view.
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+Presents an ornament.
+Beta
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+Layers a secondary view in front of this view.
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+Layers the specified style in front of this view.
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+Layers a shape that you specify in front of this view.
+func overlay<V>(alignment: Alignment, content: () -> V) -> some View
+Layers the views that you specify in front of this view.
+func overlayPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+Reads the specified preference value from the view, using it to produce a second view that is applied as an overlay to the original view.
+func overlayPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View
+Reads the specified preference value from the view, using it to produce a second view that is applied as an overlay to the original view.
+func padding(EdgeInsets) -> some View
+Adds a different padding amount to each edge of this view.
+func padding(CGFloat) -> some View
+Adds a specific padding amount to each edge of this view.
+func padding(Edge.Set, CGFloat?) -> some View
+Adds an equal padding amount to specific edges of this view.
+func padding3D(CGFloat) -> some View
+Pads this view along all edge insets by the amount you specify.
+Beta
+func padding3D(EdgeInsets3D) -> some View
+Pads this view using the edge insets you specify.
+Beta
+func padding3D(Edge3D.Set, CGFloat?) -> some View
+Pads this view using the edge insets you specify.
+Beta
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Specifies the selection effect to apply to a palette item.
+Beta
+func persistentSystemOverlays(Visibility) -> some View
+Sets the preferred visibility of the non-transient system views overlaying the app.
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Rotates this view’s rendered output in three dimensions around the given axis of rotation.
+Beta
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Cycles through the given phases continuously, updating the content using the view builder closure that you supply.
+Beta
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Cycles through the given phases when the trigger value changes, updating the view using the modifiers you apply in body.
+Beta
+func pickerStyle<S>(S) -> some View
+Sets the style for pickers within this view.
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+Presents a popover when a given condition is true.
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+Presents a popover using the given item as a data source for the popover’s content.
+func position(CGPoint) -> some View
+Positions the center of this view at the specified point in its parent’s coordinate space.
+func position(x: CGFloat, y: CGFloat) -> some View
+Positions the center of this view at the specified coordinates in its parent’s coordinate space.
+func preference<K>(key: K.Type, value: K.Value) -> some View
+Sets a value for the given preference.
+func preferredColorScheme(ColorScheme?) -> some View
+Sets the preferred color scheme for this presentation.
+func preferredSurroundingsEffect(SurroundingsEffect?) -> some View
+Sets the preference for the video passthrough effect of the user’s surroundings. Use nil to state no preference. Note that this modifier only sets a preference and ultimately the system will decide if it will honor it or not.
+Beta
+func presentationBackground<S>(S) -> some View
+Sets the presentation background of the enclosing sheet using a shape style.
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+Sets the presentation background of the enclosing sheet to a custom view.
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+Controls whether people can interact with the view behind a presentation.
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+Specifies how to adapt a presentation to compact size classes.
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+Specifies how to adapt a presentation to horizontally and vertically compact size classes.
+func presentationContentInteraction(PresentationContentInteraction) -> some View
+Configures the behavior of swipe gestures on a presentation.
+func presentationCornerRadius(CGFloat?) -> some View
+Requests that the presentation have a specific corner radius.
+func presentationDetents(Set<PresentationDetent>) -> some View
+Sets the available detents for the enclosing sheet.
+func presentationDetents(Set<PresentationDetent>, selection: Binding<PresentationDetent>) -> some View
+Sets the available detents for the enclosing sheet, giving you programmatic control of the currently selected detent.
+func presentationDragIndicator(Visibility) -> some View
+Sets the visibility of the drag indicator on top of a sheet.
+func previewContext<C>(C) -> some View
+Declares a context for the preview.
+func previewDevice(PreviewDevice?) -> some View
+Overrides the device for a preview.
+func previewDisplayName(String?) -> some View
+Sets a user visible name to show in the canvas for a preview.
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+Overrides the orientation of the preview.
+func previewLayout(PreviewLayout) -> some View
+Overrides the size of the container for the preview.
+func privacySensitive(Bool) -> some View
+Marks the view as containing sensitive, private user data.
+func progressViewStyle<S>(S) -> some View
+Sets the style for progress views in this view.
+func projectionEffect(ProjectionTransform) -> some View
+Applies a projection transformation to this view’s rendered output.
+func redacted(reason: RedactionReasons) -> some View
+Adds a reason to apply a redaction to this view hierarchy.
+func refreshable(action: () async -> Void) -> some View
+Marks this view as refreshable.
+func renameAction(FocusState<Bool>.Binding) -> some View
+Sets the rename action in the environment to update focus state.
+func renameAction(() -> Void) -> some View
+Sets a closure to run for the rename action.
+func replaceDisabled(Bool) -> some View
+Prevents replace operations in a text editor.
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some View
+Rotates this view by a specific amount.
+Beta
+func rotation3DEffect(Angle, axis: RotationAxis3D, anchor: UnitPoint3D) -> some View
+Rotates this view by the specified angle about an axis and anchor point.
+Beta
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D) -> some View
+Rotates this view by the specified angle about an axis and anchor point.
+Beta
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+Rotates this view’s rendered output in three dimensions around the given axis of rotation.
+func rotationEffect(Angle, anchor: UnitPoint) -> some View
+Rotates this view’s rendered output around the specified point.
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content above or below the modified view.
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content beside the modified view.
+func safeAreaPadding(CGFloat) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func safeAreaPadding(EdgeInsets) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func safeAreaPadding(Edge.Set, CGFloat?) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func saturation(Double) -> some View
+Adjusts the color saturation of this view.
+func scaleEffect(CGFloat, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given amount in both the horizontal and vertical directions, relative to an anchor point.
+func scaleEffect(CGFloat, anchor: UnitPoint) -> ModifiedContent<Self, _UniformScaleEffect>
+Scales this view’s rendered output by the given amount in both the horizontal and vertical directions, relative to an anchor point.
+func scaleEffect(Size3D, anchor: UnitPoint3D) -> some View
+Scales this view uniformly by the specified size in each dimension.
+Beta
+func scaleEffect(CGSize, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given vertical and horizontal size amounts, relative to an anchor point.
+func scaleEffect(CGFloat, anchor: UnitPoint3D) -> some View
+Scales this view uniformly by the specified factor.
+Beta
+func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View
+Scales this view’s rendered output by the given horizontal and vertical amounts, relative to an anchor point.
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some View
+Scales this view by the specified horizontal, vertical, and depth factors.
+Beta
+func scaledToFill() -> some View
+Scales this view to fill its parent.
+func scaledToFit() -> some View
+Scales this view to fit its parent.
+func scenePadding(Edge.Set) -> some View
+Adds padding to the specified edges of this view using an amount that’s appropriate for the current scene.
+func scenePadding(ScenePadding, edges: Edge.Set) -> some View
+Adds a specified kind of padding to the specified edges of this view using an amount that’s appropriate for the current scene.
+func scrollBounceBehavior(ScrollBounceBehavior, axes: Axis.Set) -> some View
+Configures the bounce behavior of scrollable views along the specified axis.
+func scrollClipDisabled(Bool) -> some View
+Sets whether a scroll view clips its content to its bounds.
+Beta
+func scrollContentBackground(Visibility) -> some View
+Specifies the visibility of the background for scrollable views within this view.
+func scrollDisabled(Bool) -> some View
+Disables or enables scrolling in scrollable views.
+func scrollIndicators(ScrollIndicatorVisibility, axes: Axis.Set) -> some View
+Sets the visibility of scroll indicators within this view.
+func scrollIndicatorsFlash(onAppear: Bool) -> some View
+Flashes the scroll indicators of a scrollable view when it appears.
+Beta
+func scrollIndicatorsFlash(trigger: some Equatable) -> some View
+Flashes the scroll indicators of scrollable views when a value changes.
+Beta
+func scrollPosition(id: Binding<(some Hashable)?>, anchor: UnitPoint?) -> some View
+Associates a binding to be updated when a scroll view within this view scrolls.
+Beta
+func scrollTargetBehavior(some ScrollTargetBehavior) -> some View
+Sets the scroll behavior of views scrollable in the provided axes.
+Beta
+func scrollTargetLayout(isEnabled: Bool) -> some View
+Configures the outermost layout as a scroll target layout.
+Beta
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Applies the given transition, animating between the phases of the transition as this view appears and disappears within the visible region of the containing scroll view, or other container specified using the coordinateSpace parameter.
+Beta
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Applies the given transition, animating between the phases of the transition as this view appears and disappears within the visible region of the containing scroll view, or other container specified using the coordinateSpace parameter.
+Beta
+func searchCompletion(String) -> some View
+Associates a fully formed string with the value of this view.
+func searchDictationBehavior(TextInputDictationBehavior) -> some View
+Beta
+func searchScopes<V, S>(Binding<V>, activation: SearchScopeActivation, () -> S) -> some View
+Configures the search scopes for this view with the specified activation strategy.
+func searchScopes<V, S>(Binding<V>, scopes: () -> S) -> some View
+Configures the search scopes for this view.
+func searchSuggestions<S>(() -> S) -> some View
+Configures the search suggestions for this view.
+func searchSuggestions(Visibility, for: SearchSuggestionsPlacement.Set) -> some View
+Configures how to display search suggestions within this view.
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+Marks this view as searchable with programmatic presentation of the search field.
+Beta
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+Marks this view as searchable with programmatic presentation of the search field.
+Beta
+func searchable<S>(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S) -> some View
+Marks this view as searchable with programmatic presentation of the search field.
+Beta
+func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<V, S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S, suggestions: () -> V) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens.
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens.
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+func selectionDisabled(Bool) -> some View
+Adds a condition that controls whether users can select this view.
+Beta
+func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View
+Adds a shadow to this view.
+func sheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+Presents a sheet when a binding to a Boolean value that you provide is true.
+func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+Presents a sheet using the given item as a data source for the sheet’s content.
+func simultaneousGesture<T>(T, including: GestureMask) -> some View
+Attaches a gesture to the view to process simultaneously with gestures defined by the view.
+func speechAdjustedPitch(Double) -> some View
+Raises or lowers the pitch of spoken text.
+func speechAlwaysIncludesPunctuation(Bool) -> some View
+Sets whether VoiceOver should always speak all punctuation in the text view.
+func speechAnnouncementsQueued(Bool) -> some View
+Controls whether to queue pending announcements behind existing speech rather than interrupting speech in progress.
+func speechSpellsOutCharacters(Bool) -> some View
+Sets whether VoiceOver should speak the contents of the text view character by character.
+func springLoadingBehavior(SpringLoadingBehavior) -> some View
+Sets the spring loading behavior this view.
+Beta
+func statusBar(hidden: Bool) -> some View
+Sets the visibility of the status bar.
+Deprecated
+func statusBarHidden(Bool) -> some View
+Sets the visibility of the status bar.
+func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+Applies a strikethrough to the text in this view.
+func submitLabel(SubmitLabel) -> some View
+Sets the submit label for this view.
+func submitScope(Bool) -> some View
+Prevents submission triggers originating from this view to invoke a submission action configured by a submission modifier higher up in the view hierarchy.
+func swipeActions<T>(edge: HorizontalEdge, allowsFullSwipe: Bool, content: () -> T) -> some View
+Adds custom swipe actions to a row in a list.
+func symbolEffect<T>(T, options: SymbolEffectOptions, isActive: Bool) -> some View
+Returns a new view with a symbol effect added to it.
+Beta
+func symbolEffect<T, U>(T, options: SymbolEffectOptions, value: U) -> some View
+Returns a new view with a symbol effect added to it.
+Beta
+func symbolEffectsRemoved(Bool) -> some View
+Returns a new view with its inherited symbol image effects either removed or left unchanged.
+Beta
+func symbolRenderingMode(SymbolRenderingMode?) -> some View
+Sets the rendering mode for symbol images within this view.
+func symbolVariant(SymbolVariants) -> some View
+Makes symbols within the view show a particular variant.
+func tabItem<V>(() -> V) -> some View
+Sets the tab bar item associated with this view.
+func tabViewStyle<S>(S) -> some View
+Sets the style for the tab view within the current environment.
+func tableColumnHeaders(Visibility) -> some View
+Controls the visibility of a Table’s column header views.
+Beta
+func tableStyle<S>(S) -> some View
+Sets the style for tables within this view.
+func tag<V>(V) -> some View
+Sets the unique tag value of this view.
+func task<T>(id: T, priority: TaskPriority, () async -> Void) -> some View
+Adds a task to perform before this view appears or when a specified value changes.
+func task(priority: TaskPriority, () async -> Void) -> some View
+Adds an asynchronous task to perform before this view appears.
+func textCase(Text.Case?) -> some View
+Sets a transform for the case of the text contained in this view when displayed.
+func textContentType(UITextContentType?) -> some View
+Sets the text content type for this view, which the system uses to offer suggestions while the user enters text on an iOS or tvOS device.
+func textEditorStyle(some TextEditorStyle) -> some View
+Sets the style for text editors within this view.
+Beta
+func textFieldStyle<S>(S) -> some View
+Sets the style for text fields within this view.
+func textInputAutocapitalization(TextInputAutocapitalization?) -> some View
+Sets how often the shift key in the keyboard is automatically enabled.
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+Applies a text scale to text in the view.
+Beta
+func textSelection<S>(S) -> some View
+Controls whether people can select text within this view.
+func tint(Color?) -> some View
+Sets the tint color within this view.
+func toggleStyle<S>(S) -> some View
+Sets the style for toggles in a view hierarchy.
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Specifies the visibility of a bar managed by SwiftUI.
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the views you provide.
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the specified items.
+func toolbar<Content>(id: String, content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the specified items, allowing for user customization.
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+Specifies the preferred visibility of backgrounds on a bar managed by SwiftUI.
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+Specifies the preferred color scheme of a bar managed by SwiftUI.
+func toolbarRole(ToolbarRole) -> some View
+Configures the semantic role for the content populating the toolbar.
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+Configures the toolbar title display mode for this view.
+Beta
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+Configure the title menu of a toolbar.
+func tracking(CGFloat) -> some View
+Sets the tracking for the text in this view.
+func transaction((inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given transaction mutation function to all animations used within the body closure.
+Beta
+func transaction(value: some Equatable, (inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+Beta
+func transform3DEffect(AffineTransform3D) -> some View
+Applies a 3D transformation to the receiver.
+Beta
+func transformAnchorPreference<A, K>(key: K.Type, value: Anchor<A>.Source, transform: (inout K.Value, Anchor<A>) -> Void) -> some View
+Sets a value for the specified preference key, the value is a function of the key’s current value and a geometry value tied to the current coordinate space, allowing readers of the value to convert the geometry to their local coordinates.
+func transformEffect(CGAffineTransform) -> some View
+Applies an affine transformation to this view’s rendered output.
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+Transforms the environment value of the specified key path with the given function.
+func transformPreference<K>(K.Type, (inout K.Value) -> Void) -> some View
+Applies a transformation to a preference value.
+func transition(AnyTransition) -> some View
+Associates a transition with the view.
+func truncationMode(Text.TruncationMode) -> some View
+Sets the truncation mode for lines of text that are too long to fit in the available space.
+func typeSelectEquivalent<S>(S) -> some View
+Sets an explicit type select equivalent text in a collection, such as a list or table.
+func typeSelectEquivalent(LocalizedStringKey) -> some View
+Sets an explicit type select equivalent text in a collection, such as a list or table.
+func typeSelectEquivalent(Text?) -> some View
+Sets an explicit type select equivalent text in a collection, such as a list or table.
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> some View
+Specifies the language for typesetting.
+Beta
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> some View
+Specifies the language for typesetting.
+Beta
+func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+Applies an underline to the text in this view.
+func unredacted() -> some View
+Removes any reason to apply a redaction to this view hierarchy.
+func upperLimbVisibility(Visibility) -> some View
+Sets the preferred visibility of the user’s upper limbs, while an ImmersiveSpace scene is presented.
+Beta
+func userActivity<P>(String, element: P?, (P, NSUserActivity) -> ()) -> some View
+Advertises a user activity type.
+func userActivity(String, isActive: Bool, (NSUserActivity) -> ()) -> some View
+Advertises a user activity type.
+func visualEffect((EmptyVisualEffect, GeometryProxy) -> some VisualEffect) -> some View
+Applies effects to this view, while providing access to layout information via GeometryProxy.
+Beta
+func visualEffect3D((EmptyVisualEffect, GeometryProxy3D) -> some VisualEffect) -> some View
+Applies effects to this view, while providing access to layout information via GeometryProxy3D.
+Beta
+func zIndex(Double) -> some View
+Controls the display order of overlapping views.
+Current page is View Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

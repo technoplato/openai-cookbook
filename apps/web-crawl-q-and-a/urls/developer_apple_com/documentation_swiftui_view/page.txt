@@ -1,0 +1,359 @@
+https://developer.apple.com/documentation/swiftui/viewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Deprecated modifiers
+State modifiers
+Presentation modifiers
+Search modifiers
+Input and event modifiers
+Providing interactivity
+Graphics and rendering modifiers
+Declaring a custom view
+Creating a view
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+Model data
+Documentation
+Open Menu
+Swift
+Protocol
+View
+A type that represents part of your app’s user interface and provides modifiers that you use to configure views.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+protocol View
+Overview
+You create custom views by declaring types that conform to the View protocol. Implement the required body computed property to provide the content for your custom view.
+struct MyView: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
+Assemble the view’s body by combining one or more of the built-in views provided by SwiftUI, like the Text instance in the example above, plus other custom views that you define, into a hierarchy of views. For more information about creating custom views, see Declaring a custom view.
+The View protocol provides a set of modifiers — protocol methods with default implementations — that you use to configure views in the layout of your app. Modifiers work by wrapping the view instance on which you call them in another view with the specified characteristics, as described in Configuring views. For example, adding the opacity(_:) modifier to a text view returns a new view with some amount of transparency:
+Text("Hello, World!")
+    .opacity(0.5) // Display partially transparent text.
+The complete list of default modifiers provides a large set of controls for managing views. For example, you can fine tune Layout modifiers, add Accessibility modifiers information, and respond to Input and event modifiers. You can also collect groups of default modifiers into new, custom view modifiers for easy reuse.
+Topics
+Implementing a custom view
+var body: Self.Body
+The content and behavior of the view.
+Required Default implementations provided.
+associatedtype Body : View
+The type of view representing the body of this view.
+Required
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Applies a modifier to a view and returns a new view.
+API Reference
+Previews in Xcode
+Generate dynamic, interactive previews of your custom views.
+Configuring view elements
+API Reference
+Accessibility modifiers
+Make your SwiftUI apps accessible to everyone, including people with disabilities.
+API Reference
+Appearance modifiers
+Configure a view’s foreground and background styles, controls, and visibility.
+API Reference
+Text and symbol modifiers
+Manage the rendering, selection, and entry of text in your view.
+API Reference
+Auxiliary view modifiers
+Add and configure supporting views, like toolbars and context menus.
+API Reference
+Chart view modifiers
+Configure charts that you declare with Swift Charts.
+Drawing views
+API Reference
+Style modifiers
+Apply built-in styles to different types of views.
+API Reference
+Layout modifiers
+Tell a view how to arrange itself within a view hierarchy by adjusting its size, position, alignment, padding, and so on.
+API Reference
+Graphics and rendering modifiers
+Affect the way the system draws a view, for example by scaling or masking a view, or by applying graphical effects.
+Providing interactivity
+API Reference
+Input and event modifiers
+Supply actions for a view to perform in response to user input and system events.
+API Reference
+Search modifiers
+Enable people to search for content in your app.
+API Reference
+Presentation modifiers
+Define additional views for the view to present under specified conditions.
+API Reference
+State modifiers
+Access storage and provide child views with configuration data.
+Deprecated modifiers
+API Reference
+Deprecated modifiers
+Review unsupported modifiers and their replacements.
+Instance Methods
+func popoverTip<Content>(Content, arrowEdge: Edge) -> some View
+Beta
+func popoverTip<Content>(Content, arrowEdge: Edge, action: (Tips.Action) -> Void) -> some View
+Beta
+func tipAssetSize(CGSize) -> some View
+Beta
+func tipBackground(some ShapeStyle) -> some View
+Sets the tip’s view background to a style.
+Beta
+func tipCornerRadius(Double, antialiased: Bool) -> some View
+Beta
+Relationships
+Inherited By
+DynamicViewContent
+InsettableShape
+NSViewControllerRepresentable
+NSViewRepresentable
+Shape
+ShapeView
+UIViewControllerRepresentable
+UIViewRepresentable
+WKInterfaceObjectRepresentable
+Conforming Types
+AngularGradient
+AnyShape
+AnyView
+AsyncImage
+Button
+ButtonBorderShape
+ButtonStyleConfiguration.Label
+Canvas
+Conforms when Symbols conforms to View.
+Capsule
+Circle
+Color
+ColorPicker
+ContainerRelativeShape
+ContentUnavailableView
+ControlGroup
+ControlGroupStyleConfiguration.Content
+ControlGroupStyleConfiguration.Label
+DatePicker
+DatePickerStyleConfiguration.Label
+DefaultDateProgressLabel
+DefaultSettingsLinkLabel
+DefaultShareLinkLabel
+DisclosureGroup
+DisclosureGroupStyleConfiguration.Content
+DisclosureGroupStyleConfiguration.Label
+Divider
+EditButton
+EditableCollectionContent
+Conforms when Content conforms to View.
+Ellipse
+EllipticalGradient
+EmptyView
+EquatableView
+FillShapeView
+ForEach
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, and Content conforms to View.
+Form
+FormStyleConfiguration.Content
+Gauge
+GaugeStyleConfiguration.CurrentValueLabel
+GaugeStyleConfiguration.Label
+GaugeStyleConfiguration.MarkedValueLabel
+GaugeStyleConfiguration.MaximumValueLabel
+GaugeStyleConfiguration.MinimumValueLabel
+GeometryReader
+GeometryReader3D
+Grid
+Conforms when Content conforms to View.
+GridRow
+Conforms when Content conforms to View.
+Group
+Conforms when Content conforms to View.
+GroupBox
+GroupBoxStyleConfiguration.Content
+GroupBoxStyleConfiguration.Label
+HSplitView
+HStack
+HelpLink
+Image
+KeyframeAnimator
+Label
+LabelStyleConfiguration.Icon
+LabelStyleConfiguration.Title
+LabeledContent
+Conforms when Label conforms to View and Content conforms to View.
+LabeledContentStyleConfiguration.Content
+LabeledContentStyleConfiguration.Label
+LabeledControlGroupContent
+LabeledToolbarItemGroupContent
+LazyHGrid
+LazyHStack
+LazyVGrid
+LazyVStack
+LinearGradient
+Link
+List
+Menu
+MenuButton
+MenuStyleConfiguration.Content
+MenuStyleConfiguration.Label
+ModifiedContent
+Conforms when Content conforms to DynamicViewContent and Modifier conforms to ViewModifier.
+MultiDatePicker
+NavigationLink
+NavigationSplitView
+NavigationStack
+NavigationView
+OffsetShape
+OutlineGroup
+Conforms when Data conforms to RandomAccessCollection, ID conforms to Hashable, Parent conforms to View, Leaf conforms to View, and Subgroup conforms to View.
+OutlineSubgroupChildren
+PasteButton
+Path
+PhaseAnimator
+Picker
+PlaceholderContentView
+PresentedWindowContent
+PrimitiveButtonStyleConfiguration.Label
+ProgressView
+ProgressViewStyleConfiguration.CurrentValueLabel
+ProgressViewStyleConfiguration.Label
+RadialGradient
+Rectangle
+RenameButton
+RotatedShape
+RoundedRectangle
+ScaledShape
+ScrollView
+ScrollViewReader
+SearchUnavailableContent.Actions
+SearchUnavailableContent.Description
+SearchUnavailableContent.Label
+Section
+Conforms when Parent conforms to View, Content conforms to View, and Footer conforms to View.
+SecureField
+SettingsLink
+ShareLink
+Slider
+Spacer
+Stepper
+StrokeBorderShapeView
+StrokeShapeView
+SubscriptionView
+TabView
+Table
+Text
+TextEditor
+TextField
+TextFieldLink
+TimelineView
+Conforms when Schedule conforms to TimelineSchedule and Content conforms to View.
+Toggle
+ToggleStyleConfiguration.Label
+TransformedShape
+TupleView
+UnevenRoundedRectangle
+VSplitView
+VStack
+ViewThatFits
+ZStack
+See Also
+Creating a view
+Declaring a custom view
+Define views and assemble them into a view hierarchy.
+struct ViewBuilder
+A custom parameter attribute that constructs views from closures.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is View
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

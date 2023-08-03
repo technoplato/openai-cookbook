@@ -1,0 +1,131 @@
+https://developer.apple.com/documentation/swiftui/nsviewrepresentable/sizethatfits(_:nsview:context:)-fuqxSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Adding AppKit views to SwiftUI view hierarchies
+r
+P
+NSViewRepresentable
+Creating and updating the view
+M
+func makeNSView(context: Self.Context) -> Self.NSViewType
+M
+func updateNSView(Self.NSViewType, context: Self.Context)
+T
+NSViewRepresentable.Context
+NSViewType
+Specifying a size
+Previews in Xcode
+Xcode library customization
+Articles
+Backyard Birds: Building an app with SwiftData and widgets
+Building a document-based app using SwiftData
+Controlling the timing and movements of your animations
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Documentation
+Open Menu
+Swift
+Instance Method
+sizeThatFits(_:nsView:context:)
+Given a proposed size, returns the preferred size of the composite view.
+macOS 13.0+
+func sizeThatFits(
+    _ proposal: ProposedViewSize,
+    nsView: Self.NSViewType,
+    context: Self.Context
+) -> CGSize?
+Parameters
+proposal
+The proposed size for the view.
+nsView
+Your custom view object.
+context
+A context structure containing information about the current state of the system.
+Return Value
+The composite size of the represented view controller. Returning a value of nil indicates that the system should use the default sizing algorithm.
+Discussion
+This method may be called more than once with different proposed sizes during the same layout pass. SwiftUI views choose their own size, so one of the values returned from this function will always be used as the actual size of the composite view.
+Current page is sizeThatFits(_:nsView:context:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

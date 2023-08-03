@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/toggle/init(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ColorPicker
+Choosing a color
+P
+var timeZone: TimeZone
+P
+var calendar: Calendar
+S
+MultiDatePicker
+M
+func datePickerStyle<S>(S) -> some View
+S
+DatePicker
+Creating a toggle from a configuration
+M
+init<S, C>(S, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+M
+init<C>(LocalizedStringKey, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+M
+init<S>(S, systemImage: String, isOn: Binding<Bool>)
+M
+init(LocalizedStringKey, systemImage: String, isOn: Binding<Bool>)
+Creating a toggle with an system image
+M
+init<S, C>(S, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Beta
+M
+init<C>(LocalizedStringKey, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates a toggle based on a toggle style configuration.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+init(_ configuration: ToggleStyleConfiguration)
+Available when Label is ToggleStyleConfiguration.Label.
+Parameters
+configuration
+The properties of the toggle, including a label and a binding to the toggle’s state.
+Discussion
+You can use this initializer within the makeBody(configuration:) method of a ToggleStyle to create an instance of the styled toggle. This is useful for custom toggle styles that only modify the current toggle style, as opposed to implementing a brand new style.
+For example, the following style adds a red border around the toggle, but otherwise preserves the toggle’s current style:
+struct RedBorderToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Toggle(configuration)
+            .padding()
+            .border(.red)
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

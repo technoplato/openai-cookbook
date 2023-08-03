@@ -1,0 +1,197 @@
+https://developer.apple.com/documentation/swiftui/documentsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var openDocument: OpenDocumentAction
+S
+NewDocumentAction
+P
+var newDocument: NewDocumentAction
+Opening a document programmatically
+S
+FileDocumentWriteConfiguration
+S
+FileDocumentReadConfiguration
+Reading and writing documents
+Immersive spaces
+Windows
+Scenes
+App organization
+App structure
+SwiftUI updates
+Exploring SwiftUI Sample Apps
+Learning SwiftUI
+Documentation
+Open Menu
+Swift
+Documents
+Enable people to open and manage documents.
+Overview
+Create a user interface for opening and editing documents using the DocumentGroup scene type.
+You initialize the scene with a model that describes the organization of the document’s data, and a view hierarchy that SwiftUI uses to display the document’s contents to the user. You can use either a value type model, which you typically store as a structure, that conforms to the FileDocument protocol, or a reference type model you store in a class instance that conforms to the ReferenceFileDocument protocol.
+SwiftUI supports standard behaviors that users expect from a document-based app, appropriate for each platform, like multiwindow support, open and save panels, drag and drop, and so on. For related design guidance, see Patterns in the Human Interface Guidelines.
+Topics
+Creating a document
+Building a Document-Based App with SwiftUI
+Create, save, and open documents in a SwiftUI multiplatform app.
+Building a document-based app using SwiftData
+Code along with the WWDC presenter to transform an app with SwiftData.
+struct DocumentGroup
+A scene that enables support for opening, creating, and saving documents.
+Storing document data in a structure instance
+protocol FileDocument
+A type that you use to serialize documents to and from file.
+struct FileDocumentConfiguration
+The properties of an open file document.
+Storing document data in a class instance
+protocol ReferenceFileDocument
+A type that you use to serialize reference type documents to and from file.
+struct ReferenceFileDocumentConfiguration
+The properties of an open reference file document.
+var undoManager: UndoManager?
+The undo manager used to register a view’s undo operations.
+Accessing document configuration
+var documentConfiguration: DocumentConfiguration?
+The configuration of a document in a DocumentGroup.
+Beta
+struct DocumentConfiguration
+Beta
+Reading and writing documents
+struct FileDocumentReadConfiguration
+The configuration for reading file contents.
+struct FileDocumentWriteConfiguration
+The configuration for serializing file contents.
+Opening a document programmatically
+var newDocument: NewDocumentAction
+An action in the environment that presents a new document.
+struct NewDocumentAction
+An action that presents a new document.
+var openDocument: OpenDocumentAction
+An action in the environment that presents an existing document.
+struct OpenDocumentAction
+An action that presents an existing document.
+Renaming a document
+struct RenameButton
+A button that triggers a standard rename action.
+func renameAction(FocusState<Bool>.Binding) -> some View
+Sets the rename action in the environment to update focus state.
+func renameAction(() -> Void) -> some View
+Sets a closure to run for the rename action.
+var rename: RenameAction?
+An action that activates the standard rename interaction.
+struct RenameAction
+An action that activates a standard rename interaction.
+See Also
+App structure
+API Reference
+App organization
+Define the entry point and top-level structure of your app.
+API Reference
+Scenes
+Declare the user interface groupings that make up the parts of your app.
+API Reference
+Windows
+Display user interface content in a window or a collection of windows.
+API Reference
+Immersive spaces
+Display unbounded content in a person’s surroundings.
+API Reference
+Navigation
+Enable people to move between different parts of your app’s view hierarchy within a scene.
+API Reference
+Modal presentations
+Present content in a separate view that offers focused interaction.
+API Reference
+Toolbars
+Provide immediate access to frequently used commands and controls.
+API Reference
+Search
+Enable people to search for text or other content within your app.
+API Reference
+App extensions
+Extend your app’s basic functionality to other parts of the system, like by adding a Widget.
+Current page is Documents
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

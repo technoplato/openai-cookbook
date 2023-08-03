@@ -1,0 +1,234 @@
+https://developer.apple.com/documentation/realitykit/modelentitySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func addForce(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+M
+func addForce(SIMD3<Float>, relativeTo: Entity?)
+S
+PhysicsBodyComponent
+P
+var physicsBody: PhysicsBodyComponent?
+Simulating Forces and Impulses
+r
+P
+HasCollision
+E
+CollisionEvents
+Convenience entity
+Models, shapes, and meshes
+Hello World
+Scene content
+USD Assets
+Object capture
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Documentation
+Open Menu
+Swift
+Class
+ModelEntity
+A representation of a physical object that RealityKit renders and optionally simulates.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+class ModelEntity
+Overview
+Use one or more model entities to place physical objects in a scene. In addition to the components they inherit from the Entity class, model entities have geometry, described by their ModelComponent. Model entities acquire the model component by conforming to the HasModel protocol. You specify meshes and materials to control how a model entity appears.
+Models respond to physics simulations because they conform to the HasPhysics protocol. You give them mass and other physical properties with a PhysicsBodyComponent instance, and then apply forces or impulses. The simulator uses a PhysicsMotionComponent to manage the linear and angular velocity of the object. Alternatively, you can selectively circumvent the simulation to control position and velocity yourself. Do this for a given model by setting its physics body mode to PhysicsBodyMode.kinematic.
+Models can also collide with one another, and with other entities that conform to the HasCollision protocol. The CollisionComponent provides parameters that let you manage which models collide with each other. It also lets you control the collision shape, which for performance reasons, is typically simpler than the visual geometry.
+Topics
+Creating a Model
+init()
+Creates a model entity.
+init(mesh: MeshResource, materials: [Material])
+Creates a model entity with a particular mesh and set of materials.
+init(mesh: MeshResource, materials: [Material], collisionShape: ShapeResource, mass: Float)
+Creates a model entity with a particular mesh, set of materials, collision shape, and mass.
+init(mesh: MeshResource, materials: [Material], collisionShapes: [ShapeResource], mass: Float)
+Creates a model entity with a particular mesh, set of materials, a composite collision shape, and mass.
+Configuring the Model
+var model: ModelComponent?
+The model component for the entity.
+struct ModelComponent
+A collection of resources that create the visual appearance of an entity.
+var jointNames: [String]
+The names of all the joints in the model entity.
+var jointTransforms: [Transform]
+The relative joint transforms of the model entity.
+protocol HasModel
+An interface that provides meshes and materials to define the visual appearance of an entity.
+Detecting Collisions
+var collision: CollisionComponent?
+The collision component that gives the entity the ability to participate in collision simulations.
+struct CollisionComponent
+A component that gives an entity the ability to collide with other entities that also have collision components.
+enum CollisionEvents
+Events associated with collisions.
+protocol HasCollision
+An interface used for ray casting and collision detection.
+Simulating Forces and Impulses
+var physicsBody: PhysicsBodyComponent?
+A component that is used for physics simulations of the model entity in accordance with the laws of Newtonian mechanics.
+struct PhysicsBodyComponent
+A component that defines an entity’s behavior in physics body simulations.
+func addForce(SIMD3<Float>, relativeTo: Entity?)
+Applies a force to the physics body at its center of mass.
+func addForce(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+Applies a force to the physics body at the specified position.
+func addTorque(SIMD3<Float>, relativeTo: Entity?)
+Applies a torque to the physics body at its center of mass.
+func clearForcesAndTorques()
+Clears all forces previously added to the physics body.
+func applyLinearImpulse(SIMD3<Float>, relativeTo: Entity?)
+Applies an impulse to the physics body at its center of mass.
+func applyAngularImpulse(SIMD3<Float>, relativeTo: Entity?)
+Applies an angular (torque) impulse to the physics body at its center of mass.
+func applyImpulse(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+Applies an impulse to the physics body at the specified position.
+func resetPhysicsTransform(recursive: Bool)
+Resets the position, orientation, and velocities of the simulated physics body.
+func resetPhysicsTransform(Transform, recursive: Bool)
+Resets the position and velocities of the simulated physics body.
+Deprecated
+protocol HasPhysicsBody
+An interface that enables physics simulations based on the rules of Newtonian mechanics.
+Simulating Movement
+var physicsMotion: PhysicsMotionComponent?
+The physics motion component used by physics simulations of the model entity.
+struct PhysicsMotionComponent
+A component that controls the motion of the body in physics simulations.
+protocol HasPhysicsMotion
+An interface that provides velocity properties for physics simulations.
+protocol HasPhysics
+An interface that combines the physics body and physics motion interfaces.
+Positioning Entities in Space
+API Reference
+The Transform Component
+Synchronizing an Entity Among Peers
+struct SynchronizationComponent
+A component that synchronizes an entity between processes and networked applications.
+Default Implementations
+API Reference
+HasCollision Implementations
+API Reference
+HasModel Implementations
+API Reference
+HasPhysicsBody Implementations
+API Reference
+HasPhysicsMotion Implementations
+Relationships
+Inherits From
+Entity
+Conforms To
+CustomDebugStringConvertible
+Equatable
+EventSource
+HasCollision
+HasHierarchy
+HasModel
+HasPhysics
+HasPhysicsBody
+HasPhysicsMotion
+HasSynchronization
+HasTransform
+Hashable
+Identifiable
+RealityCoordinateSpace
+Sendable
+See Also
+Convenience entity
+struct ResolvedModel3D
+A view for displaying static three-dimensional models.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModelEntity
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/request/modelfile(url:detail:geometry:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PhotogrammetrySession.Pose
+Beta
+S
+PhotogrammetrySession.Limits
+Beta
+Structures
+S
+PhotogrammetrySession.PointCloud
+E
+PhotogrammetrySession.Result
+Obtaining Results
+Equatable Implementations
+case modelEntity(detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)
+case modelFile(url: URL, detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)
+Specifying the Output
+M
+init(modelFile: URL)
+Creating the Request
+E
+PhotogrammetrySession.Request
+Creating Requests
+M
+func cancel()
+M
+func process(requests: [PhotogrammetrySession.Request]) throws
+Controlling Object Creation
+Documentation
+Open Menu
+Swift
+Case
+PhotogrammetrySession.Request.modelFile(url:detail:geometry:)
+An object-creation request saved to a USDZ file or a folder (for OBJ output).
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+case modelFile(
+    url: URL,
+    detail: PhotogrammetrySession.Request.Detail = .reduced,
+    geometry: PhotogrammetrySession.Request.Geometry? = nil
+)
+Discussion
+url: A file URL that points to the output location for this request. If the URL denotes a .usdz file, then a compressed USDZ file is produced. If a directory URL is provided, an OBJ object and all texture maps will be placed in the folder.
+detail: The level of detail for the created model.
+geometry: The bounding box or transforms for the generated object.
+See Also
+Specifying the Output
+case modelEntity(detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)
+An object-creation request stored in-memory for immediate display.
+case bounds
+An object-creation request that returns a box the same size as the created model.
+enum Detail
+Supported levels of detail for a request.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Request.modelFile(url:detail:geometry:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/pastebutton/init(supportedtypes:payloadaction:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Beta
+P
+var defaultWheelPickerItemHeight: CGFloat
+M
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+M
+func horizontalRadioGroupLayout() -> some View
+M
+func pickerStyle<S>(S) -> some View
+S
+Picker
+Choosing from a set of options
+init<Payload>(supportedContentTypes: [UTType], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+init<Payload>(supportedTypes: [String], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+Deprecated initializers
+M
+init<T>(payloadType: T.Type, onPaste: ([T]) -> Void)
+M
+init(supportedContentTypes: [UTType], payloadAction: ([NSItemProvider]) -> Void)
+Creating a paste button
+S
+PasteButton
+S
+EditButton
+Creating special-purpose buttons
+S
+ButtonRepeatBehavior
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(supportedTypes:payloadAction:)
+Creates a Paste button that accepts specific types of data from the pasteboard.
+macOS 10.15–14.0 Deprecated
+@MainActor
+init(
+    supportedTypes: [String],
+    payloadAction: @escaping ([NSItemProvider]) -> Void
+)
+Deprecated
+Use the init(supportedContentTypes:payloadAction:) initializer instead.
+Parameters
+supportedTypes
+The exact uniform type identifiers supported by the button. If the pasteboard doesn’t contain any of the supported types, the button becomes disabled.
+payloadAction
+The handler to call when the user clicks the Paste button, and the pasteboard has items that conform to supportedTypes. This closure receives an array of item providers that you use to inspect and load the pasteboard data.
+Discussion
+Set the contents of supportedTypes in order of your app’s preference for its supported types. The Paste button takes the most-preferred type that the pasteboard source supports and delivers this to the payloadAction closure.
+See Also
+Deprecated initializers
+init<Payload>(supportedTypes: [String], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+Creates a Paste button that accepts specific types of data from the pasteboard, performing a custom validation of the data before sending it to your app.
+Deprecated
+init<Payload>(supportedContentTypes: [UTType], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+Creates a Paste button that accepts specific types of data from the pasteboard, performing a custom validation of the data before sending it to your app.
+Deprecated
+Current page is init(supportedTypes:payloadAction:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

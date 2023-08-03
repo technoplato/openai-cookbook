@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/realitykit/realityviewdefaultplaceholderSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Loading Entities from a File
+Building an Immersive Experience with RealityKit
+Understanding RealityKit’s modular architecture
+Entity Component System
+r
+P
+RealityCoordinateSpaceConverting
+Beta
+S
+SceneRealityCoordinateSpace
+Beta
+C
+RealityRenderer
+S
+RealityViewAttachmentContent
+S
+RealityViewEntityCollection
+r
+P
+RealityViewContentProtocol
+S
+RealityViewContent
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+Documentation
+Open Menu
+Swift
+Structure
+RealityViewDefaultPlaceholder
+A view that represents the default placeholder for a RealityView.
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+struct RealityViewDefaultPlaceholder
+Overview
+You don’t create this type directly. RealityView creates values for you.
+Topics
+Instance Properties
+var body: some View
+The content and behavior of the view.
+Type Aliases
+typealias Body
+The type of view representing the body of this view.
+Default Implementations
+API Reference
+View Implementations
+Relationships
+Conforms To
+View
+See Also
+Working with content
+struct RealityViewContent
+The content of a RealityView that is displayed inline.
+Beta
+protocol RealityViewContentProtocol
+A protocol representing the content of a RealityView.
+Beta
+struct RealityViewEntityCollection
+A collection of entities in a RealityView.
+Beta
+struct RealityViewAttachmentContent
+A view that represents the contents of a RealityView with attachments.
+Beta
+struct RealityViewAttachmentContent
+A view that represents the contents of a RealityView with attachments.
+Beta
+struct RealityViewEntityCollection
+A collection of entities in a RealityView.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is RealityViewDefaultPlaceholder
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

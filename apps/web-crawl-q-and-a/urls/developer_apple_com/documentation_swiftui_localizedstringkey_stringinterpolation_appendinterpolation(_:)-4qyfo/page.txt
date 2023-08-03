@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/swiftui/localizedstringkey/stringinterpolation/appendinterpolation(_:)-4qyfoSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Tables
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+func appendInterpolation(timerInterval: ClosedRange<Date>, pauseTime: Date?, countsDown: Bool, showsHours: Bool)
+M
+func appendInterpolation(Date, style: Text.DateStyle)
+M
+func appendInterpolation<Subject>(Subject, formatter: Formatter?)
+M
+func appendInterpolation<Subject>(Subject, formatter: Formatter?)
+M
+func appendInterpolation<F>(F.FormatInput, format: F)
+M
+func appendInterpolation(DateInterval)
+M
+func appendInterpolation(ClosedRange<Date>)
+M
+func appendInterpolation<T>(T, specifier: String)
+M
+func appendInterpolation<T>(T)
+Documentation
+Open Menu
+Swift
+Instance Method
+appendInterpolation(_:)
+Appends the string displayed by a text view to a string interpolation.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+mutating func appendInterpolation(_ text: Text)
+Parameters
+value
+A Text instance to append.
+Discussion
+Don’t call this method directly; it’s used by the compiler when interpreting string interpolations.
+See Also
+Appending to an interpolation
+func appendInterpolation(String)
+Appends a literal string segment to a string interpolation.
+func appendInterpolation(AttributedString)
+Appends an attributed string to a string interpolation.
+func appendInterpolation<T>(T)
+Appends a type, convertible to a string by using a default format specifier, to a string interpolation.
+func appendInterpolation<T>(T, specifier: String)
+Appends a type, convertible to a string with a format specifier, to a string interpolation.
+func appendInterpolation(ClosedRange<Date>)
+Appends a date range to a string interpolation.
+func appendInterpolation(DateInterval)
+Appends a date interval to a string interpolation.
+func appendInterpolation<F>(F.FormatInput, format: F)
+Appends the formatted representation of a nonstring type supported by a corresponding format style.
+func appendInterpolation<Subject>(Subject, formatter: Formatter?)
+Appends an optionally-formatted instance of an Objective-C subclass to a string interpolation.
+func appendInterpolation<Subject>(Subject, formatter: Formatter?)
+Appends an optionally-formatted instance of a Foundation type to a string interpolation.
+func appendInterpolation(Date, style: Text.DateStyle)
+Appends a formatted date to a string interpolation.
+func appendInterpolation(Image)
+Appends an image to a string interpolation.
+func appendInterpolation(LocalizedStringResource)
+Appends the localized string resource to a string interpolation.
+func appendInterpolation(timerInterval: ClosedRange<Date>, pauseTime: Date?, countsDown: Bool, showsHours: Bool)
+Appends a timer interval to a string interpolation.
+func appendLiteral(String)
+Appends a literal string.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is appendInterpolation(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

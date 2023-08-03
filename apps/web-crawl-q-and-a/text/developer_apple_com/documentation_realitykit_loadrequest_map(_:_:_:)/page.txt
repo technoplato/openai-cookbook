@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/map(_:_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func load(contentsOf: URL, withName: String?) throws -> Entity
+Loading an Entity Hierarchy
+Publisher Implementations
+Default Implementations
+M
+func print(String, to: (TextOutputStream)?) -> Publishers.Print<Self>
+M
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+M
+func breakpointOnError() -> Publishers.Breakpoint<Self>
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+M
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+M
+func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>
+Identifying Properties with Key Paths
+M
+func encode<Coder>(encoder: Coder) -> Publishers.Encode<Self, Coder>
+M
+func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Self, Item, Coder>
+Encoding and Decoding
+M
+func share() -> Publishers.Share<Self>
+Creating Reference-type Publishers
+Documentation
+Open Menu
+Swift
+Instance Method
+map(_:_:_:)
+Publishes the values of three key paths as a tuple.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func map<T0, T1, T2>(
+    _ keyPath0: KeyPath<Self.Output, T0>,
+    _ keyPath1: KeyPath<Self.Output, T1>,
+    _ keyPath2: KeyPath<Self.Output, T2>
+) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+Parameters
+keyPath0
+The key path of a property on Output.
+keyPath1
+The key path of a second property on Output.
+keyPath2
+The key path of a third property on Output.
+Return Value
+A publisher that publishes the values of three key paths as a tuple.
+Discussion
+In the following example, the Publisher/map(_:_:_:) operator uses the Swift key path syntax to access the die1, die2, and die3 members of the DiceRoll structure published by the Just publisher.
+The downstream sink subscriber receives only these three values (as an (Int, Int, Int) tuple), not the entire DiceRoll.
+struct DiceRoll {
+    let die1: Int
+    let die2: Int
+    let die3: Int
+}
+
+
+cancellable = Just(DiceRoll(die1:Int.random(in:1...6),
+                            die2: Int.random(in:1...6),
+                            die3: Int.random(in:1...6)))
+    .map(\.die1, \.die2, \.die3)
+    .sink { values in
+        print ("Rolled: \(values.0), \(values.1), \(values.2) (total \(values.0 + values.1 + values.2))")
+    }
+// Prints "Rolled: 5, 4, 2 (total 11)" (or other random values).
+See Also
+Identifying Properties with Key Paths
+func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>
+Publishes the value of a key path.
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+Publishes the values of two key paths as a tuple.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is map(_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

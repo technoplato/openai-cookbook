@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/realitykit/meshresource/replace(with:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MeshResource.Instance
+Structures
+T
+MeshResource.Font
+Creating Text
+M
+static func generateSphere(radius: Float) -> MeshResource
+Creating a Sphere
+M
+static func generatePlane(width: Float, depth: Float, cornerRadius: Float) -> MeshResource
+static func generateBox(width: Float, height: Float, depth: Float, cornerRadius: Float, splitFaces: Bool) -> MeshResource
+P
+var expectedMaterialCount: Int
+Configuring the Resource
+M
+static func generateAsync(from: [MeshDescriptor]) -> LoadRequest<MeshResource>
+M
+static func generateAsync(from: MeshResource.Contents) -> LoadRequest<MeshResource>
+M
+static func generate(from: [MeshDescriptor]) throws -> MeshResource
+M
+static func generate(from: MeshResource.Contents) throws -> MeshResource
+Creating a Mesh Resource
+C
+MeshResource
+Documentation
+Open Menu
+Swift
+Instance Method
+replace(with:)
+Replace the contents of this mesh resource.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+@MainActor
+func replace(with content: MeshResource.Contents) throws
+Discussion
+Note
+The contents of the modified mesh resource will not be synced between network clients.
+See Also
+Configuring the Resource
+var expectedMaterialCount: Int
+The number of material entries required to render the mesh resource.
+func replaceAsync(with: MeshResource.Contents) -> LoadRequest<MeshResource>
+Replace the contents of this mesh resource asynchronously.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is replace(with:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

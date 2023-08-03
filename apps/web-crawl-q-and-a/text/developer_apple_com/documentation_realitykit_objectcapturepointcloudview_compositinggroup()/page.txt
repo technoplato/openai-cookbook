@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/compositinggroup()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func contentMargins(CGFloat, for: ContentMarginPlacement) -> some View
+M
+func contentMargins(Edge.Set, CGFloat?, for: ContentMarginPlacement) -> some View
+M
+func contentMargins(Edge.Set, EdgeInsets, for: ContentMarginPlacement) -> some View
+M
+func containerShape<T>(T) -> some View
+M
+func containerRelativeFrame(Axis.Set, count: Int, span: Int, spacing: CGFloat, alignment: Alignment) -> some View
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment, (CGFloat, Axis) -> CGFloat) -> some View
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment) -> some View
+func containerBackground<V>(for: ContainerBackgroundPlacement, alignment: Alignment, content: () -> V) -> some View
+func confirmationDialog<S, A, M, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func confirmationDialog<A, M, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func confirmationDialog<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func confirmationDialog<S, A, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+func confirmationDialog<A, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+func confirmationDialog<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+func confirmationDialog<A, M>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+func confirmationDialog<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+func confirmationDialog<S, A, M>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+func confirmationDialog<A>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+func confirmationDialog<A>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+func confirmationDialog<S, A>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+M
+func colorScheme(ColorScheme) -> some View
+M
+func colorMultiply(Color) -> some View
+M
+func colorInvert() -> some View
+M
+func colorEffect(Shader, isEnabled: Bool) -> some View
+M
+func clipped(antialiased: Bool) -> some View
+M
+func clipShape<S>(S, style: FillStyle) -> some View
+M
+func buttonStyle<S>(S) -> some View
+M
+func buttonStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+compositingGroup()
+Wraps this view in a compositing group.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func compositingGroup() -> some View
+Return Value
+A view that wraps this view in a compositing group.
+Discussion
+A compositing group makes compositing effects in this view’s ancestor views, such as opacity and the blend mode, take effect before this view is rendered.
+Use compositingGroup() to apply effects to a parent view before applying effects to this view.
+In the example below the compositingGroup() modifier separates the application of effects into stages. It applies the View/opacity(_:) effect to the VStack before the blur(radius:) effect is applied to the views inside the enclosed ZStack. This limits the scope of the opacity change to the outermost view.
+VStack {
+    ZStack {
+        Text("CompositingGroup")
+            .foregroundColor(.black)
+            .padding(20)
+            .background(Color.red)
+        Text("CompositingGroup")
+            .blur(radius: 2)
+    }
+    .font(.largeTitle)
+    .compositingGroup()
+    .opacity(0.9)
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is compositingGroup()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

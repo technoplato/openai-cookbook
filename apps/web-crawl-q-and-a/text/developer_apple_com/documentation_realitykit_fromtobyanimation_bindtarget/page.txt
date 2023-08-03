@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/realitykit/fromtobyanimation/bindtargetSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var byValue: simd_quatf?
+P
+var byValue: Float?
+P
+var byValue: Double?
+P
+var byValue: Transform?
+P
+var byValue: JointTransforms?
+Defining an Incremental Value
+P
+var fromValue: SIMD4<Float>?
+P
+var name: String
+Configuring the Animation
+M
+init(jointNames: [String], name: String, isScaleAnimated: Bool, isRotationAnimated: Bool, isTranslationAnimated: Bool, from: Value?, to: Value?, by: Value?, duration: TimeInterval, timing: AnimationTimingFunction, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+M
+init(name: String, from: Value?, to: Value?, by: Value?, duration: TimeInterval, timing: AnimationTimingFunction, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+Creating an Animation
+S
+FromToByAnimation
+Animating an Entity
+P
+var defaultAnimationClock: CMClockOrTimebase
+Documentation
+Open Menu
+Swift
+Instance Property
+bindTarget
+A textual name that identifies the particular property that animates.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var bindTarget: BindTarget { get set }
+Discussion
+The property name is a key path. For more information on key paths, see doc://com.apple.documentation/documentation/swift/swift_standard_library/key-path_expressions.
+See Also
+Configuring the Animation
+var name: String
+A textual name for the animation.
+var blendLayer: Int32
+The order in which the framework composites the animation.
+var jointNames: [String]
+Joint names that define the joints in the skeletal pose.
+Available when Value is JointTransforms.
+var isScaleAnimated: Bool
+A Boolean value that indicates whether that animation interpolates changes to the target’s size.
+Available when Value is JointTransforms.
+var isRotationAnimated: Bool
+A Boolean value that indicates whether the animation interpolates rotational changes.
+Available when Value is JointTransforms.
+var isTranslationAnimated: Bool
+A Boolean value that indicates whether the animation interpolates changes to the target object’s position.
+Available when Value is JointTransforms.
+var isAdditive: Bool
+A Boolean value that indicates whether the animation blends additively with concurrent animations.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is bindTarget
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

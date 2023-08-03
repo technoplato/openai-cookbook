@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/realitykit/realitykit-scene-understandingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Runtime Events
+Content synchronization
+Postprocessing effects
+Physics simulation
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Cameras and lighting
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+Hello World
+Scene content
+USD Assets
+Object capture
+Documentation
+Open Menu
+Swift
+Scene reconstruction and understanding
+Detect objects in an AR scene or create a detailed 3D reconstruction of the real world environment.
+Overview
+RealityKit can detect planes in the real-world environment on any device, allowing you to place virtual objects in the world and have them interact. On devices with a LiDAR sensor, RealityKit can create a detailed reconstruction of the surrounding environment, allowing more precise interactions between virtual content and the real-world. With scene understanding enabled, RealityKit not only reconstructs the environment, but can also recognize what many real world objects are.
+To enable scene understanding in an iOS or macOS RealityKit app, insert options into sceneUnderstanding, like this:
+arView.environment.sceneUnderstanding.options.insert(.occlusion)
+arView.environment.sceneUnderstanding.options.insert(.physics)
+arView.environment.sceneUnderstanding.options.insert(.collision)
+arView.environment.sceneUnderstanding.options.insert(.receivesLighting)
+To enable sccene understanding for a visionOS app, use a ARKit/SceneReconstructionProvider
+let arSession = ARKitSession()
+let sceneReconstruction = SceneReconstructionProvider(modes: [])
+
+
+Task {
+    do {
+        try await arSession.run([sceneReconstruction])
+    } catch {
+        // handle error
+    }
+}
+Topics
+Scene reconstruction
+Visualizing and Interacting with a Reconstructed Scene
+Estimate the shape of the physical environment using a polygonal mesh.
+var sceneReconstruction: ARConfiguration.SceneReconstruction
+A flag that enables scene reconstruction.
+class func supportsSceneReconstruction(ARConfiguration.SceneReconstruction) -> Bool
+Checks if the device supports scene reconstruction.
+Scene Understanding
+Creating a game with scene understanding
+Create AR games and experiences that interact with real-world objects on LiDAR-equipped iOS devices.
+struct SceneUnderstanding
+An object that holds scene understanding options for the view.
+struct Options
+struct SceneUnderstandingComponent
+A component that maps features of the physical environment.
+protocol HasSceneUnderstanding
+A specification that detects and reacts to features of the physical environment.
+See Also
+Scene content
+API Reference
+Models, shapes, and meshes
+Use mesh-based models to display virtual objects in your scene.
+API Reference
+Materials and shaders
+Apply textures to the surface of your scene’s 3D objects to give each object a unique appearance.
+API Reference
+Anchors
+Anchor an entity to an item in your scene, and specify the position, rotation, and scale of the entity’s content.
+API Reference
+Cameras and lighting
+Control the lighting and point of view for a scene.
+API Reference
+Audio
+Add immersive spatial audio to your RealityKit content.
+API Reference
+Animation
+Dynamically move, rotate, and scale objects at runtime.
+protocol RealityCoordinateSpace
+A 3D coordinate space that exists within a RealityKit hierarchy. Any RealityCoordinateSpaceConverting can convert spatial data between SwiftUI CoordinateSpaces and RealityCoordinateSpaces.
+Beta
+Current page is Scene reconstruction and understanding
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

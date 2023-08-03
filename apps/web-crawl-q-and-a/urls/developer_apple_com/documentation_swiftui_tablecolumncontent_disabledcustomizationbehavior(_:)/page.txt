@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/tablecolumncontent/disabledcustomizationbehavior(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Event handling
+Scroll views
+View groupings
+S
+TableOutlineGroupContent
+Beta
+S
+DisclosureTableRow
+Beta
+Adding progressive disclosure
+S
+TableRowBuilder
+func disabledCustomizationBehavior(TableColumnCustomizationBehavior) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+M
+func defaultVisibility(Visibility) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+Beta
+M
+func customizationID(String) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+Beta
+M
+func alignment(TableColumnAlignment) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+Beta
+Configuring the content
+TableColumnSortComparator
+Defining the comparator
+TableRowValue
+Defining the row value
+Documentation
+Open Menu
+Swift
+Instance Method
+disabledCustomizationBehavior(_:)
+Sets the disabled customization behavior for a table column.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+func disabledCustomizationBehavior(_ behavior: TableColumnCustomizationBehavior) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+Parameters
+behavior
+The behavior to disable, or .all to not allow any customization.
+Discussion
+When the containing Table is bound to some TableColumnCustomization, all columns will be able to be customized by the user on macOS by default (i.e. TableColumnCustomizationBehavior.all). This modifier allows disabling specific behavior.
+This modifier has no effect on iOS since Table does not support any built-in user customization features.
+This does not prevent programmatic changes to a table column customization.
+See Also
+Configuring the content
+func alignment(TableColumnAlignment) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+Sets the alignment of the column, applying to both its column header label and the row view content for that column.
+Beta
+func customizationID(String) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+Sets the identifier to be associated with a column when persisting its state with TableColumnCustomization.
+Beta
+func defaultVisibility(Visibility) -> some TableColumnContent<Self.TableRowValue, Self.TableColumnSortComparator>
+Sets the default visibility of a table column.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is disabledCustomizationBehavior(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

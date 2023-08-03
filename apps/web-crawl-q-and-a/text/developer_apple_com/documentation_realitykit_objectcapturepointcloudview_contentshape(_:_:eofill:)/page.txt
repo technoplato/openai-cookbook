@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/contentshape(_:_:eofill:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func dialogSuppressionToggle(Text, isSuppressed: Binding<Bool>) -> some View
+M
+func dialogSuppressionToggle<S>(S, isSuppressed: Binding<Bool>) -> some View
+M
+func deleteDisabled(Bool) -> some View
+M
+func defersSystemGestures(on: Edge.Set) -> some View
+M
+func defaultScrollAnchor(UnitPoint?) -> some View
+M
+func defaultHoverEffect(HoverEffect?) -> some View
+M
+func defaultFocus<V>(FocusState<V>.Binding, V, priority: DefaultFocusEvaluationPriority) -> some View
+func contextMenu<I, M>(forSelectionType: I.Type, menu: (Set<I>) -> M, primaryAction: ((Set<I>) -> Void)?) -> some View
+M
+func contentMargins(CGFloat, for: ContentMarginPlacement) -> some View
+M
+func contentMargins(Edge.Set, CGFloat?, for: ContentMarginPlacement) -> some View
+M
+func contentMargins(Edge.Set, EdgeInsets, for: ContentMarginPlacement) -> some View
+M
+func containerShape<T>(T) -> some View
+M
+func containerRelativeFrame(Axis.Set, count: Int, span: Int, spacing: CGFloat, alignment: Alignment) -> some View
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment, (CGFloat, Axis) -> CGFloat) -> some View
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment) -> some View
+M
+func containerBackground<V>(for: ContainerBackgroundPlacement, alignment: Alignment, content: () -> V) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+contentShape(_:_:eoFill:)
+Sets the content shape for this view.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func contentShape<S>(
+    _ kind: ContentShapeKinds,
+    _ shape: S,
+    eoFill: Bool = false
+) -> some View where S : Shape
+Parameters
+kind
+The kinds to apply to this content shape.
+shape
+The shape to use.
+eoFill
+A Boolean that indicates whether the shape is interpreted with the even-odd winding number rule.
+Return Value
+A view that uses the given shape for the specified kind.
+Discussion
+The content shape has a variety of uses. You can control the kind of the content shape by specifying one in kind. For example, the following example only sets the focus ring shape of the view, without affecting its shape for hit-testing:
+MyFocusableView()
+    .contentShape(.focusEffect, Circle())
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contentShape(_:_:eoFill:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

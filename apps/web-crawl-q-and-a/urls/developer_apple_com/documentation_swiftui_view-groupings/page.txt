@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/view-groupingsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+System events
+Focus
+Drag and drop
+Clipboard
+Input events
+Gestures
+Event handling
+Tables
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Documentation
+Open Menu
+Swift
+View groupings
+Present views in different kinds of purpose-driven containers, like forms or control groups.
+Overview
+You can create groups of views that serve different purposes.
+For example, a Group construct treats the specified views as a unit without imposing any additional layout or appearance characteristics. A Form presents a group of elements with a platform-specific appearance that’s suitable for gathering input from people.
+For design guidance, see Layout in the Human Interface Guidelines.
+Topics
+Collecting views into a unit
+struct Group
+A type that collects multiple instances of a content type — like views, scenes, or commands — into a single unit.
+Grouping views into a box
+struct GroupBox
+A stylized view, with an optional label, that visually collects a logical grouping of content.
+func groupBoxStyle<S>(S) -> some View
+Sets the style for group boxes within this view.
+Grouping inputs
+struct Form
+A container for grouping controls used for data entry, such as in settings or inspectors.
+func formStyle<S>(S) -> some View
+Sets the style for forms in a view hierarchy.
+struct LabeledContent
+A container for attaching a label to a value-bearing view.
+func labeledContentStyle<S>(S) -> some View
+Sets a style for labeled content.
+Presenting a group of controls
+struct ControlGroup
+A container view that displays semantically-related controls in a visually-appropriate manner for the context
+func controlGroupStyle<S>(S) -> some View
+Sets the style for control groups within this view.
+See Also
+View layout
+API Reference
+Layout fundamentals
+Arrange views inside built-in layout containers like stacks and grids.
+API Reference
+Layout adjustments
+Make fine adjustments to alignment, spacing, padding, and other layout parameters.
+API Reference
+Custom layout
+Place views in custom arrangements and create animated transitions between layout types.
+API Reference
+Lists
+Display a structured, scrollable column of information.
+API Reference
+Tables
+Display selectable, sortable data arranged in rows and columns.
+API Reference
+Scroll views
+Enable people to scroll to content that doesn’t fit in the current display.
+Current page is View groupings
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/gauge/init(value:in:label:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var controlActiveState: ControlActiveState
+Activating controls
+E
+ControlSize
+P
+var controlSize: ControlSize
+M
+func controlSize(ControlSize) -> some View
+Sizing controls
+S
+SensoryFeedback
+init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, minimumValueLabel: () -> BoundsLabel, maximumValueLabel: () -> BoundsLabel, markedValueLabels: () -> MarkedValueLabels)
+init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, minimumValueLabel: () -> BoundsLabel, maximumValueLabel: () -> BoundsLabel)
+init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, markedValueLabels: () -> MarkedValueLabels)
+Creating a gauge
+S
+Gauge
+Indicating a value
+S
+ColorPicker
+Choosing a color
+P
+var timeZone: TimeZone
+P
+var calendar: Calendar
+S
+MultiDatePicker
+Documentation
+Open Menu
+Swift
+Initializer
+init(value:in:label:)
+Creates a gauge showing a value within a range and describes the gauge’s purpose and current value.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+init<V>(
+    value: V,
+    in bounds: ClosedRange<V> = 0...1,
+    @ViewBuilder label: () -> Label
+) where CurrentValueLabel == EmptyView, BoundsLabel == EmptyView, MarkedValueLabels == EmptyView, V : BinaryFloatingPoint
+Parameters
+value
+The value to show in the gauge.
+bounds
+The range of the valid values. Defaults to 0...1.
+label
+A view that describes the purpose of the gauge.
+Discussion
+Use this modifier to create a gauge that shows the value at its relative position along the gauge and a label describing the gauge’s purpose. In the example below, the gauge has a range of 0...1, the indicator is set to 0.4, or 40 percent of the distance along the gauge:
+struct SimpleGauge: View {
+    @State private var batteryLevel = 0.4
+
+
+    var body: some View {
+        Gauge(value: batteryLevel) {
+            Text("Battery Level")
+        }
+    }
+}
+See Also
+Creating a gauge
+init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel)
+Creates a gauge showing a value within a range and that describes the gauge’s purpose and current value.
+init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, markedValueLabels: () -> MarkedValueLabels)
+Creates a gauge representing a value within a range.
+init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, minimumValueLabel: () -> BoundsLabel, maximumValueLabel: () -> BoundsLabel)
+Creates a gauge showing a value within a range and describes the gauge’s current, minimum, and maximum values.
+init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, minimumValueLabel: () -> BoundsLabel, maximumValueLabel: () -> BoundsLabel, markedValueLabels: () -> MarkedValueLabels)
+Creates a gauge representing a value within a range.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(value:in:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

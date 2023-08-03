@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/videoplayercomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ModelComponent
+3D Models
+S
+PointLightComponent
+S
+SpotLightComponent
+S
+GroundingShadowComponent
+Beta
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+S
+SynchronizationComponent
+r
+P
+TransientComponent
+S
+Transform
+S
+OpacityComponent
+Beta
+S
+BodyTrackingComponent
+S
+AdaptiveResolutionComponent
+Beta
+S
+SceneUnderstandingComponent
+S
+AnchoringComponent
+Documentation
+Open Menu
+Swift
+Structure
+VideoPlayerComponent
+visionOS 1.0+ Beta
+struct VideoPlayerComponent
+Topics
+Initializers
+init(avPlayer: AVPlayer)
+Creates and initializes a video player component for a given AVPlayer object
+Instance Properties
+var avPlayer: AVPlayer?
+Returns the avPlayer passed in to init(avPlayer: AVPlayer)
+var currentScreenVideoDimension: SIMD2<Float>
+the current screen video dimension
+Deprecated
+var desiredViewingMode: VideoPlaybackController.ViewingMode
+var isPassthroughTintingEnabled: Bool
+var playerScreenSize: SIMD2<Float>
+Represents the current video player screen entity size(Width and Height) in meters if defer transition to app, this will always return 1x1
+var screenVideoDimension: SIMD2<Float>
+The current screen video dimension
+var viewingMode: VideoPlaybackController.ViewingMode?
+Default Implementations
+API Reference
+Component Implementations
+Relationships
+Conforms To
+Component
+See Also
+Video Playback
+enum VideoPlayerEvents
+Events associated with video playback for VideoPlayerComponent.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VideoPlayerComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

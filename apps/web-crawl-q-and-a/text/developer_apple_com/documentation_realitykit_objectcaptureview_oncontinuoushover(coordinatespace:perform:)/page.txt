@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/oncontinuoushover(coordinatespace:perform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onPreferenceChange<K>(K.Type, perform: (K.Value) -> Void) -> some View
+M
+func onOpenURL(perform: (URL) -> ()) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+M
+func onKeyPress(phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+M
+func onContinueUserActivity(String, perform: (NSUserActivity) -> ()) -> some View
+M
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Deprecated
+M
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some View
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+M
+func onAppear(perform: (() -> Void)?) -> some View
+M
+func offset(x: CGFloat, y: CGFloat) -> some View
+M
+func offset(CGSize) -> some View
+M
+func navigationViewStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+onContinuousHover(coordinateSpace:perform:)
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+RealityKit
+SwiftUI
+iOS 16.0–17.0 Deprecated
+iPadOS 16.0–17.0 Deprecated
+macOS 13.0–14.0 Deprecated
+Mac Catalyst 16.0–17.0 Deprecated
+tvOS 16.0+
+visionOS 1.0–1.0 Deprecated
+func onContinuousHover(
+    coordinateSpace: CoordinateSpace = .local,
+    perform action: @escaping (HoverPhase) -> Void
+) -> some View
+Parameters
+coordinateSpace
+The coordinate space for the location values. Defaults to CoordinateSpace/local.
+action
+The action to perform whenever the pointer enters, moves within, or exits the view’s bounds. The action closure passes the HoverPhase/active(_:) phase with the pointer’s coordinates if the pointer is in the view’s bounds; otherwise, it passes HoverPhase/ended.
+Return Value
+A view that calls action when the pointer enters, moves within, or exits the view’s bounds.
+Discussion
+Call this method to define a region for detecting pointer movement with the size and position of this view. The following example updates hoverLocation and isHovering to be based on the phase provided to the closure:
+@State private var hoverLocation: CGPoint = .zero
+@State private var isHovering = false
+
+
+var body: some View {
+    VStack {
+        Color.red
+            .frame(width: 400, height: 400)
+            .onContinuousHover { phase in
+                switch phase {
+                case .active(let location):
+                    hoverLocation = location
+                    isHovering = true
+                case .ended:
+                    isHovering = false
+                }
+            }
+            .overlay {
+                Rectangle()
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(isHovering ? .green : .blue)
+                    .offset(x: hoverLocation.x, y: hoverLocation.y)
+            }
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onContinuousHover(coordinateSpace:perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

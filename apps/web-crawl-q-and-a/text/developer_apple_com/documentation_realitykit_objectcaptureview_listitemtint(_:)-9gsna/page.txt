@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/listitemtint(_:)-9gsnaSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func monospaced(Bool) -> some View
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+M
+func minimumScaleFactor(CGFloat) -> some View
+M
+func menuStyle<S>(S) -> some View
+M
+func menuOrder(MenuOrder) -> some View
+M
+func menuIndicator(Visibility) -> some View
+M
+func menuActionDismissBehavior(MenuActionDismissBehavior) -> some View
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+M
+func listItemTint(ListItemTint?) -> some View
+M
+func lineSpacing(CGFloat) -> some View
+M
+func lineLimit(Int, reservesSpace: Bool) -> some View
+M
+func lineLimit(ClosedRange<Int>) -> some View
+M
+func lineLimit(Int?) -> some View
+M
+func lineLimit(PartialRangeFrom<Int>) -> some View
+M
+func lineLimit(PartialRangeThrough<Int>) -> some View
+M
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+listItemTint(_:)
+Sets a fixed tint color associated with specific content in a list.
+RealityKit
+SwiftUI
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func listItemTint(_ tint: Color?) -> some View
+Parameters
+color
+The color to use to tint the content, or nil to not override the inherited tint.
+Discussion
+This is equivalent to using a tint of ListItemTint.fixed(_:) with the provided tint color.
+The containing list’s style will apply that tint as appropriate. watchOS uses the tint color for its background platter appearance. Sidebars on iOS and macOS apply the tint color to their Label icons, which otherwise use the accent color by default.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is listItemTint(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

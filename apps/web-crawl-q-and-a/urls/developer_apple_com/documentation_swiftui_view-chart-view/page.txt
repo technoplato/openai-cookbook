@@ -1,0 +1,296 @@
+https://developer.apple.com/documentation/swiftui/view-chart-viewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Body
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Previews in Xcode
+Configuring view elements
+Accessibility modifiers
+Appearance modifiers
+Text and symbol modifiers
+Auxiliary view modifiers
+func chartForegroundStyleScale<Domain, Range>(domain: Domain, range: Range, type: ScaleType?) -> some View
+func chartForegroundStyleScale<Domain, S>(domain: Domain, mapping: (Domain.Element) -> S) -> some View
+func chartLegend<Content>(position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?, content: () -> Content) -> some View
+Overlays
+M
+func chartOverlay<V>(alignment: Alignment, content: (ChartProxy) -> V) -> some View
+Axes
+M
+func chartXAxis(Visibility) -> some View
+M
+func chartXAxis<Content>(content: () -> Content) -> some View
+M
+func chartXAxisStyle<Content>(content: (ChartAxisContent) -> Content) -> some View
+Beta
+M
+func chartYAxis(Visibility) -> some View
+Documentation
+Open Menu
+Swift
+Chart view modifiers
+Configure charts that you declare with Swift Charts.
+Overview
+Use these modifiers to configure a Chart view that you add to your SwiftUI app.
+Topics
+Styles
+func chartBackground<V>(alignment: Alignment, content: (ChartProxy) -> V) -> some View
+Adds a background to a view that contains a chart.
+func chartForegroundStyleScale<DataValue, S>(KeyValuePairs<DataValue, S>) -> some View
+Configures the foreground style scale for charts.
+func chartForegroundStyleScale<Domain, Range>(domain: Domain, range: Range, type: ScaleType?) -> some View
+Configures the foreground style scale for charts.
+func chartForegroundStyleScale<Domain>(domain: Domain, type: ScaleType?) -> some View
+Configures the foreground style scale for charts.
+func chartForegroundStyleScale<Domain, S>(domain: Domain, mapping: (Domain.Element) -> S) -> some View
+Configures the foreground style scale for charts.
+func chartForegroundStyleScale<DataValue, S>(mapping: (DataValue) -> S) -> some View
+Configures the foreground style scale for charts.
+func chartForegroundStyleScale<Range>(range: Range, type: ScaleType?) -> some View
+Configures the foreground style scale for charts.
+func chartForegroundStyleScale(type: ScaleType?) -> some View
+Configures the foreground style scale for charts.
+func chartPlotStyle<Content>(content: (ChartPlotContent) -> Content) -> some View
+Configures the plot area of charts.
+Legends
+func chartLegend(Visibility) -> some View
+Configures the legend for charts.
+func chartLegend(position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?) -> some View
+Configures the legend for charts.
+func chartLegend<Content>(position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?, content: () -> Content) -> some View
+Configures the legend for charts.
+Overlays
+func chartOverlay<V>(alignment: Alignment, content: (ChartProxy) -> V) -> some View
+Adds an overlay to a view that contains a chart.
+Axes
+func chartXAxis(Visibility) -> some View
+Sets the visibility of the x axis.
+func chartXAxis<Content>(content: () -> Content) -> some View
+Configures the x-axis for charts in the view.
+func chartXAxisStyle<Content>(content: (ChartAxisContent) -> Content) -> some View
+Configures the x axis content of charts.
+Beta
+func chartYAxis(Visibility) -> some View
+Sets the visibility of the y axis.
+func chartYAxis<Content>(content: () -> Content) -> some View
+Configures the y-axis for charts in the view.
+func chartYAxisStyle<Content>(content: (ChartAxisContent) -> Content) -> some View
+Configures the y axis content of charts.
+Beta
+Axis Labels
+func chartXAxisLabel<S>(S, position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?) -> some View
+Adds x axis label for charts in the view.
+func chartXAxisLabel(LocalizedStringKey, position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?) -> some View
+Adds x axis label for charts in the view.
+func chartXAxisLabel<C>(position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?, content: () -> C) -> some View
+Adds x axis label for charts in the view.
+func chartYAxisLabel<S>(S, position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?) -> some View
+Adds y axis label for charts in the view.
+func chartYAxisLabel(LocalizedStringKey, position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?) -> some View
+Adds y axis label for charts in the view.
+func chartYAxisLabel<C>(position: AnnotationPosition, alignment: Alignment?, spacing: CGFloat?, content: () -> C) -> some View
+Adds y axis label for charts in the view.
+Axis scales
+func chartXScale<Domain, Range>(domain: Domain, range: Range, type: ScaleType?) -> some View
+Configures the x scale for charts.
+func chartXScale<Domain>(domain: Domain, type: ScaleType?) -> some View
+Configures the x scale for charts.
+func chartXScale<Range>(range: Range, type: ScaleType?) -> some View
+Configures the x scale for charts.
+func chartXScale(type: ScaleType?) -> some View
+Configures the x scale for charts.
+func chartYScale<Domain, Range>(domain: Domain, range: Range, type: ScaleType?) -> some View
+Configures the y scale for charts.
+func chartYScale<Domain>(domain: Domain, type: ScaleType?) -> some View
+Configures the y scale for charts.
+func chartYScale<Range>(range: Range, type: ScaleType?) -> some View
+Configures the y scale for charts.
+func chartYScale(type: ScaleType?) -> some View
+Configures the y scale for charts.
+Symbol scales
+func chartSymbolScale<DataValue, S>(KeyValuePairs<DataValue, S>) -> some View
+Configures the symbol scale for charts.
+func chartSymbolScale<DataValue>(KeyValuePairs<DataValue, ChartSymbolShape>) -> some View
+Configures the symbol scale for charts.
+func chartSymbolScale<Domain>(domain: Domain) -> some View
+Configures the symbol style scale for charts.
+func chartSymbolScale<Domain, Range>(domain: Domain, range: Range) -> some View
+Configures the symbol style scale for charts.
+func chartSymbolScale<Domain>(domain: Domain, range: [ChartSymbolShape]) -> some View
+Configures the symbol style scale for charts.
+func chartSymbolScale<Domain, S>(domain: Domain, mapping: (Domain.Element) -> S) -> some View
+Configures the symbol scale for charts.
+func chartSymbolScale<DataValue, S>(mapping: (DataValue) -> S) -> some View
+Configures the symbol scale for charts.
+func chartSymbolScale(range: [ChartSymbolShape]) -> some View
+Configures the symbol style scale for charts.
+func chartSymbolScale<Range>(range: Range) -> some View
+Configures the symbol style scale for charts.
+Symbol size scales
+func chartSymbolSizeScale<DataValue>(KeyValuePairs<DataValue, CGFloat>) -> some View
+Configures the symbol size scale for charts.
+func chartSymbolSizeScale<Domain, Range>(domain: Domain, range: Range, type: ScaleType?) -> some View
+Configures the symbol size scale for charts.
+func chartSymbolSizeScale<Domain>(domain: Domain, type: ScaleType?) -> some View
+Configures the symbol size scale for charts.
+func chartSymbolSizeScale<Domain>(domain: Domain, mapping: (Domain.Element) -> CGFloat) -> some View
+Configures the symbol size scale for charts.
+func chartSymbolSizeScale<DataValue>(mapping: (DataValue) -> CGFloat) -> some View
+Configures the symbol size scale for charts.
+func chartSymbolSizeScale<Range>(range: Range, type: ScaleType?) -> some View
+Configures the symbol size scale for charts.
+func chartSymbolSizeScale(type: ScaleType?) -> some View
+Configures the symbol size scale for charts.
+Line style scales
+func chartLineStyleScale<DataValue>(KeyValuePairs<DataValue, StrokeStyle>) -> some View
+Configures the line style scale for charts.
+func chartLineStyleScale<Domain>(domain: Domain) -> some View
+Configures the line style scale for charts.
+func chartLineStyleScale<Domain, Range>(domain: Domain, range: Range) -> some View
+Configures the line style scale for charts.
+func chartLineStyleScale<Range>(range: Range) -> some View
+Configures the line style scale for charts.
+func chartLineStyleScale<Domain>(domain: Domain, mapping: (Domain.Element) -> StrokeStyle) -> some View
+Configures the line style scale for charts.
+func chartLineStyleScale<DataValue>(mapping: (DataValue) -> StrokeStyle) -> some View
+Configures the line style scale for charts.
+Scrolling
+func chartScrollPosition(initialX: some Plottable) -> some View
+Sets the initial scroll position along the x-axis. Once the user scrolls the scroll view, the value provided to this modifier will have no effect.
+Beta
+func chartScrollPosition(initialY: some Plottable) -> some View
+Sets the initial scroll position along the y-axis. Once the user scrolls the scroll view, the value provided to this modifier will have no effect.
+Beta
+func chartScrollPosition(x: Binding<some Plottable>) -> some View
+Associates a binding to be updated when the chart scrolls along the x-axis.
+Beta
+func chartScrollPosition(y: Binding<some Plottable>) -> some View
+Associates a binding to be updated when the chart scrolls along the y-axis.
+Beta
+func chartScrollTargetBehavior(some ChartScrollTargetBehavior) -> some View
+Sets the scroll behavior of the scrollable chart.
+Beta
+func chartScrollableAxes(Axis.Set) -> some View
+Configures the scrollable behavior of charts in this view.
+Beta
+Selection
+func chartXSelection<P>(range: Binding<ClosedRange<P>?>) -> some View
+Beta
+func chartXSelection<P>(value: Binding<P?>) -> some View
+Beta
+func chartYSelection<P>(range: Binding<ClosedRange<P>?>) -> some View
+Beta
+func chartYSelection<P>(value: Binding<P?>) -> some View
+Beta
+func chartAngleSelection<P>(value: Binding<P?>) -> some View
+Beta
+Visible domain
+func chartXVisibleDomain<P>(length: P) -> some View
+Sets the length of the visible domain in the X dimension.
+Beta
+func chartYVisibleDomain<P>(length: P) -> some View
+Sets the length of the visible domain in the Y dimension.
+Beta
+Interaction
+func chartGesture((ChartProxy) -> some Gesture) -> some View
+Beta
+See Also
+Configuring view elements
+API Reference
+Accessibility modifiers
+Make your SwiftUI apps accessible to everyone, including people with disabilities.
+API Reference
+Appearance modifiers
+Configure a view’s foreground and background styles, controls, and visibility.
+API Reference
+Text and symbol modifiers
+Manage the rendering, selection, and entry of text in your view.
+API Reference
+Auxiliary view modifiers
+Add and configure supporting views, like toolbars and context menus.
+Current page is Chart view modifiers
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

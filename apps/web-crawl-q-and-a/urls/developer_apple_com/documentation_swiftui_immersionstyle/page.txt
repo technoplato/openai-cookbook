@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/swiftui/immersionstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Navigation
+Documents
+M
+func upperLimbVisibility(Visibility) -> some View
+Beta
+M
+func upperLimbVisibility(Visibility) -> some Scene
+Beta
+Hiding upper limbs during immersion
+S
+DismissImmersiveSpaceAction
+Beta
+P
+var dismissImmersiveSpace: DismissImmersiveSpaceAction
+M
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Beta
+S
+ImmersiveSpaceContentBuilder
+Beta
+S
+ImmersiveSpace
+Beta
+Creating an immersive space
+Immersive spaces
+Windows
+Scenes
+App organization
+Documentation
+Open Menu
+Swift
+Protocol
+ImmersionStyle
+The styles that an immersive space can have.
+visionOS 1.0+ Beta
+protocol ImmersionStyle
+Overview
+The style affects the appearance and behavior of the immersive space. To configure the current style of an immersive space, use the immersionStyle(selection:in:) modifier. Specify a style that conforms to ImmersionStyle when creating a space.
+Topics
+Getting built-in styles
+static var automatic: AutomaticImmersionStyle
+The default immersion style.
+Available when Self is AutomaticImmersionStyle.
+static var full: FullImmersionStyle
+An immersion style that displays unbounded content that obscures pass-through video, except for the user’s hands, if configured accordingly.
+Available when Self is FullImmersionStyle.
+static var mixed: MixedImmersionStyle
+An immersion style that displays unbounded content intermixed with other app content, along with passthrough video.
+Available when Self is MixedImmersionStyle.
+static var progressive: ProgressiveImmersionStyle
+An immersion style where content displays with no clipping boundaries applied.
+Available when Self is ProgressiveImmersionStyle.
+Supporting types
+struct AutomaticImmersionStyle
+The default style of immersive spaces.
+struct FullImmersionStyle
+An immersion style that displays unbounded content that obscures pass-through video.
+struct MixedImmersionStyle
+An immersion style that displays unbounded content intermixed with other app content, along with passthrough video.
+struct ProgressiveImmersionStyle
+An immersion style where content displays with no clipping boundaries applied.
+Relationships
+Conforming Types
+AutomaticImmersionStyle
+FullImmersionStyle
+MixedImmersionStyle
+ProgressiveImmersionStyle
+See Also
+Creating an immersive space
+struct ImmersiveSpace
+A scene that presents its content in an unbounded space.
+Beta
+struct ImmersiveSpaceContentBuilder
+A result builder for composing a collection of immersive space elements.
+Beta
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Sets the allowed styles for the immersive space.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ImmersionStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

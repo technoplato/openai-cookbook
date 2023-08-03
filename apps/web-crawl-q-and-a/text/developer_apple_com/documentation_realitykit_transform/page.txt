@@ -1,0 +1,207 @@
+https://developer.apple.com/documentation/realitykit/transformSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(AffineTransform3D)
+Beta
+Initializers
+M
+static func registerComponent()
+Registering a Component Type
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+static func != (Self, Self) -> Bool
+S
+OpacityComponent
+Beta
+S
+BodyTrackingComponent
+S
+AdaptiveResolutionComponent
+Beta
+S
+SceneUnderstandingComponent
+S
+AnchoringComponent
+S
+AccessibilityComponent
+Beta
+Essential components
+E
+ComponentEvents
+Documentation
+Open Menu
+Swift
+Structure
+Transform
+A component that defines the scale, rotation, and translation of an entity.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@frozen
+struct Transform
+Overview
+An entity acquires a Transform component, as well as a set of methods for manipulating the transform, by adopting the HasTransform protocol. This is true for all entities, because the Entity base class adopts the protocol.
+Topics
+Creating a Transform
+init()
+Creates a transform with the values of the identity transform.
+init(scale: SIMD3<Float>, rotation: simd_quatf, translation: SIMD3<Float>)
+Creates a new transformation using the given values.
+init(pitch: Float, yaw: Float, roll: Float)
+Creates a new transform from the specified Euler angles.
+init(matrix: float4x4)
+Creates a new transform represented as a 4x4 matrix.
+Setting Transform Properties
+var scale: SIMD3<Float>
+The scaling factor applied to the entity.
+var rotation: simd_quatf
+The rotation of the entity specified as a unit quaternion.
+var translation: SIMD3<Float>
+The position of the entity along the x, y, and z axes.
+var matrix: float4x4
+The transform represented as a 4x4 matrix.
+Getting the Identity Transform
+static let identity: Transform
+The identity transform.
+Comparing Transforms
+static func == (Transform, Transform) -> Bool
+Indicates whether two transforms are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two transforms are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the transform by feeding them into the given hash function.
+var hashValue: Int
+The hashed value of the transform.
+Registering a Component Type
+static func registerComponent()
+Registers a new component type.
+Initializers
+init(AffineTransform3D)
+Beta
+Default Implementations
+API Reference
+Component Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+AnimatableData
+BindableData
+Component
+Equatable
+Hashable
+Sendable
+See Also
+Essential components
+struct AccessibilityComponent
+Beta
+struct AnchoringComponent
+A description of how virtual content can be anchored to the real world.
+struct SceneUnderstandingComponent
+A component that maps features of the physical environment.
+struct AdaptiveResolutionComponent
+Allows an entity to change the resolution of the resources it uses according to its relevance to the user.
+Beta
+struct BodyTrackingComponent
+A component for tracking people in an AR session.
+struct OpacityComponent
+Beta
+protocol TransientComponent
+An interface for components that aren’t saved to file or cloned.
+struct SynchronizationComponent
+A component that synchronizes an entity between processes and networked applications.
+struct VideoPlayerComponent
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Transform
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

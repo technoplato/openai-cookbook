@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+S
+PhotogrammetrySample
+C
+PhotogrammetrySession
+Using object capture assets in RealityKit
+Creating a Photogrammetry Command-Line App
+Creating 3D objects from photographs
+Capturing photographs for RealityKit Object Capture
+Model Creation
+Object capture
+Documentation
+Open Menu
+Swift
+Structure
+ObjectCaptureView
+A view that guides a user through capturing images for object capture.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+struct ObjectCaptureView<Overlay> where Overlay : View
+Overview
+The primary view of the Object Capture front-end 3D UI. This view is used to present the UI for a given ObjectCaptureSession. It always presents the current state of the wrapped session. The view can be taken down temporarily to show the ObjectCapturePointCloudView or an app’s custom tutorial pages. If a ObjectCaptureView is removed from the content view, creating a new ObjectCaptureView from the original view’s ObjectCaptureSession resumes the in-progress capture session.
+Topics
+Initializers
+init(session: ObjectCaptureSession)
+Renders the current state of the provided session.
+init(session: ObjectCaptureSession, cameraFeedOverlay: () -> Overlay)
+Renders the current state of the provided session.
+Instance Properties
+var body: some View
+The content and behavior of the view.
+Type Aliases
+typealias Body
+The type of view representing the body of this view.
+Default Implementations
+API Reference
+View Implementations
+Relationships
+Conforms To
+View
+See Also
+Model Creation
+Capturing photographs for RealityKit Object Capture
+Take high-quality images of objects to generate 3D models.
+Creating 3D objects from photographs
+Construct virtual objects to use in your AR experiences.
+class PhotogrammetrySession
+PhotogrammetrySession controls the reconstruction process of a set of images of an object into a 3D model.
+struct PhotogrammetrySample
+An object that represents one image and its corresponding metadata.
+class ObjectCaptureSession
+A session object that monitors and controls image capture for photogrammetry.
+Beta
+struct ObjectCapturePointCloudView
+An object that renders the current state of the ObjectCaptureSession point cloud.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ObjectCaptureView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

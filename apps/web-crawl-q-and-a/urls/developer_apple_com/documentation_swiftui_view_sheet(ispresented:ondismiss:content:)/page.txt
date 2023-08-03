@@ -1,0 +1,192 @@
+https://developer.apple.com/documentation/swiftui/view/sheet(ispresented:ondismiss:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func presentationBackground<S>(S) -> some View
+M
+func presentationCornerRadius(CGFloat?) -> some View
+Styling a sheet and its background
+S
+PresentationContentInteraction
+r
+P
+CustomPresentationDetent
+S
+PresentationDetent
+M
+func presentationDragIndicator(Visibility) -> some View
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+func sheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+Showing a sheet, cover, or popover
+S
+DialogSeverity
+Configuring a dialog
+Modal presentations
+Navigation
+Documents
+Immersive spaces
+Windows
+Documentation
+Open Menu
+Swift
+Instance Method
+sheet(isPresented:onDismiss:content:)
+Presents a sheet when a binding to a Boolean value that you provide is true.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func sheet<Content>(
+    isPresented: Binding<Bool>,
+    onDismiss: (() -> Void)? = nil,
+    @ViewBuilder content: @escaping () -> Content
+) -> some View where Content : View
+Parameters
+isPresented
+A binding to a Boolean value that determines whether to present the sheet that you create in the modifier’s content closure.
+onDismiss
+The closure to execute when dismissing the sheet.
+content
+A closure that returns the content of the sheet.
+Discussion
+Use this method when you want to present a modal view to the user when a Boolean value you provide is true. The example below displays a modal view of the mockup for a software license agreement when the user toggles the isShowingSheet variable by clicking or tapping on the “Show License Agreement” button:
+struct ShowLicenseAgreement: View {
+    @State private var isShowingSheet = false
+    var body: some View {
+        Button(action: {
+            isShowingSheet.toggle()
+        }) {
+            Text("Show License Agreement")
+        }
+        .sheet(isPresented: $isShowingSheet,
+               onDismiss: didDismiss) {
+            VStack {
+                Text("License Agreement")
+                    .font(.title)
+                    .padding(50)
+                Text("""
+                        Terms and conditions go here.
+                    """)
+                    .padding(50)
+                Button("Dismiss",
+                       action: { isShowingSheet.toggle() })
+            }
+        }
+    }
+
+
+    func didDismiss() {
+        // Handle the dismissing action.
+    }
+}
+In vertically compact environments, such as iPhone in landscape orientation, a sheet presentation automatically adapts to appear as a full-screen cover. Use the presentationCompactAdaptation(_:) or presentationCompactAdaptation(horizontal:vertical:) modifier to override this behavior.
+See Also
+Showing a sheet, cover, or popover
+func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+Presents a sheet using the given item as a data source for the sheet’s content.
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+Presents a modal view that covers as much of the screen as possible when binding to a Boolean value you provide is true.
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+Presents a modal view that covers as much of the screen as possible using the binding you provide as a data source for the sheet’s content.
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+Presents a popover when a given condition is true.
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+Presents a popover using the given item as a data source for the popover’s content.
+enum PopoverAttachmentAnchor
+An attachment anchor for a popover.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sheet(isPresented:onDismiss:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

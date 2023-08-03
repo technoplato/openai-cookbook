@@ -1,0 +1,198 @@
+https://developer.apple.com/documentation/swiftui/previewproviderSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+InterfaceOrientation
+M
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+E
+PreviewLayout
+M
+func previewLayout(PreviewLayout) -> some View
+Customizing preview size and orientation
+S
+PreviewDevice
+M
+func previewDevice(PreviewDevice?) -> some View
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+#
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+Beta
+#
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Beta
+#
+macro Preview(String?, body: () -> View)
+Creating a preview
+Previews in Xcode
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Body
+P
+var body: Self.Body
+Documentation
+Open Menu
+Swift
+Protocol
+PreviewProvider
+A type that produces view previews in Xcode.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@MainActor
+protocol PreviewProvider : _PreviewProvider
+Overview
+Create an Xcode preview by declaring a structure that conforms to the PreviewProvider protocol. Implement the required previews computed property, and return the view to display:
+struct CircleImage_Previews: PreviewProvider {
+    static var previews: some View {
+        CircleImage()
+    }
+}
+Xcode statically discovers preview providers in your project and generates previews for any providers currently open in the source editor. Xcode generates the preview using the current run destination as a hint for which device to display. For example, Xcode shows the following preview if you’ve selected an iOS target to run on the iPhone 12 Pro Max simulator:
+When you create a new file (File > New > File) and choose the SwiftUI view template, Xcode automatically inserts a preview structure at the bottom of the file that you can configure. You can also create new preview structures in an existing SwiftUI view file by choosing Editor > Create Preview.
+Customize the preview’s appearance by adding view modifiers, just like you do when building a custom View. This includes preview-specific modifiers that let you control aspects of the preview, like the device orientation:
+struct CircleImage_Previews: PreviewProvider {
+    static var previews: some View {
+        CircleImage()
+            .previewInterfaceOrientation(.landscapeLeft)
+    }
+}
+For the complete list of preview customizations, see Previews in Xcode.
+Xcode creates different previews for each view in your preview, so you can see variations side by side. For example, you might want to see a view’s light and dark appearances simultaneously:
+struct CircleImage_Previews: PreviewProvider {
+    static var previews: some View {
+        CircleImage()
+        CircleImage()
+            .preferredColorScheme(.dark)
+    }
+}
+Use a Group when you want to maintain different previews, but apply a single modifier to all of them:
+struct CircleImage_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CircleImage()
+            CircleImage()
+                .preferredColorScheme(.dark)
+        }
+        .previewLayout(.sizeThatFits)
+    }
+}
+Topics
+Creating a preview
+static var previews: Self.Previews
+A collection of views to preview.
+Required
+associatedtype Previews : View
+The type to preview.
+Required
+Specifying the platform
+static var platform: PreviewPlatform?
+The platform on which to run the provider.
+Required Default implementation provided.
+See Also
+Creating a preview
+macro Preview(String?, body: () -> View)
+Creates a preview of a SwiftUI view.
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Creates a preview of a SwiftUI view.
+Beta
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+Creates a preview of a SwiftUI view with custom preview cameras.
+Beta
+enum PreviewPlatform
+Platforms that can run the preview.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PreviewProvider
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

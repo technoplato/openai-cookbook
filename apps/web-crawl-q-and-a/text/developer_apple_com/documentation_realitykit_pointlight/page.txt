@@ -1,0 +1,182 @@
+https://developer.apple.com/documentation/realitykit/pointlightSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Entity Compliance
+S
+GroundingShadowComponent
+Beta
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+Beta
+S
+SpotLightComponent
+C
+SpotLight
+S
+DirectionalLightComponent
+Lighting
+S
+PerspectiveCameraComponent
+C
+PerspectiveCamera
+Cameras
+Cameras and lighting
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+Documentation
+Open Menu
+Swift
+Class
+PointLight
+An entity that produces an omnidirectional light for virtual objects.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+@MainActor @preconcurrency
+class PointLight
+Overview
+During an AR session, RealityKit automatically lights your virtual objects to match real-world lighting. You can also explicitly add virtual lights that act upon your virtual content. This is typically most useful outside of an AR session (with the view’s cameraMode property set to ARView.CameraMode.nonAR).
+The point light is an omnidirectional light that illuminates all the virtual content within a configurable radius from the light. You can configure the light’s color and intensity.
+A RealityKit scene can contain up to eight dynamic lights, which are SpotLight, PointLight, and DirectionalLight entities. This limit doesn’t include light from image-based lighting.
+Topics
+Creating a Point Light
+init()
+Creates a new point light entity.
+Configuring the Point Light
+var light: PointLightComponent
+A point light component for the entity.
+struct PointLightComponent
+A component that defines a point light source.
+protocol HasPointLight
+An interface that defines a point light source component.
+Positioning Entities in Space
+API Reference
+The Transform Component
+Synchronizing an Entity Among Peers
+struct SynchronizationComponent
+A component that synchronizes an entity between processes and networked applications.
+Default Implementations
+API Reference
+HasPointLight Implementations
+Relationships
+Inherits From
+Entity
+Conforms To
+CustomDebugStringConvertible
+Equatable
+EventSource
+HasHierarchy
+HasPointLight
+HasSynchronization
+HasTransform
+Hashable
+Identifiable
+Sendable
+See Also
+Lighting
+struct PointLightComponent
+A component that defines a point light source.
+class DirectionalLight
+An entity that casts a virtual light in a particular direction.
+struct DirectionalLightComponent
+A component that defines a directional light source.
+class SpotLight
+An entity that illuminates virtual content in a cone-shaped volume.
+struct SpotLightComponent
+A component that defines a spotlight source.
+struct ImageBasedLightComponent
+Beta
+struct ImageBasedLightReceiverComponent
+Beta
+struct GroundingShadowComponent
+Beta
+Current page is PointLight
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

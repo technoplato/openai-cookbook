@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/resolve(_:)-898z6Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func resolve(GraphicsContext.Shading) -> GraphicsContext.Shading
+S
+GraphicsContext.Shading
+S
+GraphicsContext.GradientOptions
+Drawing an image
+M
+func draw(Image, at: CGPoint, anchor: UnitPoint)
+M
+func draw(Image, in: CGRect, style: FillStyle)
+M
+func draw(GraphicsContext.ResolvedImage, at: CGPoint, anchor: UnitPoint)
+M
+func draw(GraphicsContext.ResolvedImage, in: CGRect, style: FillStyle)
+M
+func drawLayer(content: (inout GraphicsContext) throws -> Void) rethrows
+Masking
+M
+func clip(to: Path, style: FillStyle, options: GraphicsContext.ClipOptions)
+M
+func clipToLayer(opacity: Double, options: GraphicsContext.ClipOptions, content: (inout GraphicsContext) throws -> Void) rethrows
+P
+var clipBoundingRect: CGRect
+S
+GraphicsContext.ClipOptions
+Setting opacity and the blend mode
+Documentation
+Open Menu
+Swift
+Instance Method
+resolve(_:)
+Gets a version of an image that’s fixed with the current values of the graphics context’s environment.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func resolve(_ image: Image) -> GraphicsContext.ResolvedImage
+Parameters
+image
+The Image to resolve.
+Return Value
+An image that’s resolved into the current context’s environment, taking into account environment values like the display resolution and current color scheme.
+Discussion
+You can measure the resolved image by looking at its size and baseline properties. You can draw the resolved image with the context’s draw(_:in:style:) or draw(_:at:anchor:) method.
+See Also
+Drawing an image
+func draw(Image, at: CGPoint, anchor: UnitPoint)
+Draws an image into the context, aligning an anchor within the image to a point in the context.
+func draw(Image, in: CGRect, style: FillStyle)
+Draws an image into the context, using the specified rectangle as a layout frame.
+func draw(GraphicsContext.ResolvedImage, at: CGPoint, anchor: UnitPoint)
+Draws a resolved image into the context, aligning an anchor within the image to a point in the context.
+func draw(GraphicsContext.ResolvedImage, in: CGRect, style: FillStyle)
+Draws a resolved image into the context, using the specified rectangle as a layout frame.
+struct ResolvedImage
+An image resolved to a particular environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is resolve(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/focusable(_:interactions:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func frame() -> some View
+Deprecated
+M
+func formStyle<S>(S) -> some View
+M
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+M
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+M
+func foregroundStyle<S>(S) -> some View
+M
+func foregroundColor(Color?) -> some View
+M
+func fontWidth(Font.Width?) -> some View
+M
+func focusable(Bool) -> some View
+M
+func focusEffectDisabled(Bool) -> some View
+M
+func flipsForRightToLeftLayoutDirection(Bool) -> some View
+M
+func fixedSize(horizontal: Bool, vertical: Bool) -> some View
+M
+func fixedSize() -> some View
+M
+func findNavigator(isPresented: Binding<Bool>) -> some View
+M
+func findDisabled(Bool) -> some View
+M
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+focusable(_:interactions:)
+Specifies if the view is focusable, and if so, what focus-driven interactions it supports.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func focusable(
+    _ isFocusable: Bool = true,
+    interactions: FocusInteractions
+) -> some View
+Parameters
+isFocusable
+true if the view should participate in focus; false otherwise. The default value is true.
+interactions
+The types of focus interactions supported by the view. The default value is .automatic.
+Return Value
+A view that sets whether its child is focusable.
+Discussion
+By default, SwiftUI enables all possible focus interactions. However, on macOS and iOS it is conventional for button-like views to only accept focus when the user has enabled keyboard navigation system-wide in the Settings app. Clients can reproduce this behavior with custom views by only supporting .activate interactions.
+MyTapGestureView(...)
+    .focusable(interactions: .activate)
+Note
+The focus interactions allowed for custom views changed in macOS 14—previously, custom views could only become focused with keyboard navigation enabled system-wide. Clients built using older SDKs will continue to see the older focus behavior, while custom views in clients built using macOS 14 or later will always be focusable unless the client requests otherwise by specifying a restricted set of focus interactions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is focusable(_:interactions:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

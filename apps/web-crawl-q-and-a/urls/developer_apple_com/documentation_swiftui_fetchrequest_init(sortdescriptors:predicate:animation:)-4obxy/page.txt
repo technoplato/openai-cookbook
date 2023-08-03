@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/fetchrequest/init(sortdescriptors:predicate:animation:)-4obxySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AppStorage
+S
+SceneStorage
+Accessing Core Data
+Loading and Displaying a Large Data Feed
+P
+var managedObjectContext: NSManagedObjectContext
+S
+FetchRequest
+Creating a fetch request
+M
+init(sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+init(entity: NSEntityDescription, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+S
+SectionedFetchResults
+Views
+View fundamentals
+View configuration
+View styles
+Animations
+Text input and output
+Documentation
+Open Menu
+Swift
+Initializer
+init(sortDescriptors:predicate:animation:)
+Creates a fetch request based on a predicate and reference type sort parameters.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@MainActor
+init(
+    sortDescriptors: [NSSortDescriptor],
+    predicate: NSPredicate? = nil,
+    animation: Animation? = nil
+)
+Available when Result inherits NSManagedObject.
+Parameters
+sortDescriptors
+An array of sort descriptors that define the sort order of the fetched results.
+predicate
+An NSPredicate instance that defines logical conditions used to filter the fetched results.
+animation
+The animation to use for user interface changes that result from changes to the fetched results.
+Discussion
+The request gets the entity type from the Result instance by calling that managed object’s entity() type method. If you need to specify the entity type explicitly, use the init(entity:sortDescriptors:predicate:animation:) initializer instead. If you need more control over the fetch request configuration, use init(fetchRequest:animation:). For value type sort descriptors, use init(sortDescriptors:predicate:animation:).
+See Also
+Creating a fetch request
+init(sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+Creates a fetch request based on a predicate and value type sort parameters.
+Available when Result inherits NSManagedObject.
+init(entity: NSEntityDescription, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+Creates a fetch request for a specified entity description, based on a predicate and sort parameters.
+Available when Result conforms to NSFetchRequestResult.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(sortDescriptors:predicate:animation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

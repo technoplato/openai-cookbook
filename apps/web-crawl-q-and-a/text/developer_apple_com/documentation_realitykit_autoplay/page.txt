@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/realitykit/autoplaySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+Animation
+USDZ Schemas for AR
+Exporting a Reality Composer Scene to USDZ
+Essentials
+USD Assets
+Object capture
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Documentation
+Open Menu
+Swift
+Article
+autoPlay
+Metadata that specifies whether an animation plays automatically on load.
+Overview
+Set the autoPlay metadata on the document’s stage, that is, the outermost container for scene description. For more information about setting stage metadata, see UsdStage > Stage Metadata.
+Set a value of true to play an animation automatically when the scene loads. If this property is false, the animation won’t play on load. If an asset omits the autoPlay property, the animation plays on load for backward-compatibility.
+To support assets that disable autoPlay, an app should provide a way to start the animation. For example, when an asset sets autoPlay to false, AR Quick Look displays a scrubber and a Play button the user can tap to start the animation.
+Reality Composer sets this property to false when it exports a USDZ to enforce that only behaviors (Preliminary_Behavior) drive animations.
+Declaration
+bool autoPlay
+Disable Automatic Animation Playback
+The following asset demonstrates autoPlay alongside existing animation properties, like startTimeCode and endTimeCode. Because this asset defines autoPlay as false, the runtime doesn’t automatically play the animation after it loads this asset.
+#usda 1.0
+(
+    endTimeCode = 300
+    startTimeCode = 1
+    timeCodesPerSecond = 30
+    autoPlay = false
+    upAxis = "Y"
+)
+
+
+def Xform "AnimatedModel"
+{
+    def Xform "body"
+    {
+        double3 xformOp:translate.timeSamples = { ... }
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+        ...
+    }
+    ...
+}
+See Also
+Animation
+playbackMode
+Metadata that controls animation idling until a behavior takes over.
+Current page is autoPlay
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

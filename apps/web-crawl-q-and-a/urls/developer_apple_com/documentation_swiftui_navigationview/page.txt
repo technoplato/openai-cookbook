@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/navigationviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Presenting views in tabs
+S
+TabView
+M
+func tabViewStyle<S>(S) -> some View
+M
+func tabItem<V>(() -> V) -> some View
+Displaying views in multiple panes
+S
+HSplitView
+S
+VSplitView
+Deprecated Types
+Views
+View fundamentals
+View configuration
+View styles
+Animations
+Text input and output
+Images
+Documentation
+Open Menu
+Swift
+Structure
+NavigationView
+A view for presenting a stack of views that represents a visible path in a navigation hierarchy.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 7.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+struct NavigationView<Content> where Content : View
+Deprecated
+Use NavigationStack and NavigationSplitView instead. For more information, see Migrating to new navigation types.
+Overview
+Use a NavigationView to create a navigation-based app in which the user can traverse a collection of views. Users navigate to a destination view by selecting a NavigationLink that you provide. On iPadOS and macOS, the destination content appears in the next column. Other platforms push a new view onto the stack, and enable removing items from the stack with platform-specific controls, like a Back button or a swipe gesture.
+Use the init(content:) initializer to create a navigation view that directly associates navigation links and their destination views:
+NavigationView {
+    List(model.notes) { note in
+        NavigationLink(note.title, destination: NoteEditor(id: note.id))
+    }
+    Text("Select a Note")
+}
+Style a navigation view by modifying it with the navigationViewStyle(_:) view modifier. Use other modifiers, like navigationTitle(_:), on views presented by the navigation view to customize the navigation interface for the presented view.
+Topics
+Creating a navigation view
+init(content: () -> Content)
+Creates a destination-based navigation view.
+Styling navigation views
+func navigationViewStyle<S>(S) -> some View
+Sets the style for navigation views within this view.
+protocol NavigationViewStyle
+A specification for the appearance and interaction of a navigation view.
+Relationships
+Conforms To
+Sendable
+View
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is NavigationView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

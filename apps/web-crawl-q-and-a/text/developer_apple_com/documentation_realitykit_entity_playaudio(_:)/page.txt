@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/entity/playaudio(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var accessibilityCustomRotors: [AccessibilityComponent.RotorType]
+Beta
+P
+var accessibilityCustomContent: [AccessibilityComponent.CustomContent]
+Beta
+P
+var accessibilityCustomActions: [LocalizedStringResource]
+Beta
+Instance Properties
+M
+convenience init(named: String, in: Bundle?) async throws
+Beta
+M
+convenience init(contentsOf: URL, withName: String?) async throws
+Beta
+Initializers
+Playing Audio
+M
+func teleportCharacter(to: SIMD3<Float>, relativeTo: Entity?)
+M
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+S
+CharacterControllerStateComponent
+P
+var characterControllerState: CharacterControllerStateComponent?
+P
+var characterController: CharacterControllerComponent?
+S
+CharacterControllerComponent
+Animating and Controlling Characters
+Documentation
+Open Menu
+Swift
+Instance Method
+playAudio(_:)
+Plays sound from an audio resource on this entity.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@discardableResult @MainActor
+func playAudio(_ resource: AudioResource) -> AudioPlaybackController
+Return Value
+An AudioPlaybackController instance that you use to manage audio playback. Use the controller to set playback characteristics like volume and reverb, and then start or stop playback.
+Discussion
+This method first prepares the audio by calling prepareAudio(_:), and then immediately calls the play() method on the returned controller.
+resource: The audio resource to play. You typically use the loadAsync(named:in:inputMode:loadingStrategy:loops:) method to get a resource from a file on disk, or the loadAsync(contentsOf:withName:inputMode:loadingStrategy:loops:) method to retrieve a resource from a URL.
+See Also
+Playing Audio
+func prepareAudio(AudioResource) -> AudioPlaybackController
+Prepares an audio resource for playback.
+func stopAllAudio()
+Stops audio playback.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is playAudio(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

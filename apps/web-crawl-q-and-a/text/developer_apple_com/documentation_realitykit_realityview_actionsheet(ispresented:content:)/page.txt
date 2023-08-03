@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/realitykit/realityview/actionsheet(ispresented:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func allowsHitTesting(Bool) -> some View
+M
+func allowedDynamicRange(Image.DynamicRange?) -> some View
+M
+func alignmentGuide(VerticalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+M
+func alignmentGuide(HorizontalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View
+M
+func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View
+M
+func alert<E, A, M>(isPresented: Binding<Bool>, error: E?, actions: (E) -> A, message: (E) -> M) -> some View
+M
+func alert<E, A>(isPresented: Binding<Bool>, error: E?, actions: () -> A) -> some View
+func alert<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func alert<A, M, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func alert<S, A, M, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func alert<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+func alert<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+M
+func accessibilityZoomAction((AccessibilityZoomGestureAction) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityValue(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityValue(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityValue<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilitySortPriority(Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityShowsLargeContentViewer<V>(() -> V) -> some View
+M
+func accessibilityShowsLargeContentViewer() -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+actionSheet(isPresented:content:)
+Presents an action sheet when a given condition is true.
+RealityKit
+SwiftUI
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func actionSheet(
+    isPresented: Binding<Bool>,
+    content: () -> ActionSheet
+) -> some View
+Parameters
+isPresented
+A binding to a Boolean value that determines whether to present the action sheet that you create in the modifier’s content closure. When the user presses or taps the sheet’s default action button the system sets this value to false dismissing the sheet.
+content
+A closure returning the ActionSheet to present.
+Discussion
+In the example below, a button conditionally presents an action sheet depending upon the value of a bound Boolean variable. When the Boolean value is set to true, the system displays an action sheet with both destructive and default actions:
+struct ConfirmEraseItems: View {
+    @State private var isShowingSheet = false
+    var body: some View {
+        Button("Show Action Sheet", action: {
+            isShowingSheet = true
+        })
+        .actionSheet(isPresented: $isShowingSheet) {
+            ActionSheet(
+                title: Text("Permanently erase the items in the Trash?"),
+                message: Text("You can't undo this action."),
+                buttons:[
+                    .destructive(Text("Empty Trash"),
+                                 action: emptyTrashAction),
+                    .cancel()
+                ]
+            )}
+    }
+
+
+    func emptyTrashAction() {
+        // Handle empty trash action.
+    }
+}
+Note
+In regular size classes in iOS, the system renders alert sheets as a popover that the user dismisses by tapping anywhere outside the popover, rather than displaying the default dismiss button.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is actionSheet(isPresented:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

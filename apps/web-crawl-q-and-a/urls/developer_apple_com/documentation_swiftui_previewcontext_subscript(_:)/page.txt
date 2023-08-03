@@ -1,0 +1,132 @@
+https://developer.apple.com/documentation/swiftui/previewcontext/subscript(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func popoverTip<Content>(Content, arrowEdge: Edge, action: (Tips.Action) -> Void) -> some View
+Beta
+M
+func popoverTip<Content>(Content, arrowEdge: Edge) -> some View
+Beta
+Instance Methods
+Deprecated modifiers
+Deprecated modifiers
+State modifiers
+Presentation modifiers
+Accessing a preview context
+r
+P
+PreviewContext
+M
+func previewContext<C>(C) -> some View
+Setting a context
+S
+InterfaceOrientation
+M
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+E
+PreviewLayout
+M
+func previewLayout(PreviewLayout) -> some View
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Returns the context’s value for a key, or a the key’s default value if the context doesn’t define a value for the key.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+subscript<Key>(key: Key.Type) -> Key.Value where Key : PreviewContextKey { get }
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

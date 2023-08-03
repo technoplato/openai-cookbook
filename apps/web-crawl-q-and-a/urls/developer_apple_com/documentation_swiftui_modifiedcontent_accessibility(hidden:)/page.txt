@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/modifiedcontent/accessibility(hidden:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a modified content view
+M
+init(content: Content, modifier: Modifier)
+P
+var content: Content
+P
+var modifier: Modifier
+Instance Methods
+M
+func accessibility(activationPoint: CGPoint) -> ModifiedContent<Content, Modifier>
+Deprecated
+M
+func accessibility(activationPoint: UnitPoint) -> ModifiedContent<Content, Modifier>
+Deprecated
+M
+func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Content, Modifier>
+Deprecated
+M
+func accessibilityAddTraits(AccessibilityTraits) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityAdjustableAction((AccessibilityAdjustmentDirection) -> Void) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityCustomContent(Text, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityCustomContent(LocalizedStringKey, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityCustomContent<V>(AccessibilityCustomContentKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityCustomContent(AccessibilityCustomContentKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+M
+func accessibilityCustomContent(AccessibilityCustomContentKey, Text?, importance: AXCustomContent.Importance) -> ModifiedContent<Content, Modifier>
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibility(hidden:)
+Specifies whether to hide this view from system accessibility features.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func accessibility(hidden: Bool) -> ModifiedContent<Content, Modifier>
+Available when Modifier is AccessibilityAttachmentModifier.
+Deprecated
+Use accessibilityHidden(_:) instead.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibility(hidden:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

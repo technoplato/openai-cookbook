@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/init(input:configuration:)-wo4eSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PhotogrammetrySession.Pose
+Beta
+S
+PhotogrammetrySession.Limits
+Beta
+Structures
+S
+PhotogrammetrySession.PointCloud
+E
+PhotogrammetrySession.Result
+Obtaining Results
+E
+PhotogrammetrySession.Request
+Creating the Session
+C
+PhotogrammetrySession
+Using object capture assets in RealityKit
+Creating a Photogrammetry Command-Line App
+Creating 3D objects from photographs
+Capturing photographs for RealityKit Object Capture
+Model Creation
+Object capture
+Documentation
+Open Menu
+Swift
+Initializer
+init(input:configuration:)
+Creates a session that will use all images found in the given input directory URL as samples for reconstruction.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+init(
+    input: URL,
+    configuration: PhotogrammetrySession.Configuration = Configuration()
+) throws
+Parameters
+input
+the directory URL containing a folder of images to use as reconstruction inputs.
+configuration
+the configuration to use for this session.
+Discussion
+Throws
+if input is not a file URL.
+See associated documentation for more information on supported formats and how to specify optional metadata.
+See Also
+Creating the Session
+init<S>(input: S, configuration: PhotogrammetrySession.Configuration) throws
+Creates a session that takes a custom sequence of input PhotogrammetrySample objects by iterating the passed in Sequence object lazily.
+static var isSupported: Bool
+Returns true if the current hardware supports Object Capture.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(input:configuration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

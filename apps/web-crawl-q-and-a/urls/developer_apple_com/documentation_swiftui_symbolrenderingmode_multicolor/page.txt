@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/symbolrenderingmode/multicolorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Focus
+Drag and drop
+Clipboard
+Input events
+Gestures
+Event handling
+Scroll views
+P
+static let monochrome: SymbolRenderingMode
+P
+static let hierarchical: SymbolRenderingMode
+Getting symbol rendering modes
+S
+SymbolRenderingMode
+P
+var symbolRenderingMode: SymbolRenderingMode?
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> some View
+Setting symbol rendering modes
+S
+SymbolEffectTransition
+Beta
+Documentation
+Open Menu
+Swift
+Type Property
+multicolor
+A mode that renders symbols as multiple layers with their inherit styles.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static let multicolor: SymbolRenderingMode
+Discussion
+The layers may be filled with their own inherent styles, or the foreground style. For example, you can render a filled exclamation mark triangle in its inherent colors, with yellow for the triangle and white for the exclamation mark:
+Image(systemName: "exclamationmark.triangle.fill")
+    .symbolRenderingMode(.multicolor)
+See Also
+Getting symbol rendering modes
+static let hierarchical: SymbolRenderingMode
+A mode that renders symbols as multiple layers, with different opacities applied to the foreground style.
+static let monochrome: SymbolRenderingMode
+A mode that renders symbols as a single layer filled with the foreground style.
+static let palette: SymbolRenderingMode
+A mode that renders symbols as multiple layers, with different styles applied to the layers.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is multicolor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

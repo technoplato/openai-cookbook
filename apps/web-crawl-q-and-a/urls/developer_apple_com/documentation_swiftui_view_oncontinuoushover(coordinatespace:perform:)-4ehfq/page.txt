@@ -1,0 +1,188 @@
+https://developer.apple.com/documentation/swiftui/view/oncontinuoushover(coordinatespace:perform:)-4ehfqSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers) -> some View
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+P
+var keyboardShortcut: KeyboardShortcut?
+S
+KeyboardShortcut
+S
+KeyEquivalent
+S
+EventModifiers
+Responding to hover events
+M
+func onHover(perform: (Bool) -> Void) -> some View
+func onContinuousHover(coordinateSpace: some CoordinateSpaceProtocol, perform: (HoverPhase) -> Void) -> some View
+S
+SubmitLabel
+Responding to commands
+M
+func onMoveCommand(perform: ((MoveCommandDirection) -> Void)?) -> some View
+M
+func onDeleteCommand(perform: (() -> Void)?) -> some View
+M
+func pageCommand<V>(value: Binding<V>, in: ClosedRange<V>, step: V) -> some View
+M
+func onExitCommand(perform: (() -> Void)?) -> some View
+M
+func onPlayPauseCommand(perform: (() -> Void)?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+onContinuousHover(coordinateSpace:perform:)
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func onContinuousHover(
+    coordinateSpace: some CoordinateSpaceProtocol = .local,
+    perform action: @escaping (HoverPhase) -> Void
+) -> some View
+Parameters
+coordinateSpace
+The coordinate space for the location values. Defaults to CoordinateSpace.local.
+action
+The action to perform whenever the pointer enters, moves within, or exits the view’s bounds. The action closure passes the HoverPhase.active(_:) phase with the pointer’s coordinates if the pointer is in the view’s bounds; otherwise, it passes HoverPhase.ended.
+Return Value
+A view that calls action when the pointer enters, moves within, or exits the view’s bounds.
+Discussion
+Call this method to define a region for detecting pointer movement with the size and position of this view. The following example updates hoverLocation and isHovering to be based on the phase provided to the closure:
+@State private var hoverLocation: CGPoint = .zero
+@State private var isHovering = false
+
+
+var body: some View {
+    VStack {
+        Color.red
+            .frame(width: 400, height: 400)
+            .onContinuousHover { phase in
+                switch phase {
+                case .active(let location):
+                    hoverLocation = location
+                    isHovering = true
+                case .ended:
+                    isHovering = false
+                }
+            }
+            .overlay {
+                Rectangle()
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(isHovering ? .green : .blue)
+                    .offset(x: hoverLocation.x, y: hoverLocation.y)
+            }
+    }
+}
+See Also
+Responding to hover events
+func onHover(perform: (Bool) -> Void) -> some View
+Adds an action to perform when the user moves the pointer over or away from the view’s frame.
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+Applies a hover effect to this view.
+Beta
+func hoverEffectDisabled(Bool) -> some View
+Adds a condition that controls whether this view can display hover effects.
+Beta
+func defaultHoverEffect(HoverEffect?) -> some View
+Sets the default hover effect to use for views within this view.
+Beta
+var isHoverEffectEnabled: Bool
+A Boolean value that indicates whether the view associated with this environment allows hover effects to be displayed.
+Beta
+enum HoverPhase
+The current hovering state and value of the pointer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onContinuousHover(coordinateSpace:perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

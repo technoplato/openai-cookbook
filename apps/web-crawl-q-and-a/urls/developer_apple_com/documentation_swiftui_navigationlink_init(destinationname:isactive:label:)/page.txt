@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/navigationlink/init(destinationname:isactive:label:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Setting titles for navigation content
+S
+NavigationSplitViewColumn
+Beta
+Managing column collapse
+M
+func navigationDestination<D, C>(item: Binding<Optional<D>>, destination: (D) -> C) -> some View
+Beta
+M
+func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View
+M
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+S
+NavigationPath
+Creating links for WatchKit
+M
+init<V>(tag: V, selection: Binding<V?>, destination: () -> Destination, label: () -> Label)
+Deprecated
+M
+init<S, V>(S, tag: V, selection: Binding<V?>, destination: () -> Destination)
+Deprecated
+M
+init<V>(LocalizedStringKey, tag: V, selection: Binding<V?>, destination: () -> Destination)
+Deprecated
+M
+init(isActive: Binding<Bool>, destination: () -> Destination, label: () -> Label)
+Deprecated
+M
+init<S>(S, isActive: Binding<Bool>, destination: () -> Destination)
+Deprecated
+M
+init(LocalizedStringKey, isActive: Binding<Bool>, destination: () -> Destination)
+Deprecated
+Creating links with view builders
+Documentation
+Open Menu
+Swift
+Initializer
+init(destinationName:isActive:label:)
+Creates a navigation link that presents a view from a WatchKit storyboard when active.
+watchOS 6.0–10.0 Deprecated
+init(
+    destinationName: String,
+    isActive: Binding<Bool>,
+    @ViewBuilder label: () -> Label
+)
+Available when Label conforms to View and Destination is _WKStoryboardContent.
+Deprecated
+Use init(value:label:) instead. For more information, see Migrating to new navigation types.
+Parameters
+destinationName
+The storyboard name of a view for the navigation link to present.
+isActive
+A binding to a Boolean value that indicates whether destination is currently presented.
+label
+A view builder to produce a label describing the destination to present.
+See Also
+Creating links for WatchKit
+init<V>(destinationName: String, tag: V, selection: Binding<V?>, label: () -> Label)
+Creates a navigation link that presents a view from a WatchKit storyboard when a bound selection variable matches a value you provide.
+Available when Label conforms to View and Destination is _WKStoryboardContent.
+Deprecated
+init(destinationName: String, label: () -> Label)
+Creates a navigation link that presents a view from a WatchKit storyboard.
+Available when Label conforms to View and Destination is _WKStoryboardContent.
+Deprecated
+Current page is init(destinationName:isActive:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

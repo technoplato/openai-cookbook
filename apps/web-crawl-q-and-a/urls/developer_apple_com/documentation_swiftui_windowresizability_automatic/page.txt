@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/windowresizability/automaticSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Images
+Text input and output
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+Getting the resizability
+S
+WindowResizability
+M
+func windowResizability(WindowResizability) -> some Scene
+M
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Beta
+M
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+M
+func defaultSize(Size3D) -> some Scene
+Beta
+M
+func defaultSize(CGSize) -> some Scene
+M
+func defaultPosition(UnitPoint) -> some Scene
+Documentation
+Open Menu
+Swift
+Type Property
+automatic
+The automatic window resizability.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 13.0+
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+static var automatic: WindowResizability { get set }
+Discussion
+When you use automatic resizability, SwiftUI applies a resizing strategy that’s appropriate for the scene type:
+Windows from WindowGroup, Window, and DocumentGroup scene declarations use the contentMinSize strategy.
+A window from a Settings scene declaration uses the contentSize strategy.
+Automatic resizability is the default if you don’t specify another value using the windowResizability(_:) scene modifier.
+See Also
+Getting the resizability
+static var contentMinSize: WindowResizability
+A window resizability that’s partially derived from the window’s content.
+static var contentSize: WindowResizability
+A window resizability that’s derived from the window’s content.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is automatic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

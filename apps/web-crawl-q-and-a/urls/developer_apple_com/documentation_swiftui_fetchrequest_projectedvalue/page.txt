@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/fetchrequest/projectedvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+Images
+S
+FetchRequest.Configuration
+Configuring a request dynamically
+M
+init(fetchRequest: NSFetchRequest<Result>, transaction: Transaction)
+M
+init(fetchRequest: NSFetchRequest<Result>, animation: Animation?)
+Creating a fully configured fetch request
+M
+init(entity: NSEntityDescription, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+Documentation
+Open Menu
+Swift
+Instance Property
+projectedValue
+A binding to the request’s mutable configuration properties.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@MainActor
+var projectedValue: Binding<FetchRequest<Result>.Configuration> { get }
+Discussion
+SwiftUI returns the value associated with this property when you use FetchRequest as a property wrapper on a FetchedResults instance, and then access the results with a dollar sign ($) prefix. The value that SwiftUI returns is a Binding to the request’s FetchRequest.Configuration structure, which dynamically configures the request.
+For example, consider the following fetch request for a type that the Loading and Displaying a Large Data Feed sample code project defines to store earthquake data, sorted based on the time property:
+@FetchRequest(sortDescriptors: [SortDescriptor(\.time, order: .reverse)])
+private var quakes: FetchedResults<Quake>
+You can use the projected value to enable a Table instance to make updates:
+Table(quakes, sortOrder: $quakes.sortDescriptors) {
+    TableColumn("Place", value: \.place)
+    TableColumn("Time", value: \.time) { quake in
+        Text(quake.time, style: .time)
+    }
+}
+Because you initialize the table using a binding to the descriptors, the table can modify the sort in response to actions that the user takes, like clicking a column header.
+See Also
+Configuring a request dynamically
+struct Configuration
+The request’s configurable properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is projectedValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

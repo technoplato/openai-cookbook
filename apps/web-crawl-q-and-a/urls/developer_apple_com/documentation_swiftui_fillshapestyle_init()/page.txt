@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/fillshapestyle/init()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+HierarchicalShapeStyleModifier
+Beta
+S
+ForegroundStyle
+S
+BackgroundStyle
+S
+SelectionShapeStyle
+S
+SeparatorShapeStyle
+S
+TintShapeStyle
+S
+FillShapeStyle
+Beta
+Creating the style
+M
+func hueRotation(Angle) -> some View
+M
+func luminanceToAlpha() -> some View
+Scaling, rotating, or transforming a view
+M
+func scaledToFill() -> some View
+M
+func scaledToFit() -> some View
+M
+func scaleEffect(CGFloat, anchor: UnitPoint) -> some View
+M
+func scaleEffect(CGSize, anchor: UnitPoint) -> some View
+Documentation
+Open Menu
+Swift
+Initializer
+init()
+An overlay fill style for filling shapes.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+init()
+Discussion
+This shape style is appropriate for items situated on top of an existing background color. It incorporates transparency to allow the background color to show through.
+Use the primary version of this style to fill thin or small shapes, such as the track of a slider. Use the secondary version of this style to fill medium-size shapes, such as the background of a switch. Use the tertiary version of this style to fill large shapes, such as input fields, search bars, or buttons. Use the quaternary version of this style to fill large areas that contain complex content, such as an expanded table cell.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

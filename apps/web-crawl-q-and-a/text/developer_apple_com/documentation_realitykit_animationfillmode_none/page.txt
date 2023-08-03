@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/animationfillmode/noneSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func isSubset(of: Self) -> Bool
+M
+func isStrictSuperset(of: Self) -> Bool
+M
+func isStrictSubset(of: Self) -> Bool
+M
+func isDisjoint(with: Self) -> Bool
+M
+func intersection(Self) -> Self
+M
+func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)
+M
+func formUnion(Self)
+Choosing a Fill Mode
+S
+AnimationFillMode
+r
+P
+AnimationDefinition
+S
+OrbitAnimation
+S
+AnimationView
+S
+AnimationTimingFunction
+S
+FromToByAnimation
+S
+SampledAnimation
+Documentation
+Open Menu
+Swift
+Type Property
+none
+An option that indicates an animation doesn’t display frame data outside of its normal duration.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+static let none: AnimationFillMode
+Discussion
+For example, if you rewind an animation of a hand waving for one second by setting trimStart to -1.0, a fillMode of none determines that the hand is invisible for one second before appearing and waving.
+See Also
+Choosing a Fill Mode
+static let forwards: AnimationFillMode
+An option that freezes the last frame of the animation until it stops.
+static let backwards: AnimationFillMode
+An option that shows the first animation frame while playback progresses to the beginning position.
+static let both: AnimationFillMode
+An option that displays the animation’s initial frame or final frame when playback occurs outside of the normal duration.
+let rawValue: Int8
+The raw value of an animation’s fill mode.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is none
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

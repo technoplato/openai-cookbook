@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/filter/brightness(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func layerShader(Shader, maxSampleOffset: CGSize) -> GraphicsContext.Filter
+Beta
+M
+static func distortionShader(Shader, maxSampleOffset: CGSize) -> GraphicsContext.Filter
+Beta
+M
+static func colorShader(Shader) -> GraphicsContext.Filter
+Beta
+Using a custom Metal shader
+M
+static func projectionTransform(ProjectionTransform) -> GraphicsContext.Filter
+Adding a transformation
+M
+static func alphaThreshold(min: Double, max: Double, color: Color) -> GraphicsContext.Filter
+static func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat, blendMode: GraphicsContext.BlendMode, options: GraphicsContext.ShadowOptions) -> GraphicsContext.Filter
+Changing brightness and contrast
+S
+GraphicsContext.Filter
+M
+func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)
+Filtering
+S
+GraphicsContext.BlendMode
+P
+var blendMode: GraphicsContext.BlendMode
+P
+var opacity: Double
+Setting opacity and the blend mode
+Documentation
+Open Menu
+Swift
+Type Method
+brightness(_:)
+Returns a filter that applies a brightness adjustment.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static func brightness(_ amount: Double) -> GraphicsContext.Filter
+Parameters
+amount
+An amount to add to the pixel’s color components.
+Return Value
+A filter that applies a brightness adjustment.
+Discussion
+This filter is different than brightness filter primitive defined by the Scalable Vector Graphics (SVG) specification. You can obtain an effect like that filter using a grayscale(_:) color multiply. However, this filter does match the CIColorControls filter’s brightness adjustment.
+See Also
+Changing brightness and contrast
+static func contrast(Double) -> GraphicsContext.Filter
+Returns a filter that applies a contrast adjustment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is brightness(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

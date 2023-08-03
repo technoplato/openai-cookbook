@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/realitykit/particleemittercomponent/particleemitter/imagesequence-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Equatable Implementations
+Default Implementations
+E
+ParticleEmitterComponent.ParticleEmitter.ImageSequence.AnimationRepeatMode
+Enumerations
+M
+func hash(into: inout Hasher)
+M
+func encode(to: Encoder) throws
+Instance Methods
+static func == (ParticleEmitterComponent.ParticleEmitter.ImageSequence, ParticleEmitterComponent.ParticleEmitter.ImageSequence) -> Bool
+Structures
+S
+ParticleEmitterComponent.ParticleEmitter
+Structures
+S
+ParticleEmitterComponent
+Beta
+S
+PhysicsSimulationComponent
+Beta
+S
+PhysicsMotionComponent
+S
+PhysicsBodyComponent
+S
+CollisionComponent
+Documentation
+Open Menu
+Swift
+Structure
+ParticleEmitterComponent.ParticleEmitter.ImageSequence
+Structure used to define properties of the sprite sheet, used by imageSequence.
+visionOS 1.0+ Beta
+struct ImageSequence
+Topics
+Operators
+static func == (ParticleEmitterComponent.ParticleEmitter.ImageSequence, ParticleEmitterComponent.ParticleEmitter.ImageSequence) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Initializers
+init()
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder.
+Instance Properties
+var animationMode: ParticleEmitterComponent.ParticleEmitter.ImageSequence.AnimationRepeatMode
+How the effect timeline is played.
+var columnCount: Int
+Number of columns in the sprite sheet.
+var frameRate: Float
+Number of sprite sheet frames to play per second.
+var frameRateVariation: Float
+Defines a plus/minus range (in frames per second) from which a value is randomly selected to offset frameRate.
+var hashValue: Int
+The hash value.
+var initialFrame: Int
+First frame of the sprite sheet animation.
+var initialFrameVariation: Int
+Defines a plus/minus range (in frames) from which a value is randomly selected to offset initialFrame.
+var rowCount: Int
+Number of rows in the sprite sheet.
+Instance Methods
+func encode(to: Encoder) throws
+Encodes this value into the given encoder.
+func hash(into: inout Hasher)
+Hashes the essential components of this value by feeding them into the given hasher.
+Enumerations
+enum AnimationRepeatMode
+Options for how the effect timeline is played, used by the animationMode property.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Decodable
+Encodable
+Equatable
+Hashable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ParticleEmitterComponent.ParticleEmitter.ImageSequence
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

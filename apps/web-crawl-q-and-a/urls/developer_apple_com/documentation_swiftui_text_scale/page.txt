@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/text/scaleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Deprecated symbols
+static func + (Text, Text) -> Text
+Combining text views
+M
+func accessibilityTextContentType(AccessibilityTextContentType) -> Text
+M
+func accessibilityLabel(LocalizedStringKey) -> Text
+M
+func accessibilityLabel(Text) -> Text
+M
+func accessibilityLabel<S>(S) -> Text
+M
+func textScale(Text.Scale, isEnabled: Bool) -> Text
+Beta
+Fitting text into available space
+S
+Text.LineStyle
+S
+Text.DateStyle
+E
+Text.Case
+M
+func baselineOffset(CGFloat) -> Text
+M
+func tracking(CGFloat) -> Text
+M
+func kerning(CGFloat) -> Text
+Documentation
+Open Menu
+Swift
+Structure
+Text.Scale
+Defines text scales
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+struct Scale
+Overview
+Text scale provides a way to pick a logical text scale relative to the base font which is used.
+Topics
+Gettingn built-in text scales
+static let `default`: Text.Scale
+Defines default text scale
+static let secondary: Text.Scale
+Defines secondary text scale
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Fitting text into available space
+func textScale(Text.Scale, isEnabled: Bool) -> Text
+Applies a text scale to the text.
+Beta
+enum TruncationMode
+The type of truncation to apply to a line of text when it’s too long to fit in the available space.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Text.Scale
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

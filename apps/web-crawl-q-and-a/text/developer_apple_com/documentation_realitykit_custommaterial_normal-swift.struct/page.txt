@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/normal-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+S
+CustomMaterial.AmbientOcclusion
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+P
+var normal: CustomMaterial.Normal
+Using a Normal Map
+S
+CustomMaterial.CustomMaterialTexture
+S
+CustomMaterial.Custom
+P
+var custom: CustomMaterial.Custom
+Using Custom Values
+S
+CustomMaterial.Metallic
+P
+var metallic: CustomMaterial.Metallic
+Documentation
+Open Menu
+Swift
+Structure
+CustomMaterial.Normal
+An object that stores fine surface details for an entity in an image texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct Normal
+Overview
+Normal mapping is a real-time rendering technique that captures fine surface details for a model by using a texture instead of by increasing the number of polygons in the model. It works by storing surface normals, which are vectors perpendicular to the surface of the model, from a much higher-resolution version of the same 3D object. A normal map stores each vector in the image by storing the vectors’ X, Y, and Z values as the R, G, and B components of the corresponding pixel in the UV-mapped image. This object defines a normal map for a custom material.
+For more information on using normal map values in a custom material, see normal.
+Topics
+Creating a Normal Object
+init(texture: CustomMaterial.Texture?)
+Create an object from a specified texture.
+init(PhysicallyBasedMaterial.Normal)
+Creates an object containing surface details for an entity from a custom material’s normal property.
+Accessing the Normal Map
+var texture: CustomMaterial.Texture?
+The material’s normal map.
+See Also
+Using a Normal Map
+var normal: CustomMaterial.Normal
+A texture map that stores fine surface details for the entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CustomMaterial.Normal
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

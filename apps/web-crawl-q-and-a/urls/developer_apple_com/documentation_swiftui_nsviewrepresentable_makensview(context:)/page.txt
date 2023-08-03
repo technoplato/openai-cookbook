@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/swiftui/nsviewrepresentable/makensview(context:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Xcode library customization
+Previews in Xcode
+Tool support
+Technology-specific views
+WatchKit integration
+UIKit integration
+S
+NSViewControllerRepresentableContext
+Creating and updating the view
+r
+P
+NSViewRepresentable
+Adding AppKit views to SwiftUI view hierarchies
+S
+NSHostingSceneBridgingOptions
+Beta
+S
+NSHostingSizingOptions
+C
+NSHostingView
+C
+NSHostingController
+Displaying SwiftUI views in AppKit
+Documentation
+Open Menu
+Swift
+Instance Method
+makeNSView(context:)
+Creates the view object and configures its initial state.
+macOS 10.15+
+@MainActor
+func makeNSView(context: Self.Context) -> Self.NSViewType
+Required
+Parameters
+context
+A context structure containing information about the current state of the system.
+Return Value
+Your AppKit view configured with the provided information.
+Discussion
+You must implement this method and use it to create your view object. Configure the view using your app’s current data and contents of the context parameter. The system calls this method only once, when it creates your view for the first time. For all subsequent updates, the system calls the updateNSView(_:context:) method.
+See Also
+Creating and updating the view
+func updateNSView(Self.NSViewType, context: Self.Context)
+Updates the state of the specified view with new information from SwiftUI.
+Required
+typealias Context
+associatedtype NSViewType : NSView
+The type of view to present.
+Required
+Current page is makeNSView(context:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

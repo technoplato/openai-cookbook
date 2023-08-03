@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/swiftui/preview(_:traits:body:cameras:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+PreviewContextKey
+r
+P
+PreviewContext
+M
+func previewContext<C>(C) -> some View
+Setting a context
+S
+InterfaceOrientation
+M
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+E
+PreviewLayout
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, windowStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+macro Preview<Style>(String?, immersionStyle: Style, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>..., body: () -> View, cameras: () -> [PreviewCamera])
+#
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Beta
+#
+macro Preview(String?, body: () -> View)
+Creating a preview
+Previews in Xcode
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Body
+P
+var body: Self.Body
+Implementing a custom view
+Documentation
+Open Menu
+Swift
+Macro
+Preview(_:traits:body:cameras:)
+Creates a preview of a SwiftUI view with custom preview cameras.
+visionOS 1.0+ Beta
+@freestanding(declaration)
+macro Preview(
+    _ name: String? = nil,
+    traits: PreviewTrait<Preview.ViewTraits>...,
+    @ViewBuilder body: @escaping @MainActor () -> View,
+    @PreviewCameraBuilder cameras: () -> [PreviewCamera]
+)
+Parameters
+name
+Optional display name for the preview, which will appear in the canvas.
+traits
+Optional list of traits customizing the appearance of the preview.
+body
+A closure producing a SwiftUI view.
+cameras
+A closure producing an array of preview cameras.
+See Also
+Creating a preview
+macro Preview(String?, body: () -> View)
+Creates a preview of a SwiftUI view.
+macro Preview(String?, traits: PreviewTrait<Preview.ViewTraits>, PreviewTrait<Preview.ViewTraits>..., body: () -> View)
+Creates a preview of a SwiftUI view.
+Beta
+protocol PreviewProvider
+A type that produces view previews in Xcode.
+enum PreviewPlatform
+Platforms that can run the preview.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Preview(_:traits:body:cameras:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

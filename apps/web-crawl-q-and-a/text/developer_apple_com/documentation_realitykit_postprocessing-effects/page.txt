@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/realitykit/postprocessing-effectsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Video Playback
+Character control
+Creating a game with scene understanding
+Creating a Game with Reality Composer
+SwiftStrike: Creating a Game with RealityKit
+Happy Beam
+Games
+Physics simulation
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Documentation
+Open Menu
+Swift
+Postprocessing effects
+Create special rendering effects for your RealityKit scenes.
+Overview
+In iOS 15 and later, and macOS 12 and later, you can apply postprocess effects to a RealityKit scene after RealityKit renders it, but before RealityKit displays it. If you register a postprocess callback function, RealityKit passes that function the complete, rendered frame so you can modify it before the viewer sees it. You can use any image processing or drawing APIs on the rendered frame but, as a practical matter, only APIs that execute on the GPU are fast enough to use every frame and maintain a good framerate.
+Core Image, Metal kernal functions, Metal Performance Shaders, and SpriteKit all execute on the GPU and can be effectively used to implement postprocessing effects.
+Topics
+RealityKit effects
+Implementing Postprocess Effects Using Metal Compute Functions
+Create custom shaders to implement postprocess effects.
+struct PostProcessContext
+An object the framework uses to pass data to a postprocess callback.
+struct RenderCallbacks
+A container that holds the view’s render callbacks.
+Core Image effects
+Applying Core Image Filters as a Postprocess Effect
+Create special rendering effects for your RealityKit scenes using Core Image.
+Metal effects
+Using Metal Performance Shaders to Create Custom Postprocess Effects
+Leverage the Metal Performance Shaders framework to create special rendering effects for your RealityKit scenes.
+Implementing Special Rendering Effects with RealityKit Postprocessing
+Implement a variety of postprocessing techniques to alter RealityKit rendering.
+Checking the Pixel Format of a Postprocess Effect’s Output Texture
+Make sure your postprocess effect works on all devices.
+Passing Structured Data to a Metal Compute Function
+Send nontexture data from Swift to your Metal shaders using a shared header file.
+Implementing Postprocess Effects Using Metal Compute Functions
+Create custom shaders to implement postprocess effects.
+See Also
+Runtime modifications
+API Reference
+Transforms: Position, Orientation, and Scale
+Control the placement of virtual objects.
+API Reference
+Body and face tracking
+Track the movement and facial expressions of people in an AR scene
+API Reference
+Collision detection
+Determine when entities collide with each other or the environment.
+API Reference
+Physics simulation
+Simulate physical interactions between entities.
+API Reference
+Content synchronization
+Synchronize the contents of entities locally or across the network.
+API Reference
+Runtime Events
+Execute code when specific things happen in your RealityKit scene.
+Current page is Postprocessing effects
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

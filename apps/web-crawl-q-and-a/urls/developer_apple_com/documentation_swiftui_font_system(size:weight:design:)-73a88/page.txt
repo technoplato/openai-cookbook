@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/font/system(size:weight:design:)-73a88Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func uppercaseSmallCaps() -> Font
+M
+func weight(Font.Weight) -> Font
+M
+func width(Font.Width) -> Font
+S
+Font.Width
+M
+func leading(Font.Leading) -> Font
+E
+Font.Leading
+Deprecated symbols
+M
+static func system(Font.TextStyle, design: Font.Design) -> Font
+Deprecated
+M
+func monospaced(Bool) -> some View
+M
+func monospacedDigit() -> some View
+Managing text layout
+M
+func truncationMode(Text.TruncationMode) -> some View
+P
+var truncationMode: Text.TruncationMode
+M
+func allowsTightening(Bool) -> some View
+P
+var allowsTightening: Bool
+Documentation
+Open Menu
+Swift
+Type Method
+system(size:weight:design:)
+Specifies a system font to use, along with the style, weight, and any design parameters you want applied to the text.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+static func system(
+    size: CGFloat,
+    weight: Font.Weight = .regular,
+    design: Font.Design = .default
+) -> Font
+Deprecated
+Use system(size:weight:design:) instead.
+Discussion
+Use this function to create a system font by specifying the size and weight, and a type design together. The following styles the system font as 17 point, semibold text:
+Text("Hello").font(.system(size: 17, weight: .semibold))
+While the following styles the text as 17 point bold, and applies a serif Font.Design to the system font:
+Text("Hello").font(.system(size: 17, weight: .bold, design: .serif))
+If you want to use the default Font.Weight (regular), you don’t need to specify the weight in the method. The following example styles the text as 17 point regular, and uses a Font.Design.rounded system font:
+Text("Hello").font(.system(size: 17, design: .rounded))
+See Also
+Deprecated symbols
+static func system(Font.TextStyle, design: Font.Design) -> Font
+Gets a system font with the given text style and design.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is system(size:weight:design:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

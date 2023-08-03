@@ -1,0 +1,191 @@
+https://developer.apple.com/documentation/swiftui/view/ondrop(of:delegate:)-2vr9oSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Modifying a view
+S
+ViewBuilder
+M
+func tipCornerRadius(Double, antialiased: Bool) -> some View
+Beta
+M
+func tipBackground(some ShapeStyle) -> some View
+Beta
+M
+func tipAssetSize(CGSize) -> some View
+Beta
+M
+func popoverTip<Content>(Content, arrowEdge: Edge, action: (Tips.Action) -> Void) -> some View
+Beta
+M
+func popoverTip<Content>(Content, arrowEdge: Edge) -> some View
+func searchable<V, S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S, suggestions: () -> V) -> some View
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+M
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+Deprecated
+M
+func onPasteCommand(of: [String], perform: ([NSItemProvider]) -> Void) -> some View
+Deprecated
+M
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Deprecated
+M
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Deprecated
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Deprecated
+M
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Deprecated
+Input and events modifiers
+M
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+onDrop(of:delegate:)
+Defines the destination for a drag and drop operation with the same size and position as this view, with behavior controlled by the given delegate.
+iOS 13.4–17.0 Deprecated
+iPadOS 13.4–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.4–17.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func onDrop(
+    of supportedTypes: [String],
+    delegate: DropDelegate
+) -> some View
+Deprecated
+Use onDrop(of:delegate:) instead.
+Parameters
+supportedTypes
+The uniform type identifiers that describe the types of content this view can accept through drag and drop. If the drag and drop operation doesn’t contain any of the supported types, then this drop destination doesn’t activate and isTargeted doesn’t update.
+delegate
+A type that conforms to the DropDelegate protocol. You have comprehensive control over drop behavior when you use a delegate.
+Return Value
+A view that provides a drop destination for a drag operation of the specified types.
+See Also
+Input and events modifiers
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Adds an action to perform when the given value changes.
+Deprecated
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Adds an action to perform when this view recognizes a tap gesture, and provides the action with the location of the interaction.
+Deprecated
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+Deprecated
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+Deprecated
+func onPasteCommand(of: [String], perform: ([NSItemProvider]) -> Void) -> some View
+Adds an action to perform in response to the system’s Paste command.
+Deprecated
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+Adds an action to perform in response to the system’s Paste command with items that you validate.
+Deprecated
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Defines the destination for a drag and drop operation, using the same size and position as this view, handling dropped content with the given closure.
+Deprecated
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Defines the destination for a drag and drop operation with the same size and position as this view, handling dropped content and the drop location with the given closure.
+Deprecated
+func focusable(Bool, onFocusChange: (Bool) -> Void) -> some View
+Specifies if the view is focusable and, if so, adds an action to perform when the view comes into focus.
+Deprecated
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onDrop(of:delegate:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,188 @@
+https://developer.apple.com/documentation/swiftui/textfield/init(value:format:prompt:label:)-99ntfSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fontDesign(Font.Design?) -> some View
+M
+func font(Font?) -> some View
+Applying custom fonts to text
+Setting a font
+r
+P
+TextSelectability
+M
+func textSelection<S>(S) -> some View
+Selecting text
+M
+init<S, F>(S, value: Binding<F.FormatInput>, format: F, prompt: Text?)
+M
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput>, format: F, prompt: Text?)
+Creating a text field with a value
+M
+init(text: Binding<String>, prompt: Text?, axis: Axis, label: () -> Label)
+M
+init<S>(S, text: Binding<String>, prompt: Text?, axis: Axis)
+M
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?, axis: Axis)
+M
+init<S>(S, text: Binding<String>, axis: Axis)
+M
+init(LocalizedStringKey, text: Binding<String>, axis: Axis)
+Documentation
+Open Menu
+Swift
+Initializer
+init(value:format:prompt:label:)
+Creates a text field that applies a format style to a bound value, with a label generated from a view builder.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init<F>(
+    value: Binding<F.FormatInput>,
+    format: F,
+    prompt: Text? = nil,
+    @ViewBuilder label: () -> Label
+) where F : ParseableFormatStyle, F.FormatOutput == String
+Available when Label conforms to View.
+Parameters
+value
+The underlying value to edit.
+format
+A format style of type F to use when converting between the string the user edits and the underlying value of type F.FormatInput. If format can’t perform the conversion, the text field leaves the value unchanged. If the user stops editing the text in an invalid state, the text field updates the field’s text to the last known valid value.
+prompt
+A Text which provides users with guidance on what to type into the text field.
+label
+A view builder that produces a label for the text field, describing its purpose.
+Discussion
+Use this initializer to create a text field that binds to a bound value, using a ParseableFormatStyle to convert to and from this type. Changes to the bound value update the string displayed by the text field. Editing the text field updates the bound value, as long as the format style can parse the text. If the format style can’t parse the input, the bound value remains unchanged.
+Use the onSubmit(of:_:) modifier to invoke an action whenever the user submits this text field.
+The following example uses a Double as the bound value, and a FloatingPointFormatStyle instance to convert to and from a string representation. As the user types, the bound value updates, which in turn updates three Text views that use different format styles. If the user enters text that doesn’t represent a valid Double, the bound value doesn’t update.
+@State private var myDouble: Double = 0.673
+var body: some View {
+    VStack {
+        TextField(
+            value: $myDouble,
+            format: .number
+        ) {
+            Text("Double")
+        }
+        Text(myDouble, format: .number)
+        Text(myDouble, format: .number.precision(.significantDigits(5)))
+        Text(myDouble, format: .number.notation(.scientific))
+    }
+}
+See Also
+Creating a text field with a value
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound value, with a label generated from a localized title string.
+Available when Label is Text.
+init<S, F>(S, value: Binding<F.FormatInput>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound value, with a label generated from a title string.
+Available when Label is Text.
+init<S, V>(S, value: Binding<V>, formatter: Formatter)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, prompt: Text?)
+Creates a text field that applies a formatter to a bound value, with a label generated from a localized title string.
+Available when Label is Text.
+init<S, V>(S, value: Binding<V>, formatter: Formatter, prompt: Text?)
+Creates a text field that applies a formatter to a bound value, with a label generated from a title string.
+Available when Label is Text.
+init<V>(value: Binding<V>, formatter: Formatter, prompt: Text?, label: () -> Label)
+Creates a text field that applies a formatter to a bound optional value, with a label generated from a view builder.
+Available when Label conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(value:format:prompt:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

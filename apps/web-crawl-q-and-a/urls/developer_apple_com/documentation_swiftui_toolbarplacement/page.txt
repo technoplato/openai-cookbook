@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/swiftui/toolbarplacementSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ToolbarContentBuilder
+Populating a customizable toolbar
+M
+func toolbar<Content>(id: String, content: () -> Content) -> some View
+r
+P
+CustomizableToolbarContent
+S
+ToolbarCustomizationBehavior
+S
+ToolbarCustomizationOptions
+Setting toolbar visibility
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func windowToolbarStyle<S>(S) -> some Scene
+r
+P
+WindowToolbarStyle
+Configuring the toolbar title display mode
+M
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+ToolbarPlacement
+The placement of a toolbar.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct ToolbarPlacement
+Overview
+Use this type in conjunction with modifiers like toolbarBackground(_:for:) and toolbar(_:for:) to customize the appearance of different bars managed by SwiftUI. Not all bars support all types of customizations.
+See ToolbarItemPlacement to learn about the different regions of these toolbars that you can place your own controls into.
+Topics
+Getting placements
+static var automatic: ToolbarPlacement
+The primary toolbar.
+static func accessoryBar<ID>(id: ID) -> ToolbarPlacement
+Creates a unique accessory bar placement.
+static var bottomBar: ToolbarPlacement
+The bottom toolbar of an app.
+static var bottomOrnament: ToolbarPlacement
+The bottom ornament of an app.
+Beta
+static var navigationBar: ToolbarPlacement
+The navigation bar of an app.
+static var tabBar: ToolbarPlacement
+The tab bar of an app.
+static var windowToolbar: ToolbarPlacement
+The window toolbar of an app.
+Deprecated symbols
+init<ID>(id: ID)
+Creates a custom accessory bar placement.
+Deprecated
+Relationships
+Conforms To
+Sendable
+See Also
+Setting toolbar visibility
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Specifies the visibility of a bar managed by SwiftUI.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ToolbarPlacement
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

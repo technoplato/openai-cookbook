@@ -1,0 +1,238 @@
+https://developer.apple.com/documentation/realitykit/textureresourceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Drawing the Texture
+E
+TextureResource.Semantic
+P
+var semantic: TextureResource.Semantic?
+E
+TextureResource.MipmapsMode
+P
+var mipmapLevelCount: Int
+P
+var width: Int
+P
+var height: Int
+static func loadAsync(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+static func loadAsync(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+static func load(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) throws -> TextureResource
+static func load(named: String, in: Bundle?, options: TextureResource.CreateOptions) throws -> TextureResource
+static func generateAsync(from: CGImage, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+static func generate(from: CGImage, withName: String?, options: TextureResource.CreateOptions) throws -> TextureResource
+E
+case texture(TextureResource)
+E
+case color(NSColor)
+Specifying Color Parameters
+E
+MaterialColorParameter
+r
+P
+Material
+S
+VideoMaterial
+S
+OcclusionMaterial
+S
+UnlitMaterial
+Documentation
+Open Menu
+Swift
+Class
+TextureResource
+A representation of a texture.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+class TextureResource
+Topics
+Creating Texture Resources
+static func generate(from: CGImage, withName: String?, options: TextureResource.CreateOptions) throws -> TextureResource
+Creates a texture resource from an in-memory Core Graphics image.
+static func generateAsync(from: CGImage, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Asynchronously creates a texture resource from an in-memory Core Graphics image.
+Loading a Texture
+static func load(named: String, in: Bundle?) throws -> TextureResource
+Loads a texture resource from a bundle.
+static func load(named: String, in: Bundle?, options: TextureResource.CreateOptions) throws -> TextureResource
+Loads a texture resource by name from a bundle.
+static func load(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) throws -> TextureResource
+Loads a texture resource from a URL with options.
+static func load(contentsOf: URL, withName: String?) throws -> TextureResource
+Loads a texture resource from a URL.
+static func loadAsync(named: String, in: Bundle?) -> LoadRequest<TextureResource>
+Loads a texture resource from a bundle asynchronously.
+static func loadAsync(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Loads a texture resource by name asynchronously.
+static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<TextureResource>
+Loads a texture resource from a URL asynchronously.
+Deprecated
+static func loadAsync(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Loads a texture resource from a URL asynchronously with options.
+Deprecated
+struct CreateOptions
+An object that holds texture resource creation options.
+Describing the Texture
+var height: Int
+The texture’s height in pixels.
+var width: Int
+The texture’s width in pixels.
+var mipmapLevelCount: Int
+The number of mipmaps contained in this texture.
+enum MipmapsMode
+An enumeration used to specify how mipmaps are allocated and generated for this texture.
+var semantic: TextureResource.Semantic?
+The intended usage of the texture resource.
+enum Semantic
+An object used to specify the intended usage of a texture.
+Drawing the Texture
+class Drawable
+A drawable associated with a drawable queue
+class DrawableQueue
+A drawable queue that may be used to update a texture resource dynamically
+var drawableQueue: TextureResource.DrawableQueue?
+The drawable queue that was used to replace the texture.
+Copying the Texture
+func copy(to: MTLTexture) throws
+Copies texture data to another texture.
+func copyAsync(to: MTLTexture, completionHandler: ((Error)?) -> Void)
+Asynchronously copies texture data to another texture.
+Modifying a Texture
+func replace(withDrawables: TextureResource.DrawableQueue)
+Dynamically replaces the texture with a drawable queue.
+func replace(withImage: CGImage, options: TextureResource.CreateOptions) throws
+Dynamically replaces the texture with a CoreGraphics image.
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Asynchronously and dynamically replaces the texture with a CoreGraphics image.
+Structures
+struct Contents
+An object which references the pixel data for each mipmap level of a texture.
+Beta
+struct Dimensions2D
+Specifies the width and height of a texture.
+Beta
+struct Format
+Specifies the pixel format and encoding of a texture.
+Beta
+Initializers
+convenience init(contentsOf: URL, withName: String?) async throws
+Beta
+convenience init(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) async throws
+Beta
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) throws
+Beta
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) async throws
+Asynchronously creates a texture resource from in-memory pixel data.
+Beta
+convenience init(named: String, in: Bundle?) async throws
+Loads a texture resource from a bundle asynchronously.
+Beta
+convenience init(named: String, in: Bundle?, options: TextureResource.CreateOptions) async throws
+Loads a texture resource by name asynchronously.
+Beta
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Resource
+Sendable
+See Also
+Specifying Color Parameters
+case color(NSColor)
+A color value in macOS.
+case texture(TextureResource)
+A texture resource.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TextureResource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

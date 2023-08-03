@@ -1,0 +1,151 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+ControlSize
+P
+var controlSize: ControlSize
+M
+func controlSize(ControlSize) -> some View
+Sizing controls
+S
+SensoryFeedback
+Beta
+M
+func sensoryFeedback<T>(SensoryFeedback, trigger: T, condition: (T, T) -> Bool) -> some View
+Beta
+M
+func sensoryFeedback<T>(trigger: T, (T, T) -> SensoryFeedback?) -> some View
+M
+init<S>(S, selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>)
+M
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>)
+Picking dates before a date
+M
+init(selection: Binding<Set<DateComponents>>, in: PartialRangeFrom<Date>, label: () -> Label)
+M
+init<S>(S, selection: Binding<Set<DateComponents>>, in: PartialRangeFrom<Date>)
+M
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>, in: PartialRangeFrom<Date>)
+Picking dates after a date
+M
+init(selection: Binding<Set<DateComponents>>, in: Range<Date>, label: () -> Label)
+Documentation
+Open Menu
+Swift
+Initializer
+init(selection:in:label:)
+Creates an instance that selects multiple dates before some end date.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+init(
+    selection: Binding<Set<DateComponents>>,
+    in bounds: PartialRangeUpTo<Date>,
+    @ViewBuilder label: () -> Label
+)
+Available when Label conforms to View.
+Parameters
+selection
+The date values being displayed and selected.
+bounds
+The open range before some end date.
+label
+A view that describes the use of the dates.
+See Also
+Picking dates before a date
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>)
+Creates an instance that selects multiple dates before some end date.
+Available when Label is Text.
+init<S>(S, selection: Binding<Set<DateComponents>>, in: PartialRangeUpTo<Date>)
+Creates an instance that selects multiple dates before some end date.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(selection:in:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

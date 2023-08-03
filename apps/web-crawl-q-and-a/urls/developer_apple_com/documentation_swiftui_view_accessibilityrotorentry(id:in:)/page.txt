@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/view/accessibilityrotorentry(id:in:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityRotor<L>(L, textRanges: [Range<String.Index>]) -> some View
+Replacing system rotors
+M
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+M
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor(AccessibilitySystemRotor, textRanges: [Range<String.Index>]) -> some View
+S
+AccessibilitySystemRotor
+Configuring rotors
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Managing model data in your app
+Migrating from the Observable Object protocol to the Observable macro
+Monitoring data changes in your app
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibilityRotorEntry(id:in:)
+Defines an explicit identifier tying an Accessibility element for this view to an entry in an Accessibility Rotor.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func accessibilityRotorEntry<ID>(
+    id: ID,
+    in namespace: Namespace.ID
+) -> some View where ID : Hashable
+Parameters
+id
+An arbitrary hashable identifier. Pass this same value when initializing an AccessibilityRotorEntry.
+namespace
+A namespace created with @Namespace(). Pass this same namespace when initializing an AccessibilityRotorEntry.
+Discussion
+Use this when creating an AccessibilityRotorEntry without a namespace does not allow SwiftUI to automatically find and reveal the element, or when the Rotor entry should be associated with a sub-element of a complex view generated in a ForEach, for example.
+See Also
+Configuring rotors
+func accessibilityLinkedGroup<ID>(id: ID, in: Namespace.ID) -> some View
+Links multiple accessibility elements so that the user can quickly navigate from one element to another, even when the elements are not near each other in the accessibility hierarchy.
+func accessibilitySortPriority(Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityRotorEntry(id:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

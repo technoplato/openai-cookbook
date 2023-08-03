@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/clearcoatroughness-swift.struct/init(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+OcclusionMaterial
+S
+UnlitMaterial
+Material Implementations
+Default Implementations
+E
+CustomMaterialError
+T
+CustomMaterial.Texture
+T
+CustomMaterial.Parameters
+M
+init(scale: Float, texture: CustomMaterial.Texture?)
+M
+init(floatLiteral: Float)
+Creating a Clearcoat Roughness Object
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates a custom clearcoat object from a physically based material’s clearcoat property.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(_ value: PhysicallyBasedMaterial.ClearcoatRoughness)
+Discussion
+This initializer creates a new object by copying the scale and texture values from an existing PhysicallyBasedMaterial.ClearcoatRoughness object.
+A clearcoat is a separate layer of transparent specular highlights used to simulate a clear coating, like on a car or the surface of lacquered objects. Use this initializer to create an object to specify the amount of clearcoat for a material using a single value for the entire material, a UV-mapped image to specify different values for different parts of the entity, or both.
+The values from this property are available in the custom material’s surface shader function regardless of the value of lightingModel , but clearcoat isn’t drawn unless the custom material’s lightingModel is CustomMaterial.LightingModel.clearcoat and the surface shader calls params.surface().set_clearcoat().
+The following Metal code demonstrates how to retrieve scale and texture in a surface shader, and use them to specify the clearcoat and clearcoat roughness values:
+    // Retrieve the clearcoat scale and roughness from the CustomMaterial.
+    float clearcoatScale = params.material_constants().clearcoat_scale();
+    float clearcoatRoughnessScale = params.material_constants().clearcoat_roughness_scale();
+
+
+    // Retrieve the entity's texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Entities loaded from a USDZ or .reality file use texture coordinates with
+    // a flipped y-axis. This compensates for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample a value from the clearcoat and clearcoat roughness textures.
+    auto tex = params.textures();
+    half clearcoat = tex.clearcoat().sample(textureSampler, uv).r;
+    half clearcoatRoughess = tex.clearcoat_roughness().sample(textureSampler, uv).r;
+
+
+    // Multiply the scale and sampled texture value from the clearcoat,
+    // and assign the result.
+    clearcoat *= clearcoatScale;
+    params.surface().set_clearcoat(clearcoat);
+
+
+    // Multiply the scale and sampled texture value from the clearcoat roughness,
+    // and assign the result.
+    clearcoatRoughess *= clearcoatRoughnessScale;
+    params.surface().set_clearcoat_roughness(clearcoatRoughess);
+value: The clearcoatRoughness property from a PhysicallyBasedMaterial.
+See Also
+Creating a Clearcoat Roughness Object
+init(floatLiteral: Float)
+Creates a clearcoat object using a single value.
+init(scale: Float, texture: CustomMaterial.Texture?)
+Creates a clearcoat object using a single value or a texture.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

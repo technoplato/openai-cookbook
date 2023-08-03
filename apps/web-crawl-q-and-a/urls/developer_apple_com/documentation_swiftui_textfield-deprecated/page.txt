@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/textfield-deprecatedSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Setting a font
+r
+P
+TextSelectability
+M
+func textSelection<S>(S) -> some View
+Selecting text
+S
+TextEditor
+S
+SecureField
+M
+func textFieldStyle<S>(S) -> some View
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Deprecated initializers
+M
+init<F>(value: Binding<F.FormatInput?>, format: F, prompt: Text?, label: () -> Label)
+M
+init<S, F>(S, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+M
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+Creating a text field with an optional
+M
+init<V>(value: Binding<V>, formatter: Formatter, prompt: Text?, label: () -> Label)
+M
+init<S, V>(S, value: Binding<V>, formatter: Formatter, prompt: Text?)
+M
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, prompt: Text?)
+Documentation
+Open Menu
+Swift
+Deprecated initializers
+Review deprecated text field initializers.
+Overview
+Use view modifiers to specify change and commit behaviors for a text field when replacing these initializers. Use the onSubmit(of:_:) view modifier to get the behavior provided by the onCommit parameter. Use focused(_:equals:) and FocusState to get the behavior provided by the onEditingChanged parameter.
+Topics
+Creating a text field with a string
+init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Creates a text field with a text label generated from a localized title string.
+Available when Label is Text.
+Deprecated
+init<S>(S, text: Binding<String>, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Creates a text field with a text label generated from a title string.
+Available when Label is Text.
+Deprecated
+init<S>(S, text: Binding<String>, onCommit: () -> Void)
+Creates a text field with a text label generated from a title string.
+Available when Label is Text.
+init(LocalizedStringKey, text: Binding<String>, onCommit: () -> Void)
+Creates a text field with a text label generated from a localized title string.
+Available when Label is Text.
+init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void)
+Creates a text field with a text label generated from a localized title string.
+Available when Label is Text.
+init<S>(S, text: Binding<String>, onEditingChanged: (Bool) -> Void)
+Creates a text field with a text label generated from a title string.
+Available when Label is Text.
+Creating a text field with a value
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Creates an instance which binds over an arbitrary type, T.
+Available when Label is Text.
+Deprecated
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Creates an instance which binds over an arbitrary type, T.
+Available when Label is Text.
+Deprecated
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, onCommit: () -> Void)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onCommit: () -> Void)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+Current page is Deprecated initializers
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

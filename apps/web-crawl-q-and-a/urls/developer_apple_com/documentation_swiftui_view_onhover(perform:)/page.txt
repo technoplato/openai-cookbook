@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/swiftui/view/onhover(perform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onExitCommand(perform: (() -> Void)?) -> some View
+M
+func pageCommand<V>(value: Binding<V>, in: ClosedRange<V>, step: V) -> some View
+M
+func onDeleteCommand(perform: (() -> Void)?) -> some View
+M
+func onMoveCommand(perform: ((MoveCommandDirection) -> Void)?) -> some View
+Responding to commands
+S
+SubmitLabel
+M
+func submitLabel(SubmitLabel) -> some View
+func onContinuousHover(coordinateSpace: some CoordinateSpaceProtocol, perform: (HoverPhase) -> Void) -> some View
+Responding to hover events
+S
+EventModifiers
+S
+KeyEquivalent
+S
+KeyboardShortcut
+P
+var keyboardShortcut: KeyboardShortcut?
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers) -> some View
+M
+func keyboardShortcut(KeyboardShortcut?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+onHover(perform:)
+Adds an action to perform when the user moves the pointer over or away from the view’s frame.
+iOS 13.4+
+iPadOS 13.4+
+macOS 10.15+
+Mac Catalyst 13.4+
+visionOS 1.0+ Beta
+func onHover(perform action: @escaping (Bool) -> Void) -> some View
+Parameters
+action
+The action to perform whenever the pointer enters or exits this view’s frame. If the pointer is in the view’s frame, the action closure passes true as a parameter; otherwise, false.
+Return Value
+A view that triggers action when the pointer enters or exits this view’s frame.
+Discussion
+Calling this method defines a region for detecting pointer movement with the size and position of this view.
+See Also
+Responding to hover events
+func onContinuousHover(coordinateSpace: some CoordinateSpaceProtocol, perform: (HoverPhase) -> Void) -> some View
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+Beta
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+Applies a hover effect to this view.
+Beta
+func hoverEffectDisabled(Bool) -> some View
+Adds a condition that controls whether this view can display hover effects.
+Beta
+func defaultHoverEffect(HoverEffect?) -> some View
+Sets the default hover effect to use for views within this view.
+Beta
+var isHoverEffectEnabled: Bool
+A Boolean value that indicates whether the view associated with this environment allows hover effects to be displayed.
+Beta
+enum HoverPhase
+The current hovering state and value of the pointer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onHover(perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

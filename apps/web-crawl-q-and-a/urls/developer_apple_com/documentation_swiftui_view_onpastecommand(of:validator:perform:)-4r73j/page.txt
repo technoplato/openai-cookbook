@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/view/onpastecommand(of:validator:perform:)-4r73jSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+Xcode library customization
+Previews in Xcode
+Tool support
+func onPasteCommand<Payload>(of: [UTType], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+M
+func onPasteCommand(of: [UTType], perform: ([NSItemProvider]) -> Void) -> some View
+M
+func onCutCommand(perform: (() -> [NSItemProvider])?) -> some View
+M
+func onCopyCommand(perform: (() -> [NSItemProvider])?) -> some View
+Copying items using item providers
+M
+func pasteDestination<T>(for: T.Type, action: ([T]) -> Void, validator: ([T]) -> [T]) -> some View
+M
+func cuttable<T>(for: T.Type, action: () -> [T]) -> some View
+M
+func copyable<T>(() -> [T]) -> some View
+Copying transferable items
+Documentation
+Open Menu
+Swift
+Instance Method
+onPasteCommand(of:validator:perform:)
+Adds an action to perform in response to the system’s Paste command with items that you validate.
+macOS 11.0+
+func onPasteCommand<Payload>(
+    of supportedContentTypes: [UTType],
+    validator: @escaping ([NSItemProvider]) -> Payload?,
+    perform payloadAction: @escaping (Payload) -> Void
+) -> some View
+Parameters
+supportedContentTypes
+The uniform type identifiers that describe the types of content this view can accept through a paste action. If the Clipboard doesn’t contain any of the supported types, the Paste command doesn’t trigger.
+validator
+A handler that validates the command. This handler receives items from the Clipboard with the types you specify in the supportedContentTypes. Use this handler to decide whether the items are valid and preprocess them for the action closure. If you return nil instead, the Paste command doesn’t trigger.
+payloadAction
+The action to perform when the Paste command triggers.
+Return Value
+A view that triggers action when the system Paste command is invoked, validating the Paste command with validator.
+Discussion
+Pass an array of uniform type identifiers to the supportedContentTypes parameter. Place the higher priority types closer to the beginning of the array. The Clipboard items that the validator closure receives have the most preferred type out of all the types the source supports.
+For example, if your app can handle plain text and rich text, but you prefer rich text, place the rich text type first in the array. If rich text is available when the paste action occurs, the validator closure passes that rich text along.
+See Also
+Copying items using item providers
+func onCopyCommand(perform: (() -> [NSItemProvider])?) -> some View
+Adds an action to perform in response to the system’s Copy command.
+func onCutCommand(perform: (() -> [NSItemProvider])?) -> some View
+Adds an action to perform in response to the system’s Cut command.
+func onPasteCommand(of: [UTType], perform: ([NSItemProvider]) -> Void) -> some View
+Adds an action to perform in response to the system’s Paste command.
+Current page is onPasteCommand(of:validator:perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

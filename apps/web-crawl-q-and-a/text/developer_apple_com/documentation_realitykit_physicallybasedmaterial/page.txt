@@ -1,0 +1,233 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterialSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating Highlights
+S
+PhysicallyBasedMaterial.AmbientOcclusion
+P
+var ambientOcclusion: PhysicallyBasedMaterial.AmbientOcclusion
+Using Ambient Occlusion
+E
+PhysicallyBasedMaterial.Blending
+P
+var blending: PhysicallyBasedMaterial.Blending
+Handling Entity Transparency
+Applying Realistic Material and Lighting Effects to Entities
+Realistic materials
+S
+OcclusionMaterial
+Object Occlusion
+S
+UnlitMaterial
+S
+SimpleMaterial
+Basic Materials
+Materials and shaders
+Documentation
+Open Menu
+Swift
+Structure
+PhysicallyBasedMaterial
+A material that simulates the appearance of real-world objects.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct PhysicallyBasedMaterial
+Overview
+In RealityKit, a material is an object that defines the surface properties of a rendered 3D object. A Physically Based Rendering (PBR) material is a material that closely approximates the way light reflects off of real-world objects. Use PhysicallyBasedMaterial to create highly realistic-looking objects for your AR scenes.
+Many of the properties for PhysicallyBasedMaterial provide the option to use more than one type of data to specify that property. You can set an object’s baseColor using a specific color for the entire material, or you can use an image that UV-maps on to the entity.
+PhysicallyBasedMaterial includes all material properties supported by USDZ. On iOS 15 and later, RealityKit automatically uses PhysicallyBasedMaterial when importing an entity from a USDZ file.
+For more information on using PhysicallyBasedMaterial, see Applying Realistic Material and Lighting Effects to Entities.
+Topics
+Creating a Physically Based Material
+init()
+Creates a physically based material.
+Setting the Entity’s Base Color
+var baseColor: PhysicallyBasedMaterial.BaseColor
+The color of an entity unmodified by lighting.
+struct BaseColor
+An object that defines an entity’s base color.
+Specifying Entity Roughness
+var roughness: PhysicallyBasedMaterial.Roughness
+The amount the surface of the 3D object scatters reflected light.
+struct Roughness
+An object that defines the roughness of an entity’s surface.
+Specifying Metallic Reflections
+var metallic: PhysicallyBasedMaterial.Metallic
+The reflectiveness of an entity.
+struct Metallic
+An object that defines the reflectiveness of an entity.
+Using a Normal Map
+var normal: PhysicallyBasedMaterial.Normal
+The normal map for the entity.
+struct Normal
+An object that specifies an entity’s normal map.
+Handling Entity Transparency
+var blending: PhysicallyBasedMaterial.Blending
+The transparency of an entity.
+enum Blending
+The object that defines the transparency of an entity.
+Using Ambient Occlusion
+var ambientOcclusion: PhysicallyBasedMaterial.AmbientOcclusion
+The ambient occlusion values for a material.
+struct AmbientOcclusion
+An object that defines the ambient occlusion of an entity’s surface.
+Creating Highlights
+var specular: PhysicallyBasedMaterial.Specular
+The specular highlight applied to the entity.
+struct Specular
+An object that defines the specular highlights of an entity.
+var sheen: PhysicallyBasedMaterial.SheenColor?
+The intensity of an entity’s sheen.
+struct SheenColor
+An object that defines the color of an entity’s sheen.
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+The transparent highlights that simulate a clear, shiny coating on an entity.
+struct Clearcoat
+An object that defines the intensity of an entity’s clear, shiny coating.
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+The degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+struct ClearcoatRoughness
+An object that defines the degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+Adding Anisotropy
+var anisotropyLevel: PhysicallyBasedMaterial.AnisotropyLevel
+The degree to which an entity reflects light to create stretched or oblong highlights.
+struct AnisotropyLevel
+An object that defines the degree to which an entity reflects light to create stretched or oblong highlights.
+var anisotropyAngle: PhysicallyBasedMaterial.AnisotropyAngle
+The anistropy angle.
+struct AnisotropyAngle
+An object used to define a material’s anisotropy angle.
+Adding Light Emission
+var emissiveIntensity: Float
+The intensity of light emitted by the entity.
+var emissiveColor: PhysicallyBasedMaterial.EmissiveColor
+The color of the light the entity emits.
+struct EmissiveColor
+An object that defines the color of the light an entity emits.
+Modifying Texture Coordinates
+var textureCoordinateTransform: PhysicallyBasedMaterial.TextureCoordinateTransform
+A two-dimensional transformation to apply to the entity’s primary texture coordinates.
+var secondaryTextureCoordinateTransform: PhysicallyBasedMaterial.TextureCoordinateTransform
+A two-dimensional transformation to apply to the entity’s secondary texture coordinates.
+struct TextureCoordinateTransform
+An object that defines a transformation the framework applies to a material’s UV-mapped textures.
+typealias TextureCoordinateTransform
+An alias for the texture coordinate transform that’s appropriate for this material class.
+Culling Unneeded Polygons
+var faceCulling: PhysicallyBasedMaterial.FaceCulling
+A process in which the system specifies polygons to remove before rendering a scene.
+enum FaceCulling
+An object that defines how the system removes polygons before rendering a scene.
+typealias FaceCulling
+An alias for the face culling object that’s appropriate for this material class.
+Defining Material Parameter Types
+typealias Parameters
+The parameter type that custom materials uses for properties the framework passes to shader functions.
+typealias Texture
+The texture type to use for materials of this class.
+Instance Properties
+var triangleFillMode: PhysicallyBasedMaterial.TriangleFillMode
+The object that controls how RealityKit draws triangles.
+Type Aliases
+typealias TriangleFillMode
+Default Implementations
+API Reference
+Material Implementations
+Relationships
+Conforms To
+Material
+See Also
+Realistic materials
+Applying Realistic Material and Lighting Effects to Entities
+Enhance the appearance of objects in a RealityKit scene with Physically Based Rendering (PBR).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhysicallyBasedMaterial
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

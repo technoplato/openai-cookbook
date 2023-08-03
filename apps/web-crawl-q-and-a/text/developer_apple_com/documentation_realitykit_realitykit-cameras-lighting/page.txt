@@ -1,0 +1,175 @@
+https://developer.apple.com/documentation/realitykit/realitykit-cameras-lightingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animation
+Audio
+Scene reconstruction and understanding
+r
+P
+HasSpotLight
+r
+P
+HasDirectionalLight
+r
+P
+HasPointLight
+r
+P
+HasPerspectiveCamera
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+Hello World
+Scene content
+USD Assets
+Object capture
+Reality Composer
+Documentation
+Open Menu
+Swift
+Cameras and lighting
+Control the lighting and point of view for a scene.
+Overview
+In RealityKit, cameras define the point of view from which a scene is rendered. In AR mode, RealityKit creates and controls the camera for you based on the location and orientation of the device. In non-AR mode, control the camera by making changes to the transform component of the PerspectiveCamera entity.
+Topics
+Cameras
+class PerspectiveCamera
+A virtual camera that establishes the rendering perspective.
+struct PerspectiveCameraComponent
+In AR applications, the camera is automatically provided by the system. In non-AR scenarios, the camera needs to be set by the app. (If no camera is provided by the app, the system will use default camera.)
+Lighting
+class PointLight
+An entity that produces an omnidirectional light for virtual objects.
+struct PointLightComponent
+A component that defines a point light source.
+class DirectionalLight
+An entity that casts a virtual light in a particular direction.
+struct DirectionalLightComponent
+A component that defines a directional light source.
+class SpotLight
+An entity that illuminates virtual content in a cone-shaped volume.
+struct SpotLightComponent
+A component that defines a spotlight source.
+struct ImageBasedLightComponent
+Beta
+struct ImageBasedLightReceiverComponent
+Beta
+struct GroundingShadowComponent
+Beta
+Entity Compliance
+protocol HasPerspectiveCamera
+An interface that enables you to configure a virtual camera that you can use to define the rendering perspective when you’re not in an AR session.
+protocol HasPointLight
+An interface that defines a point light source component.
+protocol HasDirectionalLight
+An interface that defines a directional light source component.
+protocol HasSpotLight
+An interface that defines a spot light source component.
+See Also
+Scene content
+API Reference
+Models, shapes, and meshes
+Use mesh-based models to display virtual objects in your scene.
+API Reference
+Materials and shaders
+Apply textures to the surface of your scene’s 3D objects to give each object a unique appearance.
+API Reference
+Anchors
+Anchor an entity to an item in your scene, and specify the position, rotation, and scale of the entity’s content.
+API Reference
+Scene reconstruction and understanding
+Detect objects in an AR scene or create a detailed 3D reconstruction of the real world environment.
+API Reference
+Audio
+Add immersive spatial audio to your RealityKit content.
+API Reference
+Animation
+Dynamically move, rotate, and scale objects at runtime.
+protocol RealityCoordinateSpace
+A 3D coordinate space that exists within a RealityKit hierarchy. Any RealityCoordinateSpaceConverting can convert spatial data between SwiftUI CoordinateSpaces and RealityCoordinateSpaces.
+Beta
+Current page is Cameras and lighting
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

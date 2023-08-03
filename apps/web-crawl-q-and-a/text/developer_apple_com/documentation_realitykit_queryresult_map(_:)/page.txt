@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/queryresult/map(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+Comparing Sequences
+M
+func joined(separator: String) -> String
+M
+func joined<Separator>(separator: Separator) -> JoinedSequence<Self>
+M
+func joined() -> FlattenSequence<Self>
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Self.Element>]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [ArraySlice<Self.Element>]
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+Transforming a Sequence
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>
+Excluding Elements
+M
+func suffix(Int) -> [Self.Element]
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func prefix(Int) -> PrefixSequence<Self>
+Selecting Elements
+M
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Documentation
+Open Menu
+Swift
+Instance Method
+map(_:)
+Returns an array containing the results of mapping the given closure over the sequence’s elements.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func map<T>(_ transform: (Self.Element) throws -> T) rethrows -> [T]
+Parameters
+transform
+A mapping closure. transform accepts an element of this sequence as its parameter and returns a transformed value of the same or of a different type.
+Return Value
+An array containing the transformed elements of this sequence.
+Overview
+In this example, map is used first to convert the names in the array to lowercase strings and then to count their characters.
+let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+let lowercaseNames = cast.map { $0.lowercased() }
+// 'lowercaseNames' == ["vivien", "marlon", "kim", "karl"]
+let letterCounts = cast.map { $0.count }
+// 'letterCounts' == [6, 6, 3, 4]
+Complexity: O(n), where n is the length of the sequence.
+See Also
+Transforming a Sequence
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+Returns an array containing the concatenated results of calling the given transformation with each element of this sequence.
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Returns an array containing the non-nil results of calling the given transformation with each element of this sequence.
+func reduce<Result>(Result, (Result, Self.Element) throws -> Result) rethrows -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func reduce<Result>(into: Result, (inout Result, Self.Element) throws -> ()) rethrows -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+var lazy: LazySequence<Self>
+A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily.
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Returns an array containing the results of calling the given transformation with each element of this sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is map(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

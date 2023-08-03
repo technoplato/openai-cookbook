@@ -1,0 +1,158 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Environment values
+Model data
+Data and storage
+M
+func dynamicIsland(verticalPlacement: DynamicIslandExpandedRegionVerticalPlacement) -> some View
+Managing placement in the Dynamic Island
+M
+func widgetAccentable(Bool) -> some View
+Controlling the accented group
+r
+P
+Widget
+Making a configurable widget
+Keeping a widget up to date
+Creating a widget extension
+Building Widgets Using WidgetKit and SwiftUI
+Creating widgets
+App extensions
+Search
+Documentation
+Open Menu
+Swift
+Protocol
+WidgetBundle
+A container used to expose multiple widgets from a single widget extension.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+protocol WidgetBundle
+Overview
+To support multiple types of widgets, add the @main attribute to a structure that conforms to WidgetBundle. For example, a game might have one widget to display summary information about the game and a second widget to display detailed information about individual characters.
+@main
+struct GameWidgets: WidgetBundle {
+   var body: some Widget {
+       GameStatusWidget()
+       CharacterDetailWidget()
+   }
+}
+Topics
+Implementing a widget bundle
+var body: Self.Body
+Declares the group of widgets that an app supports.
+Required
+associatedtype Body : Widget
+The type of widget that represents the content of the bundle.
+Required
+struct WidgetBundleBuilder
+A custom attribute that constructs a widget bundle’s body.
+Running a widget bundle
+init()
+Creates a widget bundle using the bundle’s body as its content.
+Required
+static func main()
+Initializes and runs the widget bundle.
+See Also
+Creating widgets
+protocol Widget
+The configuration and content of a widget to display on the Home screen or in Notification Center.
+struct LimitedAvailabilityConfiguration
+A type-erased widget configuration.
+protocol WidgetConfiguration
+A type that describes a widget’s content.
+struct EmptyWidgetConfiguration
+An empty widget configuration.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is WidgetBundle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

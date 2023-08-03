@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/roughness-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+Using Ambient Occlusion
+S
+CustomMaterial.Opacity
+E
+CustomMaterial.Blending
+P
+var blending: CustomMaterial.Blending
+P
+var opacityThreshold: Float?
+Handling Entity Transparency
+Specifying Entity Roughness
+S
+CustomMaterial.BaseColor
+P
+var baseColor: CustomMaterial.BaseColor
+Specifying the Entity’s Base Color
+S
+CustomMaterial.GeometryModifier
+S
+CustomMaterial.SurfaceShader
+Accessing Shader Functions
+E
+CustomMaterial.LightingModel
+Documentation
+Open Menu
+Swift
+Instance Property
+roughness
+The amount the surface of the 3D object scatters reflected light.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var roughness: CustomMaterial.Roughness { get set }
+Discussion
+In physically based rendering, the roughness property represents how much the surface of an entity scatters the light that it reflects. A material with a high roughness has a matte appearance, whereas one with a low roughness has a shiny appearance. With custom materials, RealityKit doesn’t automatically use the values set on this property. To render a custom material using roughness, the material’s lightingModel must be CustomMaterial.LightingModel.lit or CustomMaterial.LightingModel.clearcoat and its surface shader must specify a roughness value for rendering by calling params.surface().set_roughness().
+With custom materials, the texture and scale values from the roughness property are available in your surface shader function, but RealityKit doesn’t automatically use them to render your entity. Your surface shader is responsible for calculating or setting the actual roughness value for rendering.
+The following example shows how to use an image and a scale value to specify roughness:
+if let roughnessResource = try? TextureResource.load(named: "entity_roughness") {
+    let roughness = MaterialParameters.Texture(roughnessResource)
+    material.roughness = PhysicallyBasedMaterial.Roughness(tint: .green, texture:roughness)
+}
+The following surface shader takes the scale and texture from the roughness property, multiplies them together, and sets the resulting value as the roughness for rendering, which emulates the behavior of PhysicallyBasedMaterial:
+#include <metal_stdlib>
+#include <RealityKit/RealityKit.h>
+using namespace metal;
+
+
+// Samplers are used to retrieve a color value from a texture based on
+// the entity's UV coordinates. Samplers can be reused with different
+textures. // Surface shader functions should define no more than eight
+samplers. constexpr sampler textureSampler(address::clamp_to_edge,
+filter::bicubic);
+
+
+[[visible]] void mySurfaceShader(realitykit::surface_parameters params)
+{
+    // Retrieve the roughness scale from the CustomMaterial.
+    float roughnessScale = params.material_constants().roughness_scale();
+
+
+    // Retrieve the sampled value from the CustomMaterial's base color texture.
+    auto uv = getFlippedUVs(params);
+    auto tex = params.textures();
+    half roughness = tex.roughness().sample(textureSampler, uv).r;
+
+
+    // Multiply the tint and the sampled value from the texture, and assign it
+    // to the shader's base color property.
+    roughness *= roughnessScale;
+
+
+    // Set the roughness value to be used by the custom material shader.
+    params.surface().set_roughness(roughness);
+}
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+See Also
+Specifying Entity Roughness
+struct Roughness
+An object that defines how the surface of an entity scatters the light it reflects.
+Current page is roughness
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

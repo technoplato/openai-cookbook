@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/swiftui/table/init(_:sortorder:columns:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a table with dynamically customizable columns
+M
+init<Data, Sort>(Data, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data, Sort>(Data, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data, Sort>(Data, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data>(Data, selection: Binding<Set<Value.ID>>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data>(Data, selection: Binding<Value.ID?>, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+Beta
+M
+init<Data>(Data, columnCustomization: Binding<TableColumnCustomization<Value>>, columns: () -> Columns)
+init<Sort>(selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columns: () -> Columns, rows: () -> Rows)
+init<Sort>(selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columns: () -> Columns, rows: () -> Rows)
+init<Sort>(of: Value.Type, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columns: () -> Columns, rows: () -> Rows)
+init<Sort>(of: Value.Type, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columns: () -> Columns, rows: () -> Rows)
+init<Data, Sort>(Data, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columns: () -> Columns)
+Creating a sortable table from columns
+M
+init<Data>(Data, selection: Binding<Set<Value.ID>>, columns: () -> Columns)
+M
+init<Data>(Data, selection: Binding<Value.ID?>, columns: () -> Columns)
+M
+init<Data>(Data, columns: () -> Columns)
+Creating a table from columns
+S
+Table
+Building a Great Mac App with SwiftUI
+Creating a table
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:sortOrder:columns:)
+Creates a sortable table that computes its rows based on a collection of identifiable data.
+iOS 16.0+
+iPadOS 16.0+
+macOS 12.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+init<Data, Sort>(
+    _ data: Data,
+    sortOrder: Binding<[Sort]>,
+    @TableColumnBuilder<Value, Sort> columns: () -> Columns
+) where Rows == TableForEachContent<Data>, Data : RandomAccessCollection, Sort : SortComparator, Columns.TableRowValue == Data.Element, Data.Element == Sort.Compared
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Parameters
+data
+The identifiable data for computing the table rows.
+sortOrder
+A binding to the ordered sorting of columns.
+columns
+The columns to display in the table.
+See Also
+Creating a sortable table from columns
+init<Data, Sort>(Data, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columns: () -> Columns)
+Creates a sortable table that computes its rows based on a collection of identifiable data, and supports selecting zero or one row.
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+init<Data, Sort>(Data, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columns: () -> Columns)
+Creates a sortable table that computes its rows based on a collection of identifiable data, and supports selecting multiple rows.
+Available when Value is Rows.TableRowValue, Rows conforms to TableRowContent, Columns conforms to TableColumnContent, and Rows.TableRowValue is Columns.TableRowValue.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:sortOrder:columns:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

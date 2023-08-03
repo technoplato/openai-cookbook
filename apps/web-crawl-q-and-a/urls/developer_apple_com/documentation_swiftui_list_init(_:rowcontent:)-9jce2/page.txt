@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/list/init(_:rowcontent:)-9jce2Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<Data, RowContent>(Binding<Data>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+M
+init<Data, RowContent>(Binding<Data>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+M
+init<Data, RowContent>(Binding<Data>, rowContent: (Binding<Data.Element>) -> RowContent)
+Listing bound, identifiable data
+M
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+M
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+M
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, rowContent: (Binding<Data.Element>) -> RowContent)
+init<Data, RowContent>(Data, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+init<Data, RowContent>(Data, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+init<Data, RowContent>(Data, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, rowContent: (Data.Element) -> RowContent)
+Creating a list from a range
+M
+init(selection: Binding<Set<SelectionValue>>?, content: () -> Content)
+M
+init(selection: Binding<SelectionValue?>?, content: () -> Content)
+M
+init(selection: Binding<SelectionValue>, content: () -> Content)
+M
+init(content: () -> Content)
+Creating a list with arbitrary content
+S
+List
+Displaying data in lists
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:rowContent:)
+Creates a list that computes its views on demand over a constant range.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@MainActor
+init<RowContent>(
+    _ data: Range<Int>,
+    @ViewBuilder rowContent: @escaping (Int) -> RowContent
+) where Content == ForEach<Range<Int>, Int, RowContent>, RowContent : View
+Available when SelectionValue is Never and Content conforms to View.
+Parameters
+data
+A constant range of data to populate the list.
+rowContent
+A view builder that creates the view for a single row of the list.
+Discussion
+This instance only reads the initial value of data and doesn’t need to identify views across updates. To compute views on demand over a dynamic range, use init(_:id:rowContent:).
+See Also
+Creating a list from a range
+init<RowContent>(Range<Int>, selection: Binding<SelectionValue>, rowContent: (Int) -> RowContent)
+Creates a list that computes its views on demand over a constant range and allowing users to have exactly one row always selected.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<RowContent>(Range<Int>, selection: Binding<SelectionValue?>?, rowContent: (Int) -> RowContent)
+Creates a list that computes its views on demand over a constant range, optionally allowing users to select a single row.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+init<RowContent>(Range<Int>, selection: Binding<Set<SelectionValue>>?, rowContent: (Int) -> RowContent)
+Creates a list that computes its views on demand over a constant range, optionally allowing users to select multiple rows.
+Available when SelectionValue conforms to Hashable and Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:rowContent:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

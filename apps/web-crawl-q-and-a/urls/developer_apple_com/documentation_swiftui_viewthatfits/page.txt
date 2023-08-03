@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/swiftui/viewthatfitsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+Automatically choosing the layout that fits
+S
+ContainerBackgroundPlacement
+Beta
+M
+func containerBackground<V>(for: ContainerBackgroundPlacement, alignment: Alignment, content: () -> V) -> some View
+Beta
+M
+func containerBackground<S>(S, for: ContainerBackgroundPlacement) -> some View
+Beta
+P
+var backgroundMaterial: Material?
+M
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<V>(alignment: Alignment, content: () -> V) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+ViewThatFits
+A view that adapts to the available space by providing the first child view that fits.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+@frozen
+struct ViewThatFits<Content> where Content : View
+Overview
+ViewThatFits evaluates its child views in the order you provide them to the initializer. It selects the first child whose ideal size on the constrained axes fits within the proposed size. This means that you provide views in order of preference. Usually this order is largest to smallest, but since a view might fit along one constrained axis but not the other, this isn’t always the case. By default, ViewThatFits constrains in both the horizontal and vertical axes.
+The following example shows an UploadProgressView that uses ViewThatFits to display the upload progress in one of three ways. In order, it attempts to display:
+An HStack that contains a Text view and a ProgressView.
+Only the ProgressView.
+Only the Text view.
+The progress views are fixed to a 100-point width.
+struct UploadProgressView: View {
+    var uploadProgress: Double
+
+
+    var body: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack {
+                Text("\(uploadProgress.formatted(.percent))")
+                ProgressView(value: uploadProgress)
+                    .frame(width: 100)
+            }
+            ProgressView(value: uploadProgress)
+                .frame(width: 100)
+            Text("\(uploadProgress.formatted(.percent))")
+        }
+    }
+}
+This use of ViewThatFits evaluates sizes only on the horizontal axis. The following code fits the UploadProgressView to several fixed widths:
+VStack {
+    UploadProgressView(uploadProgress: 0.75)
+        .frame(maxWidth: 200)
+    UploadProgressView(uploadProgress: 0.75)
+        .frame(maxWidth: 100)
+    UploadProgressView(uploadProgress: 0.75)
+        .frame(maxWidth: 50)
+}
+Topics
+Creating a view that fits
+init(in: Axis.Set, content: () -> Content)
+Produces a view constrained in the given axes from one of several alternatives provided by a view builder.
+Relationships
+Conforms To
+Sendable
+View
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ViewThatFits
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

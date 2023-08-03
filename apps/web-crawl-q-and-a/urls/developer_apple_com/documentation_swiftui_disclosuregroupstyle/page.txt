@@ -1,0 +1,200 @@
+https://developer.apple.com/documentation/swiftui/disclosuregroupstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+FormStyleConfiguration
+r
+P
+FormStyle
+M
+func formStyle<S>(S) -> some View
+S
+ControlGroupStyleConfiguration
+r
+P
+ControlGroupStyle
+M
+func controlGroupStyle<S>(S) -> some View
+Styling groups
+M
+func disclosureGroupStyle<S>(S) -> some View
+S
+TableStyleConfiguration
+r
+P
+TableStyle
+M
+func tableStyle<S>(S) -> some View
+r
+P
+ListStyle
+M
+func listStyle<S>(S) -> some View
+Styling collection views
+S
+TextEditorStyleConfiguration
+Beta
+Documentation
+Open Menu
+Swift
+Protocol
+DisclosureGroupStyle
+A type that specifies the appearance and interaction of disclosure groups within a view hierarchy.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+protocol DisclosureGroupStyle
+Overview
+To configure the disclosure group style for a view hierarchy, use the disclosureGroupStyle(_:) modifier.
+To create a custom disclosure group style, declare a type that conforms to DisclosureGroupStyle. Implement the makeBody(configuration:) method to return a view that composes the elements of the configuration that SwiftUI provides to your method.
+struct MyDisclosureStyle: DisclosureGroupStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        VStack {
+            Button {
+                withAnimation {
+                    configuration.isExpanded.toggle()
+                }
+            } label: {
+                HStack(alignment: .firstTextBaseline) {
+                    configuration.label
+                    Spacer()
+                    Text(configuration.isExpanded ? "hide" : "show")
+                        .foregroundColor(.accentColor)
+                        .font(.caption.lowercaseSmallCaps())
+                        .animation(nil, value: configuration.isExpanded)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            if configuration.isExpanded {
+                configuration.content
+            }
+        }
+    }
+}
+Topics
+Getting the styles
+static var automatic: AutomaticDisclosureGroupStyle
+A disclosure group style that resolves its appearance automatically based on the current context.
+Available when Self is AutomaticDisclosureGroupStyle.
+Creating custom disclosure group styles
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creates a view that represents the body of a disclosure group.
+Required
+struct DisclosureGroupStyleConfiguration
+The properties of a disclosure group instance.
+typealias Configuration
+The properties of a disclosure group instance.
+associatedtype Body : View
+A view that represents the body of a disclosure group.
+Required
+Supporting types
+struct AutomaticDisclosureGroupStyle
+A disclosure group style that resolves its appearance automatically based on the current context.
+Relationships
+Conforming Types
+AutomaticDisclosureGroupStyle
+See Also
+Styling collection views
+func listStyle<S>(S) -> some View
+Sets the style for lists within this view.
+protocol ListStyle
+A protocol that describes the behavior and appearance of a list.
+func tableStyle<S>(S) -> some View
+Sets the style for tables within this view.
+protocol TableStyle
+A type that applies a custom appearance to all tables within a view.
+struct TableStyleConfiguration
+The properties of a table.
+func disclosureGroupStyle<S>(S) -> some View
+Sets the style for disclosure groups within this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DisclosureGroupStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

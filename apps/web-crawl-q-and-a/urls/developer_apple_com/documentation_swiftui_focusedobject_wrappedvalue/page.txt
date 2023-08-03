@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/swiftui/focusedobject/wrappedvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+P
+var projectedValue: FocusedObject<ObjectType>.Wrapper?
+Getting the value
+M
+init()
+Creating the focused object
+S
+FocusedObject
+M
+func focusedSceneObject<T>(T) -> some View
+M
+func focusedSceneObject<T>(T?) -> some View
+M
+func focusedObject<T>(T) -> some View
+Documentation
+Open Menu
+Swift
+Instance Property
+wrappedValue
+The underlying value referenced by the focused object.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+@MainActor
+var wrappedValue: ObjectType? { get }
+Discussion
+This property provides primary access to the value’s data. However, you don’t access wrappedValue directly. Instead, you use the property variable created with the FocusedObject attribute.
+When a mutable value changes, the new value is immediately available. However, a view displaying the value is updated asynchronously and may not show the new value immediately.
+See Also
+Getting the value
+var projectedValue: FocusedObject<ObjectType>.Wrapper?
+A projection of the focused object that creates bindings to its properties using dynamic member lookup.
+struct Wrapper
+A wrapper around the underlying focused object that can create bindings to its properties using dynamic member lookup.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is wrappedValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/nshostingview/sizingoptionsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+UIKit integration
+S
+NSViewControllerRepresentableContext
+r
+P
+NSViewControllerRepresentable
+S
+NSViewRepresentableContext
+r
+P
+NSViewRepresentable
+Adding AppKit views to SwiftUI view hierarchies
+S
+NSHostingSceneBridgingOptions
+P
+var lastBaselineOffsetFromBottom: CGFloat
+P
+var firstBaselineOffsetFromTop: CGFloat
+M
+func setFrameSize(NSSize)
+P
+var intrinsicContentSize: NSSize
+Modifying the frame rectangle
+M
+func renewGState()
+M
+func viewDidChangeEffectiveAppearance()
+M
+func viewDidChangeBackingProperties()
+Documentation
+Open Menu
+Swift
+Instance Property
+sizingOptions
+The options for how the hosting view creates and updates constraints based on the size of its SwiftUI content.
+macOS 13.0+
+@MainActor
+var sizingOptions: NSHostingSizingOptions { get set }
+Discussion
+NSHostingView can create minimum, maximum, and ideal (content size) constraints that are derived from its SwiftUI view content. These constraints are only created when Auto Layout constraints are otherwise being used in the containing window.
+If the NSHostingView is set as the contentView of an NSWindow, it will also update the window’s contentMinSize and contentMaxSize based on the minimum and maximum size of its SwiftUI content.
+sizingOptions defaults to .standardBounds (which includes minSize, intrinsicContentSize, and maxSize), but can be set to an explicit value to control this behavior. For instance, setting a value of .minSize will only create the constraints necessary to maintain the minimum size of the SwiftUI content, or setting a value of [] will create no constraints at all.
+If a use case can make assumptions about the size of the NSHostingView relative to its displayed content, such as the always being displayed in a fixed frame, setting this to a value with fewer options can improve performance as it reduces the amount of layout measurements that need to be performed. If an NSHostingView has a frame that is smaller or larger than that required to display its SwiftUI content, the content will be centered within that frame.
+See Also
+Modifying the frame rectangle
+var intrinsicContentSize: NSSize
+func setFrameSize(NSSize)
+var firstBaselineOffsetFromTop: CGFloat
+var lastBaselineOffsetFromBottom: CGFloat
+var firstTextLineCenter: CGFloat?
+Current page is sizingOptions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

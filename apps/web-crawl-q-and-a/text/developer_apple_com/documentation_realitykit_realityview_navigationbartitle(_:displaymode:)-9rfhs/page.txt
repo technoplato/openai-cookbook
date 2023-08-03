@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/realitykit/realityview/navigationbartitle(_:displaymode:)-9rfhsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func offset(z: CGFloat) -> some View
+M
+func offset(x: CGFloat, y: CGFloat) -> some View
+M
+func offset(CGSize) -> some View
+M
+func navigationViewStyle<S>(S) -> some View
+M
+func navigationTitle<S>(S) -> some View
+M
+func navigationTitle<V>(() -> V) -> some View
+M
+func navigationTitle(Binding<String>) -> some View
+M
+func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View
+Deprecated
+M
+func navigationBarTitle<S>(S) -> some View
+M
+func navigationBarTitle(Text) -> some View
+M
+func navigationBarTitle(LocalizedStringKey) -> some View
+M
+func navigationBarItems<T>(trailing: T) -> some View
+M
+func navigationBarItems<L, T>(leading: L, trailing: T) -> some View
+M
+func navigationBarItems<L>(leading: L) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+navigationBarTitle(_:displayMode:)
+Sets the title and display mode in the navigation bar for this view.
+RealityKit
+SwiftUI
+iOS 14.0–17.0 Deprecated
+iPadOS 14.0–17.0 Deprecated
+Mac Catalyst 14.0–17.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func navigationBarTitle<S>(
+    _ title: S,
+    displayMode: NavigationBarItem.TitleDisplayMode
+) -> some View where S : StringProtocol
+Deprecated
+Use navigationTitle(_:) with navigationBarTitleDisplayMode(_:)
+Parameters
+title
+A title for this view to display in the navigation bar.
+displayMode
+The way to display the title.
+Discussion
+Use navigationBarTitle(_:displayMode:) to set the title of the navigation bar for this view and specify a display mode for the title from one of the NavigationBarItem.Title.DisplayMode styles. This modifier only takes effect when this view is inside of and visible within a NavigationView.
+In the example below, navigationBarTitle(_:displayMode:) uses a string to provide a title for the navigation bar. Setting the title’s displayMode to .inline places the navigation bar title within the bounds of the navigation bar.
+In the example below, text for the navigation bar title is provided using a string. The navigation bar title’s displayMode is set to .inline which places the navigation bar title in the bounds of the navigation bar.
+struct FlavorView: View {
+    let items = ["Chocolate", "Vanilla", "Strawberry", "Mint Chip",
+                 "Pistachio"]
+    let title = "Today's Flavors"
+    var body: some View {
+        NavigationView {
+            List(items, id: \.self) {
+                Text($0)
+            }
+            .navigationBarTitle(title, displayMode: .inline)
+        }
+    }
+}
+![A screenshot of a navigation bar, showing the title within the bounds of the navigation bar] (SwiftUI-navigationBarTitle-stringProtocol.png)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigationBarTitle(_:displayMode:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

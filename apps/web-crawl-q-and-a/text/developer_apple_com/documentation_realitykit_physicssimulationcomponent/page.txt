@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/realitykit/physicssimulationcomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Diorama
+Asset creation
+r
+P
+EntityCollection
+Beta
+r
+P
+TransientComponent
+S
+PerspectiveCameraComponent
+S
+ParticleEmitterComponent
+Beta
+Equatable Implementations
+S
+PhysicsMotionComponent
+S
+PhysicsBodyComponent
+S
+CollisionComponent
+Simulations
+S
+SpatialAudioComponent
+Beta
+S
+ChannelAudioComponent
+Beta
+S
+AudioMixGroupsComponent
+Beta
+S
+AmbientAudioComponent
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+PhysicsSimulationComponent
+visionOS 1.0+ Beta
+struct PhysicsSimulationComponent
+Topics
+Structures
+struct CollisionOptions
+Operators
+static func == (PhysicsSimulationComponent, PhysicsSimulationComponent) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Initializers
+init()
+Instance Properties
+var clock: CMClockOrTimebase
+A custom clock which drives the physics simulation, defaults to the engine clock.
+var collisionOptions: PhysicsSimulationComponent.CollisionOptions
+Enables or disables kinematic collision reporting.
+var gravity: SIMD3<Float>
+Gravity for the simulation relative to the simulation entity. Defaults to -9.81.
+Type Methods
+static func nearestSimulationEntity(for: Entity) -> Entity?
+Returns the entity containing the physics simulation origin. The simulation origin is the nearest parent where either a PhysicsSimulationComponent exists, or the root entity (normally the anchor) where the default simulation is rooted. Returns nil if the entity is not parented in the scene.
+Default Implementations
+API Reference
+Component Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Component
+Equatable
+See Also
+Simulations
+struct CollisionComponent
+A component that gives an entity the ability to collide with other entities that also have collision components.
+struct PhysicsBodyComponent
+A component that defines an entity’s behavior in physics body simulations.
+struct PhysicsMotionComponent
+A component that controls the motion of the body in physics simulations.
+struct ParticleEmitterComponent
+Beta
+struct PerspectiveCameraComponent
+In AR applications, the camera is automatically provided by the system. In non-AR scenarios, the camera needs to be set by the app. (If no camera is provided by the app, the system will use default camera.)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhysicsSimulationComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

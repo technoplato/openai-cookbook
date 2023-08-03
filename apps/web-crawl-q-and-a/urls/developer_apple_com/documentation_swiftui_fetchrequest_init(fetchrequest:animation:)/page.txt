@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/fetchrequest/init(fetchrequest:animation:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Loading and Displaying a Large Data Feed
+P
+var managedObjectContext: NSManagedObjectContext
+S
+FetchRequest
+Creating a fetch request
+M
+init(sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+M
+init(sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(entity: NSEntityDescription, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+Creating a fully configured fetch request
+View configuration
+View styles
+Animations
+Text input and output
+Images
+Controls and indicators
+Menus and commands
+Documentation
+Open Menu
+Swift
+Initializer
+init(fetchRequest:animation:)
+Creates a fully configured fetch request that uses the specified animation when updating results.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@MainActor
+init(
+    fetchRequest: NSFetchRequest<Result>,
+    animation: Animation? = nil
+)
+Available when Result conforms to NSFetchRequestResult.
+Parameters
+fetchRequest
+An NSFetchRequest instance that describes the search criteria for retrieving data from the persistent store.
+animation
+The animation to use for user interface changes that result from changes to the fetched results.
+Discussion
+Use this initializer when you want to configure a fetch request with more than a predicate and sort descriptors. For example, you can vend a request from a Quake managed object that the Loading and Displaying a Large Data Feed sample code project defines to store earthquake data. Limit the number of results to 1000 by setting a fetchLimit for the request:
+extension Quake {
+    var request: NSFetchRequest<Quake> {
+        let request = NSFetchRequest<Quake>(entityName: "Quake")
+        request.sortDescriptors = [
+            NSSortDescriptor(
+                keyPath: \Quake.time,
+                ascending: true)]
+        request.fetchLimit = 1000
+        return request
+    }
+}
+Use the request to define a FetchedResults property:
+@FetchRequest(fetchRequest: Quake.request)
+private var quakes: FetchedResults<Quake>
+If you only need to configure the request’s predicate and sort descriptors, use init(sortDescriptors:predicate:animation:) instead. If you need to specify a Transaction rather than an optional Animation, use init(fetchRequest:transaction:).
+See Also
+Creating a fully configured fetch request
+init(fetchRequest: NSFetchRequest<Result>, transaction: Transaction)
+Creates a fully configured fetch request that uses the specified transaction when updating results.
+Available when Result conforms to NSFetchRequestResult.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(fetchRequest:animation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

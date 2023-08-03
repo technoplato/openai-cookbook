@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/realitykit/animationplaybackcontroller/speedSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var blendFactor: Float
+Managing Completion
+P
+var isComplete: Bool
+P
+var isPaused: Bool
+Accessing the Associated Entity
+P
+var entity: Entity?
+Timing Animation Playback
+P
+var duration: TimeInterval
+C
+AnimationResource
+Animation definitions
+S
+SampledAnimation
+S
+FromToByAnimation
+S
+AnimationTimingFunction
+S
+AnimationView
+S
+OrbitAnimation
+Documentation
+Open Menu
+Swift
+Instance Property
+speed
+The animation’s rate of playback.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+@MainActor
+var speed: Float { get set }
+Discussion
+The animation applies the value of this property as an irrational factor of the unaltered speed. For example, a value of 2 plays the animation twice as fast, a value of 0.5 plays the animation at half speed, and a value of 1 plays the animation at the unaltered rate.
+See Also
+Timing Animation Playback
+var duration: TimeInterval
+The length of time the animation spans, in seconds.
+var clock: CMClockOrTimebase
+A reference clock to synchronize the animation with other events.
+var time: TimeInterval
+The animation’s location within the timeline.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is speed
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

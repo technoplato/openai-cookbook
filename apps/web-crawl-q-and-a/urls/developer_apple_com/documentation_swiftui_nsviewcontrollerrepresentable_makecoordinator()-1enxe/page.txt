@@ -1,0 +1,127 @@
+https://developer.apple.com/documentation/swiftui/nsviewcontrollerrepresentable/makecoordinator()-1enxeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func updateNSViewController(Self.NSViewControllerType, context: Self.Context)
+T
+NSViewControllerRepresentable.Context
+NSViewControllerType
+Specifying a size
+M
+func sizeThatFits(ProposedViewSize, nsViewController: Self.NSViewControllerType, context: Self.Context) -> CGSize?
+Cleaning up the view controller
+M
+static func dismantleNSViewController(Self.NSViewControllerType, coordinator: Self.Coordinator)
+Providing a custom coordinator object
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Managing model data in your app
+Migrating from the Observable Object protocol to the Observable macro
+Monitoring data changes in your app
+Documentation
+Open Menu
+Swift
+Instance Method
+makeCoordinator()
+Creates the custom object that you use to communicate changes from your view controller to other parts of your SwiftUI interface.
+macOS 10.15+
+@MainActor
+func makeCoordinator() -> Self.Coordinator
+Required Default implementation provided.
+Discussion
+Implement this method if changes to your view controller might affect other parts of your app. In your implementation, create a custom Swift instance that can communicate with other parts of your interface. For example, you might provide an instance that binds its variables to SwiftUI properties, causing the two to remain synchronized. If your view controller doesn’t interact with other parts of your app, providing a coordinator is unnecessary.
+SwiftUI calls this method before calling the makeNSViewController(context:) method. The system provides your coordinator instance either directly or as part of a context structure when calling the other methods of your representable instance.
+Default Implementations
+NSViewControllerRepresentable Implementations
+func makeCoordinator() -> Self.Coordinator
+Creates an object to coordinate with the AppKit view controller.
+Available when Coordinator is ().
+See Also
+Providing a custom coordinator object
+associatedtype Coordinator = Void
+A type to coordinate with the view controller.
+Required
+Current page is makeCoordinator()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,132 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/configuration-swift.struct/sampleordering-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Controlling Object Creation
+E
+PhotogrammetrySession.Output
+P
+var outputs: PhotogrammetrySession.Outputs
+P
+var isProcessing: Bool
+P
+var activeRequests: [PhotogrammetrySession.Request]
+Monitoring the Session
+Equatable Implementations
+Configuring Sample Ordering
+P
+var isObjectMaskingEnabled: Bool
+Configuring Object Masking
+M
+init()
+Creating a Configuration
+S
+PhotogrammetrySession.Configuration
+P
+var configuration: PhotogrammetrySession.Configuration
+Configuring the Session
+Documentation
+Open Menu
+Swift
+Instance Property
+sampleOrdering
+The order of the image samples.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+var sampleOrdering: PhotogrammetrySession.Configuration.SampleOrdering
+Discussion
+By default, RealityKit assumes that image samples aren’t in any particular order. If you’re providing the images in order, with adjacent images next to each other, specifying PhotogrammetrySession.Configuration.SampleOrdering.sequential for this value may result in better performance.
+This setting has no impact on the quality of the produced object.
+See Also
+Configuring Sample Ordering
+enum SampleOrdering
+The ordering of samples.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sampleOrdering
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

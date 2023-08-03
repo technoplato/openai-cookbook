@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/textureresource/drawablequeue-swift.class/descriptorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Copying the Texture
+P
+var drawableQueue: TextureResource.DrawableQueue?
+M
+func nextDrawable() throws -> TextureResource.Drawable
+Instance Methods
+P
+var width: Int
+P
+var usage: MTLTextureUsage
+P
+var pixelFormat: MTLPixelFormat
+init(pixelFormat: MTLPixelFormat, width: Int, height: Int, usage: MTLTextureUsage, mipmapsMode: TextureResource.MipmapsMode)
+Structures
+C
+TextureResource.DrawableQueue
+C
+TextureResource.Drawable
+Drawing the Texture
+E
+TextureResource.Semantic
+P
+var semantic: TextureResource.Semantic?
+E
+TextureResource.MipmapsMode
+P
+var mipmapLevelCount: Int
+Documentation
+Open Menu
+Swift
+Structure
+TextureResource.DrawableQueue.Descriptor
+Describes the texture managed by the drawable queue
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct Descriptor
+Topics
+Initializers
+init(pixelFormat: MTLPixelFormat, width: Int, height: Int, usage: MTLTextureUsage, mipmapsMode: TextureResource.MipmapsMode)
+Instance Properties
+var height: Int
+The height of each drawable’s texture for the base level mipmap, in pixels.
+var mipmapsMode: TextureResource.MipmapsMode
+A Boolean value that determines whether the resource should generate mipmaps for each drawable’s texture after it was updated.
+var pixelFormat: MTLPixelFormat
+The size and bit layout of all pixels in each drawable’s texture.
+var usage: MTLTextureUsage
+Options that determine how you can use each drawable’s textures.
+var width: Int
+The width of each drawable’s texture for the base level mipmap, in pixels.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TextureResource.DrawableQueue.Descriptor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

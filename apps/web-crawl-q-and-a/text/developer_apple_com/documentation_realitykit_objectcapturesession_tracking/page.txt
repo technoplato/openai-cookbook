@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/realitykit/objectcapturesession/trackingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ObjectCaptureSession.Configuration
+Structures
+M
+func resume()
+M
+func requestImageCapture()
+M
+func pause()
+M
+func finish()
+M
+func cancel()
+P
+var state: ObjectCaptureSession.CaptureState
+P
+var isPaused: Bool
+E
+ObjectCaptureSession.Feedback
+P
+var feedback: Set<ObjectCaptureSession.Feedback>
+Configuring a Session
+P
+static var isSupported: Bool
+Checking Availability
+M
+init()
+Documentation
+Open Menu
+Swift
+Enumeration
+ObjectCaptureSession.Tracking
+A data structure that describes the current tracking state for the camera.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+enum Tracking
+Overview
+During an object capture, many factors contribute to the session’s ability to accurately track the position and orientation of the camera and object, including lighting and enough texture on the object and background. The object capture session uses this data structure to report the current tracking state in the cameraTracking property. Additionally, the ARKit coaching overlay will automatically appear when tracking is not .normal — the app may need to hide its UI at this time as well to allow proper visibility of the coaching overlay or to provide additional information to the user to correct the situation.
+Topics
+Operators
+static func == (ObjectCaptureSession.Tracking, ObjectCaptureSession.Tracking) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Enumeration Cases
+case limited(reason: ObjectCaptureSession.Tracking.Reason)
+Tracking is available but its quality is degraded. The ARKit coaching overlay will appear when cameraTracking enters this state.
+case normal
+Tracking is available and the session detects no problems..
+case notAvailable
+Tracking is not yet available.
+Enumerations
+enum Reason
+The reason that tracking quality has degraded.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+See Also
+Configuring a Session
+var feedback: Set<ObjectCaptureSession.Feedback>
+The current set of active Feedback states.
+Beta
+enum Feedback
+Provides information about possible problems with the capture session.
+Beta
+var isPaused: Bool
+A Boolean value that indicates if the capture session is paused.
+Beta
+var state: ObjectCaptureSession.CaptureState
+The current state of the capture session.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ObjectCaptureSession.Tracking
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

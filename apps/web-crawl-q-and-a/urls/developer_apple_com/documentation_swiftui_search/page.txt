@@ -1,0 +1,266 @@
+https://developer.apple.com/documentation/swiftui/searchSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+M
+func searchCompletion(String) -> some View
+M
+func searchCompletion<T>(T) -> some View
+M
+func searchSuggestions(Visibility, for: SearchSuggestionsPlacement.Set) -> some View
+M
+func searchSuggestions<S>(() -> S) -> some View
+Suggesting search terms
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+Toolbars
+Modal presentations
+Navigation
+Documents
+Immersive spaces
+Windows
+Scenes
+App organization
+Documentation
+Open Menu
+Swift
+Search
+Enable people to search for text or other content within your app.
+Overview
+To present a search field in your app, create and manage storage for search text and optionally for discrete search terms known as tokens. Then bind the storage to the search field by applying the searchable view modifier to a view in your app.
+As people interact with the field, they implicitly modify the underlying storage and, thereby, the search parameters. Your app correspondingly updates other parts of its interface. To enhance the search interaction, you can also:
+Offer suggestions during search, for both text and tokens.
+Implement search scopes that help people to narrow the search space.
+Detect when people activate the search field, and programmatically dismiss the search field using environment values.
+For design guidance, see Searching in the Human Interface Guidelines.
+Topics
+Searching your app’s data model
+Adding a search interface to your app
+Present an interface that people can use to search for content in your app.
+Performing a search operation
+Update search results based on search text and optional tokens that you store.
+func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens.
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+struct SearchFieldPlacement
+The placement of a search field in a view hierarchy.
+Making search suggestions
+Suggesting search terms
+Provide suggestions to people searching for content in your app.
+func searchSuggestions<S>(() -> S) -> some View
+Configures the search suggestions for this view.
+func searchSuggestions(Visibility, for: SearchSuggestionsPlacement.Set) -> some View
+Configures how to display search suggestions within this view.
+func searchCompletion<T>(T) -> some View
+Associates a search token with the value of this view.
+func searchCompletion(String) -> some View
+Associates a fully formed string with the value of this view.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+struct SearchSuggestionsPlacement
+The ways that SwiftUI displays search suggestions.
+Limiting search scope
+Scoping a search operation
+Divide the search space into a few broad categories.
+func searchScopes<V, S>(Binding<V>, scopes: () -> S) -> some View
+Configures the search scopes for this view.
+func searchScopes<V, S>(Binding<V>, activation: SearchScopeActivation, () -> S) -> some View
+Configures the search scopes for this view with the specified activation strategy.
+struct SearchScopeActivation
+The ways that searchable modifiers can show or hide search scopes.
+Detecting, activating, and dismissing search
+Managing search interface activation
+Programmatically detect and dismiss a search field.
+var isSearching: Bool
+A Boolean value that indicates when the user is searching.
+var dismissSearch: DismissSearchAction
+An action that ends the current search interaction.
+struct DismissSearchAction
+An action that can end a search interaction.
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+Marks this view as searchable with programmatic presentation of the search field.
+Beta
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+Marks this view as searchable with programmatic presentation of the search field.
+Beta
+func searchable<S>(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S) -> some View
+Marks this view as searchable with programmatic presentation of the search field.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens, as well as programmatic presentation.
+Beta
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text and tokens, as well as programmatic presentation.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions, as well as programmatic presentation.
+Beta
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions, as well as programmatic presentation.
+Beta
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions, as well as programmatic presentation.
+Beta
+Searching for text in a view with find and replace
+func findNavigator(isPresented: Binding<Bool>) -> some View
+Programmatically presents the find and replace interface for text editor views.
+func findDisabled(Bool) -> some View
+Prevents find and replace operations in a text editor.
+func replaceDisabled(Bool) -> some View
+Prevents replace operations in a text editor.
+See Also
+App structure
+API Reference
+App organization
+Define the entry point and top-level structure of your app.
+API Reference
+Scenes
+Declare the user interface groupings that make up the parts of your app.
+API Reference
+Windows
+Display user interface content in a window or a collection of windows.
+API Reference
+Immersive spaces
+Display unbounded content in a person’s surroundings.
+API Reference
+Documents
+Enable people to open and manage documents.
+API Reference
+Navigation
+Enable people to move between different parts of your app’s view hierarchy within a scene.
+API Reference
+Modal presentations
+Present content in a separate view that offers focused interaction.
+API Reference
+Toolbars
+Provide immediate access to frequently used commands and controls.
+API Reference
+App extensions
+Extend your app’s basic functionality to other parts of the system, like by adding a Widget.
+Current page is Search
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

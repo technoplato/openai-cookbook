@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/shape/layoutdirectionbehavior-361s6Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func containerShape<T>(T) -> some View
+Setting a container shape
+S
+TransformedShape
+S
+OffsetShape
+S
+RotatedShape
+S
+ScaledShape
+Transforming a shape
+Indicating a layout direction
+P
+static var role: ShapeRole
+Setting the role
+M
+func fill(style: FillStyle) -> some View
+M
+func fill<S>(S, style: FillStyle) -> some View
+M
+func fill<S>(S, style: FillStyle) -> _ShapeView<Self, S>
+Beta
+Filling a shape
+M
+func stroke(style: StrokeStyle) -> some Shape
+Documentation
+Open Menu
+Swift
+Instance Property
+layoutDirectionBehavior
+Returns the behavior this shape should use for different layout directions.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+var layoutDirectionBehavior: LayoutDirectionBehavior { get }
+Required Default implementation provided.
+Discussion
+If the layoutDirectionBehavior for a Shape is one that mirrors, the shape’s path will be mirrored horizontally when in the specified layout direction. When mirrored, the individual points of the path will be transformed.
+Defaults to .mirrors when deploying on iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0 and later, and to .fixed if not. To mirror a path when deploying to earlier releases, either use View.flipsForRightToLeftLayoutDirection for a filled or stroked shape or conditionally mirror the points in the path of the shape.
+Default Implementations
+Shape Implementations
+var layoutDirectionBehavior: LayoutDirectionBehavior
+Returns the behavior this shape should use for different layout directions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is layoutDirectionBehavior
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

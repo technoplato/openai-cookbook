@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/borderedbuttonmenustyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+Beta
+r
+P
+TextFieldStyle
+M
+func textFieldStyle<S>(S) -> some View
+S
+LabelStyleConfiguration
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+Styling views that display text
+S
+BorderlessButtonMenuStyle
+Deprecated
+S
+ButtonMenuStyle
+S
+DefaultMenuStyle
+Supporting types
+Body
+T
+MenuStyle.Configuration
+M
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creating custom menu styles
+Documentation
+Open Menu
+Swift
+Structure
+BorderedButtonMenuStyle
+A menu style that displays a bordered button that toggles the display of the menu’s contents when pressed.
+macOS 11.0–14.0 Deprecated
+struct BorderedButtonMenuStyle
+Deprecated
+Use menuStyle(_:) with button and buttonStyle(_:) with bordered.
+Overview
+Use borderedButton to construct this style.
+Topics
+Creating a bordered button menu style
+init()
+Creates a bordered button menu style.
+Relationships
+Conforms To
+MenuStyle
+Sendable
+See Also
+Supporting types
+struct DefaultMenuStyle
+The default menu style, based on the menu’s context.
+struct ButtonMenuStyle
+A menu style that displays a button that toggles the display of the menu’s contents when pressed.
+struct BorderlessButtonMenuStyle
+A menu style that displays a borderless button that toggles the display of the menu’s contents when pressed.
+Deprecated
+Current page is BorderedButtonMenuStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

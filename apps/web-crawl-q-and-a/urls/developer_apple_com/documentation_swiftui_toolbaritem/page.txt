@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/toolbaritemSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+S
+ToolbarRole
+M
+func toolbarRole(ToolbarRole) -> some View
+Specifying the role of toolbar content
+S
+ToolbarPlacement
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+Populating a toolbar
+Toolbars
+Modal presentations
+Navigation
+Documents
+Immersive spaces
+Documentation
+Open Menu
+Swift
+Structure
+ToolbarItem
+A model that represents an item which can be placed in the toolbar or navigation bar.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+struct ToolbarItem<ID, Content> where Content : View
+Topics
+Creating a toolbar item
+init(placement: ToolbarItemPlacement, content: () -> Content)
+Creates a toolbar item with the specified placement and content.
+Available when ID is () and Content conforms to View.
+init(id: String, placement: ToolbarItemPlacement, content: () -> Content)
+Creates a toolbar item with the specified placement and content, which allows for user customization.
+Available when ID is String and Content conforms to View.
+init(id: String, placement: ToolbarItemPlacement, showsByDefault: Bool, content: () -> Content)
+Creates a toolbar item with the specified placement and content, which allows for user customization.
+Available when ID is String and Content conforms to View.
+Relationships
+Conforms To
+CustomizableToolbarContent
+Conforms when ID is String and Content conforms to View.
+Identifiable
+Sendable
+ToolbarContent
+Conforms when ID is String and Content conforms to View.
+See Also
+Populating a toolbar
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the views you provide.
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the specified items.
+struct ToolbarItemGroup
+A model that represents a group of ToolbarItems which can be placed in the toolbar or navigation bar.
+struct ToolbarItemPlacement
+A structure that defines the placement of a toolbar item.
+protocol ToolbarContent
+Conforming types represent items that can be placed in various locations in a toolbar.
+Available when ID is String and Content conforms to View.
+struct ToolbarContentBuilder
+Constructs a toolbar item set from multi-expression closures.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ToolbarItem
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/proposedviewsize/unspecifiedSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View groupings
+Tables
+Lists
+S
+GridLayout
+S
+ZStackLayout
+S
+VStackLayout
+S
+HStackLayout
+P
+static let infinity: ProposedViewSize
+P
+static let zero: ProposedViewSize
+Getting standard proposals
+S
+ProposedViewSize
+S
+LayoutProperties
+Configuring a custom layout
+S
+LayoutSubviews
+S
+LayoutSubview
+Documentation
+Open Menu
+Swift
+Type Property
+unspecified
+The proposed size with both dimensions left unspecified.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static let unspecified: ProposedViewSize
+Discussion
+Both dimensions contain nil in this size proposal. Subviews of a custom layout return their ideal size when you propose this value using the dimensions(in:) method. A custom layout should also return its ideal size from the sizeThatFits(proposal:subviews:cache:) method for this value.
+See Also
+Getting standard proposals
+static let zero: ProposedViewSize
+A size proposal that contains zero in both dimensions.
+static let infinity: ProposedViewSize
+A size proposal that contains infinity in both dimensions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is unspecified
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

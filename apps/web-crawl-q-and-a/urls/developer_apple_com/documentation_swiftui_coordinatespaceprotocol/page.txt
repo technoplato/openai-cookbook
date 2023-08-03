@@ -1,0 +1,211 @@
+https://developer.apple.com/documentation/swiftui/coordinatespaceprotocolSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ShaderFunction
+Beta
+S
+Shader
+Beta
+M
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+M
+func colorEffect(Shader, isEnabled: Bool) -> some View
+Beta
+Accessing Metal shaders
+S
+PhysicalMetricsConverter
+E
+CoordinateSpace
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Beta
+S
+GeometryProxy3D
+Beta
+S
+GeometryProxy
+S
+GeometryReader3D
+Beta
+S
+GeometryReader
+Measuring a view
+E
+ColorRenderingMode
+Documentation
+Open Menu
+Swift
+Protocol
+CoordinateSpaceProtocol
+A frame of reference within the layout system.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+protocol CoordinateSpaceProtocol
+Overview
+All geometric properties of a view, including size, position, and transform, are defined within the local coordinate space of the view’s parent. These values can be converted into other coordinate spaces by passing types conforming to this protocol into functions such as GeometryProxy.frame(in:).
+For example, a named coordinate space allows you to convert the frame of a view into the local coordinate space of an ancestor view by defining a named coordinate space using the coordinateSpace(_:) modifier, then passing that same named coordinate space into the frame(in:) function.
+VStack {
+    GeometryReader { geometryProxy in
+        let distanceFromTop = geometryProxy.frame(in: "container").origin.y
+        Text("This view is \(distanceFromTop) points from the top of the VStack")
+    }
+    .padding()
+}
+.coordinateSpace(.named("container"))
+You don’t typically create types conforming to this protocol yourself. Instead, use the system-provided .global, .local, and .named(_:) implementations.
+Topics
+Getting built-in coordinate spaces
+static var immersiveSpace: NamedCoordinateSpace
+Available when Self is NamedCoordinateSpace.
+static var global: GlobalCoordinateSpace
+The global coordinate space at the root of the view hierarchy.
+Available when Self is GlobalCoordinateSpace.
+static var local: LocalCoordinateSpace
+The local coordinate space of the current view.
+Available when Self is LocalCoordinateSpace.
+static func named(some Hashable) -> NamedCoordinateSpace
+Creates a named coordinate space using the given value.
+Available when Self is NamedCoordinateSpace.
+static var scrollView: NamedCoordinateSpace
+The named coordinate space that is added by the system for the innermost containing scroll view.
+Available when Self is NamedCoordinateSpace.
+static func scrollView(axis: Axis) -> Self
+The named coordinate space that is added by the system for the innermost containing scroll view that allows scrolling along the provided axis.
+Available when Self is NamedCoordinateSpace.
+Getting the resolved coordinate space
+var coordinateSpace: CoordinateSpace
+The resolved coordinate space.
+Required
+Supporting types
+struct GlobalCoordinateSpace
+The global coordinate space at the root of the view hierarchy.
+struct LocalCoordinateSpace
+The local coordinate space of the current view.
+struct NamedCoordinateSpace
+A named coordinate space.
+Relationships
+Conforming Types
+GlobalCoordinateSpace
+LocalCoordinateSpace
+NamedCoordinateSpace
+See Also
+Measuring a view
+struct GeometryReader
+A container view that defines its content as a function of its own size and coordinate space.
+struct GeometryReader3D
+A container view that defines its content as a function of its own size and coordinate space.
+Beta
+struct GeometryProxy
+A proxy for access to the size and coordinate space (for anchor resolution) of the container view.
+struct GeometryProxy3D
+A proxy for access to the size and coordinate space of the container view.
+Beta
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Assigns a name to the view’s coordinate space, so other code can operate on dimensions like points and sizes relative to the named space.
+Beta
+enum CoordinateSpace
+A resolved coordinate space created by CoordinateSpaceProtocol.
+struct PhysicalMetric
+Provides access to a value in points that corresponds to the specified physical measurement.
+Beta
+struct PhysicalMetricsConverter
+A physical metrics converter provides conversion between point values and their extent in 3D space, in the form of physical length measurements.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CoordinateSpaceProtocol
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

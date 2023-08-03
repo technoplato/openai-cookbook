@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/realitykit/entity/childcollection/prefix(through:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Describing a Collection
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+Splitting the Collection
+M
+func shuffled<T>(using: inout T) -> [Self.Element]
+M
+func shuffled() -> [Self.Element]
+M
+func reversed() -> [Self.Element]
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func prefix(Int) -> Self.SubSequence
+subscript(Int) -> Entity
+Selecting Entities
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+M
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Documentation
+Open Menu
+Swift
+Instance Method
+prefix(through:)
+Returns a subsequence from the start of the collection through the specified position.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func prefix(through position: Self.Index) -> Self.SubSequence
+Parameters
+end
+The index of the last element to include in the resulting subsequence. end must be a valid index of the collection that is not equal to the endIndex property.
+Return Value
+A subsequence up to, and including, the end position.
+Overview
+The resulting subsequence includes the element at the position end. The following example searches for the index of the number 40 in an array of integers, and then prints the prefix of the array up to, and including, that index:
+let numbers = [10, 20, 30, 40, 50, 60]
+if let i = numbers.firstIndex(of: 40) {
+    print(numbers.prefix(through: i))
+}
+// Prints "[10, 20, 30, 40]"
+Using the prefix(through:) method is equivalent to using a partial closed range as the collection’s subscript. The subscript notation is preferred over prefix(through:).
+if let i = numbers.firstIndex(of: 40) {
+    print(numbers[...i])
+}
+// Prints "[10, 20, 30, 40]"
+Complexity: O(1)
+See Also
+Selecting Entities
+subscript(Int) -> Entity
+Accesses the element at the specified position. (See Collection.subscript.)
+func prefix(Int) -> Self.SubSequence
+Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection.
+func prefix(upTo: Self.Index) -> Self.SubSequence
+Returns a subsequence from the start of the collection up to, but not including, the specified position.
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements.
+func suffix(Int) -> Self.SubSequence
+Returns a subsequence, up to the given maximum length, containing the final elements of the collection.
+func suffix(from: Self.Index) -> Self.SubSequence
+Returns a subsequence from the specified position to the end of the collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is prefix(through:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

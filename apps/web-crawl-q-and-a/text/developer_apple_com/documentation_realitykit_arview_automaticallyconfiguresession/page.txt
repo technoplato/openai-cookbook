@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/arview/automaticallyconfiguresessionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func trackedRaycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment, updateHandler: ([ARRaycastResult]) -> Void) -> ARTrackedRaycast?
+M
+func raycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> [ARRaycastResult]
+M
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+M
+func hitTest(CGPoint, types: ARHitTestResult.ResultType) -> [ARHitTestResult]
+M
+func hitTest(CGPoint, query: CollisionCastQueryType, mask: CollisionGroup) -> [CollisionCastHit]
+M
+func entities(at: CGPoint) -> [Entity]
+M
+func entity(at: CGPoint) -> Entity?
+P
+var session: ARSession
+Configuring the AR Session
+C
+Scene
+P
+var scene: Scene
+Working with the Scene
+M
+convenience init(frame: CGRect, cameraMode: ARView.CameraMode)
+Deprecated
+T
+ARViewBase
+M
+init?(coder: NSCoder)
+Documentation
+Open Menu
+Swift
+Instance Property
+automaticallyConfigureSession
+An indication of whether to use an automatically configured AR session.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+@MainActor
+var automaticallyConfigureSession: Bool { get set }
+Discussion
+When enabled, the ARView automatically runs an RealityKit/ARSession with a default configuration. RealityKit updates that configuration based on t camera mode and scene anchors. When disabled, you must provide a configuration object and run the session manually.
+The default value is true.
+See Also
+Configuring the AR Session
+var session: ARSession
+The AR session that supports the view’s rendering.
+var renderOptions: ARView.RenderOptions
+The render options that configure the view’s AR session.
+struct RenderOptions
+The available rendering options that you use to selectively disable certain rendering effects.
+var renderCallbacks: ARView.RenderCallbacks
+A container that holds the view’s render callbacks.
+struct RenderCallbacks
+A container that holds the view’s render callbacks.
+Current page is automaticallyConfigureSession
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

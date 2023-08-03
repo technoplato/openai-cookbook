@@ -1,0 +1,227 @@
+https://developer.apple.com/documentation/realitykit/particleemittercomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var spawnOccasion: ParticleEmitterComponent.SpawnOccasion
+P
+var spawnInheritsParentColor: Bool
+P
+var simulationState: ParticleEmitterComponent.SimulationState
+P
+var simulationSpace: ParticleEmitterComponent.SimulationSpace
+P
+var radialAmount: Float
+P
+var mainEmitter: ParticleEmitterComponent.ParticleEmitter
+P
+var isEmitting: Bool
+S
+PhysicsSimulationComponent
+Beta
+S
+PhysicsMotionComponent
+S
+PhysicsBodyComponent
+S
+CollisionComponent
+Simulations
+S
+SpatialAudioComponent
+Beta
+S
+ChannelAudioComponent
+Beta
+S
+AudioMixGroupsComponent
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+ParticleEmitterComponent
+visionOS 1.0+ Beta
+struct ParticleEmitterComponent
+Topics
+Structures
+struct ParticleEmitter
+struct Presets
+Initial configurations that can be set when starting a new simulation.
+Initializers
+init()
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder.
+Instance Properties
+var birthDirection: ParticleEmitterComponent.BirthDirection
+The possible initial directions for newly spawned particles, relative to the emitter shape.Defaults to normal.
+var birthLocation: ParticleEmitterComponent.BirthLocation
+The possible locations for newly spawned particles, relative to the emitter shape. Defaults to surface.
+var burstCount: Int
+Number of particles to emit in a single burst. Defaults to 100.
+var burstCountVariation: Int
+Defines a plus/minus range from which a value is randomly selected to offset burstCount.
+var emissionDirection: SIMD3<Float>
+The direction particles are emitted when birthDirection is set to World or Local. Defaults to (0.0, 1.0, 0.0).
+var emitterShape: ParticleEmitterComponent.EmitterShape
+The shape of the region of space where the system spawns new particles. Defaults to plane.
+var emitterShapeSize: SIMD3<Float>
+The emitter shape size in meters.
+var isEmitting: Bool
+Disables/enables particle emission, independent of simulationState. Existing particles will not be affected.
+var mainEmitter: ParticleEmitterComponent.ParticleEmitter
+Particle attributes affecting the main particles of the base simulation.
+var radialAmount: Float
+Radial sweep angle for sphere, cylinder, cone, and torus emitter shapes. Defaults to 2 * pi.
+var simulationSpace: ParticleEmitterComponent.SimulationSpace
+Particle Simulation Space, either local or global
+var simulationState: ParticleEmitterComponent.SimulationState
+Controls particle simulation state: playing, paused or stopped. Defaults to play.
+var spawnInheritsParentColor: Bool
+Whether or not the spawnedEmitter’s color should be overriden by the mainEmitter’s color at the time of the spawning.
+var spawnOccasion: ParticleEmitterComponent.SpawnOccasion
+Determines when main particles emit spawn particles. Defaults to onDeath.
+var spawnSpreadFactor: Float
+Amount a spawned particle spreads away from its parent particle, works in conjunction with the spawn particle’s spreadingAngle. Defaults to 0.
+var spawnSpreadFactorVariation: Float
+Defines a plus/minus range from which a value is randomly selected to offset Spawn Spread Factor.
+var spawnVelocityFactor: Float
+How much of the parent particle’s velocity to inherit. Defaults to 1.
+var spawnedEmitter: ParticleEmitterComponent.ParticleEmitter?
+Attributes affecting secondary particles spawned from the main simulation.
+var speed: Float
+The initial speed, in meters per second, for newly spawned particles. Defaults to 0.5.
+var speedVariation: Float
+Defines a plus/minus range (in meters per second) from which a value is randomly selected to offset particle speed.
+var timing: ParticleEmitterComponent.Timing
+Defines the Emitter timing method.
+var torusInnerRadius: Float
+Radius of the torus’ emitter shape tube. Defaults to 0.25.
+Instance Methods
+func burst()
+Emits burstCount particles on the next update call.
+func encode(to: Encoder) throws
+Encodes this value into the given encoder.
+func restart()
+Restarts the emission of particles (non-looping emitter only).
+Enumerations
+enum BirthDirection
+Options for the initial direction of each emitted particle, used by the birthDirection property.
+enum BirthLocation
+Options for the location on the shape of where particles are born, used by the birthLocation property.
+enum EmitterShape
+Options for the shape of an emitter, used by the emitterShape property.
+enum SimulationSpace
+Options for particle simulation space
+enum SimulationState
+Options for the particle simulation state, used by the simulationState property.
+enum SpawnOccasion
+Options for when the spawned effect starts, used by the spawnOccasion property.
+enum Timing
+Options for specifying the duration of the particle effects, used by the timing property.
+Default Implementations
+API Reference
+Component Implementations
+Relationships
+Conforms To
+Component
+Decodable
+Encodable
+See Also
+Simulation
+Designing Scene Hierarchies for Efficient Physics Simulation
+Configure your RealityKit scenes to avoid performance bottlenecks.
+Handling Different-Sized Objects in Physics Simulations
+Set up a scene hierarchy for accurate physics simulations.
+struct CollisionComponent
+A component that gives an entity the ability to collide with other entities that also have collision components.
+struct CollisionGroup
+A bitmask used to define the collision group to which an entity belongs.
+struct CollisionFilter
+A set of masks that determine whether entities can collide during simulations.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ParticleEmitterComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

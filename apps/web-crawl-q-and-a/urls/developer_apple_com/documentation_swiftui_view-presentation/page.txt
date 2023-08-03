@@ -1,0 +1,386 @@
+https://developer.apple.com/documentation/swiftui/view-presentationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func confirmationDialog<A, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+M
+func confirmationDialog<A>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+M
+func confirmationDialog<A>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+M
+func confirmationDialog<S, A>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+Confirmation dialogs
+M
+func alert<E, A, M>(isPresented: Binding<Bool>, error: E?, actions: (E) -> A, message: (E) -> M) -> some View
+M
+func alert<S, A, M, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func alert<A, M, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func alert<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+func alert<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+func alert<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+Search modifiers
+Input and event modifiers
+Providing interactivity
+Graphics and rendering modifiers
+Layout modifiers
+Style modifiers
+Drawing views
+Chart view modifiers
+Documentation
+Open Menu
+Swift
+Presentation modifiers
+Define additional views for the view to present under specified conditions.
+Overview
+Use presentation modifiers to show different kinds of modal presentations, like alerts, popovers, sheets, and confirmation dialogs.
+Because SwiftUI is a declarative framework, you don’t call a method at the moment you want to present the modal. Rather, you define how the presentation looks and the condition under which SwiftUI should present it. SwiftUI detects when the condition changes and makes the presentation for you. Because you provide a Binding to the condition that initiates the presentation, SwiftUI can reset the underlying value when the user dismisses the presentation.
+For more information about how to use these modifiers, see Modal presentations.
+Topics
+Alerts
+func alert<S, A>(S, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presents an alert when a given condition is true, using a string variable as a title.
+func alert<A>(Text, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presents an alert when a given condition is true, using a text view for the title.
+func alert<A>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presents an alert when a given condition is true, using a localized string key for the title.
+func alert<A, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+Presents an alert using the given data to produce the alert’s content and a text view as a title.
+func alert<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+Presents an alert using the given data to produce the alert’s content and a localized string key for a title.
+func alert<S, A, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+Presents an alert using the given data to produce the alert’s content and a string variable as a title.
+func alert<E, A>(isPresented: Binding<Bool>, error: E?, actions: () -> A) -> some View
+Presents an alert when an error is present.
+Alerts with a message
+func alert<S, A, M>(S, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+Presents an alert with a message when a given condition is true using a string variable as a title.
+func alert<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+Presents an alert with a message when a given condition is true, using a localized string key for a title.
+func alert<A, M>(Text, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View
+Presents an alert with a message when a given condition is true using a text view as a title.
+func alert<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents an alert with a message using the given data to produce the alert’s content and a localized string key for a title.
+func alert<A, M, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents an alert with a message using the given data to produce the alert’s content and a text view for a title.
+func alert<S, A, M, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents an alert with a message using the given data to produce the alert’s content and a string variable as a title.
+func alert<E, A, M>(isPresented: Binding<Bool>, error: E?, actions: (E) -> A, message: (E) -> M) -> some View
+Presents an alert with a message when an error is present.
+Confirmation dialogs
+func confirmationDialog<S, A>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+Presents a confirmation dialog when a given condition is true, using a string variable as a title.
+func confirmationDialog<A>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+Presents a confirmation dialog when a given condition is true, using a text view for the title.
+func confirmationDialog<A>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+Presents a confirmation dialog when a given condition is true, using a localized string key for the title.
+func confirmationDialog<A, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+Presents a confirmation dialog using data to produce the dialog’s content and a text view for the title.
+func confirmationDialog<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+Presents a confirmation dialog using data to produce the dialog’s content and a localized string key for the title.
+func confirmationDialog<S, A, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View
+Presents a confirmation dialog using data to produce the dialog’s content and a string variable for the title.
+Confirmation dialogs with a message
+func confirmationDialog<S, A, M>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+Presents a confirmation dialog with a message when a given condition is true, using a string variable for the title.
+func confirmationDialog<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+Presents a confirmation dialog with a message when a given condition is true, using a localized string key for the title.
+func confirmationDialog<A, M>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View
+Presents a confirmation dialog with a message when a given condition is true, using a text view for the title.
+func confirmationDialog<A, M, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents a confirmation dialog with a message using data to produce the dialog’s content and a text view for the message.
+func confirmationDialog<S, A, M, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents a confirmation dialog with a message using data to produce the dialog’s content and a string variable for the title.
+func confirmationDialog<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View
+Presents a confirmation dialog with a message using data to produce the dialog’s content and a localized string key for the title.
+Dialog configuration
+func dialogIcon(Image?) -> some View
+Configures the icon used by dialogs within this view.
+func dialogSeverity(DialogSeverity) -> some View
+func dialogSuppressionToggle(isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a default suppression message on macOS. Unused on other platforms.
+Beta
+func dialogSuppressionToggle<S>(S, isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a custom suppression message on macOS. Unused on other platforms.
+Beta
+func dialogSuppressionToggle(Text, isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a custom suppression message on macOS. Unused on other platforms.
+Beta
+func dialogSuppressionToggle(LocalizedStringKey, isSuppressed: Binding<Bool>) -> some View
+Enables user suppression of dialogs and alerts presented within self, with a custom suppression message on macOS. Unused on other platforms.
+Beta
+Sheets
+func sheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+Presents a sheet when a binding to a Boolean value that you provide is true.
+func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+Presents a sheet using the given item as a data source for the sheet’s content.
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+Presents a modal view that covers as much of the screen as possible when binding to a Boolean value you provide is true.
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+Presents a modal view that covers as much of the screen as possible using the binding you provide as a data source for the sheet’s content.
+Popovers
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+Presents a popover when a given condition is true.
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+Presents a popover using the given item as a data source for the popover’s content.
+Sheet and popover configuration
+func interactiveDismissDisabled(Bool) -> some View
+Conditionally prevents interactive dismissal of presentations like popovers, sheets, and inspectors.
+func presentationDetents(Set<PresentationDetent>) -> some View
+Sets the available detents for the enclosing sheet.
+func presentationDetents(Set<PresentationDetent>, selection: Binding<PresentationDetent>) -> some View
+Sets the available detents for the enclosing sheet, giving you programmatic control of the currently selected detent.
+func presentationDragIndicator(Visibility) -> some View
+Sets the visibility of the drag indicator on top of a sheet.
+func presentationBackground<S>(S) -> some View
+Sets the presentation background of the enclosing sheet using a shape style.
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+Sets the presentation background of the enclosing sheet to a custom view.
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+Controls whether people can interact with the view behind a presentation.
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+Specifies how to adapt a presentation to horizontally and vertically compact size classes.
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+Specifies how to adapt a presentation to compact size classes.
+func presentationContentInteraction(PresentationContentInteraction) -> some View
+Configures the behavior of swipe gestures on a presentation.
+func presentationCornerRadius(CGFloat?) -> some View
+Requests that the presentation have a specific corner radius.
+File exporter
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for exporting a document that’s stored in a value type, like a structure, to a file on disk.
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for exporting a document that’s stored in a reference type, like a class, to a file on disk.
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentType: UTType, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for exporting a collection of reference type documents to files on disk.
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentType: UTType, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for exporting a collection of value type documents to files on disk.
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system interface for allowing the user to export a FileDocument to a file on disk.
+Beta
+func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to export a ReferenceFileDocument to a file on disk.
+Beta
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentTypes: [UTType], onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to export a collection of documents that conform to ReferenceFileDocument to files on disk.
+Beta
+func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentTypes: [UTType], onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to export a collection of documents that conform to FileDocument to files on disk.
+Beta
+func fileExporter<T>(isPresented: Binding<Bool>, item: T?, contentTypes: [UTType], defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system interface allowing the user to export a Transferable item to file on disk.
+Beta
+func fileExporter<C, T>(isPresented: Binding<Bool>, items: C, contentTypes: [UTType], onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system interface allowing the user to export a collection of items to files on disk.
+Beta
+func fileExporterFilenameLabel(LocalizedStringKey) -> some View
+On macOS, configures the fileExporter with a label for the file name field.
+Beta
+func fileExporterFilenameLabel(Text?) -> some View
+On macOS, configures the fileExporter with a text to use as a label for the file name field.
+Beta
+func fileExporterFilenameLabel<S>(S) -> some View
+On macOS, configures the fileExporter with a label for the file name field.
+Beta
+File importer
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for allowing the user to import multiple files.
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for allowing the user to import an existing file.
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to import multiple files.
+Beta
+File mover
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+Presents a system interface for allowing the user to move an existing file to a new location.
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+Presents a system interface for allowing the user to move a collection of existing files to a new location.
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to move an existing file to a new location.
+Beta
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Presents a system dialog for allowing the user to move a collection of existing files to a new location.
+Beta
+File dialog configuration
+func fileDialogBrowserOptions(FileDialogBrowserOptions) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover to provide a refined URL search experience: include or exclude hidden files, allow searching by tag, etc.
+Beta
+func fileDialogConfirmationLabel<S>(S) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom confirmation button label.
+Beta
+func fileDialogConfirmationLabel(Text?) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with custom text as a confirmation button label.
+Beta
+func fileDialogConfirmationLabel(LocalizedStringKey) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom confirmation button label.
+Beta
+func fileDialogCustomizationID(String) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover to persist and restore the file dialog configuration.
+Beta
+func fileDialogDefaultDirectory(URL?) -> some View
+Configures the fileExporter, fileImporter, or fileMover to open with the specified default directory.
+Beta
+func fileDialogImportsUnresolvedAliases(Bool) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover behavior when a user chooses an alias.
+Beta
+func fileDialogMessage<S>(S) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom message that is presented to the user, similar to a title.
+Beta
+func fileDialogMessage(Text?) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom text that is presented to the user, similar to a title.
+Beta
+func fileDialogMessage(LocalizedStringKey) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom message that is presented to the user, similar to a title.
+Beta
+func fileDialogURLEnabled(Predicate<URL>) -> some View
+On macOS, configures the the fileImporter or fileMover to conditionally disable presented URLs.
+Beta
+Inspectors
+func inspector<V>(isPresented: Binding<Bool>, content: () -> V) -> some View
+Inserts an inspector at the applied position in the view hierarchy.
+Beta
+func inspectorColumnWidth(CGFloat) -> some View
+Sets a fixed, preferred width for the inspector containing this view when presented as a trailing column.
+Beta
+func inspectorColumnWidth(min: CGFloat?, ideal: CGFloat, max: CGFloat?) -> some View
+Sets a flexible, preferred width for the inspector in a trailing-column presentation.
+Beta
+Quick look previews
+func quickLookPreview(Binding<URL?>) -> some View
+Presents a Quick Look preview of the contents of a single URL.
+func quickLookPreview<Items>(Binding<Items.Element?>, in: Items) -> some View
+Presents a Quick Look preview of the URLs you provide.
+Family Sharing
+func familyActivityPicker(isPresented: Binding<Bool>, selection: Binding<FamilyActivitySelection>) -> some View
+Presents an activity picker view as a sheet.
+func familyActivityPicker(headerText: String?, footerText: String?, isPresented: Binding<Bool>, selection: Binding<FamilyActivitySelection>) -> some View
+Presents an activity picker view as a sheet.
+Live Activities
+func activitySystemActionForegroundColor(Color?) -> some View
+The text color for the auxiliary action button that the system shows next to a Live Activity on the Lock Screen.
+func activityBackgroundTint(Color?) -> some View
+Sets the tint color for the background of a Live Activity that appears on the Lock Screen.
+Apple Music
+func musicSubscriptionOffer(isPresented: Binding<Bool>, options: MusicSubscriptionOffer.Options, onLoadCompletion: ((Error)?) -> Void) -> some View
+Initiates the process of presenting a sheet with subscription offers for Apple Music when the isPresented binding is true.
+StoreKit
+func appStoreOverlay(isPresented: Binding<Bool>, configuration: () -> SKOverlay.Configuration) -> some View
+Presents a StoreKit overlay when a given condition is true.
+func manageSubscriptionsSheet(isPresented: Binding<Bool>) -> some View
+func refundRequestSheet(for: Transaction.ID, isPresented: Binding<Bool>, onDismiss: ((Result<Transaction.RefundRequestStatus, Transaction.RefundRequestError>) -> ())?) -> some View
+Display the refund request sheet for the given transaction.
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+Presents a sheet that enables users to redeem subscription offer codes that you configure in App Store Connect.
+PhotoKit
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+Presents a Photos picker that selects a PhotosPickerItem.
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+Presents a Photos picker that selects a PhotosPickerItem from a given photo library.
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+Presents a Photos picker that selects a collection of PhotosPickerItem.
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+Presents a Photos picker that selects a collection of PhotosPickerItem from a given photo library.
+func photosPickerAccessoryVisibility(Visibility, edges: Edge.Set) -> some View
+Sets the accessory visibility of the Photos picker. Accessories include anything between the content and the edge, like the navigation bar or the sidebar.
+Beta
+func photosPickerDisabledCapabilities(PHPickerCapabilities) -> some View
+Disables capabilities of the Photos picker.
+Beta
+func photosPickerStyle(PhotosPickerStyle) -> some View
+Sets the mode of the Photos picker.
+Beta
+See Also
+Providing interactivity
+API Reference
+Input and event modifiers
+Supply actions for a view to perform in response to user input and system events.
+API Reference
+Search modifiers
+Enable people to search for content in your app.
+API Reference
+State modifiers
+Access storage and provide child views with configuration data.
+Current page is Presentation modifiers
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

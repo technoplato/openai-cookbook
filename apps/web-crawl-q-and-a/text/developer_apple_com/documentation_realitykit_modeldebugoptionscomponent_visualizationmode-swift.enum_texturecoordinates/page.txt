@@ -1,0 +1,182 @@
+https://developer.apple.com/documentation/realitykit/modeldebugoptionscomponent/visualizationmode-swift.enum/texturecoordinatesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+case distanceToGazeHitPoint
+Enumeration Cases
+static func != (Self, Self) -> Bool
+M
+func hash(into: inout Hasher)
+P
+var hashValue: Int
+Comparators
+T
+ModelDebugOptionsComponent.VisualizationMode.RawValue
+E
+case baseColor
+E
+case bitangent
+E
+case tangent
+E
+case normal
+E
+case none
+Visualization Modes
+E
+ModelDebugOptionsComponent.VisualizationMode
+P
+var visualizationMode: ModelDebugOptionsComponent.VisualizationMode
+Documentation
+Open Menu
+Swift
+Case
+ModelDebugOptionsComponent.VisualizationMode.textureCoordinates
+A mode that displays the texture coordinates as a color.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+case textureCoordinates
+Discussion
+Adding a ModelDebugOptionsComponent with a visualization mode of textureCoordinates to an entity tells RealityKit to draw that entity’s UV texture coordinates as its surface color. RealityKit draws the texture coordinates by using its U and V values as the R and G components of the color, using a value of 0 for the color’s B component.
+RealityKit calculates texture coordinates for entities with a VideoMaterial, UnlitMaterial, SimpleMaterial as well as for entities imported from a USDZ file. If an entity doesn’t fall within those parameters, this option has no effect on the rendering.
+Here’s how to enable UV texture coordinate visualization for an entity:
+    if let television = anchor.findEntity(named: "Television")
+        as? ModelEntity {
+    let component = ModelDebugOptionsComponent(visualizationMode: .textureCoordinates)
+    television.modelDebugOptions = component
+} ```
+
+
+![A screenshot showing two virtual TVs from an AR app. The TV on the
+left uses no debug visualizations, and renders as an old-fashioned
+television displaying a multicolored test pattern. It is drawn with
+shadows and highlights to appear as realistic as possible. The TV on
+the right uses a texture coordinate visualization, and appears in
+bright shades of yellow, green, and red, which is a graphical
+representation of the TV’s texture coordinates.
+](ModelDebugOptionsComponent-VisualizationMode-swift-enum-textureCoordinates-1)
+See Also
+Visualization Modes
+case none
+A mode that doesn’t display a visualization.
+case normal
+A mode that displays the normal vectors as a color.
+case tangent
+A mode that displays the surface tangent vectors as a color.
+case bitangent
+A mode that displays the surface bitangent vectors as a color.
+case baseColor
+A mode that displays the entity’s base color with no lighting or material properties applied.
+case finalColor
+A mode that displays the entity’s calculated color, ignoring transparency.
+case finalAlpha
+A mode that displays the entity’s calculated transparency as its surface color.
+case roughness
+A mode that displays the shininess of a material as the surface color.
+case metallic
+A mode that displays the reflectiveness of an entity as its surface color.
+case ambientOcclusion
+A mode that displays the calculated ambient occlusion value as the surface color.
+case specular
+A mode that displays en entitiy’s shininess as its surface color.
+case emissive
+A mode that displays the emissive channel of a material as the surface color.
+case clearcoat
+A mode that displays the clearcoat channel of a material as the surface color.
+case clearcoatRoughness
+A mode that displays the clearcoat roughness channel of a material as the surface color.
+case lightingDiffuse
+A mode that displays the intensity of indirect light hitting the entity as its surface color.
+case lightingSpecular
+A mode that displays the intensity of direct light hitting the entity as its surface color.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModelDebugOptionsComponent.VisualizationMode.textureCoordinates
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

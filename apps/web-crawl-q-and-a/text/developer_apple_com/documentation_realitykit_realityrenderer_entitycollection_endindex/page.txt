@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/realitykit/realityrenderer/entitycollection/endindexSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Sequence Implementations
+EntityCollection Implementations
+Collection Implementations
+Default Implementations
+T
+RealityRenderer.EntityCollection.SubSequence
+T
+RealityRenderer.EntityCollection.Iterator
+T
+RealityRenderer.EntityCollection.Indices
+P
+var count: Int
+Instance Properties
+S
+RealityRenderer.EntityCollection
+S
+RealityRenderer.CameraSettings
+S
+RealityRenderer.CameraOutput
+Structures
+C
+RealityRenderer
+Beta
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+endIndex
+The collection’s “past the end” position—that is, the position one greater than the last valid subscript argument.
+visionOS 1.0+ Beta
+@MainActor
+var endIndex: Int { get }
+Discussion
+When you need a range that includes the last element of a collection, use the half-open range operator (..<) with endIndex. The ..< operator creates a range that doesn’t include the upper bound, so it’s always safe to use with endIndex. For example:
+let numbers = [10, 20, 30, 40, 50]
+if let index = numbers.firstIndex(of: 30) {
+    print(numbers[index ..< numbers.endIndex])
+}
+// Prints "[30, 40, 50]"
+If the collection is empty, endIndex is equal to startIndex.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is endIndex
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

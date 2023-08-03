@@ -1,0 +1,187 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/handleevents(receivesubscription:receiveoutput:receivecompletion:receivecancel:receiverequest:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func loadBodyTrackedAsync(contentsOf: URL, withName: String?) -> LoadRequest<BodyTrackedEntity>
+M
+static func loadBodyTrackedAsync(named: String, in: Bundle?) -> LoadRequest<BodyTrackedEntity>
+M
+static func loadBodyTracked(contentsOf: URL, withName: String?) throws -> BodyTrackedEntity
+M
+static func loadBodyTracked(named: String, in: Bundle?) throws -> BodyTrackedEntity
+Loading a Flattened Body-Tracked Entity
+M
+static func loadModelAsync(contentsOf: URL, withName: String?) -> LoadRequest<ModelEntity>
+M
+static func loadModelAsync(named: String, in: Bundle?) -> LoadRequest<ModelEntity>
+func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>
+M
+func breakpointOnError() -> Publishers.Breakpoint<Self>
+M
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+Debugging
+M
+func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable
+Connecting Simple Subscribers
+M
+func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>
+M
+func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>
+Specifying Schedulers
+Documentation
+Open Menu
+Swift
+Instance Method
+handleEvents(receiveSubscription:receiveOutput:receiveCompletion:receiveCancel:receiveRequest:)
+Performs the specified closures when publisher events occur.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func handleEvents(
+    receiveSubscription: ((Subscription) -> Void)? = nil,
+    receiveOutput: ((Self.Output) -> Void)? = nil,
+    receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)? = nil,
+    receiveCancel: (() -> Void)? = nil,
+    receiveRequest: ((Subscribers.Demand) -> Void)? = nil
+) -> Publishers.HandleEvents<Self>
+Parameters
+receiveSubscription
+An optional closure that executes when the publisher receives the subscription from the upstream publisher. This value defaults to nil.
+receiveOutput
+An optional closure that executes when the publisher receives a value from the upstream publisher. This value defaults to nil.
+receiveCompletion
+An optional closure that executes when the upstream publisher finishes normally or terminates with an error. This value defaults to nil.
+receiveCancel
+An optional closure that executes when the downstream receiver cancels publishing. This value defaults to nil.
+receiveRequest
+An optional closure that executes when the publisher receives a request for more elements. This value defaults to nil.
+Return Value
+A publisher that performs the specified closures when publisher events occur.
+Discussion
+Use Publisher/handleEvents(receiveSubscription:receiveOutput:receiveCompletion:receiveCancel:receiveRequest:) when you want to examine elements as they progress through the stages of the publisher’s lifecycle.
+In the example below, a publisher of integers shows the effect of printing debugging information at each stage of the element-processing lifecycle:
+let integers = (0...2)
+cancellable = integers.publisher
+    .handleEvents(receiveSubscription: { subs in
+        print("Subscription: \(subs.combineIdentifier)")
+    }, receiveOutput: { anInt in
+        print("in output handler, received \(anInt)")
+    }, receiveCompletion: { _ in
+        print("in completion handler")
+    }, receiveCancel: {
+        print("received cancel")
+    }, receiveRequest: { (demand) in
+        print("received demand: \(demand.description)")
+    })
+    .sink { _ in return }
+
+
+// Prints:
+//   received demand: unlimited
+//   Subscription: 0x7f81284734c0
+//   in output handler, received 0
+//   in output handler, received 1
+//   in output handler, received 2
+//   in completion handler
+See Also
+Debugging
+func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>
+Raises a debugger signal when a provided closure needs to stop the process in the debugger.
+func breakpointOnError() -> Publishers.Breakpoint<Self>
+Raises a debugger signal upon receiving a failure.
+func print(String, to: (TextOutputStream)?) -> Publishers.Print<Self>
+Prints log messages for all publishing events.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is handleEvents(receiveSubscription:receiveOutput:receiveCompletion:receiveCancel:receiveRequest:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

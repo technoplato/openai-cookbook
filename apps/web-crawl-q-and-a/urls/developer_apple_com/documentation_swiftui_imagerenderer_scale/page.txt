@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/imagerenderer/scaleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Scroll views
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+P
+var proposedSize: ProposedViewSize
+Accessing renderer properties
+P
+var content: Content
+Providing the source view
+M
+init(content: Content)
+Creating an image renderer
+C
+ImageRenderer
+Rendering images from views
+Documentation
+Open Menu
+Swift
+Instance Property
+scale
+The scale at which to render the image.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+@MainActor
+final var scale: CGFloat { get set }
+Discussion
+This value is a ratio of view points to image pixels. This relationship means that values greater than 1.0 create an image larger than the original content view, and less than 1.0 creates a smaller image. The following example shows a 100 x 50 rectangle view and an image rendered from it with a scale of 2.0, resulting in an image size of 200 x 100.
+let rectangle = Rectangle()
+    .frame(width: 100, height: 50)
+let renderer = ImageRenderer(content: rectangle)
+renderer.scale = 2.0
+if let rendered = renderer.cgImage {
+    print("Scaled image: \(rendered.width) x \(rendered.height)")
+}
+// Prints "Scaled image: 200 x 100"
+The default value of this property is 1.0.
+See Also
+Accessing renderer properties
+var proposedSize: ProposedViewSize
+The size proposed to the root view.
+var isOpaque: Bool
+A Boolean value that indicates whether the alpha channel of the image is fully opaque.
+var colorMode: ColorRenderingMode
+The working color space and storage format of the image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is scale
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/parametersetSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Runtime Events
+Content synchronization
+Postprocessing effects
+Physics simulation
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+S
+BindableValuesReference
+S
+BindableValue
+E
+BindTarget
+S
+BindPath
+Bindable Animation Targets
+S
+AnimationHandoffType
+Beta
+S
+AnimationGroup
+S
+AnimationFillMode
+Documentation
+Open Menu
+Swift
+Structure
+ParameterSet
+A reference to general-purpose entity parameters for animations.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct ParameterSet
+Overview
+Subscript this structure to access a particular property by name. The return value is BindableValue <T>, where T is one of the adopting BindableData types.
+As a reference, this structure doesn’t exhibit copy-on-write behavior.
+Topics
+Accessing a Parameter By Name
+subscript<T>(String, T.Type) -> BindableValue<T>?
+Provides a bindable value for the given name.
+See Also
+Bindable Animation Targets
+struct BindPath
+The components of a target’s path that refer to the animation properties of a nested scene or entity.
+enum BindTarget
+A reference to a particular scene, entity, or property that animates.
+struct BindableValue
+The value of a bindable target.
+struct BindableValuesReference
+A reference to a bindable value of an animation.
+struct InternalBindPath
+A bind target for framework-provided properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ParameterSet
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

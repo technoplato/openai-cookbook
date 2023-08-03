@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/realityview/textcase(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func transaction(value: some Equatable, (inout Transaction) -> Void) -> some View
+M
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+M
+func transaction((inout Transaction) -> Void) -> some View
+M
+func tracking(CGFloat) -> some View
+M
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+M
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+M
+func toolbarRole(ToolbarRole) -> some View
+M
+func task(priority: TaskPriority, () async -> Void) -> some View
+M
+func task<T>(id: T, priority: TaskPriority, () async -> Void) -> some View
+M
+func tag<V>(V) -> some View
+M
+func tableStyle<S>(S) -> some View
+M
+func tableColumnHeaders(Visibility) -> some View
+M
+func tabViewStyle<S>(S) -> some View
+M
+func tabItem<V>(() -> V) -> some View
+M
+func symbolVariant(SymbolVariants) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+textCase(_:)
+Sets a transform for the case of the text contained in this view when displayed.
+RealityKit
+SwiftUI
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func textCase(_ textCase: Text.Case?) -> some View
+Parameters
+textCase
+One of the Text/Case enumerations; the default is nil.
+Return Value
+A view that transforms the case of the text.
+Discussion
+The default value is nil, displaying the text without any case changes.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is textCase(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

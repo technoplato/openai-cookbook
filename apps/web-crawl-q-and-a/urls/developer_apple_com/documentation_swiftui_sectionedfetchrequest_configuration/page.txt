@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/sectionedfetchrequest/configurationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a fetch request
+M
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+M
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(entity: NSEntityDescription, sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+Creating a fully configured fetch request
+M
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, animation: Animation?)
+M
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, transaction: Transaction)
+Configuring a request dynamically
+Views
+View fundamentals
+View configuration
+View styles
+Animations
+Text input and output
+Images
+Documentation
+Open Menu
+Swift
+Structure
+SectionedFetchRequest.Configuration
+The request’s configurable properties.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct Configuration
+Overview
+You initialize a SectionedFetchRequest with a section identifier, an optional predicate, and sort descriptors, either explicitly or with a configured NSFetchRequest. Later, you can dynamically update the identifier, predicate, and sort parameters using the request’s configuration structure.
+You access or bind to a request’s configuration components through properties on the associated SectionedFetchResults instance, just like you do for a FetchRequest using FetchRequest.Configuration.
+When configuring a sectioned fetch request, ensure that the combination of the section identifier and the primary sort descriptor doesn’t create discontiguous sections.
+Topics
+Setting the section identifier
+var sectionIdentifier: KeyPath<Result, SectionIdentifier>
+The request’s section identifier key path.
+Setting a predicate
+var nsPredicate: NSPredicate?
+The request’s predicate.
+Setting sort descriptors
+var sortDescriptors: [SortDescriptor<Result>]
+The request’s sort descriptors, accessed as value types.
+Available when SectionIdentifier conforms to Hashable and Result inherits NSManagedObject.
+var nsSortDescriptors: [NSSortDescriptor]
+The request’s sort descriptors, accessed as reference types.
+Relationships
+Conforms To
+Sendable
+See Also
+Configuring a request dynamically
+var projectedValue: Binding<SectionedFetchRequest<SectionIdentifier, Result>.Configuration>
+A binding to the request’s mutable configuration properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SectionedFetchRequest.Configuration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

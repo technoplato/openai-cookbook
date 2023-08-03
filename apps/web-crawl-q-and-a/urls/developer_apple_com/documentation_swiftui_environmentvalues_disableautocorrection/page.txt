@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/disableautocorrectionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var symbolVariants: SymbolVariants
+Widgets
+P
+var showsWidgetContainerBackground: Bool
+P
+var showsWidgetLabel: Bool
+P
+var widgetFamily: WidgetFamily
+P
+var widgetRenderingMode: WidgetRenderingMode
+P
+var widgetContentMargins: EdgeInsets
+Beta
+Deprecated environment values
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+View styles
+Animations
+Text input and output
+Images
+Controls and indicators
+Menus and commands
+Shapes
+Documentation
+Open Menu
+Swift
+Instance Property
+disableAutocorrection
+A Boolean value that determines whether the view hierarchy has auto-correction enabled.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 8.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+var disableAutocorrection: Bool? { get set }
+Discussion
+When the value is nil, SwiftUI uses the system default. The default value is nil.
+See Also
+Deprecated environment values
+var sizeCategory: ContentSizeCategory
+The size of content.
+Deprecated
+var presentationMode: Binding<PresentationMode>
+A binding to the current presentation mode of the view associated with this environment.
+Deprecated
+struct PresentationMode
+An indication whether a view is currently presented by another view.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is disableAutocorrection
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/realitykit/tweenmodeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CharacterControllerComponent
+Animating and Controlling Characters
+S
+InternalBindPath
+P
+var parameters: Entity.ParameterSet
+S
+Entity.ParameterSet
+S
+BindableValuesReference
+S
+BindableValue
+E
+BlendWeight
+S
+BlendTreeSourceNode
+S
+BlendTreeInvalidNode
+S
+BlendTreeBlendNode
+r
+P
+BlendTreeNode
+S
+BlendTreeAnimation
+S
+OrbitAnimation
+S
+SampledAnimation
+Documentation
+Open Menu
+Swift
+Enumeration
+TweenMode
+Options that determine whether an animation switches between frames gradually or abruptly.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum TweenMode
+Overview
+This enumeration declares the options for a sampled animation’s tweenMode. The gradual or abrupt change, or interpolation, refers to the visual behavior that occurs between adjacent values in a sampled animation’s frames.
+Topics
+Choosing a Mode Between Frames
+case hold
+An option that indicates a keyframe changes to the next abruptly.
+case linear
+An option that indicates that a keyframe changes to the next gradually.
+Comparing Tween Modes
+static func == (TweenMode, TweenMode) -> Bool
+Returns a Boolean value that indicates whether the behavior between frames is equal.
+static func != (Self, Self) -> Bool
+Returns a Boolean value that indicates whether the behavior between frames isn’t equal.
+func hash(into: inout Hasher)
+Hashes the essential components of a value by feeding them into the given hasher.
+var hashValue: Int
+The hash value.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+See Also
+Animating an Entity
+struct FromToByAnimation
+An animation that starts, stops, or increments by a specific value.
+struct SampledAnimation
+An animation that cycles through a series of frames at a constant interval.
+struct OrbitAnimation
+An animation that revolves an entity around its origin.
+struct BlendTreeAnimation
+A collection of animations on the same property that the framework blends to a single animation.
+protocol BlendTreeNode
+An interface for a node that’s a member of a blend tree.
+struct BlendTreeBlendNode
+A source node for an animation that mixes several animations to form a single animation.
+struct BlendTreeInvalidNode
+A blend tree node that’s internal only or sources from an invalid definition.
+struct BlendTreeSourceNode
+A blend node that contains an animation.
+enum BlendWeight
+A numerical representation of the impact an animation has on a scene or entity.
+var bindableValues: BindableValuesReference
+struct BindPath
+The components of a target’s path that refer to the animation properties of a nested scene or entity.
+enum BindTarget
+A reference to a particular scene, entity, or property that animates.
+protocol BindableData
+An opaque base protocol for bindable data objects.
+struct BindableValue
+The value of a bindable target.
+struct BindableValuesReference
+A reference to a bindable value of an animation.
+struct ParameterSet
+Represents a reference to the parameters for a particular entity.
+var parameters: Entity.ParameterSet
+Represents a reference to the parameters for a particular entity.
+struct InternalBindPath
+A bind target for framework-provided properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TweenMode
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/accessibilityrotorcontentbuilder/buildblock(_:_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func accessibilityRotor(Text, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor(LocalizedStringKey, textRanges: [Range<String.Index>]) -> some View
+Creating rotors for text ranges
+M
+func accessibilityRotor<L, EntryModel>(L, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<EntryModel>(Text, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<EntryModel>(LocalizedStringKey, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Creating rotors with a label
+func accessibilityRotor<L, EntryModel, ID>(L, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+func accessibilityRotor<EntryModel, ID>(Text, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+func accessibilityRotor<EntryModel, ID>(LocalizedStringKey, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> some AccessibilityRotorContent
+M
+static func buildBlock<C0, C1>(C0, C1) -> some AccessibilityRotorContent
+M
+static func buildBlock<Content>(Content) -> some AccessibilityRotorContent
+Building navigation content
+S
+AccessibilityRotorContentBuilder
+r
+P
+AccessibilityRotorContent
+M
+func accessibilityRotor<L, Content>(L, entries: () -> Content) -> some View
+M
+func accessibilityRotor<Content>(Text, entries: () -> Content) -> some View
+M
+func accessibilityRotor<Content>(LocalizedStringKey, entries: () -> Content) -> some View
+Documentation
+Open Menu
+Swift
+Type Method
+buildBlock(_:_:_:)
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static func buildBlock<C0, C1, C2>(
+    _ c0: C0,
+    _ c1: C1,
+    _ c2: C2
+) -> some AccessibilityRotorContent where C0 : AccessibilityRotorContent, C1 : AccessibilityRotorContent, C2 : AccessibilityRotorContent
+See Also
+Building navigation content
+static func buildBlock<Content>(Content) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1>(C0, C1) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> some AccessibilityRotorContent
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> some AccessibilityRotorContent
+static func buildIf<Content>(Content?) -> some AccessibilityRotorContent
+static func buildExpression<Content>(Content) -> Content
+Builds an expression within the builder.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is buildBlock(_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/view/typeselectequivalent(_:)-86bomSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+M
+func typeSelectEquivalent(LocalizedStringKey) -> some View
+M
+func typeSelectEquivalent(Text?) -> some View
+Specifying text equivalents
+S
+TextInputDictationBehavior
+Beta
+S
+TextInputDictationActivation
+Beta
+M
+func searchDictationBehavior(TextInputDictationBehavior) -> some View
+Beta
+Dictating text
+S
+TextInputAutocapitalization
+Documentation
+Open Menu
+Swift
+Instance Method
+typeSelectEquivalent(_:)
+Sets an explicit type select equivalent text in a collection, such as a list or table.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func typeSelectEquivalent<S>(_ string: S) -> some View where S : StringProtocol
+Parameters
+string
+The string to use as a type select equivalent for a view in a collection.
+Discussion
+By default, a type select equivalent is automatically derived from any Text or TextField content in a list or table. In the below example, type select can be used to select a person, even though no explicit value has been set.
+List(people, selection: $selectedPersonID) { person in
+    Label {
+        Text(person.name)
+    } icon: {
+        person.avatar
+    }
+}
+An explicit type select value should be set when there is no textual content or when a different value is desired compared to what’s displayed in the view. Explicit values also provide a more performant for complex view types. In the below example, type select is explicitly set to allow selection of views that otherwise only display an image.
+List(people, selection: $selectedPersonID) { person in
+    person.avatar
+        .accessibilityLabel(person.name)
+        .typeSelectEquivalent(person.name)
+}
+Setting an empty string value disables text selection for the view, and a value of nil results in the view using its default value.
+See Also
+Specifying text equivalents
+func typeSelectEquivalent(Text?) -> some View
+Sets an explicit type select equivalent text in a collection, such as a list or table.
+func typeSelectEquivalent(LocalizedStringKey) -> some View
+Sets an explicit type select equivalent text in a collection, such as a list or table.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is typeSelectEquivalent(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

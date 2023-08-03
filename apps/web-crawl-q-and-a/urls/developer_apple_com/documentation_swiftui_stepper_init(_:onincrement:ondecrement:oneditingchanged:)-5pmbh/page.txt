@@ -1,0 +1,186 @@
+https://developer.apple.com/documentation/swiftui/stepper/init(_:onincrement:ondecrement:oneditingchanged:)-5pmbhSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var timeZone: TimeZone
+P
+var calendar: Calendar
+S
+MultiDatePicker
+M
+func datePickerStyle<S>(S) -> some View
+S
+DatePicker
+Choosing dates
+S
+PaletteSelectionEffect
+init(onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void, label: () -> Label)
+init<V>(value: Binding<V>, in: ClosedRange<V>, step: V.Stride, onEditingChanged: (Bool) -> Void, label: () -> Label)
+init(LocalizedStringKey, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void)
+M
+init(label: () -> Label, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void)
+Creating a stepper with change behavior
+M
+init<S, F>(S, value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+M
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+M
+init<S, V>(S, value: Binding<V>, in: ClosedRange<V>, step: V.Stride, onEditingChanged: (Bool) -> Void)
+M
+init<V>(LocalizedStringKey, value: Binding<V>, in: ClosedRange<V>, step: V.Stride, onEditingChanged: (Bool) -> Void)
+M
+init<F>(value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, label: () -> Label, onEditingChanged: (Bool) -> Void)
+M
+init<V>(value: Binding<V>, in: ClosedRange<V>, step: V.Stride, label: () -> Label, onEditingChanged: (Bool) -> Void)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:onIncrement:onDecrement:onEditingChanged:)
+Creates a stepper that uses a title key and executes the closures you provide when the user clicks or taps the stepper’s increment and decrement buttons.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init(
+    _ titleKey: LocalizedStringKey,
+    onIncrement: (() -> Void)?,
+    onDecrement: (() -> Void)?,
+    onEditingChanged: @escaping (Bool) -> Void = { _ in }
+)
+Available when Label is Text.
+Parameters
+titleKey
+The key for the stepper’s localized title describing the purpose of the stepper.
+onIncrement
+The closure to execute when the user clicks or taps the control’s plus button.
+onDecrement
+The closure to execute when the user clicks or taps the control’s minus button.
+onEditingChanged
+A closure that’s called when editing begins and ends. For example, on iOS, the user may touch and hold the increment or decrement buttons on a Stepper which causes the execution of the onEditingChanged closure at the start and end of the gesture.
+Discussion
+Use this initializer to create a stepper with a custom title that executes closures you provide when either of the stepper’s increment or decrement buttons are pressed. This version of Stepper doesn’t take a binding to a value, nor does it allow you to specify a range of acceptable values, or a step value – it simply calls the closures you provide when the control’s buttons are pressed.
+The example below uses an array that holds a number of Color values, a local state variable, value, to set the control’s background color, and title label. When the user clicks or taps on the stepper’s increment or decrement buttons SwiftUI executes the relevant closure that updates value, wrapping the value to prevent overflow. SwiftUI then re-renders the view, updating the text and background color to match the current index:
+struct StepperView: View {
+    @State private var value = 0
+    let colors: [Color] = [.orange, .red, .gray, .blue, .green,
+                           .purple, .pink]
+
+
+    func incrementStep() {
+        value += 1
+        if value >= colors.count { value = 0 }
+    }
+
+
+    func decrementStep() {
+        value -= 1
+        if value < 0 { value = colors.count - 1 }
+    }
+
+
+    var body: some View {
+        Stepper("Value: \(value) Color: \(colors[value].description)",
+                 onIncrement: incrementStep,
+                 onDecrement: decrementStep)
+        .padding(5)
+        .background(colors[value])
+    }
+}
+See Also
+Creating a stepper with change behavior
+init(label: () -> Label, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void)
+Creates a stepper instance that performs the closures you provide when the user increments or decrements the stepper.
+init<S>(S, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void)
+Creates a stepper using a title string and that executes closures you provide when the user clicks or taps the stepper’s increment or decrement buttons.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:onIncrement:onDecrement:onEditingChanged:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

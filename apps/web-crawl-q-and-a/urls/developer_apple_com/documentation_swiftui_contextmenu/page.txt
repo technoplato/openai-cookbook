@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/swiftui/contextmenuSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+Input events
+T
+PullDownButton
+Deprecated
+S
+MenuButton
+Deprecated
+Deprecated types
+S
+MenuOrder
+P
+var menuOrder: MenuOrder
+M
+func menuOrder(MenuOrder) -> some View
+Setting a preferred order
+S
+MenuActionDismissBehavior
+Documentation
+Open Menu
+Swift
+Structure
+ContextMenu
+A container for views that you present as menu items in a context menu.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+watchOS 6.0–7.0 Deprecated
+visionOS 1.0+ Beta
+struct ContextMenu<MenuItems> where MenuItems : View
+Deprecated
+Use contextMenu(menuItems:) instead.
+Overview
+A context menu view allows you to present a situationally specific menu that enables taking actions relevant to the current task.
+You can create a context menu by first defining a ContextMenu container with the controls that represent the actions people can take, and then using the contextMenu(_:) view modifier to apply the menu to a view.
+The example below creates and applies a two item context menu container to a Text view. The Boolean value shouldShowMenu, which defaults to true, controls the availability of context menu:
+private let menuItems = ContextMenu {
+    Button {
+        // Add this item to a list of favorites.
+    } label: {
+        Label("Add to Favorites", systemImage: "heart")
+    }
+    Button {
+        // Open Maps and center it on this item.
+    } label: {
+        Label("Show in Maps", systemImage: "mappin")
+    }
+}
+
+
+private struct ContextMenuMenuItems: View {
+    @State private var shouldShowMenu = true
+
+
+    var body: some View {
+        Text("Turtle Rock")
+            .contextMenu(shouldShowMenu ? menuItems : nil)
+    }
+}
+Topics
+Creating a context menu
+init(menuItems: () -> MenuItems)
+Relationships
+Conforms To
+Sendable
+See Also
+Deprecated types
+struct MenuButton
+A button that displays a menu containing a list of choices when pressed.
+Deprecated
+typealias PullDownButton
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ContextMenu
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

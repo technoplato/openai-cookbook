@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/realitykit/realitykit-models-shapes-meshesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Common types
+r
+P
+MeshBufferSemantic
+r
+P
+MeshBufferContainer
+S
+AnyMeshBuffer
+S
+MeshDescriptor
+S
+MeshBuffer
+Mutable mesh buffers
+Hello World
+Scene content
+USD Assets
+Object capture
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Diorama
+Asset creation
+Documentation
+Open Menu
+Swift
+Models, shapes, and meshes
+Use mesh-based models to display virtual objects in your scene.
+Overview
+Every object that can be put into a RealityKit scene is an Entity, but not all entities are models. lights, anchors, and spatial sounds are all entities. Model entities are entities that represent rendered objects, including shape primitives like capsules and spheres, and mesh-based models imported from USDZ files.
+Topics
+Convenience entity
+class ModelEntity
+A representation of a physical object that RealityKit renders and optionally simulates.
+struct ResolvedModel3D
+A view for displaying static three-dimensional models.
+Beta
+Model component
+struct ModelComponent
+A collection of resources that create the visual appearance of an entity.
+struct ModelDebugOptionsComponent
+A component that changes how RealityKit renders its entity to help with debugging.
+protocol HasModel
+An interface that provides meshes and materials to define the visual appearance of an entity.
+Primitive shapes
+class ShapeResource
+A representation of a shape.
+Mesh resources
+class MeshResource
+A high-level representation of a collection of vertices and edges that define a shape.
+struct MeshPartCollection
+An object that holds a collection of mesh parts.
+struct MeshInstanceCollection
+An object that holds a collection of mesh resource instances.
+struct MeshModelCollection
+An object that holds a collection of mesh models.
+Mutable mesh buffers
+struct MeshBuffer
+Mesh buffer containing elements of any type.
+struct MeshDescriptor
+An object that defines a mesh.
+struct AnyMeshBuffer
+Mesh buffer stored in the container.
+protocol MeshBufferContainer
+Conforming objects contain a table of mesh buffers.
+protocol MeshBufferSemantic
+A protocol that holds an identifier value for mesh buffers.
+Common types
+protocol Resource
+A shared resource you use to configure a component, like a material, mesh, or texture.
+enum Model3DPhase
+The current phase of the asynchronous model loading operation.
+Beta
+See Also
+Scene content
+API Reference
+Materials and shaders
+Apply textures to the surface of your scene’s 3D objects to give each object a unique appearance.
+API Reference
+Anchors
+Anchor an entity to an item in your scene, and specify the position, rotation, and scale of the entity’s content.
+API Reference
+Cameras and lighting
+Control the lighting and point of view for a scene.
+API Reference
+Scene reconstruction and understanding
+Detect objects in an AR scene or create a detailed 3D reconstruction of the real world environment.
+API Reference
+Audio
+Add immersive spatial audio to your RealityKit content.
+API Reference
+Animation
+Dynamically move, rotate, and scale objects at runtime.
+protocol RealityCoordinateSpace
+A 3D coordinate space that exists within a RealityKit hierarchy. Any RealityCoordinateSpaceConverting can convert spatial data between SwiftUI CoordinateSpaces and RealityCoordinateSpaces.
+Beta
+Current page is Models, shapes, and meshes
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

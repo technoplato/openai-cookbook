@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/contenttransition/identitySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+TransitionPhase
+Beta
+S
+AsymmetricTransition
+Beta
+S
+AnyTransition
+M
+func contentTransition(ContentTransition) -> some View
+P
+var contentTransition: ContentTransition
+P
+var contentTransitionAddsDrawingGroup: Bool
+S
+ContentTransition
+Getting content transitions
+r
+P
+TransactionKey
+Deprecated types
+r
+P
+AnimatableModifier
+Deprecated
+Text input and output
+Images
+Controls and indicators
+Menus and commands
+Documentation
+Open Menu
+Swift
+Type Property
+identity
+The identity content transition, which indicates that content changes shouldn’t animate.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static let identity: ContentTransition
+Discussion
+You can pass this value to a contentTransition(_:) modifier to selectively disable animations that would otherwise be applied by a withAnimation(_:_:) block.
+See Also
+Getting content transitions
+static let interpolate: ContentTransition
+A content transition that indicates the views attempt to interpolate their contents during transitions, where appropriate.
+static func numericText(countsDown: Bool) -> ContentTransition
+Creates a content transition intended to be used with Text views displaying numeric text. In certain environments changes to the text will enable a nonstandard transition tailored to numeric characters that count up or down.
+static func numericText(value: Double) -> ContentTransition
+Creates a content transition intended to be used with Text views displaying numbers.
+Beta
+static let opacity: ContentTransition
+A content transition that indicates content fades from transparent to opaque on insertion, and from opaque to transparent on removal.
+static var symbolEffect: ContentTransition
+A content transition that applies the default symbol effect transition to symbol images within the inserted or removed view hierarchy. Other views are unaffected by this transition.
+Beta
+static func symbolEffect<T>(T, options: SymbolEffectOptions) -> ContentTransition
+Creates a content transition that applies the symbol Replace animation to symbol images that it is applied to.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is identity
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

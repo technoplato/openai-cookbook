@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/color/init(nscolor:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static let red: Color
+P
+static let purple: Color
+P
+static let pink: Color
+P
+static let orange: Color
+P
+static let mint: Color
+P
+static let indigo: Color
+P
+static let green: Color
+M
+init(uiColor: UIColor)
+Creating a color from another color
+E
+Color.RGBColorSpace
+M
+init(Color.RGBColorSpace, red: Double, green: Double, blue: Double, opacity: Double)
+M
+init(Color.RGBColorSpace, white: Double, opacity: Double)
+M
+init(hue: Double, saturation: Double, brightness: Double, opacity: Double)
+Creating a color from component values
+M
+init(String, bundle: Bundle?)
+Documentation
+Open Menu
+Swift
+Initializer
+init(nsColor:)
+Creates a color from an AppKit color.
+macOS 12.0+
+init(nsColor: NSColor)
+Parameters
+color
+An NSColor instance from which to create a color.
+Discussion
+Use this method to create a SwiftUI color from an NSColor instance. The new color preserves the adaptability of the original. For example, you can create a rectangle using linkColor to see how the shade adjusts to match the user’s system settings:
+struct Box: View {
+    var body: some View {
+        Color(nsColor: .linkColor)
+            .frame(width: 200, height: 100)
+    }
+}
+The Box view defined above automatically changes its appearance when the user turns on Dark Mode. With the light and dark appearances placed side by side, you can see the subtle difference in shades:
+Note
+Use this initializer only if you need to convert an existing NSColor to a SwiftUI color. Otherwise, create a SwiftUI Color using an initializer like init(_:red:green:blue:opacity:), or use a system color like blue.
+See Also
+Creating a color from another color
+init(uiColor: UIColor)
+Creates a color from a UIKit color.
+init(cgColor: CGColor)
+Creates a color from a Core Graphics color.
+Current page is init(nsColor:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

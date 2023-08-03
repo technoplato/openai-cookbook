@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/swiftui/colormatrixSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+ContentMode
+Masking and clipping
+M
+func mask<Mask>(alignment: Alignment, () -> Mask) -> some View
+M
+func clipped(antialiased: Bool) -> some View
+M
+func clipShape<S>(S, style: FillStyle) -> some View
+Applying blur and shadows
+M
+func blur(radius: CGFloat, opaque: Bool) -> some View
+M
+func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View
+P
+var g3: Float
+P
+var b3: Float
+P
+var a3: Float
+Fourth column
+P
+var r4: Float
+P
+var g4: Float
+P
+var b4: Float
+Documentation
+Open Menu
+Swift
+Structure
+ColorMatrix
+A matrix to use in an RGBA color transformation.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@frozen
+struct ColorMatrix
+Overview
+The matrix has five columns, each with a red, green, blue, and alpha component. You can use the matrix for tasks like creating a color transformation GraphicsContext.Filter for a GraphicsContext using the colorMatrix(_:) method.
+Topics
+Creating an identity matrix
+init()
+Creates the identity matrix.
+First column
+var r1: Float
+var g1: Float
+var b1: Float
+var a1: Float
+Second column
+var r2: Float
+var g2: Float
+var b2: Float
+var a2: Float
+Third column
+var r3: Float
+var g3: Float
+var b3: Float
+var a3: Float
+Fourth column
+var r4: Float
+var g4: Float
+var b4: Float
+var a4: Float
+Fifth column
+var r5: Float
+var g5: Float
+var b5: Float
+var a5: Float
+Relationships
+Conforms To
+Equatable
+Sendable
+See Also
+Applying blur and shadows
+func blur(radius: CGFloat, opaque: Bool) -> some View
+Applies a Gaussian blur to this view.
+func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View
+Adds a shadow to this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ColorMatrix
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

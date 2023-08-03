@@ -1,0 +1,191 @@
+https://developer.apple.com/documentation/realitykit/contactSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+EntityTargetValue
+Beta
+S
+HoverEffectComponent
+Beta
+C
+ViewAttachmentEntity
+Beta
+S
+RealityViewAttachments
+Beta
+User Interface
+S
+ModelDebugOptionsComponent
+Reducing CPU Utilization in Your RealityKit App
+Reducing GPU Utilization in Your RealityKit App
+Documentation
+Open Menu
+Swift
+Structure
+Contact
+Events associated with collisions.
+visionOS 1.0+ Beta
+struct Contact
+Overview
+To subscribe to a collision event, import Combine, create a property of type Cancellable so that you maintain a reference to the subscription, then call subscribe(to:on:_:) or subscribe(to:on:componentType:_:) and provide a closure.
+The closure is passed an RealityKit/Scene/Event object that contains information relevant to the type of event you subscribed to.
+Here’s an example of subscribing to the collision begain event and retrieving the two entities involved in the collision:
+ import AppKit
+ import RealityKit
+ import Combine
+
+
+ class GameViewController: NSViewController {
+
+
+     @IBOutlet var arView: ARView!
+     var collisionSubscription:Cancellable?
+
+
+     override func awakeFromNib() {
+        let boxAnchor = try! Experience.loadBox()
+        arView.scene.anchors.append(boxAnchor)
+
+
+        collisionSubscription = arView.scene.subscribe(
+           to: CollisionEvents.Began.self,
+            on: boxAnchor
+       ) { event in
+           print("collision started")
+           let firstEntity = event.entityA
+           let secondEntity = event.entityB
+           // Take appropriate action...
+        }
+   }
+ }
+You can also create a function to respond to the event rather than a closure by using sink(receiveCompletion:receiveValue:). Here’s an example of using a function to respond to a collision event:
+import AppKit
+import RealityKit
+import Combine
+
+
+class GameViewController: NSViewController {
+
+
+    @IBOutlet var arView: ARView!
+    var collisionSubscription:Cancellable?
+
+
+    override func awakeFromNib() {
+        let boxAnchor = try! Experience.loadBox()
+        arView.scene.anchors.append(boxAnchor)
+
+
+        collisionSubscription = arView.scene.publisher(for: CollisionEvents.Began.self,
+                                                       on:nil).sink(receiveValue: onCollisionBegan)
+    }
+
+
+    private func onCollisionBegan(_ event:
+                                  CollisionEvents.Began) {
+        print("collision started")
+        let firstEntity = event.entityA
+        let secondEntity = event.entityB
+        // Take appropriate action...
+    }
+}
+Topics
+Instance Properties
+let impulse: Float
+Impulse, the force over time of the collision, in newton-seconds
+let impulseDirection: SIMD3<Float>
+Impulse direction in scene coordinate space.
+let normal: SIMD3<Float>
+The normal of the contacting surfaces at the contact point. The normal direction points from the second shape to the first shape in scene coordinate space.
+let penetrationDistance: Float
+The distance of overlap between the contact pair.
+let point: SIMD3<Float>
+Point of contact in scene coordinate space.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Contact
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

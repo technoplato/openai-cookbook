@@ -1,0 +1,192 @@
+https://developer.apple.com/documentation/swiftui/view/alert(item:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onAppear(perform: (() -> Void)?) -> some View
+Responding to view life cycle updates
+r
+P
+EnvironmentalModifier
+S
+ModifiedContent
+S
+EmptyModifier
+r
+P
+ViewModifier
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+func searchable<V, S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S, suggestions: () -> V) -> some View
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+M
+func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View
+Deprecated
+M
+func actionSheet<T>(item: Binding<T?>, content: (T) -> ActionSheet) -> some View
+Deprecated
+M
+func actionSheet(isPresented: Binding<Bool>, content: () -> ActionSheet) -> some View
+Deprecated
+View presentation modifiers
+M
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+Deprecated
+M
+func focusable(Bool, onFocusChange: (Bool) -> Void) -> some View
+Deprecated
+M
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Deprecated
+M
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+alert(item:content:)
+Presents an alert to the user.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0+ Beta
+func alert<Item>(
+    item: Binding<Item?>,
+    content: (Item) -> Alert
+) -> some View where Item : Identifiable
+Deprecated
+Use alert(_:isPresented:presenting:actions:message:) instead.
+Parameters
+item
+A binding to an optional source of truth for the alert. if item is non-nil, the system passes the contents to the modifier’s closure. You use this content to populate the fields of an alert that you create that the system displays to the user. If item changes, the system dismisses the currently displayed alert and replaces it with a new one using the same process.
+content
+A closure returning the alert to present.
+Discussion
+Use this method when you need to show an alert that contains information from a binding to an optional data source that you provide. The example below shows a custom data source FileInfo whose properties configure the alert’s message field:
+struct FileInfo: Identifiable {
+    var id: String { name }
+    let name: String
+    let fileType: UTType
+}
+
+
+struct ConfirmImportAlert: View {
+    @State private var alertDetails: FileInfo?
+    var body: some View {
+        Button("Show Alert") {
+            alertDetails = FileInfo(name: "MyImageFile.png",
+                                    fileType: .png)
+        }
+        .alert(item: $alertDetails) { details in
+            Alert(title: Text("Import Complete"),
+                  message: Text("""
+                    Imported \(details.name) \n File
+                    type: \(details.fileType.description).
+                    """),
+                  dismissButton: .default(Text("Dismiss")))
+        }
+    }
+}
+See Also
+View presentation modifiers
+func actionSheet(isPresented: Binding<Bool>, content: () -> ActionSheet) -> some View
+Presents an action sheet when a given condition is true.
+Deprecated
+func actionSheet<T>(item: Binding<T?>, content: (T) -> ActionSheet) -> some View
+Presents an action sheet using the given item as a data source for the sheet’s content.
+Deprecated
+func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View
+Presents an alert to the user.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is alert(item:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

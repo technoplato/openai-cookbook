@@ -1,0 +1,189 @@
+https://developer.apple.com/documentation/realitykit/spotlightSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+HasDirectionalLight
+r
+P
+HasPointLight
+r
+P
+HasPerspectiveCamera
+Entity Compliance
+S
+GroundingShadowComponent
+Beta
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+S
+DirectionalLightComponent
+C
+DirectionalLight
+S
+PointLightComponent
+C
+PointLight
+Lighting
+S
+PerspectiveCameraComponent
+C
+PerspectiveCamera
+Cameras
+Documentation
+Open Menu
+Swift
+Class
+SpotLight
+An entity that illuminates virtual content in a cone-shaped volume.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+@MainActor @preconcurrency
+class SpotLight
+Overview
+During an AR session, RealityKit automatically lights your virtual objects to match real-world lighting. You can also explicitly add virtual lights that act upon your virtual content. This is typically most useful outside of an AR session (with the view’s cameraMode property set to ARView.CameraMode.nonAR).
+A RealityKit scene can contain up to eight dynamic lights, which are SpotLight, PointLight, and DirectionalLight entities. This limit doesn’t include light from image-based lighting.
+Topics
+Creating a Spotlight
+init()
+Creates a spotlight entity.
+Configuring the Spot Light
+var light: SpotLightComponent
+A spotlight component for the entity.
+struct SpotLightComponent
+A component that defines a spotlight source.
+var shadow: SpotLightComponent.Shadow?
+The shadow for the spotlight.
+protocol HasSpotLight
+An interface that defines a spot light source component.
+Positioning Entities in Space
+API Reference
+The Transform Component
+Synchronizing an Entity Among Peers
+struct SynchronizationComponent
+A component that synchronizes an entity between processes and networked applications.
+Default Implementations
+API Reference
+HasSpotLight Implementations
+Relationships
+Inherits From
+Entity
+Conforms To
+CustomDebugStringConvertible
+Equatable
+EventSource
+HasHierarchy
+HasSpotLight
+HasSynchronization
+HasTransform
+Hashable
+Identifiable
+Sendable
+See Also
+Lighting
+class PointLight
+An entity that produces an omnidirectional light for virtual objects.
+struct PointLightComponent
+A component that defines a point light source.
+class DirectionalLight
+An entity that casts a virtual light in a particular direction.
+struct DirectionalLightComponent
+A component that defines a directional light source.
+struct SpotLightComponent
+A component that defines a spotlight source.
+struct ImageBasedLightComponent
+Beta
+struct ImageBasedLightReceiverComponent
+Beta
+struct GroundingShadowComponent
+Beta
+Current page is SpotLight
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

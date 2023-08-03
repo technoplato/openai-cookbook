@@ -1,0 +1,186 @@
+https://developer.apple.com/documentation/realitykit/inputtargetcomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CollisionComponent
+Simulations
+S
+SpatialAudioComponent
+Beta
+S
+ChannelAudioComponent
+Beta
+S
+AudioMixGroupsComponent
+Beta
+S
+AmbientAudioComponent
+Beta
+Sound
+S
+WorldComponent
+Beta
+S
+PortalComponent
+Beta
+S
+HoverEffectComponent
+Beta
+User Interface
+S
+CharacterControllerStateComponent
+S
+CharacterControllerComponent
+S
+ModelSortGroupComponent
+Beta
+S
+ModelDebugOptionsComponent
+Documentation
+Open Menu
+Swift
+Structure
+InputTargetComponent
+A component that gives an entity the ability to receive system input.
+visionOS 1.0+ Beta
+struct InputTargetComponent
+Overview
+This component should be added to an entity to inform the system that it should be treated as a target for input handling. It can be customized to require only specific forms of input like direct or indirect interactions. By default the component is configured to handle all forms of input on the system.
+The hit testing shape that defines the entity’s interactive entity is defined by the CollisionComponent. To configure an entity for input but avoid any sort of physics-related processing, add an InputTargetComponent and CollisionComponent, but disable the CollisionComponent for collision detection, for example:
+// Enable the entity for input.
+myEntity.components.set(InputTargetComponent())
+
+
+// Create a collision component with an empty group and mask.
+var collision = CollisionComponent(shapes: [.generateSphere(radius: 0.1)])
+collision.filter = CollisionFilter(group: [], mask: [])
+myEntity.components.set(collision)
+InputTargetComponent behaves hierarchically, so if it is added to an entity that has descendants with CollisionComponents, those shapes will be used for input handling. The isEnabled flag can be used to override this behavior by adding the InputTargetComponent to a descendant and setting isEnabled to false.
+InputTargetComponent’s allowedInputTypes property allows the entity to only receive the provided types of input. This property also propagates down the hierarchy, but if a descendant also has an InputTargetComponent defined, its allowedInputTypes property overrides the value provided by the ancestor.
+Topics
+Structures
+struct InputType
+A type of input that the InputTargetComponent’s entity can receive.
+Operators
+static func == (InputTargetComponent, InputTargetComponent) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Initializers
+init(allowedInputTypes: InputTargetComponent.InputType)
+Creates a new instance of an InputTargetComponent with a set of allowedInputTypes that define what kinds of input the component’s entity can receive.
+Instance Properties
+var allowedInputTypes: InputTargetComponent.InputType
+The set of input types this component’s entity can receive.
+var isEnabled: Bool
+Whether the component’s entity is enabled for input.
+Default Implementations
+API Reference
+Component Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Component
+Equatable
+See Also
+User Interface
+struct HoverEffectComponent
+Adding this component to an Entity will trigger a standard highlight effect when the Entity is gazed at. Note that, just like EntityGesture, a CollisionComponent is required for the Entity to be part of hit-testing.
+Beta
+struct PortalComponent
+Beta
+struct WorldComponent
+When set on an entity, a WorldComponent separates the entity and its subtree to be rendered as part of a diferent world, that is only visible through a portal.
+Beta
+struct TextComponent
+Beta
+struct ViewAttachmentComponent
+A component containing additional information about a view attachment entity provided via the entity(for:) function.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is InputTargetComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/replaceempty(with:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>
+M
+func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>
+M
+func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>
+M
+func contains(Self.Output) -> Publishers.Contains<Self>
+Applying Matching Criteria to Elements
+M
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+M
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+M
+func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>
+M
+func removeDuplicates() -> Publishers.RemoveDuplicates<Self>
+M
+func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>
+M
+func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>
+M
+func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>
+M
+func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>
+Filtering Elements
+Documentation
+Open Menu
+Swift
+Instance Method
+replaceEmpty(with:)
+Replaces an empty stream with the provided element.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func replaceEmpty(with output: Self.Output) -> Publishers.ReplaceEmpty<Self>
+Parameters
+output
+An element to emit when the upstream publisher finishes without emitting any elements.
+Return Value
+A publisher that replaces an empty stream with the provided output element.
+Discussion
+Use replaceEmpty(with:) to provide a replacement element if the upstream publisher finishes without producing any elements.
+In the example below, the empty Double array publisher doesn’t produce any elements, so replaceEmpty(with:) publishes Double.nan and finishes normally.
+let numbers: [Double] = []
+cancellable = numbers.publisher
+    .replaceEmpty(with: Double.nan)
+    .sink { print("\($0)", terminator: " ") }
+
+
+// Prints "(nan)".
+Conversely, providing a non-empty publisher publishes all elements and the publisher then terminates normally:
+let otherNumbers: [Double] = [1.0, 2.0, 3.0]
+cancellable2 = otherNumbers.publisher
+    .replaceEmpty(with: Double.nan)
+    .sink { print("\($0)", terminator: " ") }
+
+
+// Prints: 1.0 2.0 3.0
+See Also
+Filtering Elements
+func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>
+Republishes all elements that match a provided closure.
+func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>
+Republishes all elements that match a provided error-throwing closure.
+func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>
+Calls a closure with each received element and publishes any returned optional that has a value.
+func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>
+Calls an error-throwing closure with each received element and publishes any returned optional that has a value.
+func removeDuplicates() -> Publishers.RemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element.
+Available when Output conforms to Equatable.
+func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element, as evaluated by a provided closure.
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element, as evaluated by a provided error-throwing closure.
+func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>
+Replaces any errors in the stream with the provided element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is replaceEmpty(with:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

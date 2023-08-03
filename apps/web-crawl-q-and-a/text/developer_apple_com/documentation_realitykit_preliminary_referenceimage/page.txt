@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/realitykit/preliminary_referenceimageSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Preliminary_AnchoringAPI
+Placing a Prim in the Real World
+Anchoring
+playbackMode
+autoPlay
+Animation
+USDZ Schemas for AR
+Exporting a Reality Composer Scene to USDZ
+Documentation
+Open Menu
+Swift
+Preliminary_ReferenceImage
+A schema that defines the properties of an image in the physical environment.
+Overview
+This schema defines the criteria that the runtime uses to recognize an image in the physical environment, including pixel data and width.
+When RealityKit opens a USDZ file that defines a reference image, it instantiates an AnchorEntity with a component type doc://com.apple.documentation/documentation/realitykit/anchoringcomponent/target/image_group_name.
+Declaration
+class Preliminary_ReferenceImage "Preliminary_ReferenceImage" (
+    inherits = </Typed>
+)
+Define a Reference Image
+The following example defines a prim named ImageReference that instructs the runtime to scan for an image described by image.png.
+def Preliminary_ReferenceImage "ImageReference"
+{
+    uniform asset image = @image.png@
+    uniform double physicalWidth = 12
+}
+Topics
+Properties
+image
+An image file for which the runtime should search.
+physicalWidth
+An image’s width in centimeters.
+See Also
+Anchoring
+Placing a Prim in the Real World
+Anchor a prim to a real-world object that the runtime recognizes in the physical environment.
+API Reference
+Preliminary_AnchoringAPI
+A schema that defines the placement of a prim and its children at a real-world location.
+Current page is Preliminary_ReferenceImage
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

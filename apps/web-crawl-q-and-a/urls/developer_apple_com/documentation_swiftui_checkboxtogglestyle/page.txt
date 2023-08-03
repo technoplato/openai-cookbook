@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/swiftui/checkboxtogglestyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TextEditorStyle
+Beta
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+Beta
+r
+P
+TextFieldStyle
+M
+func textFieldStyle<S>(S) -> some View
+S
+LabelStyleConfiguration
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+S
+ButtonToggleStyle
+S
+DefaultToggleStyle
+Supporting types
+Body
+T
+ToggleStyle.Configuration
+S
+ToggleStyleConfiguration
+M
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creating custom toggle styles
+Documentation
+Open Menu
+Swift
+Structure
+CheckboxToggleStyle
+A toggle style that displays a checkbox followed by its label.
+macOS 10.15+
+struct CheckboxToggleStyle
+Overview
+Use the checkbox static variable to create this style:
+Toggle("Close windows when quitting an app", isOn: $doesClose)
+    .toggleStyle(.checkbox)
+Topics
+Creating the toggle style
+init()
+Creates a checkbox toggle style.
+Supporting types
+func makeBody(configuration: CheckboxToggleStyle.Configuration) -> some View
+Creates a view that represents the body of a toggle checkbox.
+Relationships
+Conforms To
+Sendable
+ToggleStyle
+See Also
+Supporting types
+struct DefaultToggleStyle
+The default toggle style.
+struct ButtonToggleStyle
+A toggle style that displays as a button with its label as the title.
+struct SwitchToggleStyle
+A toggle style that displays a leading label and a trailing switch.
+Current page is CheckboxToggleStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

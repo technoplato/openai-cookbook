@@ -1,0 +1,132 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/lightingmodel-swift.enum/litSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating Custom Materials
+M
+init(from: Material, geometryModifier: CustomMaterial.GeometryModifier) throws
+M
+init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?) throws
+M
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+Setting the Lighting Model
+P
+var lightingModel: CustomMaterial.LightingModel
+E
+CustomMaterial.LightingModel
+Specifying the Lighting Model
+S
+CustomMaterial.BaseColor
+Specifying Entity Roughness
+P
+var roughness: CustomMaterial.Roughness
+S
+CustomMaterial.Roughness
+Specifying Metallic Reflections
+P
+var metallic: CustomMaterial.Metallic
+S
+CustomMaterial.Metallic
+Documentation
+Open Menu
+Swift
+Case
+CustomMaterial.LightingModel.lit
+The entity renders using physically based rendering techniques without a clearcoat.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+case lit
+Discussion
+A custom material using the CustomMaterial.LightingModel.lit lighting model uses physically based rendering techniques, but doesn’t render a clearcoat. If a CustomMaterial.LightingModel.lit material’s surface shader calls params.surface().set_clearcoat() or params.surface().set_clearcoat_roughness(), ReallityKit ignores it.
+See Also
+Specifying the Lighting Model
+case clearcoat
+The entity renders using physically based rendering techniques with a clearcoat.
+case unlit
+The entity renders with no light or shadow calculations.
+Current page is CustomMaterial.LightingModel.lit
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

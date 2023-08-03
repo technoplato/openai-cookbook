@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/swiftui/appstorage/init(_:store:)-22mh4Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View configuration
+View fundamentals
+Views
+S
+SectionedFetchResults
+S
+SectionedFetchRequest
+S
+FetchedResults
+S
+FetchRequest
+Storing an optional value
+M
+init<RowValue>(wrappedValue: Value, String, store: UserDefaults?)
+Beta
+M
+init(wrappedValue: Value, String, store: UserDefaults?)
+M
+init(wrappedValue: Value, String, store: UserDefaults?)
+M
+init(wrappedValue: Value, String, store: UserDefaults?)
+M
+init(wrappedValue: Value, String, store: UserDefaults?)
+M
+init(wrappedValue: Value, String, store: UserDefaults?)
+M
+init(wrappedValue: Value, String, store: UserDefaults?)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:store:)
+Creates a property that can read and write an Optional integer user default.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+init(
+    _ key: String,
+    store: UserDefaults? = nil
+) where Value == Int?
+Available when Value conforms to ExpressibleByNilLiteral.
+Parameters
+key
+The key to read and write the value to in the user defaults store.
+store
+The user defaults store to read and write to. A value of nil will use the user default store from the environment.
+Discussion
+Defaults to nil if there is no restored value.
+See Also
+Storing an optional value
+init(String, store: UserDefaults?)
+Creates a property that can read and write an Optional string user default.
+Available when Value conforms to ExpressibleByNilLiteral.
+init(String, store: UserDefaults?)
+Creates a property that can read and write an Optional double user default.
+Available when Value conforms to ExpressibleByNilLiteral.
+init<R>(String, store: UserDefaults?)
+Creates a property that can save and restore an Optional integer, transforming it to an Optional RawRepresentable data type.
+init<R>(String, store: UserDefaults?)
+Creates a property that can save and restore an Optional string, transforming it to an Optional RawRepresentable data type.
+init(String, store: UserDefaults?)
+Creates a property that can read and write an Optional data user default.
+Available when Value conforms to ExpressibleByNilLiteral.
+init(String, store: UserDefaults?)
+Creates a property that can read and write an Optional boolean user default.
+Available when Value conforms to ExpressibleByNilLiteral.
+init(String, store: UserDefaults?)
+Creates a property that can read and write an Optional URL user default.
+Available when Value conforms to ExpressibleByNilLiteral.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:store:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/realitykit/bindpathSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func stopAllAudio()
+M
+func prepareAudio(AudioResource) -> AudioPlaybackController
+M
+func playAudio(AudioResource) -> AudioPlaybackController
+Playing Audio
+M
+func teleportCharacter(to: SIMD3<Float>, relativeTo: Entity?)
+M
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+S
+CharacterControllerStateComponent
+P
+var bindableValues: BindableValuesReference
+E
+TweenMode
+E
+BlendWeight
+S
+BlendTreeSourceNode
+S
+BlendTreeInvalidNode
+S
+BlendTreeBlendNode
+r
+P
+BlendTreeNode
+S
+BlendTreeAnimation
+Documentation
+Open Menu
+Swift
+Structure
+BindPath
+The components of a target’s path that refer to the animation properties of a nested scene or entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct BindPath
+Overview
+The following code demonstrates bind target paths with varying numbers of elements. For a multicomponent target, call the BindPath.Part enumeration for each component. The individual elements form the path’s resulting parts array.
+// Single-component paths:
+let target0: BindTarget = .transform
+let target1: BindTarget = .jointTransforms
+let target2: BindTarget = .parameter("myInt")
+
+
+// Relative entity path:
+let target3: BindTarget = .entity("entityA").entity("entityB").parameter("myInt")
+
+
+// Root entity path:
+let target4: BindTarget = .anchorEntity("entityA").entity("entityB").transform
+
+
+// Scene path:
+let target5: BindTarget = .scene("sceneA").anchorEntity("entityA").entity("entityB").jointTransforms
+Topics
+Composing a Property Identifier
+var parts: [BindPath.Part]
+An array of the individual components of a complete bind path.
+enum Part
+An individual piece of a larger path that refers to the target of an animation.
+See Also
+Animating an Entity
+struct FromToByAnimation
+An animation that starts, stops, or increments by a specific value.
+struct SampledAnimation
+An animation that cycles through a series of frames at a constant interval.
+struct OrbitAnimation
+An animation that revolves an entity around its origin.
+struct BlendTreeAnimation
+A collection of animations on the same property that the framework blends to a single animation.
+protocol BlendTreeNode
+An interface for a node that’s a member of a blend tree.
+struct BlendTreeBlendNode
+A source node for an animation that mixes several animations to form a single animation.
+struct BlendTreeInvalidNode
+A blend tree node that’s internal only or sources from an invalid definition.
+struct BlendTreeSourceNode
+A blend node that contains an animation.
+enum BlendWeight
+A numerical representation of the impact an animation has on a scene or entity.
+enum TweenMode
+Options that determine whether an animation switches between frames gradually or abruptly.
+var bindableValues: BindableValuesReference
+enum BindTarget
+A reference to a particular scene, entity, or property that animates.
+protocol BindableData
+An opaque base protocol for bindable data objects.
+struct BindableValue
+The value of a bindable target.
+struct BindableValuesReference
+A reference to a bindable value of an animation.
+struct ParameterSet
+Represents a reference to the parameters for a particular entity.
+var parameters: Entity.ParameterSet
+Represents a reference to the parameters for a particular entity.
+struct InternalBindPath
+A bind target for framework-provided properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is BindPath
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

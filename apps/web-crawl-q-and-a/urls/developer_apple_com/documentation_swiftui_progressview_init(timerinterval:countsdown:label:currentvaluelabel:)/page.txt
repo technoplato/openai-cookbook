@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/progressview/init(timerinterval:countsdown:label:currentvaluelabel:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<V>(value: V?, total: V)
+M
+init<V>(LocalizedStringKey, value: V?, total: V)
+M
+init<S, V>(S, value: V?, total: V)
+M
+init<V>(value: V?, total: V, label: () -> Label)
+M
+init<V>(value: V?, total: V, label: () -> Label, currentValueLabel: () -> CurrentValueLabel)
+Create a progress view spanning a date range
+M
+init(timerInterval: ClosedRange<Date>, countsDown: Bool)
+M
+init(timerInterval: ClosedRange<Date>, countsDown: Bool, label: () -> Label)
+init(timerInterval: ClosedRange<Date>, countsDown: Bool, label: () -> Label, currentValueLabel: () -> CurrentValueLabel)
+E
+ControlSize
+Activating controls
+P
+var controlActiveState: ControlActiveState
+E
+ControlActiveState
+Menus and commands
+Shapes
+Drawing and graphics
+Documentation
+Open Menu
+Swift
+Initializer
+init(timerInterval:countsDown:label:currentValueLabel:)
+Creates a progress view for showing continuous progress as time passes, with descriptive and current progress labels.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init(
+    timerInterval: ClosedRange<Date>,
+    countsDown: Bool = true,
+    @ViewBuilder label: () -> Label,
+    @ViewBuilder currentValueLabel: () -> CurrentValueLabel
+)
+Available when Label conforms to View and CurrentValueLabel conforms to View.
+Parameters
+timerInterval
+The date range over which the view should progress.
+countsDown
+A Boolean value that determines whether the view empties or fills as time passes. If true (the default), the view empties.
+label
+An optional view that describes the purpose of the progress view.
+currentValueLabel
+A view that displays the current value of the timer.
+Discussion
+Use this initializer to create a view that shows continuous progress within a date range. The following example initializes a progress view with a range of start...end, where start is 30 seconds in the past and end is 90 seconds in the future. As a result, the progress view begins at 25 percent complete. This example also provides custom views for a descriptive label (Progress) and a current value label that shows the date range.
+struct ContentView: View {
+    let start = Date().addingTimeInterval(-30)
+    let end = Date().addingTimeInterval(90)
+
+
+    var body: some View {
+        ProgressView(interval: start...end,
+                     countsDown: false) {
+            Text("Progress")
+        } currentValueLabel: {
+            Text(start...end)
+         }
+     }
+}
+By default, the progress view empties as time passes from the start of the date range to the end, but you can use the countsDown parameter to create a progress view that fills as time passes, as the above example demonstrates.
+Note
+Date-relative progress views, such as those created with this initializer, don’t support custom styles.
+See Also
+Create a progress view spanning a date range
+init(timerInterval: ClosedRange<Date>, countsDown: Bool)
+Creates a progress view for showing continuous progress as time passes.
+Available when Label is EmptyView and CurrentValueLabel is DefaultDateProgressLabel.
+init(timerInterval: ClosedRange<Date>, countsDown: Bool, label: () -> Label)
+Creates a progress view for showing continuous progress as time passes, with a descriptive label.
+Available when Label conforms to View and CurrentValueLabel is DefaultDateProgressLabel.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(timerInterval:countsDown:label:currentValueLabel:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

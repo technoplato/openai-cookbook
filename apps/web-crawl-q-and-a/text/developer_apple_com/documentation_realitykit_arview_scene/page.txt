@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/realitykit/arview/sceneSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hitTest(CGPoint, query: CollisionCastQueryType, mask: CollisionGroup) -> [CollisionCastHit]
+M
+func entities(at: CGPoint) -> [Entity]
+M
+func entity(at: CGPoint) -> Entity?
+Finding Entities at a Point in the View
+P
+var cameraTransform: Transform
+E
+ARView.CameraMode
+P
+var cameraMode: ARView.CameraMode
+Working with the Scene
+M
+convenience init(frame: CGRect, cameraMode: ARView.CameraMode)
+Deprecated
+T
+ARViewBase
+M
+init?(coder: NSCoder)
+M
+init(frame: CGRect, cameraMode: ARView.CameraMode, automaticallyConfigureSession: Bool)
+M
+init(frame: CGRect)
+Creating a View
+C
+ARView
+Documentation
+Open Menu
+Swift
+Instance Property
+scene
+The scene that the view renders and simulates.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+@MainActor
+var scene: Scene { get }
+Discussion
+When you initialize a view, it comes with a single Scene instance that you access through the view’s scene property. Add AnchorEntity instances to the scene’s anchors collection to provide content for the scene.
+See Also
+Working with the Scene
+class Scene
+A container that holds the collection of entities rendered by an AR view.
+Current page is scene
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

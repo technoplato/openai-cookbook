@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/realitykit/hasphysicsmotionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+NetworkCompatibilityToken
+E
+SynchronizationEvents
+r
+P
+SynchronizationService
+C
+MultipeerConnectivityService
+Network Synchronization
+E
+VideoPlayerEvents
+Beta
+S
+VideoPlayerComponent
+r
+P
+HasPhysicsBody
+Entity compliance
+E
+ShapeResourceError
+Beta
+E
+PhysicsSimulationEvents
+Beta
+S
+PhysicsMassProperties
+E
+PhysicsBodyMode
+S
+PhysicsMotionComponent
+C
+PhysicsMaterialResource
+Documentation
+Open Menu
+Swift
+Protocol
+HasPhysicsMotion
+An interface that provides velocity properties for physics simulations.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+protocol HasPhysicsMotion : Entity
+Topics
+Setting the Motion Component
+var physicsMotion: PhysicsMotionComponent?
+The physics motion component used by physics simulations of the model entity.
+struct PhysicsMotionComponent
+A component that controls the motion of the body in physics simulations.
+Relationships
+Inherits From
+Entity
+Inherited By
+HasPhysics
+Conforming Types
+ModelEntity
+See Also
+Entity compliance
+protocol HasPhysicsBody
+An interface that enables physics simulations based on the rules of Newtonian mechanics.
+protocol HasPhysics
+An interface that combines the physics body and physics motion interfaces.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is HasPhysicsMotion
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

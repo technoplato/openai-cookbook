@@ -1,0 +1,177 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/tryfirst(where:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>
+M
+func zip<P>(P) -> Publishers.Zip<Self, P>
+M
+func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>
+M
+func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>
+M
+func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>
+M
+func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>
+M
+func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>
+func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>
+func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>
+func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>
+M
+func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>
+M
+func first() -> Publishers.First<Self>
+Selecting Specific Elements
+M
+func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>
+M
+func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>
+M
+func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>
+M
+func prefix(Int) -> Publishers.Output<Self>
+M
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+tryFirst(where:)
+Publishes the first element of a stream to satisfy a throwing predicate closure, then finishes normally.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func tryFirst(where predicate: @escaping (Self.Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>
+Parameters
+predicate
+A closure that takes an element as a parameter and returns a Boolean value that indicates whether to publish the element.
+Return Value
+A publisher that only publishes the first element of a stream that satisfies the predicate.
+Discussion
+Use tryFirst(where:) when you need to republish only the first element of a stream that satisfies an error-throwing closure you specify. The publisher ignores all elements after the first. If this publisher doesn’t receive any elements, it finishes without publishing. If the predicate closure throws an error, the publisher fails.
+In the example below, a range publisher emits the first element in the range then finishes normally:
+let numberRange: ClosedRange<Int> = (-1...50)
+numberRange.publisher
+    .tryFirst {
+        guard $0 < 99 else {throw RangeError()}
+        return true
+    }
+    .sink(
+        receiveCompletion: { print ("completion: \($0)", terminator: " ") },
+        receiveValue: { print ("\($0)", terminator: " ") }
+     )
+
+
+// Prints: "-1 completion: finished"
+// If instead the number range were ClosedRange<Int> = (100...200), the tryFirst operator would terminate publishing with a RangeError.
+See Also
+Selecting Specific Elements
+func first() -> Publishers.First<Self>
+Publishes the first element of a stream, then finishes.
+func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>
+Publishes the first element of a stream to satisfy a predicate closure, then finishes normally.
+func last() -> Publishers.Last<Self>
+Publishes the last element of a stream, after the stream finishes.
+func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>
+Publishes the last element of a stream that satisfies a predicate closure, after upstream finishes.
+func tryLast(where: (Self.Output) throws -> Bool) -> Publishers.TryLastWhere<Self>
+Publishes the last element of a stream that satisfies an error-throwing predicate closure, after the stream finishes.
+func output(at: Int) -> Publishers.Output<Self>
+Publishes a specific element, indicated by its index in the sequence of published elements.
+func output<R>(in: R) -> Publishers.Output<Self>
+Publishes elements specified by their range in the sequence of published elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tryFirst(where:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

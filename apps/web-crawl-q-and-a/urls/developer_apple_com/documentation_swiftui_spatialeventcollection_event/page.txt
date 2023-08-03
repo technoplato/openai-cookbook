@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/spatialeventcollection/eventSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func gesture<T>(T, including: GestureMask) -> some View
+Recognizing gestures that change over time
+static func == (SpatialEventCollection.Event, SpatialEventCollection.Event) -> Bool
+Operators
+E
+SpatialEventCollection.Event.Phase
+P
+var phase: SpatialEventCollection.Event.Phase
+Getting the event’s current phase
+subscript(SpatialEventCollection.Event.ID) -> SpatialEventCollection.Event?
+Accessing the collection’s events
+S
+SpatialEventCollection.Iterator
+M
+func makeIterator() -> SpatialEventCollection.Iterator
+Iterating over events in the collection
+S
+SpatialEventCollection
+Beta
+S
+SpatialEventGesture
+Beta
+Recognizing spatial events
+Documentation
+Open Menu
+Swift
+Structure
+SpatialEventCollection.Event
+A spatial event generated from a finger, pointing device, or other input mechanism that can drive gestures in the system.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+struct Event
+Topics
+Identifying the event
+var timestamp: TimeInterval
+The time this Event was processed.
+var id: SpatialEventCollection.Event.ID
+An identifier that uniquely identifies this event over its lifetime.
+struct ID
+A value that uniquely identifies an event over the course of its lifetime.
+var kind: SpatialEventCollection.Event.Kind
+Indicates what input source generated this event.
+enum Kind
+A kind of spatial event used to differentiate between different input sources or modes.
+var modifierKeys: EventModifiers
+The set of active modifier keys at the time of this event.
+Locating the event
+var location: CGPoint
+The 2D location of the touch.
+var location3D: Point3D
+The 3D location of the touch.
+var selectionRay: Ray3D?
+The 3D ray used to target the touch.
+var inputDevicePose: SpatialEventCollection.Event.InputDevicePose?
+The 3D position and orientation of the device controlling the touch, if one exists.
+struct InputDevicePose
+A pose describing the input device such as a pencil or hand controlling the event.
+var targetedEntity: Entity?
+The entity target for this touch, if one exists.
+Getting the event’s current phase
+var phase: SpatialEventCollection.Event.Phase
+The phase of the event.
+enum Phase
+The phase of a particular state of the event.
+Operators
+static func == (SpatialEventCollection.Event, SpatialEventCollection.Event) -> Bool
+Relationships
+Conforms To
+Identifiable
+Sendable
+See Also
+Accessing the collection’s events
+subscript(SpatialEventCollection.Event.ID) -> SpatialEventCollection.Event?
+Retrieves an event using its unique identifier.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SpatialEventCollection.Event
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

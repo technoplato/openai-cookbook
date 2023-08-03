@@ -1,0 +1,133 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/request/geometry/init(bounds:transform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+PhotogrammetrySession.Result
+Obtaining Results
+Equatable Implementations
+Default Implementations
+E
+case poses
+Beta
+E
+case pointCloud
+Enumeration Cases
+static func == (PhotogrammetrySession.Request.Geometry, PhotogrammetrySession.Request.Geometry) -> Bool
+Creating a Geometry Instance
+S
+PhotogrammetrySession.Request.Geometry
+Transforming the Created Model
+static func == (PhotogrammetrySession.Request, PhotogrammetrySession.Request) -> Bool
+static func != (Self, Self) -> Bool
+M
+func hash(into: inout Hasher)
+P
+var hashValue: Int
+Comparing Values
+Documentation
+Open Menu
+Swift
+Initializer
+init(bounds:transform:)
+Creates an instance with an optional bounding box and transform.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+init(
+    bounds: BoundingBox = BoundingBox.empty,
+    transform: Transform = Transform.identity
+)
+Parameters
+bounds
+An optional bounding box to specify the size of the generated 3D model. If you don’t pass a value, the initializer sets the bounding box to .empty, which tells RealityKit to calculate the object’s size.
+transform
+An optional Transform that RealityKit applies to the object after it’s created. Use this to scale, rotate, or move the object before the session publishes the PhotogrammetrySession.Output.requestComplete(_:_:)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(bounds:transform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

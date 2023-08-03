@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/replacenil(with:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Applying Mathematical Operations on Elements
+M
+func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>
+M
+func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>
+M
+func ignoreOutput() -> Publishers.IgnoreOutput<Self>
+M
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+M
+func collect(Int) -> Publishers.CollectByCount<Self>
+M
+func collect() -> Publishers.Collect<Self>
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+M
+func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>
+M
+func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+M
+func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>
+M
+func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>
+Mapping Elements
+M
+func subscribe<S>(S) -> AnyCancellable
+M
+func subscribe<S>(S)
+M
+func receive<S>(subscriber: S)
+Documentation
+Open Menu
+Swift
+Instance Method
+replaceNil(with:)
+Replaces nil elements in the stream with the provided element.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func replaceNil<T>(with output: T) -> Publishers.Map<Self, T> where Self.Output == T?
+Parameters
+output
+The element to use when replacing nil.
+Return Value
+A publisher that replaces nil elements from the upstream publisher with the provided element.
+Discussion
+The replaceNil(with:) operator enables replacement of nil values in a stream with a substitute value. In the example below, a collection publisher contains a nil value. The replaceNil(with:) operator replaces this with 0.0.
+let numbers: [Double?] = [1.0, 2.0, nil, 3.0]
+numbers.publisher
+    .replaceNil(with: 0.0)
+    .sink { print("\($0)", terminator: " ") }
+
+
+// Prints: "Optional(1.0) Optional(2.0) Optional(0.0) Optional(3.0)"
+See Also
+Mapping Elements
+func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>
+Transforms all elements from the upstream publisher with a provided closure.
+func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>
+Transforms all elements from the upstream publisher with a provided error-throwing closure.
+func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify.
+func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>
+Converts any failure from the upstream publisher into a new error.
+func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>
+Transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure.
+func tryScan<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryScan<Self, T>
+Transforms elements from the upstream publisher by providing the current element to an error-throwing closure along with the last value returned by the closure.
+func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<Self, E>
+Changes the failure type declared by the upstream publisher.
+Available when Failure is Never.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is replaceNil(with:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

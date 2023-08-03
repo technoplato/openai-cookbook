@@ -1,0 +1,289 @@
+https://developer.apple.com/documentation/swiftui/textfieldSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View styles
+Animations
+Text input and output
+Displaying text
+S
+Text
+S
+Label
+M
+func labelStyle<S>(S) -> some View
+Getting text input
+M
+init<S, F>(S, value: Binding<F.FormatInput>, format: F, prompt: Text?)
+M
+init<F>(value: Binding<F.FormatInput>, format: F, prompt: Text?, label: () -> Label)
+M
+init<S, V>(S, value: Binding<V>, formatter: Formatter)
+M
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter)
+M
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, prompt: Text?)
+M
+init<S, V>(S, value: Binding<V>, formatter: Formatter, prompt: Text?)
+M
+init<V>(value: Binding<V>, formatter: Formatter, prompt: Text?, label: () -> Label)
+Documentation
+Open Menu
+Swift
+Structure
+TextField
+A control that displays an editable text interface.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+struct TextField<Label> where Label : View
+Overview
+You create a text field with a label and a binding to a value. If the value is a string, the text field updates this value continuously as the user types or otherwise edits the text in the field. For non-string types, it updates the value when the user commits their edits, such as by pressing the Return key.
+The following example shows a text field to accept a username, and a Text view below it that shadows the continuously updated value of username. The Text view changes color as the user begins and ends editing. When the user submits their completed entry to the text field, the onSubmit(of:_:) modifer calls an internal validate(name:) method.
+@State private var username: String = ""
+@FocusState private var emailFieldIsFocused: Bool = false
+
+
+var body: some View {
+    TextField(
+        "User name (email address)",
+        text: $username
+    )
+    .focused($emailFieldIsFocused)
+    .onSubmit {
+        validate(name: username)
+    }
+    .textInputAutocapitalization(.never)
+    .disableAutocorrection(true)
+    .border(.secondary)
+
+
+    Text(username)
+        .foregroundColor(emailFieldIsFocused ? .red : .blue)
+}
+The bound value doesn’t have to be a string. By using a FormatStyle, you can bind the text field to a nonstring type, using the format style to convert the typed text into an instance of the bound type. The following example uses a PersonNameComponents.FormatStyle to convert the name typed in the text field to a PersonNameComponents instance. A Text view below the text field shows the debug description string of this instance.
+@State private var nameComponents = PersonNameComponents()
+
+
+var body: some View {
+    TextField(
+        "Proper name",
+        value: $nameComponents,
+        format: .name(style: .medium)
+    )
+    .onSubmit {
+        validate(components: nameComponents)
+    }
+    .disableAutocorrection(true)
+    .border(.secondary)
+    Text(nameComponents.debugDescription)
+}
+Text field prompts
+You can set an explicit prompt on the text field to guide users on what text they should provide. Each text field style determines where and when the text field uses a prompt and label. For example, a form on macOS always places the label at the leading edge of the field and uses a prompt, when available, as placeholder text within the field itself. In the same context on iOS, the text field uses either the prompt or label as placeholder text, depending on whether the initializer provided a prompt.
+The following example shows a Form with two text fields, each of which provides a prompt to indicate that the field is required, and a view builder to provide a label:
+Form {
+    TextField(text: $username, prompt: Text("Required")) {
+        Text("Username")
+    }
+    SecureField(text: $password, prompt: Text("Required")) {
+        Text("Password")
+    }
+}
+Styling text fields
+SwiftUI provides a default text field style that reflects an appearance and behavior appropriate to the platform. The default style also takes the current context into consideration, like whether the text field is in a container that presents text fields with a special style. Beyond this, you can customize the appearance and interaction of text fields using the textFieldStyle(_:) modifier, passing in an instance of TextFieldStyle. The following example applies the roundedBorder style to both text fields within a VStack.
+@State private var givenName: String = ""
+@State private var familyName: String = ""
+
+
+var body: some View {
+    VStack {
+        TextField(
+            "Given Name",
+            text: $givenName
+        )
+        .disableAutocorrection(true)
+        TextField(
+            "Family Name",
+            text: $familyName
+        )
+        .disableAutocorrection(true)
+    }
+    .textFieldStyle(.roundedBorder)
+}
+Topics
+Creating a text field with a string
+init(LocalizedStringKey, text: Binding<String>)
+Creates a text field with a text label generated from a localized title string.
+Available when Label is Text.
+init<S>(S, text: Binding<String>)
+Creates a text field with a text label generated from a title string.
+Available when Label is Text.
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?)
+Creates a text field with a text label generated from a localized title string.
+Available when Label is Text.
+init<S>(S, text: Binding<String>, prompt: Text?)
+Creates a text field with a text label generated from a title string.
+Available when Label is Text.
+init(text: Binding<String>, prompt: Text?, label: () -> Label)
+Creates a text field with a prompt generated from a Text.
+Available when Label conforms to View.
+Creating a scrollable text field
+init(LocalizedStringKey, text: Binding<String>, axis: Axis)
+Creates a text field with a preferred axis and a text label generated from a localized title string.
+Available when Label is Text.
+init<S>(S, text: Binding<String>, axis: Axis)
+Creates a text field with a preferred axis and a text label generated from a title string.
+Available when Label is Text.
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?, axis: Axis)
+Creates a text field with a preferred axis and a text label generated from a localized title string.
+Available when Label is Text.
+init<S>(S, text: Binding<String>, prompt: Text?, axis: Axis)
+Creates a text field with a text label generated from a title string.
+Available when Label is Text.
+init(text: Binding<String>, prompt: Text?, axis: Axis, label: () -> Label)
+Creates a text field with a preferred axis and a prompt generated from a Text.
+Available when Label conforms to View.
+Creating a text field with a value
+Use these initializers to create a text field that binds to a value of an arbitrary type.
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound value, with a label generated from a localized title string.
+Available when Label is Text.
+init<S, F>(S, value: Binding<F.FormatInput>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound value, with a label generated from a title string.
+Available when Label is Text.
+init<F>(value: Binding<F.FormatInput>, format: F, prompt: Text?, label: () -> Label)
+Creates a text field that applies a format style to a bound value, with a label generated from a view builder.
+Available when Label conforms to View.
+init<S, V>(S, value: Binding<V>, formatter: Formatter)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, prompt: Text?)
+Creates a text field that applies a formatter to a bound value, with a label generated from a localized title string.
+Available when Label is Text.
+init<S, V>(S, value: Binding<V>, formatter: Formatter, prompt: Text?)
+Creates a text field that applies a formatter to a bound value, with a label generated from a title string.
+Available when Label is Text.
+init<V>(value: Binding<V>, formatter: Formatter, prompt: Text?, label: () -> Label)
+Creates a text field that applies a formatter to a bound optional value, with a label generated from a view builder.
+Available when Label conforms to View.
+Creating a text field with an optional
+Use these initializers to create a text field binds to an optional value of an arbitrary type.
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound optional value, with a label generated from a localized title string.
+Available when Label is Text.
+init<S, F>(S, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound optional value, with a label generated from a title string.
+Available when Label is Text.
+init<F>(value: Binding<F.FormatInput?>, format: F, prompt: Text?, label: () -> Label)
+Creates a text field that applies a format style to a bound optional value, with a label generated from a view builder.
+Available when Label conforms to View.
+Deprecated initializers
+API Reference
+Deprecated initializers
+Review deprecated text field initializers.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Getting text input
+func textFieldStyle<S>(S) -> some View
+Sets the style for text fields within this view.
+struct SecureField
+A control into which the user securely enters private text.
+struct TextEditor
+A view that can display and edit long-form text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TextField
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

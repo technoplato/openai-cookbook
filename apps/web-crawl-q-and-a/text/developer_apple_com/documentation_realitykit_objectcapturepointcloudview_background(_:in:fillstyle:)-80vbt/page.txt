@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/background(_:in:fillstyle:)-80vbtSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func animation<V>(Animation?, value: V) -> some View
+M
+func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View
+M
+func aspectRatio(CGSize, contentMode: ContentMode) -> some View
+M
+func autocapitalization(UITextAutocapitalizationType) -> some View
+M
+func autocorrectionDisabled(Bool) -> some View
+M
+func background<Background>(Background, alignment: Alignment) -> some View
+M
+func background<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func blur(radius: CGFloat, opaque: Bool) -> some View
+M
+func bold(Bool) -> some View
+M
+func border<S>(S, width: CGFloat) -> some View
+M
+func brightness(Double) -> some View
+M
+func buttonBorderShape(ButtonBorderShape) -> some View
+M
+func buttonRepeatBehavior(ButtonRepeatBehavior) -> some View
+M
+func buttonStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+background(_:in:fillStyle:)
+Sets the view’s background to a shape filled with a style.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func background<S, T>(
+    _ style: S,
+    in shape: T,
+    fillStyle: FillStyle = FillStyle()
+) -> some View where S : ShapeStyle, T : Shape
+Parameters
+style
+A ShapeStyle that SwiftUI uses to the fill the shape that you specify.
+shape
+An instance of a type that conforms to Shape that SwiftUI draws behind the view.
+fillStyle
+The FillStyle to use when drawing the shape. The default style uses the nonzero winding number rule and antialiasing.
+Return Value
+A view with the specified shape drawn behind it.
+Discussion
+Use this modifier to layer a type that conforms to the Shape protocol behind a view. Specify the ShapeStyle that’s used to fill the shape. For example, you can create a Path that outlines a trapezoid:
+let trapezoid = Path { path in
+    path.move(to: .zero)
+    path.addLine(to: CGPoint(x: 90, y: 0))
+    path.addLine(to: CGPoint(x: 80, y: 50))
+    path.addLine(to: CGPoint(x: 10, y: 50))
+}
+Then you can use that shape as a background for a Label:
+Label("Flag", systemImage: "flag.fill")
+    .padding()
+    .background(.teal, in: trapezoid)
+The ShapeStyle/teal color fills the shape:
+This modifier and View/background(_:in:fillStyle:)-20tq5 are convenience methods for placing a single shape behind a view. To create a background with other View types — or with a stack of views — use View/background(alignment:content:) instead. To add a ShapeStyle as a background, use View/background(_:ignoresSafeAreaEdges:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is background(_:in:fillStyle:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

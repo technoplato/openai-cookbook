@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/view/activitybackgroundtint(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func subscriptionStoreControlStyle(some SubscriptionStoreControlStyle) -> some View
+Beta
+M
+func subscriptionStoreControlIcon(icon: (Product, Product.SubscriptionInfo) -> some View) -> some View
+Beta
+M
+func subscriptionStoreButtonLabel(SubscriptionStoreButtonLabel) -> some View
+Beta
+M
+func subscriptionStatusTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<[Product.SubscriptionInfo.Status]>) async -> ()) -> some View
+Beta
+M
+func storeProductsTask(for: some Collection<String> & Equatable & Sendable, priority: TaskPriority, action: (Product.CollectionTaskState) async -> ()) -> some View
+Beta
+M
+func storeProductTask(for: Product.ID, priority: TaskPriority, action: (Product.TaskState) async -> ()) -> some View
+Beta
+M
+func storeButton(Visibility, for: StoreButtonKind...) -> some View
+func onInAppPurchaseCompletion(perform: ((Product, Result<Product.PurchaseResult, Error>) async -> ())?) -> some View
+func currentEntitlementTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<VerificationResult<Transaction>?>) async -> ()) -> some View
+func musicSubscriptionOffer(isPresented: Binding<Bool>, options: MusicSubscriptionOffer.Options, onLoadCompletion: ((Error)?) -> Void) -> some View
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+func refundRequestSheet(for: Transaction.ID, isPresented: Binding<Bool>, onDismiss: ((Result<Transaction.RefundRequestStatus, Transaction.RefundRequestError>) -> ())?) -> some View
+M
+func activitySystemActionForegroundColor(Color?) -> some View
+Configuring a Live Activity
+S
+DevicePicker
+Interacting with networked devices
+M
+func quickLookPreview<Items>(Binding<Items.Element?>, in: Items) -> some View
+M
+func quickLookPreview(Binding<URL?>) -> some View
+Previewing content
+M
+func photosPickerStyle(PhotosPickerStyle) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+activityBackgroundTint(_:)
+Sets the tint color for the background of a Live Activity that appears on the Lock Screen.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+func activityBackgroundTint(_ color: Color?) -> some View
+Parameters
+color
+The background tint color to apply. To use the system’s default background material, pass nil.
+Discussion
+When you set a custom background tint color, consider setting a custom text color for the auxiliary button people use to end a Live Activity on the Lock Screen. To set a custom text color, use the activitySystemActionForegroundColor(_:) view modifier.
+See Also
+Configuring a Live Activity
+func activitySystemActionForegroundColor(Color?) -> some View
+The text color for the auxiliary action button that the system shows next to a Live Activity on the Lock Screen.
+var isActivityFullscreen: Bool
+A Boolean value that indicates whether the Live Activity appears in a full-screen presentation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is activityBackgroundTint(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

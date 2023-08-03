@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/textfield/init(value:format:prompt:label:)-5325hSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<S, V>(S, value: Binding<V>, formatter: Formatter)
+M
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter)
+M
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, prompt: Text?)
+M
+init<S, V>(S, value: Binding<V>, formatter: Formatter, prompt: Text?)
+M
+init<V>(value: Binding<V>, formatter: Formatter, prompt: Text?, label: () -> Label)
+Creating a text field with an optional
+M
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+M
+init<S, F>(S, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+P
+var font: Font?
+S
+Font
+Adjusting text size
+M
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+Beta
+M
+func dynamicTypeSize<T>(T) -> some View
+M
+func dynamicTypeSize(DynamicTypeSize) -> some View
+P
+var dynamicTypeSize: DynamicTypeSize
+Documentation
+Open Menu
+Swift
+Initializer
+init(value:format:prompt:label:)
+Creates a text field that applies a format style to a bound optional value, with a label generated from a view builder.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init<F>(
+    value: Binding<F.FormatInput?>,
+    format: F,
+    prompt: Text? = nil,
+    @ViewBuilder label: () -> Label
+) where F : ParseableFormatStyle, F.FormatOutput == String
+Available when Label conforms to View.
+Parameters
+value
+The underlying value to edit.
+format
+A format style of type F to use when converting between the string the user edits and the underlying value of type F.FormatInput. If format can’t perform the conversion, the text field sets binding.value to nil.
+prompt
+A Text which provides users with guidance on what to type into the text field.
+label
+A view builder that produces a label for the text field, describing its purpose.
+Discussion
+Use this initializer to create a text field that binds to a bound optional value, using a ParseableFormatStyle to convert to and from this type. Changes to the bound value update the string displayed by the text field. Editing the text field updates the bound value, as long as the format style can parse the text. If the format style can’t parse the input, the text field sets the bound value to nil.
+Use the onSubmit(of:_:) modifier to invoke an action whenever the user submits this text field.
+The following example uses an optional Double as the bound currency value, and a FloatingPointFormatStyle.Currency instance to convert to and from a representation as U.S. dollars. As the user types, a View.onChange(of:_:) modifier logs the new value to the console. If the user enters an invalid currency value, like letters or emoji, the console output is Optional(nil).
+@State private var myMoney: Double? = 300.0
+var body: some View {
+    TextField(
+        value: $myMoney,
+        format: .currency(code: "USD")
+    ) {
+        Text("Currency (USD)")
+    }
+    .onChange(of: myMoney) { newValue in
+        print ("myMoney: \(newValue)")
+    }
+}
+See Also
+Creating a text field with an optional
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound optional value, with a label generated from a localized title string.
+Available when Label is Text.
+init<S, F>(S, value: Binding<F.FormatInput?>, format: F, prompt: Text?)
+Creates a text field that applies a format style to a bound optional value, with a label generated from a title string.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(value:format:prompt:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

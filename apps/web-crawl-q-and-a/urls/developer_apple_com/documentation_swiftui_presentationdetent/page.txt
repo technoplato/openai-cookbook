@@ -1,0 +1,167 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func alert<A, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+M
+func alert<A>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A) -> some View
+M
+func alert<A>(Text, isPresented: Binding<Bool>, actions: () -> A) -> some View
+M
+func alert<S, A>(S, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presenting an alert
+S
+PresentationBackgroundInteraction
+M
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+M
+func presentationDragIndicator(Visibility) -> some View
+M
+func presentationContentInteraction(PresentationContentInteraction) -> some View
+M
+func presentationDetents(Set<PresentationDetent>, selection: Binding<PresentationDetent>) -> some View
+M
+func presentationDetents(Set<PresentationDetent>) -> some View
+Configuring a sheet’s height
+S
+PresentationAdaptation
+M
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+M
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+PresentationDetent
+A type that represents a height where a sheet naturally rests.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct PresentationDetent
+Topics
+Getting built-in detents
+static let large: PresentationDetent
+The system detent for a sheet at full height.
+static let medium: PresentationDetent
+The system detent for a sheet that’s approximately half the height of the screen, and is inactive in compact height.
+Creating custom detents
+static func custom<D>(D.Type) -> PresentationDetent
+A custom detent with a calculated height.
+static func fraction(CGFloat) -> PresentationDetent
+A custom detent with the specified fractional height.
+static func height(CGFloat) -> PresentationDetent
+A custom detent with the specified height.
+struct Context
+Information that you use to calculate the presentation’s height.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Configuring a sheet’s height
+func presentationDetents(Set<PresentationDetent>) -> some View
+Sets the available detents for the enclosing sheet.
+func presentationDetents(Set<PresentationDetent>, selection: Binding<PresentationDetent>) -> some View
+Sets the available detents for the enclosing sheet, giving you programmatic control of the currently selected detent.
+func presentationContentInteraction(PresentationContentInteraction) -> some View
+Configures the behavior of swipe gestures on a presentation.
+func presentationDragIndicator(Visibility) -> some View
+Sets the visibility of the drag indicator on top of a sheet.
+protocol CustomPresentationDetent
+The definition of a custom detent with a calculated height.
+struct PresentationContentInteraction
+A behavior that you can use to influence how a presentation responds to swipe gestures.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PresentationDetent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

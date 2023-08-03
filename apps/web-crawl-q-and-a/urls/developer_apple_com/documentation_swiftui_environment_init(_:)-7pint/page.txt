@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/environment/init(_:)-7pintSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+View configuration
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+M
+init(KeyPath<EnvironmentValues, Value>)
+Creating an environment instance
+S
+Environment
+Accessing environment values
+Environment values
+Model data
+Data and storage
+App extensions
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates an environment property to read an observable object from the environment.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+init(_ objectType: Value.Type) where Value : AnyObject, Value : Observable
+Parameters
+objectType
+The type of the Observable object to read from the environment.
+Discussion
+Important
+This initializer only accepts objects conforming to the Observable protocol. For reading environment objects that conform to ObservableObject, use EnvironmentObject instead.
+Don’t call this initializer directly. Instead, declare a property with the Environment property wrapper, passing the object’s type to the wrapper (using this syntax, the object type can be omitted from the end of property declaration):
+@Observable final class Profile { ... }
+
+
+struct MyView: View {
+    @Environment(Profile.self) private var currentProfile
+
+
+    // ...
+}
+Warning
+If no object has been set in the view’s environment, this property will issue a fatal error when accessed. To safely check for the existence of an environment object, initialize the environment property with an optional object type instead.
+SwiftUI automatically updates any parts of MyView that depend on the property when the associated environment object changes.
+You can’t modify the environment object using a property like this. Instead, use the View/environment(_:)-9b2sq view modifier on a view to set an object for a view hierarchy.
+See Also
+Creating an environment instance
+init(KeyPath<EnvironmentValues, Value>)
+Creates an environment property to read the specified key path.
+init<T>(T.Type)
+Creates an environment property to read an observable object from the environment, returning nil if no corresponding object has been set in the current view’s environment.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

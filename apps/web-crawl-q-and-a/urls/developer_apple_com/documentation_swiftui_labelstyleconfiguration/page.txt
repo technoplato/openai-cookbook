@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/labelstyleconfigurationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func navigationSplitViewStyle<S>(S) -> some View
+Styling navigation views
+r
+P
+DisclosureGroupStyle
+M
+func disclosureGroupStyle<S>(S) -> some View
+S
+TableStyleConfiguration
+r
+P
+TableStyle
+M
+func tableStyle<S>(S) -> some View
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+Styling views that display text
+S
+ProgressViewStyleConfiguration
+r
+P
+ProgressViewStyle
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+r
+P
+GaugeStyle
+Documentation
+Open Menu
+Swift
+Structure
+LabelStyleConfiguration
+The properties of a label.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+struct LabelStyleConfiguration
+Topics
+Setting the icon
+var icon: LabelStyleConfiguration.Icon
+A symbolic representation of the labeled item.
+struct Icon
+A type-erased icon view of a label.
+Setting the title
+var title: LabelStyleConfiguration.Title
+A description of the labeled item.
+struct Title
+A type-erased title view of a label.
+Relationships
+Conforms To
+Sendable
+See Also
+Styling views that display text
+func labelStyle<S>(S) -> some View
+Sets the style for labels within this view.
+protocol LabelStyle
+A type that applies a custom appearance to all labels within a view.
+func textFieldStyle<S>(S) -> some View
+Sets the style for text fields within this view.
+protocol TextFieldStyle
+A specification for the appearance and interaction of a text field.
+func textEditorStyle(some TextEditorStyle) -> some View
+Sets the style for text editors within this view.
+Beta
+protocol TextEditorStyle
+A specification for the appearance and interaction of a text editor.
+Beta
+struct TextEditorStyleConfiguration
+The properties of a text editor.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is LabelStyleConfiguration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

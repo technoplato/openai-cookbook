@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/clearcoatroughness-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+PhysicallyBasedMaterial.Parameters
+Defining Material Parameter Types
+T
+PhysicallyBasedMaterial.FaceCulling
+E
+MaterialParameterTypes.FaceCulling
+P
+var faceCulling: PhysicallyBasedMaterial.FaceCulling
+Culling Unneeded Polygons
+T
+PhysicallyBasedMaterial.TextureCoordinateTransform
+S
+PhysicallyBasedMaterial.Clearcoat
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+S
+PhysicallyBasedMaterial.SheenColor
+P
+var sheen: PhysicallyBasedMaterial.SheenColor?
+S
+PhysicallyBasedMaterial.Specular
+P
+var specular: PhysicallyBasedMaterial.Specular
+Creating Highlights
+S
+PhysicallyBasedMaterial.AmbientOcclusion
+Documentation
+Open Menu
+Swift
+Instance Property
+clearcoatRoughness
+The degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness { get set }
+Discussion
+When you enable clearcoat rendering for a material, RealityKit renders the clearcoat as a separate layer just above the surface of the entity. You can specify a clearcoat roughness value for the clearcoat to indicate how much the clearcoat scatters light that bounces off of it, which softens and spreads out the highlights.
+You can specify a single value that applies to the entire material, or you can supply a UV-mapped image texture containing different roughness values for different parts of the entity.
+The following example sets the clearcoatRoughness using a single value:
+material.clearcoatRoughness = .init(floatLiteral: 0.5)
+This example shows how to set the clearcoatRoughness using a UV-mapped image:
+if let clearcoatRoughnessResource = try?
+TextureResource.load(named: "entity_cc_roughness") {
+    let ccRoughnessMap = MaterialParameters.Texture(clearcoatRoughnessResource)
+    material.clearcoat = .init(texture: ccRoughnessMap)
+}
+See Also
+Creating Highlights
+var specular: PhysicallyBasedMaterial.Specular
+The specular highlight applied to the entity.
+struct Specular
+An object that defines the specular highlights of an entity.
+var sheen: PhysicallyBasedMaterial.SheenColor?
+The intensity of an entity’s sheen.
+struct SheenColor
+An object that defines the color of an entity’s sheen.
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+The transparent highlights that simulate a clear, shiny coating on an entity.
+struct Clearcoat
+An object that defines the intensity of an entity’s clear, shiny coating.
+struct ClearcoatRoughness
+An object that defines the degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is clearcoatRoughness
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

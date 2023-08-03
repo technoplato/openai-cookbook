@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/unitcurve/velocity(at:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static let circularEaseOut: UnitCurve
+P
+static let circularEaseInOut: UnitCurve
+Creating a general Bezier curve
+M
+static func bezier(startControlPoint: UnitPoint, endControlPoint: UnitPoint) -> UnitCurve
+Inverting a curve
+P
+var inverse: UnitCurve
+Getting curve characteristics
+M
+func value(at: Double) -> Double
+M
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+S
+MatchedGeometryProperties
+r
+P
+GeometryEffect
+S
+Namespace
+M
+func geometryGroup() -> some View
+Beta
+Defining transitions
+M
+func transition<T>(T) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+velocity(at:)
+Returns the rate of change (first derivative) of the output value of the curve at the given time.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func velocity(at progress: Double) -> Double
+Parameters
+progress
+The input progress (x component). The provided value is clamped to the range [0,1].
+Return Value
+The velocity of the output value (y component) of the curve at the given time.
+See Also
+Getting curve characteristics
+func value(at: Double) -> Double
+Returns the output value (y component) of the curve at the given time.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is velocity(at:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

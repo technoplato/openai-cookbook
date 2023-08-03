@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/swiftui/shapestyle/conicgradient(_:center:angle:)-2f9fySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static var regularMaterial: Material
+P
+static var thinMaterial: Material
+P
+static var ultraThinMaterial: Material
+Materials
+M
+static func radialGradient(stops: [Gradient.Stop], center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+M
+static func radialGradient(colors: [Color], center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+M
+static func radialGradient(AnyGradient, center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> some ShapeStyle
+static func radialGradient(Gradient, center: UnitPoint, startRadius: CGFloat, endRadius: CGFloat) -> RadialGradient
+static func linearGradient(stops: [Gradient.Stop], startPoint: UnitPoint, endPoint: UnitPoint) -> LinearGradient
+static func ellipticalGradient(stops: [Gradient.Stop], center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> EllipticalGradient
+static func ellipticalGradient(colors: [Color], center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> EllipticalGradient
+static func ellipticalGradient(AnyGradient, center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> some ShapeStyle
+static func ellipticalGradient(Gradient, center: UnitPoint, startRadiusFraction: CGFloat, endRadiusFraction: CGFloat) -> EllipticalGradient
+M
+static func conicGradient(Gradient, center: UnitPoint, angle: Angle) -> AngularGradient
+Conic gradients
+M
+static func angularGradient(stops: [Gradient.Stop], center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+M
+static func angularGradient(colors: [Color], center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+M
+static func angularGradient(AnyGradient, center: UnitPoint, startAngle: Angle, endAngle: Angle) -> some ShapeStyle
+M
+static func angularGradient(Gradient, center: UnitPoint, startAngle: Angle, endAngle: Angle) -> AngularGradient
+Angular gradients
+P
+static var yellow: Color
+Documentation
+Open Menu
+Swift
+Type Method
+conicGradient(_:center:angle:)
+A conic gradient that completes a full turn, optionally starting from a given angle and anchored to a relative center point within the filled shape.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static func conicGradient(
+    _ gradient: AnyGradient,
+    center: UnitPoint = .center,
+    angle: Angle = .zero
+) -> some ShapeStyle
+Available when Self is AngularGradient.
+Parameters
+gradient
+The gradient to use for filling the shape, providing the colors and their relative stop locations.
+center
+The relative center of the gradient, mapped from the unit space into the bounding rectangle of the filled shape.
+angle
+The angle to offset the beginning of the gradient’s full turn.
+Discussion
+For example, a conic gradient used as a background:
+let gradient = Gradient(colors: [.red, .yellow])
+
+
+ContentView()
+    .background(.conicGradient(gradient))
+For information about how to use shape styles, see ShapeStyle.
+See Also
+Conic gradients
+static func conicGradient(Gradient, center: UnitPoint, angle: Angle) -> AngularGradient
+A conic gradient that completes a full turn, optionally starting from a given angle and anchored to a relative center point within the filled shape.
+Available when Self is AngularGradient.
+static func conicGradient(colors: [Color], center: UnitPoint, angle: Angle) -> AngularGradient
+A conic gradient defined by a collection of colors that completes a full turn.
+Available when Self is AngularGradient.
+static func conicGradient(stops: [Gradient.Stop], center: UnitPoint, angle: Angle) -> AngularGradient
+A conic gradient defined by a collection of color stops that completes a full turn.
+Available when Self is AngularGradient.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is conicGradient(_:center:angle:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,197 @@
+https://developer.apple.com/documentation/swiftui/togglestyle/automaticSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ProgressViewStyleConfiguration
+r
+P
+ProgressViewStyle
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+r
+P
+GaugeStyle
+M
+func gaugeStyle<S>(S) -> some View
+Styling indicators
+Getting built-in toggle styles
+r
+P
+ToggleStyle
+M
+func toggleStyle<S>(S) -> some View
+Styling toggles
+S
+MenuStyleConfiguration
+r
+P
+MenuStyle
+M
+func menuStyle<S>(S) -> some View
+Styling menus
+Documentation
+Open Menu
+Swift
+Type Property
+automatic
+The default toggle style.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static var automatic: DefaultToggleStyle { get }
+Available when Self is DefaultToggleStyle.
+Discussion
+Use this ToggleStyle to let SwiftUI pick a suitable style for the current platform and context. Toggles use the automatic style by default, but you might need to set it explicitly using the toggleStyle(_:) modifier to override another style in the environment. For example, you can request automatic styling for a toggle in an HStack that’s otherwise configured to use the button style:
+HStack {
+    Toggle(isOn: $isShuffling) {
+        Label("Shuffle", systemImage: "shuffle")
+    }
+    Toggle(isOn: $isRepeating) {
+        Label("Repeat", systemImage: "repeat")
+    }
+
+
+    Divider()
+
+
+    Toggle("Enhance Sound", isOn: $isEnhanced)
+        .toggleStyle(.automatic) // Set the style automatically here.
+}
+.toggleStyle(.button) // Use button style for toggles in the stack.
+Platform defaults
+The automatic style produces an appearance that varies by platform, using the following styles in most contexts:
+Platform
+Default style
+iOS, iPadOS
+switch
+macOS
+checkbox
+tvOS
+A tvOS-specific button style (see below)
+watchOS
+switch
+The default style for tvOS behaves like a button. However, unlike the button style that’s available in some other platforms, the tvOS toggle takes as much horizontal space as its parent offers, and displays both the toggle’s label and a text field that indicates the toggle’s state. You typically collect tvOS toggles into a List:
+List {
+    Toggle("Show Lyrics", isOn: $isShowingLyrics)
+    Toggle("Shuffle", isOn: $isShuffling)
+    Toggle("Repeat", isOn: $isRepeating)
+}
+Contextual defaults
+A toggle’s automatic appearance varies in certain contexts:
+A toggle that appears as part of the content that you provide to one of the toolbar modifiers, like toolbar(content:), uses the button style by default.
+A toggle in a Menu uses a style that you can’t create explicitly:
+Menu("Playback") {
+    Toggle("Show Lyrics", isOn: $isShowingLyrics)
+    Toggle("Shuffle", isOn: $isShuffling)
+    Toggle("Repeat", isOn: $isRepeating)
+}
+SwiftUI shows the toggle’s label with a checkmark that appears only in the on state:
+Platform
+Appearance
+iOS, iPadOS
+macOS
+See Also
+Getting built-in toggle styles
+static var button: ButtonToggleStyle
+A toggle style that displays as a button with its label as the title.
+Available when Self is ButtonToggleStyle.
+static var checkbox: CheckboxToggleStyle
+A toggle style that displays a checkbox followed by its label.
+Available when Self is CheckboxToggleStyle.
+static var `switch`: SwitchToggleStyle
+A toggle style that displays a leading label and a trailing switch.
+Available when Self is SwitchToggleStyle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is automatic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

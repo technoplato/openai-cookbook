@@ -1,0 +1,175 @@
+https://developer.apple.com/documentation/swiftui/animation/easeinout(duration:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static var linear: Animation
+M
+static func linear(duration: TimeInterval) -> Animation
+Getting eased animations
+P
+static var easeIn: Animation
+M
+static func easeIn(duration: TimeInterval) -> Animation
+P
+static var easeOut: Animation
+M
+static func easeOut(duration: TimeInterval) -> Animation
+P
+static var easeInOut: Animation
+static func interactiveSpring(response: Double, dampingFraction: Double, blendDuration: TimeInterval) -> Animation
+P
+static var interpolatingSpring: Animation
+M
+static func interpolatingSpring(Spring, initialVelocity: Double) -> Animation
+Beta
+M
+static func interpolatingSpring(duration: TimeInterval, bounce: Double, initialVelocity: Double) -> Animation
+M
+static func interpolatingSpring(mass: Double, stiffness: Double, damping: Double, initialVelocity: Double) -> Animation
+Creating custom animations
+M
+init<A>(A)
+Beta
+M
+static func timingCurve(UnitCurve, duration: TimeInterval) -> Animation
+Beta
+Documentation
+Open Menu
+Swift
+Type Method
+easeInOut(duration:)
+An animation with a specified duration that combines the behaviors of in and out easing animations.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static func easeInOut(duration: TimeInterval) -> Animation
+Parameters
+duration
+The length of time, expressed in seconds, that the animation takes to complete.
+Return Value
+An ease-in ease-out animation with a specified duration.
+Discussion
+An easing animation provides motion with a natural feel by varying the acceleration and deceleration of the animation, which matches how things tend to move in reality. An ease in and out animation starts slowly, increasing its speed towards the halfway point, and finally decreasing the speed towards the end of the animation.
+Use easeInOut(duration:) when you want to specify the time it takes for the animation to complete. Otherwise, use easeInOut to perform the animation for a default length of time.
+The following code shows an example of animating the size changes of a Circle using an ease in and out animation with a duration of one second.
+struct ContentView: View {
+    @State private var scale = 0.5
+
+
+    var body: some View {
+        VStack {
+            Circle()
+                .scale(scale)
+                .animation(.easeInOut(duration: 1.0), value: scale)
+            HStack {
+                Button("+") { scale += 0.1 }
+                Button("-") { scale -= 0.1 }
+            }
+        }
+    }
+}
+Play
+See Also
+Getting eased animations
+static var easeIn: Animation
+An animation that starts slowly and then increases speed towards the end of the movement.
+static func easeIn(duration: TimeInterval) -> Animation
+An animation with a specified duration that starts slowly and then increases speed towards the end of the movement.
+static var easeOut: Animation
+An animation that starts quickly and then slows towards the end of the movement.
+static func easeOut(duration: TimeInterval) -> Animation
+An animation with a specified duration that starts quickly and then slows towards the end of the movement.
+static var easeInOut: Animation
+An animation that combines the behaviors of in and out easing animations.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is easeInOut(duration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

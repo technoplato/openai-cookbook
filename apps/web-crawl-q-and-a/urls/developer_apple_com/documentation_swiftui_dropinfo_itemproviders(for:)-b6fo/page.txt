@@ -1,0 +1,133 @@
+https://developer.apple.com/documentation/swiftui/dropinfo/itemproviders(for:)-b6foSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Articles
+Xcode library customization
+Previews in Xcode
+Tool support
+Technology-specific views
+WatchKit integration
+UIKit integration
+M
+func hasItemsConforming(to: [String]) -> Bool
+Deprecated
+Deprecated symbols
+M
+func itemProviders(for: [UTType]) -> [NSItemProvider]
+M
+func hasItemsConforming(to: [UTType]) -> Bool
+Checking for items
+P
+var location: CGPoint
+Getting the drop location
+S
+DropInfo
+Documentation
+Open Menu
+Swift
+Instance Method
+itemProviders(for:)
+Returns an array of items that each conform to at least one of the specified uniform type identifiers.
+iOS 13.4–17.0 Deprecated
+iPadOS 13.4–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.4–17.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func itemProviders(for types: [String]) -> [NSItemProvider]
+Deprecated
+Use itemProviders(for:) instead.
+Discussion
+This function is only valid during the performDrop() action.
+See Also
+Deprecated symbols
+func hasItemsConforming(to: [String]) -> Bool
+Returns whether at least one item conforms to at least one of the specified uniform type identifiers.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is itemProviders(for:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

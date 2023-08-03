@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/labeledcontent/init(_:value:)-4dkc2Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+M
+init<S>(LocalizedStringKey, value: S)
+Creating informational views
+M
+init(content: () -> Content, label: () -> Label)
+M
+init<S>(S, content: () -> Content)
+M
+init(LocalizedStringKey, content: () -> Content)
+Creating labeled content
+S
+LabeledContent
+M
+func formStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:value:)
+Creates a labeled informational view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<S1, S2>(
+    _ title: S1,
+    value: S2
+) where S1 : StringProtocol, S2 : StringProtocol
+Available when Label is Text and Content is Text.
+Parameters
+title
+A string that describes the purpose of the view.
+value
+The value being labeled.
+Discussion
+This initializer creates a Text label on your behalf, and treats the title similar to init(_:). See Text for more information about localizing strings.
+Form {
+    ForEach(person.pet) { pet in
+        LabeledContent(pet.species, value: pet.name)
+    }
+}
+See Also
+Creating informational views
+init<S>(LocalizedStringKey, value: S)
+Creates a labeled informational view.
+Available when Label is Text and Content is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:value:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

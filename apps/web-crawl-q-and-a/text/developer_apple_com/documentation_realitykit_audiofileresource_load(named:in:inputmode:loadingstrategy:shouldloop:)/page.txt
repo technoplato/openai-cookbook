@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/realitykit/audiofileresource/load(named:in:inputmode:loadingstrategy:shouldloop:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func load(named: String, from: String, in: Bundle?) async throws -> AudioFileResource
+Beta
+M
+static func load(contentsOf: URL, withName: String?, configuration: AudioFileResource.Configuration) throws -> AudioFileResource
+Beta
+M
+static func load(contentsOf: URL, withName: String?, configuration: AudioFileResource.Configuration) async throws -> AudioFileResource
+Beta
+Type Methods
+P
+let name: String
+P
+var duration: Duration
+P
+let configuration: AudioFileResource.Configuration
+static func loadAsync(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+static func load(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) throws -> AudioFileResource
+static func loadAsync(named: String, in: Bundle?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+static func load(named: String, in: Bundle?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) throws -> AudioFileResource
+Loading Audio from a Bundle
+C
+AudioFileResource
+C
+AudioResource
+Audio Resources
+E
+AudioEvents
+C
+AudioPlaybackController
+Playback
+S
+ChannelAudioComponent
+Beta
+Documentation
+Open Menu
+Swift
+Type Method
+load(named:in:inputMode:loadingStrategy:shouldLoop:)
+Loads an audio file resource from a bundle synchronously.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+static func load(
+    named name: String,
+    in bundle: Bundle? = nil,
+    inputMode: AudioResource.InputMode = .spatial,
+    loadingStrategy: AudioFileResource.LoadingStrategy = .preload,
+    shouldLoop: Bool = false
+) throws -> AudioFileResource
+Return Value
+An audio file resource that you can use to initialize an AudioPlaybackController instance by calling an entity’s prepareAudio(_:) method.
+Discussion
+As a synchronous implementation, this function blocks the calling thread until it returns.
+This function caches one file per unique file path. Subsequent calls to this function for the same file path override the previous AudioFileResource configuration. For example, both audio file resources loop in the following code.
+guard let path = Bundle.main.path(forResource: "Music", ofType:"m4a")
+    else { /* Handle the error. */ }
+let url = URL(fileURLWithPath:path)
+let audioFile1 = try AudioFileResource.load(contentsOf: url,
+    inputMode: .nonSpatial,
+    loadingStrategy: .preload,
+    shouldLoop: false)
+let audioFile2 = try AudioFileResource.load(contentsOf: url,
+    inputMode: .spatial,
+    loadingStrategy: .preload,
+    shouldLoop: true)
+To create looping and nonlooping versions of the same audio, create a copy of the source audio file in the app bundle and pass a unique file URL to each audio file resource.
+name: The name of the audio file resource the function searches for in the bundle.
+bundle: The bundle the function searches. Set to nil to use the app’s bundle.
+inputMode: The input mode the audio file resource uses.
+loadingStrategy: The loading strategy the audio file resource uses.
+shouldLoop: A Boolean you set to true to instruct the playback controller to loop the audio indefinitely.
+See Also
+Loading Audio from a Bundle
+static func loadAsync(named: String, in: Bundle?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+Loads an audio file resource from a bundle file asynchronously.
+Current page is load(named:in:inputMode:loadingStrategy:shouldLoop:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

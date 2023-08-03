@@ -1,0 +1,130 @@
+https://developer.apple.com/documentation/swiftui/wkinterfaceobjectrepresentable/makewkinterfaceobject(context:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Creating and updating the interface object
+r
+P
+WKInterfaceObjectRepresentable
+Adding WatchKit views to SwiftUI view hierarchies
+C
+WKUserNotificationHostingController
+C
+WKHostingController
+Displaying SwiftUI views in WatchKit
+WatchKit integration
+UIKit integration
+Documentation
+Open Menu
+Swift
+Instance Method
+makeWKInterfaceObject(context:)
+Creates a WatchKit interface object and configures its initial state.
+watchOS 6.0+
+@MainActor
+func makeWKInterfaceObject(context: Self.Context) -> Self.WKInterfaceObjectType
+Required
+Parameters
+context
+A context structure containing information about the current state of the system.
+Return Value
+Your interface object configured with the provided information.
+Discussion
+You must implement this method and use it to create your interface object. Configure the object using your app’s current data and contents of the context parameter. The system calls this method only once, when it creates your interface object for the first time. For all subsequent updates, the system calls the updateWKInterfaceObject(_:context:) method.
+See Also
+Creating and updating the interface object
+func updateWKInterfaceObject(Self.WKInterfaceObjectType, context: Self.Context)
+Updates the presented WatchKit interface object (and its coordinator) to the latest configuration.
+Required
+typealias Context
+Current page is makeWKInterfaceObject(context:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

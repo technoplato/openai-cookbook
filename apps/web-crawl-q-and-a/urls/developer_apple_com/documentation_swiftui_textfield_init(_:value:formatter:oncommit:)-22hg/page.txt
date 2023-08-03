@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/textfield/init(_:value:formatter:oncommit:)-22hgSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func dynamicTypeSize(DynamicTypeSize) -> some View
+M
+func dynamicTypeSize<T>(T) -> some View
+M
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+Beta
+Adjusting text size
+S
+Font
+P
+var font: Font?
+M
+func fontWidth(Font.Width?) -> some View
+M
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Deprecated
+M
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Deprecated
+Creating a text field with a value
+M
+init<S>(S, text: Binding<String>, onEditingChanged: (Bool) -> Void)
+M
+init(LocalizedStringKey, text: Binding<String>, onEditingChanged: (Bool) -> Void)
+M
+init(LocalizedStringKey, text: Binding<String>, onCommit: () -> Void)
+M
+init<S>(S, text: Binding<String>, onCommit: () -> Void)
+M
+init<S>(S, text: Binding<String>, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Deprecated
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:value:formatter:onCommit:)
+Create an instance which binds over an arbitrary type, V.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0+ Beta
+init<V>(
+    _ titleKey: LocalizedStringKey,
+    value: Binding<V>,
+    formatter: Formatter,
+    onCommit: @escaping () -> Void
+)
+Available when Label is Text.
+Parameters
+titleKey
+The key for the localized title of the text field, describing its purpose.
+value
+The underlying value to be edited.
+formatter
+A formatter to use when converting between the string the user edits and the underlying value of type V. In the event that formatter is unable to perform the conversion, binding.value isn’t modified.
+onCommit
+An action to perform when the user performs an action (for example, when the user presses the Return key) while the text field has focus.
+See Also
+Creating a text field with a value
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Creates an instance which binds over an arbitrary type, T.
+Available when Label is Text.
+Deprecated
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void, onCommit: () -> Void)
+Creates an instance which binds over an arbitrary type, T.
+Available when Label is Text.
+Deprecated
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onCommit: () -> Void)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<V>(LocalizedStringKey, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+init<S, V>(S, value: Binding<V>, formatter: Formatter, onEditingChanged: (Bool) -> Void)
+Create an instance which binds over an arbitrary type, V.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:value:formatter:onCommit:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

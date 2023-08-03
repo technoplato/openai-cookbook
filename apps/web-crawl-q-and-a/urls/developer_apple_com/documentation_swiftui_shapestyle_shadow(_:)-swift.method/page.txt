@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/shapestyle/shadow(_:)-swift.methodSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ForegroundStyle
+S
+HierarchicalShapeStyleModifier
+Beta
+S
+HierarchicalShapeStyle
+S
+ImagePaint
+S
+Material
+S
+RadialGradient
+S
+LinearGradient
+M
+func opacity(Double) -> some ShapeStyle
+M
+func blendMode(BlendMode) -> some ShapeStyle
+Modifying a shape style
+P
+static var windowBackground: WindowBackgroundShapeStyle
+Beta
+P
+static var fill: FillShapeStyle
+Beta
+P
+static var link: LinkShapeStyle
+Beta
+P
+static var placeholder: PlaceholderTextShapeStyle
+Beta
+P
+static var tint: TintShapeStyle
+Documentation
+Open Menu
+Swift
+Instance Method
+shadow(_:)
+Applies the specified shadow effect to the shape style.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func shadow(_ style: ShadowStyle) -> some ShapeStyle
+Parameters
+style
+The shadow style to apply.
+Return Value
+A new shape style that uses the specified shadow style.
+Discussion
+For example, you can create a rectangle that adds a drop shadow to the red shape style.
+Rectangle().fill(.red.shadow(.drop(radius: 2, y: 3)))
+See Also
+Modifying a shape style
+func blendMode(BlendMode) -> some ShapeStyle
+Returns a new style based on self that applies the specified blend mode when drawing.
+func opacity(Double) -> some ShapeStyle
+Returns a new style based on self that multiplies by the specified opacity when drawing.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is shadow(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

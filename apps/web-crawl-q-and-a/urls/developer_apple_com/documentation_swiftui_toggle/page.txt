@@ -1,0 +1,247 @@
+https://developer.apple.com/documentation/swiftui/toggleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a toggle for an App Intent
+M
+init(ToggleStyleConfiguration)
+Creating a toggle from a configuration
+M
+init<S, C>(S, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+M
+init<C>(LocalizedStringKey, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+M
+init<S>(S, systemImage: String, isOn: Binding<Bool>)
+M
+init(LocalizedStringKey, systemImage: String, isOn: Binding<Bool>)
+S
+Stepper
+S
+Slider
+Getting numeric inputs
+S
+HelpLink
+Beta
+S
+TextFieldLink
+S
+SharePreview
+S
+ShareLink
+S
+Link
+Documentation
+Open Menu
+Swift
+Structure
+Toggle
+A control that toggles between on and off states.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+struct Toggle<Label> where Label : View
+Overview
+You create a toggle by providing an isOn binding and a label. Bind isOn to a Boolean property that determines whether the toggle is on or off. Set the label to a view that visually describes the purpose of switching between toggle states. For example:
+@State private var vibrateOnRing = false
+
+
+var body: some View {
+    Toggle(isOn: $vibrateOnRing) {
+        Text("Vibrate on Ring")
+    }
+}
+For the common case of Label based labels, you can use the convenience initializer that takes a title string (or localized string key) and the name of a system image:
+@State private var vibrateOnRing = true
+
+
+var body: some View {
+    Toggle(
+        "Vibrate on Ring",
+        systemImage: "dot.radiowaves.left.and.right",
+        isOn: $vibrateOnRing
+    )
+}
+For text-only labels, you can use the convenience initializer that takes a title string (or localized string key) as its first parameter, instead of a trailing closure:
+@State private var vibrateOnRing = true
+
+
+var body: some View {
+    Toggle("Vibrate on Ring", isOn: $vibrateOnRing)
+}
+Styling toggles
+Toggles use a default style that varies based on both the platform and the context. For more information, read about the automatic toggle style.
+You can customize the appearance and interaction of toggles by applying styles using the toggleStyle(_:) modifier. You can apply built-in styles, like switch, to either a toggle, or to a view hierarchy that contains toggles:
+VStack {
+    Toggle("Vibrate on Ring", isOn: $vibrateOnRing)
+    Toggle("Vibrate on Silent", isOn: $vibrateOnSilent)
+}
+.toggleStyle(.switch)
+You can also define custom styles by creating a type that conforms to the ToggleStyle protocol.
+Topics
+Creating a toggle
+init(isOn: Binding<Bool>, label: () -> Label)
+Creates a toggle that displays a custom label.
+init(LocalizedStringKey, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a localized string key.
+Available when Label is Text.
+init<S>(S, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a string.
+Available when Label is Text.
+Creating a toggle for a collection
+init<C>(sources: C, isOn: KeyPath<C.Element, Binding<Bool>>, label: () -> Label)
+Creates a toggle representing a collection of values with a custom label.
+init<S, C>(S, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a string.
+Available when Label is Text.
+init<C>(LocalizedStringKey, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a localized string key.
+Available when Label is Text.
+Creating a toggle with an image resource label
+init(LocalizedStringKey, image: ImageResource, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a localized string key and image resource.
+Available when Label is Label<Text, Image>.
+Beta
+init<S>(S, image: ImageResource, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a string and image resource.
+Available when Label is Label<Text, Image>.
+Beta
+init<C>(LocalizedStringKey, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a localized string key and image resource.
+Available when Label is Label<Text, Image>.
+Beta
+init<S, C>(S, image: ImageResource, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a string and image resource.
+Available when Label is Label<Text, Image>.
+Beta
+Creating a toggle with an system image
+init(LocalizedStringKey, systemImage: String, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a localized string key and system image.
+Available when Label is Label<Text, Image>.
+init<S>(S, systemImage: String, isOn: Binding<Bool>)
+Creates a toggle that generates its label from a string and system image.
+Available when Label is Label<Text, Image>.
+init<C>(LocalizedStringKey, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a localized string key and system image.
+Available when Label is Label<Text, Image>.
+init<S, C>(S, systemImage: String, sources: C, isOn: KeyPath<C.Element, Binding<Bool>>)
+Creates a toggle representing a collection of values that generates its label from a string.
+Available when Label is Label<Text, Image>.
+Creating a toggle from a configuration
+init(ToggleStyleConfiguration)
+Creates a toggle based on a toggle style configuration.
+Available when Label is ToggleStyleConfiguration.Label.
+Creating a toggle for an App Intent
+init<I>(isOn: Bool, intent: I, label: () -> Label)
+Creates a toggle performing an AppIntent.
+Available when Label conforms to View.
+init(LocalizedStringKey, isOn: Bool, intent: some AppIntent)
+Creates a toggle performing an AppIntent and generates its label from a localized string key.
+Available when Label is Text.
+Beta
+init<S>(S, isOn: Bool, intent: some AppIntent)
+Creates a toggle that generates its label from a string.
+Available when Label is Text.
+Beta
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Getting numeric inputs
+struct Slider
+A control for selecting a value from a bounded linear range of values.
+struct Stepper
+A control that performs increment and decrement actions.
+func toggleStyle<S>(S) -> some View
+Sets the style for toggles in a view hierarchy.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Toggle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

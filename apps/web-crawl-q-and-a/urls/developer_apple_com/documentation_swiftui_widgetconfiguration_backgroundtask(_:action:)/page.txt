@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/widgetconfiguration/backgroundtask(_:action:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+func onBackgroundURLSessionEvents(matching: String, (String, () -> Void) -> Void) -> some WidgetConfiguration
+func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some WidgetConfiguration
+Managing background tasks
+M
+func containerBackgroundRemovable(Bool) -> some WidgetConfiguration
+M
+func disfavoredLocations([WidgetLocation], for: [WidgetFamily]) -> some WidgetConfiguration
+Beta
+M
+func contentMarginsDisabled() -> some WidgetConfiguration
+M
+func supportedFamilies([WidgetFamily]) -> some WidgetConfiguration
+Setting the appearance
+M
+func description(LocalizedStringKey) -> some WidgetConfiguration
+M
+func description<S>(S) -> some WidgetConfiguration
+Documentation
+Open Menu
+Swift
+Instance Method
+backgroundTask(_:action:)
+Runs the given action when the system provides a background task.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func backgroundTask<D, R>(
+    _ task: BackgroundTask<D, R>,
+    action: @escaping (D) async -> R
+) -> some WidgetConfiguration where D : Sendable, R : Sendable
+Parameters
+task
+The type of task the action responds to.
+action
+The closure that is called when the system provides a task matching the provided task.
+Discussion
+When the system wakes your app or extension for one or more background tasks, it will call any actions associated with matching tasks. When your async actions return, the system will put your app back into a suspended state. In Widget Extensions, this modifier can be used to handle URL Session background tasks with urlSession.
+See Also
+Managing background tasks
+func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration
+Adds an action to perform when events related to a URL session identified by a closure are waiting to be processed.
+func onBackgroundURLSessionEvents(matching: String, (String, () -> Void) -> Void) -> some WidgetConfiguration
+Adds an action to perform when events related to a URL session with a matching identifier are waiting to be processed.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is backgroundTask(_:action:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

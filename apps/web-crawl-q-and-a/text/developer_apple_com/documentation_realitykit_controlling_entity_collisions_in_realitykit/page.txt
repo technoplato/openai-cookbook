@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/realitykit/controlling_entity_collisions_in_realitykitSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Character control
+Creating a game with scene understanding
+Creating a Game with Reality Composer
+SwiftStrike: Creating a Game with RealityKit
+Happy Beam
+Games
+Runtime Events
+Collision shapes
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Documentation
+Open Menu
+Swift
+Sample Code
+Controlling Entity Collisions in RealityKit
+Create collision filters to control which objects collide.
+Download
+iOS 13.0+
+iPadOS 13.0+
+Xcode 12.0+
+Overview
+By default, objects that participate in RealityKit simulations collide with all other participating objects in the scene. To prevent particular objects from colliding with specific other objects, use CollisionGroup in combination with CollisionFilter. This sample code project shows how to use collision groups and collision filters to take precise control over which entities collide in a scene.
+In this sample, the user can drag entities around the scene. As they do so, those entities collide with other entities that have different shapes or colors, but ignore (or pass through) entities of the same shape and color. For example, if the user drags a sphere into a cube, the entities will collide, causing the cube to move. However, if the user drags a red sphere into another red sphere, the entities will pass through each other.
+Configure the Sample Code Project
+The sample code project requires Xcode 12.0, iOS 14.0, and an iOS device with an A9 or later processor. ARKit isn’t supported in iOS Simulator.
+Define Collision Groups
+Collision groups provide a way to group entities in a scene. Each group represents entities that respond the same way during a collision. Because CollisionGroup conforms to OptionSet, groups can be combined in many different ways to create new groups. The sample project defines a set of groups that represent each distinct type of objects, and assigns each one a different bit flag.
+The sample project defines four collision groups, as shown here:
+    let planeGroup = CollisionGroup(rawValue: 1 << 0)
+    let cubeGroup = CollisionGroup(rawValue: 1 << 1)
+    let beveledCubeGroup = CollisionGroup(rawValue: 1 << 2)
+    let sphereGroup = CollisionGroup(rawValue: 1 << 3)
+Collision groups aren’t assigned directly to entities. Instead, collision filters define the collision properties for entities by specifying which groups the object collides with. Assigning a collision filter to an entity automatically places that entity into the collision filter’s group or groups.
+Create a Collision Filter
+Collision filters define the entities that collide with other entities based on group membership. Entities that share the same filter are part of the same group or groups and have the same collision properties. More than one filter can be created for each collision group, however, so not all members of the same collision group necessarily collide with the same other objects.
+The sample project, for example, creates a filter for the cubeGroup, which defines the filter that causes cubes to collide with everything except other cubes:
+    let cubeMask = CollisionGroup.all.subtracting(cubeGroup)
+    let cubeFilter = CollisionFilter(group: cubeGroup,
+                                      mask: cubeMask)
+Note
+Group membership doesn’t have to be exclusive. A CollisionFilter‘s group parameter is an OptionSet, so it can include any combination of defined groups. Any entity that gets assigned a filter will be a member of all of that filter’s groups.
+The sample code project assigns cubeFilter to all the cube entities, which places all of the cube entities into the cubeGroup collision group, like this:
+    cube1.collision?.filter = cubeFilter
+    cube2.collision?.filter = cubeFilter
+    cube3.collision?.filter = cubeFilter
+All cubes are part of the cubeGroup because that is the group assigned to their filter.
+See Also
+_Legacy
+SwiftStrike: Creating a Game with RealityKit
+Create a multiplayer game with ARKit, RealityKit, and Swift using the SwiftStrike app as a guide.
+Creating a Game with Reality Composer
+Design your app’s visual look and behaviors in Reality Composer, and complete the gameplay experience by using custom RealityKit code.
+Creating a game with scene understanding
+Create AR games and experiences that interact with real-world objects on LiDAR-equipped iOS devices.
+Creating a Photogrammetry Command-Line App
+Generate 3D objects from images using RealityKit Object Capture.
+Taking Pictures for 3D Object Capture
+Capture high-quality images with depth and gravity data to use with RealityKit Object Capture.
+Creating an App for Face-Painting in AR
+Combine RealityKit’s face detection with PencilKit to implement virtual face-painting.
+Building an Immersive Experience with RealityKit
+Use systems and postprocessing effects to create a realistic underwater scene.
+WWDC21 Challenge: Framework Freestyle
+An AR experience that randomly selects a programming framework and maps it onto the user’s face.
+Altering RealityKit Rendering with Shader Functions
+Create rendering effects by writing surface shaders and geometry modifiers.
+Implementing Special Rendering Effects with RealityKit Postprocessing
+Implement a variety of postprocessing techniques to alter RealityKit rendering.
+Using object capture assets in RealityKit
+Create a chess game using RealityKit and assets created using Object Capture.
+Current page is Controlling Entity Collisions in RealityKit
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

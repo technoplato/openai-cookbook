@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/swiftui/openimmersivespaceactionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Environment values
+Model data
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+P
+var openImmersiveSpace: OpenImmersiveSpaceAction
+Beta
+Opening an immersive space
+r
+P
+ImmersionStyle
+Beta
+M
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Beta
+S
+ImmersiveSpaceContentBuilder
+Beta
+S
+ImmersiveSpace
+Beta
+Creating an immersive space
+Immersive spaces
+Documentation
+Open Menu
+Swift
+Structure
+OpenImmersiveSpaceAction
+An action that presents an immersive space.
+visionOS 1.0+ Beta
+struct OpenImmersiveSpaceAction
+Overview
+If the targeted immersive space accepts data, the system provides the value that you pass to the action to the space’s content closure.
+Use the openImmersiveSpace environment value to get the instance of this structure for a given Environment. Then call the instance to present a space. You call the instance directly because it defines a callAsFunction(id:) method that Swift calls when you call the instance.
+For example, you can define a button that opens the specified solar system item in a new immersive space:
+@main
+struct SolarSystemApp: App {
+    var body: some Scene {
+        ImmersiveSpace(for: SolarSystem.ID.self) { $solarSystemID in
+            // ...
+        }
+    }
+}
+
+
+struct NewSolarSystemImmersiveSpace: View {
+    var solarSystem: SolarSystem
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+
+
+    var body: some View {
+        Button("Present Solar System In New Immersive Space") {
+            Task {
+                await openImmersiveSpace(value: solarSystem.ID)
+            }
+        }
+    }
+}
+For best performance, use lightweight data for the presentation value. For structured model values that conform to Identifiable, the value’s identifier makes a good presentation value.
+Topics
+Calling the action
+func callAsFunction(id: String) async -> OpenImmersiveSpaceAction.Result
+Presents an immersive space for the scene with the specified identifier.
+func callAsFunction<D>(id: String, value: D) async -> OpenImmersiveSpaceAction.Result
+Presents the immersive space that your app defines for the specified identifier and that handles the type of the presented value.
+func callAsFunction<D>(value: D) async -> OpenImmersiveSpaceAction.Result
+Presents the immersive space that handles the type of the presented value.
+Getting the result
+enum Result
+Represents the result of opening an immersive space.
+Relationships
+Conforms To
+Sendable
+See Also
+Opening an immersive space
+var openImmersiveSpace: OpenImmersiveSpaceAction
+An action that presents an immersive space.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is OpenImmersiveSpaceAction
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

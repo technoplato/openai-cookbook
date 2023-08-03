@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/swiftui/shapestyle/windowbackgroundSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Material
+S
+RadialGradient
+S
+LinearGradient
+S
+EllipticalGradient
+S
+AngularGradient
+Supporting types
+P
+var body: _ShapeView<Rectangle, Self>
+P
+static var fill: FillShapeStyle
+Beta
+P
+static var link: LinkShapeStyle
+Beta
+P
+static var placeholder: PlaceholderTextShapeStyle
+Beta
+P
+static var tint: TintShapeStyle
+P
+static var separator: SeparatorShapeStyle
+P
+static var selection: SelectionShapeStyle
+P
+static var background: BackgroundStyle
+P
+static var foreground: ForegroundStyle
+Documentation
+Open Menu
+Swift
+Type Property
+windowBackground
+A style appropriate for elements that should match the background of their containing window.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+static var windowBackground: WindowBackgroundShapeStyle { get }
+Available when Self is WindowBackgroundShapeStyle.
+Discussion
+On macOS, this has a unique appearance compared to the default ShapeStyle.background. It matches the default background of a window: a wallpaper-tinted light gray in the light appearance and a wallpaper-tinted dark gray in the dark appearance.
+On visionOS, the default glass window background can only be created using glassBackgroundEffect.
+For information about how to use shape styles, see ShapeStyle.
+See Also
+Semantic styles
+static var foreground: ForegroundStyle
+The foreground style in the current context.
+Available when Self is ForegroundStyle.
+static var background: BackgroundStyle
+The background style in the current context.
+Available when Self is BackgroundStyle.
+static var selection: SelectionShapeStyle
+A style used to visually indicate selection following platform conventional colors and behaviors.
+Available when Self is SelectionShapeStyle.
+static var separator: SeparatorShapeStyle
+A style appropriate for foreground separator or border lines.
+Available when Self is SeparatorShapeStyle.
+static var tint: TintShapeStyle
+A style that reflects the current tint color.
+Available when Self is TintShapeStyle.
+static var placeholder: PlaceholderTextShapeStyle
+A style appropriate for placeholder text.
+Available when Self is PlaceholderTextShapeStyle.
+Beta
+static var link: LinkShapeStyle
+A style appropriate for links.
+Available when Self is LinkShapeStyle.
+Beta
+static var fill: FillShapeStyle
+An overlay fill style for filling shapes.
+Available when Self is FillShapeStyle.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is windowBackground
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

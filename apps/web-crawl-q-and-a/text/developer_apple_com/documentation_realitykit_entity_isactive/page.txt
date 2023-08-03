@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/realitykit/entity/isactiveSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func requestOwnership(timeout: TimeInterval, (SynchronizationComponent.OwnershipTransferCompletionResult) -> Void)
+P
+var isOwner: Bool
+S
+SynchronizationComponent
+P
+var synchronization: SynchronizationComponent?
+Synchronizing an Entity Among Peers
+r
+P
+HasTransform
+The Transform Component
+P
+var isEnabledInHierarchy: Bool
+P
+var isEnabled: Bool
+Getting State
+T
+Entity.ID
+P
+var id: UInt64
+M
+func findEntity(named: String) -> Entity?
+P
+var name: String
+P
+var scene: Scene?
+Documentation
+Open Menu
+Swift
+Instance Property
+isActive
+A Boolean that indicates whether the entity is active.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+var isActive: Bool { get }
+Discussion
+The value of this property is true if the entity is anchored in a scene, and it and all of its ancestors are enabled (isEnabled is set to true). RealityKit doesn’t simulate or render inactive entities.
+See Also
+Getting State
+var isEnabled: Bool
+A Boolean that you set to enable or disable the entity and its descendants.
+var isEnabledInHierarchy: Bool
+A Boolean that indicates whether the entity and all of its ancestors are enabled.
+var isAnchored: Bool
+A Boolean that indicates whether the entity is anchored.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is isActive
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

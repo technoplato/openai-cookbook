@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/modelentity/jointtransformsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var physicsMotion: PhysicsMotionComponent?
+Simulating Movement
+r
+P
+HasPhysicsBody
+M
+func resetPhysicsTransform(Transform, recursive: Bool)
+Deprecated
+M
+func resetPhysicsTransform(recursive: Bool)
+M
+func applyImpulse(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+M
+func applyAngularImpulse(SIMD3<Float>, relativeTo: Entity?)
+P
+var jointNames: [String]
+S
+ModelComponent
+P
+var model: ModelComponent?
+Configuring the Model
+M
+init(mesh: MeshResource, materials: [Material], collisionShapes: [ShapeResource], mass: Float)
+M
+init(mesh: MeshResource, materials: [Material], collisionShape: ShapeResource, mass: Float)
+M
+init(mesh: MeshResource, materials: [Material])
+M
+init()
+Documentation
+Open Menu
+Swift
+Instance Property
+jointTransforms
+The relative joint transforms of the model entity.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+var jointTransforms: [Transform] { get set }
+Discussion
+Call jointNames to determine the name and order of the joints.
+Note
+Active animations may override the joint transforms set using this property..
+See Also
+Configuring the Model
+var model: ModelComponent?
+The model component for the entity.
+struct ModelComponent
+A collection of resources that create the visual appearance of an entity.
+var jointNames: [String]
+The names of all the joints in the model entity.
+protocol HasModel
+An interface that provides meshes and materials to define the visual appearance of an entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is jointTransforms
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

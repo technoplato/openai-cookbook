@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/path/offsetby(dx:dy:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AnyShape
+r
+P
+Shape
+r
+P
+ShapeView
+Beta
+Defining shape behavior
+M
+func addRoundedRect(in: CGRect, cornerRadii: RectangleCornerRadii, style: RoundedCornerStyle, transform: CGAffineTransform)
+Instance Methods
+M
+func strokedPath(StrokeStyle) -> Path
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+M
+func applying(CGAffineTransform) -> Path
+Transforming the path
+M
+func closeSubpath()
+M
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+M
+func addRelativeArc(center: CGPoint, radius: CGFloat, startAngle: Angle, delta: Angle, transform: CGAffineTransform)
+M
+func addRects([CGRect], transform: CGAffineTransform)
+M
+func addRect(CGRect, transform: CGAffineTransform)
+M
+func addQuadCurve(to: CGPoint, control: CGPoint)
+Documentation
+Open Menu
+Swift
+Instance Method
+offsetBy(dx:dy:)
+Returns a path constructed by translating all its points.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func offsetBy(
+    dx: CGFloat,
+    dy: CGFloat
+) -> Path
+Parameters
+dx
+The offset to apply in the horizontal axis.
+dy
+The offset to apply in the vertical axis.
+Return Value
+a new copy of the path with the offset applied to all points.
+See Also
+Transforming the path
+func applying(CGAffineTransform) -> Path
+Returns a path constructed by applying the transform to all points of the path.
+func trimmedPath(from: CGFloat, to: CGFloat) -> Path
+Returns a partial copy of the path.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is offsetBy(dx:dy:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

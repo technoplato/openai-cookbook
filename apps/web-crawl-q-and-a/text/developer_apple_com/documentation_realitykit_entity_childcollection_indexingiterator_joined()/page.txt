@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/realitykit/entity/childcollection/indexingiterator/joined()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fill(using: NSCompositingOperation)
+M
+func clip()
+Working with Rectangles
+P
+var publisher: Publishers.Sequence<Self, Never>
+Publishing Changes
+M
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+Accessing Underlying Storage
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Self.Element>]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [ArraySlice<Self.Element>]
+Splitting and Joining Entities
+M
+func shuffled<T>(using: inout T) -> [Self.Element]
+M
+func shuffled() -> [Self.Element]
+M
+func reversed() -> [Self.Element]
+M
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func sorted() -> [Self.Element]
+Documentation
+Open Menu
+Swift
+Instance Method
+joined()
+Returns the elements of this sequence of sequences, concatenated.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func joined() -> FlattenSequence<Self>
+Return Value
+A flattened view of the elements of this sequence of sequences.
+Overview
+In this example, an array of three ranges is flattened so that the elements of each range can be iterated in turn.
+let ranges = [0..<3, 8..<10, 15..<17]
+
+
+// A for-in loop over 'ranges' accesses each range:
+for range in ranges {
+  print(range)
+}
+// Prints "0..<3"
+// Prints "8..<10"
+// Prints "15..<17"
+
+
+// Use 'joined()' to access each element of each range:
+for index in ranges.joined() {
+    print(index, terminator: " ")
+}
+// Prints: "0 1 2 8 9 15 16"
+See Also
+Splitting and Joining Entities
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [ArraySlice<Self.Element>]
+Returns the longest possible subsequences of the sequence, in order, that don’t contain elements satisfying the given predicate. Elements that are used to split the sequence are not returned as part of any subsequence.
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Self.Element>]
+Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element.
+Available when Element conforms to Equatable.
+func joined<Separator>(separator: Separator) -> JoinedSequence<Self>
+Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element.
+func joined(separator: String) -> String
+Returns a new string by concatenating the elements of the sequence, adding the given separator between each element.
+Available when Element conforms to StringProtocol.
+typealias SubSequence
+Available when Elements conforms to Collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is joined()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

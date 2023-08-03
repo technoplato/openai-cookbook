@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/view/animation(_:)-1hc0pSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+M
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+Search modifiers
+M
+func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View
+Deprecated
+M
+func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View
+Deprecated
+M
+func actionSheet<T>(item: Binding<T?>, content: (T) -> ActionSheet) -> some View
+Deprecated
+M
+func actionSheet(isPresented: Binding<Bool>, content: () -> ActionSheet) -> some View
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+M
+func mask<Mask>(Mask) -> some View
+Deprecated
+M
+func accentColor(Color?) -> some View
+Deprecated
+Graphics and rendering modifiers
+M
+func coordinateSpace<T>(name: T) -> some View
+Deprecated
+M
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+Deprecated
+M
+func frame() -> some View
+Deprecated
+Layout modifiers
+M
+func navigationViewStyle<S>(S) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+animation(_:)
+Applies the given animation to all animatable values within this view.
+iOS 13.0–15.0 Deprecated
+iPadOS 13.0–15.0 Deprecated
+macOS 10.15–12.0 Deprecated
+Mac Catalyst 13.0–15.0 Deprecated
+tvOS 13.0–15.0 Deprecated
+watchOS 6.0–8.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func animation(_ animation: Animation?) -> some View
+Deprecated
+Use withAnimation(_:_:) or animation(_:value:) instead.
+Parameters
+animation
+The animation to apply to animatable values within this view.
+Return Value
+A view that wraps this view and applies animation to all animatable values used within the view.
+Discussion
+Use this modifier on leaf views rather than container views. The animation applies to all child views within this view; calling animation(_:) on a container view can lead to unbounded scope.
+See Also
+Graphics and rendering modifiers
+func accentColor(Color?) -> some View
+Sets the accent color for this view and the views it contains.
+Deprecated
+func mask<Mask>(Mask) -> some View
+Masks this view using the alpha channel of the given view.
+Deprecated
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+Clips this view to its bounding frame, with the specified corner radius.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is animation(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

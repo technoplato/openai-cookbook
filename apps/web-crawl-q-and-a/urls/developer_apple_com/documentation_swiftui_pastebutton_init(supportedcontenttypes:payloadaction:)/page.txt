@@ -1,0 +1,149 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func horizontalRadioGroupLayout() -> some View
+M
+func pickerStyle<S>(S) -> some View
+S
+Picker
+Choosing from a set of options
+M
+func toggleStyle<S>(S) -> some View
+S
+Toggle
+S
+Stepper
+init<Payload>(supportedContentTypes: [UTType], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+init<Payload>(supportedTypes: [String], validator: ([NSItemProvider]) -> Payload?, payloadAction: (Payload) -> Void)
+Creating a paste button
+S
+PasteButton
+S
+EditButton
+Creating special-purpose buttons
+S
+ButtonRepeatBehavior
+Beta
+S
+ButtonRole
+S
+ButtonBorderShape
+P
+var buttonRepeatBehavior: ButtonRepeatBehavior
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(supportedContentTypes:payloadAction:)
+Creates a Paste button that accepts specific types of data from the pasteboard.
+iOS 16.0+
+iPadOS 16.0+
+macOS 11.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+@MainActor
+init(
+    supportedContentTypes: [UTType],
+    payloadAction: @escaping ([NSItemProvider]) -> Void
+)
+Parameters
+supportedContentTypes
+The exact uniform type identifiers supported by the button. If the pasteboard doesn’t contain any of the supported types, the button becomes disabled.
+payloadAction
+The handler to call when the user clicks the Paste button and the pasteboard has items that conform to supportedContentTypes. This closure receives an array of item providers that you use to inspect and load the pasteboard data.
+Discussion
+Set the contents of supportedContentTypes in order of your app’s preference for its supported types. The Paste button takes the most-preferred type that the pasteboard source supports and delivers this to the payloadAction closure.
+See Also
+Creating a paste button
+init<T>(payloadType: T.Type, onPaste: ([T]) -> Void)
+Creates an instance that accepts values of the specified type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(supportedContentTypes:payloadAction:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

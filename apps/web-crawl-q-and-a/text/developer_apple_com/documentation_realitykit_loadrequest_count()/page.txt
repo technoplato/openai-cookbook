@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/count()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>
+M
+func prefix(Int) -> Publishers.Output<Self>
+M
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+M
+func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>
+M
+func tryDrop(while: (Self.Output) throws -> Bool) -> Publishers.TryDropWhile<Self>
+M
+func dropFirst(Int) -> Publishers.Drop<Self>
+M
+func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>
+Applying Mathematical Operations on Elements
+M
+func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>
+M
+func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>
+M
+func ignoreOutput() -> Publishers.IgnoreOutput<Self>
+M
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+M
+func collect(Int) -> Publishers.CollectByCount<Self>
+M
+func collect() -> Publishers.Collect<Self>
+Reducing Elements
+Documentation
+Open Menu
+Swift
+Instance Method
+count()
+Publishes the number of elements received from the upstream publisher.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func count() -> Publishers.Count<Self>
+Return Value
+A publisher that consumes all elements until the upstream publisher finishes, then emits a single value with the total number of elements received.
+Discussion
+Use Publisher/count() to determine the number of elements received from the upstream publisher before it completes:
+let numbers = (0...10)
+cancellable = numbers.publisher
+    .count()
+    .sink { print("\($0)") }
+
+
+// Prints: "11"
+See Also
+Applying Mathematical Operations on Elements
+func max() -> Publishers.Comparison<Self>
+Publishes the maximum value received from the upstream publisher, after it finishes.
+Available when Output conforms to Comparable.
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+Publishes the maximum value received from the upstream publisher, using the provided ordering closure.
+func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+Publishes the maximum value received from the upstream publisher, using the provided error-throwing closure to order the items.
+func min() -> Publishers.Comparison<Self>
+Publishes the minimum value received from the upstream publisher, after it finishes.
+Available when Output conforms to Comparable.
+func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+Publishes the minimum value received from the upstream publisher, after it finishes.
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+Publishes the minimum value received from the upstream publisher, using the provided error-throwing closure to order the items.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is count()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

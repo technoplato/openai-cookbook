@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/realityview/badge(_:)-8lgouSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func confirmationDialog<A>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+M
+func confirmationDialog<A>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+M
+func confirmationDialog<S, A>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View
+M
+func compositingGroup() -> some View
+M
+func colorScheme(ColorScheme) -> some View
+M
+func colorMultiply(Color) -> some View
+M
+func colorInvert() -> some View
+M
+func badge(Int) -> some View
+M
+func badge(Text?) -> some View
+M
+func badge(LocalizedStringKey?) -> some View
+M
+func backgroundStyle<S>(S) -> some View
+M
+func backgroundPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View
+M
+func backgroundPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+badge(_:)
+Generates a badge for the view from a string.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func badge<S>(_ label: S?) -> some View where S : StringProtocol
+Parameters
+label
+An optional string to display as a badge. Set the value to nil to hide the badge.
+Discussion
+Use a badge to convey optional, supplementary information about a view. Keep the contents of the badge as short as possible. Badges appear only in list rows, tab bars, and menus.
+This modifier creates a Text view on your behalf, and treats the localized key similar to Text/init(_:)-9d1g4. The following example shows a list with a “Default” badge on one of its rows.
+NavigationView {
+    List(servers) { server in
+        Text(server.name)
+            .badge(server.defaultString())
+    }
+    .navigationTitle("Servers")
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is badge(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

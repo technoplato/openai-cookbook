@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/hastransform/setscale(_:relativeto:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func convert(position: SIMD3<Float>, to: Entity?) -> SIMD3<Float>
+M
+func convert(position: SIMD3<Float>, from: Entity?) -> SIMD3<Float>
+Converting Values Between Coordinate Spaces
+M
+func move(to: float4x4, relativeTo: Entity?, duration: TimeInterval, timingFunction: AnimationTimingFunction) -> AnimationPlaybackController
+M
+func move(to: Transform, relativeTo: Entity?, duration: TimeInterval, timingFunction: AnimationTimingFunction) -> AnimationPlaybackController
+Animating an Entity
+M
+func look(at: SIMD3<Float>, from: SIMD3<Float>, upVector: SIMD3<Float>, relativeTo: Entity?)
+M
+func scale(relativeTo: Entity?) -> SIMD3<Float>
+P
+var scale: SIMD3<Float>
+Scaling an Entity
+S
+Transform
+P
+var transform: Transform
+Accessing the Component
+r
+P
+HasTransform
+The Transform Component
+Documentation
+Open Menu
+Swift
+Instance Method
+setScale(_:relativeTo:)
+Sets the scale factor of the entity relative to the given reference entity.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+func setScale(
+    _ scale: SIMD3<Float>,
+    relativeTo referenceEntity: Entity?
+)
+Parameters
+scale
+A new scale factor, relative to referenceEntity.
+referenceEntity
+The entity that defines a frame of reference. Set this to nil to indicate world space.
+See Also
+Scaling an Entity
+var scale: SIMD3<Float>
+The scale of the entity relative to its parent.
+func scale(relativeTo: Entity?) -> SIMD3<Float>
+Gets the scale of an entity relative to the given entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is setScale(_:relativeTo:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

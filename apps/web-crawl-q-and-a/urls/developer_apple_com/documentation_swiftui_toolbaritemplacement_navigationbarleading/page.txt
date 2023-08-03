@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/toolbaritemplacement/navigationbarleadingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Configuring the toolbar title display mode
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+M
+init<ID>(id: ID)
+Deprecated
+Deprecated symbols
+M
+static func accessoryBar<ID>(id: ID) -> ToolbarItemPlacement
+P
+static let keyboard: ToolbarItemPlacement
+P
+static let bottomOrnament: ToolbarItemPlacement
+Beta
+P
+static let bottomBar: ToolbarItemPlacement
+P
+static var topBarTrailing: ToolbarItemPlacement
+P
+static var topBarLeading: ToolbarItemPlacement
+Documentation
+Open Menu
+Swift
+Type Property
+navigationBarLeading
+Places the item in the leading edge of the navigation bar.
+iOS 14.0–17.0 Deprecated
+iPadOS 14.0–17.0 Deprecated
+Mac Catalyst 14.0–17.0 Deprecated
+tvOS 14.0–17.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+static let navigationBarLeading: ToolbarItemPlacement
+Deprecated
+Use topBarLeading instead.
+See Also
+Deprecated symbols
+init<ID>(id: ID)
+Creates a custom accessory bar item placement.
+Deprecated
+static let navigationBarTrailing: ToolbarItemPlacement
+Places the item in the trailing edge of the navigation bar.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is navigationBarLeading
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

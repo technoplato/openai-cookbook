@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/basecolor-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PhysicallyBasedMaterial.SheenColor
+P
+var sheen: PhysicallyBasedMaterial.SheenColor?
+S
+PhysicallyBasedMaterial.Specular
+P
+var specular: PhysicallyBasedMaterial.Specular
+Creating Highlights
+S
+PhysicallyBasedMaterial.AmbientOcclusion
+P
+var ambientOcclusion: PhysicallyBasedMaterial.AmbientOcclusion
+Setting the Entity’s Base Color
+M
+init()
+Creating a Physically Based Material
+S
+PhysicallyBasedMaterial
+Applying Realistic Material and Lighting Effects to Entities
+Realistic materials
+S
+OcclusionMaterial
+Object Occlusion
+Documentation
+Open Menu
+Swift
+Instance Property
+baseColor
+The color of an entity unmodified by lighting.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var baseColor: PhysicallyBasedMaterial.BaseColor { get set }
+Discussion
+The base color of an entity is either a solid color or a UV-mapped image texture. This property represents the color of the entity before RealityKit applies any lighting or rendering calculations.
+To determine the appearance of the entity, RealityKit modifies the entity’s base color using its material properties and the light sources in the scene.
+You can define an entity’s base color using a CGColor, a UV-mapped image texture, or both. If you only provide a color, RealityKit uses that as the base color for the entire entity. If you specify only an image texture, it applies that texture as the base color of the entity. If you provide both a color and a texture, RealityKit tints the image texture using the color.
+Here’s an example of using a single color to specify base color:
+var material = PhysicallyBasedMaterial()
+material.baseColor = PhysicallyBasedMaterial.BaseColor(tint:.red)
+The following example demonstrates how to use an image to specify base color:
+var material = PhysicallyBasedMaterial()
+
+
+    // Load entity_basecolor.png from the app's bundle.
+    if let baseResource = try? TextureResource.load(named: "entity_basecolor") {
+        // Create a material parameter and assign it.
+        let baseColor = MaterialParameters.Texture(baseResource)
+        material.baseColor = PhysicallyBasedMaterial.BaseColor(texture:baseColor)
+    }
+See Also
+Setting the Entity’s Base Color
+struct BaseColor
+An object that defines an entity’s base color.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is baseColor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,196 @@
+https://developer.apple.com/documentation/swiftui/view/transaction(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Event handling
+Scroll views
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+func withTransaction<R, V>(WritableKeyPath<Transaction, V>, V, () throws -> R) rethrows -> R
+func withTransaction<Result>(Transaction, () throws -> Result) rethrows -> Result
+Moving an animation to another view
+S
+PlaceholderContentView
+Beta
+S
+ContentTransition
+P
+var contentTransitionAddsDrawingGroup: Bool
+P
+var contentTransition: ContentTransition
+M
+func contentTransition(ContentTransition) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+transaction(_:)
+Applies the given transaction mutation function to all animations used within the view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func transaction(_ transform: @escaping (inout Transaction) -> Void) -> some View
+Parameters
+transform
+The transformation to apply to transactions within this view.
+Return Value
+A view that wraps this view and applies a transformation to all transactions used within the view.
+Discussion
+Use this modifier to change or replace the animation used in a view. Consider three identical animations controlled by a button that executes all three animations simultaneously:
+The first animation rotates the “Rotation” Text view by 360 degrees.
+The second uses the transaction(_:) modifier to change the animation by adding a delay to the start of the animation by two seconds and then increases the rotational speed of the “Rotation\nModified” Text view animation by a factor of 2.
+The third animation uses the transaction(_:) modifier to replace the rotation animation affecting the “Animation\nReplaced” Text view with a spring animation.
+The following code implements these animations:
+struct TransactionExample: View {
+    @State private var flag = false
+
+
+    var body: some View {
+        VStack(spacing: 50) {
+            HStack(spacing: 30) {
+                Text("Rotation")
+                    .rotationEffect(Angle(degrees:
+                                            self.flag ? 360 : 0))
+
+
+                Text("Rotation\nModified")
+                    .rotationEffect(Angle(degrees:
+                                            self.flag ? 360 : 0))
+                    .transaction { view in
+                        view.animation =
+                            view.animation?.delay(2.0).speed(2)
+                    }
+
+
+                Text("Animation\nReplaced")
+                    .rotationEffect(Angle(degrees:
+                                            self.flag ? 360 : 0))
+                    .transaction { view in
+                        view.animation = .interactiveSpring(
+                            response: 0.60,
+                            dampingFraction: 0.20,
+                            blendDuration: 0.25)
+                    }
+            }
+
+
+            Button("Animate") {
+                withAnimation(.easeIn(duration: 2.0)) {
+                    self.flag.toggle()
+                }
+            }
+        }
+    }
+}
+Use this modifier on leaf views such as Image or Button rather than container views such as VStack or HStack. The transformation applies to all child views within this view; calling transaction(_:) on a container view can lead to unbounded scope of execution depending on the depth of the view hierarchy.
+See Also
+Moving an animation to another view
+func withTransaction<Result>(Transaction, () throws -> Result) rethrows -> Result
+Executes a closure with the specified transaction and returns the result.
+func withTransaction<R, V>(WritableKeyPath<Transaction, V>, V, () throws -> R) rethrows -> R
+Executes a closure with the specified transaction key path and value and returns the result.
+func transaction(value: some Equatable, (inout Transaction) -> Void) -> some View
+Applies the given transaction mutation function to all animations used within the view.
+Beta
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given transaction mutation function to all animations used within the body closure.
+Beta
+struct Transaction
+The context of the current state-processing update.
+protocol TransactionKey
+A key for accessing values in a transaction.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is transaction(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

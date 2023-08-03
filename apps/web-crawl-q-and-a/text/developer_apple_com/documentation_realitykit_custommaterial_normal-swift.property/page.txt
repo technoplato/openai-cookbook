@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/normal-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+Modifying Texture Coordinates
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+Using a Normal Map
+S
+CustomMaterial.CustomMaterialTexture
+S
+CustomMaterial.Custom
+P
+var custom: CustomMaterial.Custom
+Using Custom Values
+S
+CustomMaterial.Metallic
+P
+var metallic: CustomMaterial.Metallic
+Specifying Metallic Reflections
+Documentation
+Open Menu
+Swift
+Instance Property
+normal
+A texture map that stores fine surface details for the entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var normal: CustomMaterial.Normal { get set }
+Discussion
+Normal mapping is a real-time rendering technique that captures fine surface details for a model by using a texture instead of increasing the number of polygons in the model. It works by storing surface normals, which are vectors perpendicular to the surface of the model, from a much higher-resolution version of the same 3D object. A normal map stores each vector in the image by storing the vectors’ X, Y, and Z values as the R, G, and B components of the corresponding pixel in the UV-mapped image.
+For custom materials, normal is only used when lightingModel is CustomMaterial.LightingModel.lit or CustomMaterial.LightingModel.clearcoat and its surface shader calls params.surface().set_normal(). The normal map texture is still available to your surface shader function when using CustomMaterial.LightingModel.unlit.
+The following code loads a normal map texture and uses it to set this property:
+if let normalResource = try? TextureResource.load(named:"entity_normals") {
+    let normalMap = MaterialParameters.Texture(normalResource)
+    material.normal = .init(texture:normalMap)
+}
+The following Metal code shows how to sample the normal map texture in a surface shader and use it to set the fragment’s surface normal:
+    // Retrieve the entity's texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Entities loaded from USDZ or .reality files have texture coordinates
+    // with a flipped y-axis. This adjusts for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample the normal map to get the surface normal for this fragment.
+    auto tex = params.textures();
+    float3 color = (float3)tex.normal().sample(textureSampler, uv).rgb;
+
+
+    // Set the fragment's surface normal using the sampled value.
+    params.surface().set_normal(color);
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+See Also
+Using a Normal Map
+struct Normal
+An object that stores fine surface details for an entity in an image texture.
+Current page is normal
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

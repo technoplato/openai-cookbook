@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/swiftui/anchor/sourceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+S
+UnitPoint3D
+Beta
+S
+UnitPoint
+S
+Angle
+E
+Axis
+Accessing geometric constructs
+S
+ShaderLibrary
+Beta
+S
+ShaderFunction
+Beta
+S
+Shader
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+Anchor.Source
+A type-erased geometry value that produces an anchored value of a given type.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen
+struct Source
+Overview
+SwiftUI passes anchored geometry values around the view tree via preference keys. It then converts them back into the local coordinate space using a GeometryProxy value.
+Topics
+Getting point anchor sources
+static func point(CGPoint) -> Anchor<Value>.Source
+Available when Value is CGPoint.
+static func unitPoint(UnitPoint) -> Anchor<Value>.Source
+Available when Value is CGPoint.
+Getting rectangle anchor sources
+static func rect(CGRect) -> Anchor<Value>.Source
+Returns an anchor source rect defined by r in the current view.
+Available when Value is CGRect.
+static var bounds: Anchor<CGRect>.Source
+An anchor source rect defined as the entire bounding rect of the current view.
+Available when Value is CGRect.
+Getting top anchor sources
+static var topLeading: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+static var top: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+static var topTrailing: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+Getting middle anchor sources
+static var leading: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+static var center: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+static var trailing: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+Getting bottom anchor sources
+static var bottomTrailing: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+static var bottom: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+static var bottomLeading: Anchor<CGPoint>.Source
+Available when Value is CGPoint.
+Creating an anchor source
+init<T>(Anchor<T>.Source?)
+init<T>([Anchor<T>.Source])
+Relationships
+Conforms To
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Anchor.Source
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

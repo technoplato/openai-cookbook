@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/gaugestyle/accessorylinearSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+Styling views that display text
+S
+ProgressViewStyleConfiguration
+r
+P
+ProgressViewStyle
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+P
+static var linearCapacity: LinearCapacityGaugeStyle
+P
+static var linear: LinearGaugeStyle
+Getting linear gauge styles
+P
+static var accessoryCircularCapacity: AccessoryCircularCapacityGaugeStyle
+P
+static var accessoryCircular: AccessoryCircularGaugeStyle
+P
+static var circular: CircularGaugeStyle
+Getting circular gauge styles
+P
+static var automatic: DefaultGaugeStyle
+Documentation
+Open Menu
+Swift
+Type Property
+accessoryLinear
+A gauge style that displays bar with a marker that appears at a point along the bar to indicate the gauge’s current value.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static var accessoryLinear: AccessoryLinearGaugeStyle { get }
+Available when Self is AccessoryLinearGaugeStyle.
+Discussion
+Apply this style to a Gauge or to a view hierarchy that contains gauges using the gaugeStyle(_:) modifier:
+Gauge(value: batteryLevel, in: 0...100) {
+    Text("Battery Level")
+}
+.gaugeStyle(.accessoryLinear)
+If you provide minimumValueLabel and maximumValueLabel parameters when you create the gauge, they appear on leading and trailing edges of the bar, respectively. Otherwise, the gauge displays the currentValueLabel value on the leading edge.
+See Also
+Getting linear gauge styles
+static var linear: LinearGaugeStyle
+A gauge style that displays a bar with a marker that appears at a point along the bar to indicate the gauge’s current value.
+Available when Self is LinearGaugeStyle.
+static var linearCapacity: LinearCapacityGaugeStyle
+A gauge style that displays a bar that fills from leading to trailing edges as the gauge’s current value increases.
+Available when Self is LinearCapacityGaugeStyle.
+static var accessoryLinearCapacity: AccessoryLinearCapacityGaugeStyle
+A gauge style that displays bar that fills from leading to trailing edges as the gauge’s current value increases.
+Available when Self is AccessoryLinearCapacityGaugeStyle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessoryLinear
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

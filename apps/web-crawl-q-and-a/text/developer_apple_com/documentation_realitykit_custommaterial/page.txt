@@ -1,0 +1,246 @@
+https://developer.apple.com/documentation/realitykit/custommaterialSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var custom: CustomMaterial.Custom
+Using Custom Values
+S
+CustomMaterial.Metallic
+P
+var metallic: CustomMaterial.Metallic
+Specifying Metallic Reflections
+S
+CustomMaterial.Roughness
+P
+var roughness: CustomMaterial.Roughness
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?) throws
+S
+PhysicallyBasedMaterial
+S
+SimpleMaterial
+P
+var materials: [Material]
+Configuring the Material
+r
+P
+MeshBufferSemantic
+r
+P
+MeshBufferContainer
+S
+MeshBuffer
+C
+MeshResource
+Documentation
+Open Menu
+Swift
+Structure
+CustomMaterial
+A material that works with custom Metal shader functions.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+struct CustomMaterial
+Overview
+Custom, or programmable, materials allow you to leverage RealityKit’s existing shader pipeline to render physically based or unlit materials that support custom Metal shader functions. These functions modify how RealityKit renders an entity. Custom materials support two different types of custom Metal shader functions: geometry modifiers and surface shaders.
+Use a _surface shader _to calculate or specify all the material attributes that RealityKit uses to render your entity, such as baseColor, normal, and roughness. A geometry modifier can offset the position of an entity’s vertices to change the size and shape of an entity. It can also change other per-vertex data, such as vertex color and UV texture coordinates, which define how RealityKit maps textures on to the model.
+Important
+For the Metal API documentation for custom material shader functions, see the Metal RealityKit APIs PDF.
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+Topics
+Creating Custom Materials
+init(from: Material, geometryModifier: CustomMaterial.GeometryModifier) throws
+Creates a custom material from an existing material and a geometry modifier.
+init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?) throws
+Creates a custom material from an existing material, surface shader, and geometry modifier.
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+Creates a custom material from a lighting model, surface shader, and geometry modifier.
+Setting the Lighting Model
+var lightingModel: CustomMaterial.LightingModel
+The lighting model that the material uses.
+enum LightingModel
+An object that defines how the framework renders a custom material.
+Accessing Shader Functions
+struct SurfaceShader
+The custom material’s surface shader function.
+struct GeometryModifier
+The custom material’s optional shader function that can manipulate an entity’s vertex data.
+Specifying the Entity’s Base Color
+var baseColor: CustomMaterial.BaseColor
+The color of an entity unmodified by lighting.
+struct BaseColor
+An object that defines an entity’s base color.
+Specifying Entity Roughness
+var roughness: CustomMaterial.Roughness
+The amount the surface of the 3D object scatters reflected light.
+struct Roughness
+An object that defines how the surface of an entity scatters the light it reflects.
+Specifying Metallic Reflections
+var metallic: CustomMaterial.Metallic
+The reflectiveness of an entity.
+struct Metallic
+An object that defines an entity’s reflectiveness.
+Using Custom Values
+var custom: CustomMaterial.Custom
+User-defined properties for the material’s shader functions.
+struct Custom
+An object that defines the custom properties for the material.
+struct CustomMaterialTexture
+A texture object that you use to create custom materials.
+Using a Normal Map
+var normal: CustomMaterial.Normal
+A texture map that stores fine surface details for the entity.
+struct Normal
+An object that stores fine surface details for an entity in an image texture.
+Adding Light Emission
+var emissiveColor: CustomMaterial.EmissiveColor
+The color of light this material emits.
+struct EmissiveColor
+An object that defines the color of the light an entity emits.
+Handling Entity Transparency
+var opacityThreshold: Float?
+The minimum opacity value to treat as fully opaque.
+var blending: CustomMaterial.Blending
+The transparency of an entity.
+enum Blending
+An object that specifies the transparency of an entity.
+struct Opacity
+An object that defines the transparency options for a custom material.
+Using Ambient Occlusion
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+The ambient light exposure for a material.
+struct AmbientOcclusion
+An object that defines an entity’s exposure to ambient light.
+Creating Highlights
+var specular: CustomMaterial.Specular
+The bright highlights to apply to the entity.
+struct Specular
+An object that defines the specular highlights of an entity.
+var clearcoat: CustomMaterial.Clearcoat
+The transparent highlights that simulate a clear, shiny coating on an entity.
+struct Clearcoat
+An object that defines the intensity of an entity’s clear, shiny coating.
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+The degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+struct ClearcoatRoughness
+An object that defines the degree to which an entity’s clear, shiny coating scatters light to create soft highlights.
+Modifying Texture Coordinates
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+A two-dimensional transformation RealityKit applies to the entity’s primary texture coordinates.
+var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+A two-dimensional transformation RealityKit applies to the entity’s secondary texture coordinates.
+struct TextureCoordinateTransform
+An object that defines a transformation the framework applies to a material’s UV-mapped textures.
+typealias TextureCoordinateTransform
+The object type that custom material use to hold UV texture coordinates.
+Culling Unneeded Polygons
+var faceCulling: CustomMaterial.FaceCulling
+A process in which the system specifies polygons to remove before rendering a scene.
+enum FaceCulling
+An object that defines how the system removes polygons before rendering a scene.
+typealias FaceCulling
+The type of object used to control the removal of polygons that aren’t visible to the user.
+Defining Material Parameter Types
+typealias Parameters
+The parameter type that custom materials uses for properties the framework passes to shader functions.
+typealias Texture
+The object type that custom materials use to hold texture properties.
+enum CustomMaterialError
+Errors generated when loading custom material functions.
+Default Implementations
+API Reference
+Material Implementations
+Relationships
+Conforms To
+Material
+See Also
+Custom Materials and Shader Functions
+Modifying RealityKit Rendering Using Custom Materials
+Write Metal shader functions to implement custom rendering effects.
+Current page is CustomMaterial
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

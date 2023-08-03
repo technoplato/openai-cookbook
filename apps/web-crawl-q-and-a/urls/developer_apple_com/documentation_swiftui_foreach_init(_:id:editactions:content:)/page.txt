@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/foreach/init(_:id:editactions:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func listSectionSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+M
+func listRowSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View
+Configuring separators
+P
+var defaultMinListRowHeight: CGFloat
+S
+ListItemTint
+M
+func listItemTint(ListItemTint?) -> some View
+M
+func listItemTint(Color?) -> some View
+init<C, R>(Binding<C>, id: KeyPath<C.Element, ID>, editActions: EditActions<C>, content: (Binding<C.Element>) -> R)
+M
+init<C, R>(Binding<C>, editActions: EditActions<C>, content: (Binding<C.Element>) -> R)
+Creating editable content
+M
+init(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+M
+init(Data, content: (Data.Element) -> Content)
+Creating chart content
+M
+init<V>(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)
+M
+init<V>(Data, content: (Data.Element) -> Content)
+M
+init<V>(Range<Int>, content: (Int) -> Content)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:id:editActions:content:)
+Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<C, R>(
+    _ data: Binding<C>,
+    id: KeyPath<C.Element, ID>,
+    editActions: EditActions<C>,
+    @ViewBuilder content: @escaping (Binding<C.Element>) -> R
+) where Data == IndexedIdentifierCollection<C, ID>, Content == EditableCollectionContent<R, C>, C : MutableCollection, C : RandomAccessCollection, R : View, C.Index : Hashable
+Available when Data conforms to RandomAccessCollection and ID conforms to Hashable.
+Parameters
+data
+The identified data that the ForEach instance uses to create views dynamically and can be edited by the user.
+id
+The key path to the provided data’s identifier.
+editActions
+The edit actions that are synthesized on data.
+content
+The view builder that creates views dynamically.
+Discussion
+It’s important that the id of a data element doesn’t change unless you replace the data element with a new data element that has a new identity. If the id of a data element changes, the content view generated from that data element loses any current state and animations.
+When placed inside a List the edit actions (like delete or move) can be automatically synthesized by specifying an appropriate EditActions.
+The following example shows a list of recipes whose elements can be deleted and reordered:
+List {
+    ForEach($recipes, editActions: [.delete, .move]) { $recipe in
+        RecipeCell($recipe)
+    }
+}
+Use deleteDisabled(_:) and moveDisabled(_:) to disable respectively delete or move actions on a per-row basis.
+The following example shows a list of recipes whose elements can be deleted only if they satisfy a condition:
+List {
+    ForEach($recipes, editActions: .delete) { $recipe in
+        RecipeCell($recipe)
+            .deleteDisabled(recipe.isFromMom)
+    }
+}
+Explicit DynamicViewContent.onDelete(perform:), DynamicViewContent.onMove(perform:), or View.swipeActions(edge:allowsFullSwipe:content:) modifiers will override any synthesized actions. Use this modifier if you need fine-grain control on how mutations are applied to the data driving the ForEach. For example, if you need to execute side effects or call into your existing model code.
+See Also
+Creating editable content
+init<C, R>(Binding<C>, editActions: EditActions<C>, content: (Binding<C.Element>) -> R)
+Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+Available when Data conforms to RandomAccessCollection and ID conforms to Hashable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:id:editActions:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

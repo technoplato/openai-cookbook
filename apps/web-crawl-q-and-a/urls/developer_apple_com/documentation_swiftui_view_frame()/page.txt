@@ -1,0 +1,157 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func actionSheet(isPresented: Binding<Bool>, content: () -> ActionSheet) -> some View
+Deprecated
+View presentation modifiers
+M
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+Deprecated
+M
+func focusable(Bool, onFocusChange: (Bool) -> Void) -> some View
+Deprecated
+M
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Deprecated
+M
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Deprecated
+M
+func onDrop(of: [String], delegate: DropDelegate) -> some View
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Layout modifiers
+M
+func navigationViewStyle<S>(S) -> some View
+Deprecated
+M
+func menuButtonStyle<S>(S) -> some View
+Deprecated
+Style modifiers
+M
+func contextMenu<MenuItems>(ContextMenu<MenuItems>?) -> some View
+Deprecated
+M
+func statusBar(hidden: Bool) -> some View
+Deprecated
+M
+func navigationBarHidden(Bool) -> some View
+Deprecated
+M
+func navigationBarItems<T>(trailing: T) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+frame()
+Positions this view within an invisible frame.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func frame() -> some View
+Deprecated
+Use frame(width:height:alignment:) or frame(minWidth:idealWidth:maxWidth:minHeight:idealHeight:maxHeight:alignment:) instead.
+See Also
+Layout modifiers
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+Changes the view’s proposed area to extend outside the screen’s safe areas.
+Deprecated
+func coordinateSpace<T>(name: T) -> some View
+Assigns a name to the view’s coordinate space, so other code can operate on dimensions like points and sizes relative to the named space.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is frame()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

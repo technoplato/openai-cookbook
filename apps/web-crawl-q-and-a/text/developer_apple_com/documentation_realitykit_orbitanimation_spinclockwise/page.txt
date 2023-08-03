@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/realitykit/orbitanimation/spinclockwiseSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+BlendTreeNode
+S
+BlendTreeAnimation
+AnimationDefinition Implementations
+Default Implementations
+M
+func repeatingForever() -> Self
+M
+func repeated(count: Int) -> Self
+M
+func repeated(count: TimeInterval) -> Self
+P
+var rotationCount: Float
+P
+var blendLayer: Int32
+P
+var bindTarget: BindTarget
+P
+var name: String
+P
+var axis: SIMD3<Float>
+P
+var startTransform: Transform
+Configuring the Animation
+M
+init(name: String, duration: TimeInterval, axis: SIMD3<Float>, startTransform: Transform, spinClockwise: Bool, orientToPath: Bool, rotationCount: Float, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, isAdditive: Bool, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)
+Documentation
+Open Menu
+Swift
+Instance Property
+spinClockwise
+A Boolean value that indicates whether the object orbits the center point in the clockwise direction.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var spinClockwise: Bool { get set }
+Discussion
+The default value is true, which indicates that the rotation occurs in the clockwise direction. Set the value to false to cause the object to orbit the center point counterclockwise.
+See Also
+Configuring the Animation
+var startTransform: Transform
+The pose of the orbiting object at the start of the animation.
+var axis: SIMD3<Float>
+A 3D vector that points in the direction of the axis around which to rotate.
+var name: String
+A textual name for the animation.
+var bindTarget: BindTarget
+A textual name that identifies the particular property that animates.
+var blendLayer: Int32
+The order in which the framework composites the animation.
+var rotationCount: Float
+The number of times to rotate the target entity before stopping.
+var orientToPath: Bool
+A Boolean value that indicates whether the orbiting object updates its orientation during the animation to orient itself along the rotation path.
+var additive: Bool
+A Boolean value that indicates whether the animation builds on the current state of the target entity or resets the state before running.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is spinClockwise
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

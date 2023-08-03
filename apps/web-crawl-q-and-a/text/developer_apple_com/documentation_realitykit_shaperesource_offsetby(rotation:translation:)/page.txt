@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/shaperesource/offsetby(rotation:translation:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func generateConvex(from: MeshResource) async throws -> ShapeResource
+M
+static func generateConvex(from: [SIMD3<Float>]) async throws -> ShapeResource
+Type Methods
+P
+var bounds: BoundingBox
+Instance Properties
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+M
+func offsetBy(translation: SIMD3<Float>) -> ShapeResource
+M
+func offsetBy(rotation: simd_quatf) -> ShapeResource
+Transforming a Shape
+C
+ShapeResource
+P
+var shapes: [ShapeResource]
+Setting Collision Shapes
+S
+CollisionFilter
+P
+var filter: CollisionFilter
+Documentation
+Open Menu
+Swift
+Instance Method
+offsetBy(rotation:translation:)
+Creates a new shape resource by applying a rotation and a translation.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+func offsetBy(
+    rotation: simd_quatf = simd_quatf(ix: 0, iy: 0, iz: 0, r: 1),
+    translation: SIMD3<Float> = SIMD3<Float>()
+) -> ShapeResource
+Parameters
+rotation
+The rotation to apply to the existing shape resource.
+Return Value
+The transformed resource.
+Discussion
+translation: The translation to apply to the existing shape resource.
+See Also
+Transforming a Shape
+func offsetBy(rotation: simd_quatf) -> ShapeResource
+Creates a new shape resource by applying a rotation.
+func offsetBy(translation: SIMD3<Float>) -> ShapeResource
+Creates a new shape resource by applying a translation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is offsetBy(rotation:translation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

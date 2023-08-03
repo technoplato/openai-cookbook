@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/realitykit/entity/childcollection/dropfirst(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+Describing a Collection
+P
+var description: String
+Counting Entities
+P
+var count: Int
+P
+var isEmpty: Bool
+Excluding Entities
+M
+func index(Self.Index, offsetBy: Int) -> Self.Index
+M
+func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?
+M
+func index(after: Int) -> Int
+M
+func index(of: Self.Element) -> Self.Index?
+Publishing Changes
+P
+var publisher: Publishers.Sequence<Self, Never>
+Instance Methods
+Documentation
+Open Menu
+Swift
+Instance Method
+dropFirst(_:)
+Returns a subsequence containing all but the given number of initial elements.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func dropFirst(_ k: Int = 1) -> Self.SubSequence
+Parameters
+k
+The number of elements to drop from the beginning of the collection. k must be greater than or equal to zero.
+Return Value
+A subsequence starting after the specified number of elements.
+Overview
+If the number of elements to drop exceeds the number of elements in the collection, the result is an empty subsequence.
+let numbers = [1, 2, 3, 4, 5]
+print(numbers.dropFirst(2))
+// Prints "[3, 4, 5]"
+print(numbers.dropFirst(10))
+// Prints "[]"
+Complexity: O(1) if the collection conforms to RandomAccessCollection; otherwise, O(k), where k is the number of elements to drop from the beginning of the collection.
+See Also
+Excluding Entities
+func dropLast(Int) -> Self.SubSequence
+Returns a subsequence containing all but the specified number of final elements.
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is dropFirst(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

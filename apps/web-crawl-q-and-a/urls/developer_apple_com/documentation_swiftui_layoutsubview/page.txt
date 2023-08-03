@@ -1,0 +1,158 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+VStackLayout
+S
+HStackLayout
+S
+AnyLayout
+Transitioning between layout types
+r
+P
+LayoutValueKey
+M
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+Associating values with views in a custom layout
+r
+P
+Layout
+Composing custom layouts with SwiftUI
+Creating a custom layout container
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Documentation
+Open Menu
+Swift
+Structure
+LayoutSubview
+A proxy that represents one subview of a layout.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct LayoutSubview
+Overview
+This type acts as a proxy for a view that your custom layout container places in the user interface. Layout protocol methods receive a LayoutSubviews collection that contains exactly one proxy for each of the subviews arranged by your container.
+Use a proxy to get information about the associated subview, like its dimensions, layout priority, or custom layout values. You also use the proxy to tell its corresponding subview where to appear by calling the proxy’s place(at:anchor:proposal:) method. Do this once for each subview from your implementation of the layout’s placeSubviews(in:proposal:subviews:cache:) method.
+You can read custom layout values associated with a subview by using the property’s key as an index on the subview. For more information about defining, setting, and reading custom values, see LayoutValueKey.
+Topics
+Placing the subview
+func place(at: CGPoint, anchor: UnitPoint, proposal: ProposedViewSize)
+Assigns a position and proposed size to the subview.
+Getting subview characteristics
+func dimensions(in: ProposedViewSize) -> ViewDimensions
+Asks the subview for its dimensions and alignment guides.
+func sizeThatFits(ProposedViewSize) -> CGSize
+Asks the subview for its size.
+var spacing: ViewSpacing
+The subviews’s preferred spacing values.
+var priority: Double
+The layout priority of the subview.
+Getting custom values
+subscript<K>(K.Type) -> K.Value
+Gets the value for the subview that’s associated with the specified key.
+Relationships
+Conforms To
+Equatable
+Sendable
+See Also
+Creating a custom layout container
+protocol Layout
+A type that defines the geometry of a collection of views.
+struct LayoutSubviews
+A collection of proxy values that represent the subviews of a layout view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is LayoutSubview
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

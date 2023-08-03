@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/realitykit/textureresource/format/normalencodingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func != (Self, Self) -> Bool
+static func == (MaterialColorParameter, MaterialColorParameter) -> Bool
+Comparing Material Color Parameters
+Equatable Implementations
+Default Implementations
+M
+convenience init(named: String, in: Bundle?, options: TextureResource.CreateOptions) async throws
+Beta
+M
+convenience init(named: String, in: Bundle?) async throws
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) async throws
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) throws
+convenience init(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) async throws
+E
+TextureResource.Format.ColorSpace
+Enumerations
+M
+static func raw(pixelFormat: MTLPixelFormat) -> TextureResource.Format
+M
+static func normal(TextureResource.Format.NormalEncoding, pixelFormat: MTLPixelFormat) -> TextureResource.Format
+M
+static func color(TextureResource.Format.ColorSpace, pixelFormat: MTLPixelFormat) -> TextureResource.Format
+Type Methods
+S
+TextureResource.Format
+Beta
+S
+TextureResource.Dimensions2D
+Beta
+Documentation
+Open Menu
+Swift
+Enumeration
+TextureResource.Format.NormalEncoding
+visionOS 1.0+ Beta
+enum NormalEncoding
+Topics
+Enumeration Cases
+case wy
+A normal map with the X and Y components of a surface normal in the tangent space of the surface encoded in the alpha and green channels of a texture, with each component between 0.0 and 1.0.
+case xy
+A normal map with the X and Y components of a surface normal in the tangent space of the surface encoded in the red and green channels of a texture, with each component between 0.0 and 1.0.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TextureResource.Format.NormalEncoding
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

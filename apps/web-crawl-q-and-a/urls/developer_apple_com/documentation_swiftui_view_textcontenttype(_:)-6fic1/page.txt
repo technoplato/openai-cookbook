@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/view/textcontenttype(_:)-6fic1Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Images
+E
+ContentSizeCategory
+Deprecated
+Deprecated types
+S
+TypesettingLanguage
+Beta
+M
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> some View
+Beta
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> some View
+Beta
+P
+var locale: Locale
+M
+func textContentType(UITextContentType?) -> some View
+M
+func scrollDismissesKeyboard(ScrollDismissesKeyboardMode) -> some View
+M
+func keyboardType(UIKeyboardType) -> some View
+P
+var autocorrectionDisabled: Bool
+M
+func autocorrectionDisabled(Bool) -> some View
+Managing text entry
+P
+var multilineTextAlignment: TextAlignment
+M
+func multilineTextAlignment(TextAlignment) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+textContentType(_:)
+Sets the text content type for this view, which the system uses to offer suggestions while the user enters text on macOS.
+macOS 11.0+
+func textContentType(_ textContentType: NSTextContentType?) -> some View
+Parameters
+textContentType
+One of the content types available in the NSTextContentType structure that identify the semantic meaning expected for a text-entry area.
+Discussion
+Use this method to set the content type for input text. For example, you can configure a TextField for the entry of a username:
+TextField("Enter your username", text: $username)
+    .textContentType(.username)
+See Also
+Managing text entry
+func autocorrectionDisabled(Bool) -> some View
+Sets whether to disable autocorrection for this view.
+var autocorrectionDisabled: Bool
+A Boolean value that determines whether the view hierarchy has auto-correction enabled.
+func keyboardType(UIKeyboardType) -> some View
+Sets the keyboard type for this view.
+func scrollDismissesKeyboard(ScrollDismissesKeyboardMode) -> some View
+Configures the behavior in which scrollable content interacts with the software keyboard.
+func textContentType(UITextContentType?) -> some View
+Sets the text content type for this view, which the system uses to offer suggestions while the user enters text on an iOS or tvOS device.
+func textContentType(WKTextContentType?) -> some View
+Sets the text content type for this view, which the system uses to offer suggestions while the user enters text on a watchOS device.
+func textInputAutocapitalization(TextInputAutocapitalization?) -> some View
+Sets how often the shift key in the keyboard is automatically enabled.
+struct TextInputAutocapitalization
+The kind of autocapitalization behavior applied during text input.
+Current page is textContentType(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

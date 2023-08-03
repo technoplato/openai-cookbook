@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/assertnofailure(_:file:line:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>
+M
+func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>
+Working with Multiple Subscribers
+M
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+M
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+M
+func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>
+Identifying Properties with Key Paths
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+Handling Errors
+M
+func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>
+M
+func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Self, P, Q, R>
+M
+func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>
+M
+func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>
+M
+func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>
+M
+func zip<P>(P) -> Publishers.Zip<Self, P>
+M
+func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>
+Documentation
+Open Menu
+Swift
+Instance Method
+assertNoFailure(_:file:line:)
+Raises a fatal error when its upstream publisher fails, and otherwise republishes all received input.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func assertNoFailure(
+    _ prefix: String = "",
+    file: StaticString = #file,
+    line: UInt = #line
+) -> Publishers.AssertNoFailure<Self>
+Parameters
+prefix
+A string used at the beginning of the fatal error message.
+file
+A filename used in the error message. This defaults to #file.
+line
+A line number used in the error message. This defaults to #line.
+Return Value
+A publisher that raises a fatal error when its upstream publisher fails.
+Discussion
+Use assertNoFailure() for internal integrity checks that are active during testing. However, it is important to note that, like its Swift counterpart fatalError(_:), the assertNoFailure() operator asserts a fatal exception when triggered during development and testing, and in shipping versions of code.
+In the example below, a CurrentValueSubject publishes the initial and second values successfully. The third value, containing a genericSubjectError, causes the assertNoFailure() operator to assert a fatal exception stopping the process:
+public enum SubjectError: Error {
+    case genericSubjectError
+}
+
+
+let subject = CurrentValueSubject<String, Error>("initial value")
+subject
+    .assertNoFailure()
+    .sink(receiveCompletion: { print ("completion: \($0)") },
+          receiveValue: { print ("value: \($0).") }
+    )
+
+
+subject.send("second value")
+subject.send(completion: Subscribers.Completion<Error>.failure(SubjectError.genericSubjectError))
+
+
+// Prints:
+//  value: initial value.
+//  value: second value.
+//  The process then terminates in the debugger as the assertNoFailure operator catches the genericSubjectError.
+See Also
+Handling Errors
+func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>
+Handles errors from an upstream publisher by replacing it with another publisher.
+func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>
+Handles errors from an upstream publisher by either replacing it with another publisher or throwing a new error.
+func retry(Int) -> Publishers.Retry<Self>
+Attempts to recreate a failed subscription with the upstream publisher up to the number of times you specify.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is assertNoFailure(_:file:line:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

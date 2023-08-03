@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/swiftui/view/exportsitemproviders(_:onexport:onedit:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+Xcode library customization
+Previews in Xcode
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+M
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider]) -> some View
+M
+func importsItemProviders([UTType], onImport: ([NSItemProvider]) -> Bool) -> some View
+Importing and exporting using item providers
+M
+func exportableToServices<T>(() -> [T], onEdit: ([T]) -> Bool) -> some View
+M
+func exportableToServices<T>(() -> [T]) -> some View
+M
+func importableFromServices<T>(for: T.Type, action: ([T]) -> Bool) -> some View
+Importing and exporting transferable items
+S
+OpenURLAction
+Documentation
+Open Menu
+Swift
+Instance Method
+exportsItemProviders(_:onExport:onEdit:)
+Exports a read-write item provider for consumption by shortcuts, quick actions, and services.
+macOS 12.0+
+func exportsItemProviders(
+    _ contentTypes: [UTType],
+    onExport: @escaping () -> [NSItemProvider],
+    onEdit: @escaping ([NSItemProvider]) -> Bool
+) -> some View
+Parameters
+contentTypes
+The types of content that the view supports exporting and importing. An empty array means the view does not currently support exporting.
+onExport
+A closure that will be called on request of the items by the shortcut or service.
+onEdit
+A closure that will be called after the shortcut or service completes with its output data. This should replace the selected subpart that was exported with onExport. Return false to indicate that there was a failure to receive the items.
+Discussion
+If the associated view supports selection, the exported item should reflect that selected subpart.
+See Also
+Importing and exporting using item providers
+func importsItemProviders([UTType], onImport: ([NSItemProvider]) -> Bool) -> some View
+Enables importing item providers from services, such as Continuity Camera on macOS.
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider]) -> some View
+Exports a read-only item provider for consumption by shortcuts, quick actions, and services.
+Current page is exportsItemProviders(_:onExport:onEdit:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

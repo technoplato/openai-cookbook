@@ -1,0 +1,216 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Renaming a document
+S
+OpenDocumentAction
+P
+var openDocument: OpenDocumentAction
+S
+NewDocumentAction
+P
+var newDocument: NewDocumentAction
+Opening a document programmatically
+S
+FileDocumentWriteConfiguration
+Creating a document
+Documents
+Immersive spaces
+Windows
+Scenes
+App organization
+App structure
+SwiftUI updates
+Documentation
+Open Menu
+Swift
+Sample Code
+Building a Document-Based App with SwiftUI
+Create, save, and open documents in a SwiftUI multiplatform app.
+Download
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Xcode 13.2+
+Overview
+This sample creates a checklist document that can have one or more checklist items. The user can select and deselect the checkboxes of items in the list, add and delete items, and rearrange items. The sample implements a DocumentGroup scene, and adopts the ReferenceFileDocument protocol.
+Configure the Sample Code Project
+To build and run this sample on your device, you must first select your development team for the project’s target using these steps:
+Open the sample with the latest version of Xcode.
+Select the top-level project.
+For the project’s target, choose your team from the Team drop-down menu in the Signing & Capabilities pane to let Xcode automatically manage your provisioning profile.
+Create the Data Model
+This sample is a simple checklist app that keeps track of one or more items in a checklist, and whether the checkboxes of the items are in a selected state. The app has a data model that defines ChecklistItem and Checklist objects, and these objects conform to Codable to enable easy serialization. They also conform to Identifiable for unique identification during enumeration.
+struct ChecklistItem: Identifiable, Codable {
+    var id = UUID()
+    var isChecked = false
+    var title: String
+}
+
+
+struct Checklist: Identifiable, Codable {
+    var id = UUID()
+    var items: [ChecklistItem]
+}
+Export the App’s Document Type
+The app defines and exports a custom checklist document type that tells the operating system to open checklist documents with this app. The app does this by including an entry in its Information Property List file under the CFBundleDocumentTypes and UTExportedTypeDeclarations keys. Additionally, the sample defines the bundle’s exported type as a UTType to support the sample app’s data format.
+extension UTType {
+    static let checklistDocument = UTType(exportedAs: "com.example.checklist")
+}
+For more information, see Defining file and data types for your app.
+Define the App’s Scene
+A document-based SwiftUI app returns a DocumentGroup scene from its body property. The newDocument parameter that an app supplies to the document group’s init(newDocument:editor:) initializer must conform to FileDocument or ReferenceFileDocument. This sample adopts ReferenceFileDocument. The trailing closure of the initializer returns a view that renders the document’s contents.
+@main
+struct DocumentBasedApp: App {
+    var body: some Scene {
+        DocumentGroup(newDocument: { ChecklistDocument() }) { configuration in
+            ChecklistView()
+        }
+    }
+}
+Adopt the Reference File Document Protocol
+The sample’s ChecklistDocument structure adopts the ReferenceFileDocument protocol to serialize checklists to and from files. This sample implements the required properties and methods to conform to the protocol. The readableContentTypes property defines the types that the sample can read, namely, the .checklistDocument type.
+static var readableContentTypes: [UTType] { [.checklistDocument] }
+The sample reads data from a document in the init(configuration:) method. After reading the file’s data, the initializer uses a JSONDecoder to deserialize the data into model objects.
+init(configuration: ReadConfiguration) throws {
+    guard let data = configuration.file.regularFileContents
+    else {
+        throw CocoaError(.fileReadCorruptFile)
+    }
+    self.checklist = try JSONDecoder().decode(Checklist.self, from: data)
+}
+When the user saves the document, the sample returns a snapshot of the document’s data for serialization in the snapshot(contentType:) instance method.
+func snapshot(contentType: UTType) throws -> Checklist {
+    checklist // Make a copy.
+}
+Conversely, in the fileWrapper(configuration:) method, a JSONEncoder instance serializes the data model into a FileWrapper object that represents the data in the file system.
+func fileWrapper(snapshot: Checklist, configuration: WriteConfiguration) throws -> FileWrapper {
+    let data = try JSONEncoder().encode(snapshot)
+    let fileWrapper = FileWrapper(regularFileWithContents: data)
+    return fileWrapper
+}
+Register Undo and Redo Actions
+In an app that uses FileDocument for its document object, undo management and the registration of undo actions are automatic. However, because this sample uses a ReferenceFileDocument document class, the sample itself must perform undo management. Implementing undo management also alerts SwiftUI when the document changes. The UndoManager class handles undo management, and SwiftUI supplies an instance of this class in the environment.
+@Environment(\.undoManager) var undoManager
+In this sample, the SwiftUI views handle user actions by calling the ChecklistDocument and passing along the UndoManager object.
+document.toggleItem($item.wrappedValue, undoManager: undoManager)
+The ChecklistDocument toggles the isChecked state of the ChecklistItem, and registers an undo action that calls itself. This way, the sample doesn’t need to register a redo action when performing an undo action.
+func toggleItem(_ item: ChecklistItem, undoManager: UndoManager? = nil) {
+    let index = checklist.items.firstIndex(of: item)!
+    
+    checklist.items[index].isChecked.toggle()
+    
+    undoManager?.registerUndo(withTarget: self) { doc in
+        // Because it calls itself, this is redoable, as well.
+        doc.toggleItem(item, undoManager: undoManager)
+    }
+}
+See Also
+Essentials
+Food Truck: Building a SwiftUI multiplatform app
+Create a single codebase and app target for Mac, iPad, and iPhone.
+Add Rich Graphics to Your SwiftUI App
+Make your apps stand out by adding background materials, vibrancy, custom graphics, and animations.
+Fruta: Building a Feature-Rich App with SwiftUI
+Create a shared codebase to build a multiplatform app that offers widgets and an App Clip.
+Building a Great Mac App with SwiftUI
+Create engaging SwiftUI Mac apps by incorporating side bars, tables, toolbars, and several other popular user interface elements.
+Building custom views in SwiftUI
+Create a custom view with data-driven transitions and animations in SwiftUI.
+Restoring Your App’s State with SwiftUI
+Provide app continuity for users by preserving their current activities.
+Creating Accessible Views
+Make your app accessible to everyone by applying accessibility modifiers to your SwiftUI views.
+Loading and Displaying a Large Data Feed
+Consume data in the background, and lower memory use by batching imports and preventing duplicate records.
+Composing custom layouts with SwiftUI
+Arrange views in your app’s interface using layout tools that SwiftUI provides.
+Bringing multiple windows to your SwiftUI app
+Compose rich views by reacting to state changes and customize your app’s scene presentation and behavior on iPadOS and macOS.
+Bringing robust navigation structure to your SwiftUI app
+Use navigation links, stacks, destinations, and paths to provide a streamlined experience for all platforms, as well as behaviors such as deep linking and state restoration.
+Current page is Building a Document-Based App with SwiftUI
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

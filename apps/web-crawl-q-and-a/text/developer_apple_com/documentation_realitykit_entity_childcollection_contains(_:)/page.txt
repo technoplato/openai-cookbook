@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/realitykit/entity/childcollection/contains(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+M
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+M
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func map<T>((Self.Element) throws -> T) rethrows -> [T]
+Transforming Entities
+M
+func suffix(from: Self.Index) -> Self.SubSequence
+M
+func suffix(Int) -> Self.SubSequence
+Finding Entities
+P
+var underestimatedCount: Int
+M
+func enumerated() -> EnumeratedSequence<Self>
+M
+func forEach((Self.Element) throws -> Void) rethrows
+S
+Entity.ChildCollection.IndexingIterator
+Iterating over Collection of Entities
+M
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+Documentation
+Open Menu
+Swift
+Instance Method
+contains(_:)
+Returns a Boolean value indicating whether the sequence contains the given element.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func contains(_ element: Self.Element) -> Bool
+Available when Element conforms to Equatable.
+Parameters
+element
+The element to find in the sequence.
+Return Value
+true if the element was found in the sequence; otherwise, false.
+Overview
+This example checks to see whether a favorite actor is in an array storing a movie’s cast.
+let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+print(cast.contains("Marlon"))
+// Prints "true"
+print(cast.contains("James"))
+// Prints "false"
+Complexity: O(n), where n is the length of the sequence.
+See Also
+Finding Entities
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func allSatisfy((Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+var first: Self.Element?
+The first element of the collection.
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the first element of the sequence that satisfies the given predicate.
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the maximum element in the sequence, using the given predicate as the comparison between elements.
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the minimum element in the sequence, using the given predicate as the comparison between elements.
+func randomElement() -> Self.Element?
+Returns a random element of the collection.
+func randomElement<T>(using: inout T) -> Self.Element?
+Returns a random element of the collection, using the given generator as a source for randomness.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contains(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

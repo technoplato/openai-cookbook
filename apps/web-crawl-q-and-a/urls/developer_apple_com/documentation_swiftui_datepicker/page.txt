@@ -1,0 +1,245 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MultiDatePicker
+M
+func datePickerStyle<S>(S) -> some View
+S
+DatePickerComponents
+T
+DatePicker.Components
+Setting date picker components
+M
+init<S>(S, selection: Binding<Date>, in: PartialRangeThrough<Date>, displayedComponents: DatePicker<Label>.Components)
+M
+init(LocalizedStringKey, selection: Binding<Date>, in: PartialRangeThrough<Date>, displayedComponents: DatePicker<Label>.Components)
+init(selection: Binding<Date>, in: PartialRangeThrough<Date>, displayedComponents: DatePicker<Label>.Components, label: () -> Label)
+init<S>(S, selection: Binding<Date>, in: PartialRangeFrom<Date>, displayedComponents: DatePicker<Label>.Components)
+init(LocalizedStringKey, selection: Binding<Date>, in: PartialRangeFrom<Date>, displayedComponents: DatePicker<Label>.Components)
+init(selection: Binding<Date>, in: PartialRangeFrom<Date>, displayedComponents: DatePicker<Label>.Components, label: () -> Label)
+init<S>(S, selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Label>.Components)
+init(LocalizedStringKey, selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Label>.Components)
+init(selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Label>.Components, label: () -> Label)
+Choosing dates
+S
+PaletteSelectionEffect
+Beta
+M
+func paletteSelectionEffect(PaletteSelectionEffect) -> some View
+Beta
+P
+var defaultWheelPickerItemHeight: CGFloat
+M
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+M
+func horizontalRadioGroupLayout() -> some View
+M
+func pickerStyle<S>(S) -> some View
+S
+Picker
+Documentation
+Open Menu
+Swift
+Structure
+DatePicker
+A control for selecting an absolute date.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+struct DatePicker<Label> where Label : View
+Overview
+Use a DatePicker when you want to provide a view that allows the user to select a calendar date, and optionally a time. The view binds to a Date instance.
+The following example creates a basic DatePicker, which appears on iOS as text representing the date. This example limits the display to only the calendar date, not the time. When the user taps or clicks the text, a calendar view animates in, from which the user can select a date. When the user dismisses the calendar view, the view updates the bound Date.
+@State private var date = Date()
+
+
+var body: some View {
+    DatePicker(
+        "Start Date",
+        selection: $date,
+        displayedComponents: [.date]
+    )
+}
+You can limit the DatePicker to specific ranges of dates, allowing selections only before or after a certain date, or between two dates. The following example shows a date-and-time picker that only permits selections within the year 2021 (in the UTC time zone).
+@State private var date = Date()
+let dateRange: ClosedRange<Date> = {
+    let calendar = Calendar.current
+    let startComponents = DateComponents(year: 2021, month: 1, day: 1)
+    let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
+    return calendar.date(from:startComponents)!
+        ...
+        calendar.date(from:endComponents)!
+}()
+
+
+var body: some View {
+    DatePicker(
+        "Start Date",
+         selection: $date,
+         in: dateRange,
+         displayedComponents: [.date, .hourAndMinute]
+    )
+}
+Styling date pickers
+To use a different style of date picker, use the datePickerStyle(_:) view modifier. The following example shows the graphical date picker style.
+@State private var date = Date()
+
+
+var body: some View {
+    DatePicker(
+        "Start Date",
+        selection: $date,
+        displayedComponents: [.date]
+    )
+    .datePickerStyle(.graphical)
+}
+Topics
+Creating a date picker for any date
+init(selection: Binding<Date>, displayedComponents: DatePicker<Label>.Components, label: () -> Label)
+Creates an instance that selects a Date with an unbounded range.
+Available when Label conforms to View.
+init(LocalizedStringKey, selection: Binding<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date with an unbounded range.
+Available when Label is Text.
+init<S>(S, selection: Binding<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date within the given range.
+Available when Label is Text.
+Creating a date picker for a range
+init(selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Label>.Components, label: () -> Label)
+Creates an instance that selects a Date in a closed range.
+Available when Label conforms to View.
+init(LocalizedStringKey, selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date in a closed range.
+Available when Label is Text.
+init<S>(S, selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date in a closed range.
+Available when Label is Text.
+Creating a date picker with a start date
+init(selection: Binding<Date>, in: PartialRangeFrom<Date>, displayedComponents: DatePicker<Label>.Components, label: () -> Label)
+Creates an instance that selects a Date on or after some start date.
+Available when Label conforms to View.
+init(LocalizedStringKey, selection: Binding<Date>, in: PartialRangeFrom<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date on or after some start date.
+Available when Label is Text.
+init<S>(S, selection: Binding<Date>, in: PartialRangeFrom<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date on or after some start date.
+Available when Label is Text.
+Creating a date picker with an end date
+init(selection: Binding<Date>, in: PartialRangeThrough<Date>, displayedComponents: DatePicker<Label>.Components, label: () -> Label)
+Creates an instance that selects a Date on or before some end date.
+Available when Label conforms to View.
+init(LocalizedStringKey, selection: Binding<Date>, in: PartialRangeThrough<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date on or before some end date.
+Available when Label is Text.
+init<S>(S, selection: Binding<Date>, in: PartialRangeThrough<Date>, displayedComponents: DatePicker<Label>.Components)
+Creates an instance that selects a Date on or before some end date.
+Available when Label is Text.
+Setting date picker components
+typealias Components
+struct DatePickerComponents
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Choosing dates
+func datePickerStyle<S>(S) -> some View
+Sets the style for date pickers within this view.
+struct MultiDatePicker
+A control for picking multiple dates.
+var calendar: Calendar
+The current calendar that views should use when handling dates.
+var timeZone: TimeZone
+The current time zone that views should use when handling dates.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DatePicker
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

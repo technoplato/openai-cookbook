@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/physics-simulationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a Game with Reality Composer
+SwiftStrike: Creating a Game with RealityKit
+Happy Beam
+Games
+Runtime Events
+Content synchronization
+Postprocessing effects
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Documentation
+Open Menu
+Swift
+Physics simulation
+Simulate physical interactions between entities.
+Overview
+RealityKit simulates physical interactions between virtual objects in your scene, as well as between virtual objects and detected surfaces in the real world, such as floors, walls, or tabletops. On iOS devices with a LiDAR Scanner, RealityKit can even simulate interactions between virtual objects and scanned real-world geometry.
+Topics
+Physics interaction
+Designing Scene Hierarchies for Efficient Physics Simulation
+Configure your RealityKit scenes to avoid performance bottlenecks.
+Handling Different-Sized Objects in Physics Simulations
+Set up a scene hierarchy for accurate physics simulations.
+struct PhysicsBodyComponent
+A component that defines an entity’s behavior in physics body simulations.
+class PhysicsMaterialResource
+Material properties, like friction, of a physically simulated object.
+struct PhysicsMotionComponent
+A component that controls the motion of the body in physics simulations.
+enum PhysicsBodyMode
+The ways that a physics body can move in response to physical forces.
+struct PhysicsMassProperties
+Mass properties of a physics body.
+enum PhysicsSimulationEvents
+Beta
+enum ShapeResourceError
+Beta
+Entity compliance
+protocol HasPhysicsBody
+An interface that enables physics simulations based on the rules of Newtonian mechanics.
+protocol HasPhysicsMotion
+An interface that provides velocity properties for physics simulations.
+protocol HasPhysics
+An interface that combines the physics body and physics motion interfaces.
+See Also
+Runtime modifications
+API Reference
+Transforms: Position, Orientation, and Scale
+Control the placement of virtual objects.
+API Reference
+Body and face tracking
+Track the movement and facial expressions of people in an AR scene
+API Reference
+Collision detection
+Determine when entities collide with each other or the environment.
+API Reference
+Postprocessing effects
+Create special rendering effects for your RealityKit scenes.
+API Reference
+Content synchronization
+Synchronize the contents of entities locally or across the network.
+API Reference
+Runtime Events
+Execute code when specific things happen in your RealityKit scene.
+Current page is Physics simulation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

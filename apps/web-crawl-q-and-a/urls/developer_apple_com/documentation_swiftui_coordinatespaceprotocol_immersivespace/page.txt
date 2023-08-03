@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/coordinatespaceprotocol/immersivespaceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GeometryReader
+S
+GeometryReader3D
+Beta
+S
+GeometryProxy
+S
+GeometryProxy3D
+Beta
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Beta
+E
+CoordinateSpace
+r
+P
+CoordinateSpaceProtocol
+Beta
+Getting built-in coordinate spaces
+M
+func colorEffect(Shader, isEnabled: Bool) -> some View
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+M
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+S
+Shader
+Beta
+S
+ShaderFunction
+Beta
+S
+ShaderLibrary
+Beta
+Accessing geometric constructs
+Documentation
+Open Menu
+Swift
+Type Property
+immersiveSpace
+visionOS 1.0+ Beta
+static var immersiveSpace: NamedCoordinateSpace { get }
+Available when Self is NamedCoordinateSpace.
+See Also
+Getting built-in coordinate spaces
+static var global: GlobalCoordinateSpace
+The global coordinate space at the root of the view hierarchy.
+Available when Self is GlobalCoordinateSpace.
+Beta
+static var local: LocalCoordinateSpace
+The local coordinate space of the current view.
+Available when Self is LocalCoordinateSpace.
+Beta
+static func named(some Hashable) -> NamedCoordinateSpace
+Creates a named coordinate space using the given value.
+Available when Self is NamedCoordinateSpace.
+Beta
+static var scrollView: NamedCoordinateSpace
+The named coordinate space that is added by the system for the innermost containing scroll view.
+Available when Self is NamedCoordinateSpace.
+Beta
+static func scrollView(axis: Axis) -> Self
+The named coordinate space that is added by the system for the innermost containing scroll view that allows scrolling along the provided axis.
+Available when Self is NamedCoordinateSpace.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is immersiveSpace
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/swiftui/view/handlesexternalevents(preferring:allowing:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+Handling external events
+M
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+M
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider]) -> some View
+M
+func importsItemProviders([UTType], onImport: ([NSItemProvider]) -> Bool) -> some View
+Importing and exporting using item providers
+M
+func exportableToServices<T>(() -> [T], onEdit: ([T]) -> Bool) -> some View
+M
+func exportableToServices<T>(() -> [T]) -> some View
+M
+func importableFromServices<T>(for: T.Type, action: ([T]) -> Bool) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+handlesExternalEvents(preferring:allowing:)
+Specifies a modifier indicating the Scene this View is in can handle matching incoming External Events.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+func handlesExternalEvents(
+    preferring: Set<String>,
+    allowing: Set<String>
+) -> some View
+Parameters
+preferring
+A Set of Strings that are checked to see if they are contained in the targetContentIdenfifier to see if the Scene this View is in prefers to handle the Exernal Event. The empty Set and empty Strings never match. The String value “*” always matches. The String comparisons are case/diacritic insensitive
+allowing
+A Set of Strings that are checked to see if they are contained in the targetContentIdenfifier to see if the Scene this View is in allows handling the External Event. The empty Set and empty Strings never match. The String value “*” always matches.
+Discussion
+If no modifier is set in any Views within a Scene, the behavior is platform dependent. On macOS, a new Scene will be created to use for the External Event. On iOS, the system will choose an existing Scene to use.
+On platforms that only allow a single Window/Scene, this method is ignored, and incoming External Events are always routed to the existing single Scene.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is handlesExternalEvents(preferring:allowing:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

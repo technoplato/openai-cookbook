@@ -1,0 +1,187 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/sheet(item:ondismiss:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creating a reality view
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+sheet(item:onDismiss:content:)
+Presents a sheet using the given item as a data source for the sheet’s content.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func sheet<Item, Content>(
+    item: Binding<Item?>,
+    onDismiss: (() -> Void)? = nil,
+    @ViewBuilder content: @escaping (Item) -> Content
+) -> some View where Item : Identifiable, Content : View
+Parameters
+item
+A binding to an optional source of truth for the sheet. When item is non-nil, the system passes the item’s content to the modifier’s closure. You display this content in a sheet that you create that the system displays to the user. If item changes, the system dismisses the sheet and replaces it with a new one using the same process.
+onDismiss
+The closure to execute when dismissing the sheet.
+content
+A closure returning the content of the sheet.
+Discussion
+Use this method when you need to present a modal view with content from a custom data source. The example below shows a custom data source InventoryItem that the content closure uses to populate the display the action sheet shows to the user:
+struct ShowPartDetail: View {
+    @State private var sheetDetail: InventoryItem?
+
+
+    var body: some View {
+        Button("Show Part Details") {
+            sheetDetail = InventoryItem(
+                id: "0123456789",
+                partNumber: "Z-1234A",
+                quantity: 100,
+                name: "Widget")
+        }
+        .sheet(item: $sheetDetail,
+               onDismiss: didDismiss) { detail in
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Part Number: \(detail.partNumber)")
+                Text("Name: \(detail.name)")
+                Text("Quantity On-Hand: \(detail.quantity)")
+            }
+            .onTapGesture {
+                sheetDetail = nil
+            }
+        }
+    }
+
+
+    func didDismiss() {
+        // Handle the dismissing action.
+    }
+}
+
+
+struct InventoryItem: Identifiable {
+    var id: String
+    let partNumber: String
+    let quantity: Int
+    let name: String
+}
+In vertically compact environments, such as iPhone in landscape orientation, a sheet presentation automatically adapts to appear as a full-screen cover. Use the View/presentationCompactAdaptation(_:) or View/presentationCompactAdaptation(horizontal:vertical:) modifier to override this behavior.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sheet(item:onDismiss:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

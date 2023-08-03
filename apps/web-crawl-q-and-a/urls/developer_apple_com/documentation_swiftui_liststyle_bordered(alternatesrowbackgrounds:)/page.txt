@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/liststyle/bordered(alternatesrowbackgrounds:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TabViewStyle
+M
+func tabViewStyle<S>(S) -> some View
+r
+P
+NavigationSplitViewStyle
+M
+func navigationSplitViewStyle<S>(S) -> some View
+Styling navigation views
+r
+P
+DisclosureGroupStyle
+M
+func disclosureGroupStyle<S>(S) -> some View
+Deprecated styles
+P
+static var sidebar: SidebarListStyle
+P
+static var plain: PlainListStyle
+P
+static var insetGrouped: InsetGroupedListStyle
+P
+static var inset: InsetListStyle
+P
+static var grouped: GroupedListStyle
+P
+static var elliptical: EllipticalListStyle
+P
+static var carousel: CarouselListStyle
+Documentation
+Open Menu
+Swift
+Type Method
+bordered(alternatesRowBackgrounds:)
+The list style that describes the behavior and appearance of a list with standard border.
+macOS 12.0–14.0 Deprecated
+static func bordered(alternatesRowBackgrounds: Bool) -> BorderedListStyle
+Available when Self is BorderedListStyle.
+Deprecated
+Use the bordered style and add the alternatingRowBackgrounds(_:) view modifier instead.
+Parameters
+alternatesRowBackgrounds
+Whether the rows should alternate their backgrounds to help visually distinguish them from each other.
+Discussion
+Bordered lists are expected to be inset from their outer containers, but do not have inset style rows or selection.
+See Also
+Deprecated styles
+static func inset(alternatesRowBackgrounds: Bool) -> InsetListStyle
+The list style that describes the behavior and appearance of an inset list with optional alternating row backgrounds.
+Available when Self is InsetListStyle.
+Deprecated
+Current page is bordered(alternatesRowBackgrounds:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

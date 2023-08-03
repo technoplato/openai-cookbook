@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/webauthenticationsessionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+S
+PhotosPicker
+Selecting photos
+S
+VideoPlayer
+S
+NowPlayingView
+S
+CameraView
+func familyActivityPicker(headerText: String?, footerText: String?, isPresented: Binding<Bool>, selection: Binding<FamilyActivitySelection>) -> some View
+func familyActivityPicker(isPresented: Binding<Bool>, selection: Binding<FamilyActivitySelection>) -> some View
+P
+var authorizationController: AuthorizationController
+M
+func signInWithAppleButtonStyle(SignInWithAppleButton.Style) -> some View
+S
+SignInWithAppleButton
+S
+LocalAuthenticationView
+Authorizing and authenticating
+S
+AsyncShareablePassConfiguration
+S
+VerifyIdentityWithWalletButton
+S
+AddPassToWalletButton
+Documentation
+Open Menu
+Swift
+Instance Property
+webAuthenticationSession
+A value provided in the SwiftUI environment that views can use to authenticate a user through a web service.
+AuthenticationServices
+SwiftUI
+iOS 16.4+
+iPadOS 16.4+
+macOS 13.3+
+tvOS 16.4+
+watchOS 9.4+
+var webAuthenticationSession: WebAuthenticationSession { get }
+Discussion
+For example, you can start a web authentication session when the user taps a button:
+struct WebAuthenticationSessionExample: View {
+    @Environment(\.webAuthenticationSession) private var webAuthenticationSession
+
+
+    var body: some View {
+        Button("Sign In") {
+            Task {
+                do {
+                    let urlWithToken = try await webAuthenticationSession.authenticate(
+                        using: URL(string: "https://www.example.com")!,
+                        callbackURLScheme: "x-example-app")
+                    try await signIn(using: urlWithToken) // defined elsewhere
+                } catch {
+                    // code to handle authentication errors
+                }
+            }
+        }
+    }
+}
+Use WebAuthenticationSession/BrowserSession/ephemeral to request that the browser doesn’t share cookies or other browsing data between the authentication session and the user’s normal browser session. Whether the request is honored depends on the user’s default web browser. Safari always honors the request.
+let urlWithToken = try await webAuthenticationSession.authenticate(
+    using: URL(string: "https://www.example.com")!,
+    callbackURLScheme: "x-example-app",
+    preferredBrowserSession: .ephemeral)
+After the user authenticates, the authentication provider redirects the browser to a URL that uses the callback scheme. The browser detects the redirect, dismisses itself, and the complete URL will be returned. Inspect the URL to determine the outcome of the authentication:
+let queryItems = URLComponents(string: urlWithToken.absoluteString)?.queryItems
+let token = queryItems?.first(where: { $0.name == "token" })?.value
+The above example looks for a token stored as a query parameter. The specific parsing that you have to do depends on how the authentication provider structures the callback URL.
+See Also
+Authorizing and authenticating
+func signInWithAppleButtonStyle(SignInWithAppleButton.Style) -> some View
+Sets the style used for displaying the control (see SignInWithAppleButton.Style).
+var authorizationController: AuthorizationController
+A value provided in the SwiftUI environment that views can use to perform authorization requests.
+Current page is webAuthenticationSession
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

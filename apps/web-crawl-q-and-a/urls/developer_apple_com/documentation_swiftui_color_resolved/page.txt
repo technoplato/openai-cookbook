@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/swiftui/color/resolvedSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AnyShapeStyle
+r
+P
+ShapeStyle
+P
+var backgroundStyle: AnyShapeStyle?
+M
+func backgroundStyle<S>(S) -> some View
+M
+func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View
+M
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+M
+func foregroundStyle<S>(S) -> some View
+Structures
+ShapeStyle Implementations
+Default Implementations
+P
+var cgColor: CGColor?
+Deprecated
+M
+init(CGColor)
+Deprecated
+M
+init(NSColor)
+Deprecated
+M
+init(UIColor)
+Deprecated
+Deprecated symbols
+Documentation
+Open Menu
+Swift
+Structure
+Color.Resolved
+A concrete color value.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+@frozen
+struct Resolved
+Overview
+Color.Resolved is a set of RGBA values that represent a color that can be shown. The values are in Linear sRGB color space, extended range. This is a low-level type, most colors are represented by the Color type.
+See Also
+Color
+Topics
+Initializers
+init(colorSpace: Color.RGBColorSpace, red: Float, green: Float, blue: Float, opacity: Float)
+Creates a resolved color from red, green, and blue component values.
+Instance Properties
+var blue: Float
+The amount of blue in the color in the sRGB color space.
+var cgColor: CGColor
+A Core Graphics representation of the color.
+var green: Float
+The amount of green in the color in the sRGB color space.
+var linearBlue: Float
+The amount of blue in the color in the sRGB linear color space.
+var linearGreen: Float
+The amount of green in the color in the sRGB linear color space.
+var linearRed: Float
+The amount of red in the color in the sRGB linear color space.
+var opacity: Float
+The degree of opacity in the color, given in the range 0 to 1.
+var red: Float
+The amount of red in the color in the sRGB color space.
+Relationships
+Conforms To
+Animatable
+CustomStringConvertible
+Decodable
+Encodable
+Equatable
+Hashable
+Sendable
+ShapeStyle
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Color.Resolved
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

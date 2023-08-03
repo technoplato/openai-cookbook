@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/realitykit/textureresource/loadasync(contentsof:withname:options:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TextureResource.Contents
+Beta
+Structures
+M
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+M
+func replace(withImage: CGImage, options: TextureResource.CreateOptions) throws
+M
+func replace(withDrawables: TextureResource.DrawableQueue)
+Modifying a Texture
+M
+func copyAsync(to: MTLTexture, completionHandler: ((Error)?) -> Void)
+static func loadAsync(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+M
+static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<TextureResource>
+Deprecated
+M
+static func loadAsync(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+M
+static func loadAsync(named: String, in: Bundle?) -> LoadRequest<TextureResource>
+M
+static func load(contentsOf: URL, withName: String?) throws -> TextureResource
+M
+static func load(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) throws -> TextureResource
+M
+static func load(named: String, in: Bundle?, options: TextureResource.CreateOptions) throws -> TextureResource
+M
+static func load(named: String, in: Bundle?) throws -> TextureResource
+Loading a Texture
+Documentation
+Open Menu
+Swift
+Type Method
+loadAsync(contentsOf:withName:options:)
+Loads a texture resource from a URL asynchronously with options.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+@MainActor
+static func loadAsync(
+    contentsOf url: URL,
+    withName resourceName: String? = nil,
+    options: TextureResource.CreateOptions
+) -> LoadRequest<TextureResource>
+Deprecated
+Use try await TextureResource(contentsOf:… withName:… options:…) instead.
+Parameters
+url
+The path or address of the file to load.
+resourceName
+A unique name to assign to the loaded resource, for use in network synchronization.
+options
+Configuration options for texture creation.
+Return Value
+A load operation that publishes the resource.
+Discussion
+RealityKit uses the resource name to distinguish resources locally, and to match texture resources between networked peers. Specify a unique name for each texture resource you load or generate.
+See Also
+Loading a Texture
+static func load(named: String, in: Bundle?) throws -> TextureResource
+Loads a texture resource from a bundle.
+static func load(named: String, in: Bundle?, options: TextureResource.CreateOptions) throws -> TextureResource
+Loads a texture resource by name from a bundle.
+static func load(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) throws -> TextureResource
+Loads a texture resource from a URL with options.
+static func load(contentsOf: URL, withName: String?) throws -> TextureResource
+Loads a texture resource from a URL.
+static func loadAsync(named: String, in: Bundle?) -> LoadRequest<TextureResource>
+Loads a texture resource from a bundle asynchronously.
+static func loadAsync(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+Loads a texture resource by name asynchronously.
+static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<TextureResource>
+Loads a texture resource from a URL asynchronously.
+Deprecated
+struct CreateOptions
+An object that holds texture resource creation options.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is loadAsync(contentsOf:withName:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

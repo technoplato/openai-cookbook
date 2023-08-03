@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/realitykit-systemsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+USD Assets
+Object capture
+Reality Composer
+Designing RealityKit content with Reality Composer Pro
+Diorama
+Asset creation
+r
+P
+EntityCollection
+Loading Entities from a File
+Building an Immersive Experience with RealityKit
+Understanding RealityKit’s modular architecture
+Entity Component System
+r
+P
+RealityCoordinateSpaceConverting
+Beta
+S
+SceneRealityCoordinateSpace
+Beta
+C
+RealityRenderer
+Beta
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+RealityKit Systems
+Apply behaviors and physical effects to the entities in a RealityKit scene.
+Overview
+In the Entity-Component-System (ECS) paradigm, the behavior of entities is often implemented using systems. A System has an update(context:) method that fires every frame and applies its logic to all entities that meet certain criteria. For example, a game might have a system that controls applying damage to entities from different sources. The same system might make changes to the player’s character, non-player characters, and even inanimate objects that can be damaged or broken. Systems typically work together with one or more components. The system’s component both identifies which entities the system effects and also stores any per-entity data the system needs to work. A damage system, for example, might work with a damage component that stores health or hit points. To make an entity damageable, all you have to do is add the damage component to it, which can be done at runtime. The damage system queries for entities that contain thedamage component and applies the appropriate health or hit point change to each of them.
+In traditional object-oriented design, the behavior of an object is usually implemented by writing methods on each object. Using that approach, the code to apply damage to an entity would reside on the entity subclasses. There are two drawback to the traditional approach when it comes to the design of games and other immersive experiences.
+First, if multiple objects require the same behavior, but are implemented as different entity classes without a common ancestor other than Entity, that logic has to be duplicated on all the objects and the duplicated code has to be kept in sync as it changes.
+Second, having to call behavior methods individually on every relevant entity in the scene can negatively impact performance. By placing logic that potentially effects multiple types of entities into a single System, we reduce the overhead required to implement the logic. It also allows us to do any per-frame calculations that are the same for all entities only once per frame, eliminating the need to do those calculations for every entity in the scene that can be damaged.
+Topics
+Essentials
+Implementing systems for entities in a scene
+Apply behaviors and physical effects to the objects and characters in a RealityKit scene with the Entity Component System (ECS).
+struct SystemUpdateCondition
+A condition which causes a System to update.
+Beta
+System type
+protocol System
+An object that affects multiple entities in every frame of a RealityKit scene.
+struct SceneUpdateContext
+An object that contains information about the scene to update.
+Entity Queries
+struct EntityQuery
+An object that retrieves entities from a scene.
+struct QueryPredicate
+An object that defines the criteria for an entity query.
+struct QueryResult
+An object that returns the results of an entity query.
+See Also
+Entity Component System
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+class Scene
+A container that holds the collection of entities rendered by an AR view.
+class Entity
+An element of a RealityKit scene to which you attach components that provide appearance and behavior characteristics for the entity.
+protocol Component
+A representation of a geometry or a behavior that you apply to an entity.
+protocol TransientComponent
+An interface for components that aren’t saved to file or cloned.
+protocol EntityCollection
+Beta
+Current page is RealityKit Systems
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

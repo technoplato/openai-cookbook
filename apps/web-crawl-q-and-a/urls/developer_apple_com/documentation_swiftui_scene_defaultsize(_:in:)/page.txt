@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/scene/defaultsize(_:in:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+SettingsLink
+Beta
+S
+Settings
+Managing a settings window
+E
+ScenePhase
+P
+var scenePhase: ScenePhase
+Monitoring scene life cycle
+S
+SceneBuilder
+func modelContainer(for: PersistentModel.Type, inMemory: Bool, isAutosaveEnabled: Bool, isUndoEnabled: Bool, onSetup: (Result<ModelContainer, Error>) -> Void) -> some Scene
+func modelContainer(for: [PersistentModel.Type], inMemory: Bool, isAutosaveEnabled: Bool, isUndoEnabled: Bool, onSetup: (Result<ModelContainer, Error>) -> Void) -> some Scene
+M
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Beta
+M
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+M
+func defaultSize(Size3D) -> some Scene
+Beta
+M
+func defaultSize(CGSize) -> some Scene
+M
+func defaultPosition(UnitPoint) -> some Scene
+Sizing and positioning the scene
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some Scene
+M
+func keyboardShortcut(KeyboardShortcut?) -> some Scene
+Documentation
+Open Menu
+Swift
+Instance Method
+defaultSize(_:in:)
+Sets a default size for a volumetric window.
+visionOS 1.0+ Beta
+func defaultSize(
+    _ size: Size3D,
+    in unit: UnitLength
+) -> some Scene
+Parameters
+width
+The default width for the created window.
+height
+The default height for the created window.
+depth
+The default depth for the created volumetric window.
+unit
+The unit of length the dimensions of the window are specified in.
+Return Value
+A scene that uses a default size for new windows.
+Discussion
+Use this modifier to indicate the default initial size for a new 3D window created from a Scene using VolumetricWindowStyle:
+WindowGroup {
+    ContentView()
+}
+.windowStyle(.volumetric)
+.defaultSize(Size3D(width: 1, height: 1, depth: 0.5), in: .meters)
+Each parameter is specified in the unit you provide. The size of a volumetric scene is immutable after creation.
+This modifier affects only windows that have the volumetric style in visionOS.
+See Also
+Sizing and positioning the scene
+func defaultPosition(UnitPoint) -> some Scene
+Sets a default position for a window.
+func defaultSize(CGSize) -> some Scene
+Sets a default size for a window.
+func defaultSize(Size3D) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+Sets a default width and height for a window.
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat, in: UnitLength) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func windowResizability(WindowResizability) -> some Scene
+Sets the kind of resizability to use for a window.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is defaultSize(_:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

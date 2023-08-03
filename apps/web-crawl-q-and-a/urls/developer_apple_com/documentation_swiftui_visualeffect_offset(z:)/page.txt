@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/visualeffect/offset(z:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func coordinateSpace(NamedCoordinateSpace) -> some View
+Beta
+S
+GeometryProxy3D
+Beta
+S
+GeometryProxy
+S
+GeometryReader3D
+Beta
+S
+GeometryReader
+Measuring a view
+E
+ColorRenderingMode
+M
+func offset(x: CGFloat, y: CGFloat) -> some VisualEffect
+M
+func offset(CGSize) -> some VisualEffect
+Translating
+M
+func rotationEffect(Angle, anchor: UnitPoint) -> some VisualEffect
+M
+func rotation3DEffect(Angle, axis: RotationAxis3D, anchor: UnitPoint3D) -> some VisualEffect
+M
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D) -> some VisualEffect
+M
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some VisualEffect
+M
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some VisualEffect
+Documentation
+Open Menu
+Swift
+Instance Method
+offset(z:)
+Brings a view forward in Z by the provided distance in points.
+visionOS 1.0+ Beta
+func offset(z: CGFloat) -> some VisualEffect
+Parameters
+distance
+The distance to extrude the view forward in Z, in points.
+Return Value
+An effect that is extruded forward in Z by distance.
+See Also
+Translating
+func offset(CGSize) -> some VisualEffect
+Offsets the view by the horizontal and vertical amount specified in the offset parameter.
+Beta
+func offset(x: CGFloat, y: CGFloat) -> some VisualEffect
+Offsets the view by the specified horizontal and vertical distances.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is offset(z:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/swiftui/proposedviewsizeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ZStackLayout
+S
+VStackLayout
+S
+HStackLayout
+S
+AnyLayout
+Transitioning between layout types
+r
+P
+LayoutValueKey
+M
+func layoutValue<K>(key: K.Type, value: K.Value) -> some View
+S
+LayoutProperties
+Configuring a custom layout
+S
+LayoutSubviews
+S
+LayoutSubview
+r
+P
+Layout
+Composing custom layouts with SwiftUI
+Creating a custom layout container
+Custom layout
+Documentation
+Open Menu
+Swift
+Structure
+ProposedViewSize
+A proposal for the size of a view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+@frozen
+struct ProposedViewSize
+Overview
+During layout in SwiftUI, views choose their own size, but they do that in response to a size proposal from their parent view. When you create a custom layout using the Layout protocol, your layout container participates in this process using ProposedViewSize instances. The layout protocol’s methods take a proposed size input that you can take into account when arranging views and calculating the size of the composite container. Similarly, your layout proposes a size to each of its own subviews when it measures and places them.
+Layout containers typically measure their subviews by proposing several sizes and looking at the responses. The container can use this information to decide how to allocate space among its subviews. A layout might try the following special proposals:
+The zero proposal; the view responds with its minimum size.
+The infinity proposal; the view responds with its maximum size.
+The unspecified proposal; the view responds with its ideal size.
+A layout might also try special cases for one dimension at a time. For example, an HStack might measure the flexibility of its subviews’ widths, while using a fixed value for the height.
+Topics
+Getting standard proposals
+static let zero: ProposedViewSize
+A size proposal that contains zero in both dimensions.
+static let infinity: ProposedViewSize
+A size proposal that contains infinity in both dimensions.
+static let unspecified: ProposedViewSize
+The proposed size with both dimensions left unspecified.
+Creating a custom size proposal
+init(CGSize)
+Creates a new proposed size from a specified size.
+init(width: CGFloat?, height: CGFloat?)
+Creates a new proposed size using the specified width and height.
+Getting the proposal’s dimensions
+var height: CGFloat?
+The proposed vertical size measured in points.
+var width: CGFloat?
+The proposed horizontal size measured in points.
+Modifying a proposal
+func replacingUnspecifiedDimensions(by: CGSize) -> CGSize
+Creates a new proposal that replaces unspecified dimensions in this proposal with the corresponding dimension of the specified size.
+Relationships
+Conforms To
+Equatable
+Sendable
+See Also
+Configuring a custom layout
+struct LayoutProperties
+Layout-specific properties of a layout container.
+struct ViewSpacing
+A collection of the geometric spacing preferences of a view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ProposedViewSize
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

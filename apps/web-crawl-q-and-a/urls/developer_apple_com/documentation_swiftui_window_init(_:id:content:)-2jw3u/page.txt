@@ -1,0 +1,143 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func defaultSize(Size3D) -> some Scene
+Beta
+M
+func defaultSize(CGSize) -> some Scene
+M
+func defaultPosition(UnitPoint) -> some Scene
+Positioning and sizing windows
+Positioning and sizing a window
+S
+DismissBehavior
+Beta
+S
+DismissAction
+M
+init<S>(S, id: String, content: () -> Content)
+M
+init(LocalizedStringKey, id: String, content: () -> Content)
+Creating a window
+S
+Window
+S
+WindowGroup
+Bringing multiple windows to your SwiftUI app
+Creating windows
+Windows
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:id:content:)
+Creates a window with a title and an identifier.
+macOS 13.0+
+init(
+    _ title: Text,
+    id: String,
+    @ViewBuilder content: () -> Content
+)
+Parameters
+title
+The Text view to use for the window’s title in system menus and in the window’s title bar. Provide a title that describes the purpose of the window.
+id
+A unique string identifier that you can use to open the window.
+content
+The view content to display in the window.
+Discussion
+The window displays the view that you specify.
+Important
+The system ignores any text styling that you apply to the Text view title, like bold or italics. However, you can use the formatting controls that the view offers, like for localization, dates, and numerical representations.
+See Also
+Creating a window
+init(LocalizedStringKey, id: String, content: () -> Content)
+Creates a window with a localized title and an identifier.
+init<S>(S, id: String, content: () -> Content)
+Creates a window with a title string and an identifier.
+Current page is init(_:id:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

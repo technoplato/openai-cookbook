@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/customanimation/shouldmerge(previous:value:time:context:)-7f4tsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+SpringKeyframe
+Beta
+Creating custom animations
+r
+P
+CustomAnimation
+Beta
+Animating a value
+M
+func animate<V>(value: V, time: TimeInterval, context: inout AnimationContext<V>) -> V?
+Getting the velocity
+M
+func velocity<V>(value: V, time: TimeInterval, context: AnimationContext<V>) -> V?
+Determining whether to merge
+func shouldMerge<V>(previous: Animation, value: V, time: TimeInterval, context: inout AnimationContext<V>) -> Bool
+T
+TimelineViewDefaultContext
+Synchronizing geometries
+M
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+S
+MatchedGeometryProperties
+r
+P
+GeometryEffect
+S
+Namespace
+M
+func geometryGroup() -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+shouldMerge(previous:value:time:context:)
+Determines whether an instance of the animation can merge with other instance of the same type.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func shouldMerge<V>(
+    previous: Animation,
+    value: V,
+    time: TimeInterval,
+    context: inout AnimationContext<V>
+) -> Bool where V : VectorArithmetic
+Required Default implementation provided.
+Parameters
+previous
+The previous running animation.
+value
+The vector to animate towards.
+time
+The amount of time since the start of the previous animation.
+context
+An instance of AnimationContext that provides access to state and the animation environment.
+Return Value
+A Boolean value of true if the animation should merge with the previous animation; otherwise, false.
+Discussion
+When a view creates a new animation on an animatable value that already has a running animation of the same animation type, the system calls the shouldMerge(previous:value:time:context:) method on the new instance to determine whether it can merge the two instance. Implement this method if the animation can merge with another instance. The default implementation returns false.
+If shouldMerge(previous:value:time:context:) returns true, the system merges the new animation instance with the previous animation. The system provides to the new instance the state and elapsed time from the previous one. Then it removes the previous animation.
+If this method returns false, the system doesn’t merge the animation with the previous one. Instead, both animations run together and the system combines their results.
+If your custom animation needs to maintain state between calls to the shouldMerge(previous:value:time:context:) method, store the state data in context. This makes the data available to the method next time the system calls it. To learn more, see AnimationContext.
+Default Implementations
+CustomAnimation Implementations
+func shouldMerge<V>(previous: Animation, value: V, time: TimeInterval, context: inout AnimationContext<V>) -> Bool
+Determines whether an instance of the animation can merge with other instance of the same type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is shouldMerge(previous:value:time:context:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

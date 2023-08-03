@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/swiftui/imagerenderer/nsimageSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Focus
+Drag and drop
+Clipboard
+Input events
+Gestures
+Event handling
+Scroll views
+P
+var cgImage: CGImage?
+M
+func render(rasterizationScale: CGFloat, renderer: (CGSize, (CGContext) -> Void) -> Void)
+Rendering images
+P
+var colorMode: ColorRenderingMode
+P
+var isOpaque: Bool
+P
+var scale: CGFloat
+P
+var proposedSize: ProposedViewSize
+Accessing renderer properties
+Documentation
+Open Menu
+Swift
+Instance Property
+nsImage
+The current contents of the view, rasterized as an AppKit image.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+@MainActor
+final var nsImage: NSImage? { get }
+Discussion
+The renderer notifies its objectWillChange publisher when the contents of the image may have changed.
+See Also
+Rendering images
+func render(rasterizationScale: CGFloat, renderer: (CGSize, (CGContext) -> Void) -> Void)
+Draws the renderer’s current contents to an arbitrary Core Graphics context.
+var cgImage: CGImage?
+The current contents of the view, rasterized as a Core Graphics image.
+var uiImage: UIImage?
+The current contents of the view, rasterized as a UIKit image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is nsImage
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

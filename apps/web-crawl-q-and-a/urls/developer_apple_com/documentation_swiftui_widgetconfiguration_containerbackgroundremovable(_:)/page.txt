@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/widgetconfiguration/containerbackgroundremovable(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+Model data
+func onBackgroundURLSessionEvents(matching: String, (String, () -> Void) -> Void) -> some WidgetConfiguration
+func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration
+M
+func disfavoredLocations([WidgetLocation], for: [WidgetFamily]) -> some WidgetConfiguration
+Beta
+M
+func contentMarginsDisabled() -> some WidgetConfiguration
+M
+func supportedFamilies([WidgetFamily]) -> some WidgetConfiguration
+Setting the appearance
+M
+func description(LocalizedStringKey) -> some WidgetConfiguration
+M
+func description<S>(S) -> some WidgetConfiguration
+M
+func description(Text) -> some WidgetConfiguration
+Setting a description
+Documentation
+Open Menu
+Swift
+Instance Method
+containerBackgroundRemovable(_:)
+A modifier that marks the background of a widget as removable.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func containerBackgroundRemovable(_ isRemovable: Bool = true) -> some WidgetConfiguration
+Parameters
+isRemovable
+If true, the widget supports removal of the container background in contexts that prefer no backgrounds. If false, the system doesn’t remove the background.
+Return Value
+A modified widget configuration.
+Discussion
+In most cases, mark the background container of a widget as removable to allow people to place the widget in as many contexts as possible. If you mark the background as nonremovable, the widget becomes ineligible in various contexts that require a removable background. For example, a small widget without a removable background doesn’t appear in the widget gallery on the iPad Lock Screen.
+If you mark a background as nonremovable, the system always displays the background container of the widget. Note that the background may render differently; for example, it can appear faded or desaturated.
+This modifier has no effect on operation system versions prior to iOS 17, watchOS 10, or macOS 14.
+See Also
+Setting the appearance
+func supportedFamilies([WidgetFamily]) -> some WidgetConfiguration
+Sets the sizes that a widget supports.
+func contentMarginsDisabled() -> some WidgetConfiguration
+Disable default content margins.
+func disfavoredLocations([WidgetLocation], for: [WidgetFamily]) -> some WidgetConfiguration
+Sets the disfavored locations for a widget.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is containerBackgroundRemovable(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/swiftui/disclosuretablerowSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+UIKit integration
+AppKit integration
+Framework integration
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Adding progressive disclosure
+S
+TableRowBuilder
+r
+P
+DynamicTableRowContent
+S
+EmptyTableRowContent
+S
+TableForEachContent
+S
+TupleTableRowContent
+S
+TableHeaderRowContent
+r
+P
+TableRowContent
+Documentation
+Open Menu
+Swift
+Structure
+DisclosureTableRow
+A kind of table row that shows or hides additional rows based on the state of a disclosure control.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+struct DisclosureTableRow<Label, Content> where Label : TableRowContent, Content : TableRowContent, Label.TableRowValue == Content.TableRowValue
+Overview
+A disclosure group row consists of a label row that is always visible, and some content rows that are conditionally visible depending on the state. Toggling the control will flip the state between “expanded” and “collapsed”.
+In the following example, a disclosure group has allDevices as the label row, and exposes its expanded state with the bound property, expanded. Upon toggling the disclosure control, the user can update the expanded state which will in turn show or hide the three content rows for iPhone, iPad, and Mac.
+private struct DeviceStats: Identifiable {
+    // ...
+}
+@State private var expanded: Bool = true
+@State private var allDevices: DeviceStats = /* ... */
+@State private var iPhone: DeviceStats = /* ... */
+@State private var iPad: DeviceStats = /* ... */
+@State private var Mac: DeviceStats = /* ... */
+
+
+var body: some View {
+    Table(of: DeviceStats.self) {
+        // ...
+    } rows: {
+        DisclosureTableRow(allDevices, isExpanded: $expanded) {
+            TableRow(iPhone)
+            TableRow(iPad)
+            TableRow(Mac)
+        }
+    }
+}
+Topics
+Creating a disclosure table row
+init<Value>(Value, isExpanded: Binding<Bool>?, content: () -> Content)
+Creates a disclosure group with the given value and table rows, and a binding to the expansion state (expanded or collapsed).
+Relationships
+Conforms To
+Sendable
+TableRowContent
+See Also
+Adding progressive disclosure
+struct TableOutlineGroupContent
+An opaque table row type created by a table’s hierarchical initializers.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DisclosureTableRow
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

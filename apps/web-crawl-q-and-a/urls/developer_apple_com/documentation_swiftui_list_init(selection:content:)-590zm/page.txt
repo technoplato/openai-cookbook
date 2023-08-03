@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/list/init(selection:content:)-590zmSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Binding<Data.Element>) -> RowContent)
+M
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Binding<Data.Element>) -> RowContent)
+M
+init<Data, ID, RowContent>(Binding<Data>, id: KeyPath<Data.Element, ID>, rowContent: (Binding<Data.Element>) -> RowContent)
+Listing bound data
+M
+init<Data, RowContent>(Data, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+M
+init<Data, RowContent>(Data, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue>, rowContent: (Data.Element) -> RowContent)
+init<Data, ID, RowContent>(Data, id: KeyPath<Data.Element, ID>, rowContent: (Data.Element) -> RowContent)
+M
+init(content: () -> Content)
+Creating a list with arbitrary content
+S
+List
+Displaying data in lists
+Creating a list
+Lists
+Custom layout
+Layout adjustments
+Documentation
+Open Menu
+Swift
+Initializer
+init(selection:content:)
+Creates a list with the given content that supports selecting a single row that cannot be deselcted.
+macOS 13.0+
+@MainActor
+init(
+    selection: Binding<SelectionValue>,
+    @ViewBuilder content: () -> Content
+)
+Parameters
+selection
+A binding to a selected row.
+content
+The content of the list.
+See Also
+Creating a list with arbitrary content
+init(content: () -> Content)
+Creates a list with the given content.
+Available when SelectionValue is Never and Content conforms to View.
+init(selection: Binding<SelectionValue?>?, content: () -> Content)
+Creates a list with the given content that supports selecting a single row.
+init(selection: Binding<Set<SelectionValue>>?, content: () -> Content)
+Creates a list with the given content that supports selecting multiple rows.
+Current page is init(selection:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/sectionedfetchrequest/init(fetchrequest:sectionidentifier:transaction:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, transaction: Transaction)
+M
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, animation: Animation?)
+Creating a fully configured fetch request
+M
+init(entity: NSEntityDescription, sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)
+M
+init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)
+Creating a fetch request
+S
+SectionedFetchRequest
+S
+FetchedResults
+Documentation
+Open Menu
+Swift
+Initializer
+init(fetchRequest:sectionIdentifier:transaction:)
+Creates a fully configured sectioned fetch request that uses the specified transaction when updating results.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@MainActor
+init(
+    fetchRequest: NSFetchRequest<Result>,
+    sectionIdentifier: KeyPath<Result, SectionIdentifier>,
+    transaction: Transaction
+)
+Available when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+Parameters
+fetchRequest
+An NSFetchRequest instance that describes the search criteria for retrieving data from the persistent store.
+sectionIdentifier
+A key path that SwiftUI applies to the Result type to get an object’s section identifier.
+transaction
+A transaction to use for user interface changes that result from changes to the fetched results.
+Discussion
+Use this initializer if you need a fetch request with updates that affect the user interface based on a Transaction. Otherwise, use init(fetchRequest:sectionIdentifier:animation:).
+See Also
+Creating a fully configured fetch request
+init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, animation: Animation?)
+Creates a fully configured sectioned fetch request that uses the specified animation when updating results.
+Available when SectionIdentifier conforms to Hashable and Result conforms to NSFetchRequestResult.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(fetchRequest:sectionIdentifier:transaction:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

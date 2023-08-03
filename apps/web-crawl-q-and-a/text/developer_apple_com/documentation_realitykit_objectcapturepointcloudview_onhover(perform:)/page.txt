@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/onhover(perform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func overlayPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View
+M
+func overlay<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+M
+func opacity(Double) -> some View
+M
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+M
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Deprecated
+M
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+M
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Deprecated
+M
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+M
+func onDrop(of: [String], delegate: DropDelegate) -> some View
+Deprecated
+M
+func onDrop(of: [UTType], delegate: DropDelegate) -> some View
+M
+func onDrag<V>(() -> NSItemProvider, preview: () -> V) -> some View
+M
+func onDrag(() -> NSItemProvider) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+onHover(perform:)
+Adds an action to perform when the user moves the pointer over or away from the view’s frame.
+RealityKit
+SwiftUI
+iOS 13.4+
+iPadOS 13.4+
+macOS 10.15+
+Mac Catalyst 13.4+
+visionOS 1.0+ Beta
+func onHover(perform action: @escaping (Bool) -> Void) -> some View
+Parameters
+action
+The action to perform whenever the pointer enters or exits this view’s frame. If the pointer is in the view’s frame, the action closure passes true as a parameter; otherwise, false.
+Return Value
+A view that triggers action when the pointer enters or exits this view’s frame.
+Discussion
+Calling this method defines a region for detecting pointer movement with the size and position of this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onHover(perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

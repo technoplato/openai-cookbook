@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/swiftui/scene/defaultposition(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Closing windows
+P
+var dismissWindow: DismissWindowAction
+Beta
+S
+DismissWindowAction
+Beta
+P
+var dismiss: DismissAction
+S
+DismissAction
+S
+DismissBehavior
+Beta
+Positioning and sizing a window
+Positioning and sizing windows
+Model data
+Environment values
+Preferences
+Persistent storage
+Views
+View fundamentals
+View configuration
+Documentation
+Open Menu
+Swift
+Instance Method
+defaultPosition(_:)
+Sets a default position for a window.
+macOS 13.0+
+func defaultPosition(_ position: UnitPoint) -> some Scene
+Parameters
+position
+A UnitPoint that specifies where to place a newly opened window relative to the screen bounds.
+Return Value
+A scene that uses a default position for new windows.
+Discussion
+The first time your app opens a window from a particular scene declaration, the system places the window at the center of the screen by default. For scene types that support multiple simultaneous windows, the system offsets each additional window by a small amount to avoid completely obscuring existing windows.
+You can override the default placement of the first window by applying a scene modifier that indicates where to place the window relative to the screen bounds. For example, you can request that the system place a new window in the bottom trailing corner of the screen:
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        .defaultPosition(.bottomTrailing)
+    }
+}
+The system aligns the point in the window that corresponds to the specified UnitPoint with the point in the screen that corresponds to the same unit point.
+You typically use one of the predefined unit points — like bottomTrailing in the above example — but you can also use a custom unit point. For example, the following modifier aligns the point that’s one quarter of the way from the leading edge of the window with the point that’s one quarter of the way from the leading edge of the screen, while centering the window in the y-dimension:
+WindowGroup {
+    ContentView()
+}
+.defaultPosition(UnitPoint(x: 0.25, y: 0.5))
+The modifier affects any scene type that creates windows in macOS, namely:
+WindowGroup
+Window
+DocumentGroup
+Settings
+The value that you provide acts only as an initial default. During state restoration, the system restores the window to the position that it last occupied.
+See Also
+Positioning and sizing a window
+func defaultSize(CGSize) -> some Scene
+Sets a default size for a window.
+func defaultSize(Size3D) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+Sets a default width and height for a window.
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func windowResizability(WindowResizability) -> some Scene
+Sets the kind of resizability to use for a window.
+struct WindowResizability
+The resizability of a window.
+Current page is defaultPosition(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

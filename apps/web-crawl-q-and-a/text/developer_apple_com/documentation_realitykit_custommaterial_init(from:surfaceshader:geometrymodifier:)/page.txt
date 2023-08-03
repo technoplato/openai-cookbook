@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/init(from:surfaceshader:geometrymodifier:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+MeshBufferSemantic
+Configuring the Material
+P
+var materials: [Material]
+S
+SimpleMaterial
+S
+PhysicallyBasedMaterial
+S
+CustomMaterial
+Creating Custom Materials
+M
+init(from: Material, geometryModifier: CustomMaterial.GeometryModifier) throws
+init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?) throws
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+P
+var metallic: CustomMaterial.Metallic
+S
+CustomMaterial.Metallic
+Using Custom Values
+P
+var custom: CustomMaterial.Custom
+S
+CustomMaterial.Custom
+S
+CustomMaterial.CustomMaterialTexture
+Using a Normal Map
+Documentation
+Open Menu
+Swift
+Initializer
+init(from:surfaceShader:geometryModifier:)
+Creates a custom material from an existing material, surface shader, and geometry modifier.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+init(
+    from material: Material,
+    surfaceShader: CustomMaterial.SurfaceShader,
+    geometryModifier: CustomMaterial.GeometryModifier? = nil
+) throws
+Parameters
+material
+The material from which to copy properties.
+surfaceShader
+The surface shader function.
+geometryModifier
+The geometry modifier shader function.
+Discussion
+Use this initializer to create a custom material with the same properties as another existing material, but with a geometry modifier and surface shader.
+See Also
+Creating Custom Materials
+init(from: Material, geometryModifier: CustomMaterial.GeometryModifier) throws
+Creates a custom material from an existing material and a geometry modifier.
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+Creates a custom material from a lighting model, surface shader, and geometry modifier.
+Current page is init(from:surfaceShader:geometryModifier:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

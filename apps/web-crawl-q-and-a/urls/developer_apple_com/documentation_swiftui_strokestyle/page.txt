@@ -1,0 +1,182 @@
+https://developer.apple.com/documentation/swiftui/strokestyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+InsettableShape
+M
+func containerShape<T>(T) -> some View
+Setting a container shape
+S
+TransformedShape
+S
+OffsetShape
+S
+RotatedShape
+S
+ScaledShape
+init(lineWidth: CGFloat, lineCap: CGLineCap, lineJoin: CGLineJoin, miterLimit: CGFloat, dash: [CGFloat], dashPhase: CGFloat)
+E
+ShapeRole
+S
+AnyShape
+r
+P
+Shape
+r
+P
+ShapeView
+Beta
+Defining shape behavior
+S
+Path
+Drawing custom shapes
+S
+Capsule
+Documentation
+Open Menu
+Swift
+Structure
+StrokeStyle
+The characteristics of a stroke that traces a path.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@frozen
+struct StrokeStyle
+Topics
+Creating a stroke style
+init(lineWidth: CGFloat, lineCap: CGLineCap, lineJoin: CGLineJoin, miterLimit: CGFloat, dash: [CGFloat], dashPhase: CGFloat)
+Creates a new stroke style from the given components.
+Setting stroke style properties
+var lineWidth: CGFloat
+The width of the stroked path.
+var lineCap: CGLineCap
+The endpoint style of a line.
+var lineJoin: CGLineJoin
+The join type of a line.
+var miterLimit: CGFloat
+A threshold used to determine whether to use a bevel instead of a miter at a join.
+var dash: [CGFloat]
+The lengths of painted and unpainted segments used to make a dashed line.
+var dashPhase: CGFloat
+How far into the dash pattern the line starts.
+Relationships
+Conforms To
+Animatable
+Equatable
+Sendable
+See Also
+Defining shape behavior
+protocol ShapeView
+A view that provides a shape that you can use for drawing operations.
+Beta
+protocol Shape
+A 2D shape that you can use when drawing a view.
+struct AnyShape
+A type-erased shape value.
+enum ShapeRole
+Ways of styling a shape.
+struct StrokeShapeView
+A shape provider that strokes its shape.
+Beta
+struct StrokeBorderShapeView
+A shape provider that strokes the border of its shape.
+Beta
+struct FillStyle
+A style for rasterizing vector shapes.
+struct FillShapeView
+A shape provider that fills its shape.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is StrokeStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

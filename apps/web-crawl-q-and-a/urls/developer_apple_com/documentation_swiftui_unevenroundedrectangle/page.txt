@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/unevenroundedrectangleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+StrokeStyle
+E
+ShapeRole
+S
+AnyShape
+r
+P
+Shape
+r
+P
+ShapeView
+Beta
+Defining shape behavior
+S
+Path
+init(topLeadingRadius: CGFloat, bottomLeadingRadius: CGFloat, bottomTrailingRadius: CGFloat, topTrailingRadius: CGFloat, style: RoundedCornerStyle)
+E
+RoundedCornerStyle
+S
+RoundedRectangle
+S
+Rectangle
+Creating rectangular shapes
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Documentation
+Open Menu
+Swift
+Structure
+UnevenRoundedRectangle
+A rectangular shape with rounded corners with different values, aligned inside the frame of the view containing it.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+@frozen
+struct UnevenRoundedRectangle
+Topics
+Creating an uneven rounded rectangle
+init(cornerRadii: RectangleCornerRadii, style: RoundedCornerStyle)
+Creates a new rounded rectangle shape with uneven corners.
+init(topLeadingRadius: CGFloat, bottomLeadingRadius: CGFloat, bottomTrailingRadius: CGFloat, topTrailingRadius: CGFloat, style: RoundedCornerStyle)
+Creates a new rounded rectangle shape with uneven corners.
+Getting the shape’s characteristics
+var cornerRadii: RectangleCornerRadii
+The radii of each corner of the rounded rectangle.
+var style: RoundedCornerStyle
+The style of corners drawn by the rounded rectangle.
+Supporting types
+var animatableData: RectangleCornerRadii.AnimatableData
+The data to animate.
+Relationships
+Conforms To
+Animatable
+InsettableShape
+Sendable
+Shape
+View
+See Also
+Creating rectangular shapes
+struct Rectangle
+A rectangular shape aligned inside the frame of the view containing it.
+struct RoundedRectangle
+A rectangular shape with rounded corners, aligned inside the frame of the view containing it.
+enum RoundedCornerStyle
+Defines the shape of a rounded rectangle’s corners.
+struct RectangleCornerRadii
+Describes the corner radius values of a rounded rectangle with uneven corners.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UnevenRoundedRectangle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

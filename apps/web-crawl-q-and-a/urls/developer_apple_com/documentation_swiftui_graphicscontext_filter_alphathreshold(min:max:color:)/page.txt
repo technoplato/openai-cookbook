@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/filter/alphathreshold(min:max:color:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func tint<S>(S?) -> some View
+Setting a color
+P
+var environment: EnvironmentValues
+Accessing the environment
+M
+func withCGContext(content: (CGContext) throws -> Void) rethrows
+Drawing with a core graphics context
+P
+var transform: CGAffineTransform
+P
+static var luminanceToAlpha: GraphicsContext.Filter
+Adjusting opacity
+M
+static func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat, blendMode: GraphicsContext.BlendMode, options: GraphicsContext.ShadowOptions) -> GraphicsContext.Filter
+Adding a shadow
+M
+static func blur(radius: CGFloat, options: GraphicsContext.BlurOptions) -> GraphicsContext.Filter
+Adding blur
+M
+static func colorMatrix(ColorMatrix) -> GraphicsContext.Filter
+M
+static func grayscale(Double) -> GraphicsContext.Filter
+Documentation
+Open Menu
+Swift
+Type Method
+alphaThreshold(min:max:color:)
+Returns a filter that replaces each pixel with alpha components within a range by a constant color, or transparency otherwise.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static func alphaThreshold(
+    min: Double,
+    max: Double = 1,
+    color: Color = Color.black
+) -> GraphicsContext.Filter
+Parameters
+min
+The minimum alpha threshold. Pixels whose alpha component is less than this value will render as transparent. Results are undefined unless min < max.
+max
+The maximum alpha threshold. Pixels whose alpha component is greater than this value will render as transparent. Results are undefined unless min < max.
+color
+The color that is output for pixels with an alpha component between the two threshold values.
+Return Value
+A filter that applies a threshold to alpha values.
+See Also
+Adjusting opacity
+static var luminanceToAlpha: GraphicsContext.Filter
+Returns a filter that sets the opacity of each pixel based on its luminance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is alphaThreshold(min:max:color:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

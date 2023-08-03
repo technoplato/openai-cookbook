@@ -1,0 +1,175 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/configuration-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Equatable Implementations
+Default Implementations
+P
+var customDetailSpecification: PhotogrammetrySession.Configuration.CustomDetailSpecification
+Beta
+P
+var checkpointDirectory: URL?
+Beta
+Instance Properties
+M
+init(checkpointDirectory: URL)
+Beta
+Initializers
+P
+var configuration: PhotogrammetrySession.Configuration
+Configuring the Session
+P
+static var isSupported: Bool
+M
+init<S>(input: S, configuration: PhotogrammetrySession.Configuration) throws
+M
+init(input: URL, configuration: PhotogrammetrySession.Configuration) throws
+Creating the Session
+C
+PhotogrammetrySession
+Using object capture assets in RealityKit
+Documentation
+Open Menu
+Swift
+Structure
+PhotogrammetrySession.Configuration
+The configuration parameters for a photogrammetry session.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+struct Configuration
+Overview
+A PhotogrammetrySession.Configuration instance may be passed in to any of the PhotogrammetrySession initializers to override its default values.
+Use the default values in most instances. In some cases, you may improve the quality of the generated 3D object by specifying different values. If, for example, your source images have few landmarks or poor contrast, you might set featureSensitivity to PhotogrammetrySession.Configuration.FeatureSensitivity.high to compensate for it.
+Topics
+Creating a Configuration
+init()
+Creates a configuration using default values.
+Configuring Object Masking
+var isObjectMaskingEnabled: Bool
+A Boolean value that indicates whether the session uses object masks.
+Configuring Sample Ordering
+var sampleOrdering: PhotogrammetrySession.Configuration.SampleOrdering
+The order of the image samples.
+enum SampleOrdering
+The ordering of samples.
+Configuring Feature Sensitivity
+var featureSensitivity: PhotogrammetrySession.Configuration.FeatureSensitivity
+The precision of landmark detection.
+enum FeatureSensitivity
+The sensitivity to sample landmarks.
+Structures
+struct CustomDetailSpecification
+A structure for specifying various customizable options on the reconstructed model and textures.
+Beta
+Operators
+static func == (PhotogrammetrySession.Configuration, PhotogrammetrySession.Configuration) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Initializers
+init(checkpointDirectory: URL)
+Beta
+Instance Properties
+var checkpointDirectory: URL?
+For macOS reconstruction, the checkpoint directory is used as a temporary reconstruction space if it is not nil. Reconstruction always starts from scratch, there is no resuming.
+Beta
+var customDetailSpecification: PhotogrammetrySession.Configuration.CustomDetailSpecification
+To specify the .custom Detail level and control various specifications in the model output such as texture size, the specific PhotogrammetrySession.Configuration.CustomDetailSpecification should be set here. All .custom requests will then use these values. Other Detail level settings will ignore these.
+Beta
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+See Also
+Configuring the Session
+var configuration: PhotogrammetrySession.Configuration
+Readonly property containing the session configuration set in the construction.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Configuration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

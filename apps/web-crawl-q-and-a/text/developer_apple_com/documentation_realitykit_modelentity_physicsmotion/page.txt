@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/realitykit/modelentity/physicsmotionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MeshResource
+Mesh resources
+C
+ShapeResource
+Primitive shapes
+r
+P
+HasModel
+S
+ModelDebugOptionsComponent
+S
+ModelComponent
+Simulating Movement
+r
+P
+HasPhysicsBody
+M
+func resetPhysicsTransform(Transform, recursive: Bool)
+Deprecated
+M
+func resetPhysicsTransform(recursive: Bool)
+M
+func applyImpulse(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)
+M
+func applyAngularImpulse(SIMD3<Float>, relativeTo: Entity?)
+M
+func applyLinearImpulse(SIMD3<Float>, relativeTo: Entity?)
+M
+func clearForcesAndTorques()
+Documentation
+Open Menu
+Swift
+Instance Property
+physicsMotion
+The physics motion component used by physics simulations of the model entity.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+var physicsMotion: PhysicsMotionComponent? { get set }
+See Also
+Simulating Movement
+struct PhysicsMotionComponent
+A component that controls the motion of the body in physics simulations.
+protocol HasPhysicsMotion
+An interface that provides velocity properties for physics simulations.
+protocol HasPhysics
+An interface that combines the physics body and physics motion interfaces.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is physicsMotion
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

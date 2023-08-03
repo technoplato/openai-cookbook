@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/scene/defaultappstorage(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Configuring a data model
+M
+func windowToolbarStyle<S>(S) -> some Scene
+M
+func windowStyle<S>(S) -> some Scene
+M
+func upperLimbVisibility(Visibility) -> some Scene
+Beta
+M
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Beta
+Styling the scene
+M
+func windowResizability(WindowResizability) -> some Scene
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some Scene
+Managing app storage
+M
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some Scene
+Creating background tasks
+M
+func handlesExternalEvents(matching: Set<String>) -> some Scene
+M
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some Scene
+Beta
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some Scene
+Beta
+Watching for changes
+Body
+Documentation
+Open Menu
+Swift
+Instance Method
+defaultAppStorage(_:)
+The default store used by AppStorage contained within the scene and its view content.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func defaultAppStorage(_ store: UserDefaults) -> some Scene
+Parameters
+store
+The user defaults to use as the default store for AppStorage.
+Discussion
+If unspecified, the default store for a view hierarchy is UserDefaults.standard, but can be set a to a custom one. For example, sharing defaults between an app and an extension can override the default store to one created with UserDefaults.init(suiteName:_).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is defaultAppStorage(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

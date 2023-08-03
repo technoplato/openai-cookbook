@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/tabviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Configuring the navigation bar
+M
+func navigationBarBackButtonHidden(Bool) -> some View
+M
+func navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode) -> some View
+S
+NavigationBarItem
+Configuring the sidebar
+P
+var sidebarRowSize: SidebarRowSize
+E
+SidebarRowSize
+Presenting views in tabs
+Data and storage
+Model data
+Environment values
+Preferences
+Persistent storage
+Views
+View fundamentals
+Documentation
+Open Menu
+Swift
+Structure
+TabView
+A view that switches between multiple child views using interactive user interface elements.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+struct TabView<SelectionValue, Content> where SelectionValue : Hashable, Content : View
+Overview
+To create a user interface with tabs, place views in a TabView and apply the tabItem(_:) modifier to the contents of each tab. On iOS, you can also use one of the badge modifiers, like badge(_:), to assign a badge to each of the tabs.
+The following example creates a tab view with three tabs, each presenting a custom child view. The first tab has a numeric badge and the third has a string badge.
+TabView {
+    ReceivedView()
+        .badge(2)
+        .tabItem {
+            Label("Received", systemImage: "tray.and.arrow.down.fill")
+        }
+    SentView()
+        .tabItem {
+            Label("Sent", systemImage: "tray.and.arrow.up.fill")
+        }
+    AccountView()
+        .badge("!")
+        .tabItem {
+            Label("Account", systemImage: "person.crop.circle.fill")
+        }
+}
+Use a Label for each tab item, or optionally a Text, an Image, or an image followed by text. Passing any other type of view results in a visible but empty tab item.
+Topics
+Creating a tab view
+init(content: () -> Content)
+Available when SelectionValue is Int and Content conforms to View.
+init(selection: Binding<SelectionValue>?, content: () -> Content)
+Creates an instance that selects from content associated with Selection values.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Presenting views in tabs
+func tabViewStyle<S>(S) -> some View
+Sets the style for the tab view within the current environment.
+func tabItem<V>(() -> V) -> some View
+Sets the tab bar item associated with this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TabView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

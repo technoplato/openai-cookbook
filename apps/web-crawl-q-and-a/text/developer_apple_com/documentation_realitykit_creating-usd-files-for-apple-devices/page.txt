@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/realitykit/creating-usd-files-for-apple-devicesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Entity.ChildCollection
+M
+func removeChild(Entity, preservingWorldTransform: Bool)
+M
+func addChild(Entity, preservingWorldTransform: Bool)
+P
+var children: Entity.ChildCollection
+M
+func removeFromParent(preservingWorldTransform: Bool)
+M
+func setParent(Entity?, preservingWorldTransform: Bool)
+P
+var parent: Entity?
+Loading Entities from a File
+Stored Entities
+Loading a Stored Entity
+M
+func didClone(from: Entity)
+M
+func clone(recursive: Bool) -> Self
+M
+init()
+Creating an Entity
+C
+Entity
+Documentation
+Open Menu
+Swift
+Creating USD files for Apple devices
+Generate 3D assets that render as expected.
+Overview
+Universal Scene Description (USD) is a comprehensive 3D content-creation technology that supports a variety of real-time and offline workflows. Depending on the device and its operating system, there are three renderers that might display a 3D asset you create for your real-time apps and AR experiences: RealityKit, SceneKit, or Storm. Each renderer supports a specific subset of the USD features. Use only USD features supported by the renderer that displays your asset to ensure that it renders and functions as desired. For detailed information about which USD features each renderer supports, see Validating Feature Support for USD Files.
+All three renderers use a physically based rendering (PBR) technique that the USD specification calls the metallic workflow. A metallic workflow shader takes metallic, roughness, and base color values as its core inputs. Most digital content creation tools (DCCs) support PBR metallic workflow shaders and many of them default to using it.
+USD and many DCCs also support a second PBR technique called the specular workflow (sometimes also called the glossy workflow). The specular workflow renders assets by using another algorithm that takes different input values. Only Storm supports the specular workflow, so for maximum compatibility, use metallic workflow shaders in your DCC, or your preview renders won’t accurately represent how your final rendered asset looks.
+Note
+Find more information and an example shader implementation for both of USD’s PBR workflows by reading the USDPreviewSurface shader page in the USD specification.
+Target a renderer
+Your app’s operating system will use one of three renderers, based on these factors:
+RealityKit
+The RealityKit renderer is part of the RealityKit framework. It handles drawing for Reality Composer and RealityKit scenes. It also renders AR Quick Look for USDZ files on iOS and Quick Look for USDZ files on macOS.
+SceneKit
+The SceneKit renderer is part of the SceneKit framework. It renders 3D content in Xcode, Motion, and all other apps that use the SceneKit framework. Preview and Quick Look also use it to display USD, USDA, and USDC files on macOS 10 and 11.
+Storm
+The Storm renderer is a Metal-native implementation of Pixar’s high-performance preview renderer. It’s available on macOS 12 and later, where Preview and Quick Look use it to display USD, USDA, and USDC files.
+Use the process outlined below to ensure that your USD assets render correctly and function as expected in your app.
+Validate your USD assets
+USD files that aren’t well-formed may not work correctly. Validate that your assets conform to the USD specification before including them in your app by using the usdchecker tool with the --arkit flag. Obtain usdchecker by installing the USDPython package available from the AR Creation Tools Page.
+Use the latest USD schemas
+The USD adoption process often results in changes to proposed schemas before they become part of the specification. If you’ve created any assets using a preliminary schema, re-export them using the standard USD schema once the features your asset uses become part of the specification.
+Note
+Only the RealityKit renderer supports custom preliminary schemas.
+Target your use of subdivision
+USD supports a feature called subdivision surfaces, which tells the renderer to generate additional geometry on-the-fly to make the entity render more smoothly. Target your use of this feature to instances when you most need smooth rendering. Each level of subdivision increases the number of rendered polygons in the model by a factor of four, which can have substantial performance implications. Subdivision surfaces is supported by both the SceneKit and Storm renderers, but not the RealityKit renderer.
+Note
+The default subdivisionScheme value in USD is catmullClark, a subdivision surfaces algorithm. This means subdivision surfaces is automatically enabled for assets that don’t explicitly include a subdivision scheme. To ensure that subdivision surfaces is not enabled for your asset, explicitly set subdivisionScheme to none when exporting. For more information, see the documentation for GetSubdivisionSchemeAttr() in the USD specification.
+Limit rigged models to a single skeleton
+USD supports skeletal animation, which you can use to animate a character or other complex model by manipulating a hierarchy of bones or joints to deform the model. Many DCCs allow you to use multiple skeletons (sometimes called armatures or rigs), to deform a single mesh. For example, for a character model, you might create one skeleton to handle facial animation and a second one to control general body movement. Before exporting models with multiple skeletons to a USD file, merge all the skeletons into a single joint or bone hierarchy. Models with multiple hierarchies can cause performance and compatibility issues with all three renderers.
+Note
+All DCCs implement skeletal animation using either a hierarchy of bones or joints. Both approaches deform the model for animation, but use different underlying data representations. DCCs that use bone-based skeletons automatically convert the skeleton to joints when exporting to USD, because USD only supports joint-based skeletons.
+Topics
+Validating USD feature support
+Validating feature support for USD files
+Ensure that the renderer that displays your USD assets supports its features.
+See Also
+Loading a Stored Entity
+API Reference
+Stored Entities
+Manage entities stored as assets on disk.
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+Current page is Creating USD files for Apple devices
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

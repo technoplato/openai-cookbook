@@ -1,0 +1,148 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Indicating missing content
+S
+DefaultDateProgressLabel
+M
+func progressViewStyle<S>(S) -> some View
+S
+ProgressView
+M
+func gaugeStyle<S>(S) -> some View
+S
+Gauge
+Indicating a value
+Picking dates in a range
+M
+init(selection: Binding<Set<DateComponents>>, label: () -> Label)
+M
+init<S>(S, selection: Binding<Set<DateComponents>>)
+M
+init(LocalizedStringKey, selection: Binding<Set<DateComponents>>)
+Picking dates
+S
+MultiDatePicker
+M
+func datePickerStyle<S>(S) -> some View
+S
+DatePicker
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:selection:in:)
+Creates an instance that selects multiple dates in a range.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+init(
+    _ titleKey: LocalizedStringKey,
+    selection: Binding<Set<DateComponents>>,
+    in bounds: Range<Date>
+)
+Available when Label is Text.
+Parameters
+titleKey
+The key for the localized title of self, describing its purpose.
+selection
+The date values being displayed and selected.
+bounds
+The exclusive range of selectable dates.
+See Also
+Picking dates in a range
+init<S>(S, selection: Binding<Set<DateComponents>>, in: Range<Date>)
+Creates an instance that selects multiple dates in a range.
+Available when Label is Text.
+init(selection: Binding<Set<DateComponents>>, in: Range<Date>, label: () -> Label)
+Creates an instance that selects multiple dates in a range.
+Available when Label conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:selection:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

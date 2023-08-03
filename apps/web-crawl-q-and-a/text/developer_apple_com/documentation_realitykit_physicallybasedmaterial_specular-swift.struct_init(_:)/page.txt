@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/specular-swift.struct/init(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Modifying Texture Coordinates
+S
+PhysicallyBasedMaterial.EmissiveColor
+P
+var emissiveColor: PhysicallyBasedMaterial.EmissiveColor
+P
+var emissiveIntensity: Float
+Adding Light Emission
+S
+PhysicallyBasedMaterial.AnisotropyAngle
+P
+var anisotropyAngle: PhysicallyBasedMaterial.AnisotropyAngle
+M
+init(scale: Float, texture: PhysicallyBasedMaterial.Texture?)
+M
+init(floatLiteral: Float)
+Creating a Specular Object
+S
+PhysicallyBasedMaterial.Specular
+P
+var specular: PhysicallyBasedMaterial.Specular
+Creating Highlights
+S
+PhysicallyBasedMaterial.AmbientOcclusion
+P
+var ambientOcclusion: PhysicallyBasedMaterial.AmbientOcclusion
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates an object from a custom material’s specular property.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+init(_ value: CustomMaterial.Specular)
+Parameters
+value
+The custom material’s specular property.
+Discussion
+RealityKit automatically draws specular highlights for physically based materials using the values of various properties, primarily roughness and metallic. Specular highlights are bright spots of reflected light that appear on shiny objects.
+While many real-world objects can be accurately and realistically simulated with just the core PBR properties, you can create additional realistic effects by augmenting the specular highlights.
+This initializer creates a PhysicallyBasedMaterial.Specular object from the specular property of a CustomMaterial.
+See Also
+Creating a Specular Object
+init(floatLiteral: Float)
+Creates an object from single value.
+init(scale: Float, texture: PhysicallyBasedMaterial.Texture?)
+Creates an object from a single value or a texture.
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

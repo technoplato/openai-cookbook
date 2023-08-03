@@ -1,0 +1,132 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/configuration-swift.struct/featuresensitivity-swift.enum/normalSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var activeRequests: [PhotogrammetrySession.Request]
+Monitoring the Session
+Equatable Implementations
+Default Implementations
+P
+var customDetailSpecification: PhotogrammetrySession.Configuration.CustomDetailSpecification
+Beta
+P
+var checkpointDirectory: URL?
+Beta
+Instance Properties
+static func == (PhotogrammetrySession.Configuration.FeatureSensitivity, PhotogrammetrySession.Configuration.FeatureSensitivity) -> Bool
+Specifying Feature Sensitivity
+E
+PhotogrammetrySession.Configuration.FeatureSensitivity
+P
+var featureSensitivity: PhotogrammetrySession.Configuration.FeatureSensitivity
+Configuring Feature Sensitivity
+E
+PhotogrammetrySession.Configuration.SampleOrdering
+P
+var sampleOrdering: PhotogrammetrySession.Configuration.SampleOrdering
+Configuring Sample Ordering
+P
+var isObjectMaskingEnabled: Bool
+Documentation
+Open Menu
+Swift
+Case
+PhotogrammetrySession.Configuration.FeatureSensitivity.normal
+The session uses the default algorithm to detect landmarks.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+case normal
+See Also
+Specifying Feature Sensitivity
+case high
+The session uses a slower, more sensitive algorithm to detect landmarks.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Configuration.FeatureSensitivity.normal
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

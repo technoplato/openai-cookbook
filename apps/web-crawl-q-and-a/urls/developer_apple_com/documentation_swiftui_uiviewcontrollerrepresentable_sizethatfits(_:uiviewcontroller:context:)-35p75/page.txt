@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/uiviewcontrollerrepresentable/sizethatfits(_:uiviewcontroller:context:)-35p75Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+Xcode library customization
+Previews in Xcode
+Tool support
+Technology-specific views
+func sizeThatFits(ProposedViewSize, uiViewController: Self.UIViewControllerType, context: Self.Context) -> CGSize?
+Specifying a size
+UIViewControllerType
+T
+UIViewControllerRepresentable.Context
+M
+func updateUIViewController(Self.UIViewControllerType, context: Self.Context)
+M
+func makeUIViewController(context: Self.Context) -> Self.UIViewControllerType
+Creating and updating the view controller
+r
+P
+UIViewControllerRepresentable
+S
+UIViewRepresentableContext
+Documentation
+Open Menu
+Swift
+Instance Method
+sizeThatFits(_:uiViewController:context:)
+Given a proposed size, returns the preferred size of the composite view.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+@MainActor
+func sizeThatFits(
+    _ proposal: ProposedViewSize,
+    uiViewController: Self.UIViewControllerType,
+    context: Self.Context
+) -> CGSize?
+Required Default implementation provided.
+Parameters
+proposal
+The proposed size for the view controller.
+uiViewController
+Your custom view controller object.
+context
+A context structure containing information about the current state of the system.
+Return Value
+The composite size of the represented view controller. Returning a value of nil indicates that the system should use the default sizing algorithm.
+Discussion
+This method may be called more than once with different proposed sizes during the same layout pass. SwiftUI views choose their own size, so one of the values returned from this function will always be used as the actual size of the composite view.
+Default Implementations
+UIViewControllerRepresentable Implementations
+func sizeThatFits(ProposedViewSize, uiViewController: Self.UIViewControllerType, context: Self.Context) -> CGSize?
+Given a proposed size, returns the preferred size of the composite view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sizeThatFits(_:uiViewController:context:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

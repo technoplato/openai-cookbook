@@ -1,0 +1,187 @@
+https://developer.apple.com/documentation/swiftui/animation/repeatcount(_:autoreverses:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating keyframe-based animation
+S
+PhaseAnimator
+Beta
+M
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Beta
+M
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Beta
+Controlling the timing and movements of your animations
+Creating phase-based animation
+M
+func animation<V>(Animation?, body: (PlaceholderContentView<Self>) -> V) -> some View
+static func interactiveSpring(duration: TimeInterval, extraBounce: Double, blendDuration: TimeInterval) -> Animation
+func shouldMerge<V>(previous: Animation, value: V, time: TimeInterval, context: inout AnimationContext<V>) -> Bool
+M
+func delay(TimeInterval) -> Animation
+Configuring an animation
+M
+static func timingCurve(Double, Double, Double, Double, duration: TimeInterval) -> Animation
+M
+static func timingCurve(UnitCurve, duration: TimeInterval) -> Animation
+Beta
+M
+init<A>(A)
+Beta
+Creating custom animations
+M
+static func interpolatingSpring(mass: Double, stiffness: Double, damping: Double, initialVelocity: Double) -> Animation
+M
+static func interpolatingSpring(duration: TimeInterval, bounce: Double, initialVelocity: Double) -> Animation
+Documentation
+Open Menu
+Swift
+Instance Method
+repeatCount(_:autoreverses:)
+Repeats the animation for a specific number of times.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func repeatCount(
+    _ repeatCount: Int,
+    autoreverses: Bool = true
+) -> Animation
+Parameters
+repeatCount
+The number of times that the animation repeats. Each repeated sequence starts at the beginning when autoreverse is false.
+autoreverses
+A Boolean value that indicates whether the animation sequence plays in reverse after playing forward. Autoreverse counts towards the repeatCount. For instance, a repeatCount of one plays the animation forward once, but it doesn’t play in reverse even if autoreverse is true. When autoreverse is true and repeatCount is 2, the animation moves forward, then reverses, then stops.
+Return Value
+An animation that repeats for specific number of times.
+Discussion
+Use this method to repeat the animation a specific number of times. For example, in the following code, the animation moves a truck from one edge of the view to the other edge. It repeats this animation three times.
+struct ContentView: View {
+    @State private var driveForward = true
+
+
+    private var driveAnimation: Animation {
+        .easeInOut
+        .repeatCount(3, autoreverses: true)
+        .speed(0.5)
+    }
+
+
+    var body: some View {
+        VStack(alignment: driveForward ? .leading : .trailing, spacing: 40) {
+            Image(systemName: "box.truck")
+                .font(.system(size: 48))
+                .animation(driveAnimation, value: driveForward)
+
+
+            HStack {
+                Spacer()
+                Button("Animate") {
+                    driveForward.toggle()
+                }
+                Spacer()
+            }
+        }
+    }
+}
+Play
+The first time the animation runs, the truck moves from the leading edge to the trailing edge of the view. The second time the animation runs, the truck moves from the trailing edge to the leading edge because autoreverse is true. If autoreverse were false, the truck would jump back to leading edge before moving to the trailing edge. The third time the animation runs, the truck moves from the leading to the trailing edge of the view.
+See Also
+Configuring an animation
+func delay(TimeInterval) -> Animation
+Delays the start of the animation by the specified number of seconds.
+func repeatForever(autoreverses: Bool) -> Animation
+Repeats the animation for the lifespan of the view containing the animation.
+func speed(Double) -> Animation
+Changes the duration of an animation by adjusting its speed.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is repeatCount(_:autoreverses:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/process(requests:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var configuration: PhotogrammetrySession.Configuration
+S
+PhotogrammetrySession.Configuration
+Monitoring the Session
+P
+var activeRequests: [PhotogrammetrySession.Request]
+P
+var isProcessing: Bool
+P
+var outputs: PhotogrammetrySession.Outputs
+E
+PhotogrammetrySession.Output
+Controlling Object Creation
+Default Implementations
+Identifiable Implementations
+S
+PhotogrammetrySample
+S
+ObjectCaptureView
+Beta
+C
+ObjectCaptureSession
+Beta
+S
+ObjectCapturePointCloudView
+Beta
+USD Assets
+Documentation
+Open Menu
+Swift
+Instance Method
+process(requests:)
+Starts processing of the provided processing requests. Messages begin to be produced to the output publisher.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+func process(requests: [PhotogrammetrySession.Request]) throws
+Discussion
+On the first process()call the data in the input source will be ingested entirely and inputComplete produced on the output stream before any request processing progress will begin. Before inputComplete, warnings about samples will be published, if any.
+Throws
+if isProcessing another batch still, the session is invalid (an Error was produced on output or if one of the requests is invalid.
+See Also
+Controlling Object Creation
+func cancel()
+Requests cancellation of any running requests.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is process(requests:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

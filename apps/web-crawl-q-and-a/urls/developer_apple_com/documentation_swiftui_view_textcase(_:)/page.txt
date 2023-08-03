@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/view/textcase(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func lineLimit(Int, reservesSpace: Bool) -> some View
+M
+func lineLimit(ClosedRange<Int>) -> some View
+M
+func lineLimit(PartialRangeThrough<Int>) -> some View
+M
+func lineLimit(PartialRangeFrom<Int>) -> some View
+M
+func lineLimit(Int?) -> some View
+Limiting line count for multiline text
+E
+TextAlignment
+M
+func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+M
+func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+M
+func italic(Bool) -> some View
+M
+func bold(Bool) -> some View
+Controlling text style
+S
+ScaledMetric
+E
+DynamicTypeSize
+P
+var dynamicTypeSize: DynamicTypeSize
+Documentation
+Open Menu
+Swift
+Instance Method
+textCase(_:)
+Sets a transform for the case of the text contained in this view when displayed.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func textCase(_ textCase: Text.Case?) -> some View
+Parameters
+textCase
+One of the Text.Case enumerations; the default is nil.
+Return Value
+A view that transforms the case of the text.
+Discussion
+The default value is nil, displaying the text without any case changes.
+See Also
+Controlling text style
+func bold(Bool) -> some View
+Applies a bold font weight to the text in this view.
+func italic(Bool) -> some View
+Applies italics to the text in this view.
+func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+Applies an underline to the text in this view.
+func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View
+Applies a strikethrough to the text in this view.
+var textCase: Text.Case?
+A stylistic override to transform the case of Text when displayed, using the environment’s locale.
+func monospaced(Bool) -> some View
+Modifies the fonts of all child views to use the fixed-width variant of the current font, if possible.
+func monospacedDigit() -> some View
+Modifies the fonts of all child views to use fixed-width digits, if possible, while leaving other characters proportionally spaced.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is textCase(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

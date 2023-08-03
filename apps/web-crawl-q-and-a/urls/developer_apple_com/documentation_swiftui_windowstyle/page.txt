@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/swiftui/windowstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+OpenWindowAction
+P
+var openWindow: OpenWindowAction
+P
+var supportsMultipleWindows: Bool
+Presenting windows and spaces
+Opening windows
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+S
+Window
+S
+WindowGroup
+Bringing multiple windows to your SwiftUI app
+Creating windows
+Windows
+Scenes
+App organization
+App structure
+Documentation
+Open Menu
+Swift
+Protocol
+WindowStyle
+A specification for the appearance and interaction of a window.
+macOS 11.0+
+visionOS 1.0+ Beta
+protocol WindowStyle
+Topics
+Getting built-in window styles
+static var automatic: DefaultWindowStyle
+The default window style.
+Available when Self is DefaultWindowStyle.
+static var hiddenTitleBar: HiddenTitleBarWindowStyle
+A window style which hides both the window’s title and the backing of the titlebar area, allowing more of the window’s content to show.
+Available when Self is HiddenTitleBarWindowStyle.
+static var plain: PlainWindowStyle
+The plain window style.
+Available when Self is PlainWindowStyle.
+Beta
+static var titleBar: TitleBarWindowStyle
+A window style which displays the title bar section of the window.
+Available when Self is TitleBarWindowStyle.
+static var volumetric: VolumetricWindowStyle
+A window style that creates a 3D volumetric window.
+Available when Self is VolumetricWindowStyle.
+Beta
+Supporting types
+struct DefaultWindowStyle
+The default window style.
+struct HiddenTitleBarWindowStyle
+A window style which hides both the window’s title and the backing of the titlebar area, allowing more of the window’s content to show.
+struct PlainWindowStyle
+The plain window style.
+Beta
+struct TitleBarWindowStyle
+A window style which displays the title bar section of the window.
+struct VolumetricWindowStyle
+A window style that creates a 3D volumetric window.
+Beta
+Relationships
+Conforming Types
+DefaultWindowStyle
+HiddenTitleBarWindowStyle
+PlainWindowStyle
+TitleBarWindowStyle
+VolumetricWindowStyle
+See Also
+Creating windows
+struct WindowGroup
+A scene that presents a group of identically structured windows.
+struct Window
+A scene that presents its content in a single, unique window.
+func windowStyle<S>(S) -> some Scene
+Sets the style for windows created by this scene.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is WindowStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

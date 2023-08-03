@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/windowgroup/init(_:content:)-ulz4Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init<D, C>(Text, id: String, for: D.Type, content: (Binding<D?>) -> C)
+M
+init<S, D, C>(S, id: String, for: D.Type, content: (Binding<D?>) -> C)
+M
+init<D, C>(LocalizedStringKey, id: String, for: D.Type, content: (Binding<D?>) -> C)
+M
+init<D, C>(id: String, for: D.Type, content: (Binding<D?>) -> C)
+Identifying a data-driven window group
+M
+init<D, C>(Text, for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+M
+init<S, D, C>(S, for: D.Type, content: (Binding<D>) -> C, defaultValue: () -> D)
+M
+init(Text, content: () -> Content)
+M
+init(content: () -> Content)
+Creating a window group
+S
+WindowGroup
+Bringing multiple windows to your SwiftUI app
+Creating windows
+Windows
+Scenes
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:content:)
+Creates a window group with a localized title string.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+init(
+    _ titleKey: LocalizedStringKey,
+    @ViewBuilder content: () -> Content
+)
+Parameters
+titleKey
+The title key to use for the group’s title.
+content
+A closure that creates the content for each instance of the group.
+Discussion
+The window group uses the specified content as a template to create each window in the group. The system uses the title to distinguish the window group in the user interface, such as in the name of commands associated with the group.
+See Also
+Creating a window group
+init(content: () -> Content)
+Creates a window group.
+init(Text, content: () -> Content)
+Creates a window group with a text view title.
+init<S>(S, content: () -> Content)
+Creates a window group with a title string.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

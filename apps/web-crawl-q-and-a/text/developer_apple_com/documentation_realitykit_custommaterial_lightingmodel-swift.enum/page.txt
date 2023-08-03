@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/lightingmodel-swift.enumSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Specifying Metallic Reflections
+S
+CustomMaterial.Roughness
+P
+var roughness: CustomMaterial.Roughness
+Specifying Entity Roughness
+S
+CustomMaterial.BaseColor
+P
+var baseColor: CustomMaterial.BaseColor
+Specifying the Entity’s Base Color
+P
+var lightingModel: CustomMaterial.LightingModel
+Setting the Lighting Model
+M
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+M
+init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?) throws
+M
+init(from: Material, geometryModifier: CustomMaterial.GeometryModifier) throws
+Creating Custom Materials
+S
+CustomMaterial
+S
+PhysicallyBasedMaterial
+Documentation
+Open Menu
+Swift
+Enumeration
+CustomMaterial.LightingModel
+An object that defines how the framework renders a custom material.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+enum LightingModel
+Topics
+Specifying the Lighting Model
+case lit
+The entity renders using physically based rendering techniques without a clearcoat.
+case clearcoat
+The entity renders using physically based rendering techniques with a clearcoat.
+case unlit
+The entity renders with no light or shadow calculations.
+Comparing Values
+var hashValue: Int
+The hashed value of the case.
+func hash(into: inout Hasher)
+Hashes the raw value by feeding it into the given hash function.
+static func == (CustomMaterial.LightingModel, CustomMaterial.LightingModel) -> Bool
+A Boolean value that indicates whether two instances are equal.
+static func != (Self, Self) -> Bool
+A Boolean value that indicates whether two instances are not equal.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+See Also
+Setting the Lighting Model
+var lightingModel: CustomMaterial.LightingModel
+The lighting model that the material uses.
+Current page is CustomMaterial.LightingModel
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

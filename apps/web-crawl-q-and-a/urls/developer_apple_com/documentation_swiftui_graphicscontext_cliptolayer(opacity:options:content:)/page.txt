@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/cliptolayer(opacity:options:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func draw(GraphicsContext.ResolvedSymbol, at: CGPoint, anchor: UnitPoint)
+M
+func draw(GraphicsContext.ResolvedSymbol, in: CGRect)
+M
+func resolveSymbol<ID>(id: ID) -> GraphicsContext.ResolvedSymbol?
+S
+GraphicsContext.ResolvedSymbol
+Drawing into a new layer
+M
+func drawLayer(content: (inout GraphicsContext) throws -> Void) rethrows
+Masking
+M
+func clip(to: Path, style: FillStyle, options: GraphicsContext.ClipOptions)
+func clipToLayer(opacity: Double, options: GraphicsContext.ClipOptions, content: (inout GraphicsContext) throws -> Void) rethrows
+M
+func rotate(by: Angle)
+M
+func translateBy(x: CGFloat, y: CGFloat)
+M
+func concatenate(CGAffineTransform)
+P
+var transform: CGAffineTransform
+Drawing with a core graphics context
+M
+func withCGContext(content: (CGContext) throws -> Void) rethrows
+Accessing the environment
+Documentation
+Open Menu
+Swift
+Instance Method
+clipToLayer(opacity:options:content:)
+Adds a clip shape that you define in a new layer to the context’s array of clip shapes.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+mutating func clipToLayer(
+    opacity: Double = 1,
+    options: GraphicsContext.ClipOptions = ClipOptions(),
+    content: (inout GraphicsContext) throws -> Void
+) rethrows
+Parameters
+opacity
+A value that SwiftUI uses to multiply the alpha channel of the rasterized layer that you define in the content closure. The alpha values that result define the clip shape.
+options
+A set of options that tell SwiftUI how to interpret the clip shape. For example, you can invert the clip shape by setting the inverse option.
+content
+A closure that receives as input a new GraphicsContext, which represents a new transparency layer. The alpha channel of content that you draw into this context, multiplied by the opacity parameter, defines the clip shape.
+Discussion
+Call this method to add a shape to the array of clip shapes that the context uses to define a clipping mask. Shapes that you add affect only subsequent drawing operations.
+See Also
+Masking
+func clip(to: Path, style: FillStyle, options: GraphicsContext.ClipOptions)
+Adds a path to the context’s array of clip shapes.
+var clipBoundingRect: CGRect
+The bounding rectangle of the intersection of all current clip shapes in the current user space.
+struct ClipOptions
+Options that affect the use of clip shapes.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is clipToLayer(opacity:options:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

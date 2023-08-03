@@ -1,0 +1,182 @@
+https://developer.apple.com/documentation/swiftui/griditemSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+M
+func background<S>(in: S, fillStyle: FillStyle) -> some View
+M
+func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+S
+LazyVGrid
+S
+LazyHGrid
+Dynamically arranging views in two dimensions
+M
+func gridColumnAlignment(HorizontalAlignment) -> some View
+M
+func gridCellUnsizedAxes(Axis.Set) -> some View
+M
+func gridCellAnchor(UnitPoint) -> some View
+M
+func gridCellColumns(Int) -> some View
+S
+GridRow
+Documentation
+Open Menu
+Swift
+Structure
+GridItem
+A description of a row or a column in a lazy grid.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+struct GridItem
+Overview
+Use an array of GridItem instances to configure the layout of items in a lazy grid. Each grid item in the array specifies layout properties like size and spacing for the rows of a LazyHGrid or the columns of a LazyVGrid. The following example defines four rows for a horizontal grid, each with different characteristics:
+struct GridItemDemo: View {
+    let rows = [
+        GridItem(.fixed(30), spacing: 1),
+        GridItem(.fixed(60), spacing: 10),
+        GridItem(.fixed(90), spacing: 20),
+        GridItem(.fixed(10), spacing: 50)
+    ]
+
+
+    var body: some View {
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: rows, spacing: 5) {
+                ForEach(0...300, id: \.self) { _ in
+                    Color.red.frame(width: 30)
+                    Color.green.frame(width: 30)
+                    Color.blue.frame(width: 30)
+                    Color.yellow.frame(width: 30)
+                }
+            }
+        }
+    }
+}
+A lazy horizontal grid sets the width of each column based on the widest cell in the column. It can do this because it has access to all of the views in a given column at once. In the example above, the Color views always have the same fixed width, resulting in a uniform column width across the whole grid.
+However, a lazy horizontal grid doesn’t generally have access to all the views in a row, because it generates new cells as people scroll through information in your app. Instead, it relies on a grid item for information about each row. The example above indicates a different fixed height for each row, and sets a different amount of spacing to appear after each row:
+Topics
+Creating a grid item
+init(GridItem.Size, spacing: CGFloat?, alignment: Alignment?)
+Creates a grid item with the specified size, spacing, and alignment.
+Inspecting grid item properties
+var alignment: Alignment?
+The alignment to use when placing each view.
+var spacing: CGFloat?
+The spacing to the next item.
+var size: GridItem.Size
+The size of the item, which is the width of a column item or the height of a row item.
+enum Size
+The size in the minor axis of one or more rows or columns in a grid layout.
+Relationships
+Conforms To
+Sendable
+See Also
+Dynamically arranging views in two dimensions
+struct LazyHGrid
+A container view that arranges its child views in a grid that grows horizontally, creating items only as needed.
+struct LazyVGrid
+A container view that arranges its child views in a grid that grows vertically, creating items only as needed.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GridItem
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

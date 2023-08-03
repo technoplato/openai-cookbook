@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/nsapplicationdelegateadaptor/init(_:)-62dnySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Views
+Persistent storage
+Preferences
+Environment values
+Model data
+Data and storage
+App extensions
+M
+init(DelegateType.Type)
+M
+init(DelegateType.Type)
+Creating a delegate adaptor
+S
+NSApplicationDelegateAdaptor
+Targeting macOS
+S
+UIApplicationDelegateAdaptor
+O
+property list key UILaunchScreens
+O
+property list key UILaunchScreen
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates an AppKit app delegate adaptor using an observable delegate.
+macOS 14.0+ Beta
+@MainActor
+init(_ delegateType: DelegateType.Type = DelegateType.self)
+Available when DelegateType inherits NSObject, DelegateType conforms to NSApplicationDelegate, and DelegateType conforms to Observable.
+Parameters
+delegateType
+The type of application delegate that you define in your app, which conforms to the NSApplicationDelegate and doc://com.apple.documentation/documentation/Observation/Observable-swift.protocol protocols.
+Discussion
+Call this initializer indirectly by creating a property with the NSApplicationDelegateAdaptor property wrapper from inside your App declaration:
+@main
+struct MyApp: App {
+    @NSApplicationDelegateAdaptor private var appDelegate: MyAppDelegate
+
+
+    var body: some Scene { ... }
+}
+SwiftUI initializes the delegate and manages its lifetime, calling it as needed to handle application delegate callbacks.
+SwiftUI invokes this method when your app delegate conforms to the doc://com.apple.documentation/documentation/Observation/Observable-swift.protocol protocol. In this case, SwiftUI automatically places the delegate in the Environment. You can access such a delegate from any scene or view in your app using the Environment property wrapper:
+@Environment(MyAppDelegate.self) private var appDelegate
+If your delegate isn’t observable, SwiftUI invokes the init(_:) initializer rather than this one, and doesn’t put the delegate instance in the environment.
+See Also
+Creating a delegate adaptor
+init(DelegateType.Type)
+Creates an AppKit app delegate adaptor using a delegate that’s an observable object.
+Available when DelegateType inherits NSObject, DelegateType conforms to NSApplicationDelegate, and DelegateType conforms to ObservableObject.
+init(DelegateType.Type)
+Creates an AppKit app delegate adaptor.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

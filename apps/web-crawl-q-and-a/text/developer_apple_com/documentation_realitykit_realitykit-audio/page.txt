@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/realitykit/realitykit-audioSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+S
+AudioMixGroupsComponent
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+Hello World
+Scene content
+USD Assets
+Documentation
+Open Menu
+Swift
+Audio
+Add immersive spatial audio to your RealityKit content.
+Overview
+You can load and configure audio files with AudioFileResource, adjust their spatial rendering with SpatialAudioComponent, AmbientAudioComponent, ChannelAudioComponent, and control their playback using AudioPlaybackController. You can control the playback levels of multiple resources at once with AudioMixGroup and AudioMixGroupsComponent.
+Topics
+Audio Source Components
+struct SpatialAudioComponent
+Configure how sounds are emitted from an entity into the user’s environment.
+Beta
+struct AmbientAudioComponent
+Configure ambient rendering of sounds from an entity.
+Beta
+struct ChannelAudioComponent
+Configure channel-based rendering of sounds from an entity.
+Beta
+Playback
+class AudioPlaybackController
+A controller that manages audio playback of a resource.
+enum AudioEvents
+Events associated with audio playback.
+Audio Resources
+class AudioResource
+A playable audio resource
+class AudioFileResource
+An audio resource that you load from a file or from a URL.
+class AudioFileGroupResource
+An audio file group.
+Beta
+class AudioBufferResource
+A resource that contains audio data in memory.
+Audio mixing
+struct AudioMixGroup
+Beta
+struct AudioMixGroupsComponent
+Beta
+See Also
+Scene content
+API Reference
+Models, shapes, and meshes
+Use mesh-based models to display virtual objects in your scene.
+API Reference
+Materials and shaders
+Apply textures to the surface of your scene’s 3D objects to give each object a unique appearance.
+API Reference
+Anchors
+Anchor an entity to an item in your scene, and specify the position, rotation, and scale of the entity’s content.
+API Reference
+Cameras and lighting
+Control the lighting and point of view for a scene.
+API Reference
+Scene reconstruction and understanding
+Detect objects in an AR scene or create a detailed 3D reconstruction of the real world environment.
+API Reference
+Animation
+Dynamically move, rotate, and scale objects at runtime.
+protocol RealityCoordinateSpace
+A 3D coordinate space that exists within a RealityKit hierarchy. Any RealityCoordinateSpaceConverting can convert spatial data between SwiftUI CoordinateSpaces and RealityCoordinateSpaces.
+Beta
+Current page is Audio
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

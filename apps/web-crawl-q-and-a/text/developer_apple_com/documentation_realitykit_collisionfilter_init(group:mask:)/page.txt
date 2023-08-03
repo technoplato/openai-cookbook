@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/collisionfilter/init(group:mask:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CollisionComponent.CollisionOptions
+Beta
+Structures
+static func != (Self, Self) -> Bool
+static func == (CollisionComponent, CollisionComponent) -> Bool
+Comparing Collision Components
+M
+static func registerComponent()
+Registering a Component Type
+Creating a Collision Filter
+S
+CollisionFilter
+P
+var filter: CollisionFilter
+Filtering Collisions
+E
+CollisionComponent.Mode
+P
+var mode: CollisionComponent.Mode
+Setting the Collision Mode
+M
+init(shapes: [ShapeResource], mode: CollisionComponent.Mode, filter: CollisionFilter)
+Documentation
+Open Menu
+Swift
+Initializer
+init(group:mask:)
+Creates a collision filter.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+init(
+    group: CollisionGroup,
+    mask: CollisionGroup
+)
+Parameters
+group
+The collision group identifier.
+Discussion
+Collision filters are created for the collision group specified in the group parameter. The mask parameter defines which objects will collide with the objects that use this filter. Because CollisionGroup conforms to OptionSet, you can specify any combination of collision groups in the mask parameter by using the various OptionSet methods like union(_:), subtracting(_:), and intersection(_:). Entities from any group contained in mask will collide with entities using this filter, while those not contained by mask will not.
+To combine multiple groups into a filter, use the union(_:) method, like this:
+let groupA = CollisionGroup(rawValue: 1 << 0)
+let groupB = CollisionGroup(rawValue: 1 << 1)
+let groupC = CollisionGroup(rawValue: 1 << 2)
+
+
+// Create a filter that collides with A and C, but not B
+let theFilter = CollisionFilter(group: groupA, mask: groupA.union(groupB))
+A common use case is to want entities to collide with everything except one group, or a few groups. In a game, for example, you might not want a player’s pieces to collide with their own pieces, or you might not want players on the same team to collide with each other. You can accomplish that by starting with the all property, subtracting the group or groups that you don’t want the entities using this filter to collide with, like this:
+// Create a filter that collides with everything except B
+let notGroupB = CollisionGroup.all.subtracting(groupB)
+mask: The collision mask defines what objects will collide with objects using this filter.
+See Also
+Creating a Collision Filter
+static let `default`: CollisionFilter
+The default collision filter.
+static let sensor: CollisionFilter
+A collision filter for an entity that collides with everything.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(group:mask:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

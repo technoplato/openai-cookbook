@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/gradient/colorspaceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func scaleEffect(Size3D, anchor: UnitPoint3D) -> some View
+Beta
+M
+func scaleEffect(CGFloat, anchor: UnitPoint3D) -> some View
+Beta
+M
+func scaleEffect(CGSize, anchor: UnitPoint) -> some View
+M
+func scaleEffect(CGFloat, anchor: UnitPoint) -> some View
+M
+func scaledToFit() -> some View
+M
+func scaledToFill() -> some View
+Scaling, rotating, or transforming a view
+M
+func colorSpace(Gradient.ColorSpace) -> AnyGradient
+Working with color spaces
+S
+Gradient.Stop
+P
+var stops: [Gradient.Stop]
+M
+init(stops: [Gradient.Stop])
+Creating a gradient from stops
+M
+init(colors: [Color])
+Creating a gradient from colors
+Documentation
+Open Menu
+Swift
+Structure
+Gradient.ColorSpace
+A method of interpolating between the colors in a gradient.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+struct ColorSpace
+Topics
+Getting an interpolation method
+static let device: Gradient.ColorSpace
+Interpolates gradient colors in the output color space.
+static let perceptual: Gradient.ColorSpace
+Interpolates gradient colors in a perceptual color space.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Working with color spaces
+func colorSpace(Gradient.ColorSpace) -> AnyGradient
+Returns a version of the gradient that will use a specified color space for interpolating between its colors.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Gradient.ColorSpace
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/draggesture/init(minimumdistance:coordinatespace:)-3804hSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GestureStateGesture
+S
+GestureState
+Managing gesture state
+S
+HandActivationBehavior
+Beta
+S
+AnyGesture
+r
+P
+Gesture
+M
+func defersSystemGestures(on: Edge.Set) -> some View
+Deprecated initializers
+P
+var coordinateSpace: CoordinateSpace
+P
+var minimumDistance: CGFloat
+M
+init(minimumDistance: CGFloat, coordinateSpace: some CoordinateSpaceProtocol)
+Beta
+Creating a drag gesture
+S
+DragGesture
+M
+func gesture<T>(T, including: GestureMask) -> some View
+Recognizing gestures that change over time
+Documentation
+Open Menu
+Swift
+Initializer
+init(minimumDistance:coordinateSpace:)
+Creates a dragging gesture with the minimum dragging distance before the gesture succeeds and the coordinate space of the gesture’s location.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+init(
+    minimumDistance: CGFloat = 10,
+    coordinateSpace: CoordinateSpace = .local
+)
+Deprecated
+Use init(minimumDistance:coordinateSpace:) instead.
+Parameters
+minimumDistance
+The minimum dragging distance for the gesture to succeed.
+coordinateSpace
+The coordinate space of the dragging gesture’s location.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(minimumDistance:coordinateSpace:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

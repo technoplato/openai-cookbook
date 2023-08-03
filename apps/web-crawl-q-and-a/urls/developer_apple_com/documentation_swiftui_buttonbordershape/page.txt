@@ -1,0 +1,175 @@
+https://developer.apple.com/documentation/swiftui/buttonbordershapeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Controls and indicators
+Creating buttons
+S
+Button
+M
+func buttonStyle<S>(S) -> some View
+M
+func buttonStyle<S>(S) -> some View
+M
+func buttonBorderShape(ButtonBorderShape) -> some View
+M
+func buttonRepeatBehavior(ButtonRepeatBehavior) -> some View
+Beta
+P
+var buttonRepeatBehavior: ButtonRepeatBehavior
+Beta
+S
+ShareLink
+S
+SharePreview
+S
+TextFieldLink
+S
+HelpLink
+Beta
+Getting numeric inputs
+S
+Slider
+S
+Stepper
+Documentation
+Open Menu
+Swift
+Structure
+ButtonBorderShape
+A shape that is used to draw a button’s border.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct ButtonBorderShape
+Topics
+Getting border shapes
+static let automatic: ButtonBorderShape
+A shape that defers to the system to determine an appropriate shape for the given context and platform.
+static let capsule: ButtonBorderShape
+A capsule shape.
+static let circle: ButtonBorderShape
+static let roundedRectangle: ButtonBorderShape
+A rounded rectangle shape.
+static func roundedRectangle(radius: CGFloat) -> ButtonBorderShape
+A rounded rectangle shape.
+Relationships
+Conforms To
+Animatable
+Equatable
+InsettableShape
+Sendable
+Shape
+View
+See Also
+Creating buttons
+struct Button
+A control that initiates an action.
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and standard interaction behavior.
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and custom interaction behavior.
+func buttonBorderShape(ButtonBorderShape) -> some View
+Sets the border shape for buttons in this view.
+func buttonRepeatBehavior(ButtonRepeatBehavior) -> some View
+Sets whether buttons in this view should repeatedly trigger their actions on prolonged interactions.
+Beta
+var buttonRepeatBehavior: ButtonRepeatBehavior
+Whether buttons with this associated environment should repeatedly trigger their actions on prolonged interactions.
+Beta
+struct ButtonRole
+A value that describes the purpose of a button.
+struct ButtonRepeatBehavior
+The options for controlling the repeatability of button actions.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ButtonBorderShape
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

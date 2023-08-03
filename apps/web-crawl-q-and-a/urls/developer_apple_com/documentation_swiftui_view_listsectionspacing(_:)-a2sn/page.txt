@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/swiftui/view/listsectionspacing(_:)-a2snSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func refreshable(action: () async -> Void) -> some View
+Refreshing a list’s content
+M
+func selectionDisabled(Bool) -> some View
+Beta
+M
+func swipeActions<T>(edge: HorizontalEdge, allowsFullSwipe: Bool, content: () -> T) -> some View
+Configuring interaction
+S
+BadgeProminence
+Beta
+P
+var badgeProminence: BadgeProminence
+M
+func listRowSpacing(CGFloat?) -> some View
+Configuring spacing
+P
+var defaultMinListHeaderHeight: CGFloat?
+E
+Prominence
+P
+var headerProminence: Prominence
+M
+func headerProminence(Prominence) -> some View
+Configuring headers
+M
+func listSectionSeparator(Visibility, edges: VerticalEdge.Set) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+listSectionSpacing(_:)
+Sets the spacing to a custom value between adjacent sections in a List.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+Mac Catalyst 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func listSectionSpacing(_ spacing: CGFloat) -> some View
+Parameters
+spacing
+the amount of spacing to apply.
+Discussion
+The following example creates a List with 5 pts of spacing between sections:
+List {
+    Section("Colors") {
+        Text("Blue")
+        Text("Red")
+    }
+
+
+    Section("Shapes") {
+        Text("Square")
+        Text("Circle")
+    }
+}
+.listSectionSpacing(5.0)
+Spacing can also be specified on a per-section basis. The following example creates a List with compact spacing for its second section:
+List {
+    Section("Colors") {
+        Text("Blue")
+        Text("Red")
+    }
+
+
+    Section("Borders") {
+        Text("Dashed")
+        Text("Solid")
+    }
+    .listSectionSpacing(.compact)
+
+
+    Section("Shapes") {
+        Text("Square")
+        Text("Circle")
+    }
+}
+If adjacent sections have different spacing value, the smaller value on the shared edge is used. Spacing specified inside the List is preferred over any List-wide value.
+See Also
+Configuring spacing
+func listRowSpacing(CGFloat?) -> some View
+Sets the vertical spacing between two adjacent rows in a List.
+func listSectionSpacing(ListSectionSpacing) -> some View
+Sets the spacing between adjacent sections in a List.
+Beta
+struct ListSectionSpacing
+The spacing options between two adjacent sections in a list.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is listSectionSpacing(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

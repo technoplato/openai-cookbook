@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/swiftui/view/refreshable(action:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func badge(Int) -> some View
+M
+func badgeProminence(BadgeProminence) -> some View
+Beta
+P
+var badgeProminence: BadgeProminence
+Beta
+S
+BadgeProminence
+Beta
+Configuring interaction
+M
+func swipeActions<T>(edge: HorizontalEdge, allowsFullSwipe: Bool, content: () -> T) -> some View
+M
+func selectionDisabled(Bool) -> some View
+Beta
+Refreshing a list’s content
+Gestures
+Input events
+Clipboard
+Drag and drop
+Focus
+System events
+Accessibility
+Documentation
+Open Menu
+Swift
+Instance Method
+refreshable(action:)
+Marks this view as refreshable.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func refreshable(action: @escaping () async -> Void) -> some View
+Parameters
+action
+An asynchronous handler that SwiftUI executes when the user requests a refresh. Use this handler to initiate an update of model data displayed in the modified view. Use await in front of any asynchronous calls inside the handler.
+Return Value
+A view with a new refresh action in its environment.
+Discussion
+Apply this modifier to a view to set the refresh value in the view’s environment to a RefreshAction instance that uses the specified action as its handler. Views that detect the presence of the instance can change their appearance to provide a way for the user to execute the handler.
+For example, when you apply this modifier on iOS and iPadOS to a List, the list enables a standard pull-to-refresh gesture that refreshes the list contents. When the user drags the top of the scrollable area downward, the view reveals a progress indicator and executes the specified handler. The indicator remains visible for the duration of the refresh, which runs asynchronously:
+List(mailbox.conversations) { conversation in
+    ConversationCell(conversation)
+}
+.refreshable {
+    await mailbox.fetch()
+}
+You can add refresh capability to your own views as well. For information on how to do that, see RefreshAction.
+See Also
+Refreshing a list’s content
+var refresh: RefreshAction?
+A refresh action stored in a view’s environment.
+struct RefreshAction
+An action that initiates a refresh operation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is refreshable(action:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

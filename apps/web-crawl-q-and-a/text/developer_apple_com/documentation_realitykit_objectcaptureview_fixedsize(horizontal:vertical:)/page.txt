@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/fixedsize(horizontal:vertical:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View
+M
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+M
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+M
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+M
+func findDisabled(Bool) -> some View
+M
+func findNavigator(isPresented: Binding<Bool>) -> some View
+M
+func fixedSize() -> some View
+M
+func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value) -> some View
+M
+func font(Font?) -> some View
+M
+func fontDesign(Font.Design?) -> some View
+M
+func fontWeight(Font.Weight?) -> some View
+M
+func fontWidth(Font.Width?) -> some View
+M
+func foregroundColor(Color?) -> some View
+M
+func foregroundStyle<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+fixedSize(horizontal:vertical:)
+Fixes this view at its ideal size in the specified dimensions.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func fixedSize(
+    horizontal: Bool,
+    vertical: Bool
+) -> some View
+Parameters
+horizontal
+A Boolean value that indicates whether to fix the width of the view.
+vertical
+A Boolean value that indicates whether to fix the height of the view.
+Return Value
+A view that fixes this view at its ideal size in the dimensions specified by horizontal and vertical.
+Discussion
+This function behaves like View/fixedSize(), except with fixedSize(horizontal:vertical:) the fixing of the axes can be optionally specified in one or both dimensions. For example, if you horizontally fix a text view before wrapping it in the frame view, you’re telling the text view to maintain its ideal width. The view calculates this to be the space needed to represent the entire string.
+Text("A single line of text, too long to fit in a box.")
+    .fixedSize(horizontal: true, vertical: false)
+    .frame(width: 200, height: 200)
+    .border(Color.gray)
+This can result in the view exceeding the parent’s bounds, which may or may not be the effect you want.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is fixedSize(horizontal:vertical:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

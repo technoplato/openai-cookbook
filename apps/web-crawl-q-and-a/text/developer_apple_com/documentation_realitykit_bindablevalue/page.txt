@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/realitykit/bindablevalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+BlendTreeInvalidNode
+S
+BlendTreeSourceNode
+E
+BlendWeight
+E
+TweenMode
+P
+var bindableValues: BindableValuesReference
+S
+BindPath
+E
+BindTarget
+r
+P
+BindableData
+S
+CharacterControllerStateComponent
+M
+func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags
+M
+func teleportCharacter(to: SIMD3<Float>, relativeTo: Entity?)
+Playing Audio
+M
+func playAudio(AudioResource) -> AudioPlaybackController
+M
+func prepareAudio(AudioResource) -> AudioPlaybackController
+M
+func stopAllAudio()
+Documentation
+Open Menu
+Swift
+Structure
+BindableValue
+The value of a bindable target.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct BindableValue<T> where T : BindableData
+Overview
+This structure holds the value of an animatable property (animatedValue), that is, the target property that animates. In addition, the structure stores the property’s original value (baseValue), which represents the property’s value before a running animation starts. The value property returns the animated value when an animation runs; when the animation isn’t running, it returns the base value.
+Topics
+Creating a Value
+init(T, animatedValue: T?)
+Creates a bindable value.
+Accessing the Value
+var value: T
+The main accessor for the bind value.
+var baseValue: T
+A value that reflects the state of the animated property before or after an animation.
+var animatedValue: T?
+A value that represents the state of the animated property as an animation progresses.
+See Also
+Animating an Entity
+struct FromToByAnimation
+An animation that starts, stops, or increments by a specific value.
+struct SampledAnimation
+An animation that cycles through a series of frames at a constant interval.
+struct OrbitAnimation
+An animation that revolves an entity around its origin.
+struct BlendTreeAnimation
+A collection of animations on the same property that the framework blends to a single animation.
+protocol BlendTreeNode
+An interface for a node that’s a member of a blend tree.
+struct BlendTreeBlendNode
+A source node for an animation that mixes several animations to form a single animation.
+struct BlendTreeInvalidNode
+A blend tree node that’s internal only or sources from an invalid definition.
+struct BlendTreeSourceNode
+A blend node that contains an animation.
+enum BlendWeight
+A numerical representation of the impact an animation has on a scene or entity.
+enum TweenMode
+Options that determine whether an animation switches between frames gradually or abruptly.
+var bindableValues: BindableValuesReference
+struct BindPath
+The components of a target’s path that refer to the animation properties of a nested scene or entity.
+enum BindTarget
+A reference to a particular scene, entity, or property that animates.
+protocol BindableData
+An opaque base protocol for bindable data objects.
+struct BindableValuesReference
+A reference to a bindable value of an animation.
+struct ParameterSet
+Represents a reference to the parameters for a particular entity.
+var parameters: Entity.ParameterSet
+Represents a reference to the parameters for a particular entity.
+struct InternalBindPath
+A bind target for framework-provided properties.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is BindableValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

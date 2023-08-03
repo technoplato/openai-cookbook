@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/realitykit/objectcapturesession/configuration-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+ObjectCaptureSession.Error
+Controlling the Session
+M
+func cancel()
+M
+func finish()
+M
+func pause()
+M
+func requestImageCapture()
+M
+func resume()
+Structures
+P
+var maximumNumberOfInputImages: Int
+P
+var numberOfShotsTaken: Int
+P
+var numberOfShotsTakenUpdates: ObjectCaptureSession.Updates<Int>
+P
+var stateUpdates: ObjectCaptureSession.Updates<ObjectCaptureSession.CaptureState>
+P
+var userCompletedScanPass: Bool
+P
+var userCompletedScanPassUpdates: ObjectCaptureSession.Updates<Bool>
+Instance Methods
+Documentation
+Open Menu
+Swift
+Structure
+ObjectCaptureSession.Configuration
+The configuration options for the session which are passed into the start(imagesDirectory:configuration:) call.
+RealityKit
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+struct Configuration
+Topics
+Initializers
+init()
+Instance Properties
+var checkpointDirectory: URL?
+An optional directory to store data about session progress which may be used to speed up on-device reconstruction by passing into the PhotogrammetrySession.Configuration. If you provide a value for checkpointDirectory, it also must point to an empty, writable directory. If the directory is not writable or already contains data, the session moves to the .failed(Error) state.
+var isOverCaptureEnabled: Bool
+Enables the session to continue capturing even after the number of captured images exceeds maximumNumberOfInputImages. This setting is meant for use when the images are intended to be transferred to macOS for model reconstruction.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ObjectCaptureSession.Configuration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

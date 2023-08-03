@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/swiftui/contentsizecategorySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func <= (ContentSizeCategory, ContentSizeCategory) -> Bool
+static func > (ContentSizeCategory, ContentSizeCategory) -> Bool
+static func < (ContentSizeCategory, ContentSizeCategory) -> Bool
+Operators
+P
+var isAccessibilityCategory: Bool
+Deprecated
+Comparing content size categories
+M
+init?(UIContentSizeCategory)
+Deprecated types
+S
+TypesettingLanguage
+Beta
+M
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> some View
+Beta
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> some View
+Beta
+P
+var locale: Locale
+S
+LocalizedStringKey
+Preparing views for localization
+Localizing text
+Documentation
+Open Menu
+Swift
+Enumeration
+ContentSizeCategory
+The sizes that you can specify for content.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 6.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+enum ContentSizeCategory
+Deprecated
+Use DynamicTypeSize instead.
+Topics
+Content size categories
+case accessibilityExtraExtraExtraLarge
+case accessibilityExtraExtraLarge
+case accessibilityExtraLarge
+case accessibilityLarge
+case accessibilityMedium
+case extraExtraExtraLarge
+case extraExtraLarge
+case extraLarge
+case extraSmall
+case large
+case medium
+case small
+Creating a size category
+init?(UIContentSizeCategory)
+Create a size category from its UIContentSizeCategory equivalent.
+Comparing content size categories
+var isAccessibilityCategory: Bool
+A Boolean value indicating whether the content size category is one that is associated with accessibility.
+Operators
+static func < (ContentSizeCategory, ContentSizeCategory) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument.
+static func > (ContentSizeCategory, ContentSizeCategory) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument.
+static func <= (ContentSizeCategory, ContentSizeCategory) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument.
+static func >= (ContentSizeCategory, ContentSizeCategory) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument.
+Relationships
+Conforms To
+CaseIterable
+Equatable
+Hashable
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ContentSizeCategory
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

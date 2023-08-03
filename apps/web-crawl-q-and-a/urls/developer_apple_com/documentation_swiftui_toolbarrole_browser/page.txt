@@ -1,0 +1,136 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+App extensions
+Search
+S
+OrnamentAttachmentAnchor
+Beta
+M
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+Beta
+Creating an ornament
+S
+ToolbarTitleMenu
+M
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+Behavior-specific roles
+S
+ToolbarRole
+M
+func toolbarRole(ToolbarRole) -> some View
+Specifying the role of toolbar content
+S
+ToolbarPlacement
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Setting toolbar visibility
+S
+ToolbarCustomizationOptions
+Documentation
+Open Menu
+Swift
+Type Property
+browser
+The browser role.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+static var browser: ToolbarRole { get }
+Discussion
+Use this role for content that can be navigated forwards and backwards. In iPadOS, this will leading align the navigation title and allow for toolbar items to occupy the center of the navigation bar.
+See Also
+Behavior-specific roles
+static var editor: ToolbarRole
+The editor role.
+static var navigationStack: ToolbarRole
+The navigationStack role.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is browser
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

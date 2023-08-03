@@ -1,0 +1,178 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func tipBackground(some ShapeStyle) -> some View
+Beta
+M
+func tipAssetSize(CGSize) -> some View
+Beta
+M
+func popoverTip<Content>(Content, arrowEdge: Edge, action: (Tips.Action) -> Void) -> some View
+Beta
+M
+func popoverTip<Content>(Content, arrowEdge: Edge) -> some View
+Beta
+Instance Methods
+M
+func searchable<V, S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S, suggestions: () -> V) -> some View
+M
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Deprecated
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Deprecated
+M
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Deprecated
+Input and events modifiers
+M
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+Deprecated
+M
+func animation(Animation?) -> some View
+Deprecated
+M
+func mask<Mask>(Mask) -> some View
+Deprecated
+M
+func accentColor(Color?) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+onLongPressGesture(minimumDuration:pressing:perform:)
+Adds an action to perform when this view recognizes a long press gesture.
+tvOS 14.0–17.0 Deprecated
+func onLongPressGesture(
+    minimumDuration: Double = 0.5,
+    pressing: ((Bool) -> Void)? = nil,
+    perform action: @escaping () -> Void
+) -> some View
+Deprecated
+Use onLongPressGesture(minimumDuration:perform:onPressingChanged:) instead.
+See Also
+Input and events modifiers
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Adds an action to perform when the given value changes.
+Deprecated
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Adds an action to perform when this view recognizes a tap gesture, and provides the action with the location of the interaction.
+Deprecated
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+Deprecated
+func onPasteCommand(of: [String], perform: ([NSItemProvider]) -> Void) -> some View
+Adds an action to perform in response to the system’s Paste command.
+Deprecated
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+Adds an action to perform in response to the system’s Paste command with items that you validate.
+Deprecated
+func onDrop(of: [String], delegate: DropDelegate) -> some View
+Defines the destination for a drag and drop operation with the same size and position as this view, with behavior controlled by the given delegate.
+Deprecated
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Defines the destination for a drag and drop operation, using the same size and position as this view, handling dropped content with the given closure.
+Deprecated
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Defines the destination for a drag and drop operation with the same size and position as this view, handling dropped content and the drop location with the given closure.
+Deprecated
+func focusable(Bool, onFocusChange: (Bool) -> Void) -> some View
+Specifies if the view is focusable and, if so, adds an action to perform when the view comes into focus.
+Deprecated
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+Deprecated
+Current page is onLongPressGesture(minimumDuration:pressing:perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

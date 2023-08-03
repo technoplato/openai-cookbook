@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/resolve(_:)-4dx65Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GraphicsContext.FilterOptions
+S
+GraphicsContext.Filter
+M
+func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)
+Filtering
+S
+GraphicsContext.BlendMode
+P
+var blendMode: GraphicsContext.BlendMode
+P
+var opacity: Double
+func clipToLayer(opacity: Double, options: GraphicsContext.ClipOptions, content: (inout GraphicsContext) throws -> Void) rethrows
+M
+func draw(GraphicsContext.ResolvedText, in: CGRect)
+M
+func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)
+M
+func draw(Text, in: CGRect)
+M
+func draw(Text, at: CGPoint, anchor: UnitPoint)
+Drawing text
+S
+GraphicsContext.ResolvedImage
+M
+func resolve(Image) -> GraphicsContext.ResolvedImage
+M
+func draw(GraphicsContext.ResolvedImage, in: CGRect, style: FillStyle)
+Documentation
+Open Menu
+Swift
+Instance Method
+resolve(_:)
+Gets a version of a text view that’s fixed with the current values of the graphics context’s environment.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func resolve(_ text: Text) -> GraphicsContext.ResolvedText
+Parameters
+text
+The Text view to resolve.
+Return Value
+A text view that’s resolved into the current context’s environment, taking into account environment values like the display resolution and current color scheme.
+Discussion
+You can measure the resolved text by calling its measure(in:) method. You can draw the resolved text with the context’s draw(_:in:) or draw(_:at:anchor:) method.
+See Also
+Drawing text
+func draw(Text, at: CGPoint, anchor: UnitPoint)
+Draws text into the context, aligning an anchor within the ideal size of the rendered text to a point in the context.
+func draw(Text, in: CGRect)
+Draws text into the context using the specified rectangle as a layout frame.
+func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)
+Draws resolved text into the context, aligning an anchor within the ideal size of the text to a point in the context.
+func draw(GraphicsContext.ResolvedText, in: CGRect)
+Draws resolved text into the context using the specified rectangle as a layout frame.
+struct ResolvedText
+A text view resolved to a particular environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is resolve(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/clearcoatroughness-swift.struct/init(floatliteral:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Material Implementations
+Default Implementations
+E
+CustomMaterialError
+T
+CustomMaterial.Texture
+T
+CustomMaterial.Parameters
+Defining Material Parameter Types
+T
+CustomMaterial.FaceCulling
+Creating a Clearcoat Roughness Object
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+Documentation
+Open Menu
+Swift
+Initializer
+init(floatLiteral:)
+Creates a clearcoat object using a single value.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(floatLiteral value: Float)
+Parameters
+value
+The clearcoat value to use for the entity.
+Discussion
+A clearcoat is a separate layer of transparent specular highlights used to simulate a clear coating, like on a car or the surface of lacquered objects. Use this initializer to create an object to specify the amount of clearcoat for a material using a single value for the entire material, a UV-mapped image to specify different values for different parts of the entity, or both.
+The values from this property are available in the custom material’s surface shader function regardless of the value of lightingModel , but clearcoat isn’t drawn unless the custom material’s lightingModel is CustomMaterial.LightingModel.clearcoat and the surface shader calls params.surface().set_clearcoat().
+The following Metal code demonstrates how to retrieve the scale and texture values from this property and use them to enable clearcoat rendering.
+    // Retrieve the clearcoat scale and roughness from the CustomMaterial.
+    float clearcoatScale = params.material_constants().clearcoat_scale();
+    float clearcoatRoughnessScale = params.material_constants().clearcoat_roughness_scale();
+
+
+    // Assign the clearcoat scale to enable clearcoat rendering (if
+    // lightingModel is .clearcoat).
+    params.surface().set_clearcoat(clearcoatScale);
+
+
+    // Assign the clearcoat roughness from the scale property set
+    //  on the custom material.
+    params.surface().set_clearcoat_roughness(clearcoatRoughnessScale);
+See Also
+Creating a Clearcoat Roughness Object
+init(scale: Float, texture: CustomMaterial.Texture?)
+Creates a clearcoat object using a single value or a texture.
+init(PhysicallyBasedMaterial.ClearcoatRoughness)
+Creates a custom clearcoat object from a physically based material’s clearcoat property.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(floatLiteral:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

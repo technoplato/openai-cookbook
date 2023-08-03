@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/view/accessibilityrotor(_:textranges:)-1ot43Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+M
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+M
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+Replacing system rotors
+M
+func accessibilityRotor<L>(L, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor(Text, textRanges: [Range<String.Index>]) -> some View
+M
+func accessibilityRotor(LocalizedStringKey, textRanges: [Range<String.Index>]) -> some View
+Creating rotors for text ranges
+Documentation
+Open Menu
+Swift
+Instance Method
+accessibilityRotor(_:textRanges:)
+Create an Accessibility Rotor replacing the specified system-provided Rotor. The Rotor will be attached to the current Accessibility element, and each entry will go the specified range of that element.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func accessibilityRotor(
+    _ systemRotor: AccessibilitySystemRotor,
+    textRanges: [Range<String.Index>]
+) -> some View
+Parameters
+systemRotor
+The system-provided Rotor that will be overridden by this custom Rotor.
+textRanges
+An array of ranges that will be used to generate the entries of the Rotor.
+Discussion
+An Accessibility Rotor is a shortcut for Accessibility users to quickly navigate to specific elements of the user interface, and optionally specific ranges of text within those elements.
+In the following example, a Message application adds a Rotor allowing the user to navigate through all the ranges of text containing headings.
+extension Message {
+    // Ranges of special areas in the `content` text. Calculated when
+    // `content` is set and then cached so that we don't have to
+    // re-compute them.
+    var headingRanges: [Range<String.Index>]
+}
+
+
+struct MessageContentView: View {
+    TextEditor(.constant(message.content))
+        .accessibilityRotor(
+            .heading,
+            textRanges: message.headingRanges
+        )
+}
+See Also
+Replacing system rotors
+func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View
+Create an Accessibility Rotor replacing the specified system-provided Rotor.
+struct AccessibilitySystemRotor
+Designates a Rotor that replaces one of the automatic, system-provided Rotors with a developer-provided Rotor.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is accessibilityRotor(_:textRanges:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

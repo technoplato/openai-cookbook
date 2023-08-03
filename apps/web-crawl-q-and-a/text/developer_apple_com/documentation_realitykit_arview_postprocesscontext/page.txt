@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/realitykit/arview/postprocesscontextSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Runtime Events
+Content synchronization
+Implementing Postprocess Effects Using Metal Compute Functions
+Passing Structured Data to a Metal Compute Function
+Checking the Pixel Format of a Postprocess Effect’s Output Texture
+Implementing Special Rendering Effects with RealityKit Postprocessing
+Using Metal Performance Shaders to Create Custom Postprocess Effects
+Implementing Postprocess Effects Using Metal Compute Functions
+RealityKit effects
+Postprocessing effects
+Physics simulation
+Collision detection
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+Documentation
+Open Menu
+Swift
+Structure
+ARView.PostProcessContext
+An object the framework uses to pass data to a postprocess callback.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+struct PostProcessContext
+Overview
+In iOS 15 and later, as well as macOS 12 and later, you can register a callback function to apply postprocessing effects to RealityKit’s rendered scene. Once every frame, RealityKit calls that function before it displays the scene. You can use this callback to apply postprocess effects using any APIs that can modify an image texture. However, because RealityKit calls this method every frame, you should only use APIs that execute on the GPU, such as Metal compute functions, doc://com.apple.documentation/documentationmetalperformanceshaders, or Core Image. You can also render additional content, such as a rendered SpriteKit scene, on top of the frame buffer.
+Note
+For more information on implementing postprocess effects, see Implementing implementing_special_rendering_effects_with_realitykit_postprocessing , which demonstrates multiple postprocess techniques.
+A postprocess callback takes a single PostProcessContext parameter, which contains data the callback function needs to modify the rendered scene, including the frame buffer, depth map, and a property for writing the modified image. If you’ve registered a postprocess callback, that function must encode to the output texture or the frame is never displayed.
+A postprocess function looks like this:
+    func myPostProcessCallback(context: ARView.PostProcessContext) {
+        // Handle postprocessing here.
+    }
+To register a function as the postprocess render callback, assign it to the postProcess property of the renderCallbacks property of the scene’s ARView:
+arView.renderCallbacks.postProcess = myPostProcessCallback
+To stop postprocessing, set the doc://com.apple.documentation/realitykit/arview/rendercallbacks/3752727-postprocess render callback to nil.
+arView.renderCallbacks.postProcess = nil
+If your app turns postprocessing on and off frequently, another option for disabling postprocess effects is to keep your callback registered, but use an MTLBlitCommandEncoder to encode the unmodified framebuffer directly to the output texture whenever postprocess effects aren’t active.
+ func myPostProcessCallback(context: ARView.PostProcessContext) {
+     if (usePostProcessEffects) {
+         handlePostProcessing(context: ARView.PostProcessContext)
+         return
+     }
+
+
+
+
+     // If postprocess effects are disabled, copy sourceColorTexture
+     // directly to targetColorTexture.
+     let blitEncoder = context.commandBuffer.makeBlitCommandEncoder()
+     blitEncoder?.copy(from: context.sourceColorTexture, to: context.targetColorTexture)
+     blitEncoder?.endEncoding()
+ }
+Topics
+Initializers
+init(MTLDevice, MTLCommandBuffer, MTLTexture, MTLTexture, MTLTexture, float4x4, TimeInterval)
+Creates a new context object.
+Instance Properties
+var commandBuffer: MTLCommandBuffer
+The Metal command buffer for encoding the frame.
+var device: MTLDevice
+The Metal device where the scene renders.
+var projection: float4x4
+The projection matrix used to render the frame.
+var sourceColorTexture: MTLTexture
+The rendered frame buffer.
+var sourceDepthTexture: MTLTexture
+The frame’s depth buffer.
+var targetColorTexture: MTLTexture
+The output texture where the postprocess callback writes the modified frame buffer.
+var time: TimeInterval
+The scene’s elapsed time.
+See Also
+RealityKit effects
+Implementing Postprocess Effects Using Metal Compute Functions
+Create custom shaders to implement postprocess effects.
+struct RenderCallbacks
+A container that holds the view’s render callbacks.
+Current page is ARView.PostProcessContext
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

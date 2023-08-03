@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/filter/shadow(color:radius:x:y:blendmode:options:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessing the environment
+M
+func withCGContext(content: (CGContext) throws -> Void) rethrows
+Drawing with a core graphics context
+P
+var transform: CGAffineTransform
+M
+func concatenate(CGAffineTransform)
+M
+func translateBy(x: CGFloat, y: CGFloat)
+M
+func rotate(by: Angle)
+static func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat, blendMode: GraphicsContext.BlendMode, options: GraphicsContext.ShadowOptions) -> GraphicsContext.Filter
+Adding a shadow
+M
+static func blur(radius: CGFloat, options: GraphicsContext.BlurOptions) -> GraphicsContext.Filter
+Adding blur
+M
+static func colorMatrix(ColorMatrix) -> GraphicsContext.Filter
+M
+static func grayscale(Double) -> GraphicsContext.Filter
+M
+static func hueRotation(Angle) -> GraphicsContext.Filter
+M
+static func colorMultiply(Color) -> GraphicsContext.Filter
+M
+static func colorInvert(Double) -> GraphicsContext.Filter
+Documentation
+Open Menu
+Swift
+Type Method
+shadow(color:radius:x:y:blendMode:options:)
+Returns a filter that adds a shadow.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static func shadow(
+    color: Color = Color(.sRGBLinear, white: 0, opacity: 0.33),
+    radius: CGFloat,
+    x: CGFloat = 0,
+    y: CGFloat = 0,
+    blendMode: GraphicsContext.BlendMode = .normal,
+    options: GraphicsContext.ShadowOptions = ShadowOptions()
+) -> GraphicsContext.Filter
+Parameters
+color
+A Color that tints the shadow.
+radius
+A measure of how far the shadow extends from the edges of the content receiving the shadow.
+x
+An amount to translate the shadow horizontally.
+y
+An amount to translate the shadow vertically.
+blendMode
+The GraphicsContext.BlendMode to use when blending the shadow into the background layer.
+options
+A set of options that you can use to customize the process of adding the shadow. Use one or more of the options in GraphicsContext.ShadowOptions.
+Return Value
+A filter that adds a shadow style.
+Discussion
+SwiftUI produces the shadow by blurring the alpha channel of the object receiving the shadow, multiplying the result by a color, optionally translating the shadow by an amount, and then blending the resulting shadow into a new layer below the source primitive. You can customize some of these steps by adding one or more shadow options.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is shadow(color:radius:x:y:blendMode:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

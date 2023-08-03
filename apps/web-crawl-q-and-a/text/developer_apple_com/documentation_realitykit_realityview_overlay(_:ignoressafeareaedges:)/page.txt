@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/realitykit/realityview/overlay(_:ignoressafeareaedges:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func preference<K>(key: K.Type, value: K.Value) -> some View
+M
+func position(x: CGFloat, y: CGFloat) -> some View
+M
+func position(CGPoint) -> some View
+M
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+M
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+M
+func pickerStyle<S>(S) -> some View
+M
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+M
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+M
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+M
+func opacity(Double) -> some View
+M
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+M
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+M
+func onPreferenceChange<K>(K.Type, perform: (K.Value) -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+overlay(_:ignoresSafeAreaEdges:)
+Layers the specified style in front of this view.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func overlay<S>(
+    _ style: S,
+    ignoresSafeAreaEdges edges: Edge.Set = .all
+) -> some View where S : ShapeStyle
+Parameters
+style
+An instance of a type that conforms to ShapeStyle that SwiftUI layers in front of the modified view.
+edges
+The set of edges for which to ignore safe area insets when adding the overlay. The default value is Edge/Set/all. Specify an empty set to respect safe area insets on all edges.
+Return Value
+A view with the specified style drawn in front of it.
+Discussion
+Use this modifier to layer a type that conforms to the ShapeStyle protocol, like a Color, Material, or HierarchicalShapeStyle, in front of a view. For example, you can overlay the ShapeStyle/ultraThinMaterial over a Circle:
+struct CoveredCircle: View {
+    var body: some View {
+        Circle()
+            .frame(width: 300, height: 200)
+            .overlay(.ultraThinMaterial)
+    }
+}
+SwiftUI anchors the style to the view’s bounds. For the example above, the overlay fills the entirety of the circle’s frame (which happens to be wider than the circle is tall):
+SwiftUI also limits the style’s extent to the view’s container-relative shape. You can see this effect if you constrain the CoveredCircle view with a View/containerShape(_:) modifier:
+CoveredCircle()
+    .containerShape(RoundedRectangle(cornerRadius: 30))
+The overlay takes on the specified container shape:
+By default, the overlay ignores safe area insets on all edges, but you can provide a specific set of edges to ignore, or an empty set to respect safe area insets on all edges:
+Rectangle()
+    .overlay(
+        .secondary,
+        ignoresSafeAreaEdges: []) // Ignore no safe area insets.
+If you want to specify a View or a stack of views as the overlay rather than a style, use View/overlay(alignment:content:) instead. If you want to specify a Shape, use View/overlay(_:in:fillStyle:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is overlay(_:ignoresSafeAreaEdges:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

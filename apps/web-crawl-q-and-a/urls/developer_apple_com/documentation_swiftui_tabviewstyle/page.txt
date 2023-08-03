@@ -1,0 +1,189 @@
+https://developer.apple.com/documentation/swiftui/tabviewstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TableStyle
+S
+TableStyleConfiguration
+M
+func disclosureGroupStyle<S>(S) -> some View
+r
+P
+DisclosureGroupStyle
+Styling navigation views
+M
+func navigationSplitViewStyle<S>(S) -> some View
+r
+P
+NavigationSplitViewStyle
+M
+func tabViewStyle<S>(S) -> some View
+static func verticalPage(transitionStyle: VerticalPageTabViewStyle.TransitionStyle) -> VerticalPageTabViewStyle
+r
+P
+ControlGroupStyle
+S
+ControlGroupStyleConfiguration
+M
+func formStyle<S>(S) -> some View
+r
+P
+FormStyle
+S
+FormStyleConfiguration
+M
+func groupBoxStyle<S>(S) -> some View
+r
+P
+GroupBoxStyle
+Documentation
+Open Menu
+Swift
+Protocol
+TabViewStyle
+A specification for the appearance and interaction of a TabView.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+protocol TabViewStyle
+Topics
+Getting built-in tab view styles
+static var automatic: DefaultTabViewStyle
+The default TabView style.
+Available when Self is DefaultTabViewStyle.
+static var carousel: CarouselTabViewStyle
+A style that implements the carousel interaction and appearance.
+Available when Self is CarouselTabViewStyle.
+Deprecated
+static var page: PageTabViewStyle
+A TabViewStyle that implements a paged scrolling TabView.
+Available when Self is PageTabViewStyle.
+static func page(indexDisplayMode: PageTabViewStyle.IndexDisplayMode) -> PageTabViewStyle
+A TabViewStyle that implements a paged scrolling TabView with an index display mode.
+Available when Self is PageTabViewStyle.
+static var verticalPage: VerticalPageTabViewStyle
+A TabViewStyle that implements the vertical page TabView interaction and appearance.
+Available when Self is VerticalPageTabViewStyle.
+Beta
+static func verticalPage(transitionStyle: VerticalPageTabViewStyle.TransitionStyle) -> VerticalPageTabViewStyle
+A TabViewStyle that implements the vertical page TabView interaction and appearance, and performs the specified transition.
+Available when Self is VerticalPageTabViewStyle.
+Beta
+Supporting types
+struct DefaultTabViewStyle
+The default TabView style.
+struct CarouselTabViewStyle
+A style that implements the carousel interaction and appearance.
+Deprecated
+struct PageTabViewStyle
+A TabViewStyle that implements a paged scrolling TabView.
+struct VerticalPageTabViewStyle
+A TabViewStyle that implements the vertical TabView interaction and appearance.
+Beta
+Relationships
+Conforming Types
+CarouselTabViewStyle
+DefaultTabViewStyle
+PageTabViewStyle
+VerticalPageTabViewStyle
+See Also
+Styling navigation views
+func navigationSplitViewStyle<S>(S) -> some View
+Sets the style for navigation split views within this view.
+protocol NavigationSplitViewStyle
+A type that specifies the appearance and interaction of navigation split views within a view hierarchy.
+func tabViewStyle<S>(S) -> some View
+Sets the style for the tab view within the current environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TabViewStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

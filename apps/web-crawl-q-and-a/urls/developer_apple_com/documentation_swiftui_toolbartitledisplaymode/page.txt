@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/toolbartitledisplaymodeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+Model data
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+M
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+Beta
+Configuring the toolbar title display mode
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+Documentation
+Open Menu
+Swift
+Structure
+ToolbarTitleDisplayMode
+A type that defines the behavior of title of a toolbar.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+struct ToolbarTitleDisplayMode
+Overview
+Use values of this type in conjunction with the View/toolbarTitleDisplayMode(_:)-45ijr modifier to configure the title display behavior of your toolbar.
+NavigationStack {
+    ContentView()
+        .toolbarTitleDisplayMode(.inlineLarge)
+}
+Topics
+Getting display modes
+static var automatic: ToolbarTitleDisplayMode
+The automatic mode.
+static var inline: ToolbarTitleDisplayMode
+The inline mode.
+static var inlineLarge: ToolbarTitleDisplayMode
+The inline large mode.
+static var large: ToolbarTitleDisplayMode
+The large mode.
+Relationships
+Conforms To
+Sendable
+See Also
+Configuring the toolbar title display mode
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+Configures the toolbar title display mode for this view.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ToolbarTitleDisplayMode
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

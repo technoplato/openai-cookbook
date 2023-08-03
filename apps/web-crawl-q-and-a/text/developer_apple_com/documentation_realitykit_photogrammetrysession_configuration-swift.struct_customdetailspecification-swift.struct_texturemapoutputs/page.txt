@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/configuration-swift.struct/customdetailspecification-swift.struct/texturemapoutputsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func == (PhotogrammetrySession.Configuration.CustomDetailSpecification, PhotogrammetrySession.Configuration.CustomDetailSpecification) -> Bool
+Operators
+SetAlgebra Implementations
+OptionSet Implementations
+Equatable Implementations
+Default Implementations
+P
+static let roughness: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+static let normal: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+static let displacement: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+static let diffuseColor: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+static let ambientOcclusion: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs.ArrayLiteralElement
+Structures
+S
+PhotogrammetrySession.Configuration.CustomDetailSpecification
+Beta
+Structures
+E
+PhotogrammetrySession.Configuration.FeatureSensitivity
+P
+var featureSensitivity: PhotogrammetrySession.Configuration.FeatureSensitivity
+Configuring Feature Sensitivity
+E
+PhotogrammetrySession.Configuration.SampleOrdering
+P
+var sampleOrdering: PhotogrammetrySession.Configuration.SampleOrdering
+Documentation
+Open Menu
+Swift
+Structure
+PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+Allows specification of the set of output texture maps to be included in the output model.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+struct TextureMapOutputs
+Topics
+Initializers
+init(rawValue: UInt)
+Creates a new option set from the given raw value.
+Instance Properties
+let rawValue: UInt
+The corresponding value of the raw type.
+Type Aliases
+typealias ArrayLiteralElement
+The type of the elements of an array literal.
+typealias Element
+The element type of the option set.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+Type Properties
+static let all: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+Option to include all maps.
+static let ambientOcclusion: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+The ambient occlusion (AO) map.
+static let diffuseColor: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+The primary base color texture map.
+static let displacement: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+The surface displacement map.
+static let normal: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+The normal map.
+static let roughness: PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+The surface roughness map.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+OptionSet Implementations
+API Reference
+SetAlgebra Implementations
+Relationships
+Conforms To
+Equatable
+ExpressibleByArrayLiteral
+OptionSet
+RawRepresentable
+SetAlgebra
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhotogrammetrySession.Configuration.CustomDetailSpecification.TextureMapOutputs
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

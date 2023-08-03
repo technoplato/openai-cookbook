@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/metallic-swift.struct/init(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+Using Ambient Occlusion
+S
+CustomMaterial.Opacity
+E
+CustomMaterial.Blending
+P
+var blending: CustomMaterial.Blending
+P
+var opacityThreshold: Float?
+Handling Entity Transparency
+M
+init(scale: Float, texture: CustomMaterial.Texture?)
+M
+init(floatLiteral: Float)
+Creating a Metallic Object
+S
+CustomMaterial.Metallic
+P
+var metallic: CustomMaterial.Metallic
+Specifying Metallic Reflections
+S
+CustomMaterial.Roughness
+P
+var roughness: CustomMaterial.Roughness
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates a metallic object from a physically based material’s metallic property.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(_ value: PhysicallyBasedMaterial.Metallic)
+Parameters
+value
+The physically based material’s metallic property.
+Discussion
+This initializer creates a new object by copying the values from an existing PhysicallyBasedMaterial.Metallic object.
+To render an entity with reflectiveness, lightingModel must be CustomMaterial.LightingModel.lit or CustomMaterial.LightingModel.clearcoat and the custom material’s surface shader function must call params.surface().set_metallic(). To achieve the same metallic behavior as PhysicallyBasedMaterial, the surface shader function multiplies metallic scale by the sampled value from the texture, as the following Metal code demonstrates:
+    // Retrieve the metallic scale from the CustomMaterial.
+    float metallicScale = params.material_constants().metallic_scale();
+
+
+    // Retrieve the entity's UV texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Models loaded from USDZ or Reality Composer use UVs that are flipped
+    // on the y-axis. This compensates for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample the texture based on the resulting UVs.
+    auto tex = params.textures();
+    half metallic = tex.metallic().sample(textureSampler, uv).r;
+
+
+    // Multiply the scale and the sampled value from the texture,
+    // and assign the result to the shader's metallic property.
+    metallic *= metallicScale;
+    params.surface().set_metallic(metallic);
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+See Also
+Creating a Metallic Object
+init(floatLiteral: Float)
+Creates an object from a single value.
+init(scale: Float, texture: CustomMaterial.Texture?)
+Creates an object from a color or texture.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

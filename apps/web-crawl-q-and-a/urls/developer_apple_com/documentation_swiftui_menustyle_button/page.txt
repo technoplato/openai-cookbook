@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/menustyle/buttonSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func progressViewStyle<S>(S) -> some View
+S
+GaugeStyleConfiguration
+r
+P
+GaugeStyle
+M
+func gaugeStyle<S>(S) -> some View
+Styling indicators
+S
+ToggleStyleConfiguration
+r
+P
+ToggleStyle
+P
+static var automatic: DefaultMenuStyle
+Getting built-in menu styles
+r
+P
+MenuStyle
+M
+func menuStyle<S>(S) -> some View
+Styling menus
+r
+P
+DatePickerStyle
+M
+func datePickerStyle<S>(S) -> some View
+r
+P
+PickerStyle
+Documentation
+Open Menu
+Swift
+Type Property
+button
+A menu style that displays a button that toggles the display of the menu’s contents when pressed.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+static var button: ButtonMenuStyle { get }
+Available when Self is ButtonMenuStyle.
+Discussion
+On macOS, the button displays an arrow to indicate that it presents a menu.
+Pressing and then dragging into the contents activates the selected action on release.
+See Also
+Getting built-in menu styles
+static var automatic: DefaultMenuStyle
+The default menu style, based on the menu’s context.
+Available when Self is DefaultMenuStyle.
+static var borderedButton: BorderedButtonMenuStyle
+A menu style that displays a bordered button that toggles the display of the menu’s contents when pressed.
+Available when Self is BorderedButtonMenuStyle.
+Deprecated
+static var borderlessButton: BorderlessButtonMenuStyle
+A menu style that displays a borderless button that toggles the display of the menu’s contents when pressed.
+Available when Self is BorderlessButtonMenuStyle.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is button
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

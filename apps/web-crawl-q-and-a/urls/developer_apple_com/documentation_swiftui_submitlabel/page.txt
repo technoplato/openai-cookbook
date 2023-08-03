@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/submitlabelSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func contentShape<S>(S, eoFill: Bool) -> some View
+M
+func allowsTightening(Bool) -> some View
+Controlling hit testing
+E
+MoveCommandDirection
+M
+func onCommand(Selector, perform: (() -> Void)?) -> some View
+M
+func onPlayPauseCommand(perform: (() -> Void)?) -> some View
+M
+func onExitCommand(perform: (() -> Void)?) -> some View
+M
+func submitLabel(SubmitLabel) -> some View
+Labeling a submission event
+S
+SubmitTriggers
+M
+func submitScope(Bool) -> some View
+M
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+Responding to submission events
+S
+HoverEffect
+M
+func hoverEffect(HoverEffect) -> some View
+Documentation
+Open Menu
+Swift
+Structure
+SubmitLabel
+A semantic label describing the label of submission within a view hierarchy.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct SubmitLabel
+Overview
+A submit label is a description of a submission action provided to a view hierarchy using the onSubmit(of:_:) modifier.
+Topics
+Getting submission labels
+static var `continue`: SubmitLabel
+Defines a submit label with text of “Continue”.
+static var done: SubmitLabel
+Defines a submit label with text of “Done”.
+static var go: SubmitLabel
+Defines a submit label with text of “Go”.
+static var join: SubmitLabel
+Defines a submit label with text of “Join”.
+static var next: SubmitLabel
+Defines a submit label with text of “Next”.
+static var `return`: SubmitLabel
+Defines a submit label with text of “Return”.
+static var route: SubmitLabel
+Defines a submit label with text of “Route”.
+static var search: SubmitLabel
+Defines a submit label with text of “Search”.
+static var send: SubmitLabel
+Defines a submit label with text of “Send”.
+Relationships
+Conforms To
+Sendable
+See Also
+Labeling a submission event
+func submitLabel(SubmitLabel) -> some View
+Sets the submit label for this view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SubmitLabel
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

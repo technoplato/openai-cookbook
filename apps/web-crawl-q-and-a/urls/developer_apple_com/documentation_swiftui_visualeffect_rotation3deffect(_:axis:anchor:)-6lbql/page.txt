@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/visualeffect/rotation3deffect(_:axis:anchor:)-6lbqlSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Measuring a view
+E
+ColorRenderingMode
+E
+BlendMode
+M
+func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View
+M
+func compositingGroup() -> some View
+M
+func blendMode(BlendMode) -> some View
+Compositing views
+M
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D) -> some VisualEffect
+M
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some VisualEffect
+M
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some VisualEffect
+M
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D, perspective: CGFloat) -> some VisualEffect
+Rotating
+M
+func scaleEffect(x: CGFloat, y: CGFloat, z: CGFloat, anchor: UnitPoint3D) -> some VisualEffect
+M
+func scaleEffect(CGFloat, anchor: UnitPoint3D) -> some VisualEffect
+M
+func scaleEffect(Size3D, anchor: UnitPoint3D) -> some VisualEffect
+Documentation
+Open Menu
+Swift
+Instance Method
+rotation3DEffect(_:axis:anchor:)
+Rotates this view by the specified angle about an axis and anchor point.
+visionOS 1.0+ Beta
+func rotation3DEffect(
+    _ angle: Angle,
+    axis: RotationAxis3D,
+    anchor: UnitPoint3D = .center
+) -> some VisualEffect
+Parameters
+angle
+The angle by which to rotate this view.
+axis
+The axis about which to rotate this view.
+anchor
+The anchor point about which to rotate this view. Defaults to center.
+Return Value
+An effect that rotates this view by angle about axis and anchor.
+Discussion
+The original dimensions of the view are considered to be unchanged by rotating the contents.
+For example, to rotate a 3D model by 45° about the Y axis:
+Model3D("robot")
+    .rotationEffect(.degrees(45), axis: .y)
+See Also
+Rotating
+func perspectiveRotationEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D, perspective: CGFloat) -> some VisualEffect
+Rotates the view’s rendered output in three dimensions around the given axis of rotation.
+Beta
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some VisualEffect
+Rotates the view’s rendered output in three dimensions around the given axis of rotation.
+Beta
+func rotation3DEffect(Rotation3D, anchor: UnitPoint3D) -> some VisualEffect
+Rotates this view by a specific amount.
+Beta
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint3D) -> some VisualEffect
+Rotates this view by the specified angle about an axis and anchor point.
+Beta
+func rotationEffect(Angle, anchor: UnitPoint) -> some VisualEffect
+Rotates the view’s rendered output around the specified point.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is rotation3DEffect(_:axis:anchor:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,182 @@
+https://developer.apple.com/documentation/swiftui/timelineviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AnyTransition
+S
+AsymmetricTransition
+Beta
+E
+TransitionPhase
+Beta
+S
+TransitionProperties
+Beta
+r
+P
+Transition
+Beta
+M
+func transition(AnyTransition) -> some View
+M
+func transition<T>(T) -> some View
+func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View
+Updating watchOS apps with timelines
+Updating a view on a schedule
+S
+EmptyAnimatableData
+r
+P
+VectorArithmetic
+S
+AnimatablePair
+r
+P
+Animatable
+Making data animatable
+S
+Spring
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+TimelineView
+A view that updates according to a schedule that you provide.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct TimelineView<Schedule, Content> where Schedule : TimelineSchedule
+Overview
+A timeline view acts as a container with no appearance of its own. Instead, it redraws the content it contains at scheduled points in time. For example, you can update the face of an analog timer once per second:
+TimelineView(.periodic(from: startDate, by: 1)) { context in
+    AnalogTimerView(date: context.date)
+}
+The closure that creates the content receives an input of type TimelineView.Context that you can use to customize the content’s appearance. The context includes the date that triggered the update. In the example above, the timeline view sends that date to an analog timer that you create so the timer view knows how to draw the hands on its face.
+The context also includes a cadence property that you can use to hide unnecessary detail. For example, you can use the cadence to decide when it’s appropriate to display the timer’s second hand:
+TimelineView(.periodic(from: startDate, by: 1.0)) { context in
+    AnalogTimerView(
+        date: context.date,
+        showSeconds: context.cadence <= .seconds)
+}
+The system might use a cadence that’s slower than the schedule’s update rate. For example, a view on watchOS might remain visible when the user lowers their wrist, but update less frequently, and thus require less detail.
+You can define a custom schedule by creating a type that conforms to the TimelineSchedule protocol, or use one of the built-in schedule types:
+Use an everyMinute schedule to update at the beginning of each minute.
+Use a periodic(from:by:) schedule to update periodically with a custom start time and interval between updates.
+Use an explicit(_:) schedule when you need a finite number, or irregular set of updates.
+For a schedule containing only dates in the past, the timeline view shows the last date in the schedule. For a schedule containing only dates in the future, the timeline draws its content using the current date until the first scheduled date arrives.
+Topics
+Creating a timeline
+init(Schedule, content: (TimelineViewDefaultContext) -> Content)
+Creates a new timeline view that uses the given schedule.
+Available when Schedule conforms to TimelineSchedule and Content conforms to View.
+struct Context
+Information passed to a timeline view’s content callback.
+Deprecated symbols
+init(Schedule, content: (TimelineView<Schedule, Content>.Context) -> Content)
+Creates a new timeline view that uses the given schedule.
+Available when Schedule conforms to TimelineSchedule and Content conforms to View.
+Deprecated
+Relationships
+Conforms To
+Sendable
+View
+Conforms when Schedule conforms to TimelineSchedule and Content conforms to View.
+See Also
+Updating a view on a schedule
+protocol TimelineSchedule
+A type that provides a sequence of dates for use as a schedule.
+typealias TimelineViewDefaultContext
+Information passed to a timeline view’s content callback.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TimelineView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

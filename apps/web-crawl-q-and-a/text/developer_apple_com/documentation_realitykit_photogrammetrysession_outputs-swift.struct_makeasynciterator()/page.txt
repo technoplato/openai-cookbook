@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/realitykit/photogrammetrysession/outputs-swift.struct/makeasynciterator()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Structures
+AsyncSequence Implementations
+Default Implementations
+M
+func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>
+M
+func prefix(Int) -> AsyncPrefixSequence<Self>
+M
+func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>
+M
+func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>
+func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>
+func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>
+func compactMap<ElementOfResult>((Self.Element) async -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>
+func compactMap<ElementOfResult>((Self.Element) async throws -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>
+Iterating the Collection
+S
+PhotogrammetrySession.Outputs
+T
+PhotogrammetrySession.Outputs.Element
+T
+PhotogrammetrySession.Outputs.AsyncIterator
+Iterating Outputs
+P
+var localizedDescription: String
+Describing Updates
+E
+case skippedSample(id: Int)
+Documentation
+Open Menu
+Swift
+Instance Method
+makeAsyncIterator()
+Creates an asynchronous iterator for the collection.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 12.0+
+Mac Catalyst 15.0+
+func makeAsyncIterator() -> PhotogrammetrySession.Outputs.Iterator
+Return Value
+An asynchronous iterator.
+Discussion
+This method creates an asynchronous iterator for the collection. Typically, you won’t call this method. Instead, use a try-await-in loop inside of an async task, which creates an iterator implicitly and waits for the session to publish new PhotogrammetrySession.Output objects, as the following example demonstrates.
+let waiter = Task {
+    do {
+        for try await output in session.outputs {
+            switch output {
+                case .processingComplete:
+                    // RealityKit has processed all requests.
+                case .requestError(let request, let error):
+                    // Request encountered an error.
+                case .requestComplete(let request, let result):
+                    // RealityKit has finished processing a request.
+                case .requestProgress(let request, let fractionComplete):
+                    // Periodic progress update. Update UI here.
+                case requestProgressInfo(let request, let progressInfo):
+                    // Periodic progress info update.
+                case .inputComplete:
+                    // Ingestion of images is complete and processing begins.
+                case .invalidSample(let id, let reason):
+                    // RealityKit deemed a sample invalid and didn't use it.
+                case .skippedSample(let id):
+                    // RealityKit was unable to use a provided sample.
+                case .automaticDownsampling:
+                    // RealityKit downsampled the input images because of
+                    // resource constraints.
+                case .processingCancelled
+                    // Processing was canceled.
+                @unknown default:
+                    // Unrecognized output.
+            }
+        }
+    } catch {
+        print("Output: ERROR = \(String(describing: error))")
+        // Handle error.
+    }
+}
+See Also
+Iterating the Collection
+typealias AsyncIterator
+The type of iterator used for Object Capture updates.
+typealias Element
+The type of element used for Photogrammetry Session updates.
+struct Iterator
+An object for iterating over published output objects.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is makeAsyncIterator()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

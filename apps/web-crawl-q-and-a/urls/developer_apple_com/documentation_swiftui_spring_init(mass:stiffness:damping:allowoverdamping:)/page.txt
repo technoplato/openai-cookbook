@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/swiftui/spring/init(mass:stiffness:damping:allowoverdamping:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func value<V>(fromValue: V, toValue: V, initialVelocity: V, time: TimeInterval) -> V
+M
+func value<V>(target: V, initialVelocity: V, time: TimeInterval) -> V
+Getting spring state
+P
+var stiffness: Double
+P
+var settlingDuration: TimeInterval
+P
+var response: Double
+P
+var mass: Double
+M
+init(duration: TimeInterval, bounce: Double)
+Creating a spring
+S
+Spring
+Beta
+S
+UnitCurve
+Beta
+r
+P
+AnimationStateKey
+Beta
+S
+AnimationState
+Beta
+S
+AnimationContext
+Beta
+r
+P
+CustomAnimation
+Beta
+Documentation
+Open Menu
+Swift
+Initializer
+init(mass:stiffness:damping:allowOverDamping:)
+Creates a spring with the specified mass, stiffness, and damping.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+init(
+    mass: Double = 1.0,
+    stiffness: Double,
+    damping: Double,
+    allowOverDamping: Bool = false
+)
+Parameters
+mass
+Specifies that property of the object attached to the end of the spring.
+stiffness
+The corresponding spring coefficient.
+damping
+Defines how the spring’s motion should be damped due to the forces of friction.
+allowOverdamping
+A value of true specifies that over-damping should be allowed when appropriate based on the other inputs, and a value of false specifies that such cases should instead be treated as critically damped.
+See Also
+Creating a spring
+init(duration: TimeInterval, bounce: Double)
+Creates a spring with the specified duration and bounce.
+Beta
+init(response: Double, dampingRatio: Double)
+Creates a spring with the specified response and damping ratio.
+Beta
+init(settlingDuration: TimeInterval, dampingRatio: Double, epsilon: Double)
+Creates a spring with the specified duration and damping ratio.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(mass:stiffness:damping:allowOverDamping:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

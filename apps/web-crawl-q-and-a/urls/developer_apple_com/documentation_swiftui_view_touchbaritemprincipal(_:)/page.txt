@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/view/touchbaritemprincipal(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Previews in Xcode
+Tool support
+Technology-specific views
+WatchKit integration
+UIKit integration
+AppKit integration
+Framework integration
+M
+func touchBar<Content>(TouchBar<Content>) -> some View
+M
+func touchBar<Content>(content: () -> Content) -> some View
+Managing Touch Bar input
+E
+DigitalCrownRotationalSensitivity
+S
+DigitalCrownEvent
+M
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, by: V.Stride?, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool) -> some View
+M
+func digitalCrownRotation<V>(Binding<V>) -> some View
+M
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+touchBarItemPrincipal(_:)
+Sets principal views that have special significance to this Touch Bar.
+macOS 10.15+
+func touchBarItemPrincipal(_ principal: Bool = true) -> some View
+Parameters
+principal
+A Boolean value that indicates whether to display this view prominently in the Touch Bar compared to other views.
+Return Value
+A Touch Bar view with one element centered in the Touch Bar row.
+Discussion
+Use touchBarItemPrincipal(_:) to designate a view as a significant view in the Touch Bar. Currently, that view will be placed in the center of the row.
+The example below sets the last button as the principal button for the Touch Bar view.
+let touchBarItems = TouchBar(id: "myBarItems") {
+    Button("♣️", action: {})
+    Button("♥️", action: {})
+    Button("♠️", action: {})
+    Button("♦️", action: {})
+       .touchBarItemPrincipal(true)
+}
+
+
+TextField("TouchBar Demo", text: $placeholder)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .focusable()
+    .touchBar(touchBarItems)
+Note
+Multiple visible bars may each specify a principal view, but the system only honors one of them.
+See Also
+Managing Touch Bar input
+func touchBar<Content>(content: () -> Content) -> some View
+Sets the content that the Touch Bar displays.
+func touchBar<Content>(TouchBar<Content>) -> some View
+Sets the Touch Bar content to be shown in the Touch Bar when applicable.
+func touchBarCustomizationLabel(Text) -> some View
+Sets a user-visible string that identifies the view’s functionality.
+func touchBarItemPresence(TouchBarItemPresence) -> some View
+Sets the behavior of the user-customized view.
+struct TouchBar
+A container for a view that you can show in the Touch Bar.
+enum TouchBarItemPresence
+Options that affect user customization of the Touch Bar.
+Current page is touchBarItemPrincipal(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

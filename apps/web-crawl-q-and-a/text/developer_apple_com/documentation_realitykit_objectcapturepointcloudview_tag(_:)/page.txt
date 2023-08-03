@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/tag(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func tracking(CGFloat) -> some View
+M
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+M
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+M
+func toolbarRole(ToolbarRole) -> some View
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbar<Content>(id: String, content: () -> Content) -> some View
+M
+func tableStyle<S>(S) -> some View
+M
+func tableColumnHeaders(Visibility) -> some View
+M
+func tabViewStyle<S>(S) -> some View
+M
+func tabItem<V>(() -> V) -> some View
+M
+func symbolVariant(SymbolVariants) -> some View
+M
+func symbolRenderingMode(SymbolRenderingMode?) -> some View
+M
+func symbolEffectsRemoved(Bool) -> some View
+M
+func symbolEffect<T, U>(T, options: SymbolEffectOptions, value: U) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+tag(_:)
+Sets the unique tag value of this view.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func tag<V>(_ tag: V) -> some View where V : Hashable
+Parameters
+tag
+A Hashable value to use as the view’s tag.
+Return Value
+A view with the specified tag set.
+Discussion
+Use this modifier to differentiate among certain selectable views, like the possible values of a Picker or the tabs of a TabView. Tag values can be of any type that conforms to the Hashable protocol.
+In the example below, the ForEach loop in the Picker view builder iterates over the Flavor enumeration. It extracts the string value of each enumeration element for use in constructing the row label, and uses the enumeration value, cast as an optional, as input to the tag(_:) modifier. The Picker requires the tags to have a type that exactly matches the selection type, which in this case is an optional Flavor.
+struct FlavorPicker: View {
+    enum Flavor: String, CaseIterable, Identifiable {
+        case chocolate, vanilla, strawberry
+        var id: Self { self }
+    }
+
+
+    @State private var selectedFlavor: Flavor? = nil
+
+
+    var body: some View {
+        Picker("Flavor", selection: $selectedFlavor) {
+            ForEach(Flavor.allCases) { flavor in
+                Text(flavor.rawValue).tag(Optional(flavor))
+            }
+        }
+    }
+}
+If you change selectedFlavor to be non-optional, you need to remove the Optional cast from the tag input to match.
+A ForEach automatically applies a default tag to each enumerated view using the id parameter of the corresponding element. If the element’s id parameter and the picker’s selection input have exactly the same type, you can omit the explicit tag modifier. To see examples that don’t require an explicit tag, see Picker.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tag(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

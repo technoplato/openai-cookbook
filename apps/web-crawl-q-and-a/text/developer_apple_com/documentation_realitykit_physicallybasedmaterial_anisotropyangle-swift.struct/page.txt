@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/anisotropyangle-swift.structSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+PhysicallyBasedMaterial.FaceCulling
+E
+MaterialParameterTypes.FaceCulling
+P
+var faceCulling: PhysicallyBasedMaterial.FaceCulling
+Culling Unneeded Polygons
+T
+PhysicallyBasedMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: PhysicallyBasedMaterial.TextureCoordinateTransform
+P
+var anisotropyAngle: PhysicallyBasedMaterial.AnisotropyAngle
+S
+PhysicallyBasedMaterial.AnisotropyLevel
+P
+var anisotropyLevel: PhysicallyBasedMaterial.AnisotropyLevel
+Adding Anisotropy
+S
+PhysicallyBasedMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+S
+PhysicallyBasedMaterial.Clearcoat
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+Documentation
+Open Menu
+Swift
+Structure
+PhysicallyBasedMaterial.AnisotropyAngle
+An object used to define a material’s anisotropy angle.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct AnisotropyAngle
+Topics
+Creating an Anisotropy Angle Object
+init(floatLiteral: Float)
+Creates an anisotropy angle object from a single value.
+init(scale: Float, texture: PhysicallyBasedMaterial.Texture?)
+Creates an anisotropy angle object using a single value or a texture.
+Accessing Anisotropy Angle Values
+var texture: PhysicallyBasedMaterial.Texture?
+The anisotropy angle values specified using a UV-mapped image.
+static let textureSemantic: TextureResource.Semantic
+The intended use of this object’s texture property.
+var scale: Float
+The anistropy angle specified as a single value.
+typealias FloatLiteralType
+The type of scalar parameter used by this parameter.
+Relationships
+Conforms To
+ExpressibleByFloatLiteral
+See Also
+Adding Anisotropy
+var anisotropyLevel: PhysicallyBasedMaterial.AnisotropyLevel
+The degree to which an entity reflects light to create stretched or oblong highlights.
+struct AnisotropyLevel
+An object that defines the degree to which an entity reflects light to create stretched or oblong highlights.
+var anisotropyAngle: PhysicallyBasedMaterial.AnisotropyAngle
+The anistropy angle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PhysicallyBasedMaterial.AnisotropyAngle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,188 @@
+https://developer.apple.com/documentation/swiftui/shapeviewSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+OffsetShape
+S
+RotatedShape
+S
+ScaledShape
+Transforming a shape
+S
+FillShapeView
+Beta
+S
+FillStyle
+S
+StrokeBorderShapeView
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+func strokeBorder<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+Defining shape behavior
+S
+Path
+Drawing custom shapes
+S
+Capsule
+S
+Ellipse
+S
+Circle
+Creating circular shapes
+S
+RectangleCornerRadii
+Documentation
+Open Menu
+Swift
+Protocol
+ShapeView
+A view that provides a shape that you can use for drawing operations.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+protocol ShapeView<Content> : View
+Overview
+Use this type with the drawing methods on Shape to apply multiple fills and/or strokes to a shape. For example, the following code applies a fill and stroke to a capsule shape:
+Capsule()
+    .fill(.yellow)
+    .stroke(.blue, lineWidth: 8)
+Topics
+Getting the shape
+var shape: Self.Content
+The shape that this type draws and provides for other drawing operations.
+Required
+associatedtype Content : Shape
+The type of shape this can provide.
+Required
+Modify the shape
+func fill<S>(S, style: FillStyle) -> FillShapeView<Self.Content, S, Self>
+Fills this shape with a color or gradient.
+func stroke<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeShapeView<Self.Content, S, Self>
+Traces the outline of this shape with a color or gradient.
+func stroke<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeShapeView<Self.Content, S, Self>
+Traces the outline of this shape with a color or gradient.
+func strokeBorder<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+Returns a view that’s the result of insetting this view by half of its style’s line width.
+Available when Content conforms to InsettableShape.
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+Returns a view that’s the result of filling an inner stroke of this view with the content you supply.
+Available when Content conforms to InsettableShape.
+Relationships
+Inherits From
+View
+Conforming Types
+FillShapeView
+StrokeBorderShapeView
+StrokeShapeView
+See Also
+Defining shape behavior
+protocol Shape
+A 2D shape that you can use when drawing a view.
+struct AnyShape
+A type-erased shape value.
+enum ShapeRole
+Ways of styling a shape.
+struct StrokeStyle
+The characteristics of a stroke that traces a path.
+struct StrokeShapeView
+A shape provider that strokes its shape.
+Beta
+struct StrokeBorderShapeView
+A shape provider that strokes the border of its shape.
+Beta
+struct FillStyle
+A style for rasterizing vector shapes.
+struct FillShapeView
+A shape provider that fills its shape.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ShapeView
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

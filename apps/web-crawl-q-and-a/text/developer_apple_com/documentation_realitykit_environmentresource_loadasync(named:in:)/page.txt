@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/environmentresource/loadasync(named:in:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+M
+func hitTest(CGPoint, types: ARHitTestResult.ResultType) -> [ARHitTestResult]
+M
+func hitTest(CGPoint, query: CollisionCastQueryType, mask: CollisionGroup) -> [CollisionCastHit]
+M
+func entities(at: CGPoint) -> [Entity]
+M
+func entity(at: CGPoint) -> Entity?
+Finding Entities at a Point in the View
+P
+var cameraTransform: Transform
+M
+static func load(named: String, in: Bundle?) throws -> EnvironmentResource
+M
+static func generate(fromLatLong: CGImage, withName: String?) throws -> EnvironmentResource
+Deprecated
+M
+static func generate(fromEquirectangular: CGImage, withName: String?) async throws -> EnvironmentResource
+M
+static func generate(fromEquirectangular: CGImage, withName: String?) throws -> EnvironmentResource
+Type Methods
+M
+convenience init(named: String, in: Bundle?) async throws
+Beta
+Initializers
+C
+EnvironmentResource
+Documentation
+Open Menu
+Swift
+Type Method
+loadAsync(named:in:)
+Loads an environment resource from a bundle asynchronously.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+static func loadAsync(
+    named name: String,
+    in bundle: Bundle? = nil
+) -> LoadRequest<EnvironmentResource>
+Deprecated
+Use try await EnvironmentResource(named:… in:…) instead.
+Parameters
+name
+The image name without the file extension.
+bundle
+The bundle to search for the resource. Use nil to indicate the app’s bundle.
+Return Value
+The environment resource loaded from the specified bundle.
+Discussion
+If your image file is at the path Foo.skybox/Bar.exr in your Xcode project, use Bar for the name parameter. This function must be called with the async keyword from an asynchronous context, such as from within a doc://com.apple.documentation/documentation/swift/task> closure.
+To add an environment resource to your Xcode project, see realitykit/environmentresource.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is loadAsync(named:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

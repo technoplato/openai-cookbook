@@ -1,0 +1,193 @@
+https://developer.apple.com/documentation/swiftui/tablesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+DynamicTableRowContent
+S
+EmptyTableRowContent
+S
+TableForEachContent
+S
+TupleTableRowContent
+S
+TableHeaderRowContent
+r
+P
+TableRowContent
+S
+TableRow
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Documentation
+Open Menu
+Swift
+Tables
+Display selectable, sortable data arranged in rows and columns.
+Overview
+Use a table to display multiple values across a collection of elements. Each element in the collection appears in a different row of the table, while each value for a given element appears in a different column. Narrow displays may adapt to show only the first column of the table.
+When you create a table, you provide a collection of elements, and then tell the table how to find the needed value for each column. In simple cases, SwiftUI infers the element for each row, but you can also specify the row elements explicitly in more complex scenarios. With a small amount of additional configuration, you can also make the items in the table selectable, and the columns sortable.
+Like a List, a table includes implicit vertical scrolling that you can configure using the view modifiers described in Scroll views. For design guidance, see Lists and tables in the Human Interface Guidelines.
+Topics
+Creating a table
+Building a Great Mac App with SwiftUI
+Create engaging SwiftUI Mac apps by incorporating side bars, tables, toolbars, and several other popular user interface elements.
+struct Table
+A container that presents rows of data arranged in one or more columns, optionally providing the ability to select one or more members.
+func tableStyle<S>(S) -> some View
+Sets the style for tables within this view.
+Creating columns
+struct TableColumn
+A column that displays a view for each row in a table.
+protocol TableColumnContent
+A type used to represent columns within a table.
+struct TableColumnAlignment
+Describes the alignment of the content of a table column.
+Beta
+struct TableColumnBuilder
+A result builder that creates table column content from closures.
+Customizing columns
+func tableColumnHeaders(Visibility) -> some View
+Controls the visibility of a Table’s column header views.
+Beta
+struct TableColumnCustomization
+A representation of the state of the columns in a table.
+Beta
+struct TableColumnCustomizationBehavior
+A set of customization behaviors of a column that a table can offer to a user.
+Beta
+Creating rows
+struct TableRow
+A row that represents a data value in a table.
+protocol TableRowContent
+A type used to represent table rows.
+struct TableHeaderRowContent
+A table row that displays a single view instead of columned content.
+struct TupleTableRowContent
+A type of table column content that creates table rows created from a Swift tuple of table rows.
+struct TableForEachContent
+A type of table row content that creates table rows created by iterating over a collection.
+struct EmptyTableRowContent
+A table row content that doesn’t produce any rows.
+protocol DynamicTableRowContent
+A type of table row content that generates table rows from an underlying collection of data.
+struct TableRowBuilder
+A result builder that creates table row content from closures.
+Adding progressive disclosure
+struct DisclosureTableRow
+A kind of table row that shows or hides additional rows based on the state of a disclosure control.
+Beta
+struct TableOutlineGroupContent
+An opaque table row type created by a table’s hierarchical initializers.
+Beta
+See Also
+View layout
+API Reference
+Layout fundamentals
+Arrange views inside built-in layout containers like stacks and grids.
+API Reference
+Layout adjustments
+Make fine adjustments to alignment, spacing, padding, and other layout parameters.
+API Reference
+Custom layout
+Place views in custom arrangements and create animated transitions between layout types.
+API Reference
+Lists
+Display a structured, scrollable column of information.
+API Reference
+View groupings
+Present views in different kinds of purpose-driven containers, like forms or control groups.
+API Reference
+Scroll views
+Enable people to scroll to content that doesn’t fit in the current display.
+Current page is Tables
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

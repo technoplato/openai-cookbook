@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/swiftui/navigationlink/init(_:destination:)-6z03eSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+NavigationSplitViewColumn
+Beta
+Managing column collapse
+M
+func navigationDestination<D, C>(item: Binding<Optional<D>>, destination: (D) -> C) -> some View
+Beta
+M
+func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View
+M
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+S
+NavigationPath
+S
+NavigationStack
+M
+init(LocalizedStringKey, destination: () -> Destination)
+Presenting a destination view
+S
+NavigationLink
+S
+NavigationSplitViewVisibility
+M
+func navigationSplitViewColumnWidth(min: CGFloat?, ideal: CGFloat, max: CGFloat?) -> some View
+M
+func navigationSplitViewColumnWidth(CGFloat) -> some View
+M
+func navigationSplitViewStyle<S>(S) -> some View
+S
+NavigationSplitView
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:destination:)
+Creates a navigation link that presents a destination view, with a text label that the link generates from a title string.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+init<S>(
+    _ title: S,
+    @ViewBuilder destination: () -> Destination
+) where S : StringProtocol
+Available when Label is Text and Destination conforms to View.
+Parameters
+title
+A string for creating a text label.
+destination
+A view for the navigation link to present.
+See Also
+Presenting a destination view
+init(LocalizedStringKey, destination: () -> Destination)
+Creates a navigation link that presents a destination view, with a text label that the link generates from a localized string key.
+Available when Label is Text and Destination conforms to View.
+init(destination: () -> Destination, label: () -> Label)
+Creates a navigation link that presents the destination view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:destination:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,197 @@
+https://developer.apple.com/documentation/swiftui/documentgroup/init(editing:contenttype:editor:preparedocument:)-5jkorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var newDocument: NewDocumentAction
+Opening a document programmatically
+S
+FileDocumentWriteConfiguration
+S
+FileDocumentReadConfiguration
+Reading and writing documents
+S
+DocumentConfiguration
+Beta
+P
+var documentConfiguration: DocumentConfiguration?
+init(editing: [PersistentModel.Type], contentType: UTType, editor: () -> Content, prepareDocument: ((ModelContext) -> Void))
+init(editing: PersistentModel.Type, contentType: UTType, editor: () -> Content, prepareDocument: ((ModelContext) -> Void))
+init(editing: Schema, contentType: UTType, editor: () -> Content, prepareDocument: ((ModelContext) -> Void))
+Editing a document backed by a persistent store
+M
+init(viewing: Document.Type, viewer: (ReferenceFileDocumentConfiguration<Document>) -> Content)
+M
+init(newDocument: () -> Document, editor: (ReferenceFileDocumentConfiguration<Document>) -> Content)
+Creating a reference file document group
+M
+init(viewing: Document.Type, viewer: (FileDocumentConfiguration<Document>) -> Content)
+M
+init(newDocument: () -> Document, editor: (FileDocumentConfiguration<Document>) -> Content)
+Creating a document group
+S
+DocumentGroup
+Documentation
+Open Menu
+Swift
+Initializer
+init(editing:contentType:editor:prepareDocument:)
+Instantiates a document group for creating and editing documents described by a provided Schema.
+SwiftData
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+init(
+    editing schema: Schema,
+    contentType: UTType,
+    editor: () -> Content,
+    prepareDocument: @escaping ((ModelContext) -> Void) = { _ in }
+)
+Available when Document is ModelDocument and Content conforms to View.
+Parameters
+schema
+The schema of the document.
+contentType
+The content type of the document. It should conform to UTType.package.
+editor
+The editing UI for the provided document.
+prepareDocument
+The optional closure that accepts ModelContext associated with the new document. Use this closure to set the document’s initial contents before it is displayed: insert preconfigured models in the provided ModelContext.
+Discussion
+ @main
+ struct Todo: App {
+     var schema = Schema([TodoItem.self])
+     var body: some Scene {
+         DocumentGroup(editing: schema, contentType: .todoItem) {
+             ContentView()
+         }
+     }
+ }
+
+
+ struct ContentView: View {
+     @Query var items: [TodoItem]
+
+
+         var body: some View {
+             List {
+                 ForEach(items) { item in
+                     @Bindable var item = item
+                     Toggle(item.text, isOn: $item.isDone)
+                 }
+              }
+         }
+ }
+
+
+ @Model
+ final class TodoItem {
+     var created: Date
+     var text: String
+     var isDone = false
+ }
+
+
+ extension UTType {
+     static var todoItem = UTType(exportedAs: "com.myApp.todoItem")
+ }
+Important
+If your app declares custom uniform type identifiers, include corresponding entries in the app’s Info.plist. For more information, see Defining file and data types for your app. Also, remember to specify the supported Document types in the Info.plist as well.
+See Also
+Editing a document backed by a persistent store
+init(editing: PersistentModel.Type, contentType: UTType, editor: () -> Content, prepareDocument: ((ModelContext) -> Void))
+Instantiates a document group for creating and editing documents that store a specific model type.
+Available when Document is ModelDocument and Content conforms to View.
+Beta
+init(editing: [PersistentModel.Type], contentType: UTType, editor: () -> Content, prepareDocument: ((ModelContext) -> Void))
+Instantiates a document group for creating and editing documents that store several model types.
+Available when Document is ModelDocument and Content conforms to View.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(editing:contentType:editor:prepareDocument:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

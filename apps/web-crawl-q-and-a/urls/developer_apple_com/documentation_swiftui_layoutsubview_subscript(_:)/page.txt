@@ -1,0 +1,131 @@
+https://developer.apple.com/documentation/swiftui/layoutsubview/subscript(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Input events
+Gestures
+Event handling
+Scroll views
+View groupings
+Tables
+Lists
+Getting custom values
+P
+var priority: Double
+P
+var spacing: ViewSpacing
+M
+func sizeThatFits(ProposedViewSize) -> CGSize
+M
+func dimensions(in: ProposedViewSize) -> ViewDimensions
+Getting subview characteristics
+M
+func place(at: CGPoint, anchor: UnitPoint, proposal: ProposedViewSize)
+Placing the subview
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Gets the value for the subview that’s associated with the specified key.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+subscript<K>(key: K.Type) -> K.Value where K : LayoutValueKey { get }
+Overview
+If you define a custom layout value using LayoutValueKey, you can read the key’s associated value for a given subview in a layout container by indexing the container’s subviews with the key type. For example, if you define a Flexibility key type, you can put the associated values of all the layout’s subviews into an array:
+let flexibilities = subviews.map { subview in
+    subview[Flexibility.self]
+}
+For more information about creating a custom layout, see Layout.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

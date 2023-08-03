@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/collisionevents/updatedSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Methods
+P
+var timebase: CMTimebase
+Beta
+Instance Properties
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+static func != (Self, Self) -> Bool
+static func == (Scene, Scene) -> Bool
+S
+CollisionEvents.Began
+Detecting Collisions
+E
+CollisionEvents
+E
+AudioEvents
+E
+AnimationEvents
+E
+SceneEvents
+S
+Scene.Publisher
+M
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> Cancellable
+Documentation
+Open Menu
+Swift
+Structure
+CollisionEvents.Updated
+An event raised on every frame when two objects are in contact.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+struct Updated
+Topics
+Getting the Involved Entities
+let entityA: Entity
+The first entity involved in the collision.
+let entityB: Entity
+The second entity involved in the collision.
+Characterizing the Collision
+let impulse: Float
+The estimated strength of the impact.
+let position: SIMD3<Float>
+A position representing the estimated point of contact.
+Instance Properties
+var contacts: [Contact]
+All contacts between the collision pair. Empty if all contact information is not requested.
+Beta
+var impulseDirection: SIMD3<Float>
+The direction of the total impulse in scene coordinate space.
+Beta
+var penetrationDistance: Float
+The estimated distance of overlap between the two colliding entities in scene coordinate space.
+Beta
+Relationships
+Conforms To
+Event
+Sendable
+See Also
+Detecting Collisions
+struct Began
+An event raised when two objects collide.
+struct Ended
+An event raised when two objects, previously in contact, separate.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is CollisionEvents.Updated
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

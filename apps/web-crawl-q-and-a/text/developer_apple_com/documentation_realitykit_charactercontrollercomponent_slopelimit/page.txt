@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/realitykit/charactercontrollercomponent/slopelimitSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+User Interface
+S
+CharacterControllerStateComponent
+Component Implementations
+Default Implementations
+S
+JointTransforms
+Animating a Character
+P
+static let defaultUpVector: SIMD3<Float>
+P
+var skinWidth: Float
+P
+var radius: Float
+P
+var height: Float
+Configuring a Character
+M
+init(radius: Float, height: Float, skinWidth: Float, slopeLimit: Float, stepLimit: Float, upVector: SIMD3<Float>, collisionFilter: CollisionFilter)
+M
+init()
+Creating a Character Controller Component
+S
+CharacterControllerComponent
+Documentation
+Open Menu
+Swift
+Instance Property
+slopeLimit
+The slope limit expressed as a limit angle in radians.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var slopeLimit: Float
+Discussion
+This value represents the maximum slope that the character can move over. RealityKit applies this value to characters that are walking on static objects, but not when walking on kinematic or dynamic objects.
+See Also
+Configuring a Character
+var height: Float
+The capsule height.
+var radius: Float
+The capsule radius.
+var skinWidth: Float
+An added tolerance around the character capsule.
+var stepLimit: Float
+The maximum obstacle height that the controller can move over.
+var upVector: SIMD3<Float>
+Y axis direction relative to the physics origin.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is slopeLimit
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

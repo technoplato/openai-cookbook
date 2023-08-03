@@ -1,0 +1,129 @@
+https://developer.apple.com/documentation/swiftui/wkinterfaceobjectrepresentable/dismantlewkinterfaceobject(_:coordinator:)-73ixSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Cleaning up the interface object
+T
+WKInterfaceObjectRepresentable.Context
+M
+func updateWKInterfaceObject(Self.WKInterfaceObjectType, context: Self.Context)
+M
+func makeWKInterfaceObject(context: Self.Context) -> Self.WKInterfaceObjectType
+Creating and updating the interface object
+r
+P
+WKInterfaceObjectRepresentable
+Adding WatchKit views to SwiftUI view hierarchies
+C
+WKUserNotificationHostingController
+Documentation
+Open Menu
+Swift
+Type Method
+dismantleWKInterfaceObject(_:coordinator:)
+Cleans up the presented WatchKit interface object (and its coordinator) in anticipation of their removal.
+watchOS 6.0+
+@MainActor
+static func dismantleWKInterfaceObject(
+    _ wkInterfaceObject: Self.WKInterfaceObjectType,
+    coordinator: Self.Coordinator
+)
+Required Default implementation provided.
+Parameters
+wkInterfaceObject
+Your custom interface object.
+coordinator
+The custom coordinator instance you use to communicate changes back to SwiftUI. If you do not use a custom coordinator, the system provides a default instance.
+Discussion
+Use this method to perform additional clean-up work related to your custom interface object. For example, you might use this method to remove observers or update other parts of your SwiftUI interface.
+Default Implementations
+WKInterfaceObjectRepresentable Implementations
+static func dismantleWKInterfaceObject(Self.WKInterfaceObjectType, coordinator: Self.Coordinator)
+Cleans up the presented interface object (and coordinator) in anticipation of their removal.
+Current page is dismantleWKInterfaceObject(_:coordinator:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

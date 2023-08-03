@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/horizontaledgeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var displayScale: CGFloat
+P
+var pixelLength: CGFloat
+P
+var horizontalSizeClass: UserInterfaceSizeClass?
+P
+var verticalSizeClass: UserInterfaceSizeClass?
+E
+UserInterfaceSizeClass
+Accessing edges and regions
+E
+Edge
+E
+Edge3D
+Beta
+Gestures
+Input events
+Clipboard
+Drag and drop
+Focus
+System events
+Accessibility
+Documentation
+Open Menu
+Swift
+Enumeration
+HorizontalEdge
+An edge on the horizontal axis.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+@frozen
+enum HorizontalEdge
+Overview
+Use a horizontal edge for tasks like setting a swipe action with the swipeActions(edge:allowsFullSwipe:content:) view modifier. The positions of the leading and trailing edges depend on the locale chosen by the user.
+Topics
+Getting the edges
+case leading
+The leading edge.
+case trailing
+The trailing edge.
+Accessing sets of edges
+struct Set
+An efficient set of HorizontalEdges.
+Relationships
+Conforms To
+CaseIterable
+Decodable
+Encodable
+Equatable
+Hashable
+RawRepresentable
+Sendable
+See Also
+Accessing edges and regions
+enum Edge
+An enumeration to indicate one edge of a rectangle.
+enum Edge3D
+An edge or face of a 3D volume.
+Beta
+enum VerticalEdge
+An edge on the vertical axis.
+struct EdgeInsets
+The inset distances for the sides of a rectangle.
+struct EdgeInsets3D
+The inset distances for the faces of a 3D volume.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is HorizontalEdge
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

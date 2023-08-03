@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/view/safeareapadding(_:)-5lh9pSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+EdgeInsets
+E
+VerticalEdge
+E
+HorizontalEdge
+E
+Edge3D
+Beta
+E
+Edge
+Accessing edges and regions
+E
+UserInterfaceSizeClass
+M
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+M
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+Staying in the safe areas
+S
+ContentMarginPlacement
+Beta
+M
+func contentMargins(Edge.Set, EdgeInsets, for: ContentMarginPlacement) -> some View
+Beta
+M
+func contentMargins(Edge.Set, CGFloat?, for: ContentMarginPlacement) -> some View
+Beta
+M
+func contentMargins(CGFloat, for: ContentMarginPlacement) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+safeAreaPadding(_:)
+Adds the provided insets into the safe area of this view.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func safeAreaPadding(_ insets: EdgeInsets) -> some View
+Discussion
+Use this modifier when you would like to add a fixed amount of space to the safe area a view sees.
+ScrollView(.horizontal) {
+    HStack(spacing: 10.0) {
+        ForEach(items) { item in
+            ItemView(item)
+        }
+    }
+}
+.safeAreaPadding(.horizontal, 20.0)
+See the View/safeAreaInset(edge:alignment:spacing:content) modifier for adding to the safe area based on the size of a view.
+See Also
+Staying in the safe areas
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+Expands the view out of its safe area.
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content beside the modified view.
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content above or below the modified view.
+func safeAreaPadding(CGFloat) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func safeAreaPadding(Edge.Set, CGFloat?) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+struct SafeAreaRegions
+A set of symbolic safe area regions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is safeAreaPadding(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/commandmenu/init(_:content:)-50ti4Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var menuOrder: MenuOrder
+M
+func menuOrder(MenuOrder) -> some View
+Setting a preferred order
+S
+MenuActionDismissBehavior
+M
+func menuActionDismissBehavior(MenuActionDismissBehavior) -> some View
+Configuring menu dismissal
+P
+var menuIndicatorVisibility: Visibility
+M
+init(LocalizedStringKey, content: () -> Content)
+Creating a command menu
+S
+CommandMenu
+r
+P
+Commands
+M
+func commandsReplaced<Content>(content: () -> Content) -> some Scene
+M
+func commandsRemoved() -> some Scene
+M
+func commands<Content>(content: () -> Content) -> some Scene
+Defining commands
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:content:)
+Creates a new menu for a collection of app-specific commands, inserted in the standard location for app menus (after the View menu, in order with other menus declared without an explicit location).
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+init(
+    _ name: Text,
+    @ViewBuilder content: () -> Content
+)
+See Also
+Creating a command menu
+init(LocalizedStringKey, content: () -> Content)
+Creates a new menu with a localized name for a collection of app- specific commands, inserted in the standard location for app menus (after the View menu, in order with other menus declared without an explicit location).
+init<S>(S, content: () -> Content)
+Creates a new menu for a collection of app-specific commands, inserted in the standard location for app menus (after the View menu, in order with other menus declared without an explicit location).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

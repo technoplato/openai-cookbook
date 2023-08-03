@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/swiftui/layoutsubview/spacingSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Scroll views
+View groupings
+Tables
+Lists
+S
+GridLayout
+S
+ZStackLayout
+S
+VStackLayout
+M
+func sizeThatFits(ProposedViewSize) -> CGSize
+M
+func dimensions(in: ProposedViewSize) -> ViewDimensions
+Getting subview characteristics
+M
+func place(at: CGPoint, anchor: UnitPoint, proposal: ProposedViewSize)
+Placing the subview
+S
+LayoutSubview
+r
+P
+Layout
+Composing custom layouts with SwiftUI
+Documentation
+Open Menu
+Swift
+Instance Property
+spacing
+The subviews’s preferred spacing values.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+var spacing: ViewSpacing { get }
+Discussion
+This ViewSpacing instance indicates how much space a subview in a custom layout prefers to have between it and the next view. It contains preferences for all edges, and might take into account the type of both this and the adjacent view. If your Layout type places subviews based on spacing preferences, use this instance to compute a distance between this subview and the next. See placeSubviews(in:proposal:subviews:cache:) for an example.
+You can also merge this instance with instances from other subviews to construct a new instance that’s suitable for the subviews’ container. See spacing(subviews:cache:).
+See Also
+Getting subview characteristics
+func dimensions(in: ProposedViewSize) -> ViewDimensions
+Asks the subview for its dimensions and alignment guides.
+func sizeThatFits(ProposedViewSize) -> CGSize
+Asks the subview for its size.
+var priority: Double
+The layout priority of the subview.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is spacing
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

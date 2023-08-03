@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)-1er8oSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Managing the view hierarchy
+M
+func task<T>(id: T, priority: TaskPriority, () async -> Void) -> some View
+M
+func task(priority: TaskPriority, () async -> Void) -> some View
+M
+func onDisappear(perform: (() -> Void)?) -> some View
+M
+func onAppear(perform: (() -> Void)?) -> some View
+Responding to view life cycle updates
+r
+P
+EnvironmentalModifier
+func searchable<V, S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S, suggestions: () -> V) -> some View
+M
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+M
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+Search modifiers
+M
+func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View
+Deprecated
+M
+func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View
+Deprecated
+M
+func actionSheet<T>(item: Binding<T?>, content: (T) -> ActionSheet) -> some View
+Deprecated
+M
+func actionSheet(isPresented: Binding<Bool>, content: () -> ActionSheet) -> some View
+Deprecated
+View presentation modifiers
+Documentation
+Open Menu
+Swift
+Instance Method
+searchable(text:placement:prompt:suggestions:)
+Marks this view as searchable, which configures the display of a search field.
+iOS 15.0–17.0 Deprecated
+iPadOS 15.0–17.0 Deprecated
+macOS 12.0–14.0 Deprecated
+Mac Catalyst 15.0–17.0 Deprecated
+tvOS 15.0–17.0 Deprecated
+watchOS 8.0–10.0 Deprecated
+visionOS 1.0+ Beta
+func searchable<V, S>(
+    text: Binding<String>,
+    placement: SearchFieldPlacement = .automatic,
+    prompt: S,
+    @ViewBuilder suggestions: () -> V
+) -> some View where V : View, S : StringProtocol
+Parameters
+text
+The text to display and edit in the search field.
+placement
+Where the search field should attempt to be placed based on the containing view hierarchy.
+prompt
+A string representing the prompt of the search field which provides users with guidance on what to search for.
+suggestions
+A view builder that produces content that populates a list of suggestions.
+Discussion
+For more information about using searchable modifiers, see Adding a search interface to your app.
+See Also
+Search modifiers
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+Marks this view as searchable, which configures the display of a search field.
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+Marks this view as searchable, which configures the display of a search field.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is searchable(text:placement:prompt:suggestions:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

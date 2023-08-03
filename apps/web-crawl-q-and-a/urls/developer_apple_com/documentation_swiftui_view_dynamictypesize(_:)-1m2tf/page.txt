@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/view/dynamictypesize(_:)-1m2tfSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func kerning(CGFloat) -> some View
+M
+func baselineOffset(CGFloat) -> some View
+P
+var minimumScaleFactor: CGFloat
+M
+func minimumScaleFactor(CGFloat) -> some View
+P
+var allowsTightening: Bool
+M
+func allowsTightening(Bool) -> some View
+P
+var truncationMode: Text.TruncationMode
+M
+func dynamicTypeSize<T>(T) -> some View
+M
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+Beta
+Adjusting text size
+S
+Font
+P
+var font: Font?
+M
+func fontWidth(Font.Width?) -> some View
+M
+func fontWeight(Font.Weight?) -> some View
+M
+func fontDesign(Font.Design?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+dynamicTypeSize(_:)
+Sets the Dynamic Type size within the view to the given value.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func dynamicTypeSize(_ size: DynamicTypeSize) -> some View
+Parameters
+size
+The size to set for this view.
+Return Value
+A view that sets the Dynamic Type size to the specified size.
+Discussion
+As an example, you can set a Dynamic Type size in ContentView to be DynamicTypeSize.xLarge (this can be useful in previews to see your content at a different size) like this:
+ContentView()
+    .dynamicTypeSize(.xLarge)
+If a Dynamic Type size range is applied after setting a value, the value is limited by that range:
+ContentView() // Dynamic Type size will be .large
+    .dynamicTypeSize(...DynamicTypeSize.large)
+    .dynamicTypeSize(.xLarge)
+When limiting the Dynamic Type size, consider if adding a large content view with accessibilityShowsLargeContentViewer() would be appropriate.
+See Also
+Adjusting text size
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+Applies a text scale to text in the view.
+Beta
+func dynamicTypeSize<T>(T) -> some View
+Limits the Dynamic Type size within the view to the given range.
+var dynamicTypeSize: DynamicTypeSize
+The current Dynamic Type size.
+enum DynamicTypeSize
+A Dynamic Type size, which specifies how large scalable content should be.
+struct ScaledMetric
+A dynamic property that scales a numeric value.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is dynamicTypeSize(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/entitytargetvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+HoverEffectComponent
+Beta
+C
+ViewAttachmentEntity
+Beta
+S
+RealityViewAttachments
+Beta
+User Interface
+S
+ModelDebugOptionsComponent
+Reducing CPU Utilization in Your RealityKit App
+Reducing GPU Utilization in Your RealityKit App
+Improving the Performance of a RealityKit App
+Documentation
+Open Menu
+Swift
+Structure
+EntityTargetValue
+A value containing an original gesture value along with a targeted entity.
+RealityKit
+SwiftUI
+visionOS 1.0+ Beta
+@dynamicMemberLookup
+struct EntityTargetValue<Value>
+Overview
+Spatial data from a location returned by a gesture can be converted to and from the entity using functions defined in RealityCoordinateSpaceConverting.
+For example, here’s how to convert location from a DragGesture to the parent of an Entity:
+DragGesture(coordinateSpace: .global).targetedToEntity().updating($state) { state, value, _ in
+    let location = value.convert(
+        value.location, from: .global, to: value.entity.parent
+    )
+    ...
+}
+Topics
+Accessing gesture info
+var entity: Entity
+The targeted entity.
+var gestureValue: Value
+The gesture value updated by the gesture.
+Subscripts
+subscript<T>(dynamicMember _: KeyPath<Value, T>) -> T
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+RealityCoordinateSpaceConverting Implementations
+Relationships
+Conforms To
+Equatable
+RealityCoordinateSpaceConverting
+See Also
+User Interface
+struct RealityViewAttachments
+The attachments associated with a RealityView.
+Beta
+class ViewAttachmentEntity
+An entity that has a view attachment.
+Beta
+struct HoverEffectComponent
+Adding this component to an Entity will trigger a standard highlight effect when the Entity is gazed at. Note that, just like EntityGesture, a CollisionComponent is required for the Entity to be part of hit-testing.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is EntityTargetValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

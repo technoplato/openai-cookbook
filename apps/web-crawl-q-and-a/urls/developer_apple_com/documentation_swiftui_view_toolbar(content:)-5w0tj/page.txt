@@ -1,0 +1,189 @@
+https://developer.apple.com/documentation/swiftui/view/toolbar(content:)-5w0tjSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func windowToolbarStyle<S>(S) -> some Scene
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+S
+ToolbarRole
+M
+func toolbarRole(ToolbarRole) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+Populating a toolbar
+Toolbars
+Modal presentations
+Navigation
+Documents
+Immersive spaces
+Windows
+Documentation
+Open Menu
+Swift
+Instance Method
+toolbar(content:)
+Populates the toolbar or navigation bar with the specified items.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func toolbar<Content>(@ToolbarContentBuilder content: () -> Content) -> some View where Content : ToolbarContent
+Parameters
+content
+The items representing the content of the toolbar.
+Discussion
+Use this method to populate a toolbar with a collection of views that you provide to a toolbar view builder.
+The toolbar modifier expects a collection of toolbar items which you can provide either by supplying a collection of views with each view wrapped in a ToolbarItem, or by providing a collection of views as a ToolbarItemGroup. The example below uses a collection of ToolbarItem views to create a macOS toolbar that supports text editing features:
+struct StructToolbarItemGroupView: View {
+    @State private var text = ""
+    @State private var bold = false
+    @State private var italic = false
+    @State private var fontSize = 12.0
+
+
+    var displayFont: Font {
+        let font = Font.system(size: CGFloat(fontSize),
+                               weight: bold == true ? .bold : .regular)
+        return italic == true ? font.italic() : font
+    }
+
+
+    var body: some View {
+        TextEditor(text: $text)
+            .font(displayFont)
+            .toolbar {
+                ToolbarItemGroup {
+                    Slider(
+                        value: $fontSize,
+                        in: 8...120,
+                        minimumValueLabel:
+                            Text("A").font(.system(size: 8)),
+                        maximumValueLabel:
+                            Text("A").font(.system(size: 16))
+                    ) {
+                        Text("Font Size (\(Int(fontSize)))")
+                    }
+                    .frame(width: 150)
+                    Toggle(isOn: $bold) {
+                        Image(systemName: "bold")
+                    }
+                    Toggle(isOn: $italic) {
+                        Image(systemName: "italic")
+                    }
+                }
+            }
+            .navigationTitle("My Note")
+    }
+}
+Although it’s not mandatory, wrapping a related group of toolbar items together in a ToolbarItemGroup provides a one-to-one mapping between controls and toolbar items which results in the correct layout and spacing on each platform. For design guidance on toolbars for macOS apps, see macOS Human Interface Guidelines > Toolbars. For design guidance on toolbars for iOS apps, see iOS Human Interface Guidelines > Toolbars.
+See Also
+Populating a toolbar
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the views you provide.
+struct ToolbarItem
+A model that represents an item which can be placed in the toolbar or navigation bar.
+struct ToolbarItemGroup
+A model that represents a group of ToolbarItems which can be placed in the toolbar or navigation bar.
+struct ToolbarItemPlacement
+A structure that defines the placement of a toolbar item.
+protocol ToolbarContent
+Conforming types represent items that can be placed in various locations in a toolbar.
+struct ToolbarContentBuilder
+Constructs a toolbar item set from multi-expression closures.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is toolbar(content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

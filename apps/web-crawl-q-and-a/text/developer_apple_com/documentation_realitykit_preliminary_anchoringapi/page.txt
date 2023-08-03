@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/realitykit/preliminary_anchoringapiSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Essentials
+Exporting a Reality Composer Scene to USDZ
+USDZ Schemas for AR
+Animation
+autoPlay
+playbackMode
+Anchoring
+Placing a Prim in the Real World
+Models, shapes, and meshes
+Materials and shaders
+Anchors
+Cameras and lighting
+Scene reconstruction and understanding
+Audio
+Animation
+Documentation
+Open Menu
+Swift
+Preliminary_AnchoringAPI
+A schema that defines the placement of a prim and its children at a real-world location.
+Overview
+Use this schema to attach prims to real-world areas in an AR experience, such as surfaces, images, or faces. In non-AR viewers like studio mode in AR Quick Look, the runtime displays a prim by applying its transform –– that is, its position, rotation, and scale –– relative to the center of the view.
+Note
+Although ARKit features the ability to recognize predefined real-world objects (see ARReferenceObject), and location anchors (see ARGeoAnchor), the Preliminary_AnchoringAPI schema doesn’t support object or location anchors.
+Declaration
+class "Preliminary_AnchoringAPI"
+(
+    inherits = </APISchemaBase>
+)
+Nest and Layer Anchorable Prims
+When you assign this schema to a nested prim, the runtime positions the nested prim independently by not basing the child’s transform relative to its parent. As a result, the anchorable child is effectively out of the parent’s hierarchy. Similarly, if an asset defines one or more anchorable prims layered beneath another anchorable prim, the runtime positions each prim independently. However, any unanchorable children of an anchorable prim remain positioned relative to their parent.
+Since the runtime doesn’t observe anchorable prim hierarchies, you need to define all anchorable prims at the root of the document, thus, without a parent.
+Topics
+Properties
+preliminary:anchoring:type
+A option that specifies the type of anchor.
+preliminary:planeAnchoring:alignment
+An option that specifies the orientation of a plane.
+preliminary:imageAnchoring:referenceImage
+The characteristics of an image the runtime should scan for in order to attach a prim.
+See Also
+Anchoring
+Placing a Prim in the Real World
+Anchor a prim to a real-world object that the runtime recognizes in the physical environment.
+API Reference
+Preliminary_ReferenceImage
+A schema that defines the properties of an image in the physical environment.
+Current page is Preliminary_AnchoringAPI
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

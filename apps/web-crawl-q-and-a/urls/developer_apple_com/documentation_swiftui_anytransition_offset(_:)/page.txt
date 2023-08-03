@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/swiftui/anytransition/offset(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+func withTransaction<R, V>(WritableKeyPath<Transaction, V>, V, () throws -> R) rethrows -> R
+func withTransaction<Result>(Transaction, () throws -> Result) rethrows -> Result
+Moving an animation to another view
+S
+PlaceholderContentView
+Beta
+S
+ContentTransition
+P
+var contentTransitionAddsDrawingGroup: Bool
+P
+var contentTransition: ContentTransition
+M
+static func move(edge: Edge) -> AnyTransition
+P
+static let identity: AnyTransition
+Getting built-in transitions
+S
+AnyTransition
+S
+AsymmetricTransition
+Beta
+E
+TransitionPhase
+Beta
+S
+TransitionProperties
+Beta
+r
+P
+Transition
+Beta
+Documentation
+Open Menu
+Swift
+Type Method
+offset(_:)
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+static func offset(_ offset: CGSize) -> AnyTransition
+See Also
+Getting built-in transitions
+static let identity: AnyTransition
+A transition that returns the input view, unmodified, as the output view.
+static func move(edge: Edge) -> AnyTransition
+Returns a transition that moves the view away, towards the specified edge of the view.
+static func offset(x: CGFloat, y: CGFloat) -> AnyTransition
+static let opacity: AnyTransition
+A transition from transparent to opaque on insertion, and from opaque to transparent on removal.
+static func push(from: Edge) -> AnyTransition
+Creates a transition that when added to a view will animate the view’s insertion by moving it in from the specified edge while fading it in, and animate its removal by moving it out towards the opposite edge and fading it out.
+static var scale: AnyTransition
+Returns a transition that scales the view.
+static func scale(scale: CGFloat, anchor: UnitPoint) -> AnyTransition
+Returns a transition that scales the view by the specified amount.
+static var slide: AnyTransition
+A transition that inserts by moving in from the leading edge, and removes by moving out towards the trailing edge.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is offset(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

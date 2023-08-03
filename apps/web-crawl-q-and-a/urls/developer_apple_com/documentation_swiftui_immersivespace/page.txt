@@ -1,0 +1,217 @@
+https://developer.apple.com/documentation/swiftui/immersivespaceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ImmersiveSpaceContentBuilder
+Beta
+S
+NoImmersiveSpaceData
+r
+P
+ImmersiveSpaceContent
+S
+ImmersiveSpaceViewContent
+Supporting types
+M
+init(id: String, for: Data.Type, content: (Binding<Data>) -> Content, defaultValue: () -> Data)
+M
+init<V>(id: String, for: Data.Type, content: (Binding<Data>) -> V, defaultValue: () -> Data)
+Creating an immersive space
+Immersive spaces
+Windows
+Scenes
+App organization
+App structure
+SwiftUI updates
+Exploring SwiftUI Sample Apps
+Documentation
+Open Menu
+Swift
+Structure
+ImmersiveSpace
+A scene that presents its content in an unbounded space.
+visionOS 1.0+ Beta
+struct ImmersiveSpace<Content, Data> where Content : ImmersiveSpaceContent, Data : Decodable, Data : Encodable, Data : Hashable
+Overview
+Use an ImmersiveSpace as a container for a view hierarchy presented by your app. The hierarchy that you declare as the immersive space’s content serves as a template for it:
+@main
+struct SolarSystemApp: App {
+    var body: some Scene {
+        ImmersiveSpace {
+            SolarSystem()
+        }
+    }
+}
+When your app opens an immersive space, the system hides all other visible apps. SwiftUI only allows one opened ImmersiveSpace at a time. Close any currently opened immersive space before opening another one.
+You can use ImmersiveSpace as the main interface of an app. For bounded scenes, use WindowGroup instead. For document-based apps, use a DocumentGroup instead.
+You can optionally define an ImmersiveSpace to present data of a type that conforms to both Hashable and Codable.
+If you pass a value to the openImmersiveSpace action to open an immersive space, the space receives a binding to the presented value as its root view. The system persists the value of the binding for the purposes of state restoration. When restoring the space, the system decodes the value and uses it to set the binding. If decoding fails, the system sets the binding to either the default value or nil.
+Prefer using lightweight data for your presentation value. For structured model values that conform to Identifiable, the value’s identifier works well. For example, you can define a button that opens the specified solar system value in a new immersive space:
+@main
+struct SolarSystemApp: App {
+    var body: some Scene {
+        ImmersiveSpace(for: SolarSystem.ID.self) { $solarSystemID in
+            // ...
+        }
+    }
+}
+
+
+struct NewSolarSystemImmersiveSpace: View {
+    var solarSystem: SolarSystem
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+
+
+    var body: some View {
+        Button("Present Solar System In New Immersive Space") {
+            Task {
+                await openImmersiveSpace(value: solarSystem.ID)
+            }
+        }
+    }
+}
+If you want your app to display an ImmersiveSpace scene at launch, configure your app’s Info.plist accordingly. Set the UIApplicationPreferredDefaultSceneSessionRoleKey key in the scene manifest to the value UISceneSessionRoleImmersiveSpaceApplication.
+To further configure that initial immersive space, add a new scene configuration for the scene session role UISceneSessionRoleImmersiveSpaceApplication to your app’s scene manifest of the Info.plist. Use the UISceneInitialImmersionStyle key together with one of the following values to define the initial style that the immersive space should open with:
+UIImmersionStyleMixed
+UIImmersionStyleFull
+UIImmersionStyleProgressive At launch, SwiftUI will display the first ImmersiveSpace scene defined by your app that is compatible with the requested style.
+Topics
+Creating an immersive space
+init(content: () -> Content)
+init<V>(content: () -> V)
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+Identifying an immersive space
+init(id: String, content: () -> Content)
+init<V>(id: String, content: () -> V)
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+Creating a data-driven immersive space
+init(for: Data.Type, content: (Binding<Data?>) -> Content)
+Creates the immersive space for a specified type of presented data.
+init<V>(for: Data.Type, content: (Binding<Data?>) -> V)
+A convenience for creating an immersive space using view-based content. Creates the immersive space for a specified type of presented data.
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+init(id: String, for: Data.Type, content: (Binding<Data?>) -> Content)
+Creates the immersive space associated with an identifier for a specified type of presented data.
+init<V>(id: String, for: Data.Type, content: (Binding<Data?>) -> V)
+A convenience for creating an immersive space using view-based content. Creates the immersive space associated with an identifier for a specified type of presented data.
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+Providing default data to an immersive space
+init(for: Data.Type, content: (Binding<Data>) -> Content, defaultValue: () -> Data)
+Creates an immersive space.
+init<V>(for: Data.Type, content: (Binding<Data>) -> V, defaultValue: () -> Data)
+A convenience for creating an immersive space using view-based content. Creates an immersive space for a specified type of presented data, and a default value, if the data is not set.
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+init<V>(id: String, for: Data.Type, content: (Binding<Data>) -> V, defaultValue: () -> Data)
+A convenience for creating an immersive space using view-based content. Creates the immersive space associated with an identifier for a specified type of presented data, and a default value, if the data is not set.
+Available when Content conforms to ImmersiveSpaceContent, Data conforms to Decodable, Data conforms to Encodable, and Data conforms to Hashable.
+init(id: String, for: Data.Type, content: (Binding<Data>) -> Content, defaultValue: () -> Data)
+Creates the immersive space associated with an identifier for a specified type of presented data, and a default value, if the data is not set.
+Supporting types
+struct ImmersiveSpaceViewContent
+Immersive space content that uses a SwiftUI view hierarchy as the content.
+protocol ImmersiveSpaceContent
+A type that you can use as the content of an immersive space.
+struct NoImmersiveSpaceData
+Relationships
+Conforms To
+Scene
+Sendable
+See Also
+Creating an immersive space
+struct ImmersiveSpaceContentBuilder
+A result builder for composing a collection of immersive space elements.
+Beta
+func immersionStyle(selection: Binding<ImmersionStyle>, in: ImmersionStyle...) -> some Scene
+Sets the allowed styles for the immersive space.
+Beta
+protocol ImmersionStyle
+The styles that an immersive space can have.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ImmersiveSpace
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

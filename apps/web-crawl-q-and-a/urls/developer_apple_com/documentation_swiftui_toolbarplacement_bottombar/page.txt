@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/toolbarplacement/bottombarSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ToolbarCustomizationBehavior
+S
+ToolbarCustomizationOptions
+Setting toolbar visibility
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+S
+ToolbarPlacement
+Getting placements
+P
+static var automatic: ToolbarPlacement
+M
+static func accessoryBar<ID>(id: ID) -> ToolbarPlacement
+r
+P
+WindowToolbarStyle
+Configuring the toolbar title display mode
+M
+func toolbarTitleDisplayMode(ToolbarTitleDisplayMode) -> some View
+Beta
+S
+ToolbarTitleDisplayMode
+Beta
+Setting the toolbar title menu
+M
+func toolbarTitleMenu<C>(content: () -> C) -> some View
+S
+ToolbarTitleMenu
+Documentation
+Open Menu
+Swift
+Type Property
+bottomBar
+The bottom toolbar of an app.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+static var bottomBar: ToolbarPlacement { get }
+See Also
+Getting placements
+static var automatic: ToolbarPlacement
+The primary toolbar.
+static func accessoryBar<ID>(id: ID) -> ToolbarPlacement
+Creates a unique accessory bar placement.
+static var bottomOrnament: ToolbarPlacement
+The bottom ornament of an app.
+Beta
+static var navigationBar: ToolbarPlacement
+The navigation bar of an app.
+static var tabBar: ToolbarPlacement
+The tab bar of an app.
+static var windowToolbar: ToolbarPlacement
+The window toolbar of an app.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is bottomBar
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/environment-valuesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+Model data
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+Navigation
+Documents
+Documentation
+Open Menu
+Swift
+Environment values
+Share data throughout a view hierarchy using the environment.
+Overview
+Views in SwiftUI can react to configuration information that they read from the environment using an Environment property wrapper.
+A view inherits its environment from its container view, subject to explicit changes from an environment(_:_:) view modifier, or by implicit changes from one of the many modifiers that operate on environment values. As a result, you can configure a entire hierarchy of views by modifying the environment of the group’s container.
+You can find many built-in environment values in the EnvironmentValues structure. You can also create custom values using the EnvironmentKey protocol.
+Topics
+Accessing environment values
+struct Environment
+A property wrapper that reads a value from a view’s environment.
+struct EnvironmentValues
+A collection of environment values propagated through a view hierarchy.
+Creating custom environment values
+protocol EnvironmentKey
+A key for accessing values in the environment.
+Modifying the environment
+func environment<T>(T?) -> some View
+Sets an observable object of the environment to the given value.
+Beta
+func environment<V>(WritableKeyPath<EnvironmentValues, V>, V) -> some View
+Sets the environment value of the specified key path to the given value.
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+Transforms the environment value of the specified key path with the given function.
+See Also
+Data and storage
+API Reference
+Model data
+Manage the data that your app uses to drive its interface.
+API Reference
+Preferences
+Indicate configuration preferences from views to their container views.
+API Reference
+Persistent storage
+Store data for use across sessions of your app.
+Current page is Environment values
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/menubarextra/init(_:systemimage:isinserted:content:)-1qg20Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model data
+Data and storage
+App extensions
+Search
+Toolbars
+Modal presentations
+Navigation
+M
+init(LocalizedStringKey, systemImage: String, content: () -> Content)
+Creating a menu bar extra with a system image
+M
+init<S>(S, image: String, isInserted: Binding<Bool>, content: () -> Content)
+M
+init<S>(S, image: String, content: () -> Content)
+M
+init(LocalizedStringKey, image: String, isInserted: Binding<Bool>, content: () -> Content)
+M
+init(LocalizedStringKey, image: String, content: () -> Content)
+Creating a menu bar extra with a named image
+M
+init(isInserted: Binding<Bool>, content: () -> Content, label: () -> Label)
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:systemImage:isInserted:content:)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+macOS 13.0+
+init(
+    _ titleKey: LocalizedStringKey,
+    systemImage: String,
+    isInserted: Binding<Bool>,
+    @ViewBuilder content: () -> Content
+)
+Available when Label is Label<Text, Image> and Content conforms to View.
+Parameters
+titleKey
+The localized string key to use for the accessibility label of the item.
+systemImage
+The name of a system image to use as the label.
+isInserted
+Whether the item is inserted in the menu bar. The item may or may not be visible, depending on the number of items present.
+content
+A View to display when the user selects the item.
+Discussion
+The item will be displayed in the system menu bar when the specified binding is set to true. If the user removes the item from the menu bar, the binding will be set to false.
+See Also
+Creating a menu bar extra with a system image
+init(LocalizedStringKey, systemImage: String, content: () -> Content)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+Available when Label is Label<Text, Image> and Content conforms to View.
+init<S>(S, systemImage: String, content: () -> Content)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+Available when Label is Label<Text, Image> and Content conforms to View.
+init<S>(S, systemImage: String, isInserted: Binding<Bool>, content: () -> Content)
+Creates a menu bar extra with a system image to use as the items label. The provided title will be used by the accessibility system.
+Available when Label is Label<Text, Image> and Content conforms to View.
+Current page is init(_:systemImage:isInserted:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

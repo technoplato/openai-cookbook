@@ -1,0 +1,198 @@
+https://developer.apple.com/documentation/swiftui/formSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+Grouping inputs
+M
+func groupBoxStyle<S>(S) -> some View
+S
+GroupBox
+Grouping views into a box
+S
+Group
+Collecting views into a unit
+View groupings
+Tables
+Documentation
+Open Menu
+Swift
+Structure
+Form
+A container for grouping controls used for data entry, such as in settings or inspectors.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+struct Form<Content> where Content : View
+Overview
+SwiftUI applies platform-appropriate styling to views contained inside a form, to group them together. Form-specific styling applies to things like buttons, toggles, labels, lists, and more. Keep in mind that these stylings may be platform-specific. For example, forms apppear as grouped lists on iOS, and as aligned vertical stacks on macOS.
+The following example shows a simple data entry form on iOS, grouped into two sections. The supporting types (NotifyMeAboutType and ProfileImageSize) and state variables (notifyMeAbout, profileImageSize, playNotificationSounds, and sendReadReceipts) are omitted for simplicity.
+var body: some View {
+    NavigationView {
+        Form {
+            Section(header: Text("Notifications")) {
+                Picker("Notify Me About", selection: $notifyMeAbout) {
+                    Text("Direct Messages").tag(NotifyMeAboutType.directMessages)
+                    Text("Mentions").tag(NotifyMeAboutType.mentions)
+                    Text("Anything").tag(NotifyMeAboutType.anything)
+                }
+                Toggle("Play notification sounds", isOn: $playNotificationSounds)
+                Toggle("Send read receipts", isOn: $sendReadReceipts)
+            }
+            Section(header: Text("User Profiles")) {
+                Picker("Profile Image Size", selection: $profileImageSize) {
+                    Text("Large").tag(ProfileImageSize.large)
+                    Text("Medium").tag(ProfileImageSize.medium)
+                    Text("Small").tag(ProfileImageSize.small)
+                }
+                Button("Clear Image Cache") {}
+            }
+        }
+    }
+}
+On macOS, a similar form renders as a vertical stack. To adhere to macOS platform conventions, this version doesn’t use sections, and uses colons at the end of its labels. It also sets the picker to use the inline style, which produces radio buttons on macOS.
+var body: some View {
+    Spacer()
+    HStack {
+        Spacer()
+        Form {
+            Picker("Notify Me About:", selection: $notifyMeAbout) {
+                Text("Direct Messages").tag(NotifyMeAboutType.directMessages)
+                Text("Mentions").tag(NotifyMeAboutType.mentions)
+                Text("Anything").tag(NotifyMeAboutType.anything)
+            }
+            Toggle("Play notification sounds", isOn: $playNotificationSounds)
+            Toggle("Send read receipts", isOn: $sendReadReceipts)
+
+
+            Picker("Profile Image Size:", selection: $profileImageSize) {
+                Text("Large").tag(ProfileImageSize.large)
+                Text("Medium").tag(ProfileImageSize.medium)
+                Text("Small").tag(ProfileImageSize.small)
+            }
+            .pickerStyle(.inline)
+
+
+            Button("Clear Image Cache") {}
+        }
+        Spacer()
+    }
+    Spacer()
+}
+Topics
+Creating a form
+init(content: () -> Content)
+Creates a form with the provided content.
+Creating a form from a configuration
+init(FormStyleConfiguration)
+Creates a form based on a form style configuration.
+Available when Content is FormStyleConfiguration.Content.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Grouping inputs
+func formStyle<S>(S) -> some View
+Sets the style for forms in a view hierarchy.
+struct LabeledContent
+A container for attaching a label to a value-bearing view.
+func labeledContentStyle<S>(S) -> some View
+Sets a style for labeled content.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Form
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

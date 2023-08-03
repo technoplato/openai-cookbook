@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/swiftui/stepper/init(value:in:step:label:oneditingchanged:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var defaultWheelPickerItemHeight: CGFloat
+M
+func defaultWheelPickerItemHeight(CGFloat) -> some View
+M
+func horizontalRadioGroupLayout() -> some View
+M
+func pickerStyle<S>(S) -> some View
+S
+Picker
+Choosing from a set of options
+M
+func toggleStyle<S>(S) -> some View
+init(onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void, label: () -> Label)
+init<V>(value: Binding<V>, in: ClosedRange<V>, step: V.Stride, onEditingChanged: (Bool) -> Void, label: () -> Label)
+init(LocalizedStringKey, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void)
+init(label: () -> Label, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?, onEditingChanged: (Bool) -> Void)
+init<S, F>(S, value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+init<V>(LocalizedStringKey, value: Binding<V>, in: ClosedRange<V>, step: V.Stride, onEditingChanged: (Bool) -> Void)
+init<F>(value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, label: () -> Label, onEditingChanged: (Bool) -> Void)
+init<V>(value: Binding<V>, in: ClosedRange<V>, step: V.Stride, label: () -> Label, onEditingChanged: (Bool) -> Void)
+Creating a stepper over a range
+M
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+M
+init<S, F>(S, value: Binding<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+M
+init<S, V>(S, value: Binding<V>, step: V.Stride, onEditingChanged: (Bool) -> Void)
+M
+init<V>(LocalizedStringKey, value: Binding<V>, step: V.Stride, onEditingChanged: (Bool) -> Void)
+M
+init<F>(value: Binding<F.FormatInput>, step: F.FormatInput.Stride, format: F, label: () -> Label, onEditingChanged: (Bool) -> Void)
+M
+init<V>(value: Binding<V>, step: V.Stride, label: () -> Label, onEditingChanged: (Bool) -> Void)
+Creating a stepper
+Documentation
+Open Menu
+Swift
+Initializer
+init(value:in:step:label:onEditingChanged:)
+Creates a stepper configured to increment or decrement a binding to a value using a step value and within a range of values you provide.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init<V>(
+    value: Binding<V>,
+    in bounds: ClosedRange<V>,
+    step: V.Stride = 1,
+    @ViewBuilder label: () -> Label,
+    onEditingChanged: @escaping (Bool) -> Void = { _ in }
+) where V : Strideable
+Available when Label conforms to View.
+Parameters
+value
+A Binding to a value that you provide.
+bounds
+A closed range that describes the upper and lower bounds permitted by the stepper.
+step
+The amount to increment or decrement the stepper when the user clicks or taps the stepper’s increment or decrement buttons, respectively.
+label
+A view describing the purpose of this stepper.
+onEditingChanged
+A closure that’s called when editing begins and ends. For example, on iOS, the user may touch and hold the increment or decrement buttons on a stepper which causes the execution of the onEditingChanged closure at the start and end of the gesture.
+Discussion
+Use this initializer to create a stepper that increments or decrements a binding to value by the step size you provide within the given bounds. By setting the bounds, you ensure that the value never goes below or above the lowest or highest value, respectively.
+The example below shows a stepper that displays the effect of incrementing or decrementing a value with the step size of step with the bounds defined by range:
+struct StepperView: View {
+    @State private var value = 0
+    let step = 5
+    let range = 1...50
+
+
+    var body: some View {
+        Stepper(value: $value,
+                in: range,
+                step: step) {
+            Text("Current: \(value) in \(range.description) " +
+                 "stepping by \(step)")
+        }
+            .padding(10)
+    }
+}
+See Also
+Creating a stepper over a range
+init<F>(value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, label: () -> Label, onEditingChanged: (Bool) -> Void)
+Creates a stepper configured to increment or decrement a binding to a value using a step value and within a range of values you provide, displaying its value with an applied format style.
+Available when Label conforms to View.
+init<V>(LocalizedStringKey, value: Binding<V>, in: ClosedRange<V>, step: V.Stride, onEditingChanged: (Bool) -> Void)
+Creates a stepper instance that increments and decrements a binding to a value, by a step size and within a closed range that you provide.
+Available when Label is Text.
+init<S, V>(S, value: Binding<V>, in: ClosedRange<V>, step: V.Stride, onEditingChanged: (Bool) -> Void)
+Creates a stepper instance that increments and decrements a binding to a value, by a step size and within a closed range that you provide.
+Available when Label is Text.
+init<F>(LocalizedStringKey, value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+Creates a stepper instance that increments and decrements a binding to a value, by a step size and within a closed range that you provide, displaying its value with an applied format style.
+Available when Label is Text.
+init<S, F>(S, value: Binding<F.FormatInput>, in: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride, format: F, onEditingChanged: (Bool) -> Void)
+Creates a stepper instance that increments and decrements a binding to a value, by a step size and within a closed range that you provide, displaying its value with an applied format style.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(value:in:step:label:onEditingChanged:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,185 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/tryscan(_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func max() -> Publishers.Comparison<Self>
+M
+func count() -> Publishers.Count<Self>
+Applying Mathematical Operations on Elements
+M
+func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>
+M
+func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>
+M
+func ignoreOutput() -> Publishers.IgnoreOutput<Self>
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+M
+func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>
+M
+func replaceNil<T>(with: T) -> Publishers.Map<Self, T>
+M
+func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>
+M
+func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+M
+func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>
+M
+func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>
+Mapping Elements
+M
+func subscribe<S>(S) -> AnyCancellable
+Documentation
+Open Menu
+Swift
+Instance Method
+tryScan(_:_:)
+Transforms elements from the upstream publisher by providing the current element to an error-throwing closure along with the last value returned by the closure.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func tryScan<T>(
+    _ initialResult: T,
+    _ nextPartialResult: @escaping (T, Self.Output) throws -> T
+) -> Publishers.TryScan<Self, T>
+Parameters
+initialResult
+The previous result returned by the nextPartialResult closure.
+nextPartialResult
+An error-throwing closure that takes as its arguments the previous value returned by the closure and the next element emitted from the upstream publisher.
+Return Value
+A publisher that transforms elements by applying a closure that receives its previous return value and the next element from the upstream publisher.
+Discussion
+Use Publisher/tryScan(_:_:) to accumulate all previously-published values into a single value, which you then combine with each newly-published value. If your accumulator closure throws an error, the publisher terminates with the error.
+In the example below, Publisher/tryScan(_:_:) calls a division function on elements of a collection publisher. The Publishers/TryScan publisher publishes each result until the function encounters a DivisionByZeroError, which terminates the publisher.
+struct DivisionByZeroError: Error {}
+
+
+/// A function that throws a DivisionByZeroError if `current` provided by the TryScan publisher is zero.
+func myThrowingFunction(_ lastValue: Int, _ currentValue: Int) throws -> Int {
+    guard currentValue != 0 else { throw DivisionByZeroError() }
+    return (lastValue + currentValue) / currentValue
+ }
+
+
+let numbers = [1,2,3,4,5,0,6,7,8,9]
+cancellable = numbers.publisher
+    .tryScan(10) { try myThrowingFunction($0, $1) }
+    .sink(
+        receiveCompletion: { print ("\($0)") },
+        receiveValue: { print ("\($0)", terminator: " ") }
+     )
+
+
+// Prints: "11 6 3 1 1 -1 failure(DivisionByZeroError())".
+If the closure throws an error, the publisher fails with the error.
+See Also
+Mapping Elements
+func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>
+Transforms all elements from the upstream publisher with a provided closure.
+func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>
+Transforms all elements from the upstream publisher with a provided error-throwing closure.
+func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>
+Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify.
+func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>
+Converts any failure from the upstream publisher into a new error.
+func replaceNil<T>(with: T) -> Publishers.Map<Self, T>
+Replaces nil elements in the stream with the provided element.
+func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>
+Transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tryScan(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

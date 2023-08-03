@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/realitykit/arview/environment-swift.struct/reverb-swift.enum/preset/hash(into:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+M
+func hitTest(CGPoint, types: ARHitTestResult.ResultType) -> [ARHitTestResult]
+M
+func hitTest(CGPoint, query: CollisionCastQueryType, mask: CollisionGroup) -> [CollisionCastHit]
+M
+func entities(at: CGPoint) -> [Entity]
+M
+func entity(at: CGPoint) -> Entity?
+Finding Entities at a Point in the View
+P
+var cameraTransform: Transform
+static func != (Self, Self) -> Bool
+static func == (ARView.Environment.Reverb.Preset, ARView.Environment.Reverb.Preset) -> Bool
+Comparing Reverb Presets
+E
+case smallRoom
+E
+case mediumRoom
+E
+case mediumHall
+E
+case largeRoom
+E
+case largeHall
+Documentation
+Open Menu
+Swift
+Instance Method
+hash(into:)
+Hashes the essential components of the reverb choice by feeding them into the given hash function.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+func hash(into hasher: inout Hasher)
+Parameters
+hasher
+The hash function to use when combining the components of the reverb setting.
+See Also
+Comparing Reverb Presets
+static func == (ARView.Environment.Reverb.Preset, ARView.Environment.Reverb.Preset) -> Bool
+Indicates whether two reverb choices are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two reverb choices are not equal.
+var hashValue: Int
+The hashed value of the reverb choice.
+Current page is hash(into:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

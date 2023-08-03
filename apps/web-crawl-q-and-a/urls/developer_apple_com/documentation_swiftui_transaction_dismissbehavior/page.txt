@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/transaction/dismissbehaviorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Managing window dismissal
+M
+func addAnimationCompletion(criteria: AnimationCompletionCriteria, () -> Void)
+Beta
+P
+var disablesAnimations: Bool
+P
+var animation: Animation?
+Managing animations
+M
+init(animation: Animation?)
+M
+init()
+Creating a transaction
+Documentation
+Open Menu
+Swift
+Instance Property
+dismissBehavior
+The behavior for how windows will dismiss programmatically when used in conjunction with DismissWindowAction.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+var dismissBehavior: DismissBehavior { get set }
+Discussion
+The default value is .interactive.
+You can use this property to dismiss windows which may be showing a modal presentation by using the .destructive value:
+struct DismissWindowButton: View {
+    @Environment(\.dismissWindow) private var dismissWindow
+
+
+    var body: some View {
+        Button("Close Auxiliary Window") {
+            withTransaction(\.dismissBehavior, .destructive) {
+                dismissWindow(id: "auxiliary")
+            }
+        }
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is dismissBehavior
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/swiftui/alternatingrowbackgroundbehaviorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Configuring spacing
+M
+func listRowSpacing(CGFloat?) -> some View
+M
+func listSectionSpacing(CGFloat) -> some View
+Beta
+M
+func listSectionSpacing(ListSectionSpacing) -> some View
+Beta
+S
+ListSectionSpacing
+Beta
+Configuring backgrounds
+M
+func listRowBackground<V>(V?) -> some View
+M
+func alternatingRowBackgrounds(AlternatingRowBackgroundBehavior) -> some View
+Beta
+Configuring interaction
+M
+func swipeActions<T>(edge: HorizontalEdge, allowsFullSwipe: Bool, content: () -> T) -> some View
+M
+func selectionDisabled(Bool) -> some View
+Beta
+Refreshing a list’s content
+M
+func refreshable(action: () async -> Void) -> some View
+P
+var refresh: RefreshAction?
+S
+RefreshAction
+Documentation
+Open Menu
+Swift
+Structure
+AlternatingRowBackgroundBehavior
+The styling of views with respect to alternating row backgrounds.
+macOS 14.0+ Beta
+struct AlternatingRowBackgroundBehavior
+Overview
+Use values of this type with the alternatingRowBackgrounds(_:) modifier.
+Topics
+Getting alternating row background behavior
+static let automatic: AlternatingRowBackgroundBehavior
+The automatic alternating row background behavior.
+static let enabled: AlternatingRowBackgroundBehavior
+Alternating rows will be enabled for applicable views.
+static let disabled: AlternatingRowBackgroundBehavior
+Alternating rows will be disabled for applicable views.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Configuring backgrounds
+func listRowBackground<V>(V?) -> some View
+Places a custom background view behind a list row item.
+func alternatingRowBackgrounds(AlternatingRowBackgroundBehavior) -> some View
+Overrides whether lists and tables in this view have alternating row backgrounds.
+Beta
+var backgroundProminence: BackgroundProminence
+The prominence of the background underneath views associated with this environment.
+Beta
+struct BackgroundProminence
+The prominence of backgrounds underneath other views.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AlternatingRowBackgroundBehavior
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

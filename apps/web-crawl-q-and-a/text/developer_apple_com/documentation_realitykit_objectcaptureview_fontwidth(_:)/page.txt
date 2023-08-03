@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/fontwidth(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func headerProminence(Prominence) -> some View
+M
+func handlesExternalEvents(preferring: Set<String>, allowing: Set<String>) -> some View
+M
+func groupBoxStyle<S>(S) -> some View
+M
+func gridColumnAlignment(HorizontalAlignment) -> some View
+M
+func gridCellUnsizedAxes(Axis.Set) -> some View
+M
+func gridCellColumns(Int) -> some View
+M
+func gridCellAnchor(UnitPoint) -> some View
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+M
+func fontWeight(Font.Weight?) -> some View
+M
+func fontDesign(Font.Design?) -> some View
+M
+func font(Font?) -> some View
+M
+func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value) -> some View
+M
+func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value?) -> some View
+M
+func focusedValue<T>(T?) -> some View
+M
+func focusedSceneValue<T>(WritableKeyPath<FocusedValues, T?>, T?) -> some View
+M
+func focusedSceneValue<T>(WritableKeyPath<FocusedValues, T?>, T) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+fontWidth(_:)
+Sets the font width of the text in this view.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func fontWidth(_ width: Font.Width?) -> some View
+Parameters
+width
+One of the available font widths. Providing nil removes the effect of any font width modifier applied higher in the view hierarchy.
+Return Value
+A view that uses the font width you specify.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is fontWidth(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

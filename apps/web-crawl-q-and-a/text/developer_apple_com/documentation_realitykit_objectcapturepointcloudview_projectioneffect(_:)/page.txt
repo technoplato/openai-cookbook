@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/projectioneffect(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func scrollBounceBehavior(ScrollBounceBehavior, axes: Axis.Set) -> some View
+M
+func scenePadding(ScenePadding, edges: Edge.Set) -> some View
+M
+func scenePadding(Edge.Set) -> some View
+M
+func scaledToFit() -> some View
+M
+func scaledToFill() -> some View
+M
+func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View
+M
+func scaleEffect(CGFloat, anchor: UnitPoint) -> some View
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View
+M
+func progressViewStyle<S>(S) -> some View
+M
+func privacySensitive(Bool) -> some View
+M
+func previewLayout(PreviewLayout) -> some View
+M
+func previewInterfaceOrientation(InterfaceOrientation) -> some View
+M
+func previewDisplayName(String?) -> some View
+M
+func previewDevice(PreviewDevice?) -> some View
+M
+func previewContext<C>(C) -> some View
+M
+func presentationDragIndicator(Visibility) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+projectionEffect(_:)
+Applies a projection transformation to this view’s rendered output.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func projectionEffect(_ transform: ProjectionTransform) -> some View
+Parameters
+transform
+A ProjectionTransform to apply to the view.
+Discussion
+Use projectionEffect(_:) to apply a 3D transformation to the view.
+The example below rotates the text 30˚ around the z axis, which is the axis pointing out of the screen:
+// This transform represents a 30˚ rotation around the z axis.
+let transform = CATransform3DMakeRotation(
+    -30 * (.pi / 180), 0.0, 0.0, 1.0)
+
+
+Text("Projection effects using transforms")
+    .projectionEffect(.init(transform))
+    .border(Color.gray)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is projectionEffect(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

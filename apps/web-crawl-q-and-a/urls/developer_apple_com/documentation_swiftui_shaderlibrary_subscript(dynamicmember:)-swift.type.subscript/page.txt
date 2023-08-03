@@ -1,0 +1,129 @@
+https://developer.apple.com/documentation/swiftui/shaderlibrary/subscript(dynamicmember:)-swift.type.subscriptSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Drag and drop
+Clipboard
+Input events
+Gestures
+Event handling
+Scroll views
+View groupings
+Access shader functions
+M
+init(data: Data)
+M
+init(url: URL)
+Creating a shader library
+M
+static func bundle(Bundle) -> ShaderLibrary
+P
+static let `default`: ShaderLibrary
+Getting the default shader library
+S
+ShaderLibrary
+Beta
+Documentation
+Open Menu
+Swift
+Type Subscript
+subscript(dynamicMember:)
+Returns a new shader function representing the stitchable MSL function called name in the default shader library.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+static subscript(dynamicMember name: String) -> ShaderFunction { get }
+Overview
+Typically this subscript is used implicitly via the dynamic member syntax, for example:
+let fn = ShaderLibrary.myFunction
+which creates a reference to the MSL function called myFunction().
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(dynamicMember:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

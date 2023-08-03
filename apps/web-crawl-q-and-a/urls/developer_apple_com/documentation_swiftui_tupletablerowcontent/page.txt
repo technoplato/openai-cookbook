@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/tupletablerowcontentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+S
+TableHeaderRowContent
+r
+P
+TableRowContent
+S
+TableRow
+Creating rows
+S
+TableColumnCustomizationBehavior
+Beta
+S
+TableColumnCustomization
+Beta
+M
+func tableColumnHeaders(Visibility) -> some View
+Beta
+Customizing columns
+Documentation
+Open Menu
+Swift
+Structure
+TupleTableRowContent
+A type of table column content that creates table rows created from a Swift tuple of table rows.
+iOS 16.0+
+iPadOS 16.0+
+macOS 12.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+@frozen
+struct TupleTableRowContent<Value, T> where Value : Identifiable
+Overview
+Don’t use this type directly; instead, SwiftUI uses this type as the return value from the various buildBlock methods in TableRowBuilder. The size of the tuple corresponds to how many columns you create in the rows closure you provide to the Table initializer.
+Topics
+Accessing the value
+var value: T
+Relationships
+Conforms To
+Sendable
+TableRowContent
+See Also
+Creating rows
+struct TableRow
+A row that represents a data value in a table.
+protocol TableRowContent
+A type used to represent table rows.
+struct TableHeaderRowContent
+A table row that displays a single view instead of columned content.
+struct TableForEachContent
+A type of table row content that creates table rows created by iterating over a collection.
+struct EmptyTableRowContent
+A table row content that doesn’t produce any rows.
+protocol DynamicTableRowContent
+A type of table row content that generates table rows from an underlying collection of data.
+struct TableRowBuilder
+A result builder that creates table row content from closures.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TupleTableRowContent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,202 @@
+https://developer.apple.com/documentation/swiftui/securefieldSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Font
+P
+var font: Font?
+M
+func fontWidth(Font.Width?) -> some View
+M
+func fontWeight(Font.Weight?) -> some View
+M
+func fontDesign(Font.Design?) -> some View
+M
+func font(Font?) -> some View
+Applying custom fonts to text
+M
+func textFieldStyle<S>(S) -> some View
+S
+TextField
+Getting text input
+M
+func labelStyle<S>(S) -> some View
+S
+Label
+S
+Text
+Displaying text
+Text input and output
+Documentation
+Open Menu
+Swift
+Structure
+SecureField
+A control into which the user securely enters private text.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+struct SecureField<Label> where Label : View
+Overview
+Use a SecureField when you want behavior similar to a TextField, but you don’t want the user’s text to be visible. Typically, you use this for entering passwords and other sensitive information.
+A SecureField uses a binding to a string value, and a closure that executes when the user commits their edits, such as by pressing the Return key. The field updates the bound string on every keystroke or other edit, so you can read its value at any time from another control, such as a Done button.
+The following example shows a SecureField bound to the string password. If the user commits their edit in the secure field, the onCommit closure sends the password string to a handleLogin() method.
+@State private var username: String = ""
+@State private var password: String = ""
+
+
+var body: some View {
+    TextField(
+        "User name (email address)",
+        text: $username)
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
+        .border(Color(UIColor.separator))
+    SecureField(
+        "Password",
+        text: $password
+    ) {
+        handleLogin(username: username, password: password)
+    }
+    .border(Color(UIColor.separator))
+}
+SecureField prompts
+A secure field may be provided an explicit prompt to guide users on what text they should provide. The context in which a secure field appears determines where and when a prompt and label may be used. For example, a form on macOS will always place the label alongside the leading edge of the field and will use a prompt, when available, as placeholder text within the field itself. In the same context on iOS, the prompt or label will be used as placeholder text depending on whether a prompt is provided.
+Form {
+    TextField(text: $username, prompt: Text("Required")) {
+        Text("Username")
+    }
+    SecureField(text: $username, prompt: Text("Required")) {
+        Text("Password")
+   }
+}
+Topics
+Creating a secure text field
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+init<S>(S, text: Binding<String>, prompt: Text?)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+init(text: Binding<String>, prompt: Text?, label: () -> Label)
+Creates a secure field with a prompt generated from a Text.
+Available when Label conforms to View.
+init(LocalizedStringKey, text: Binding<String>)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+init<S>(S, text: Binding<String>)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+Deprecated initializers
+init(LocalizedStringKey, text: Binding<String>, onCommit: () -> Void)
+Creates an instance.
+Available when Label is Text.
+Deprecated
+init<S>(S, text: Binding<String>, onCommit: () -> Void)
+Creates an instance.
+Available when Label is Text.
+Deprecated
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Getting text input
+struct TextField
+A control that displays an editable text interface.
+func textFieldStyle<S>(S) -> some View
+Sets the style for text fields within this view.
+struct TextEditor
+A view that can display and edit long-form text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SecureField
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

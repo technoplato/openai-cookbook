@@ -1,0 +1,125 @@
+https://developer.apple.com/documentation/swiftui/griditem/size-swift.enumSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Documentation
+Open Menu
+Enumeration
+GridItem.Size
+The size in the minor axis of one or more rows or columns in a grid layout.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+enum Size
+Overview
+Use a Size instance when you create a GridItem. The value tells a LazyHGrid how to size its rows, or a LazyVGrid how to size its columns.
+Topics
+Getting the sizes
+case adaptive(minimum: CGFloat, maximum: CGFloat)
+Multiple items in the space of a single flexible item.
+case fixed(CGFloat)
+A single item with the specified fixed size.
+case flexible(minimum: CGFloat, maximum: CGFloat)
+A single flexible item.
+Relationships
+Conforms To
+Sendable
+See Also
+Inspecting grid item properties
+var alignment: Alignment?
+The alignment to use when placing each view.
+var spacing: CGFloat?
+The spacing to the next item.
+var size: GridItem.Size
+The size of the item, which is the width of a column item or the height of a row item.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GridItem.Size
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

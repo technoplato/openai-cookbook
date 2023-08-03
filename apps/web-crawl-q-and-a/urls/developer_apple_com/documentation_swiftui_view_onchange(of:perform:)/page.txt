@@ -1,0 +1,209 @@
+https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func popoverTip<Content>(Content, arrowEdge: Edge) -> some View
+Beta
+Instance Methods
+M
+func searchable<V, S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S, suggestions: () -> V) -> some View
+M
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View
+M
+func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View
+Search modifiers
+M
+func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Input and events modifiers
+M
+func cornerRadius(CGFloat, antialiased: Bool) -> some View
+Deprecated
+M
+func animation(Animation?) -> some View
+Deprecated
+M
+func mask<Mask>(Mask) -> some View
+Deprecated
+M
+func accentColor(Color?) -> some View
+Deprecated
+Graphics and rendering modifiers
+M
+func coordinateSpace<T>(name: T) -> some View
+Deprecated
+M
+func edgesIgnoringSafeArea(Edge.Set) -> some View
+Deprecated
+Documentation
+Open Menu
+Swift
+Instance Method
+onChange(of:perform:)
+Adds an action to perform when the given value changes.
+iOS 14.0–17.0 Deprecated
+iPadOS 14.0–17.0 Deprecated
+macOS 11.0–14.0 Deprecated
+Mac Catalyst 14.0–17.0 Deprecated
+tvOS 14.0–17.0 Deprecated
+watchOS 7.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+func onChange<V>(
+    of value: V,
+    perform action: @escaping (V) -> Void
+) -> some View where V : Equatable
+Deprecated
+Use onChange(of:initial:_:) or onChange(of:initial:_:) instead. The trailing closure in each case takes either zero or two input parameters, compared to this method which takes one.
+Be aware that the replacements have slightly different behvavior. This modifier’s closure captures values that represent the state before the change. The new modifiers capture values that correspond to the new state. The new behavior makes it easier to perform updates that rely on values other than the one that caused the modifier’s closure to run.
+Discussion
+Use this modifier to trigger a side effect when a value changes, like the value associated with an Environment value or a Binding. For example, you can clear a cache when you notice that a scene moves to the background:
+struct MyScene: Scene {
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject private var cache = DataCache()
+
+
+    var body: some Scene {
+        WindowGroup {
+            MyRootView()
+        }
+        .onChange(of: scenePhase) { newScenePhase in
+            if newScenePhase == .background {
+                cache.empty()
+            }
+        }
+    }
+}
+The system may call the action closure on the main actor, so avoid long-running tasks in the closure. If you need to perform such tasks, detach an asynchronous background task:
+.onChange(of: scenePhase) { newScenePhase in
+    if newScenePhase == .background {
+        Task.detached(priority: .background) {
+            // ...
+        }
+    }
+}
+The system passes the new value into the closure. If you need the old value, capture it in the closure.
+See Also
+Input and events modifiers
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+Adds an action to perform when this view recognizes a tap gesture, and provides the action with the location of the interaction.
+Deprecated
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+Deprecated
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+Adds an action to perform when this view recognizes a long press gesture.
+Deprecated
+func onPasteCommand(of: [String], perform: ([NSItemProvider]) -> Void) -> some View
+Adds an action to perform in response to the system’s Paste command.
+Deprecated
+func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View
+Adds an action to perform in response to the system’s Paste command with items that you validate.
+Deprecated
+func onDrop(of: [String], delegate: DropDelegate) -> some View
+Defines the destination for a drag and drop operation with the same size and position as this view, with behavior controlled by the given delegate.
+Deprecated
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View
+Defines the destination for a drag and drop operation, using the same size and position as this view, handling dropped content with the given closure.
+Deprecated
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+Defines the destination for a drag and drop operation with the same size and position as this view, handling dropped content and the drop location with the given closure.
+Deprecated
+func focusable(Bool, onFocusChange: (Bool) -> Void) -> some View
+Specifies if the view is focusable and, if so, adds an action to perform when the view comes into focus.
+Deprecated
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onChange(of:perform:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

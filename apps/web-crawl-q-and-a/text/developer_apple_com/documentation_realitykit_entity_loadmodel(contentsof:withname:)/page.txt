@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/entity/loadmodel(contentsof:withname:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Establishing a Hierarchy
+P
+var isAnchored: Bool
+P
+var isActive: Bool
+P
+var isEnabledInHierarchy: Bool
+P
+var isEnabled: Bool
+Getting State
+T
+Entity.ID
+static func loadBodyTrackedAsync(contentsOf: URL, withName: String?) -> LoadRequest<BodyTrackedEntity>
+Loading a Flattened Model Entity
+M
+static func loadAnchorAsync(contentsOf: URL, withName: String?) -> LoadRequest<AnchorEntity>
+M
+static func loadAnchorAsync(named: String, in: Bundle?) -> LoadRequest<AnchorEntity>
+M
+static func loadAnchor(contentsOf: URL, withName: String?) throws -> AnchorEntity
+M
+static func loadAnchor(named: String, in: Bundle?) throws -> AnchorEntity
+Loading an Anchor Entity
+M
+static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<Entity>
+M
+static func loadAsync(named: String, in: Bundle?) -> LoadRequest<Entity>
+Documentation
+Open Menu
+Swift
+Type Method
+loadModel(contentsOf:withName:)
+Blocks your app while loading a model entity from a file URL.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+static func loadModel(
+    contentsOf url: URL,
+    withName resourceName: String? = nil
+) throws -> ModelEntity
+Parameters
+url
+A file URL representing the file to load.
+Return Value
+The root entity in the loaded file, cast as a ModelEntity.
+Discussion
+resourceName: A unique name to assign to the loaded resource, for use in network synchronization.
+See Also
+Related Documentation
+Loading Entities from a File
+Retrieve an entity from storage on disk using a synchronous or an asynchronous load operation.
+Loading a Flattened Model Entity
+static func loadModelAsync(named: String, in: Bundle?) -> LoadRequest<ModelEntity>
+Loads a model entity from a file in a bundle asynchronously.
+Deprecated
+static func loadModelAsync(contentsOf: URL, withName: String?) -> LoadRequest<ModelEntity>
+Loads a model entity from a file URL asynchronously.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is loadModel(contentsOf:withName:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

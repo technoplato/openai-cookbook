@@ -1,0 +1,192 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ScrollTransitionConfiguration
+Beta
+E
+ScrollTransitionPhase
+Beta
+M
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+M
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+Animating scroll transitions
+S
+ViewAlignedScrollTargetBehavior
+Beta
+S
+PagingScrollTargetBehavior
+S
+ScrollView
+Creating a scroll view
+Scroll views
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Documentation
+Open Menu
+Swift
+Structure
+ScrollViewReader
+A view that provides programmatic scrolling, by working with a proxy to scroll to known child views.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+@frozen
+struct ScrollViewReader<Content> where Content : View
+Overview
+The scroll view reader’s content view builder receives a ScrollViewProxy instance; you use the proxy’s scrollTo(_:anchor:) to perform scrolling.
+The following example creates a ScrollView containing 100 views that together display a color gradient. It also contains two buttons, one each at the top and bottom. The top button tells the ScrollViewProxy to scroll to the bottom button, and vice versa.
+@Namespace var topID
+@Namespace var bottomID
+
+
+var body: some View {
+    ScrollViewReader { proxy in
+        ScrollView {
+            Button("Scroll to Bottom") {
+                withAnimation {
+                    proxy.scrollTo(bottomID)
+                }
+            }
+            .id(topID)
+
+
+            VStack(spacing: 0) {
+                ForEach(0..<100) { i in
+                    color(fraction: Double(i) / 100)
+                        .frame(height: 32)
+                }
+            }
+
+
+            Button("Top") {
+                withAnimation {
+                    proxy.scrollTo(topID)
+                }
+            }
+            .id(bottomID)
+        }
+    }
+}
+
+
+func color(fraction: Double) -> Color {
+    Color(red: fraction, green: 1 - fraction, blue: 0.5)
+}
+Important
+You may not use the ScrollViewProxy during execution of the content view builder; doing so results in a runtime error. Instead, only actions created within content can call the proxy, such as gesture handlers or a view’s onChange(of:perform:) method.
+Topics
+Creating a scroll view reader
+init(content: (ScrollViewProxy) -> Content)
+Creates an instance that can perform programmatic scrolling of its child scroll views.
+Configuring a scroll view reader
+var content: (ScrollViewProxy) -> Content
+The view builder that creates the reader’s content.
+Relationships
+Conforms To
+Sendable
+View
+See Also
+Creating a scroll view
+struct ScrollView
+A scrollable view.
+struct ScrollViewProxy
+A proxy value that supports programmatic scrolling of the scrollable views within a view hierarchy.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ScrollViewReader
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

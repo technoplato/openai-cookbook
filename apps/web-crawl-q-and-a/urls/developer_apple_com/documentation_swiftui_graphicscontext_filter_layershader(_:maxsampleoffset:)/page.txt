@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/filter/layershader(_:maxsampleoffset:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func foregroundStyle<S1, S2>(S1, S2) -> some View
+M
+func foregroundStyle<S>(S) -> some View
+M
+func border<S>(S, width: CGFloat) -> some View
+Styling content
+S
+Color
+M
+func tint(Color?) -> some View
+M
+func tint<S>(S?) -> some View
+M
+static func distortionShader(Shader, maxSampleOffset: CGSize) -> GraphicsContext.Filter
+Beta
+M
+static func colorShader(Shader) -> GraphicsContext.Filter
+Beta
+Using a custom Metal shader
+M
+static func projectionTransform(ProjectionTransform) -> GraphicsContext.Filter
+Adding a transformation
+M
+static func alphaThreshold(min: Double, max: Double, color: Color) -> GraphicsContext.Filter
+P
+static var luminanceToAlpha: GraphicsContext.Filter
+Adjusting opacity
+Documentation
+Open Menu
+Swift
+Type Method
+layerShader(_:maxSampleOffset:)
+Returns a filter that applies shader to the contents of the source layer.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+static func layerShader(
+    _ shader: Shader,
+    maxSampleOffset: CGSize
+) -> GraphicsContext.Filter
+Parameters
+shader
+The shader to apply as a layer effect.
+maxSampleOffset
+If the shader function samples from the layer at locations not equal to the destination position, this value must specify the maximum sampling distance in each axis, for all source pixels.
+Return Value
+A filter applies the shader as a layer effect.
+Discussion
+For a shader function to act as a layer effect it must have a function signature matching:
+[[ stitchable ]] half4 name(float2 position,
+  SwiftUI::Layer layer, args...)
+where position is the user-space coordinates of the destination pixel applied to the shader, and layer is a rasterized subregion of the source layer. args... should be compatible with the uniform arguments bound to shader.
+The SwiftUI::Layer type is defined in the <SwiftUI/SwiftUI.h> header file. It exports a single sample() function that returns a linearly-filtered pixel value from a position in the source content, as a premultiplied RGBA pixel value:
+namespace SwiftUI {
+  struct Layer {
+    half4 sample(float2 position) const;
+  };
+};
+The function should return the color mapping to the destination pixel, typically by sampling one or more pixels from layer at location(s) derived from position and them applying some kind of transformation to produce a new color.
+See Also
+Using a custom Metal shader
+static func colorShader(Shader) -> GraphicsContext.Filter
+Returns a filter that applies shader to the color of each source pixel.
+Beta
+static func distortionShader(Shader, maxSampleOffset: CGSize) -> GraphicsContext.Filter
+Returns a filter that applies shader as a geometric distortion effect on the location of each pixel.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is layerShader(_:maxSampleOffset:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,260 @@
+https://developer.apple.com/documentation/swiftui/view/musicsubscriptionoffer(ispresented:options:onloadcompletion:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func subscriptionStoreControlBackground(SubscriptionStoreControlBackground) -> some View
+Beta
+M
+func subscriptionStoreSignInAction((() -> ())?) -> some View
+Beta
+M
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle, some ShapeStyle) -> some View
+Beta
+M
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle) -> some View
+Beta
+M
+func subscriptionStorePolicyDestination(url: URL, for: SubscriptionStorePolicyKind) -> some View
+Beta
+M
+func subscriptionStorePolicyDestination(for: SubscriptionStorePolicyKind, destination: () -> some View) -> some View
+Beta
+M
+func subscriptionStorePickerItemBackground(some ShapeStyle) -> some View
+func subscriptionStatusTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<[Product.SubscriptionInfo.Status]>) async -> ()) -> some View
+func storeProductsTask(for: some Collection<String> & Equatable & Sendable, priority: TaskPriority, action: (Product.CollectionTaskState) async -> ()) -> some View
+func storeProductTask(for: Product.ID, priority: TaskPriority, action: (Product.TaskState) async -> ()) -> some View
+func onInAppPurchaseCompletion(perform: ((Product, Result<Product.PurchaseResult, Error>) async -> ())?) -> some View
+func currentEntitlementTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<VerificationResult<Transaction>?>) async -> ()) -> some View
+func musicSubscriptionOffer(isPresented: Binding<Bool>, options: MusicSubscriptionOffer.Options, onLoadCompletion: ((Error)?) -> Void) -> some View
+M
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+M
+func refundRequestSheet(for: Transaction.ID, isPresented: Binding<Bool>, onDismiss: ((Result<Transaction.RefundRequestStatus, Transaction.RefundRequestError>) -> ())?) -> some View
+M
+func manageSubscriptionsSheet(isPresented: Binding<Bool>) -> some View
+M
+func appStoreOverlay(isPresented: Binding<Bool>, configuration: () -> SKOverlay.Configuration) -> some View
+Interacting with the App Store and Apple Music
+P
+var isActivityFullscreen: Bool
+M
+func activityBackgroundTint(Color?) -> some View
+M
+func activitySystemActionForegroundColor(Color?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+musicSubscriptionOffer(isPresented:options:onLoadCompletion:)
+Initiates the process of presenting a sheet with subscription offers for Apple Music when the isPresented binding is true.
+MusicKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+func musicSubscriptionOffer(
+    isPresented: Binding<Bool>,
+    options: MusicSubscriptionOffer.Options = .default,
+    onLoadCompletion: @escaping ((Error)?) -> Void = { _ in }
+) -> some View
+Parameters
+isPresented
+A binding to a Boolean value that you can set to true to show a sheet with subscription offers for Apple Music.
+options
+Options to use for loading the subscription offer for Apple Music.
+onLoadCompletion
+The function to call upon completing the initial loading process for this subscription offer. The subscription offer UI becomes visible when it calls this function with the error argument as nil. If there is an error in the loading process, the subscription offer calls this function with a non-nil error, and it resets the isPresented binding to false.
+Discussion
+The example below displays a simple button that the user can activate to begin presenting subscription offers for Apple Music. The action handler of this button initiates the presentation of those offers by setting the isShowingOffer variable to true.
+struct MusicSubscriptionOfferButton: View {
+    @State var isShowingOffer = false
+    var body: some View {
+        Button("Apple Music Subscription Offer") {
+            isShowingOffer = true
+        }
+        .musicSubscriptionOffer(isPresented: $isShowingOffer)
+    }
+}
+You can also configure the Apple Music subscription offer by creating an instance of MusicSubscriptionOffer.Options, setting relevant properties on it, and passing it to .musicSubscriptionOffer(…). For example, to present contextual offers that highlight a specific album, you can configure the subscription offer like the following:
+struct MusicSubscriptionOfferButton: View {
+    var album: Album
+    @State var isShowingOffer = false
+    @State var offerOptions = MusicSubscriptionOffer.Options(
+        affiliateToken: "<affiliate_token>", 
+        campaignToken: "<campaign_token>"
+    )
+
+
+    var body: some View {
+        Button("Apple Music Subscription Offer") {
+            offerOptions.itemID = album.id
+            isShowingOffer = true
+        }
+        .musicSubscriptionOffer(
+            isPresented: $isShowingOffer, 
+            options: offerOptions
+        )
+    }
+}
+The initial value of offerOptions includes relevant tokens (affiliate and campaign tokens) that allow you to receive compensation for referring new Apple Music subscribers. For more information, see this presentation of the Apple Services Performance Partners Program.
+You may also set isShowingOffer to false to programmatically dismiss the subscription offer (or to abort its loading process).
+See Also
+Interacting with the App Store and Apple Music
+func appStoreOverlay(isPresented: Binding<Bool>, configuration: () -> SKOverlay.Configuration) -> some View
+Presents a StoreKit overlay when a given condition is true.
+func manageSubscriptionsSheet(isPresented: Binding<Bool>) -> some View
+func refundRequestSheet(for: Transaction.ID, isPresented: Binding<Bool>, onDismiss: ((Result<Transaction.RefundRequestStatus, Transaction.RefundRequestError>) -> ())?) -> some View
+Display the refund request sheet for the given transaction.
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+Presents a sheet that enables users to redeem subscription offer codes that you configure in App Store Connect.
+func currentEntitlementTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<VerificationResult<Transaction>?>) async -> ()) -> some View
+Declares the view as dependent on the entitlement of an in-app purchase product for productID and returns a modified view.
+Beta
+func inAppPurchaseOptions(((Product) async -> Set<Product.PurchaseOption>)?) -> some View
+Add a function to call before initiating a purchase from an in-app store within view, providing a set of options for the purchase.
+Beta
+func manageSubscriptionsSheet(isPresented: Binding<Bool>, subscriptionGroupID: String) -> some View
+Beta
+func onInAppPurchaseCompletion(perform: ((Product, Result<Product.PurchaseResult, Error>) async -> ())?) -> some View
+Add an action to perform when a purchase initiated from an in-app store within this view completes.
+Beta
+func onInAppPurchaseStart(perform: ((Product) async -> ())?) -> some View
+Add an action to perform when a user triggers the purchase button on an in-app store within this view.
+Beta
+func productIconBorder() -> some View
+Adds a standard border to an icon used by an ProductView .
+Beta
+func productViewStyle(some ProductViewStyle) -> some View
+Sets the style for in-app store products within a view.
+Beta
+func storeButton(Visibility, for: StoreButtonKind...) -> some View
+Specifies the visibility of certain kinds of auxiliary buttons used by StoreView or SubscriptionStoreView instances within the view.
+Beta
+func storeProductTask(for: Product.ID, priority: TaskPriority, action: (Product.TaskState) async -> ()) -> some View
+Declares the view as dependent on the in-app purchase product for id and returns a modified view.
+Beta
+func storeProductsTask(for: some Collection<String> & Equatable & Sendable, priority: TaskPriority, action: (Product.CollectionTaskState) async -> ()) -> some View
+Declares the view as dependent on a collection of in-app purchase products and returns a modified view.
+Beta
+func subscriptionStatusTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<[Product.SubscriptionInfo.Status]>) async -> ()) -> some View
+Declares the view as dependent on the status of an auto-renewable subscription group for groupID and returns a modified view.
+Beta
+func subscriptionStoreButtonLabel(SubscriptionStoreButtonLabel) -> some View
+Configures in-app subscription store instances within a view to use a certain button label.
+Beta
+func subscriptionStoreControlIcon(icon: (Product, Product.SubscriptionInfo) -> some View) -> some View
+Set a view to use to decorate individual subscription options within a SubscriptionStoreView.
+Beta
+func subscriptionStoreControlStyle(some SubscriptionStoreControlStyle) -> some View
+Sets the control style for in-app subscription stores within a view.
+Beta
+func subscriptionStorePickerItemBackground(some ShapeStyle) -> some View
+Sets the background style for picker items of SubscriptionStoreView instances within this view.
+Beta
+func subscriptionStorePolicyDestination(for: SubscriptionStorePolicyKind, destination: () -> some View) -> some View
+Configures a view as the destination when someone chooses to view the corresponding policy in a SubscriptionStoreView within this view.
+Beta
+func subscriptionStorePolicyDestination(url: URL, for: SubscriptionStorePolicyKind) -> some View
+Configures a URL as the destination when someone chooses to view the corresponding policy in a SubscriptionStoreView within this view.
+Beta
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle) -> some View
+Sets the style for terms of service or privacy policy buttons created by SubscriptionStoreView within a view.
+Beta
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle, some ShapeStyle) -> some View
+Sets the style for terms of service and privacy policy buttons created by SubscriptionStoreView within a view.
+Beta
+func subscriptionStoreSignInAction((() -> ())?) -> some View
+Add an action to perform when someone triggers the sign in button on a SubscriptionStoreView within this view.
+Beta
+func subscriptionStoreControlBackground(SubscriptionStoreControlBackground) -> some View
+Set the control background style for SubscriptionStoreView instances within the view.
+Beta
+func subscriptionStoreControlBackground(some ShapeStyle) -> some View
+Set the control background style for SubscriptionStoreView instances within the view.
+Beta
+Current page is musicSubscriptionOffer(isPresented:options:onLoadCompletion:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

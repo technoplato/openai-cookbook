@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/section/init(_:content:)-90be4Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Iterating over list content
+M
+func collapsible(Bool) -> some View
+Deprecated
+M
+init(header: Parent, footer: Footer, content: () -> Content)
+Deprecated
+M
+init(footer: Footer, content: () -> Content)
+Deprecated
+M
+init(header: Parent, content: () -> Content)
+Deprecated
+Deprecated symbols
+M
+init<V, H>(isExpanded: Binding<Bool>, content: () -> Content, header: () -> H)
+M
+init(content: () -> Content)
+M
+init<V>(content: () -> Content)
+Creating a section
+S
+Section
+M
+func listStyle<S>(S) -> some View
+S
+List
+Displaying data in lists
+Creating a list
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:content:)
+Creates a section with the provided section content.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init(
+    _ titleKey: LocalizedStringKey,
+    @ViewBuilder content: () -> Content
+)
+Available when Parent is Text, Content conforms to View, and Footer is EmptyView.
+Parameters
+titleKey
+The key for the section’s localized title, which describes the contents of the section.
+content
+The section’s content.
+See Also
+Creating a section
+init<V>(content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+init(content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent is EmptyView, Content conforms to View, and Footer is EmptyView.
+init<S>(S, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent is Text, Content conforms to View, and Footer is EmptyView.
+init<V, S>(S, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+init<V>(LocalizedStringKey, content: () -> Content)
+Creates a section with the provided section content.
+Available when Parent conforms to TableRowContent, Content conforms to TableRowContent, and Footer conforms to TableRowContent.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

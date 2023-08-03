@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/view/widgetaccentable(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Controls and indicators
+Controlling the accented group
+M
+func widgetLabel<Label>(label: () -> Label) -> some View
+M
+func widgetLabel(LocalizedStringKey) -> some View
+M
+func widgetLabel<S>(S) -> some View
+Labeling a widget
+S
+EmptyWidgetConfiguration
+r
+P
+WidgetConfiguration
+S
+LimitedAvailabilityConfiguration
+Documentation
+Open Menu
+Swift
+Instance Method
+widgetAccentable(_:)
+Adds the view and all of its subviews to the accented group.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func widgetAccentable(_ accentable: Bool = true) -> some View
+Parameters
+accentable
+A Boolean value that indicates whether to add the view and its subviews to the accented group.
+Discussion
+When the system renders the widget using the WidgetKit/WidgetRenderingMode/accented mode, it divides the widget’s view hierarchy into two groups: the accented group and the default group. It then applies a different color to each group.
+When applying the colors, the system treats the widget’s views as if they were template images. It ignores the view’s color — rendering the new colors based on the view’s alpha channel.
+To control your view’s appearance, add the widgetAccentable(_:) modifier to part of your view’s hierarchy. If the accentable parameter is true, the system adds that view and all of its subviews to the accent group. It puts all other views in the default group.
+var body: some View {
+    VStack {
+        Text("MON")
+            .font(.caption)
+            .widgetAccentable()
+        Text("6")
+            .font(.title)
+        }
+    }
+}
+Important
+After you call widgetAccentable(true) on a view moving it into the accented group, calling widgetAccentable(false) on its subviews doesn’t move the subviews back into the default group.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is widgetAccentable(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

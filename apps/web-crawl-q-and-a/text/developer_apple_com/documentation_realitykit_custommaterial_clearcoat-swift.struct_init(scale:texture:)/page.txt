@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/clearcoat-swift.struct/init(scale:texture:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+E
+CustomMaterialError
+T
+CustomMaterial.Texture
+T
+CustomMaterial.Parameters
+Defining Material Parameter Types
+T
+CustomMaterial.FaceCulling
+E
+MaterialParameterTypes.FaceCulling
+M
+init(floatLiteral: Float)
+Creating a Clearcoat Object
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+S
+CustomMaterial.AmbientOcclusion
+Documentation
+Open Menu
+Swift
+Initializer
+init(scale:texture:)
+Creates a clearcoat object using a single value or a texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(
+    scale: Float = 1.0,
+    texture: CustomMaterial.Texture? = nil
+)
+Parameters
+scale
+The clearcoat value for the entire material.
+Discussion
+A clearcoat is a separate layer of transparent specular highlights used to simulate a clear coating, like on a car or the surface of lacquered objects. Use this initializer to create an object to specify the amount of clearcoat for a material using a single value for the entire material, a UV-mapped image to specify different values for different parts of the entity, or both.
+The copied values for scale and texture are available in the material’s surface shader function, regardless of the material’s lighting model; however RealityKit only renders a clearcoat when lightingModel is CustomMaterial.LightingModel.clearcoat and the material’s surface shader function calls params.surface().set_clearcoat().
+The following Metal code demonstrates how to retrieve the clearcoat scale and texture in a surface shader function and use them to calculate the final clearcoat value for rendering:
+    // Retrieve the base color tint from the CustomMaterial.
+    float clearcoatScale = params.material_constants().clearcoat_scale();
+
+
+    // Retrieve the entity's primary texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Models loaded from a USDZ of .reality file use texture coordinates
+    // with a flipped y-axis. This compensates for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample the clearcoat texture to get the value UV-mapped to this pixel.
+    auto tex = params.textures();
+    half clearcoat = tex.clearcoat().sample(textureSampler, uv).r;
+
+
+    // Multiply the tint and the sampled value from the texture, and assign it
+    // to the shader's base color property.
+    clearcoat *= clearcoatScale;
+    params.surface().set_clearcoat(clearcoat);
+texture: The clearcoat values as the texture of a UV-mapped image.
+See Also
+Creating a Clearcoat Object
+init(floatLiteral: Float)
+Creates a clearcoat object using a single value.
+init(PhysicallyBasedMaterial.Clearcoat)
+Creates a custom clearcoat object from a physically based material’s clearcoat property.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(scale:texture:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

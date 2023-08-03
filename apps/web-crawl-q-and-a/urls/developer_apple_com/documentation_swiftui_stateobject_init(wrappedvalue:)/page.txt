@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftui/stateobject/init(wrappedvalue:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View styles
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+Creating a state object
+S
+StateObject
+Monitoring data changes in your app
+#
+macro Observable()
+Beta
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Creating model data
+S
+Binding
+Documentation
+Open Menu
+Swift
+Initializer
+init(wrappedValue:)
+Creates a new state object with an initial wrapped value.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+init(wrappedValue thunk: @autoclosure @escaping () -> ObjectType)
+Parameters
+thunk
+An initial value for the state object.
+Discussion
+You typically don’t call this initializer directly. Instead, SwiftUI calls it for you when you declare a property with the @StateObject attribute in an App, Scene, or View and provide an initial value:
+struct MyView: View {
+    @StateObject private var model = DataModel()
+
+
+    // ...
+}
+SwiftUI creates only one instance of the state object for each container instance that you declare. In the above code, SwiftUI creates model only the first time it initializes a particular instance of MyView. On the other hand, each instance of MyView creates a distinct instance of the data model. For example, each of the views in the following VStack has its own model storage:
+var body: some View {
+    VStack {
+        MyView()
+        MyView()
+    }
+}
+Initialize using external data
+If the initial state of a state object depends on external data, you can call this initializer directly. However, use caution when doing this, because SwiftUI only initializes the object once during the lifetime of the view — even if you call the state object initializer more than once — which might result in unexpected behavior. For more information and an example, see StateObject.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(wrappedValue:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

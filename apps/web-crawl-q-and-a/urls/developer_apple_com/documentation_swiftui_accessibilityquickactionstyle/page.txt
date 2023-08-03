@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/accessibilityquickactionstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible navigation
+Accessible descriptions
+M
+func accessibilityRespondsToUserInteraction(Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Managing interactivity
+S
+AccessibilityFocusState
+M
+func accessibilityFocused<Value>(AccessibilityFocusState<Value>.Binding, equals: Value) -> some View
+M
+func accessibilityFocused(AccessibilityFocusState<Bool>.Binding) -> some View
+func accessibilityZoomAction((AccessibilityZoomGestureAction) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+func accessibilityDirectTouch(Bool, options: AccessibilityDirectTouchOptions) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityQuickAction<Style, Content>(style: Style, isActive: Binding<Bool>, content: () -> Content) -> some View
+M
+func accessibilityQuickAction<Style, Content>(style: Style, content: () -> Content) -> some View
+Offering Quick Actions to people
+E
+AccessibilityAdjustmentDirection
+S
+AccessibilityActionKind
+M
+func accessibilityScrollAction((Edge) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityAdjustableAction((AccessibilityAdjustmentDirection) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityAction<Label>(action: () -> Void, label: () -> Label) -> some View
+Documentation
+Open Menu
+Swift
+Protocol
+AccessibilityQuickActionStyle
+A type that describes the presentation style of an accessibility quick action.
+watchOS 9.0+
+protocol AccessibilityQuickActionStyle
+Topics
+Getting built-in menu styles
+static var outline: AccessibilityQuickActionOutlineStyle
+A presentation style that animates an outline around the view when the accessibility quick action is active.
+Available when Self is AccessibilityQuickActionOutlineStyle.
+static var prompt: AccessibilityQuickActionPromptStyle
+A presentation style that displays a prompt to the user when the accessibility quick action is active.
+Available when Self is AccessibilityQuickActionPromptStyle.
+Supporting types
+struct AccessibilityQuickActionOutlineStyle
+A presentation style that displays a prompt to the user when the accessibility quick action is active.
+struct AccessibilityQuickActionPromptStyle
+A presentation style that displays a prompt to the user when the accessibility quick action is active.
+Relationships
+Conforming Types
+AccessibilityQuickActionOutlineStyle
+AccessibilityQuickActionPromptStyle
+See Also
+Offering Quick Actions to people
+func accessibilityQuickAction<Style, Content>(style: Style, content: () -> Content) -> some View
+Adds a quick action to be shown by the system when active.
+func accessibilityQuickAction<Style, Content>(style: Style, isActive: Binding<Bool>, content: () -> Content) -> some View
+Adds a quick action to be shown by the system when active.
+Current page is AccessibilityQuickActionStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

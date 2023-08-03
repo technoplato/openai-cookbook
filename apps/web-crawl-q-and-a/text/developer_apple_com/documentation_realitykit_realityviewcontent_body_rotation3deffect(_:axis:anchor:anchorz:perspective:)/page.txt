@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/realitykit/realityviewcontent/body/rotation3deffect(_:axis:anchor:anchorz:perspective:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+T
+RealityView.DefaultPlaceholder
+T
+RealityView.Body
+T
+RealityView.AttachmentContent
+Type Aliases
+S
+RealityViewEntityCollection
+S
+RealityViewAttachmentContent
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> EventSubscription
+Working with content
+P
+var body: some View
+M
+init<A, P>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, placeholder: () -> P, attachments: () -> A)
+M
+init<P>(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?, placeholder: () -> P)
+M
+init<A>(make: (inout RealityViewContent, RealityViewAttachments) async -> Void, update: ((inout RealityViewContent, RealityViewAttachments) -> Void)?, attachments: () -> A)
+M
+init(make: (inout RealityViewContent) async -> Void, update: ((inout RealityViewContent) -> Void)?)
+Creating a reality view
+S
+RealityView
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+rotation3DEffect(_:axis:anchor:anchorZ:perspective:)
+Rotates this view’s rendered output in three dimensions around the given axis of rotation.
+RealityKit
+SwiftUI
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func rotation3DEffect(
+    _ angle: Angle,
+    axis: (x: CGFloat, y: CGFloat, z: CGFloat),
+    anchor: UnitPoint = .center,
+    anchorZ: CGFloat = 0,
+    perspective: CGFloat = 1
+) -> some View
+Parameters
+angle
+The angle at which to rotate the view.
+axis
+The x, y and z elements that specify the axis of rotation.
+anchor
+The location with a default of UnitPoint/center that defines a point in 3D space about which the rotation is anchored.
+anchorZ
+The location with a default of 0 that defines a point in 3D space about which the rotation is anchored.
+perspective
+The relative vanishing point with a default of 1 for this rotation.
+Discussion
+Use rotation3DEffect(_:axis:anchor:anchorZ:perspective:) to rotate the view in three dimensions around the given axis of rotation, and optionally, position the view at a custom display order and perspective.
+In the example below, the text is rotated 45˚ about the y axis, front-most (the default zIndex) and default perspective (1):
+Text("Rotation by passing an angle in degrees")
+    .rotation3DEffect(.degrees(45), axis: (x: 0.0, y: 1.0, z: 0.0))
+    .border(Color.gray)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is rotation3DEffect(_:axis:anchor:anchorZ:perspective:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/realitykit/anchorentitySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+M
+convenience init(AnchoringComponent.Target, trackingMode: AnchoringComponent.TrackingMode)
+Beta
+Initializers
+S
+SynchronizationComponent
+Synchronizing an Entity Among Peers
+The Transform Component
+Positioning Entities in Space
+convenience init(plane: AnchoringComponent.Target.Alignment, classification: AnchoringComponent.Target.Classification, minimumBounds: SIMD2<Float>)
+Convenience Entity
+Anchors
+Materials and shaders
+Models, shapes, and meshes
+Hello World
+Scene content
+USD Assets
+Object capture
+Documentation
+Open Menu
+Swift
+Class
+AnchorEntity
+An anchor that tethers entities to a scene.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+class AnchorEntity
+Overview
+Use anchor entities to control how RealityKit places virtual objects into your scene. AnchorEntity conforms to the HasAnchoring protocol, which gives it an AnchoringComponent instance.
+RealityKit places anchors based on the anchoring component’s target property. For example, you can configure an anchor entity to rest on a detected horizontal surface in an AR scene like a table or floor, and RealityKit automatically places that anchor once it detects an appropriate horizontal plane in the real world.
+For information on the different types of anchors available when using Reality Composer, see Selecting an Anchor for a Reality Composer Scene.
+Add anchor entities directly to your scene’s anchors collection, or anywhere else in the scene hierarchy by adding them to the children collection of another entity in your scene. Because AnchorEntity is a subclass of Entity, you can make an anchor entity a child of any other entity. RealityKit may move anchor entities as the scene updates, so the location and rotation of the anchor entity may change relative to its parent, even if your code never modifies its transform property.
+Some anchor entities may not show up in your scene at all if RealityKit fails to detect an appropriate place for them. For example, an anchor entity with an image target won’t show up in the scene until RealityKit detects the specified image in the real world.
+You can have multiple anchors in a RealityKit scene. For example, one anchor could place a toy car on a horizontal surface, like a table, and another could tie an informative text bubbles to an image in the same scene.
+Topics
+Creating an Anchor
+init()
+Creates a new anchor entity.
+init(AnchoringComponent.Target)
+convenience init(anchor: ARAnchor)
+Creates an anchor entity that uses an existing AR anchor.
+convenience init(plane: AnchoringComponent.Target.Alignment, classification: AnchoringComponent.Target.Classification, minimumBounds: SIMD2<Float>)
+Creates an anchor entity that targets a plane with the given characteristics.
+convenience init(raycastResult: ARRaycastResult)
+Creates an anchor entity using the information about a real-world surface discovered using a ray-cast query.
+convenience init(world: float4x4)
+Creates an anchor entity with a target fixed at the given position in the scene.
+convenience init(world: SIMD3<Float>)
+Creates an anchor entity with a target fixed at the given position in the scene.
+Configuring the Anchor
+var anchoring: AnchoringComponent
+struct AnchoringComponent
+A description of how virtual content can be anchored to the real world.
+var anchorIdentifier: UUID?
+The identifier of the AR anchor with which the anchor entity is associated, or nil if it isn’t currently anchored.
+func reanchor(AnchoringComponent.Target, preservingWorldTransform: Bool)
+Changes the entity’s anchoring, preserving either the world transform or the local transform.
+protocol HasAnchoring
+An interface that enables anchoring of virtual content to a real-world object in an AR scene.
+Positioning Entities in Space
+API Reference
+The Transform Component
+Manipulate the scale, rotation, and translation of the entity.
+Synchronizing an Entity Among Peers
+struct SynchronizationComponent
+A component that synchronizes an entity between processes and networked applications.
+Initializers
+convenience init(AnchoringComponent.Target, trackingMode: AnchoringComponent.TrackingMode)
+Beta
+Default Implementations
+API Reference
+HasAnchoring Implementations
+Relationships
+Inherits From
+Entity
+Conforms To
+CustomDebugStringConvertible
+Equatable
+EventSource
+HasAnchoring
+HasHierarchy
+HasSynchronization
+HasTransform
+Hashable
+Identifiable
+RealityCoordinateSpace
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AnchorEntity
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

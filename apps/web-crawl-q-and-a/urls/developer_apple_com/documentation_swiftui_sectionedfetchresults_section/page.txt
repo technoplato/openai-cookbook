@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/sectionedfetchresults/sectionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+View configuration
+P
+var sectionIdentifier: KeyPath<Result, SectionIdentifier>
+P
+var nsSortDescriptors: [NSSortDescriptor]
+P
+var sortDescriptors: [SortDescriptor<Result>]
+P
+var nsPredicate: NSPredicate?
+Configuring the associated sectioned fetch request
+S
+SectionedFetchResults
+S
+SectionedFetchRequest
+S
+FetchedResults
+Documentation
+Open Menu
+Swift
+Structure
+SectionedFetchResults.Section
+A collection of fetched results that share a specified identifier.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct Section
+Overview
+Examine a Section instance to find the entities that satisfy a SectionedFetchRequest predicate, and that have a particular property with the value stored in the section’s id parameter. You specify which property by setting the fetch request’s sectionIdentifier parameter during initialization, or by modifying the corresponding SectionedFetchResults instance’s sectionIdentifier property.
+Obtain specific sections by treating the fetch results as a collection. For example, consider the following property declaration that fetches Quake managed objects that the Loading and Displaying a Large Data Feed sample code project defines to store earthquake data:
+@SectionedFetchRequest<String, Quake>(
+    sectionIdentifier: \.day,
+    sortDescriptors: [SortDescriptor(\.time, order: .reverse)]
+)
+private var quakes: SectionedFetchResults<String, Quake>
+Get the first section using a subscript:
+let firstSection = quakes[0]
+Alternatively, you can loop over the sections to create a list of sections.
+ForEach(quakes) { section in
+    Text("Section \(section.id) has \(section.count) elements")
+}
+The sections also act as collections, which means you can use operations like the Section/count method in the example above.
+Topics
+Identifying the section
+let id: SectionIdentifier
+The value that all entities in the section share for a specified key path.
+Getting indices
+var startIndex: Int
+The index of the first entity in the section.
+var endIndex: Int
+The index that’s one greater than that of the last entity in the section.
+Getting results
+subscript(Int) -> Result
+Gets the entity at the specified index within the section.
+Relationships
+Conforms To
+BidirectionalCollection
+Collection
+Identifiable
+RandomAccessCollection
+Sendable
+Sequence
+See Also
+Configuring the associated sectioned fetch request
+var nsPredicate: NSPredicate?
+The request’s predicate.
+var sortDescriptors: [SortDescriptor<Result>]
+The request’s sort descriptors, accessed as value types.
+Available when SectionIdentifier conforms to Hashable and Result inherits NSManagedObject.
+var nsSortDescriptors: [NSSortDescriptor]
+The request’s sort descriptors, accessed as reference types.
+var sectionIdentifier: KeyPath<Result, SectionIdentifier>
+The key path that the system uses to group fetched results into sections.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SectionedFetchResults.Section
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

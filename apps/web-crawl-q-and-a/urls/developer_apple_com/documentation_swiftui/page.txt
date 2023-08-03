@@ -1,0 +1,299 @@
+https://developer.apple.com/documentation/swiftuiSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Views
+Persistent storage
+Preferences
+Environment values
+Model data
+Data and storage
+App extensions
+Documentation
+Open Menu
+Swift
+Framework
+SwiftUI
+Declare the user interface and behavior for your app on every platform.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+Overview
+SwiftUI provides views, controls, and layout structures for declaring your app’s user interface. The framework provides event handlers for delivering taps, gestures, and other types of input to your app, and tools to manage the flow of data from your app’s models down to the views and controls that users see and interact with.
+Define your app structure using the App protocol, and populate it with scenes that contain the views that make up your app’s user interface. Create your own custom views that conform to the View protocol, and compose them with SwiftUI views for displaying text, images, and custom shapes using stacks, lists, and more. Apply powerful modifiers to built-in views and your own views to customize their rendering and interactivity. Share code between apps on multiple platforms with views and controls that adapt to their context and presentation.
+You can integrate SwiftUI views with objects from the UIKit, AppKit, and WatchKit frameworks to take further advantage of platform-specific functionality. You can also customize accessibility support in SwiftUI, and localize your app’s interface for different languages, countries, or cultural regions.
+Featured samples
+Hello World
+Use windows, volumes, and immersive spaces to teach people about the Earth.
+View sample code
+Backyard Birds: Building an app with SwiftData and widgets
+Create an app with persistent data, interactive widgets, and an all new in-app purchase experience.
+View sample code
+Topics
+Essentials
+Introducing SwiftUI
+SwiftUI is a modern way to declare user interfaces for any Apple platform. Create beautiful, dynamic apps faster than ever before.
+Learning SwiftUI
+Discover tips and techniques for building multiplatform apps with this set of conceptual articles and sample code.
+Exploring SwiftUI Sample Apps
+Explore these SwiftUI samples using Swift Playgrounds on iPad or in Xcode to learn about defining user interfaces, responding to user interactions, and managing data flow.
+SwiftUI updates
+Learn about important changes to SwiftUI.
+App structure
+API Reference
+App organization
+Define the entry point and top-level structure of your app.
+API Reference
+Scenes
+Declare the user interface groupings that make up the parts of your app.
+API Reference
+Windows
+Display user interface content in a window or a collection of windows.
+API Reference
+Immersive spaces
+Display unbounded content in a person’s surroundings.
+API Reference
+Documents
+Enable people to open and manage documents.
+API Reference
+Navigation
+Enable people to move between different parts of your app’s view hierarchy within a scene.
+API Reference
+Modal presentations
+Present content in a separate view that offers focused interaction.
+API Reference
+Toolbars
+Provide immediate access to frequently used commands and controls.
+API Reference
+Search
+Enable people to search for text or other content within your app.
+API Reference
+App extensions
+Extend your app’s basic functionality to other parts of the system, like by adding a Widget.
+Data and storage
+API Reference
+Model data
+Manage the data that your app uses to drive its interface.
+API Reference
+Environment values
+Share data throughout a view hierarchy using the environment.
+API Reference
+Preferences
+Indicate configuration preferences from views to their container views.
+API Reference
+Persistent storage
+Store data for use across sessions of your app.
+Views
+API Reference
+View fundamentals
+Define the visual elements of your app using a hierarchy of views.
+API Reference
+View configuration
+Adjust the characteristics of views in a hierarchy.
+API Reference
+View styles
+Apply built-in and custom appearances and behaviors to different types of views.
+API Reference
+Animations
+Create smooth visual updates in response to state changes.
+API Reference
+Text input and output
+Display formatted text and get text input from the user.
+API Reference
+Images
+Add images and symbols to your app’s user interface.
+API Reference
+Controls and indicators
+Display values and get user selections.
+API Reference
+Menus and commands
+Provide space-efficient, context-dependent access to commands and controls.
+API Reference
+Shapes
+Trace and fill built-in and custom shapes with a color, gradient, or other pattern.
+API Reference
+Drawing and graphics
+Enhance your views with graphical effects and customized drawings.
+View layout
+API Reference
+Layout fundamentals
+Arrange views inside built-in layout containers like stacks and grids.
+API Reference
+Layout adjustments
+Make fine adjustments to alignment, spacing, padding, and other layout parameters.
+API Reference
+Custom layout
+Place views in custom arrangements and create animated transitions between layout types.
+API Reference
+Lists
+Display a structured, scrollable column of information.
+API Reference
+Tables
+Display selectable, sortable data arranged in rows and columns.
+API Reference
+View groupings
+Present views in different kinds of purpose-driven containers, like forms or control groups.
+API Reference
+Scroll views
+Enable people to scroll to content that doesn’t fit in the current display.
+Event handling
+API Reference
+Gestures
+Define interactions from taps, clicks, and swipes to fine-grained gestures.
+API Reference
+Input events
+Respond to input from a hardware device, like a keyboard or a Touch Bar.
+API Reference
+Clipboard
+Enable people to move or duplicate items by issuing Copy and Paste commands.
+API Reference
+Drag and drop
+Enable people to move or duplicate items by dragging them from one location to another.
+API Reference
+Focus
+Identify and control which visible object responds to user interaction.
+API Reference
+System events
+React to system events, like opening a URL.
+Accessibility
+API Reference
+Accessibility fundamentals
+Make your SwiftUI apps accessible to everyone, including people with disabilities.
+API Reference
+Accessible appearance
+Enhance the legibility of content in your app’s interface.
+API Reference
+Accessible controls
+Improve access to actions that your app can undertake.
+API Reference
+Accessible descriptions
+Describe interface elements to help people understand what they represent.
+API Reference
+Accessible navigation
+Enable users to navigate to specific user interface elements using rotors.
+Framework integration
+API Reference
+AppKit integration
+Add AppKit views to your SwiftUI app, or use SwiftUI views in your AppKit app.
+API Reference
+UIKit integration
+Add UIKit views to your SwiftUI app, or use SwiftUI views in your UIKit app.
+API Reference
+WatchKit integration
+Add WatchKit views to your SwiftUI app, or use SwiftUI views in your WatchKit app.
+API Reference
+Technology-specific views
+Use SwiftUI views that other Apple frameworks provide.
+Tool support
+API Reference
+Previews in Xcode
+Generate dynamic, interactive previews of your custom views.
+API Reference
+Xcode library customization
+Expose custom views and modifiers in the Xcode library.
+Articles
+Backyard Birds: Building an app with SwiftData and widgets
+Create an app with persistent data, interactive widgets, and an all new in-app purchase experience.
+Building a document-based app using SwiftData
+Code along with the WWDC presenter to transform an app with SwiftData.
+Controlling the timing and movements of your animations
+Build sophisticated animations that you control using phase and keyframe animators.
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Create custom focusable views with key-press handlers that accelerate keyboard input and support movement, and control focus programmatically.
+Managing model data in your app
+Create connections between your app’s data model and views.
+Migrating from the Observable Object protocol to the Observable macro
+Update your existing app to leverage the benefits of Observation in Swift.
+Monitoring data changes in your app
+Show changes to data in your app’s user interface by using observable objects.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SwiftUI
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

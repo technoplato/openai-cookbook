@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/navigationviewstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+Environment values
+Model data
+M
+func navigationViewStyle<S>(S) -> some View
+Deprecated
+Styling navigation views
+M
+init(content: () -> Content)
+Deprecated
+Creating a navigation view
+S
+NavigationView
+Deprecated
+Deprecated Types
+S
+VSplitView
+S
+HSplitView
+Documentation
+Open Menu
+Swift
+Protocol
+NavigationViewStyle
+A specification for the appearance and interaction of a navigation view.
+iOS 13.0–17.0 Deprecated
+iPadOS 13.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 13.0–17.0 Deprecated
+tvOS 13.0–17.0 Deprecated
+watchOS 7.0–10.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+protocol NavigationViewStyle
+Deprecated
+Replace a styled NavigationView with a NavigationStack or NavigationSplitView. For more information, see Migrating to new navigation types.
+Topics
+Getting built-in navigation view styles
+static var automatic: DefaultNavigationViewStyle
+The default navigation view style in the current context of the view being styled.
+Available when Self is DefaultNavigationViewStyle.
+static var columns: ColumnNavigationViewStyle
+A navigation view style represented by a series of views in columns.
+Available when Self is ColumnNavigationViewStyle.
+static var stack: StackNavigationViewStyle
+A navigation view style represented by a view stack that only shows a single top view at a time.
+Available when Self is StackNavigationViewStyle.
+Supporting types
+struct DefaultNavigationViewStyle
+The default navigation view style.
+struct ColumnNavigationViewStyle
+A navigation view style represented by a series of views in columns.
+struct StackNavigationViewStyle
+A navigation view style represented by a view stack that only shows a single top view at a time.
+struct DoubleColumnNavigationViewStyle
+A navigation view style represented by a primary view stack that navigates to a detail view.
+Relationships
+Conforming Types
+ColumnNavigationViewStyle
+DefaultNavigationViewStyle
+DoubleColumnNavigationViewStyle
+StackNavigationViewStyle
+See Also
+Styling navigation views
+func navigationViewStyle<S>(S) -> some View
+Sets the style for navigation views within this view.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is NavigationViewStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

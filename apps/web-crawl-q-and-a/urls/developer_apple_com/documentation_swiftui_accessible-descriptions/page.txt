@@ -1,0 +1,211 @@
+https://developer.apple.com/documentation/swiftui/accessible-descriptionsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+AXChartDescriptorRepresentable
+M
+func accessibilityChartDescriptor<R>(R) -> some View
+Describing charts
+S
+AccessibilityTextContentType
+E
+AccessibilityHeadingLevel
+M
+func accessibilityHeading(AccessibilityHeadingLevel) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+M
+func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+Documentation
+Open Menu
+Swift
+Accessible descriptions
+Describe interface elements to help people understand what they represent.
+Overview
+SwiftUI can often infer some information about your user interface elements, but you can use accessibility modifiers to provide even more information for users that need it.
+For design guidance, see Content descriptions in the Accessibility section of the Human Interface Guidelines.
+Topics
+Applying labels
+func accessibilityLabel<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityLabel(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityLabel(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a label to the view that describes its contents.
+func accessibilityInputLabels([LocalizedStringKey]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityInputLabels<S>([S]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityInputLabels([Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets alternate input labels with which users identify a view.
+func accessibilityLabeledPair<ID>(role: AccessibilityLabeledPairRole, id: ID, in: Namespace.ID) -> some View
+Pairs an accessibility element representing a label with the element for the matching content.
+enum AccessibilityLabeledPairRole
+The role of an accessibility element in a label / content pair.
+Describing values
+func accessibilityValue<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+func accessibilityValue(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+func accessibilityValue(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds a textual description of the value that the view contains.
+Describing content
+func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets an accessibility text content type.
+func accessibilityHeading(AccessibilityHeadingLevel) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Sets the accessibility level of this heading.
+enum AccessibilityHeadingLevel
+The hierarchy of a heading in relation other headings.
+struct AccessibilityTextContentType
+Textual context that assistive technologies can use to improve the presentation of spoken text.
+Describing charts
+func accessibilityChartDescriptor<R>(R) -> some View
+Adds a descriptor to a View that represents a chart to make the chart’s contents accessible to all users.
+protocol AXChartDescriptorRepresentable
+A type to generate an AXChartDescriptor object that you use to provide information about a chart and its data for an accessible experience in VoiceOver or other assistive technologies.
+Adding custom descriptions
+func accessibilityCustomContent(AccessibilityCustomContentKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(AccessibilityCustomContentKey, Text?, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent<V>(LocalizedStringKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(Text, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(LocalizedStringKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent<V>(AccessibilityCustomContentKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+func accessibilityCustomContent(LocalizedStringKey, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Add additional accessibility information to the view.
+struct AccessibilityCustomContentKey
+Key used to specify the identifier and label associated with an entry of additional accessibility information.
+Assigning traits to content
+func accessibilityAddTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Adds the given traits to the view.
+func accessibilityRemoveTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Removes the given traits from this view.
+struct AccessibilityTraits
+A set of accessibility traits that describe how an element behaves.
+Offering hints
+func accessibilityHint(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+func accessibilityHint(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+func accessibilityHint<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
+Communicates to the user what happens after performing the view’s action.
+Configuring VoiceOver
+func speechAdjustedPitch(Double) -> some View
+Raises or lowers the pitch of spoken text.
+func speechAlwaysIncludesPunctuation(Bool) -> some View
+Sets whether VoiceOver should always speak all punctuation in the text view.
+func speechAnnouncementsQueued(Bool) -> some View
+Controls whether to queue pending announcements behind existing speech rather than interrupting speech in progress.
+func speechSpellsOutCharacters(Bool) -> some View
+Sets whether VoiceOver should speak the contents of the text view character by character.
+See Also
+Accessibility
+API Reference
+Accessibility fundamentals
+Make your SwiftUI apps accessible to everyone, including people with disabilities.
+API Reference
+Accessible appearance
+Enhance the legibility of content in your app’s interface.
+API Reference
+Accessible controls
+Improve access to actions that your app can undertake.
+API Reference
+Accessible navigation
+Enable users to navigate to specific user interface elements using rotors.
+Current page is Accessible descriptions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

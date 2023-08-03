@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/swiftui/toolbarrole/editorSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Data and storage
+App extensions
+Search
+S
+OrnamentAttachmentAnchor
+Beta
+M
+func ornament<Content>(visibility: Visibility, attachmentAnchor: OrnamentAttachmentAnchor, contentAlignment: Alignment, ornament: () -> Content) -> some View
+Beta
+Creating an ornament
+S
+ToolbarTitleMenu
+P
+static var browser: ToolbarRole
+Behavior-specific roles
+S
+ToolbarRole
+M
+func toolbarRole(ToolbarRole) -> some View
+Specifying the role of toolbar content
+S
+ToolbarPlacement
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+Setting toolbar visibility
+Documentation
+Open Menu
+Swift
+Type Property
+editor
+The editor role.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+static var editor: ToolbarRole { get }
+Discussion
+Use this role for a toolbar that primarily displays controls geared towards editing document-like content. In iPadOS, this will leading align the navigation title, allow for toolbar items to occupy the center of the navigation bar, and provide a custom appearance for any back button present in the toolbar.
+See Also
+Behavior-specific roles
+static var browser: ToolbarRole
+The browser role.
+static var navigationStack: ToolbarRole
+The navigationStack role.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is editor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/metallic-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+S
+CustomMaterial.AmbientOcclusion
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+Using Ambient Occlusion
+S
+CustomMaterial.Opacity
+E
+CustomMaterial.Blending
+Specifying Metallic Reflections
+S
+CustomMaterial.Roughness
+P
+var roughness: CustomMaterial.Roughness
+Specifying Entity Roughness
+S
+CustomMaterial.BaseColor
+P
+var baseColor: CustomMaterial.BaseColor
+Specifying the Entity’s Base Color
+S
+CustomMaterial.GeometryModifier
+Documentation
+Open Menu
+Swift
+Instance Property
+metallic
+The reflectiveness of an entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var metallic: CustomMaterial.Metallic { get set }
+Discussion
+In physically based rendering, the metallic property represents the reflectiveness of an entity. Use this property to specify whether the entity displays metallic qualities and reflects the surrounding environment, or displays dielectric qualities and doesn’t reflect the environment. With custom materials, RealityKit doesn’t automatically use the values set on this property. To render a custom material using the metallic property, the material’s lightingModel must be CustomMaterial.LightingModel.lit or CustomMaterial.LightingModel.clearcoat and its surface shader must specify a roughness value for rendering by calling params.surface().set_roughness().
+The following Swift code shows how to use an image and a scale to specify roughness:
+if let metallicResource = try? TextureResource.load(named:"entity_metallic") {
+    let metallic = MaterialParameters.Texture(metallicResource)
+    material.metallic = PhysicallyBasedMaterial.Metallic(scale: 1.0, texture:metallic)
+}
+The following surface shader takes the scale and texture values from the metallic property, multiplies them together, and uses the result to specify the metallic value for rendering, which emulates the behavior of PhysicallyBasedMaterial.
+#include <metal_stdlib>
+#include <RealityKit/RealityKit.h>
+using namespace metal;
+
+
+// Use samplers to retrieve a color value from a texture based on // the
+entity's UV coordinates. Samplers can be reused with different textures.
+// Surface shader functions should define no more than eight samplers.
+constexpr sampler textureSampler(address::clamp_to_edge,
+filter::bicubic);
+
+
+[[visible]] void mySurfaceShader(realitykit::surface_parameters params)
+{
+    // Retrieve the metallic scale from the CustomMaterial.
+    float metallicScale = params.material_constants().metallic_scale();
+
+
+    // Retrieve the entity's texture coordinates.
+    float2 uv = params.geometry().uv0();
+
+
+    // Entities loaded from USDZ or .reality files have texture coordinates
+    // with a flipped y-axis. This adjusts for that.
+    uv.y = 1.0 - uv.y;
+
+
+    // Sample the metallic texture based on the UV coordinates.
+    auto tex = params.textures();
+    half metallic = tex.metallic().sample(textureSampler, uv).r;
+
+
+    // Multiply the tint and the sampled value from the texture,
+    // and assign the result to the shader's metallic property.
+    metallic *= metallicScale;
+    params.surface().set_metallic(metallic);
+}
+For more information on creating custom materials and writing shader functions, see Modifying RealityKit Rendering Using Custom Materials.
+See Also
+Specifying Metallic Reflections
+struct Metallic
+An object that defines an entity’s reflectiveness.
+Current page is metallic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

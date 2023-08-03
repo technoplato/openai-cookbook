@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/swiftui/tablerowcontent/contextmenu(menuitems:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+Input events
+func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> ModifiedContent<Self, _ContextMenuPreviewTableRowModifier<M, P>>
+func contextMenu<M>(menuItems: () -> M) -> ModifiedContent<Self, _ContextMenuTableRowModifier<M>>
+Adding a context menu to a row
+S
+ItemProviderTableRowModifier
+M
+func itemProvider((() -> NSItemProvider?)?) -> ModifiedContent<Self, ItemProviderTableRowModifier>
+M
+func onHover(perform: (Bool) -> Void) -> some TableRowContent<Self.TableRowValue>
+Beta
+M
+func dropDestination<T>(for: T.Type, action: ([T]) -> Void) -> some TableRowContent<Self.TableRowValue>
+Beta
+M
+func draggable<T>(() -> T) -> some TableRowContent<Self.TableRowValue>
+Beta
+Managing interaction
+TableRowValue
+Documentation
+Open Menu
+Swift
+Instance Method
+contextMenu(menuItems:)
+Adds a context menu to a table row.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+func contextMenu<M>(@ViewBuilder menuItems: () -> M) -> ModifiedContent<Self, _ContextMenuTableRowModifier<M>> where M : View
+Parameters
+menuItems
+A closure that produces the menu’s contents. You can deactivate the context menu by returning nothing from the closure.
+Return Value
+A row that can display a context menu.
+Discussion
+Use this modifier to add a context menu to a table row. Compose the menu by returning controls like Button, Toggle, and Picker from the menuItems closure. You can also use Menu to define submenus, or Section to group items.
+The following example adds a context menu to each row in a table that people can use to send an email to the person represented by that row:
+Table(of: Person.self) {
+    TableColumn("Given Name", value: \.givenName)
+    TableColumn("Family Name", value: \.familyName)
+} rows: {
+    ForEach(people) { person in
+        TableRow(person)
+            .contextMenu {
+                Button("Send Email...") { }
+            }
+    }
+}
+If you want to display a preview beside the context menu, use contextMenu(menuItems:preview:). If you want to display a context menu that’s based on the current selection, use contextMenu(forSelectionType:menu:primaryAction:). To add context menus to other kinds of views, use contextMenu(menuItems:).
+See Also
+Adding a context menu to a row
+func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> ModifiedContent<Self, _ContextMenuPreviewTableRowModifier<M, P>>
+Adds a context menu with a preview to a table row.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contextMenu(menuItems:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/inputtargetcomponent/inputtype/issubset(of:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Simulations
+S
+SpatialAudioComponent
+Beta
+S
+ChannelAudioComponent
+Beta
+S
+AudioMixGroupsComponent
+Beta
+S
+AmbientAudioComponent
+Beta
+Sound
+S
+ViewAttachmentComponent
+M
+func isStrictSuperset(of: Self) -> Bool
+M
+func isStrictSubset(of: Self) -> Bool
+M
+func isDisjoint(with: Self) -> Bool
+Instance Methods
+P
+var isEmpty: Bool
+Instance Properties
+M
+init(arrayLiteral: Self.Element...)
+M
+init<S>(S)
+Documentation
+Open Menu
+Swift
+Instance Method
+isSubset(of:)
+Returns a Boolean value that indicates whether the set is a subset of another set.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func isSubset(of other: Self) -> Bool
+Parameters
+other
+A set of the same type as the current set.
+Return Value
+true if the set is a subset of other; otherwise, false.
+Discussion
+Set A is a subset of another set B if every member of A is also a member of B.
+let employees: Set = ["Alicia", "Bethany", "Chris", "Diana", "Eric"]
+let attendees: Set = ["Alicia", "Bethany", "Diana"]
+print(attendees.isSubset(of: employees))
+// Prints "true"
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is isSubset(of:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

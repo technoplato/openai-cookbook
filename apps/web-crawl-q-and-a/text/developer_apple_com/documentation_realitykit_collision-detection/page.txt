@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/realitykit/collision-detectionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a Game with Reality Composer
+SwiftStrike: Creating a Game with RealityKit
+Happy Beam
+Games
+Runtime Events
+Content synchronization
+Postprocessing effects
+Body and face tracking
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Documentation
+Open Menu
+Swift
+Collision detection
+Determine when entities collide with each other or the environment.
+Overview
+RealityKit can automatically detect when two objects participating in the physics system collide with each other if both entities have a CollisionComponent with at least one collision shape. Because doing collision detection with complex 3D models can be computationally expensive, collision shapes are simpler, invisible shapes RealityKit uses to detect collision, as well as doing hit testing, ray casts, and convex shape casts.
+Entities can participate in the scene simulation in two different modes: as a rigid body or as a trigger. A rigid body fully participates in the collision simulation. It affects the velocity and direction of other rigid body entities with which it collides. If configured with a rigid body mode of PhysicsBodyMode.dynamic, it’s own velocity and direction can be affected by other rigid body entities. A trigger entity doesn’t have any impact on the other rigid bodies in the scene, but can trigger code or Reality Composer behaviors when another rigid body enity overlaps it.
+Turn an entity into a trigger by adding a CollisionComponent to it and setting its mode to CollisionComponent.Mode.trigger.
+Turn an entity into a rigd body by adding a PhysicsBodyComponent to the entity in addition to a CollisionComponent. The PhysicsBodyComponent defines the physical properties of the entity, such as its mass and collision shape.
+Note
+If an entity has a PhysicsBodyComponent, the collision component’s mode is ignored. An entity can be a rigid body, or a trigger, but not both at the same time.
+Topics
+Collision shapes
+Controlling Entity Collisions in RealityKit
+Create collision filters to control which objects collide.
+struct CollisionComponent
+A component that gives an entity the ability to collide with other entities that also have collision components.
+struct CollisionGroup
+A bitmask used to define the collision group to which an entity belongs.
+struct CollisionFilter
+A set of masks that determine whether entities can collide during simulations.
+class TriggerVolume
+An invisible 3D shape that detects when objects enter or exit a given region of space.
+Collision-related notifications
+enum CollisionEvents
+Events associated with collisions.
+Ray casting
+struct CollisionCastHit
+A hit result of a collision cast.
+enum CollisionCastQueryType
+The kinds of ray and convex shape cast queries that you can make.
+Entity Compliance
+protocol HasCollision
+An interface used for ray casting and collision detection.
+See Also
+Runtime modifications
+API Reference
+Transforms: Position, Orientation, and Scale
+Control the placement of virtual objects.
+API Reference
+Body and face tracking
+Track the movement and facial expressions of people in an AR scene
+API Reference
+Physics simulation
+Simulate physical interactions between entities.
+API Reference
+Postprocessing effects
+Create special rendering effects for your RealityKit scenes.
+API Reference
+Content synchronization
+Synchronize the contents of entities locally or across the network.
+API Reference
+Runtime Events
+Execute code when specific things happen in your RealityKit scene.
+Current page is Collision detection
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

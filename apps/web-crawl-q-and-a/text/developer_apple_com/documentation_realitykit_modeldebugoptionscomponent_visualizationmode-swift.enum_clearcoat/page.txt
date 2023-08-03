@@ -1,0 +1,182 @@
+https://developer.apple.com/documentation/realitykit/modeldebugoptionscomponent/visualizationmode-swift.enum/clearcoatSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ModelSortGroupComponent
+Beta
+Component Implementations
+Default Implementations
+M
+static func registerComponent()
+Registering the Component
+RawRepresentable Implementations
+Equatable Implementations
+E
+case emissive
+E
+case specular
+E
+case ambientOcclusion
+E
+case metallic
+E
+case roughness
+E
+case finalAlpha
+E
+case finalColor
+E
+case textureCoordinates
+Documentation
+Open Menu
+Swift
+Case
+ModelDebugOptionsComponent.VisualizationMode.clearcoat
+A mode that displays the clearcoat channel of a material as the surface color.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+case clearcoat
+Discussion
+Add a ModelDebugOptionsComponent with a visualization mode of clearcoat to an entity to tell RealityKit to draw the entity’s clearcoat values as its surface color. A clearcoat is a way to render objects that appear to have a transparent coating or veneer, such as the surface of a car with a coat of wax or items shrinkwrapped in clear plastic. RealityKit draws clearcoat values as a grayscale value from black (0.0) to white (1.0), with black representing parts of the entity that don’t use clearcoat.
+RealityKit calculates clearcoat for entities with a SimpleMaterial and for entities imported from a USDZ file. For other entities, this option has no effect.
+Here’s how to enable roughness visualization for an entity:
+    if let television = anchor.findEntity(named: "Television")
+        as? ModelEntity {
+    let component = ModelDebugOptionsComponent(visualizationMode: .clearcoat)
+    television.modelDebugOptions = component
+} ```
+
+
+![A screenshot showing two virtual TVs from an AR app. The TV on the
+left uses no debug visualizations, and renders as an old-fashioned
+television displaying a multicolored test pattern. It is drawn with
+shadows and highlights to appear as realistic as possible. The TV on
+the right is drawn in black, except for the screen, which is drawn
+in shades of gray, which is a representation of the TV’s clearcoat
+values.
+](ModelDebugOptionsComponent-VisualizationMode-swift-enum-clearcoat-1)
+See Also
+Visualization Modes
+case none
+A mode that doesn’t display a visualization.
+case normal
+A mode that displays the normal vectors as a color.
+case tangent
+A mode that displays the surface tangent vectors as a color.
+case bitangent
+A mode that displays the surface bitangent vectors as a color.
+case baseColor
+A mode that displays the entity’s base color with no lighting or material properties applied.
+case textureCoordinates
+A mode that displays the texture coordinates as a color.
+case finalColor
+A mode that displays the entity’s calculated color, ignoring transparency.
+case finalAlpha
+A mode that displays the entity’s calculated transparency as its surface color.
+case roughness
+A mode that displays the shininess of a material as the surface color.
+case metallic
+A mode that displays the reflectiveness of an entity as its surface color.
+case ambientOcclusion
+A mode that displays the calculated ambient occlusion value as the surface color.
+case specular
+A mode that displays en entitiy’s shininess as its surface color.
+case emissive
+A mode that displays the emissive channel of a material as the surface color.
+case clearcoatRoughness
+A mode that displays the clearcoat roughness channel of a material as the surface color.
+case lightingDiffuse
+A mode that displays the intensity of indirect light hitting the entity as its surface color.
+case lightingSpecular
+A mode that displays the intensity of direct light hitting the entity as its surface color.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModelDebugOptionsComponent.VisualizationMode.clearcoat
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

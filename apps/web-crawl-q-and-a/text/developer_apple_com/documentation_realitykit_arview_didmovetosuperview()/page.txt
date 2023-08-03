@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/realitykit/arview/didmovetosuperview()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+RealityView
+Beta
+S
+Model3D
+Beta
+UIGestureRecognizerDelegate Implementations
+ARSessionProviding Implementations
+Default Implementations
+S
+ARView.DebugOptions
+P
+var debugOptions: ARView.DebugOptions
+P
+var contentScaleFactor: CGFloat
+P
+var frame: NSRect
+Managing the View
+M
+func scrollWheel(with: NSEvent)
+M
+func otherMouseUp(with: NSEvent)
+M
+func otherMouseDragged(with: NSEvent)
+M
+func otherMouseDown(with: NSEvent)
+M
+func rightMouseUp(with: NSEvent)
+Documentation
+Open Menu
+Swift
+Instance Method
+didMoveToSuperview()
+Tells the view that its superview changed.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+override dynamic func didMoveToSuperview()
+See Also
+Managing the View
+var frame: NSRect
+The frame rectangle, which describes the view’s location and size in the coordinate system of the view’s superview.
+var contentScaleFactor: CGFloat
+The scale factor of the content in the view.
+func didMoveToWindow()
+Tells the view that its window property is set to a new value.
+func layoutSubviews()
+Lays out subviews.
+func layout()
+class var layerClass: AnyClass
+The class used to create the layer for view instances.
+func makeBackingLayer() -> CALayer
+Creates the view’s backing layer.
+func viewDidChangeBackingProperties()
+Tells the view when its backing store properties change.
+func viewDidMoveToSuperview()
+Tells the view that it has a new superview or that the view’s superview has been removed.
+struct ModelSortGroup
+An object that defines a model sort group. Can only be configured on initialization. Once it is created, it cannot be modified.
+Beta
+struct Model3DPlaceholderContent
+A container view that presents either a ResolvedModel3D or a placeholder view.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is didMoveToSuperview()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

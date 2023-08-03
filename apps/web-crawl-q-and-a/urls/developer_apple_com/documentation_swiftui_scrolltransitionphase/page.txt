@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/scrolltransitionphaseSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var isScrollEnabled: Bool
+M
+func scrollDisabled(Bool) -> some View
+Disabling scrolling
+M
+func scrollClipDisabled(Bool) -> some View
+Beta
+M
+func scrollContentBackground(Visibility) -> some View
+Managing content visibility
+S
+ScrollIndicatorVisibility
+M
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+M
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+Animating scroll transitions
+S
+ViewAlignedScrollTargetBehavior
+Beta
+S
+PagingScrollTargetBehavior
+Beta
+S
+ScrollTargetBehaviorContext
+Beta
+r
+P
+ScrollTargetBehavior
+Beta
+S
+ScrollTarget
+Beta
+Documentation
+Open Menu
+Swift
+Enumeration
+ScrollTransitionPhase
+The phases that a view transitions between when it scrolls among other views.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+@frozen
+enum ScrollTransitionPhase
+Overview
+When a view with a scroll transition modifier applied is approaching the visible region of the containing scroll view or other container, the effect will first be applied with the topLeading or bottomTrailing phase (depending on which edge the view is approaching), then will be moved to the identity phase as the view moves into the visible area. The timing and behavior that determines when a view is visible within the container is controlled by the configuration that is provided to the scrollTransition modifier.
+In the identity phase, scroll transitions should generally not make any visual change to the view they are applied to, since the transition’s view modifications in the identity phase will be applied to the view as long as it is visible. In the topLeading and bottomTrailing phases, transitions should apply a change that will be animated to create the transition.
+Topics
+Getting the phase
+case identity
+The scroll transition is being applied to a view that is in the visible area.
+case topLeading
+The scroll transition is being applied to a view that is about to move into the visible area at the top edge of a vertical scroll view, or the leading edge of a horizont scroll view.
+case bottomTrailing
+The scroll transition is being applied to a view that is about to move into the visible area at the bottom edge of a vertical scroll view, or the trailing edge of a horizontal scroll view.
+Accessing the phase state
+var isIdentity: Bool
+var value: Double
+A phase-derived value that can be used to scale or otherwise modify effects.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Animating scroll transitions
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Applies the given transition, animating between the phases of the transition as this view appears and disappears within the visible region of the containing scroll view, or other container specified using the coordinateSpace parameter.
+Beta
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Applies the given transition, animating between the phases of the transition as this view appears and disappears within the visible region of the containing scroll view, or other container specified using the coordinateSpace parameter.
+Beta
+struct ScrollTransitionConfiguration
+The configuration of a scroll transition that controls how a transition is applied as a view is scrolled through the visible region of a containing scroll view or other container.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ScrollTransitionPhase
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

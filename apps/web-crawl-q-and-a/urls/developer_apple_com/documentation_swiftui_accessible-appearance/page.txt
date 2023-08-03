@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/accessible-appearanceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Framework integration
+Accessible navigation
+Accessible descriptions
+Accessible controls
+P
+var accessibilityReduceMotion: Bool
+P
+var accessibilityPlayAnimatedImages: Bool
+Beta
+P
+var accessibilityDimFlashingLights: Bool
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+Input events
+Gestures
+Documentation
+Open Menu
+Swift
+Accessible appearance
+Enhance the legibility of content in your app’s interface.
+Overview
+Make content easier for people to see by making it larger, giving it greater contrast, or reducing the amount of distracting motion.
+For design guidance, see Text display in the Accessibility section of the Human Interface Guidelines.
+Topics
+Managing color
+func accessibilityIgnoresInvertColors(Bool) -> some View
+Sets whether this view should ignore the system Smart Invert setting.
+var accessibilityInvertColors: Bool
+Whether the system preference for Invert Colors is enabled.
+var accessibilityDifferentiateWithoutColor: Bool
+Whether the system preference for Differentiate without Color is enabled.
+Enlarging content
+func accessibilityShowsLargeContentViewer() -> some View
+Adds a default large content view to be shown by the large content viewer.
+func accessibilityShowsLargeContentViewer<V>(() -> V) -> some View
+Adds a custom large content view to be shown by the large content viewer.
+var accessibilityLargeContentViewerEnabled: Bool
+Whether the Large Content Viewer is enabled.
+Improving legibility
+var accessibilityShowButtonShapes: Bool
+Whether the system preference for Show Button Shapes is enabled.
+var accessibilityReduceTransparency: Bool
+Whether the system preference for Reduce Transparency is enabled.
+var legibilityWeight: LegibilityWeight?
+The font weight to apply to text.
+enum LegibilityWeight
+The Accessibility Bold Text user setting options.
+Minimizing motion
+var accessibilityDimFlashingLights: Bool
+Whether the setting to reduce flashing or strobing lights in video content is on. This setting can also be used to determine if UI in playback controls should be shown to indicate upcoming content that includes flashing or strobing lights.
+Beta
+var accessibilityPlayAnimatedImages: Bool
+Whether the setting for playing animations in an animated image is on. When this value is false, any presented image that contains animation should not play automatically.
+Beta
+var accessibilityReduceMotion: Bool
+Whether the system preference for Reduce Motion is enabled.
+See Also
+Accessibility
+API Reference
+Accessibility fundamentals
+Make your SwiftUI apps accessible to everyone, including people with disabilities.
+API Reference
+Accessible controls
+Improve access to actions that your app can undertake.
+API Reference
+Accessible descriptions
+Describe interface elements to help people understand what they represent.
+API Reference
+Accessible navigation
+Enable users to navigate to specific user interface elements using rotors.
+Current page is Accessible appearance
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

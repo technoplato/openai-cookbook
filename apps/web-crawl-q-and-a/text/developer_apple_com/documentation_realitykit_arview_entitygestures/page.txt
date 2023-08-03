@@ -1,0 +1,240 @@
+https://developer.apple.com/documentation/realitykit/arview/entitygesturesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func remove(Self.Element) -> Self.Element?
+M
+func update(with: Self.Element) -> Self.Element?
+M
+func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)
+Adding and Removing Options
+M
+func contains(Self) -> Bool
+P
+var isEmpty: Bool
+Testing for Membership
+M
+func installGestures(ARView.EntityGestures, for: HasCollision) -> [EntityGestureRecognizer]
+Adding Gesture Recognizers to Entities
+M
+func trackedRaycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment, updateHandler: ([ARRaycastResult]) -> Void) -> ARTrackedRaycast?
+M
+func raycast(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> [ARRaycastResult]
+M
+func makeRaycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?
+M
+func hitTest(CGPoint, types: ARHitTestResult.ResultType) -> [ARHitTestResult]
+M
+func hitTest(CGPoint, query: CollisionCastQueryType, mask: CollisionGroup) -> [CollisionCastHit]
+M
+func entities(at: CGPoint) -> [Entity]
+Documentation
+Open Menu
+Swift
+Structure
+ARView.EntityGestures
+The set of possible entity gesture recognizers.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 14.0+
+struct EntityGestures
+Topics
+Recognizing Gesture Types
+static let all: ARView.EntityGestures
+All gesture types.
+static let rotation: ARView.EntityGestures
+A multitouch gesture used to rotate an entity.
+static let scale: ARView.EntityGestures
+A pinch gesture used to scale an entity.
+static let translation: ARView.EntityGestures
+A single touch pan gesture used to move entities along their anchoring plane.
+Creating Gesture Option Sets
+init()
+Creates an empty option set.
+Available when RawValue conforms to FixedWidthInteger.
+init<S>(S)
+Creates a new set from a finite sequence of items.
+init(arrayLiteral: Self.Element...)
+Creates a set containing the elements of the given array literal.
+Available when ArrayLiteralElement is Self.Element.
+typealias Element
+The element type of the option set.
+typealias ArrayLiteralElement
+The type of the elements of an array literal.
+init(rawValue: Int)
+Creates a new option set from the given raw value.
+let rawValue: Int
+The corresponding value of the raw type.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+Testing for Membership
+var isEmpty: Bool
+A Boolean value that indicates whether the set has no elements.
+func contains(Self) -> Bool
+Returns a Boolean value that indicates whether a given element is a member of the option set.
+Available when Self is Self.Element.
+Adding and Removing Options
+func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)
+Adds the given element to the option set if it is not already a member.
+Available when Self is Self.Element.
+func update(with: Self.Element) -> Self.Element?
+Inserts the given element into the set.
+Available when Self is Self.Element.
+func remove(Self.Element) -> Self.Element?
+Removes the given element and all elements subsumed by it.
+Available when Self is Self.Element.
+func subtract(Self)
+Removes the elements of the given set from this set.
+func subtracting(Self) -> Self
+Returns a new set containing the elements of this set that do not occur in the given set.
+Combining Options
+func union(Self) -> Self
+Returns a new option set of the elements contained in this set, in the given set, or in both.
+func formUnion(Self)
+Inserts the elements of another set into this option set.
+Available when RawValue conforms to FixedWidthInteger.
+func intersection(Self) -> Self
+Returns a new option set with only the elements contained in both this set and the given set.
+func formIntersection(Self)
+Removes all elements of this option set that are not also present in the given set.
+Available when RawValue conforms to FixedWidthInteger.
+func symmetricDifference(Self) -> Self
+Returns a new option set with the elements contained in this set or in the given set, but not in both.
+func formSymmetricDifference(Self)
+Replaces this set with a new set containing all elements contained in either this set or the given set, but not in both.
+Available when RawValue conforms to FixedWidthInteger.
+Comparing Options
+static func != (Self, Self) -> Bool
+func isSubset(of: Self) -> Bool
+Returns a Boolean value that indicates whether the set is a subset of another set.
+func isStrictSubset(of: Self) -> Bool
+Returns a Boolean value that indicates whether this set is a strict subset of the given set.
+func isSuperset(of: Self) -> Bool
+Returns a Boolean value that indicates whether the set is a superset of the given set.
+func isStrictSuperset(of: Self) -> Bool
+Returns a Boolean value that indicates whether this set is a strict superset of the given set.
+func isDisjoint(with: Self) -> Bool
+Returns a Boolean value that indicates whether the set has no members in common with the given set.
+Using Entity Gestures
+protocol EntityGestureRecognizer
+A gesture recognizer that works on entities.
+class EntityRotationGestureRecognizer
+A gesture recognizer that uses rotation gestures involving two touches to rotate a given entity.
+class EntityScaleGestureRecognizer
+A gesture recognizer that uses a pinch gesture to scale or zoom an entity.
+class EntityTranslationGestureRecognizer
+A gesture recognizer that uses a pan gesture to move an entity.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+OptionSet Implementations
+API Reference
+SetAlgebra Implementations
+Relationships
+Conforms To
+Equatable
+ExpressibleByArrayLiteral
+OptionSet
+RawRepresentable
+SetAlgebra
+See Also
+Adding Gesture Recognizers to Entities
+func installGestures(ARView.EntityGestures, for: HasCollision) -> [EntityGestureRecognizer]
+Installs standard gestures onto the given entity, configured to be recognized simultaneously.
+func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool
+Determines whether two gesture recognizers should simultaneously recognize a gesture.
+class EntityRotationGestureRecognizer
+A gesture recognizer that uses rotation gestures involving two touches to rotate a given entity.
+class EntityScaleGestureRecognizer
+A gesture recognizer that uses a pinch gesture to scale or zoom an entity.
+class EntityTranslationGestureRecognizer
+A gesture recognizer that uses a pan gesture to move an entity.
+protocol EntityGestureRecognizer
+A gesture recognizer that works on entities.
+Current page is ARView.EntityGestures
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,209 @@
+https://developer.apple.com/documentation/realitykit/audiofileresourceSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+SpatialAudioComponent
+Beta
+S
+AmbientAudioComponent
+Beta
+S
+ChannelAudioComponent
+Beta
+Playback
+C
+AudioPlaybackController
+E
+AudioEvents
+Audio Resources
+C
+AudioResource
+static func load(named: String, in: Bundle?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) throws -> AudioFileResource
+static func loadAsync(named: String, in: Bundle?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+static func load(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) throws -> AudioFileResource
+static func loadAsync(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+static func == (AudioFileResource, AudioFileResource) -> Bool
+Instance Properties
+P
+let configuration: AudioFileResource.Configuration
+P
+var duration: Duration
+P
+let name: String
+Type Methods
+M
+static func load(contentsOf: URL, withName: String?, configuration: AudioFileResource.Configuration) async throws -> AudioFileResource
+Beta
+Documentation
+Open Menu
+Swift
+Class
+AudioFileResource
+An audio resource that you load from a file or from a URL.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+class AudioFileResource
+Overview
+Load an audio file resource, like an audio file stored in .aiff format, by calling one of the load functions. Use the resource to create an AudioPlaybackController instance by calling an entity’s prepareAudio(_:) function. The controller plays the audio from the location in space of the entity that created the controller. If you use the spatial input mode (AudioResource.InputMode.spatial) the sound grows louder as the user moves toward the entity in an AR experience.
+Topics
+Loading Audio from a Bundle
+static func load(named: String, in: Bundle?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) throws -> AudioFileResource
+Loads an audio file resource from a bundle synchronously.
+static func loadAsync(named: String, in: Bundle?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+Loads an audio file resource from a bundle file asynchronously.
+Loading Audio from a URL
+static func load(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) throws -> AudioFileResource
+Loads an audio file resource from a URL synchronously.
+static func loadAsync(contentsOf: URL, withName: String?, inputMode: AudioResource.InputMode, loadingStrategy: AudioFileResource.LoadingStrategy, shouldLoop: Bool) -> LoadRequest<AudioFileResource>
+Loads an audio file resource from a URL asynchronously.
+Specifying a Loading Strategy
+var loadingStrategy: AudioFileResource.LoadingStrategy
+The strategy a resource uses to access data.
+enum LoadingStrategy
+Strategies that the playback controller can use to access a resource’s data during playback.
+Controlling Looping
+var shouldLoop: Bool
+A Boolean you set to indicate whether the resource loops during playback.
+Structures
+struct Configuration
+A container for various settings that can be used when loading an RealityFoundation/AudioFileResource.
+Beta
+Operators
+static func == (AudioFileResource, AudioFileResource) -> Bool
+Instance Properties
+let configuration: AudioFileResource.Configuration
+The configuration of this AudioFileResource.
+var duration: Duration
+The duration of this AudioFileResource.
+let name: String
+The name of this AudioFileResource.
+Type Methods
+static func load(contentsOf: URL, withName: String?, configuration: AudioFileResource.Configuration) async throws -> AudioFileResource
+Loads an AudioFileResource asynchronously.
+Beta
+static func load(contentsOf: URL, withName: String?, configuration: AudioFileResource.Configuration) throws -> AudioFileResource
+Loads an AudioFileResource synchronously.
+Beta
+static func load(named: String, from: String, in: Bundle?) async throws -> AudioFileResource
+Loads a preconfigured AudioFileResource asynchronously from a Reality Composer Pro project with the given name as the the prim-path of the AudioFile, and the scene as the name of the USD file name.
+Beta
+static func load(named: String, from: String, in: Bundle?) throws -> AudioFileResource
+Loads a preconfigured AudioFileResource from a Reality Composer Pro project with the given name as the the prim-path of the AudioFile, and the scene as the name of the USD file name.
+Beta
+static func load(named: String, in: Bundle?, configuration: AudioFileResource.Configuration) async throws -> AudioFileResource
+Loads an AudioFileResource asynchronously.
+Beta
+static func load(named: String, in: Bundle?, configuration: AudioFileResource.Configuration) throws -> AudioFileResource
+Loads an AudioFileResource synchronously.
+Beta
+Default Implementations
+API Reference
+Hashable Implementations
+Relationships
+Inherits From
+AudioResource
+Conforms To
+Equatable
+Hashable
+Resource
+Sendable
+See Also
+Audio Resources
+class AudioResource
+A playable audio resource
+class AudioFileGroupResource
+An audio file group.
+Beta
+class AudioBufferResource
+A resource that contains audio data in memory.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AudioFileResource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/colorschemeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+M
+func preferredColorScheme(ColorScheme?) -> some View
+Detecting and requesting the light or dark appearance
+E
+GlassBackgroundDisplayMode
+Beta
+M
+func glassBackgroundEffect<S>(in: S, displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+M
+func glassBackgroundEffect(displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+Adding a glass background
+M
+func help(Text) -> some View
+M
+func help<S>(S) -> some View
+Documentation
+Open Menu
+Swift
+Instance Property
+colorScheme
+The color scheme of this environment.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+var colorScheme: ColorScheme { get set }
+Discussion
+Read this environment value from within a view to find out if SwiftUI is currently displaying the view using the ColorScheme.light or ColorScheme.dark appearance. The value that you receive depends on whether the user has enabled Dark Mode, possibly superseded by the configuration of the current presentation’s view hierarchy.
+@Environment(\.colorScheme) private var colorScheme
+
+
+var body: some View {
+    Text(colorScheme == .dark ? "Dark" : "Light")
+}
+You can set the colorScheme environment value directly, but that usually isn’t what you want. Doing so changes the color scheme of the given view and its child views but not the views above it in the view hierarchy. Instead, set a color scheme using the preferredColorScheme(_:) modifier, which also propagates the value up through the view hierarchy to the enclosing presentation, like a sheet or a window.
+When adjusting your app’s user interface to match the color scheme, consider also checking the colorSchemeContrast property, which reflects a system-wide contrast setting that the user controls. For information about using color and contrast in your app, see Color and Contrast.
+Note
+If you only need to provide different colors or images for different color scheme and contrast settings, do that in your app’s Asset Catalog. See Asset management.
+See Also
+Detecting and requesting the light or dark appearance
+func preferredColorScheme(ColorScheme?) -> some View
+Sets the preferred color scheme for this presentation.
+enum ColorScheme
+The possible color schemes, corresponding to the light and dark appearances.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is colorScheme
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

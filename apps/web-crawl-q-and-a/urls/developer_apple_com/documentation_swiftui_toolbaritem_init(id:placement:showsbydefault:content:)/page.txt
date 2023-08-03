@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/toolbaritem/init(id:placement:showsbydefault:content:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+M
+func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toolbarBackground<S>(S, for: ToolbarPlacement...) -> some View
+Styling a toolbar
+S
+ToolbarRole
+M
+init(id: String, placement: ToolbarItemPlacement, content: () -> Content)
+M
+init(placement: ToolbarItemPlacement, content: () -> Content)
+Creating a toolbar item
+S
+ToolbarItem
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+Populating a toolbar
+Toolbars
+Documentation
+Open Menu
+Swift
+Initializer
+init(id:placement:showsByDefault:content:)
+Creates a toolbar item with the specified placement and content, which allows for user customization.
+iOS 14.0–17.0 Deprecated
+iPadOS 14.0–17.0 Deprecated
+macOS 11.0–14.0 Deprecated
+Mac Catalyst 14.0–17.0 Deprecated
+tvOS 14.0–17.0 Deprecated
+watchOS 7.0–10.0 Deprecated
+visionOS 1.0+ Beta
+init(
+    id: String,
+    placement: ToolbarItemPlacement = .automatic,
+    showsByDefault: Bool,
+    @ViewBuilder content: () -> Content
+)
+Available when ID is String and Content conforms to View.
+Parameters
+id
+A unique identifier for this item.
+placement
+Which section of the toolbar the item should be placed in.
+showsByDefault
+Whether the item appears by default in the toolbar, or only shows if the user explicitly adds it via customization.
+content
+The content of the item.
+See Also
+Creating a toolbar item
+init(placement: ToolbarItemPlacement, content: () -> Content)
+Creates a toolbar item with the specified placement and content.
+Available when ID is () and Content conforms to View.
+init(id: String, placement: ToolbarItemPlacement, content: () -> Content)
+Creates a toolbar item with the specified placement and content, which allows for user customization.
+Available when ID is String and Content conforms to View.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(id:placement:showsByDefault:content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

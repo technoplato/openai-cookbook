@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/presentationadaptation/automaticSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func alert<A>(Text, isPresented: Binding<Bool>, actions: () -> A) -> some View
+M
+func alert<S, A>(S, isPresented: Binding<Bool>, actions: () -> A) -> some View
+Presenting an alert
+S
+PresentationBackgroundInteraction
+M
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+M
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func presentationBackground<S>(S) -> some View
+Getting adaptation strategies
+S
+PresentationAdaptation
+M
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+M
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+Adapting a presentation to size classes
+E
+PopoverAttachmentAnchor
+M
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+M
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+Documentation
+Open Menu
+Swift
+Type Property
+automatic
+Use the default presentation adaptation.
+iOS 16.4+
+iPadOS 16.4+
+macOS 13.3+
+Mac Catalyst 16.4+
+tvOS 16.4+
+watchOS 9.4+
+visionOS 1.0+ Beta
+static var automatic: PresentationAdaptation { get }
+See Also
+Getting adaptation strategies
+static var none: PresentationAdaptation
+Don’t adapt for the size class, if possible.
+static var fullScreenCover: PresentationAdaptation
+Prefer a full-screen-cover appearance when adapting for size classes.
+static var popover: PresentationAdaptation
+Prefer a popover appearance when adapting for size classes.
+static var sheet: PresentationAdaptation
+Prefer a sheet appearance when adapting for size classes.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is automatic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

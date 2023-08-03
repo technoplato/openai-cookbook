@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/realitykit/meshskeletoncollectionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Network Synchronization
+E
+VideoPlayerEvents
+Beta
+S
+VideoPlayerComponent
+Beta
+Video Playback
+S
+MeshJointInfluence
+Beta
+Sequence Implementations
+ExpressibleByArrayLiteral Implementations
+S
+CharacterControllerStateComponent
+S
+CharacterControllerComponent
+Essentials
+Character control
+Creating a game with scene understanding
+Creating a Game with Reality Composer
+SwiftStrike: Creating a Game with RealityKit
+Happy Beam
+Documentation
+Open Menu
+Swift
+Structure
+MeshSkeletonCollection
+An object that holds a collection of skeletons used by a mesh resource.
+visionOS 1.0+ Beta
+struct MeshSkeletonCollection
+Topics
+Initializers
+init()
+init([MeshResource.Skeleton])
+Instance Properties
+var count: Int
+Number of skeletons.
+var isEmpty: Bool
+True if there are no skeletons.
+Instance Methods
+func insert(MeshResource.Skeleton) -> Bool
+Add a new skeleton to the container. Returns true if added.
+func remove(id: String) -> MeshResource.Skeleton?
+Remove a skeleton by id.
+func removeAll()
+Remove all the skeletons.
+func update(MeshResource.Skeleton) -> MeshResource.Skeleton?
+Update an existing skeleton. The old instance is returned.
+Subscripts
+subscript(String) -> MeshResource.Skeleton?
+Read a skeleton given its id.
+Default Implementations
+API Reference
+ExpressibleByArrayLiteral Implementations
+API Reference
+Sequence Implementations
+Relationships
+Conforms To
+ExpressibleByArrayLiteral
+Sequence
+See Also
+Essentials
+struct CharacterControllerComponent
+A component that manages character movement.
+struct CharacterControllerStateComponent
+An object that maintains state for a character controller.
+struct MeshJointInfluence
+A binding to a joint, which consists of the joint’s index and the weight of that joint’s influence on a vertex.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MeshSkeletonCollection
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

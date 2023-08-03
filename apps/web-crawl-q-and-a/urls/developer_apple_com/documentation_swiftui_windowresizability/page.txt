@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/swiftui/windowresizabilitySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animations
+View styles
+View configuration
+View fundamentals
+Views
+Persistent storage
+Preferences
+M
+func windowResizability(WindowResizability) -> some Scene
+M
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Beta
+M
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+M
+func defaultSize(Size3D) -> some Scene
+Beta
+M
+func defaultSize(CGSize) -> some Scene
+M
+func defaultPosition(UnitPoint) -> some Scene
+Positioning and sizing windows
+Positioning and sizing a window
+Documentation
+Open Menu
+Swift
+Structure
+WindowResizability
+The resizability of a window.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 13.0+
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+struct WindowResizability
+Overview
+Use the windowResizability(_:) scene modifier to apply a value of this type to a Scene that you define in your App declaration. The value that you specify indicates the strategy the system uses to place minimum and maximum size restrictions on windows that it creates from that scene.
+For example, you can create a window group that people can resize to between 100 and 400 points in both dimensions by applying both a frame with those constraints to the scene’s content, and the contentSize resizability to the scene:
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .frame(
+                    minWidth: 100, maxWidth: 400,
+                    minHeight: 100, maxHeight: 400)
+        }
+        .windowResizability(.contentSize)
+    }
+}
+The default value for all scenes if you don’t apply the modifier is automatic. With that strategy, Settings windows use the contentSize strategy, while all others use contentMinSize.
+Topics
+Getting the resizability
+static var automatic: WindowResizability
+The automatic window resizability.
+static var contentMinSize: WindowResizability
+A window resizability that’s partially derived from the window’s content.
+static var contentSize: WindowResizability
+A window resizability that’s derived from the window’s content.
+Relationships
+Conforms To
+Sendable
+See Also
+Positioning and sizing a window
+func defaultPosition(UnitPoint) -> some Scene
+Sets a default position for a window.
+func defaultSize(CGSize) -> some Scene
+Sets a default size for a window.
+func defaultSize(Size3D) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+Sets a default width and height for a window.
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func windowResizability(WindowResizability) -> some Scene
+Sets the kind of resizability to use for a window.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is WindowResizability
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/swiftui/shape/rect(cornerradii:style:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Getting standard shapes
+P
+static var buttonBorder: ButtonBorderShape
+Beta
+P
+static var capsule: Capsule
+M
+static func capsule(style: RoundedCornerStyle) -> Self
+P
+static var circle: Circle
+P
+static var containerRelative: ContainerRelativeShape
+P
+static var ellipse: Ellipse
+P
+static var rect: Rectangle
+static func rect(topLeadingRadius: CGFloat, bottomLeadingRadius: CGFloat, bottomTrailingRadius: CGFloat, topTrailingRadius: CGFloat, style: RoundedCornerStyle) -> Self
+M
+func offset(CGSize) -> OffsetShape<Self>
+M
+func offset(CGPoint) -> OffsetShape<Self>
+M
+func offset(x: CGFloat, y: CGFloat) -> OffsetShape<Self>
+Setting the stroke characteristics
+M
+func stroke<S>(S, lineWidth: CGFloat) -> some View
+M
+func stroke<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeShapeView<Self, S, EmptyView>
+Beta
+M
+func stroke(lineWidth: CGFloat) -> some Shape
+Documentation
+Open Menu
+Swift
+Type Method
+rect(cornerRadii:style:)
+A rectangular shape with rounded corners with different values, aligned inside the frame of the view containing it.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+static func rect(
+    cornerRadii: RectangleCornerRadii,
+    style: RoundedCornerStyle = .continuous
+) -> Self
+Available when Self is UnevenRoundedRectangle.
+See Also
+Getting standard shapes
+static var buttonBorder: ButtonBorderShape
+A shape that defers to the environment to determine the resolved button border shape.
+Available when Self is ButtonBorderShape.
+Beta
+static var capsule: Capsule
+A capsule shape aligned inside the frame of the view containing it.
+Available when Self is Capsule.
+static func capsule(style: RoundedCornerStyle) -> Self
+A capsule shape aligned inside the frame of the view containing it.
+Available when Self is Capsule.
+static var circle: Circle
+A circle centered on the frame of the view containing it.
+Available when Self is Circle.
+static var containerRelative: ContainerRelativeShape
+A shape that is replaced by an inset version of the current container shape. If no container shape was defined, is replaced by a rectangle.
+Available when Self is ContainerRelativeShape.
+static var ellipse: Ellipse
+An ellipse aligned inside the frame of the view containing it.
+Available when Self is Ellipse.
+static var rect: Rectangle
+A rectangular shape aligned inside the frame of the view containing it.
+Available when Self is Rectangle.
+static func rect(cornerRadius: CGFloat, style: RoundedCornerStyle) -> Self
+A rectangular shape with rounded corners, aligned inside the frame of the view containing it.
+Available when Self is RoundedRectangle.
+static func rect(cornerSize: CGSize, style: RoundedCornerStyle) -> Self
+A rectangular shape with rounded corners, aligned inside the frame of the view containing it.
+Available when Self is RoundedRectangle.
+static func rect(topLeadingRadius: CGFloat, bottomLeadingRadius: CGFloat, bottomTrailingRadius: CGFloat, topTrailingRadius: CGFloat, style: RoundedCornerStyle) -> Self
+A rectangular shape with rounded corners with different values, aligned inside the frame of the view containing it.
+Available when Self is UnevenRoundedRectangle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is rect(cornerRadii:style:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

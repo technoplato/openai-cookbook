@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/swiftui/griditem/size-swift.enum/adaptive(minimum:maximum:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a grid item
+M
+init(GridItem.Size, spacing: CGFloat?, alignment: Alignment?)
+Inspecting grid item properties
+P
+var alignment: Alignment?
+P
+var spacing: CGFloat?
+P
+var size: GridItem.Size
+E
+GridItem.Size
+Getting the sizes
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View
+P
+var backgroundMaterial: Material?
+M
+func containerBackground<S>(S, for: ContainerBackgroundPlacement) -> some View
+Beta
+M
+func containerBackground<V>(for: ContainerBackgroundPlacement, alignment: Alignment, content: () -> V) -> some View
+Beta
+S
+ContainerBackgroundPlacement
+Beta
+Automatically choosing the layout that fits
+Documentation
+Open Menu
+Swift
+Case
+GridItem.Size.adaptive(minimum:maximum:)
+Multiple items in the space of a single flexible item.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+case adaptive(
+    minimum: CGFloat,
+    maximum: CGFloat = .infinity
+)
+Discussion
+This size case places one or more items into the space assigned to a single flexible item, using the provided bounds and spacing to decide exactly how many items fit. This approach prefers to insert as many items of the minimum size as possible but lets them increase to the maximum size.
+See Also
+Getting the sizes
+case fixed(CGFloat)
+A single item with the specified fixed size.
+case flexible(minimum: CGFloat, maximum: CGFloat)
+A single flexible item.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GridItem.Size.adaptive(minimum:maximum:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

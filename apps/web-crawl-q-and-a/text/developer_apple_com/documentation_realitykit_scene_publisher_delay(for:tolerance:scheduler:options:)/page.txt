@@ -1,0 +1,195 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/delay(for:tolerance:scheduler:options:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>
+M
+func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>
+Specifying Schedulers
+M
+func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>
+Performing Type Erasure
+M
+func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>
+Buffering Elements
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+M
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+M
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+Controlling Timing
+M
+func retry(Int) -> Publishers.Retry<Self>
+M
+func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>
+M
+func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>
+M
+func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>
+Handling Errors
+Documentation
+Open Menu
+Swift
+Instance Method
+delay(for:tolerance:scheduler:options:)
+Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func delay<S>(
+    for interval: S.SchedulerTimeType.Stride,
+    tolerance: S.SchedulerTimeType.Stride? = nil,
+    scheduler: S,
+    options: S.SchedulerOptions? = nil
+) -> Publishers.Delay<Self, S> where S : Scheduler
+Parameters
+interval
+The amount of time to delay.
+tolerance
+The allowed tolerance in delivering delayed events. The Delay publisher may deliver elements this much sooner or later than the interval specifies.
+scheduler
+The scheduler to deliver the delayed events.
+options
+Options relevant to the scheduler’s behavior.
+Return Value
+A publisher that delays delivery of elements and completion to the downstream receiver.
+Discussion
+Use delay(for:tolerance:scheduler:options:) when you need to delay the delivery of elements to a downstream by a specified amount of time.
+In this example, a Timer publishes an event every second. The delay(for:tolerance:scheduler:options:) operator holds the delivery of the initial element for 3 seconds (±0.5 seconds), after which each element is delivered to the downstream on the main run loop after the specified delay:
+let df = DateFormatter()
+df.dateStyle = .none
+df.timeStyle = .long
+cancellable = Timer.publish(every: 1.0, on: .main, in: .default)
+    .autoconnect()
+    .handleEvents(receiveOutput: { date in
+        print ("Sending Timestamp \'\(df.string(from: date))\' to delay()")
+    })
+    .delay(for: .seconds(3), scheduler: RunLoop.main, options: .none)
+    .sink(
+        receiveCompletion: { print ("completion: \($0)", terminator: "\n") },
+        receiveValue: { value in
+            let now = Date()
+            print ("At \(df.string(from: now)) received  Timestamp \'\(df.string(from: value))\' sent: \(String(format: "%.2f", now.timeIntervalSince(value))) secs ago", terminator: "\n")
+        }
+    )
+
+
+// Prints:
+//    Sending Timestamp '5:02:33 PM PDT' to delay()
+//    Sending Timestamp '5:02:34 PM PDT' to delay()
+//    Sending Timestamp '5:02:35 PM PDT' to delay()
+//    Sending Timestamp '5:02:36 PM PDT' to delay()
+//    At 5:02:36 PM PDT received  Timestamp '5:02:33 PM PDT' sent: 3.00 secs ago
+//    Sending Timestamp '5:02:37 PM PDT' to delay()
+//    At 5:02:37 PM PDT received  Timestamp '5:02:34 PM PDT' sent: 3.00 secs ago
+//    Sending Timestamp '5:02:38 PM PDT' to delay()
+//    At 5:02:38 PM PDT received  Timestamp '5:02:35 PM PDT' sent: 3.00 secs ago
+The delay affects the delivery of elements and completion, but not of the original subscription.
+See Also
+Controlling Timing
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+Measures and emits the time interval between events received from an upstream publisher.
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+Publishes elements only after a specified time interval elapses between events.
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is delay(for:tolerance:scheduler:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/realitykit/charactercontrollercomponent/collisionflags/setalgebra-implementationsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static let defaultUpVector: SIMD3<Float>
+P
+static let defaultStepLimit: Float
+P
+static let defaultSlopeLimit: Float
+P
+static let defaultSkinWidth: Float
+P
+static let defaultRadius: Float
+P
+static let defaultHeight: Float
+Reading Default Values
+OptionSet Implementations
+Equatable Implementations
+Default Implementations
+P
+static let top: CharacterControllerComponent.CollisionFlags
+P
+static let side: CharacterControllerComponent.CollisionFlags
+P
+static let none: CharacterControllerComponent.CollisionFlags
+P
+static let bottom: CharacterControllerComponent.CollisionFlags
+Type Properties
+Documentation
+Open Menu
+Swift
+SetAlgebra Implementations
+Topics
+Initializers
+init<S>(S)
+Creates a new set from a finite sequence of items.
+init(arrayLiteral: Self.Element...)
+Creates a set containing the elements of the given array literal.
+Available when ArrayLiteralElement is Self.Element.
+Instance Properties
+var isEmpty: Bool
+A Boolean value that indicates whether the set has no elements.
+Instance Methods
+func isDisjoint(with: Self) -> Bool
+Returns a Boolean value that indicates whether the set has no members in common with the given set.
+func isStrictSubset(of: Self) -> Bool
+Returns a Boolean value that indicates whether this set is a strict subset of the given set.
+func isStrictSuperset(of: Self) -> Bool
+Returns a Boolean value that indicates whether this set is a strict superset of the given set.
+func isSubset(of: Self) -> Bool
+Returns a Boolean value that indicates whether the set is a subset of another set.
+func isSuperset(of: Self) -> Bool
+Returns a Boolean value that indicates whether the set is a superset of the given set.
+func subtract(Self)
+Removes the elements of the given set from this set.
+func subtracting(Self) -> Self
+Returns a new set containing the elements of this set that do not occur in the given set.
+Current page is SetAlgebra Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

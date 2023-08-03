@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/swiftui/glassbackgrounddisplaymode/neverSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func help(Text) -> some View
+Adding a glass background
+M
+func glassBackgroundEffect(displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+M
+func glassBackgroundEffect<S>(in: S, displayMode: GlassBackgroundDisplayMode) -> some View
+Beta
+E
+GlassBackgroundDisplayMode
+Beta
+Getting the mode
+E
+case always
+E
+case implicit
+M
+func unredacted() -> some View
+P
+var redactionReasons: RedactionReasons
+S
+RedactionReasons
+View styles
+Animations
+Text input and output
+Images
+Documentation
+Open Menu
+Swift
+Case
+GlassBackgroundDisplayMode.never
+Do not create glass material.
+visionOS 1.0+ Beta
+case never
+See Also
+Getting the mode
+case always
+Always create glass material.
+Beta
+case implicit
+Only create glass material when the view is not itself already contained in glass, which should include if the view has been offset in Z from another view that is contained in glass because it is separated from other glass materials.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is GlassBackgroundDisplayMode.never
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

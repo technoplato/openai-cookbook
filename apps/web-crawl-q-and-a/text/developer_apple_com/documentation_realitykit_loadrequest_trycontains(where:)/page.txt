@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/trycontains(where:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func output(at: Int) -> Publishers.Output<Self>
+M
+func tryLast(where: (Self.Output) throws -> Bool) -> Publishers.TryLastWhere<Self>
+M
+func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>
+M
+func last() -> Publishers.Last<Self>
+M
+func tryFirst(where: (Self.Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>
+M
+func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>
+M
+func first() -> Publishers.First<Self>
+func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>
+func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>
+M
+func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>
+M
+func contains(Self.Output) -> Publishers.Contains<Self>
+Applying Matching Criteria to Elements
+M
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func min() -> Publishers.Comparison<Self>
+M
+func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+tryContains(where:)
+Publishes a Boolean value upon receiving an element that satisfies the throwing predicate closure.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func tryContains(where predicate: @escaping (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>
+Parameters
+predicate
+A closure that takes an element as its parameter and returns a Boolean value that indicates whether the element satisfies the closure’s comparison logic.
+Return Value
+A publisher that emits the Boolean value true when the upstream publisher emits a matching value.
+Discussion
+Use Publisher/tryContains(where:) to find the first element in an upstream that satisfies the error-throwing closure you provide.
+This operator consumes elements produced from the upstream publisher until the upstream publisher either:
+Produces a matching element, after which it emits true and the publisher finishes normally.
+Emits false if no matching element is found and the publisher finishes normally.
+If the predicate throws an error, the publisher fails, passing the error to its downstream.
+In the example below, the Publisher/tryContains(where:) operator tests values to find an element less than 10; when the closure finds an odd number, like 3, the publisher terminates with an IllegalValueError.
+struct IllegalValueError: Error {}
+
+
+let numbers = [3, 2, 10, 5, 0, 9]
+numbers.publisher
+    .tryContains {
+        if ($0 % 2 != 0) {
+            throw IllegalValueError()
+        }
+       return $0 < 10
+    }
+    .sink(
+        receiveCompletion: { print ("completion: \($0)") },
+        receiveValue: { print ("value: \($0)") }
+    )
+
+
+// Prints: "completion: failure(IllegalValueError())"
+See Also
+Applying Matching Criteria to Elements
+func contains(Self.Output) -> Publishers.Contains<Self>
+Publishes a Boolean value upon receiving an element equal to the argument.
+Available when Output conforms to Equatable.
+func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>
+Publishes a Boolean value upon receiving an element that satisfies the predicate closure.
+func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>
+Publishes a single Boolean value that indicates whether all received elements pass a given predicate.
+func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>
+Publishes a single Boolean value that indicates whether all received elements pass a given error-throwing predicate.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tryContains(where:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

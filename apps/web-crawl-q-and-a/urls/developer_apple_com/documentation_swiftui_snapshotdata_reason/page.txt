@@ -1,0 +1,125 @@
+https://developer.apple.com/documentation/swiftui/snapshotdata/reasonSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+M
+func handlesExternalEvents(preferring: Set<String>, allowing: Set<String>) -> some View
+Handling external events
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+P
+let identifier: String?
+Getting the data
+S
+SnapshotData
+S
+BackgroundTask
+M
+func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some Scene
+Handling background tasks
+M
+func onContinueUserActivity(String, perform: (NSUserActivity) -> ()) -> some View
+M
+func userActivity(String, isActive: Bool, (NSUserActivity) -> ()) -> some View
+Documentation
+Open Menu
+Swift
+Instance Property
+reason
+The reason for a background snapshot task.
+watchOS 9.0+
+let reason: SnapshotData.SnapshotReason
+See Also
+Getting the data
+let identifier: String?
+The identifier associated with this snapshot request.
+enum SnapshotReason
+The reason for a background snapshot task.
+Current page is reason
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/layoutsubview/dimensions(in:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Tables
+Lists
+S
+GridLayout
+S
+ZStackLayout
+S
+VStackLayout
+S
+HStackLayout
+S
+AnyLayout
+Getting subview characteristics
+M
+func place(at: CGPoint, anchor: UnitPoint, proposal: ProposedViewSize)
+Placing the subview
+S
+LayoutSubview
+r
+P
+Layout
+Composing custom layouts with SwiftUI
+Creating a custom layout container
+Custom layout
+Documentation
+Open Menu
+Swift
+Instance Method
+dimensions(in:)
+Asks the subview for its dimensions and alignment guides.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func dimensions(in proposal: ProposedViewSize) -> ViewDimensions
+Parameters
+proposal
+A proposed size for the subview. In SwiftUI, views choose their own size, but can take a size proposal from their parent view into account when doing so.
+Return Value
+A ViewDimensions instance that includes a height and width, as well as a set of alignment guides.
+Discussion
+Call this method to ask a subview of a custom Layout type about its size and alignment properties. You can call it from your implementation of any of that protocol’s methods, like placeSubviews(in:proposal:subviews:cache:) or sizeThatFits(proposal:subviews:cache:), to get information for your layout calculations.
+When you call this method, you propose a size using the proposal parameter. The subview can choose its own size, but might take the proposal into account. You can call this method more than once with different proposals to find out if the view is flexible. For example, you can propose:
+zero to get the subview’s minimum size.
+infinity to get the subview’s maximum size.
+unspecified to get the subview’s ideal size.
+If you need only the view’s height and width, you can use the sizeThatFits(_:) method instead.
+See Also
+Getting subview characteristics
+func sizeThatFits(ProposedViewSize) -> CGSize
+Asks the subview for its size.
+var spacing: ViewSpacing
+The subviews’s preferred spacing values.
+var priority: Double
+The layout priority of the subview.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is dimensions(in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

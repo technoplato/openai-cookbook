@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/blendmode-swift.struct/exclusionSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GraphicsContext.BlurOptions
+S
+GraphicsContext.FilterOptions
+S
+GraphicsContext.Filter
+M
+func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)
+Filtering
+P
+static var xor: GraphicsContext.BlendMode
+P
+static var destinationAtop: GraphicsContext.BlendMode
+P
+static var difference: GraphicsContext.BlendMode
+Inverting
+P
+static var hardLight: GraphicsContext.BlendMode
+P
+static var softLight: GraphicsContext.BlendMode
+P
+static var overlay: GraphicsContext.BlendMode
+Adding contrast
+P
+static var plusLighter: GraphicsContext.BlendMode
+P
+static var colorDodge: GraphicsContext.BlendMode
+Documentation
+Open Menu
+Swift
+Type Property
+exclusion
+A mode that produces an effect similar to that produced by the difference blend mode, but with lower contrast.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static var exclusion: GraphicsContext.BlendMode { get }
+Discussion
+Source image sample values that are black don’t produce a change; white inverts the background color values.
+See Also
+Inverting
+static var difference: GraphicsContext.BlendMode
+A mode that subtracts the brighter of the source image sample color or the background image sample color from the other.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is exclusion
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

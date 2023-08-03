@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/tablerowcontent/contextmenu(menuitems:preview:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Focus
+Drag and drop
+Clipboard
+func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> ModifiedContent<Self, _ContextMenuPreviewTableRowModifier<M, P>>
+M
+func contextMenu<M>(menuItems: () -> M) -> ModifiedContent<Self, _ContextMenuTableRowModifier<M>>
+Adding a context menu to a row
+S
+ItemProviderTableRowModifier
+M
+func itemProvider((() -> NSItemProvider?)?) -> ModifiedContent<Self, ItemProviderTableRowModifier>
+M
+func onHover(perform: (Bool) -> Void) -> some TableRowContent<Self.TableRowValue>
+Beta
+M
+func dropDestination<T>(for: T.Type, action: ([T]) -> Void) -> some TableRowContent<Self.TableRowValue>
+Beta
+M
+func draggable<T>(() -> T) -> some TableRowContent<Self.TableRowValue>
+Beta
+Managing interaction
+Documentation
+Open Menu
+Swift
+Instance Method
+contextMenu(menuItems:preview:)
+Adds a context menu with a preview to a table row.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+func contextMenu<M, P>(
+    @ViewBuilder menuItems: () -> M,
+    @ViewBuilder preview: () -> P
+) -> ModifiedContent<Self, _ContextMenuPreviewTableRowModifier<M, P>> where M : View, P : View
+Parameters
+menuItems
+A closure that produces the menu’s contents. You can deactivate the context menu by returning nothing from the closure.
+preview
+A view that the system displays along with the menu.
+Return Value
+A row that can display a context menu with a preview.
+Discussion
+When you use this modifier to add a context menu to rows in a table, the system shows a preview beside the menu. Compose the menu by returning controls like Button, Toggle, and Picker from the menuItems closure. You can also use Menu to define submenus.
+Define the preview by returning a view from the preview closure. The system sizes the preview to match the size of its content. For example, the following code adds a context menu with a preview to each row in a table that people can use to send an email to the person represented by that row:
+Table(of: Person.self) {
+    TableColumn("Given Name", value: \.givenName)
+    TableColumn("Family Name", value: \.familyName)
+} rows: {
+    ForEach(people) { person in
+        TableRow(person)
+            .contextMenu {
+                Button("Send Email...") { }
+            } preview: {
+                Image("envelope") // Loads the image from an asset catalog.
+            }
+    }
+}
+Note
+This view modifier produces a context menu on macOS, but that platform doesn’t display the preview.
+If you don’t need a preview, use contextMenu(menuItems:). If you want to display a context menu that’s based on the current selection, use contextMenu(forSelectionType:menu:primaryAction:). To add context menus to other kinds of views, see contextMenu(menuItems:).
+See Also
+Adding a context menu to a row
+func contextMenu<M>(menuItems: () -> M) -> ModifiedContent<Self, _ContextMenuTableRowModifier<M>>
+Adds a context menu to a table row.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contextMenu(menuItems:preview:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

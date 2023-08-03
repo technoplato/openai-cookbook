@@ -1,0 +1,198 @@
+https://developer.apple.com/documentation/swiftui/windowsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var openWindow: OpenWindowAction
+P
+var supportsMultipleWindows: Bool
+Presenting windows and spaces
+Opening windows
+r
+P
+WindowToolbarStyle
+M
+func windowToolbarStyle<S>(S) -> some Scene
+Styling the associated toolbar
+Documentation
+Open Menu
+Swift
+Windows
+Display user interface content in a window or a collection of windows.
+Overview
+The most common way to present a view hierarchy in your app’s interface is with a WindowGroup, which produces a platform-specific behavior and appearance.
+On platforms that support it, people can open multiple windows from the group simultaneously. Each window relies on the same root view definition, but retains its own view state. On some platforms, you can also supplement your app’s user interface with a single-instance window using the Window scene type.
+Configure windows using scene modifiers that you add to the window declaration, like windowStyle(_:) or defaultPosition(_:). You can also indicate how to configure new windows that you present from a view hierarchy by adding the presentedWindowStyle(_:) view modifier to a view in the hierarchy.
+For design guidance, see Windows in the Human Interface Guidelines.
+Topics
+Creating windows
+Bringing multiple windows to your SwiftUI app
+Compose rich views by reacting to state changes and customize your app’s scene presentation and behavior on iPadOS and macOS.
+struct WindowGroup
+A scene that presents a group of identically structured windows.
+struct Window
+A scene that presents its content in a single, unique window.
+protocol WindowStyle
+A specification for the appearance and interaction of a window.
+func windowStyle<S>(S) -> some Scene
+Sets the style for windows created by this scene.
+Styling the associated toolbar
+func windowToolbarStyle<S>(S) -> some Scene
+Sets the style for the toolbar defined within this scene.
+protocol WindowToolbarStyle
+A specification for the appearance and behavior of a window’s toolbar.
+Opening windows
+Presenting windows and spaces
+Open and close the scenes that make up your app’s interface.
+var supportsMultipleWindows: Bool
+A Boolean value that indicates whether the current platform supports opening multiple windows.
+var openWindow: OpenWindowAction
+An window presentation action stored in a view’s environment.
+struct OpenWindowAction
+An action that presents a window.
+Closing windows
+var dismissWindow: DismissWindowAction
+A window dismissal action stored in a view’s environment.
+Beta
+struct DismissWindowAction
+An action that dismisses a window associated to a particular scene.
+Beta
+var dismiss: DismissAction
+An action that dismisses the current presentation.
+struct DismissAction
+An action that dismisses a presentation.
+struct DismissBehavior
+Programmatic window dismissal behaviors.
+Beta
+Positioning and sizing a window
+Positioning and sizing windows
+Influence the initial geometry of windows that your app presents.
+func defaultPosition(UnitPoint) -> some Scene
+Sets a default position for a window.
+func defaultSize(CGSize) -> some Scene
+Sets a default size for a window.
+func defaultSize(Size3D) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func defaultSize(width: CGFloat, height: CGFloat) -> some Scene
+Sets a default width and height for a window.
+func defaultSize(width: CGFloat, height: CGFloat, depth: CGFloat) -> some Scene
+Sets a default size for a volumetric window.
+Beta
+func windowResizability(WindowResizability) -> some Scene
+Sets the kind of resizability to use for a window.
+struct WindowResizability
+The resizability of a window.
+See Also
+App structure
+API Reference
+App organization
+Define the entry point and top-level structure of your app.
+API Reference
+Scenes
+Declare the user interface groupings that make up the parts of your app.
+API Reference
+Immersive spaces
+Display unbounded content in a person’s surroundings.
+API Reference
+Documents
+Enable people to open and manage documents.
+API Reference
+Navigation
+Enable people to move between different parts of your app’s view hierarchy within a scene.
+API Reference
+Modal presentations
+Present content in a separate view that offers focused interaction.
+API Reference
+Toolbars
+Provide immediate access to frequently used commands and controls.
+API Reference
+Search
+Enable people to search for text or other content within your app.
+API Reference
+App extensions
+Extend your app’s basic functionality to other parts of the system, like by adding a Widget.
+Current page is Windows
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

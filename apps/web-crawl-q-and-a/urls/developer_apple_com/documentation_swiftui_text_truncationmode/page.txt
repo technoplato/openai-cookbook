@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/text/truncationmodeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Deprecated symbols
+static func + (Text, Text) -> Text
+Combining text views
+M
+func accessibilityTextContentType(AccessibilityTextContentType) -> Text
+M
+func accessibilityLabel(LocalizedStringKey) -> Text
+M
+func accessibilityLabel(Text) -> Text
+M
+func accessibilityLabel<S>(S) -> Text
+S
+Text.Scale
+Beta
+M
+func textScale(Text.Scale, isEnabled: Bool) -> Text
+Beta
+Fitting text into available space
+S
+Text.LineStyle
+S
+Text.DateStyle
+E
+Text.Case
+M
+func baselineOffset(CGFloat) -> Text
+M
+func tracking(CGFloat) -> Text
+Documentation
+Open Menu
+Swift
+Enumeration
+Text.TruncationMode
+The type of truncation to apply to a line of text when it’s too long to fit in the available space.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+enum TruncationMode
+Overview
+When a text view contains more text than it’s able to display, the view might truncate the text and place an ellipsis (…) at the truncation point. Use the truncationMode(_:) modifier with one of the TruncationMode values to indicate which part of the text to truncate, either at the beginning, in the middle, or at the end.
+Topics
+Getting text truncation modes
+case head
+Truncate at the beginning of the line.
+case middle
+Truncate in the middle of the line.
+case tail
+Truncate at the end of the line.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Fitting text into available space
+func textScale(Text.Scale, isEnabled: Bool) -> Text
+Applies a text scale to the text.
+Beta
+struct Scale
+Defines text scales
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Text.TruncationMode
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

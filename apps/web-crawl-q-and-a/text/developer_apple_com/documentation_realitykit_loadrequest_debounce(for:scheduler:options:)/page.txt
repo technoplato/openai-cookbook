@@ -1,0 +1,206 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/debounce(for:scheduler:options:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>
+Specifying Schedulers
+M
+func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>
+Performing Type Erasure
+M
+func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>
+Buffering Elements
+M
+func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+M
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+Controlling Timing
+M
+func retry(Int) -> Publishers.Retry<Self>
+M
+func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>
+M
+func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>
+M
+func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>
+Handling Errors
+M
+func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>
+Documentation
+Open Menu
+Swift
+Instance Method
+debounce(for:scheduler:options:)
+Publishes elements only after a specified time interval elapses between events.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func debounce<S>(
+    for dueTime: S.SchedulerTimeType.Stride,
+    scheduler: S,
+    options: S.SchedulerOptions? = nil
+) -> Publishers.Debounce<Self, S> where S : Scheduler
+Parameters
+dueTime
+The time the publisher should wait before publishing an element.
+scheduler
+The scheduler on which this publisher delivers elements
+options
+Scheduler options that customize this publisher’s delivery of elements.
+Return Value
+A publisher that publishes events only after a specified time elapses.
+Discussion
+Use the Publisher/debounce(for:scheduler:options:) operator to control the number of values and time between delivery of values from the upstream publisher. This operator is useful to process bursty or high-volume event streams where you need to reduce the number of values delivered to the downstream to a rate you specify.
+In this example, a PassthroughSubject publishes elements on a schedule defined by the bounces array. The array is composed of tuples representing a value sent by the PassthroughSubject, and a TimeInterval ranging from one-quarter second up to 2 seconds that drives a delivery timer. As the queue builds, elements arriving faster than one-half second debounceInterval are discarded, while elements arriving at a rate slower than debounceInterval are passed through to the Publisher/sink(receiveValue:) operator.
+let bounces:[(Int,TimeInterval)] = [
+    (0, 0),
+    (1, 0.25),  // 0.25s interval since last index
+    (2, 1),     // 0.75s interval since last index
+    (3, 1.25),  // 0.25s interval since last index
+    (4, 1.5),   // 0.25s interval since last index
+    (5, 2)      // 0.5s interval since last index
+]
+
+
+let subject = PassthroughSubject<Int, Never>()
+cancellable = subject
+    .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+    .sink { index in
+        print ("Received index \(index)")
+    }
+
+
+for bounce in bounces {
+    DispatchQueue.main.asyncAfter(deadline: .now() + bounce.1) {
+        subject.send(bounce.0)
+    }
+}
+
+
+// Prints:
+//  Received index 1
+//  Received index 4
+//  Received index 5
+
+
+//  Here is the event flow shown from the perspective of time, showing value delivery through the `debounce()` operator:
+
+
+//  Time 0: Send index 0.
+//  Time 0.25: Send index 1. Index 0 was waiting and is discarded.
+//  Time 0.75: Debounce period ends, publish index 1.
+//  Time 1: Send index 2.
+//  Time 1.25: Send index 3. Index 2 was waiting and is discarded.
+//  Time 1.5: Send index 4. Index 3 was waiting and is discarded.
+//  Time 2: Debounce period ends, publish index 4. Also, send index 5.
+//  Time 2.5: Debounce period ends, publish index 5.
+See Also
+Controlling Timing
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+Measures and emits the time interval between events received from an upstream publisher.
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler.
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is debounce(for:scheduler:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,152 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Articles
+Making your existing app compatible with visionOS
+Checking whether your existing app is compatible with visionOS
+Bringing your ARKit app to visionOS
+Bringing your existing apps to visionOS
+iOS migration and compatibility
+Interacting with your app in the visionOS simulator
+Tracking specific points in world space
+Incorporating real-world surroundings in an immersive experience
+Placing content on detected planes
+Setting up access to ARKit data
+Happy Beam
+ARKit
+Designing RealityKit content with Reality Composer Pro
+Understanding RealityKit’s modular architecture
+Documentation
+Open Menu
+Article
+Tracking preregistered images in 3D space
+Place content based on the current position of a known image in a person’s surroundings.
+Overview
+Use ARKit’s support for tracking 2D images to place 3D content in a space. ARKit provides updates to the image’s location as it moves relative to the person. If you supply one or more reference images in your app’s asset catalog, people can use a real-world copy of that image to place virtual 3D content in your app. For example, if you design a pack of custom playing cards and provide those assets to people in the form of a real-world deck of playing cards, they can place unique content per card in a fully immersive experience.
+The following example tracks a set of images loaded from an app’s asset catalog:
+let session = ARKitSession()
+let imageInfo = ImageTrackingProvider(
+    referenceImages: ReferenceImage.loadReferenceImages(inGroupNamed: "playingcard-photos")
+)
+
+
+if ImageTrackingProvider.isSupported {
+    Task {
+        try await session.run([imageInfo])
+        for await update in imageInfo.anchorUpdates {
+            updateImage(update.anchor)
+        }
+    }
+}
+
+
+func updateImage(_ anchor: ImageAnchor) {
+    if imageAnchors[anchor.id] == nil {
+        // Add a new entity to represent this image.
+        let entity = ModelEntity(mesh: .generateSphere(radius: 0.05))
+        entityMap[anchor.id] = entity
+        rootEntity.addChild(entity)
+    }
+    
+    if anchor.isTracked {
+        entityMap[anchor.id]?.transform = Transform(matrix: anchor.transform)
+    }
+}
+If you know the real-world dimensions of the images you’re tracking, use the physicalSize property to improve tracking accuracy. The estimatedScaleFactor property provides information about how the scale of the tracked image differs from the expected physical size you provide.
+See Also
+ARKit
+Happy Beam
+Leverage a Full Space to create a fun game using ARKit.
+Setting up access to ARKit data
+Check whether your app can use ARKit and respect people’s privacy.
+Placing content on detected planes
+Detect horizontal surfaces like tables and floors, as well as vertical planes like walls and doors.
+Incorporating real-world surroundings in an immersive experience
+Create an immersive experience by making your app’s content respond to the local shape of the world.
+Tracking specific points in world space
+Retrieve the position and orientation of anchors your app stores in ARKit.
+Current page is Tracking preregistered images in 3D space
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

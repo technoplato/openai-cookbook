@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/swiftui/scrolltransitionconfiguration/interactive(timingcurve:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+E
+ScrollTransitionPhase
+Beta
+S
+ScrollTransitionConfiguration
+Beta
+Getting the configuration
+P
+static let identity: ScrollTransitionConfiguration
+P
+static let animated: ScrollTransitionConfiguration
+M
+static func animated(Animation) -> ScrollTransitionConfiguration
+P
+static let interactive: ScrollTransitionConfiguration
+Disabling scrolling
+M
+func scrollDisabled(Bool) -> some View
+P
+var isScrollEnabled: Bool
+Configuring scroll bounce behavior
+M
+func scrollBounceBehavior(ScrollBounceBehavior, axes: Axis.Set) -> some View
+P
+var horizontalScrollBounceBehavior: ScrollBounceBehavior
+P
+var verticalScrollBounceBehavior: ScrollBounceBehavior
+Documentation
+Open Menu
+Swift
+Type Method
+interactive(timingCurve:)
+Creates a new configuration that interactively interpolates the transition’s effect as the view is scrolled into the visible region of the container.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+static func interactive(timingCurve: UnitCurve = .easeInOut) -> ScrollTransitionConfiguration
+Parameters
+timingCurve
+The curve that adjusts the pace at which the effect is interpolated between phases of the transition. For example, an .easeIn curve causes interpolation to begin slowly as the view reaches the edge of the scroll view, then speed up as it reaches the visible threshold. The curve is applied ‘forward’ while the view is appearing, meaning that time zero corresponds to the view being just hidden, and time 1.0 corresponds to the pont at which the view reaches the configuration threshold. This also means that the timing curve is applied in reversed while the view is moving away from the center of the scroll view.
+Return Value
+A configuration that interactively interpolates between transition phases based on the current scroll position.
+See Also
+Getting the configuration
+static let identity: ScrollTransitionConfiguration
+Creates a new configuration that does not change the appearance of the view.
+Beta
+static let animated: ScrollTransitionConfiguration
+Creates a new configuration that discretely animates the transition when the view becomes visible.
+Beta
+static func animated(Animation) -> ScrollTransitionConfiguration
+Creates a new configuration that discretely animates the transition when the view becomes visible.
+Beta
+static let interactive: ScrollTransitionConfiguration
+Creates a new configuration that interactively interpolates the transition’s effect as the view is scrolled into the visible region of the container.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is interactive(timingCurve:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

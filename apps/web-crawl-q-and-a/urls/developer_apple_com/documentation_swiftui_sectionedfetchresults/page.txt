@@ -1,0 +1,189 @@
+https://developer.apple.com/documentation/swiftui/sectionedfetchresultsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Shapes
+Menus and commands
+Controls and indicators
+Images
+Text input and output
+Animations
+View styles
+S
+SectionedFetchRequest
+S
+FetchedResults
+S
+FetchRequest
+P
+var managedObjectContext: NSManagedObjectContext
+Loading and Displaying a Large Data Feed
+Accessing Core Data
+S
+SceneStorage
+S
+AppStorage
+Documentation
+Open Menu
+Swift
+Structure
+SectionedFetchResults
+A collection of results retrieved from a Core Data persistent store, grouped into sections.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+struct SectionedFetchResults<SectionIdentifier, Result> where SectionIdentifier : Hashable, Result : NSFetchRequestResult
+Overview
+Use a SectionedFetchResults instance to show or edit Core Data managed objects, grouped into sections, in your app’s user interface. If you don’t need sectioning, use FetchedResults instead.
+You request a particular set of results by annotating the fetched results property declaration with a SectionedFetchRequest property wrapper. Indicate the type of the fetched entities with a Results type, and the type of the identifier that distinguishes the sections with a SectionIdentifier type. For example, you can create a request to list all Quake managed objects that the Loading and Displaying a Large Data Feed sample code project defines to store earthquake data, sorted by their time property and grouped by a string that represents the days when earthquakes occurred:
+@SectionedFetchRequest<String, Quake>(
+    sectionIdentifier: \.day,
+    sortDescriptors: [SortDescriptor(\.time, order: .reverse)]
+)
+private var quakes: SectionedFetchResults<String, Quake>
+The quakes property acts as a collection of SectionedFetchResults.Section instances, each containing a collection of Quake instances. The example above depends on the Quake model object declaring both time and day properties, either stored or computed. For best performance with large data sets, use stored properties.
+The collection of sections, as well as the collection of managed objects in each section, conforms to the RandomAccessCollection protocol, so you can access them as you would any other collection. For example, you can create nested ForEach loops inside a List to iterate over the results:
+List {
+    ForEach(quakes) { section in
+        Section(header: Text(section.id)) {
+            ForEach(section) { quake in
+                QuakeRow(quake: quake) // Displays information about a quake.
+            }
+        }
+    }
+}
+Don’t confuse the Section view that you use to create a hierarchical display with the SectionedFetchResults.Section instances that hold the fetched results.
+When you need to dynamically change the request’s section identifier, predicate, or sort descriptors, set the result instance’s sectionIdentifier, nsPredicate, and sortDescriptors or nsSortDescriptors properties, respectively. Be sure that the sorting and sectioning work together to avoid discontinguous sections.
+The fetch request and its results use the managed object context stored in the environment, which you can access using the managedObjectContext environment value. To support user interface activity, you typically rely on the viewContext property of a shared NSPersistentContainer instance. For example, you can set a context on your top-level content view using a container that you define as part of your model:
+ContentView()
+    .environment(
+        \.managedObjectContext,
+        QuakesProvider.shared.container.viewContext)
+Topics
+Configuring the associated sectioned fetch request
+var nsPredicate: NSPredicate?
+The request’s predicate.
+var sortDescriptors: [SortDescriptor<Result>]
+The request’s sort descriptors, accessed as value types.
+Available when SectionIdentifier conforms to Hashable and Result inherits NSManagedObject.
+var nsSortDescriptors: [NSSortDescriptor]
+The request’s sort descriptors, accessed as reference types.
+var sectionIdentifier: KeyPath<Result, SectionIdentifier>
+The key path that the system uses to group fetched results into sections.
+struct Section
+A collection of fetched results that share a specified identifier.
+Getting indices
+var startIndex: Int
+The index of the first section in the results collection.
+var endIndex: Int
+The index that’s one greater than that of the last section.
+Getting results
+subscript(Int) -> SectionedFetchResults<SectionIdentifier, Result>.Section
+Gets the section at the specified index.
+Relationships
+Conforms To
+BidirectionalCollection
+Collection
+RandomAccessCollection
+Sendable
+Sequence
+See Also
+Accessing Core Data
+var managedObjectContext: NSManagedObjectContext
+struct FetchRequest
+A property wrapper type that retrieves entities from a Core Data persistent store.
+struct FetchedResults
+A collection of results retrieved from a Core Data store.
+struct SectionedFetchRequest
+A property wrapper type that retrieves entities, grouped into sections, from a Core Data persistent store.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SectionedFetchResults
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

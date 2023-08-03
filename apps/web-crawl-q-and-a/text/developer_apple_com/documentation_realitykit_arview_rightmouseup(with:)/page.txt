@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/realitykit/arview/rightmouseup(with:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Debugging the Session
+T
+ARView.Image
+M
+func snapshot(saveToHDR: Bool, completion: (ARView.Image?) -> Void)
+M
+func snapshot(saveToHDR: Bool, completion: (ARView.Image?) -> Void)
+Taking a Snapshot
+S
+ModelSortGroup
+Beta
+M
+func viewDidMoveToSuperview()
+M
+func rightMouseDragged(with: NSEvent)
+M
+func rightMouseDown(with: NSEvent)
+M
+func mouseMoved(with: NSEvent)
+M
+func mouseUp(with: NSEvent)
+M
+func mouseDragged(with: NSEvent)
+M
+func mouseDown(with: NSEvent)
+Handling Mouse Input
+M
+func keyUp(with: NSEvent)
+Documentation
+Open Menu
+Swift
+Instance Method
+rightMouseUp(with:)
+Informs the view that the user has released the right mouse button.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+override dynamic func rightMouseUp(with event: NSEvent)
+Parameters
+event
+An object encapsulating information about the mouse event.
+Discussion
+The view handles the event instead of passing it to the next responder. See NSResponder for more information about the responder chain.
+See Also
+Handling Mouse Input
+func mouseDown(with: NSEvent)
+Informs the view that the user has pressed the left mouse button.
+func mouseDragged(with: NSEvent)
+Informs the view that the user has moved the mouse with the left button pressed.
+func mouseUp(with: NSEvent)
+Informs the view that the user has released the left mouse button.
+func mouseMoved(with: NSEvent)
+Informs the view that the mouse has moved.
+func rightMouseDown(with: NSEvent)
+Informs the view that the user has pressed the right mouse button.
+func rightMouseDragged(with: NSEvent)
+Informs the view that the user has moved the mouse with the right button pressed.
+func otherMouseDown(with: NSEvent)
+Informs the view that the user has pressed a mouse button other than the left or right one.
+func otherMouseDragged(with: NSEvent)
+Informs the view that the user has moved the mouse with a button other than the left or right button pressed.
+func otherMouseUp(with: NSEvent)
+Informs the view that the user has released a mouse button other than the left or right button.
+func scrollWheel(with: NSEvent)
+Informs the view that the mouse’s scroll wheel has moved.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is rightMouseUp(with:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

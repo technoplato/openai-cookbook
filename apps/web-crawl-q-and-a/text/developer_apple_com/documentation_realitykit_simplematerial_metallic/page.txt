@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/realitykit/simplematerial/metallicSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Modifying RealityKit Rendering Using Custom Materials
+Custom materials
+C
+VideoPlaybackController
+S
+VideoMaterial
+Video materials
+S
+PhysicallyBasedMaterial
+Applying Realistic Material and Lighting Effects to Entities
+T
+SimpleMaterial.Texture
+P
+var tintColor: NSColor
+P
+var tintColor: UIColor
+T
+SimpleMaterial.BaseColor
+P
+var baseColor: MaterialColorParameter
+P
+var color: SimpleMaterial.BaseColor
+Characterizing a Material
+M
+init(color: SimpleMaterial.Color, roughness: MaterialScalarParameter, isMetallic: Bool)
+Documentation
+Open Menu
+Swift
+Instance Property
+metallic
+A Boolean value that you set to control whether the material has a metallic look.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+var metallic: MaterialScalarParameter { get set }
+Discussion
+This property defines whether a material is dielectric (0.0) or a metallic (1.0). Although this property can be set to any value between 0 and 1, to create a realistic material, set it to either 0 or 1.).
+Dielectric materials
+These are materials that simulate real-world materials that are poor conductors. In these materials, light travels into the surface of the material and the color is mostly controlled by the color of the sub-surface. Typical examples of dielectric materaisl include organic materials, plastics, and industrial minerals such as sand, limestone, marble, clay and salt.
+Metallic
+A metallic (or conductive) material reflects light differently than dielectric ones. The overall color is caused by an immediate re-emission of the light from the entity’s surface. Typical examples of metallic materials include aluminum, chassis metal, chromium, copper, gold, silver, and titanium
+See Also
+Characterizing a Material
+var color: SimpleMaterial.BaseColor
+The material’s color.
+var baseColor: MaterialColorParameter
+The base color of the material.
+typealias BaseColor
+The type used to represent base color.
+var tintColor: UIColor
+A tint color applied to the base color in macOS.
+var tintColor: NSColor
+A tint color applied to the base color in macOS.
+typealias Texture
+The type used to represent textures.
+var roughness: MaterialScalarParameter
+The roughness of the material.
+typealias Parameters
+The parameter type that custom materials uses for properties the framework passes to shader functions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is metallic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

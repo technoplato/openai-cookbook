@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/gridcellunsizedaxes(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func interactionActivityTrackingTag(String) -> some View
+M
+func inspectorColumnWidth(min: CGFloat?, ideal: CGFloat, max: CGFloat?) -> some View
+M
+func inspectorColumnWidth(CGFloat) -> some View
+M
+func inspector<V>(isPresented: Binding<Bool>, content: () -> V) -> some View
+M
+func indexViewStyle<S>(S) -> some View
+M
+func imageScale(Image.Scale) -> some View
+M
+func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View
+M
+func gridCellColumns(Int) -> some View
+M
+func gridCellAnchor(UnitPoint) -> some View
+M
+func grayscale(Double) -> some View
+M
+func gesture<T>(T, including: GestureMask) -> some View
+M
+func geometryGroup() -> some View
+M
+func gaugeStyle<S>(S) -> some View
+M
+func fullScreenCover<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View
+M
+func fullScreenCover<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+gridCellUnsizedAxes(_:)
+Asks grid layouts not to offer the view extra size in the specified axes.
+RealityKit
+SwiftUI
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func gridCellUnsizedAxes(_ axes: Axis.Set) -> some View
+Parameters
+axes
+The dimensions in which the grid shouldn’t offer the view a share of any available space. This prevents a flexible view like a Spacer, Divider, or Color from defining the size of a row or column.
+Return Value
+A view that doesn’t ask an enclosing grid for extra size in one or more axes.
+Discussion
+Use this modifier to prevent a flexible view from taking more space on the specified axes than the other cells in a row or column require. For example, consider the following Grid that places a Divider between two rows of content:
+Grid {
+    GridRow {
+        Text("Hello")
+        Image(systemName: "globe")
+    }
+    Divider()
+    GridRow {
+        Image(systemName: "hand.wave")
+        Text("World")
+    }
+}
+The text and images all have ideal widths for their content. However, because a divider takes as much space as its parent offers, the grid fills the width of the display, expanding all the other cells to match:
+You can prevent the grid from giving the divider more width than the other cells require by adding the modifier with the Axis/horizontal parameter:
+Divider()
+    .gridCellUnsizedAxes(.horizontal)
+This restores the grid to the width that it would have without the divider:
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is gridCellUnsizedAxes(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

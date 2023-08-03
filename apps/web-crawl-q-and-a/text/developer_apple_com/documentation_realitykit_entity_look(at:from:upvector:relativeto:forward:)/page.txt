@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/realitykit/entity/look(at:from:upvector:relativeto:forward:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Designing RealityKit content with Reality Composer Pro
+Diorama
+Asset creation
+r
+P
+EntityCollection
+Beta
+r
+P
+TransientComponent
+r
+P
+Component
+Identifiable Implementations
+func move(to: Transform, relativeTo: Entity?, duration: TimeInterval, timingFunction: AnimationTimingFunction) -> AnimationPlaybackController
+func move(to: float4x4, relativeTo: Entity?, duration: TimeInterval, timingFunction: AnimationTimingFunction) -> AnimationPlaybackController
+func look(at: SIMD3<Float>, from: SIMD3<Float>, upVector: SIMD3<Float>, relativeTo: Entity?, forward: Entity.ForwardDirection)
+M
+func look(at: SIMD3<Float>, from: SIMD3<Float>, upVector: SIMD3<Float>, relativeTo: Entity?)
+M
+func convert(transform: Transform, to: Entity?) -> Transform
+M
+func convert(transform: Transform, from: Entity?) -> Transform
+M
+func convert(position: SIMD3<Float>, to: Entity?) -> SIMD3<Float>
+M
+func convert(position: SIMD3<Float>, from: Entity?) -> SIMD3<Float>
+M
+func convert(normal: SIMD3<Float>, to: Entity?) -> SIMD3<Float>
+M
+func convert(normal: SIMD3<Float>, from: Entity?) -> SIMD3<Float>
+M
+func convert(direction: SIMD3<Float>, to: Entity?) -> SIMD3<Float>
+Documentation
+Open Menu
+Swift
+Instance Method
+look(at:from:upVector:relativeTo:forward:)
+Positions and orients the entity such that it looks at certain target from a give position.
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+func look(
+    at target: SIMD3<Float>,
+    from position: SIMD3<Float>,
+    upVector: SIMD3<Float> = SIMD3<Float>(0, 1, 0),
+    relativeTo referenceEntity: Entity?,
+    forward: Entity.ForwardDirection = .negativeZ
+)
+Parameters
+target
+The target position to look at.
+position
+The new position of the entity.
+upVector
+The up direction of the entity.
+referenceEntity
+The reference entity which defines the frame of reference. Can be nil, which is equivalent to “world space”.
+forward
+Use default forward (.negativeZ). Can be set to .positiveZ for non-camera entities
+Discussion
+This function moves the entity to the specified position. It rotates the entity such that the forward direction is pointing towards target. It further makes sure that entity’s up direction aligns with the specified upVector.
+Note: This method can be used for non-camera entities.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is look(at:from:upVector:relativeTo:forward:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

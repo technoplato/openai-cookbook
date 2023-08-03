@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/realitykit/modelsortgroupcomponentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+SpatialAudioComponent
+Beta
+S
+ChannelAudioComponent
+Beta
+S
+AudioMixGroupsComponent
+Beta
+S
+AmbientAudioComponent
+Beta
+Sound
+S
+ViewAttachmentComponent
+Beta
+S
+TextComponent
+S
+ModelDebugOptionsComponent
+S
+ModelComponent
+3D Models
+S
+PointLightComponent
+S
+SpotLightComponent
+S
+GroundingShadowComponent
+Beta
+S
+ImageBasedLightReceiverComponent
+Beta
+S
+ImageBasedLightComponent
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+ModelSortGroupComponent
+A component that allows an entity’s models to be rendered in an explicit order relative to the models of other entities in the same sort group. If this component is on an entity, then it must belong to a sort group.
+visionOS 1.0+ Beta
+struct ModelSortGroupComponent
+Topics
+Initializers
+init(group: ModelSortGroup, order: Int32)
+Instance Properties
+var group: ModelSortGroup
+Group membership is strictly defined by having an identical group to other entities in the scene. This is not hierarchical; membership only applies to the entity which owns this component.
+var order: Int32
+The draw order of the model relative to other models in its group. Lower value means the model draws earlier.
+Default Implementations
+API Reference
+Component Implementations
+Relationships
+Conforms To
+Component
+See Also
+3D Models
+struct ModelComponent
+A collection of resources that create the visual appearance of an entity.
+struct ModelDebugOptionsComponent
+A component that changes how RealityKit renders its entity to help with debugging.
+struct CharacterControllerComponent
+A component that manages character movement.
+struct CharacterControllerStateComponent
+An object that maintains state for a character controller.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModelSortGroupComponent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

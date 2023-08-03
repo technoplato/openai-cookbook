@@ -1,0 +1,193 @@
+https://developer.apple.com/documentation/swiftui/view/searchcompletion(_:)-e0prSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Beta
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Beta
+M
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Beta
+M
+func searchable<S>(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: S) -> some View
+Beta
+M
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: Text?) -> some View
+Beta
+M
+func searchable(text: Binding<String>, isPresented: Binding<Bool>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View
+Beta
+S
+DismissSearchAction
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+M
+func searchSuggestions(Visibility, for: SearchSuggestionsPlacement.Set) -> some View
+M
+func searchSuggestions<S>(() -> S) -> some View
+Suggesting search terms
+Making search suggestions
+S
+SearchFieldPlacement
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: some StringProtocol, token: (Binding<C.Element>) -> some View) -> some View
+Beta
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (Binding<C.Element>) -> some View) -> some View
+Beta
+M
+func searchable<C>(text: Binding<String>, editableTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (Binding<C.Element>) -> some View) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+searchCompletion(_:)
+Associates a search token with the value of this view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+func searchCompletion<T>(_ token: T) -> some View where T : Identifiable
+Parameters
+token
+Data to use as the view’s completion.
+Discussion
+Use this method to associate a search token with a view that is within a search suggestion list context. The system uses this value when the view is selected to replace the partial text being currently edited of the associated search field.
+enum FruitToken: Hashable, Identifiable, CaseIterable {
+    case apple
+    case pear
+    case banana
+
+
+    var id: Self { self }
+}
+
+
+@State private var text = ""
+@State private var tokens: [FruitToken] = []
+
+
+SearchPlaceholderView()
+    .searchable(text: $text, tokens: $tokens) { token in
+        switch token {
+        case .apple: Text("Apple")
+        case .pear: Text("Pear")
+        case .banana: Text("Banana")
+        }
+    }
+    .searchSuggestions {
+        Text("🍎").searchCompletion(FruitToken.apple)
+        Text("🍐").searchCompletion(FruitToken.pear)
+        Text("🍌").searchCompletion(FruitToken.banana)
+    }
+See Also
+Making search suggestions
+Suggesting search terms
+Provide suggestions to people searching for content in your app.
+func searchSuggestions<S>(() -> S) -> some View
+Configures the search suggestions for this view.
+func searchSuggestions(Visibility, for: SearchSuggestionsPlacement.Set) -> some View
+Configures how to display search suggestions within this view.
+func searchCompletion(String) -> some View
+Associates a fully formed string with the value of this view.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View
+Marks this view as searchable with text, tokens, and suggestions.
+struct SearchSuggestionsPlacement
+The ways that SwiftUI displays search suggestions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is searchCompletion(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

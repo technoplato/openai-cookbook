@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftui/shapeview/fill(_:style:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ContainerRelativeShape
+r
+P
+InsettableShape
+M
+func containerShape<T>(T) -> some View
+Setting a container shape
+S
+TransformedShape
+S
+OffsetShape
+S
+RotatedShape
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+func strokeBorder<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+Modify the shape
+Content
+P
+var shape: Self.Content
+Getting the shape
+r
+P
+ShapeView
+Beta
+Defining shape behavior
+S
+Path
+Drawing custom shapes
+Documentation
+Open Menu
+Swift
+Instance Method
+fill(_:style:)
+Fills this shape with a color or gradient.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func fill<S>(
+    _ content: S = .foreground,
+    style: FillStyle = FillStyle()
+) -> FillShapeView<Self.Content, S, Self> where S : ShapeStyle
+Parameters
+content
+The color or gradient to use when filling this shape.
+style
+The style options that determine how the fill renders.
+Return Value
+A shape filled with the color or gradient you supply.
+See Also
+Modify the shape
+func stroke<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeShapeView<Self.Content, S, Self>
+Traces the outline of this shape with a color or gradient.
+Beta
+func stroke<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeShapeView<Self.Content, S, Self>
+Traces the outline of this shape with a color or gradient.
+Beta
+func strokeBorder<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+Returns a view that’s the result of insetting this view by half of its style’s line width.
+Available when Content conforms to InsettableShape.
+Beta
+func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> StrokeBorderShapeView<Self.Content, S, Self>
+Returns a view that’s the result of filling an inner stroke of this view with the content you supply.
+Available when Content conforms to InsettableShape.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is fill(_:style:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

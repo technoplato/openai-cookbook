@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/swiftui/view/badge(_:)-8adyqSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func alternatingRowBackgrounds(AlternatingRowBackgroundBehavior) -> some View
+Beta
+S
+AlternatingRowBackgroundBehavior
+Beta
+P
+var backgroundProminence: BackgroundProminence
+Beta
+S
+BackgroundProminence
+Beta
+Displaying a badge on a list item
+M
+func badge(Text?) -> some View
+M
+func badge<S>(S?) -> some View
+M
+func badge(LocalizedStringKey?) -> some View
+E
+EditMode
+S
+EditActions
+S
+EditableCollectionContent
+S
+IndexedIdentifierCollection
+Tables
+View groupings
+Scroll views
+Documentation
+Open Menu
+Swift
+Instance Method
+badge(_:)
+Generates a badge for the view from an integer value.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func badge(_ count: Int) -> some View
+Parameters
+count
+An integer value to display in the badge. Set the value to zero to hide the badge.
+Discussion
+Use a badge to convey optional, supplementary information about a view. Keep the contents of the badge as short as possible. Badges appear only in list rows, tab bars, and menus.
+The following example shows a List with the value of recentItems.count represented by a badge on one of the rows:
+List {
+    Text("Recents")
+        .badge(recentItems.count)
+    Text("Favorites")
+}
+See Also
+Displaying a badge on a list item
+func badge(Text?) -> some View
+Generates a badge for the view from a text view.
+func badge<S>(S?) -> some View
+Generates a badge for the view from a string.
+func badge(LocalizedStringKey?) -> some View
+Generates a badge for the view from a localized string key.
+func badgeProminence(BadgeProminence) -> some View
+Specifies the prominence of badges created by this view.
+Beta
+var badgeProminence: BadgeProminence
+The prominence to apply to badges associated with this environment.
+Beta
+struct BadgeProminence
+The visual prominence of a badge.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is badge(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

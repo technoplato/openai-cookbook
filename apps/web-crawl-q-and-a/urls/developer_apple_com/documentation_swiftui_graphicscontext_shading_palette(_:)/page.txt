@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/shading/palette(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func radialGradient(Gradient, center: CGPoint, startRadius: CGFloat, endRadius: CGFloat, options: GraphicsContext.GradientOptions) -> GraphicsContext.Shading
+M
+static func conicGradient(Gradient, center: CGPoint, angle: Angle, options: GraphicsContext.GradientOptions) -> GraphicsContext.Shading
+Other shape styles
+M
+static func style<S>(S) -> GraphicsContext.Shading
+P
+static var foreground: GraphicsContext.Shading
+Images
+M
+static func tiledImage(Image, origin: CGPoint, sourceRect: CGRect, scale: CGFloat) -> GraphicsContext.Shading
+Composite shading types
+M
+func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)
+M
+func draw(GraphicsContext.ResolvedText, in: CGRect)
+M
+func resolve(Text) -> GraphicsContext.ResolvedText
+S
+GraphicsContext.ResolvedText
+Drawing a child view
+M
+func draw(GraphicsContext.ResolvedSymbol, at: CGPoint, anchor: UnitPoint)
+M
+func draw(GraphicsContext.ResolvedSymbol, in: CGRect)
+Documentation
+Open Menu
+Swift
+Type Method
+palette(_:)
+Returns a multilevel shading instance constructed from an array of shading instances.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static func palette(_ array: [GraphicsContext.Shading]) -> GraphicsContext.Shading
+Parameters
+array
+An array of shading instances. The array must contain at least one element.
+Return Value
+A shading instance composed from the given instances.
+See Also
+Composite shading types
+static var backdrop: GraphicsContext.Shading
+A shading instance that draws a copy of the current background.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is palette(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

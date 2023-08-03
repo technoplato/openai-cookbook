@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/view/quicklookpreview(_:in:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func storeProductTask(for: Product.ID, priority: TaskPriority, action: (Product.TaskState) async -> ()) -> some View
+Beta
+M
+func storeButton(Visibility, for: StoreButtonKind...) -> some View
+Beta
+M
+func productViewStyle(some ProductViewStyle) -> some View
+Beta
+M
+func productIconBorder() -> some View
+Beta
+M
+func onInAppPurchaseStart(perform: ((Product) async -> ())?) -> some View
+Beta
+M
+func onInAppPurchaseCompletion(perform: ((Product, Result<Product.PurchaseResult, Error>) async -> ())?) -> some View
+Beta
+M
+func manageSubscriptionsSheet(isPresented: Binding<Bool>, subscriptionGroupID: String) -> some View
+func currentEntitlementTask(for: String, priority: TaskPriority, action: (EntitlementTaskState<VerificationResult<Transaction>?>) async -> ()) -> some View
+func musicSubscriptionOffer(isPresented: Binding<Bool>, options: MusicSubscriptionOffer.Options, onLoadCompletion: ((Error)?) -> Void) -> some View
+func offerCodeRedemption(isPresented: Binding<Bool>, onCompletion: (Result<Void, Error>) -> Void) -> some View
+func refundRequestSheet(for: Transaction.ID, isPresented: Binding<Bool>, onDismiss: ((Result<Transaction.RefundRequestStatus, Transaction.RefundRequestError>) -> ())?) -> some View
+M
+func quickLookPreview(Binding<URL?>) -> some View
+Previewing content
+M
+func photosPickerStyle(PhotosPickerStyle) -> some View
+Beta
+M
+func photosPickerDisabledCapabilities(PHPickerCapabilities) -> some View
+Beta
+M
+func photosPickerAccessoryVisibility(Visibility, edges: Edge.Set) -> some View
+Beta
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<[PhotosPickerItem]>, maxSelectionCount: Int?, selectionBehavior: PhotosPickerSelectionBehavior, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy) -> some View
+M
+func photosPicker(isPresented: Binding<Bool>, selection: Binding<PhotosPickerItem?>, matching: PHPickerFilter?, preferredItemEncoding: PhotosPickerItem.EncodingDisambiguationPolicy, photoLibrary: PHPhotoLibrary) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+quickLookPreview(_:in:)
+Presents a Quick Look preview of the URLs you provide.
+QuickLook
+SwiftUI
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+func quickLookPreview<Items>(
+    _ selection: Binding<Items.Element?>,
+    in items: Items
+) -> some View where Items : RandomAccessCollection, Items.Element == URL
+Parameters
+selection
+A Binding to an element that’s part of the items collection. This is the URL that you currently want to preview.
+items
+A collection of URLs to preview.
+Return Value
+A view that presents the preview of the contents of the URL.
+Discussion
+The Quick Look preview appears when you set the binding to a non-nil item. When you set the item back to nil, Quick Look dismisses the preview. If the value of the selection binding isn’t contained in the items collection, Quick Look treats it the same as a nil selection.
+Quick Look updates the value of the selection binding to match the URL of the file the user is previewing. Upon dismissal by the user, Quick Look automatically sets the item binding to nil.
+See Also
+Previewing content
+func quickLookPreview(Binding<URL?>) -> some View
+Presents a Quick Look preview of the contents of a single URL.
+Current page is quickLookPreview(_:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

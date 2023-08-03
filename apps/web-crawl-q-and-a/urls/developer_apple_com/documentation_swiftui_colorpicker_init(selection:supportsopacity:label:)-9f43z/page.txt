@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/colorpicker/init(selection:supportsopacity:label:)-9f43zSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var controlActiveState: ControlActiveState
+Activating controls
+E
+ControlSize
+P
+var controlSize: ControlSize
+M
+func controlSize(ControlSize) -> some View
+Sizing controls
+S
+SensoryFeedback
+Creating a core graphics color picker
+M
+init<S>(S, selection: Binding<Color>, supportsOpacity: Bool)
+M
+init(LocalizedStringKey, selection: Binding<Color>, supportsOpacity: Bool)
+M
+init(selection: Binding<Color>, supportsOpacity: Bool, label: () -> Label)
+Creating a color picker
+S
+ColorPicker
+Choosing a color
+P
+var timeZone: TimeZone
+Documentation
+Open Menu
+Swift
+Initializer
+init(selection:supportsOpacity:label:)
+Creates an instance that selects a color.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+init(
+    selection: Binding<CGColor>,
+    supportsOpacity: Bool = true,
+    @ViewBuilder label: () -> Label
+)
+Parameters
+selection
+A Binding to the variable that displays the selected CGColor.
+supportsOpacity
+A Boolean value that indicates whether the color picker allows adjusting the selected color’s opacity; the default is true.
+label
+A view that describes the use of the selected color. The system color picker UI sets it’s title using the text from this view.
+See Also
+Creating a core graphics color picker
+init(LocalizedStringKey, selection: Binding<CGColor>, supportsOpacity: Bool)
+Creates a color picker with a text label generated from a title string key.
+Available when Label is Text.
+init<S>(S, selection: Binding<CGColor>, supportsOpacity: Bool)
+Creates a color picker with a text label generated from a title string.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(selection:supportsOpacity:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

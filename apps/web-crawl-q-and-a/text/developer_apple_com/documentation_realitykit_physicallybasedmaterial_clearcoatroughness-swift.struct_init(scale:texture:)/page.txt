@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/clearcoatroughness-swift.struct/init(scale:texture:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Culling Unneeded Polygons
+T
+PhysicallyBasedMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: PhysicallyBasedMaterial.TextureCoordinateTransform
+P
+var textureCoordinateTransform: PhysicallyBasedMaterial.TextureCoordinateTransform
+Modifying Texture Coordinates
+S
+PhysicallyBasedMaterial.EmissiveColor
+M
+init(floatLiteral: Float)
+Creating a Clearcoat Roughness Object
+S
+PhysicallyBasedMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+S
+PhysicallyBasedMaterial.Clearcoat
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+S
+PhysicallyBasedMaterial.SheenColor
+P
+var sheen: PhysicallyBasedMaterial.SheenColor?
+Documentation
+Open Menu
+Swift
+Initializer
+init(scale:texture:)
+Creates a clearcoat roughness object using a single value or a texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(
+    scale: Float = 1.0,
+    texture: PhysicallyBasedMaterial.Texture? = nil
+)
+Parameters
+scale
+The clearcoat roughness value for the entire material.
+texture
+The clearcoat roughness values as a UV-mapped image.
+Discussion
+A clearcoat is a separate layer of transparent specular highlights used to simulate a clear transparent coating, like the paint on a car, or the surface of lacquered objects. When you enable clearcoat rendering for a material, RealityKit renders the clearcoat as a separate layer just above the surface of the entity. You can specify a clearcoat roughness value for the clearcoat to indicate how much the clearcoat scatters light that bounces off of it, which softens and spreads out the highlights.
+This initializer creates an object that specifies the clearcoat roughness for a material using a single value for the entire material, a UV-mapped image, or both.
+If you specify texture, RealityKit calculates the clearcoat roughness for the entity by UV-mapping texture onto the entity and multiplying the value of each mapped pixel by scale. If you don’t specify a texture, then RealityKit uses scale as the entire entity’s clearcoat roughness. If you provide a color image for texture rather than a grayscale image, RealityKit only uses the intensity of the image’s red channel.
+See Also
+Creating a Clearcoat Roughness Object
+init(floatLiteral: Float)
+Creates a clearcoat roughness object using a single value.
+init(CustomMaterial.ClearcoatRoughness)
+Creates a clearcoat roughness object from a custom material’s clearcoat roughness property.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(scale:texture:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

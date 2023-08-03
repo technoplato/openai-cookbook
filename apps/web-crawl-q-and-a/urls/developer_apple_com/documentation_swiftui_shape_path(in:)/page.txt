@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/shape/path(in:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fill<S>(S, style: FillStyle) -> some View
+M
+func fill<S>(S, style: FillStyle) -> _ShapeView<Self, S>
+Beta
+Filling a shape
+M
+func stroke(style: StrokeStyle) -> some Shape
+M
+func stroke<S>(S, style: StrokeStyle, antialiased: Bool) -> StrokeShapeView<Self, S, EmptyView>
+Beta
+M
+func stroke<S>(S, style: StrokeStyle) -> some View
+M
+func stroke(lineWidth: CGFloat) -> some Shape
+M
+func sizeThatFits(ProposedViewSize) -> CGSize
+Defining a shape’s size and path
+M
+static func rect(topLeadingRadius: CGFloat, bottomLeadingRadius: CGFloat, bottomTrailingRadius: CGFloat, topTrailingRadius: CGFloat, style: RoundedCornerStyle) -> Self
+M
+static func rect(cornerSize: CGSize, style: RoundedCornerStyle) -> Self
+M
+static func rect(cornerRadius: CGFloat, style: RoundedCornerStyle) -> Self
+M
+static func rect(cornerRadii: RectangleCornerRadii, style: RoundedCornerStyle) -> Self
+P
+static var rect: Rectangle
+P
+static var ellipse: Ellipse
+Documentation
+Open Menu
+Swift
+Instance Method
+path(in:)
+Describes this shape as a path within a rectangular frame of reference.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func path(in rect: CGRect) -> Path
+Required
+Parameters
+rect
+The frame of reference for describing this shape.
+Return Value
+A path that describes this shape.
+See Also
+Defining a shape’s size and path
+func sizeThatFits(ProposedViewSize) -> CGSize
+Returns the size of the view that will render the shape, given a proposed size.
+Required Default implementation provided.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is path(in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

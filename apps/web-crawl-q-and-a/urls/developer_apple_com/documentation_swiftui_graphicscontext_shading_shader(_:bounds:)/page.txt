@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/shading/shader(_:bounds:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Drawing into a new layer
+S
+GraphicsContext.ResolvedSymbol
+M
+func resolveSymbol<ID>(id: ID) -> GraphicsContext.ResolvedSymbol?
+M
+func draw(GraphicsContext.ResolvedSymbol, in: CGRect)
+M
+func draw(GraphicsContext.ResolvedSymbol, at: CGPoint, anchor: UnitPoint)
+Drawing a child view
+S
+GraphicsContext.ResolvedText
+Using a custom Metal shader
+P
+static var backdrop: GraphicsContext.Shading
+M
+static func palette([GraphicsContext.Shading]) -> GraphicsContext.Shading
+Composite shading types
+M
+static func tiledImage(Image, origin: CGPoint, sourceRect: CGRect, scale: CGFloat) -> GraphicsContext.Shading
+Images
+P
+static var foreground: GraphicsContext.Shading
+M
+static func style<S>(S) -> GraphicsContext.Shading
+Documentation
+Open Menu
+Swift
+Type Method
+shader(_:bounds:)
+Returns a shading instance that fills with the results of querying a shader for each pixel.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+static func shader(
+    _ shader: Shader,
+    bounds: CGRect = .zero
+) -> GraphicsContext.Shading
+Parameters
+shader
+The shader defining the filled colors.
+bounds
+The rect used to define any bounds arguments of the shader.
+Return Value
+A shading instance that fills using the shader.
+Discussion
+For a shader function to act as a shape fill it must have a function signature matching:
+[[ stitchable ]] half4 name(float2 position, args...)
+where position is the user-space coordinates of the pixel applied to the shader, and args... should be compatible with the uniform arguments bound to shader. The function should return the premultiplied color value in the color space of the destination (typically sRGB).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is shader(_:bounds:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

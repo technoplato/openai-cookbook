@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/swiftui/keyboardshortcutSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Beta
+S
+KeyPress
+Beta
+Creating keyboard shortcuts
+M
+func keyboardShortcut(KeyboardShortcut) -> some View
+M
+func keyboardShortcut(KeyboardShortcut?) -> some View
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers) -> some View
+M
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+P
+var keyboardShortcut: KeyboardShortcut?
+M
+func onHover(perform: (Bool) -> Void) -> some View
+M
+func onContinuousHover(coordinateSpace: some CoordinateSpaceProtocol, perform: (HoverPhase) -> Void) -> some View
+Beta
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+Beta
+M
+func hoverEffectDisabled(Bool) -> some View
+Beta
+M
+func defaultHoverEffect(HoverEffect?) -> some View
+Beta
+P
+var isHoverEffectEnabled: Bool
+Beta
+E
+HoverPhase
+Documentation
+Open Menu
+Swift
+Structure
+KeyboardShortcut
+Keyboard shortcuts describe combinations of keys on a keyboard that the user can press in order to activate a button or toggle.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+struct KeyboardShortcut
+Topics
+Getting standard shortcuts
+static let cancelAction: KeyboardShortcut
+The standard keyboard shortcut for cancelling the in-progress action or dismissing a prompt, consisting of the Escape (⎋) key and no modifiers.
+static let defaultAction: KeyboardShortcut
+The standard keyboard shortcut for the default button, consisting of the Return (↩) key and no modifiers.
+Creating a shortcut
+init(KeyEquivalent, modifiers: EventModifiers)
+Creates a new keyboard shortcut with the given key equivalent and set of modifier keys.
+var key: KeyEquivalent
+The key equivalent that the user presses in conjunction with any specified modifier keys to activate the shortcut.
+var modifiers: EventModifiers
+The modifier keys that the user presses in conjunction with a key equivalent to activate the shortcut.
+Creating a localized shortcut
+init(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization)
+Creates a new keyboard shortcut with the given key equivalent and set of modifier keys.
+var localization: KeyboardShortcut.Localization
+The localization strategy to apply to this shortcut.
+struct Localization
+Options for how a keyboard shortcut participates in automatic localization.
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Creating keyboard shortcuts
+func keyboardShortcut(KeyboardShortcut) -> some View
+Assigns a keyboard shortcut to the modified control.
+func keyboardShortcut(KeyboardShortcut?) -> some View
+Assigns an optional keyboard shortcut to the modified control.
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers) -> some View
+Defines a keyboard shortcut and assigns it to the modified control.
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+Defines a keyboard shortcut and assigns it to the modified control.
+var keyboardShortcut: KeyboardShortcut?
+The keyboard shortcut that buttons in this environment will be triggered with.
+struct KeyEquivalent
+Key equivalents consist of a letter, punctuation, or function key that can be combined with an optional set of modifier keys to specify a keyboard shortcut.
+struct EventModifiers
+A set of key modifiers that you can add to a gesture.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is KeyboardShortcut
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

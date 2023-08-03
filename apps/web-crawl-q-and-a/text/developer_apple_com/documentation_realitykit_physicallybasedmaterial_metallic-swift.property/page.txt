@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/realitykit/physicallybasedmaterial/metallic-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var anisotropyLevel: PhysicallyBasedMaterial.AnisotropyLevel
+Adding Anisotropy
+S
+PhysicallyBasedMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: PhysicallyBasedMaterial.ClearcoatRoughness
+S
+PhysicallyBasedMaterial.Clearcoat
+P
+var clearcoat: PhysicallyBasedMaterial.Clearcoat
+S
+PhysicallyBasedMaterial.SheenColor
+Specifying Metallic Reflections
+S
+PhysicallyBasedMaterial.Roughness
+P
+var roughness: PhysicallyBasedMaterial.Roughness
+Specifying Entity Roughness
+S
+PhysicallyBasedMaterial.BaseColor
+P
+var baseColor: PhysicallyBasedMaterial.BaseColor
+Setting the Entity’s Base Color
+M
+init()
+Documentation
+Open Menu
+Swift
+Instance Property
+metallic
+The reflectiveness of an entity.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var metallic: PhysicallyBasedMaterial.Metallic { get set }
+Discussion
+The metallic property represents the reflectiveness of an entity. Use this property to specify whether the entity displays metallic qualities and reflects the surrounding environment, or displays dielectric qualities and doesn’t reflect the environment.
+Specify this property using a Float to represent a uniform reflectiveness for the entire entity. You an also use a UV-mapped grayscale image to represent the reflectiveness of different parts of the entity. When using an image, black pixels represent areas that are dielectric, while white pixels represents areas that are completely metallic and reflective.
+If you initialize this property with a color image, rather than a grayscale image, RealityKit only uses the intensity of the image’s red channel.
+The following example specifies the metallic qualities of an entity using a single value:
+material.metallic = PhysicallyBasedMaterial.Metallic(floatLiteral: 1.0) ```
+
+
+The following example specifies the metallic qualities of an entity
+using a UV-mapped image:
+
+
+```swift
+if let metalResource = try? TextureResource.load(named:"entity_metallic") {
+    let metallic = MaterialParameters.Texture(metalResource)
+    material.metallic = PhysicallyBasedMaterial.Metallic(texture:metallic)
+}
+See Also
+Specifying Metallic Reflections
+struct Metallic
+An object that defines the reflectiveness of an entity.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is metallic
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

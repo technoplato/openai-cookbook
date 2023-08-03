@@ -1,0 +1,118 @@
+https://developer.apple.com/documentation/swiftui/wkhostingcontroller/updatebodyifneeded()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Monitoring data changes in your app
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Updating the root view
+P
+var body: Body
+Getting the root view
+M
+init()
+Creating a hosting controller object
+C
+WKHostingController
+Displaying SwiftUI views in WatchKit
+WatchKit integration
+Documentation
+Open Menu
+Swift
+Instance Method
+updateBodyIfNeeded()
+Updates the interface controller’s set of views immediately, if updates are pending.
+watchOS 6.0+
+@MainActor
+func updateBodyIfNeeded()
+Discussion
+Calling this method forces the hosting controller to update its current set of views, but only if there are pending changes. If there are no pending changes, this method does nothing.
+To mark the interface controller as needing an update, call setNeedsBodyUpdate().
+See Also
+Updating the root view
+func setNeedsBodyUpdate()
+Invalidates the current SwiftUI views and triggers an update during the next cycle.
+Current page is updateBodyIfNeeded()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

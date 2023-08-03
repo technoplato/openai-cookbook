@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Input events
+Gestures
+Event handling
+S
+ScrollDismissesKeyboardMode
+P
+var scrollDismissesKeyboardMode: ScrollDismissesKeyboardMode
+M
+func scrollDismissesKeyboard(ScrollDismissesKeyboardMode) -> some View
+Interacting with a software keyboard
+M
+func scrollIndicatorsFlash(trigger: some Equatable) -> some View
+Beta
+M
+func scrollIndicatorsFlash(onAppear: Bool) -> some View
+Beta
+Showing scroll indicators
+S
+ScrollTransitionConfiguration
+Beta
+E
+ScrollTransitionPhase
+Beta
+M
+func scrollTransition(topLeading: ScrollTransitionConfiguration, bottomTrailing: ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+M
+func scrollTransition(ScrollTransitionConfiguration, axis: Axis?, transition: (EmptyVisualEffect, ScrollTransitionPhase) -> some VisualEffect) -> some View
+Beta
+Animating scroll transitions
+Documentation
+Open Menu
+Swift
+Instance Method
+scrollIndicators(_:axes:)
+Sets the visibility of scroll indicators within this view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func scrollIndicators(
+    _ visibility: ScrollIndicatorVisibility,
+    axes: Axis.Set = [.vertical, .horizontal]
+) -> some View
+Parameters
+visibility
+The visibility to apply to scrollable views.
+axes
+The axes of scrollable views that the visibility applies to.
+Return Value
+A view with the specified scroll indicator visibility.
+Discussion
+Use this modifier to hide or show scroll indicators on scrollable content in views like a ScrollView, List, or TextEditor. This modifier applies the prefered visibility to any scrollable content within a view hierarchy.
+ScrollView {
+    VStack(alignment: .leading) {
+        ForEach(0..<100) {
+            Text("Row \($0)")
+        }
+    }
+}
+.scrollIndicators(.hidden)
+Use the hidden value to indicate that you prefer that views never show scroll indicators along a given axis. Use visible when you prefer that views show scroll indicators. Depending on platform conventions, visible scroll indicators might only appear while scrolling. Pass automatic to allow views to decide whether or not to show their indicators.
+See Also
+Showing scroll indicators
+func scrollIndicatorsFlash(onAppear: Bool) -> some View
+Flashes the scroll indicators of a scrollable view when it appears.
+Beta
+func scrollIndicatorsFlash(trigger: some Equatable) -> some View
+Flashes the scroll indicators of scrollable views when a value changes.
+Beta
+var horizontalScrollIndicatorVisibility: ScrollIndicatorVisibility
+The visibility to apply to scroll indicators of any horizontally scrollable content.
+var verticalScrollIndicatorVisibility: ScrollIndicatorVisibility
+The visiblity to apply to scroll indicators of any vertically scrollable content.
+struct ScrollIndicatorVisibility
+The visibility of scroll indicators of a UI element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is scrollIndicators(_:axes:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

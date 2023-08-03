@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/appkit-integrationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+Xcode library customization
+Previews in Xcode
+Framework integration
+Accessible navigation
+Accessible descriptions
+Accessible controls
+Accessible appearance
+Accessibility fundamentals
+Accessibility
+System events
+Documentation
+Open Menu
+Swift
+AppKit integration
+Add AppKit views to your SwiftUI app, or use SwiftUI views in your AppKit app.
+Overview
+Integrate SwiftUI with your app’s existing content using hosting controllers to add SwiftUI views into AppKit interfaces. A hosting controller wraps a set of SwiftUI views in a form that you can then add to your storyboard-based app.
+You can also add AppKit views and view controllers to your SwiftUI interfaces. A representable object wraps the designated view or view controller, and facilitates communication between the wrapped object and your SwiftUI views.
+For design guidance, see Designing for macOS in the Human Interface Guidelines.
+Topics
+Displaying SwiftUI views in AppKit
+class NSHostingController
+An AppKit view controller that hosts SwiftUI view hierarchy.
+class NSHostingView
+An AppKit view that hosts a SwiftUI view hierarchy.
+struct NSHostingSizingOptions
+Options for how hosting views and controllers reflect their content’s size into Auto Layout constraints.
+struct NSHostingSceneBridgingOptions
+Options for how hosting views and controllers manage aspects of the associated window.
+Beta
+Adding AppKit views to SwiftUI view hierarchies
+protocol NSViewRepresentable
+A wrapper that you use to integrate an AppKit view into your SwiftUI view hierarchy.
+struct NSViewRepresentableContext
+Contextual information about the state of the system that you use to create and update your AppKit view.
+protocol NSViewControllerRepresentable
+A wrapper that you use to integrate an AppKit view controller into your SwiftUI interface.
+struct NSViewControllerRepresentableContext
+Contextual information about the state of the system that you use to create and update your AppKit view controller.
+See Also
+Framework integration
+API Reference
+UIKit integration
+Add UIKit views to your SwiftUI app, or use SwiftUI views in your UIKit app.
+API Reference
+WatchKit integration
+Add WatchKit views to your SwiftUI app, or use SwiftUI views in your WatchKit app.
+API Reference
+Technology-specific views
+Use SwiftUI views that other Apple frameworks provide.
+Current page is AppKit integration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

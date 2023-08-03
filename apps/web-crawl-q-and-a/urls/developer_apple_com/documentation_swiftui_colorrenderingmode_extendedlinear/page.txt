@@ -1,0 +1,145 @@
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+Axis
+Accessing geometric constructs
+S
+ShaderLibrary
+Beta
+S
+ShaderFunction
+Beta
+S
+Shader
+Beta
+M
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Getting rendering modes
+E
+ColorRenderingMode
+E
+BlendMode
+M
+func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View
+M
+func compositingGroup() -> some View
+M
+func blendMode(BlendMode) -> some View
+Compositing views
+S
+EmptyVisualEffect
+Beta
+Documentation
+Open Menu
+Swift
+Case
+ColorRenderingMode.extendedLinear
+The extended linear sRGB working color space.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+case extendedLinear
+Discussion
+Color component values outside the range [0, 1] are preserved. This color space isn’t gamma corrected.
+See Also
+Getting rendering modes
+case linear
+The linear sRGB working color space.
+case nonLinear
+The non-linear sRGB working color space.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ColorRenderingMode.extendedLinear
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

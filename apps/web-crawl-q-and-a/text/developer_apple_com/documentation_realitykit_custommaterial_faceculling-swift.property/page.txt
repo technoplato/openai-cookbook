@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/faceculling-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var boundsMargin: Float
+Modifying the Bounding Box for Rendering
+M
+static func registerComponent()
+Registering a Component Type
+Modifying RealityKit Rendering Using Custom Materials
+Applying Realistic Material and Lighting Effects to Entities
+S
+MaterialParameterTypes
+Culling Unneeded Polygons
+T
+CustomMaterial.TextureCoordinateTransform
+S
+MaterialParameterTypes.TextureCoordinateTransform
+P
+var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+P
+var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform
+Modifying Texture Coordinates
+S
+CustomMaterial.ClearcoatRoughness
+P
+var clearcoatRoughness: CustomMaterial.ClearcoatRoughness
+Documentation
+Open Menu
+Swift
+Instance Property
+faceCulling
+A process in which the system specifies polygons to remove before rendering a scene.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var faceCulling: CustomMaterial.FaceCulling { get set }
+Discussion
+To improve performance, RealityKit culls polygons, or faces, that it determines won’t be visible. Discarding faces that aren’t part of the final render elimininates the need to do any calculations for those faces.
+RealityKit recognizes when a face aims toward the camera (a front face) or away from the camera (a back face). This value controls the type of faces RealityKit culls.
+The default for this value is MaterialParameterTypes.FaceCulling.back, which means RealityKit removes faces that point away from the camera. Because back faces point away from the camera and are usually obscured by front-facing polygons, the user typically won’t see them. As a result, in most cases, the default setting is desirable because it culls polygons that don’t contribute to the rendered scene.
+You can change the culling behavior to cull front faces instead or to turn off face culling altogether, but be aware that turning off face culling results in less efficient rendering and may negatively impact your app’s frame rate.
+See Also
+Culling Unneeded Polygons
+enum FaceCulling
+An object that defines how the system removes polygons before rendering a scene.
+typealias FaceCulling
+The type of object used to control the removal of polygons that aren’t visible to the user.
+Current page is faceCulling
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/path/boundingrectSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Transforming the path
+M
+func closeSubpath()
+M
+func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)
+M
+func addRelativeArc(center: CGPoint, radius: CGFloat, startAngle: Angle, delta: Angle, transform: CGAffineTransform)
+M
+func addRects([CGRect], transform: CGAffineTransform)
+M
+func addRect(CGRect, transform: CGAffineTransform)
+M
+func addQuadCurve(to: CGPoint, control: CGPoint)
+func addArc(center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool, transform: CGAffineTransform)
+Getting the path’s characteristics
+M
+init(roundedRect: CGRect, cornerRadii: RectangleCornerRadii, style: RoundedCornerStyle)
+M
+init(roundedRect: CGRect, cornerSize: CGSize, style: RoundedCornerStyle)
+M
+init(roundedRect: CGRect, cornerRadius: CGFloat, style: RoundedCornerStyle)
+M
+init(ellipseIn: CGRect)
+M
+init(CGRect)
+M
+init?(String)
+M
+init(CGPath)
+Documentation
+Open Menu
+Swift
+Instance Property
+boundingRect
+A rectangle containing all path segments.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+var boundingRect: CGRect { get }
+Discussion
+This is the smallest rectangle completely enclosing all points in the path but not including control points for Bézier curves.
+See Also
+Getting the path’s characteristics
+var cgPath: CGPath
+An immutable path representing the elements in the path.
+func contains(CGPoint, eoFill: Bool) -> Bool
+Returns true if the path contains a specified point.
+var currentPoint: CGPoint?
+Returns the last point in the path, or nil if the path contains no points.
+var description: String
+A description of the path that may be used to recreate the path via init?(_:).
+var isEmpty: Bool
+A Boolean value indicating whether the path contains zero elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is boundingRect
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

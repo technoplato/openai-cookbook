@@ -1,0 +1,228 @@
+https://developer.apple.com/documentation/swiftui/tablecolumnbuilderSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4, C5, C6)>
+M
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4, C5)>
+M
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4)>
+M
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3)>
+M
+static func buildBlock<C0, C1, C2>(C0, C1, C2) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2)>
+M
+static func buildBlock<C0, C1>(C0, C1) -> TupleTableColumnContent<RowValue, Sort, (C0, C1)>
+M
+static func buildBlock<Column>(Column) -> Column
+static func buildExpression<Content, Label>(TableColumn<RowValue, Never, Content, Label>) -> TableColumn<RowValue, Never, Content, Label>
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6, C7, C8, C9)>
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6, C7, C8)>
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6, C7)>
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6)>
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5)>
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4)>
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3)>
+S
+TableColumnAlignment
+Beta
+r
+P
+TableColumnContent
+S
+TableColumn
+Creating columns
+M
+func tableStyle<S>(S) -> some View
+S
+Table
+Building a Great Mac App with SwiftUI
+Creating a table
+Documentation
+Open Menu
+Swift
+Structure
+TableColumnBuilder
+A result builder that creates table column content from closures.
+iOS 16.0+
+iPadOS 16.0+
+macOS 12.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+@resultBuilder
+struct TableColumnBuilder<RowValue, Sort> where RowValue : Identifiable, Sort : SortComparator
+Overview
+The buildBlock methods in this type create TableColumnContent instances based on the number and types of sources provided as parameters.
+Don’t use this type directly; instead, SwiftUI annotates the columns parameter of the various Table initializers with the @TableColumnBuilder annotation, implicitly calling this builder for you.
+Topics
+Building an unsortable column
+static func buildBlock<Column>(Column) -> Column
+Creates a single, unsortable column result.
+static func buildBlock<C0, C1>(C0, C1) -> TupleTableColumnContent<RowValue, Never, (C0, C1)>
+Creates an unsortable column result from two sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2>(C0, C1, C2) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2)>
+Creates an unsortable column result from three sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3)>
+Creates an unsortable column result from four sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4)>
+Creates an unsortable column result from five sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5)>
+Creates an unsortable column result from six sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6)>
+Creates an unsortable column result from seven sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6, C7)>
+Creates an unsortable column result from eight sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6, C7, C8)>
+Creates an unsortable column result from nine sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> TupleTableColumnContent<RowValue, Never, (C0, C1, C2, C3, C4, C5, C6, C7, C8, C9)>
+Creates an unsortable column result from ten sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildExpression<Column>(Column) -> Column
+Creates a generic, unsortable single column expression.
+static func buildExpression<Content, Label>(TableColumn<RowValue, Never, Content, Label>) -> TableColumn<RowValue, Never, Content, Label>
+Creates a sortable table column expression whose value type matches that of the builder.
+Building a sortable column
+static func buildBlock<Column>(Column) -> Column
+Creates a single, sortable column result.
+static func buildBlock<C0, C1>(C0, C1) -> TupleTableColumnContent<RowValue, Sort, (C0, C1)>
+Creates a sortable column result from two sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2>(C0, C1, C2) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2)>
+Creates a sortable column result from three sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3>(C0, C1, C2, C3) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3)>
+Creates a sortable column result from four sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4>(C0, C1, C2, C3, C4) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4)>
+Creates a sortable column result from five sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5>(C0, C1, C2, C3, C4, C5) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4, C5)>
+Creates a sortable column result from six sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(C0, C1, C2, C3, C4, C5, C6) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4, C5, C6)>
+Creates a sortable column result from seven sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7>(C0, C1, C2, C3, C4, C5, C6, C7) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4, C5, C6, C7)>
+Creates a sortable column result from eight sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8>(C0, C1, C2, C3, C4, C5, C6, C7, C8) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4, C5, C6, C7, C8)>
+Creates a sortable column result from nine sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>(C0, C1, C2, C3, C4, C5, C6, C7, C8, C9) -> TupleTableColumnContent<RowValue, Sort, (C0, C1, C2, C3, C4, C5, C6, C7, C8, C9)>
+Creates a sortable column result from ten sources.
+Available when RowValue conforms to Identifiable and Sort conforms to SortComparator.
+static func buildExpression<Column>(Column) -> Column
+Creates a generic, sortable single column expression.
+static func buildExpression<Content, Label>(TableColumn<RowValue, Sort, Content, Label>) -> TableColumn<RowValue, Sort, Content, Label>
+Creates a sortable table column expression whose value and sort types match those of the builder.
+Supporting types
+struct TupleTableColumnContent
+A type of table column content that creates table columns created from a Swift tuple of table columns.
+Relationships
+Conforms To
+Sendable
+See Also
+Creating columns
+struct TableColumn
+A column that displays a view for each row in a table.
+protocol TableColumnContent
+A type used to represent columns within a table.
+struct TableColumnAlignment
+Describes the alignment of the content of a table column.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TableColumnBuilder
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

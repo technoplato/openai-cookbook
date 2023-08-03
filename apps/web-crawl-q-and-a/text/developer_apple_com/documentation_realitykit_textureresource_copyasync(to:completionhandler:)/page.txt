@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/realitykit/textureresource/copyasync(to:completionhandler:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hash(into: inout Hasher)
+static func != (Self, Self) -> Bool
+static func == (MaterialColorParameter, MaterialColorParameter) -> Bool
+Comparing Material Color Parameters
+Equatable Implementations
+Default Implementations
+M
+convenience init(named: String, in: Bundle?, options: TextureResource.CreateOptions) async throws
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) async throws
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) throws
+convenience init(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) async throws
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+M
+func copy(to: MTLTexture) throws
+Copying the Texture
+P
+var drawableQueue: TextureResource.DrawableQueue?
+C
+TextureResource.DrawableQueue
+C
+TextureResource.Drawable
+Drawing the Texture
+E
+TextureResource.Semantic
+P
+var semantic: TextureResource.Semantic?
+Documentation
+Open Menu
+Swift
+Instance Method
+copyAsync(to:completionHandler:)
+Asynchronously copies texture data to another texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+@MainActor @preconcurrency
+func copyAsync(
+    to texture: MTLTexture,
+    completionHandler: @escaping @MainActor ((Error)?) -> Void
+)
+Parameters
+texture
+Target texture for copying the data. It must have the same width and height as the TextureResource, and .shaderWrite usage.
+completionHandler
+A closure called after once copy has completed, with nil error if succeeded.
+Discussion
+This function is asynchronous. It returns immediately and runs in the background, calling completionHandler when it finishes or errors. This method copies all available mipmap sizes to texture.
+Even though semantic is an optional, it is recommended that you provide a value. Specifying a semantic for this texture resource enables RealityKit to select an appropriate pixel format for the target texture.
+See Also
+Copying the Texture
+func copy(to: MTLTexture) throws
+Copies texture data to another texture.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is copyAsync(to:completionHandler:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

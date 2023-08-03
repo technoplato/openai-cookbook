@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftui/openurlaction/callasfunction(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Handling URLs
+M
+func onOpenURL(perform: (URL) -> ()) -> some View
+P
+var openURL: OpenURLAction
+S
+OpenURLAction
+Creating the action
+M
+init(handler: (URL) -> OpenURLAction.Result)
+S
+OpenURLAction.Result
+Calling the action
+func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View
+Accessible controls
+Accessible descriptions
+Accessible navigation
+Framework integration
+AppKit integration
+UIKit integration
+WatchKit integration
+Documentation
+Open Menu
+Swift
+Instance Method
+callAsFunction(_:)
+Opens a URL, following system conventions.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func callAsFunction(_ url: URL)
+Parameters
+url
+The URL to open.
+Discussion
+Don’t call this method directly. SwiftUI calls it when you call the OpenURLAction structure that you get from the Environment, using a URL as an argument:
+struct OpenURLExample: View {
+    @Environment(\.openURL) private var openURL
+
+
+    var body: some View {
+        Button {
+            if let url = URL(string: "https://www.example.com") {
+                openURL(url) // Implicitly calls openURL.callAsFunction(url)
+            }
+        } label: {
+            Label("Get Help", systemImage: "person.fill.questionmark")
+        }
+    }
+}
+For information about how Swift uses the callAsFunction() method to simplify call site syntax, see Methods with Special Names in The Swift Programming Language.
+See Also
+Calling the action
+func callAsFunction(URL, completion: (Bool) -> Void)
+Asynchronously opens a URL, following system conventions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is callAsFunction(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

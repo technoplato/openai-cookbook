@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/progressview/init()Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var timeZone: TimeZone
+Choosing a color
+S
+ColorPicker
+Indicating a value
+S
+Gauge
+M
+func gaugeStyle<S>(S) -> some View
+S
+ProgressView
+Creating an indeterminate progress view
+init(timerInterval: ClosedRange<Date>, countsDown: Bool, label: () -> Label, currentValueLabel: () -> CurrentValueLabel)
+Creating a configured progress view
+M
+init(ProgressViewStyleConfiguration)
+M
+func progressViewStyle<S>(S) -> some View
+S
+DefaultDateProgressLabel
+Indicating missing content
+S
+ContentUnavailableView
+Beta
+Providing haptic feedback
+Documentation
+Open Menu
+Swift
+Initializer
+init()
+Creates a progress view for showing indeterminate progress, without a label.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+init() where Label == EmptyView
+Available when Label conforms to View and CurrentValueLabel is EmptyView.
+See Also
+Creating an indeterminate progress view
+init(label: () -> Label)
+Creates a progress view for showing indeterminate progress that displays a custom label.
+Available when Label conforms to View and CurrentValueLabel is EmptyView.
+init(LocalizedStringKey)
+Creates a progress view for showing indeterminate progress that generates its label from a localized string.
+Available when Label conforms to View and CurrentValueLabel is EmptyView.
+init<S>(S)
+Creates a progress view for showing indeterminate progress that generates its label from a string.
+Available when Label conforms to View and CurrentValueLabel is EmptyView.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

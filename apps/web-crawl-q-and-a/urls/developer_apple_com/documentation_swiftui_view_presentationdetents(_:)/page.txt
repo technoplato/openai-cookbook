@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/swiftui/view/presentationdetents(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+M
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+E
+PopoverAttachmentAnchor
+Adapting a presentation to size classes
+M
+func presentationCompactAdaptation(horizontal: PresentationAdaptation, vertical: PresentationAdaptation) -> some View
+M
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+S
+PresentationAdaptation
+Configuring a sheet’s height
+M
+func alert<A>(Text, isPresented: Binding<Bool>, actions: () -> A) -> some View
+M
+func alert<A>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A) -> some View
+M
+func alert<A, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+M
+func alert<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+M
+func alert<S, A, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View
+M
+func alert<E, A>(isPresented: Binding<Bool>, error: E?, actions: () -> A) -> some View
+Presenting an alert with a message
+Documentation
+Open Menu
+Swift
+Instance Method
+presentationDetents(_:)
+Sets the available detents for the enclosing sheet.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func presentationDetents(_ detents: Set<PresentationDetent>) -> some View
+Parameters
+detents
+A set of supported detents for the sheet. If you provide more that one detent, people can drag the sheet to resize it.
+Discussion
+By default, sheets support the large detent.
+struct ContentView: View {
+    @State private var showSettings = false
+
+
+    var body: some View {
+        Button("View Settings") {
+            showSettings = true
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
+                .presentationDetents([.medium, .large])
+        }
+    }
+}
+See Also
+Configuring a sheet’s height
+func presentationDetents(Set<PresentationDetent>, selection: Binding<PresentationDetent>) -> some View
+Sets the available detents for the enclosing sheet, giving you programmatic control of the currently selected detent.
+func presentationContentInteraction(PresentationContentInteraction) -> some View
+Configures the behavior of swipe gestures on a presentation.
+func presentationDragIndicator(Visibility) -> some View
+Sets the visibility of the drag indicator on top of a sheet.
+struct PresentationDetent
+A type that represents a height where a sheet naturally rests.
+protocol CustomPresentationDetent
+The definition of a custom detent with a calculated height.
+struct PresentationContentInteraction
+A behavior that you can use to influence how a presentation responds to swipe gestures.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is presentationDetents(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

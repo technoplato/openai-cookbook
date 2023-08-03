@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/custom-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+CustomMaterial.Clearcoat
+P
+var clearcoat: CustomMaterial.Clearcoat
+S
+CustomMaterial.Specular
+P
+var specular: CustomMaterial.Specular
+Creating Highlights
+S
+CustomMaterial.AmbientOcclusion
+P
+var ambientOcclusion: CustomMaterial.AmbientOcclusion
+Using Custom Values
+S
+CustomMaterial.Metallic
+P
+var metallic: CustomMaterial.Metallic
+Specifying Metallic Reflections
+S
+CustomMaterial.Roughness
+P
+var roughness: CustomMaterial.Roughness
+Specifying Entity Roughness
+S
+CustomMaterial.BaseColor
+Documentation
+Open Menu
+Swift
+Instance Property
+custom
+User-defined properties for the material’s shader functions.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var custom: CustomMaterial.Custom { get set }
+Discussion
+Use a CustomMaterial.Custom object to send custom data to your shader functions. A custom object can hold a texture or a vector value, or both. Both the texture and vector value are available in your shader functions.
+Note
+Unlike other CustomMaterial properties, you don’t need to create a CustomMaterial.Custom object for your material. All CustomMaterial objects have one by default; you just need to set the value property, texture property, or both.
+The following code demonstrates how to use the custom property to pass a vector to your shader functions:
+// Specify a custom vector to pass to the shader functions.
+customMaterial.custom.value = SIMD4<Float>(x: 0.25, y: 0.25, z: 0.25, w:
+1.0) ```
+
+
+You can also use it to pass up to four scalar values instead of a
+vector:
+
+
+```swift
+let customValue1: Float = 0.25 let customValue2: Float = 0.75
+customMaterial.custom.value[0] = customValue1
+customMaterial.custoom.value[1] = customValue2 ```
+
+
+The custom property can also include a texture. The following code
+demonstrates how to add a texture to the custom property:
+
+
+```swift
+if let theResource = try? TextureResource.load(named:
+"MyCustomTexture") {
+    let myTexture = CustomMaterial.Texture(theResource)
+    customMaterial.custom.texture = .init(myTexture)
+}
+The following Metal code shows how to retrieve the custom vector in a shader function:
+float4 myCustomVector = params.uniforms().custom_parameter();
+The following Metal code shows how to retrieve individual values from the custom vector in your shader functions:
+float firstCustomValue =
+params.uniforms().custom_parameter()[0]; float secondCustomValue =
+params.uniforms().custom_parameter()[1];
+Here’s how to retrieve the custom texture in your shader functions:
+float voronoiColor =
+params.textures().custom().sample(textureSampler, UV).r;
+See Also
+Using Custom Values
+struct Custom
+An object that defines the custom properties for the material.
+struct CustomMaterialTexture
+A texture object that you use to create custom materials.
+Current page is custom
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

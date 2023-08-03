@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/swiftui/configure-your-apps-navigation-titlesSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func modifier<T>(T) -> ModifiedContent<Self, T>
+Previews in Xcode
+Configuring view elements
+Accessibility modifiers
+Appearance modifiers
+Text and symbol modifiers
+Auxiliary view modifiers
+Navigation titles
+M
+func navigationDocument<D, I1, I2>(D, preview: SharePreview<I1, I2>) -> some View
+Navigation bars
+M
+func navigationBarBackButtonHidden(Bool) -> some View
+M
+func navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode) -> some View
+Navigation stacks and columns
+M
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+M
+func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View
+Documentation
+Open Menu
+Swift
+Article
+Configure your apps navigation titles
+Use a navigation title to display the current navigation state of an interface.
+Overview
+On iOS and watchOS, when a view is navigated to inside of a navigation stack, that view’s title is displayed in the navigation bar. On iPadOS, the primary destination’s navigation title is reflected as the window’s title in the App Switcher. Similarly on macOS, the primary destination’s title is used as the window title in the titlebar, Windows menu and Mission Control.
+In its simplest form, you can provide a string or a localized string key to a navigation title modifier directly.
+ContentView()
+    .navigationTitle("My Title")
+The title of your apps toolbar can be further customized using additional navigation related modifiers. For example, you can associate a URL or your own type conforming to Transferable to your view using the navigation document modifier.
+ContentView()
+    .navigationTitle("My Title")
+    .navigationDocument(myURL)
+In iOS and iPadOS, this will construct a title that can present a menu by tapping the navigation title in the app’s navigation bar. The menu contains content providing information related to the URL and a draggable icon for sharing.
+In macOS, this item will construct a proxy icon for manipulating the file backing the document.
+When providing a transferable type, you should typically provide a SharePreview which provides the appropriate content for rendering the preview in the header of the menu.
+ContentView()
+    .navigationTitle("My Title")
+    .navigationDocument(
+        myDocument, 
+        preview: SharePreview(
+            "My Preview Title", image: myDocument.image))
+Renaming
+You can provide a text binding to the navigation title modifier and SwiftUI will automatically configure the toolbar to allow editing of the navigation title on iOS or macOS. SwiftUI automatically syncs the navigation title with the value of the string binding provided to the text field.
+You can provide a string binding to the navigation title to configure the title’s text field. SwiftUI will automatically place a rename action in the titl menu alongside the actions originating from your app’s commands.
+ContentView()
+    .navigationTitle($contentTitle)
+In iOS, when using a text field in a navigation title, SwiftUI creates a button in the toolbar title. When triggered, this button updates the navigation title to display an inline text field that will update the binding you provide as the user types.
+See Also
+Navigation titles
+func navigationTitle(LocalizedStringKey) -> some View
+Configures the view’s title for purposes of navigation, using a localized string.
+func navigationTitle(Text) -> some View
+Configures the view’s title for purposes of navigation.
+func navigationTitle<S>(S) -> some View
+Configures the view’s title for purposes of navigation, using a string.
+func navigationTitle<V>(() -> V) -> some View
+Configures the view’s title for purposes of navigation, using a custom view.
+func navigationTitle(Binding<String>) -> some View
+Configures the view’s title for purposes of navigation, using a string binding.
+func navigationSubtitle<S>(S) -> some View
+Configures the view’s subtitle for purposes of navigation, using a string.
+func navigationSubtitle(Text) -> some View
+Configures the view’s subtitle for purposes of navigation.
+func navigationSubtitle(LocalizedStringKey) -> some View
+Configures the view’s subtitle for purposes of navigation, using a localized string.
+Current page is Configure your apps navigation titles
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

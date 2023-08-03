@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/swiftui/shaderSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+S
+Anchor
+S
+UnitPoint3D
+M
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+M
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Beta
+M
+func colorEffect(Shader, isEnabled: Bool) -> some View
+Beta
+Accessing Metal shaders
+S
+PhysicalMetricsConverter
+Beta
+S
+PhysicalMetric
+Beta
+r
+P
+CoordinateSpaceProtocol
+Beta
+E
+CoordinateSpace
+Documentation
+Open Menu
+Swift
+Structure
+Shader
+A reference to a function in a Metal shader library, along with its bound uniform argument values.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+struct Shader
+Overview
+Shader values can be used as filter effects on views, see the View/colorEffect(_:isEnabled:)`, View/distortionEffect(_:isEnabled:), and ``View/layerEffect(_:isEnabled:) functions.
+Shaders also conform to the ShapeStyle protocol, letting their MSL shader function provide per-pixel color to fill any shape or text view. For a shader function to act as a fill pattern it must have a function signature matching:
+[[ stitchable ]] half4 name(float2 position, args...)
+where position is the user-space coordinates of the pixel applied to the shader, and args... should be compatible with the uniform arguments bound to shader. The function should return the premultiplied color value in the color space of the destination (typically extended sRGB).
+Topics
+Creating a shader
+init(function: ShaderFunction, arguments: [Shader.Argument])
+Creates a new shader from a function and the uniform argument values to bind to the function.
+struct Argument
+A single uniform argument value to a shader function.
+Getting the shader function
+var function: ShaderFunction
+The shader function called by the shader.
+var arguments: [Shader.Argument]
+The uniform argument values passed to the shader function.
+Configuring the shader
+var dithersColor: Bool
+For shader functions that return color values, whether the returned color has dither noise added to it, or is simply rounded to the output bit-depth. For shaders generating smooth gradients, dithering is usually necessary to prevent visible banding in the result.
+Relationships
+Conforms To
+Equatable
+Sendable
+ShapeStyle
+See Also
+Accessing Metal shaders
+func colorEffect(Shader, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a filter effect on the color of each pixel.
+Beta
+func distortionEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a geometric distortion effect on the location of each pixel.
+Beta
+func layerEffect(Shader, maxSampleOffset: CGSize, isEnabled: Bool) -> some View
+Returns a new view that applies shader to self as a filter on the raster layer created from self.
+Beta
+struct ShaderFunction
+A reference to a function in a Metal shader library.
+Beta
+struct ShaderLibrary
+A Metal shader library.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Shader
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

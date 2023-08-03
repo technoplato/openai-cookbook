@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/realitykit/animationrepeatmodeSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+AnimationDefinition
+S
+OrbitAnimation
+S
+AnimationView
+S
+AnimationTimingFunction
+S
+FromToByAnimation
+S
+SampledAnimation
+Animation definitions
+E
+AnimationEvents
+C
+AnimationPlaybackController
+Playback
+Animation
+Audio
+Scene reconstruction and understanding
+Cameras and lighting
+Anchors
+Documentation
+Open Menu
+Swift
+Enumeration
+AnimationRepeatMode
+Options that determine whether an animation replays after completion.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum AnimationRepeatMode
+Overview
+Adopters of AnimationDefinition, such as SampledAnimation, offer repeat options of this type through the repeatMode property.
+To select a behavior, set the repeat mode as you configure your animation, as in the following example:
+let clip = FromToByAnimation<Transform>()
+clip.repeatMode = .repeat
+Topics
+Choosing a Repeat Mode
+case `repeat`
+A mode that restarts the animation after it completes.
+case cumulative
+A mode that repeats indefinitely and begins each repetition by setting the animated property to the ending value of the previous repetition.
+case autoReverse
+A mode that reverses the animation after reaching the end or the beginning.
+case none
+An option that determines the animation doesn’t repeat.
+Comparing Repeat Modes
+static func == (AnimationRepeatMode, AnimationRepeatMode) -> Bool
+Returns a Boolean value that indicates whether two repeat modes are equal.
+static func != (Self, Self) -> Bool
+Returns a Boolean value that indicates whether two repeat modes aren’t equal.
+func hash(into: inout Hasher)
+Hashes the essential components of a value by feeding them into the given hasher.
+var hashValue: Int
+The hash value.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+See Also
+Playback
+class AnimationPlaybackController
+A controller that manages animation playback.
+enum AnimationEvents
+Notable milestones that the framework signals during animation playback.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AnimationRepeatMode
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

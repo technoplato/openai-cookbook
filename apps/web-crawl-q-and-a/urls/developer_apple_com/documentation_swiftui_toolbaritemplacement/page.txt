@@ -1,0 +1,200 @@
+https://developer.apple.com/documentation/swiftui/toolbaritemplacementSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+static let navigationBarLeading: ToolbarItemPlacement
+Deprecated
+M
+init<ID>(id: ID)
+Deprecated
+Deprecated symbols
+M
+static func accessoryBar<ID>(id: ID) -> ToolbarItemPlacement
+P
+static let keyboard: ToolbarItemPlacement
+P
+static let bottomOrnament: ToolbarItemPlacement
+Beta
+P
+static let bottomBar: ToolbarItemPlacement
+S
+ToolbarItemGroup
+S
+ToolbarItem
+M
+func toolbar<Content>(content: () -> Content) -> some View
+M
+func toolbar<Content>(content: () -> Content) -> some View
+Populating a toolbar
+Toolbars
+Modal presentations
+Navigation
+Documentation
+Open Menu
+Swift
+Structure
+ToolbarItemPlacement
+A structure that defines the placement of a toolbar item.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+struct ToolbarItemPlacement
+Overview
+There are two types of placements:
+Semantic placements, such as principal and navigation, denote the intent of the item being added. SwiftUI determines the appropriate placement for the item based on this intent and its surrounding context, like the current platform.
+Positional placements, such as navigationBarLeading, denote a precise placement for the item, usually for a particular platform.
+In iOS, iPadOS, and macOS, the system uses the space available to the toolbar when determining how many items to render in the toolbar. If not all items fit in the available space, an overflow menu may be created and remaining items placed in that menu.
+Topics
+Getting semantic placement
+static let automatic: ToolbarItemPlacement
+The system places the item automatically, depending on many factors including the platform, size class, or presence of other items.
+static let principal: ToolbarItemPlacement
+The system places the item in the principal item section.
+static let status: ToolbarItemPlacement
+The item represents a change in status for the current context.
+Getting placement for specific actions
+static let primaryAction: ToolbarItemPlacement
+The item represents a primary action.
+static let secondaryAction: ToolbarItemPlacement
+The item represents a secondary action.
+static let confirmationAction: ToolbarItemPlacement
+The item represents a confirmation action for a modal interface.
+static let cancellationAction: ToolbarItemPlacement
+The item represents a cancellation action for a modal interface.
+static let destructiveAction: ToolbarItemPlacement
+The item represents a destructive action for a modal interface.
+static let navigation: ToolbarItemPlacement
+The item represents a navigation action.
+Getting explicit placement
+static var topBarLeading: ToolbarItemPlacement
+Places the item in the leading edge of the top bar.
+static var topBarTrailing: ToolbarItemPlacement
+Places the item in the trailing edge of the top bar.
+static let bottomBar: ToolbarItemPlacement
+Places the item in the bottom toolbar.
+static let bottomOrnament: ToolbarItemPlacement
+Places the item in an ornament under the window.
+Beta
+static let keyboard: ToolbarItemPlacement
+The item is placed in the keyboard section.
+static func accessoryBar<ID>(id: ID) -> ToolbarItemPlacement
+Creates a unique accessory bar placement.
+Deprecated symbols
+init<ID>(id: ID)
+Creates a custom accessory bar item placement.
+Deprecated
+static let navigationBarLeading: ToolbarItemPlacement
+Places the item in the leading edge of the navigation bar.
+Deprecated
+static let navigationBarTrailing: ToolbarItemPlacement
+Places the item in the trailing edge of the navigation bar.
+Deprecated
+Relationships
+Conforms To
+Sendable
+See Also
+Populating a toolbar
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the views you provide.
+func toolbar<Content>(content: () -> Content) -> some View
+Populates the toolbar or navigation bar with the specified items.
+struct ToolbarItem
+A model that represents an item which can be placed in the toolbar or navigation bar.
+struct ToolbarItemGroup
+A model that represents a group of ToolbarItems which can be placed in the toolbar or navigation bar.
+protocol ToolbarContent
+Conforming types represent items that can be placed in various locations in a toolbar.
+struct ToolbarContentBuilder
+Constructs a toolbar item set from multi-expression closures.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ToolbarItemPlacement
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

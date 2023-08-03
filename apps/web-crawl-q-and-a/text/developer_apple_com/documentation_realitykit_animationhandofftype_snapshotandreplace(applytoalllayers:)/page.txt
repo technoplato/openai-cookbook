@@ -1,0 +1,128 @@
+https://developer.apple.com/documentation/realitykit/animationhandofftype/snapshotandreplace(applytoalllayers:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Transforms: Position, Orientation, and Scale
+Runtime modifications
+r
+P
+RealityCoordinateSpace
+Beta
+r
+P
+BindableData
+r
+P
+AnimatableData
+Compliance-related protocols
+S
+BlendTreeInvalidNode
+M
+static func replace(applyToAllLayers: Bool) -> AnimationHandoffType
+Type Methods
+P
+static var stop: AnimationHandoffType
+P
+static var `default`: AnimationHandoffType
+P
+static var compose: AnimationHandoffType
+Type Properties
+static func == (AnimationHandoffType, AnimationHandoffType) -> Bool
+Operators
+Documentation
+Open Menu
+Swift
+Type Method
+snapshotAndReplace(applyToAllLayers:)
+Immediately stops the current animation and uses the current value of that animation as the blend value for the transition to the new animation.
+visionOS 1.0+ Beta
+static func snapshotAndReplace(applyToAllLayers: Bool = true) -> AnimationHandoffType
+Discussion
+A Boolean value is used to define the following: false only replaces current animations that have the same layerId as the blendLayerOffset parameter in the playAnimation() call. true replaces all animations regardless of the layer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is snapshotAndReplace(applyToAllLayers:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

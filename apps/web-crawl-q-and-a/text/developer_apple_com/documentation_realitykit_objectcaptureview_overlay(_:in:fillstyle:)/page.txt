@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/realitykit/objectcaptureview/overlay(_:in:fillstyle:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func presentationCompactAdaptation(PresentationAdaptation) -> some View
+M
+func presentationBackgroundInteraction(PresentationBackgroundInteraction) -> some View
+M
+func presentationBackground<V>(alignment: Alignment, content: () -> V) -> some View
+M
+func presentationBackground<S>(S) -> some View
+M
+func preferredColorScheme(ColorScheme?) -> some View
+M
+func preference<K>(key: K.Type, value: K.Value) -> some View
+M
+func position(x: CGFloat, y: CGFloat) -> some View
+func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View
+func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+M
+func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View
+M
+func overlay<Overlay>(Overlay, alignment: Alignment) -> some View
+M
+func opacity(Double) -> some View
+M
+func onTapGesture(count: Int, perform: () -> Void) -> some View
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+M
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+M
+func onPreferenceChange<K>(K.Type, perform: (K.Value) -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+overlay(_:in:fillStyle:)
+Layers a shape that you specify in front of this view.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func overlay<S, T>(
+    _ style: S,
+    in shape: T,
+    fillStyle: FillStyle = FillStyle()
+) -> some View where S : ShapeStyle, T : Shape
+Parameters
+style
+A ShapeStyle that SwiftUI uses to the fill the shape that you specify.
+shape
+An instance of a type that conforms to Shape that SwiftUI draws in front of the view.
+fillStyle
+The FillStyle to use when drawing the shape. The default style uses the nonzero winding number rule and antialiasing.
+Return Value
+A view with the specified shape drawn in front of it.
+Discussion
+Use this modifier to layer a type that conforms to the Shape protocol — like a Rectangle, Circle, or Capsule — in front of a view. Specify a ShapeStyle that’s used to fill the shape. For example, you can overlay the outline of one rectangle in front of another:
+Rectangle()
+    .frame(width: 200, height: 100)
+    .overlay(.teal, in: Rectangle().inset(by: 10).stroke(lineWidth: 5))
+The example above uses the InsettableShape/inset(by:) method to slightly reduce the size of the overlaid rectangle, and the Shape/stroke(lineWidth:) method to fill only the shape’s outline. This creates an inset border:
+This modifier is a convenience method for layering a shape over a view. To handle the more general case of overlaying a View — or a stack of views — with control over the position, use View/overlay(alignment:content:) instead. To cover a view with a ShapeStyle, use View/overlay(_:ignoresSafeAreaEdges:).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is overlay(_:in:fillStyle:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

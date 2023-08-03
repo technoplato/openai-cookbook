@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/swiftui/checkboxtogglestyle/makebody(configuration:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+ListStyle
+M
+func listStyle<S>(S) -> some View
+Styling collection views
+S
+TextEditorStyleConfiguration
+Beta
+r
+P
+TextEditorStyle
+Beta
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+Beta
+r
+P
+TextFieldStyle
+Supporting types
+M
+init()
+Creating the toggle style
+S
+CheckboxToggleStyle
+S
+ButtonToggleStyle
+S
+DefaultToggleStyle
+Supporting types
+Body
+Documentation
+Open Menu
+Swift
+Instance Method
+makeBody(configuration:)
+Creates a view that represents the body of a toggle checkbox.
+macOS 10.15+
+func makeBody(configuration: CheckboxToggleStyle.Configuration) -> some View
+Parameters
+configuration
+The properties of the toggle, including a label and a binding to the toggle’s state.
+Return Value
+A view that represents a checkbox.
+Discussion
+SwiftUI implements this required method of the ToggleStyle protocol to define the behavior and appearance of the checkbox toggle style. Don’t call this method directly. Rather, the system calls this method for each Toggle instance in a view hierarchy that’s styled as a checkbox.
+Current page is makeBody(configuration:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

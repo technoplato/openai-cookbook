@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/swiftui/text/foregroundstyle(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Localizing text
+E
+Text.TruncationMode
+S
+Text.Scale
+Beta
+M
+func textScale(Text.Scale, isEnabled: Bool) -> Text
+Beta
+Fitting text into available space
+S
+Text.LineStyle
+S
+Text.DateStyle
+Styling the view’s text
+M
+func fontWidth(Font.Width?) -> Text
+M
+func fontDesign(Font.Design?) -> Text
+M
+func fontWeight(Font.Weight?) -> Text
+M
+func font(Font?) -> Text
+Choosing a font
+M
+init(timerInterval: ClosedRange<Date>, pauseTime: Date?, countsDown: Bool, showsHours: Bool)
+Creating a text view with a timer
+Documentation
+Open Menu
+Swift
+Instance Method
+foregroundStyle(_:)
+Sets the style of the text displayed by this view.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func foregroundStyle<S>(_ style: S) -> Text where S : ShapeStyle
+Parameters
+style
+The style to use when displaying this text.
+Return Value
+A text view that uses the color value you supply.
+Discussion
+Use this method to change the rendering style of the text rendered by a text view.
+For example, you can display the names of the colors red, green, and blue in their respective colors:
+HStack {
+    Text("Red").foregroundStyle(.red)
+    Text("Green").foregroundStyle(.green)
+    Text("Blue").foregroundStyle(.blue)
+}
+See Also
+Styling the view’s text
+func bold() -> Text
+Applies a bold font weight to the text.
+func bold(Bool) -> Text
+Applies a bold font weight to the text.
+func italic() -> Text
+Applies italics to the text.
+func italic(Bool) -> Text
+Applies italics to the text.
+func strikethrough(Bool, color: Color?) -> Text
+Applies a strikethrough to the text.
+func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> Text
+Applies a strikethrough to the text.
+func underline(Bool, color: Color?) -> Text
+Applies an underline to the text.
+func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> Text
+Applies an underline to the text.
+func monospaced(Bool) -> Text
+Modifies the font of the text to use the fixed-width variant of the current font, if possible.
+func monospacedDigit() -> Text
+Modifies the text view’s font to use fixed-width digits, while leaving other characters proportionally spaced.
+func kerning(CGFloat) -> Text
+Sets the spacing, or kerning, between characters.
+func tracking(CGFloat) -> Text
+Sets the tracking for the text.
+func baselineOffset(CGFloat) -> Text
+Sets the vertical offset for the text relative to its baseline.
+enum Case
+A scheme for transforming the capitalization of characters within text.
+struct DateStyle
+A predefined style used to display a Date.
+struct LineStyle
+Description of the style used to draw the line for StrikethroughStyleAttribute and UnderlineStyleAttribute.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is foregroundStyle(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

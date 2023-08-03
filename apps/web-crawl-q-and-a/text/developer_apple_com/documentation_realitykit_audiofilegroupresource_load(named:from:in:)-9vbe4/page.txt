@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/realitykit/audiofilegroupresource/load(named:from:in:)-9vbe4Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Happy Beam
+Games
+Runtime Events
+Content synchronization
+Postprocessing effects
+Physics simulation
+Collision detection
+M
+static func load(named: String, from: String, in: Bundle) async throws -> AudioFileGroupResource
+M
+init(resources: [AudioFileResource]) throws
+Creating a resource
+C
+AudioFileGroupResource
+Beta
+C
+AudioFileResource
+C
+AudioResource
+Audio Resources
+E
+AudioEvents
+Documentation
+Open Menu
+Swift
+Type Method
+load(named:from:in:)
+Loads an audio resource from a Reality Composer Pro project.
+visionOS 1.0+ Beta
+static func load(
+    named name: String,
+    from scene: String,
+    in bundle: Bundle? = nil
+) throws -> AudioFileGroupResource
+Parameters
+name
+The USD Prim path to the resource in the Reality Composer Pro project to load.
+scene
+The name of the Reality Composer Pro scene to load from.
+bundle
+The bundle that contains the project. Leave nil to load from the app’s bundle.
+Discussion
+This method loads a preconfigured AudioFileGroupResource from a scene in a Reality Composer Pro project.
+Important
+The name provided must be unique.
+See Also
+Creating a resource
+init(resources: [AudioFileResource]) throws
+Creates an AudioFileGroupResource with the given audio file resources.
+Beta
+static func load(named: String, from: String, in: Bundle) async throws -> AudioFileGroupResource
+Loads an audio resource from a Reality Composer Pro project.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is load(named:from:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

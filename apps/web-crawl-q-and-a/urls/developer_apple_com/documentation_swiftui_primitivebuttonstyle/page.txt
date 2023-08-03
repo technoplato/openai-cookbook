@@ -1,0 +1,221 @@
+https://developer.apple.com/documentation/swiftui/primitivebuttonstyleSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+View fundamentals
+View configuration
+View styles
+Styling buttons
+M
+func buttonStyle<S>(S) -> some View
+r
+P
+ButtonStyle
+S
+ButtonStyleConfiguration
+M
+func buttonStyle<S>(S) -> some View
+Supporting types
+S
+DefaultButtonStyle
+S
+AccessoryBarButtonStyle
+Beta
+S
+AccessoryBarActionButtonStyle
+Beta
+S
+BorderedButtonStyle
+S
+BorderedProminentButtonStyle
+S
+BorderlessButtonStyle
+Documentation
+Open Menu
+Swift
+Protocol
+PrimitiveButtonStyle
+A type that applies custom interaction behavior and a custom appearance to all buttons within a view hierarchy.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+protocol PrimitiveButtonStyle
+Overview
+To configure the current button style for a view hierarchy, use the buttonStyle(_:) modifier. Specify a style that conforms to PrimitiveButtonStyle to create a button with custom interaction behavior. To create a button with the standard button interaction behavior defined for each platform, use ButtonStyle instead.
+Topics
+Getting built-in button styles
+static var automatic: DefaultButtonStyle
+The default button style, based on the button’s context.
+Available when Self is DefaultButtonStyle.
+static var accessoryBar: AccessoryBarButtonStyle
+A button style that is typically used in the context of an accessory toolbar (sometimes refererred to as a “scope bar”), for buttons that narrow the focus of a search or other operation.
+Available when Self is AccessoryBarButtonStyle.
+Beta
+static var accessoryBarAction: AccessoryBarActionButtonStyle
+A button style that you use for extra actions in an accessory toolbar.
+Available when Self is AccessoryBarActionButtonStyle.
+Beta
+static var bordered: BorderedButtonStyle
+A button style that applies standard border artwork based on the button’s context.
+Available when Self is BorderedButtonStyle.
+static var borderedProminent: BorderedProminentButtonStyle
+A button style that applies standard border prominent artwork based on the button’s context.
+Available when Self is BorderedProminentButtonStyle.
+static var borderless: BorderlessButtonStyle
+A button style that doesn’t apply a border.
+Available when Self is BorderlessButtonStyle.
+static var card: CardButtonStyle
+A button style that doesn’t pad the content, and applies a motion effect when a button has focus.
+Available when Self is CardButtonStyle.
+static var link: LinkButtonStyle
+A button style for buttons that emulate links.
+Available when Self is LinkButtonStyle.
+static var plain: PlainButtonStyle
+A button style that doesn’t style or decorate its content while idle, but may apply a visual effect to indicate the pressed, focused, or enabled state of the button.
+Available when Self is PlainButtonStyle.
+Creating custom button styles
+func makeBody(configuration: Self.Configuration) -> Self.Body
+Creates a view that represents the body of a button.
+Required
+typealias Configuration
+The properties of a button.
+associatedtype Body : View
+A view that represents the body of a button.
+Required
+Supporting types
+struct DefaultButtonStyle
+The default button style, based on the button’s context.
+struct AccessoryBarButtonStyle
+A button style that you use for actions in an accessory toolbar that narrow the focus of a search or other operation.
+Beta
+struct AccessoryBarActionButtonStyle
+A button style that you use for extra actions in an accessory toolbar.
+Beta
+struct BorderedButtonStyle
+A button style that applies standard border artwork based on the button’s context.
+struct BorderedProminentButtonStyle
+A button style that applies standard border prominent artwork based on the button’s context.
+struct BorderlessButtonStyle
+A button style that doesn’t apply a border.
+struct CardButtonStyle
+A button style that doesn’t pad the content, and applies a motion effect when a button has focus.
+struct LinkButtonStyle
+A button style for buttons that emulate links.
+struct PlainButtonStyle
+A button style that doesn’t style or decorate its content while idle, but may apply a visual effect to indicate the pressed, focused, or enabled state of the button.
+Relationships
+Conforming Types
+AccessoryBarActionButtonStyle
+AccessoryBarButtonStyle
+BorderedButtonStyle
+BorderedProminentButtonStyle
+BorderlessButtonStyle
+CardButtonStyle
+DefaultButtonStyle
+LinkButtonStyle
+PlainButtonStyle
+See Also
+Styling buttons
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and standard interaction behavior.
+protocol ButtonStyle
+A type that applies standard interaction behavior and a custom appearance to all buttons within a view hierarchy.
+struct ButtonStyleConfiguration
+The properties of a button.
+func buttonStyle<S>(S) -> some View
+Sets the style for buttons within this view to a button style with a custom appearance and custom interaction behavior.
+struct PrimitiveButtonStyleConfiguration
+The properties of a button.
+func signInWithAppleButtonStyle(SignInWithAppleButton.Style) -> some View
+Sets the style used for displaying the control (see SignInWithAppleButton.Style).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PrimitiveButtonStyle
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

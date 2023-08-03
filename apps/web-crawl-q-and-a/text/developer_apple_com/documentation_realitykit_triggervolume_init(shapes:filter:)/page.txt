@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/realitykit/triggervolume/init(shapes:filter:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Games
+Runtime Events
+Content synchronization
+Postprocessing effects
+Physics simulation
+r
+P
+HasCollision
+Entity Compliance
+M
+convenience init(shape: ShapeResource, filter: CollisionFilter)
+M
+init()
+Creating a Trigger Volume
+C
+TriggerVolume
+S
+CollisionFilter
+S
+CollisionGroup
+S
+CollisionComponent
+Controlling Entity Collisions in RealityKit
+Documentation
+Open Menu
+Swift
+Initializer
+init(shapes:filter:)
+Creates a trigger volume with the given composite shape and collision filter.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+init(
+    shapes: [ShapeResource],
+    filter: CollisionFilter = .sensor
+)
+Discussion
+shapes: A collection of shapes which taken together define the composite shape of the trigger volume.
+filter: A collision filter that lets you differentiate among collision groups.
+See Also
+Creating a Trigger Volume
+init()
+Creates a trigger volume.
+convenience init(shape: ShapeResource, filter: CollisionFilter)
+Creates a trigger volume with the given shape and collision filter.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(shapes:filter:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

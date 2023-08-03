@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/realitykit/realityview/ondrag(_:preview:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View
+M
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+M
+func onReceive<P>(P, perform: (P.Output) -> Void) -> some View
+M
+func onPreferenceChange<K>(K.Type, perform: (K.Value) -> Void) -> some View
+M
+func onOpenURL(perform: (URL) -> ()) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+M
+func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View
+func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View
+M
+func onDrag(() -> NSItemProvider) -> some View
+M
+func onDisappear(perform: (() -> Void)?) -> some View
+M
+func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View
+M
+func onContinueUserActivity(String, perform: (NSUserActivity) -> ()) -> some View
+M
+func onChange<V>(of: V, perform: (V) -> Void) -> some View
+Deprecated
+M
+func onChange<V>(of: V, initial: Bool, (V, V) -> Void) -> some View
+M
+func onChange<V>(of: V, initial: Bool, () -> Void) -> some View
+M
+func onAppear(perform: (() -> Void)?) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+onDrag(_:preview:)
+Activates this view as the source of a drag and drop operation.
+RealityKit
+SwiftUI
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func onDrag<V>(
+    _ data: @escaping () -> NSItemProvider,
+    @ViewBuilder preview: () -> V
+) -> some View where V : View
+Parameters
+data
+A closure that returns a single NSItemProvider that represents the draggable data from this view.
+preview
+A View to use as the source for the dragging preview, once the drag operation has begun. The preview is centered over the source view.
+Return Value
+A view that activates this view as the source of a drag-and- drop operation, beginning with user gesture input.
+Discussion
+Applying the onDrag(_:preview:) modifier adds the appropriate gestures for drag and drop to this view. When a drag operation begins, a rendering of preview is generated and used as the preview image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is onDrag(_:preview:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

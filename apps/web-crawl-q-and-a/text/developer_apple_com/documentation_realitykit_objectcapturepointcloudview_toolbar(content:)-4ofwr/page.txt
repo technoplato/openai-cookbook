@@ -1,0 +1,186 @@
+https://developer.apple.com/documentation/realitykit/objectcapturepointcloudview/toolbar(content:)-4ofwrSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> some View
+M
+func typeSelectEquivalent<S>(S) -> some View
+M
+func typeSelectEquivalent(LocalizedStringKey) -> some View
+M
+func typeSelectEquivalent(Text?) -> some View
+M
+func truncationMode(Text.TruncationMode) -> some View
+M
+func transition(AnyTransition) -> some View
+M
+func transformPreference<K>(K.Type, (inout K.Value) -> Void) -> some View
+func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View
+func transformAnchorPreference<A, K>(key: K.Type, value: Anchor<A>.Source, transform: (inout K.Value, Anchor<A>) -> Void) -> some View
+func transaction<V>((inout Transaction) -> Void, body: (PlaceholderContentView<Self>) -> V) -> some View
+M
+func toolbar(Visibility, for: ToolbarPlacement...) -> some View
+M
+func toggleStyle<S>(S) -> some View
+M
+func tint(Color?) -> some View
+M
+func textSelection<S>(S) -> some View
+M
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+M
+func textInputAutocapitalization(TextInputAutocapitalization?) -> some View
+M
+func textFieldStyle<S>(S) -> some View
+M
+func textEditorStyle(some TextEditorStyle) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+toolbar(content:)
+Populates the toolbar or navigation bar with the views you provide.
+RealityKit
+SwiftUI
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func toolbar<Content>(@ViewBuilder content: () -> Content) -> some View where Content : View
+Parameters
+content
+The views representing the content of the toolbar.
+Discussion
+Use this modifier to add content to the toolbar. The toolbar modifier expects a collection of toolbar items that you can provide either by supplying a collection of views with each view wrapped in a ToolbarItem, or by providing a collection of views as a ToolbarItemGroup. The example below adds views to using a toolbar item group to support text editing features:
+struct StructToolbarItemGroupView: View {
+    @State private var text = ""
+    @State private var bold = false
+    @State private var italic = false
+    @State private var fontSize = 12.0
+
+
+    var displayFont: Font {
+        let font = Font.system(size: CGFloat(fontSize),
+                               weight: bold == true ? .bold : .regular)
+        return italic == true ? font.italic() : font
+    }
+
+
+    var body: some View {
+        TextEditor(text: $text)
+            .font(displayFont)
+            .toolbar {
+                ToolbarItemGroup {
+                    Slider(
+                        value: $fontSize,
+                        in: 8...120,
+                        minimumValueLabel:
+                            Text("A").font(.system(size: 8)),
+                        maximumValueLabel:
+                            Text("A").font(.system(size: 16))
+                    ) {
+                        Text("Font Size (\(Int(fontSize)))")
+                    }
+                    .frame(width: 150)
+                    Toggle(isOn: $bold) {
+                        Image(systemName: "bold")
+                    }
+                    Toggle(isOn: $italic) {
+                        Image(systemName: "italic")
+                    }
+                }
+            }
+            .navigationTitle("My Note")
+    }
+}
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is toolbar(content:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

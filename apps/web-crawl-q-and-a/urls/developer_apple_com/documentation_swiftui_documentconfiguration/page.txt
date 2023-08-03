@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/swiftui/documentconfigurationSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+FileDocument
+S
+FileDocumentConfiguration
+Storing document data in a class instance
+r
+P
+ReferenceFileDocument
+S
+ReferenceFileDocumentConfiguration
+P
+var undoManager: UndoManager?
+Accessing document configuration
+P
+var documentConfiguration: DocumentConfiguration?
+Beta
+M
+func renameAction(() -> Void) -> some View
+P
+var rename: RenameAction?
+S
+RenameAction
+Navigation
+Modal presentations
+Toolbars
+Search
+Documentation
+Open Menu
+Swift
+Structure
+DocumentConfiguration
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+struct DocumentConfiguration
+Topics
+Getting configuration values
+var fileURL: URL?
+A URL of an open document.
+var isEditable: Bool
+A Boolean value that indicates whether you can edit the document.
+Relationships
+Conforms To
+Sendable
+See Also
+Accessing document configuration
+var documentConfiguration: DocumentConfiguration?
+The configuration of a document in a DocumentGroup.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is DocumentConfiguration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

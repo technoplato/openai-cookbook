@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/swiftui/view/phaseanimator(_:trigger:content:animation:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+UnitCurve
+Beta
+r
+P
+AnimationStateKey
+Beta
+S
+AnimationState
+Beta
+S
+AnimationContext
+Beta
+r
+P
+CustomAnimation
+Beta
+Creating custom animations
+S
+SpringKeyframe
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+M
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Beta
+Controlling the timing and movements of your animations
+Creating phase-based animation
+M
+func animation<V>(Animation?, body: (PlaceholderContentView<Self>) -> V) -> some View
+Beta
+M
+func animation<V>(Animation?, value: V) -> some View
+M
+func animation(Animation?) -> some View
+Adding state-based animation to a view
+S
+Animation
+Documentation
+Open Menu
+Swift
+Instance Method
+phaseAnimator(_:trigger:content:animation:)
+Cycles through the given phases when the trigger value changes, updating the view using the modifiers you apply in body.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func phaseAnimator<Phase>(
+    _ phases: some Sequence,
+    trigger: some Equatable,
+    @ViewBuilder content: @escaping (PlaceholderContentView<Self>, Phase) -> some View,
+    animation: @escaping (Phase) -> Animation? = { _ in .default }
+) -> some View where Phase : Equatable
+Parameters
+phases
+Phases defining the states that will be cycled through. This sequence must not be empty. If an empty sequence is provided, a visual warning will be displayed in place of this view, and a warning will be logged.
+trigger
+A value to observe for changes.
+content
+A view builder closure that takes two parameters. The first parameter is a proxy value representing the modified view. The second parameter is the current phase.
+animation
+A closure that returns the animation to use when transitioning to the next phase. If nil is returned, the transition will not be animated.
+Discussion
+The phases that you provide specify the individual values that will be animated to when the trigger value changes.
+When the view first appears, the value from the first phase is provided to the content closure. When the trigger value changes, the content closure is called with the value from the second phase and its corresponding animation. This continues until the last phase is reached, after which the first phase is animated to.
+See Also
+Creating phase-based animation
+Controlling the timing and movements of your animations
+Build sophisticated animations that you control using phase and keyframe animators.
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+Cycles through the given phases continuously, updating the content using the view builder closure that you supply.
+Beta
+struct PhaseAnimator
+A container that animates its content by automatically cycling through a collection of phases that you provide, each defining a discrete step within an animation.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is phaseAnimator(_:trigger:content:animation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

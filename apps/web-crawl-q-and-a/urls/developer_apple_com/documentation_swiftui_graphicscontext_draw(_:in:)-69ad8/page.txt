@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/draw(_:in:)-69ad8Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GraphicsContext.Filter
+M
+func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)
+Filtering
+S
+GraphicsContext.BlendMode
+P
+var blendMode: GraphicsContext.BlendMode
+P
+var opacity: Double
+Setting opacity and the blend mode
+func clipToLayer(opacity: Double, options: GraphicsContext.ClipOptions, content: (inout GraphicsContext) throws -> Void) rethrows
+M
+func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)
+M
+func draw(Text, in: CGRect)
+M
+func draw(Text, at: CGPoint, anchor: UnitPoint)
+Drawing text
+S
+GraphicsContext.ResolvedImage
+M
+func resolve(Image) -> GraphicsContext.ResolvedImage
+M
+func draw(GraphicsContext.ResolvedImage, in: CGRect, style: FillStyle)
+M
+func draw(GraphicsContext.ResolvedImage, at: CGPoint, anchor: UnitPoint)
+Documentation
+Open Menu
+Swift
+Instance Method
+draw(_:in:)
+Draws resolved text into the context using the specified rectangle as a layout frame.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func draw(
+    _ text: GraphicsContext.ResolvedText,
+    in rect: CGRect
+)
+Parameters
+text
+The GraphicsContext.ResolvedText to draw. Get resolved text from a Text view by calling resolve(_:). Alternatively, you can call draw(_:in:) with a Text view, and that method performs the resolution automatically.
+rect
+The rectangle in the current user space to draw the text in.
+Discussion
+The current context state defines the full drawing operation. For example, the current transformation and clip shapes affect how SwiftUI draws the text.
+See Also
+Drawing text
+func draw(Text, at: CGPoint, anchor: UnitPoint)
+Draws text into the context, aligning an anchor within the ideal size of the rendered text to a point in the context.
+func draw(Text, in: CGRect)
+Draws text into the context using the specified rectangle as a layout frame.
+func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)
+Draws resolved text into the context, aligning an anchor within the ideal size of the text to a point in the context.
+func resolve(Text) -> GraphicsContext.ResolvedText
+Gets a version of a text view that’s fixed with the current values of the graphics context’s environment.
+struct ResolvedText
+A text view resolved to a particular environment.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is draw(_:in:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

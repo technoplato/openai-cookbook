@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/swiftui/view/filedialogbrowseroptions(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Deprecated modal presentations
+M
+func interactiveDismissDisabled(Bool) -> some View
+S
+DismissAction
+P
+var dismiss: DismissAction
+P
+var isPresented: Bool
+Dismissing a presentation
+M
+func inspectorColumnWidth(min: CGFloat?, ideal: CGFloat, max: CGFloat?) -> some View
+Configuring a file dialog
+M
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Beta
+M
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void, onCancellation: () -> Void) -> some View
+Beta
+M
+func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void) -> some View
+M
+func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void) -> some View
+Moving a file
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void, onCancellation: () -> Void) -> some View
+Beta
+M
+func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View
+Documentation
+Open Menu
+Swift
+Instance Method
+fileDialogBrowserOptions(_:)
+On macOS, configures the fileExporter, fileImporter, or fileMover to provide a refined URL search experience: include or exclude hidden files, allow searching by tag, etc.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+func fileDialogBrowserOptions(_ options: FileDialogBrowserOptions) -> some View
+Parameters
+options
+The search options to apply to a given file dialog.
+See Also
+Configuring a file dialog
+func fileDialogConfirmationLabel<S>(S) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom confirmation button label.
+Beta
+func fileDialogConfirmationLabel(Text?) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with custom text as a confirmation button label.
+Beta
+func fileDialogConfirmationLabel(LocalizedStringKey) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom confirmation button label.
+Beta
+func fileDialogCustomizationID(String) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover to persist and restore the file dialog configuration.
+Beta
+func fileDialogDefaultDirectory(URL?) -> some View
+Configures the fileExporter, fileImporter, or fileMover to open with the specified default directory.
+Beta
+func fileDialogImportsUnresolvedAliases(Bool) -> some View
+On macOS, configures the fileExporter, fileImporter, or fileMover behavior when a user chooses an alias.
+Beta
+func fileDialogMessage<S>(S) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom message that is presented to the user, similar to a title.
+Beta
+func fileDialogMessage(Text?) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom text that is presented to the user, similar to a title.
+Beta
+func fileDialogMessage(LocalizedStringKey) -> some View
+On macOS, configures the the fileExporter, fileImporter, or fileMover with a custom message that is presented to the user, similar to a title.
+Beta
+func fileDialogURLEnabled(Predicate<URL>) -> some View
+On macOS, configures the the fileImporter or fileMover to conditionally disable presented URLs.
+Beta
+struct FileDialogBrowserOptions
+The way that file dialogs present the file system.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is fileDialogBrowserOptions(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

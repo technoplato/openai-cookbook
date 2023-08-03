@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/swiftui/view/healthdataaccessrequest(store:sharetypes:readtypes:trigger:completion:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+func healthDataAccessRequest(store: HKHealthStore, shareTypes: Set<HKSampleType>, readTypes: Set<HKObjectType>?, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+M
+func healthDataAccessRequest(store: HKHealthStore, readTypes: Set<HKObjectType>, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+Beta
+M
+func healthDataAccessRequest(store: HKHealthStore, objectType: HKObjectType, predicate: NSPredicate?, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+Beta
+Accessing health data
+M
+func subscriptionStoreControlBackground(some ShapeStyle) -> some View
+Beta
+M
+func subscriptionStoreControlBackground(SubscriptionStoreControlBackground) -> some View
+Beta
+M
+func subscriptionStoreSignInAction((() -> ())?) -> some View
+Beta
+M
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle, some ShapeStyle) -> some View
+Beta
+M
+func subscriptionStorePolicyForegroundStyle(some ShapeStyle) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+healthDataAccessRequest(store:shareTypes:readTypes:trigger:completion:)
+Requests authorization to read and share the given HealthKit types Parameters: store: Your app’s HKHealthStore, for which authorization will be requested shareTypes: An optional set containing the data types you want to share readTypes: An optional set containing the data types you want to read trigger: A generic equatable value; change this value to initiate a new request completion: A block that will be passed success or error when the request completes.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func healthDataAccessRequest(
+    store: HKHealthStore,
+    shareTypes: Set<HKSampleType>,
+    readTypes: Set<HKObjectType>? = nil,
+    trigger: some Equatable,
+    completion: @escaping (Result<Bool, Error>) -> Void
+) -> some View
+See Also
+Accessing health data
+func healthDataAccessRequest(store: HKHealthStore, objectType: HKObjectType, predicate: NSPredicate?, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+Beta
+func healthDataAccessRequest(store: HKHealthStore, readTypes: Set<HKObjectType>, trigger: some Equatable, completion: (Result<Bool, Error>) -> Void) -> some View
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is healthDataAccessRequest(store:shareTypes:readTypes:trigger:completion:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

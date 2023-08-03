@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftui/view/ignoressafearea(_:edges:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+Edge3D
+Beta
+E
+Edge
+Accessing edges and regions
+E
+UserInterfaceSizeClass
+P
+var verticalSizeClass: UserInterfaceSizeClass?
+P
+var horizontalSizeClass: UserInterfaceSizeClass?
+P
+var pixelLength: CGFloat
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Staying in the safe areas
+S
+ContentMarginPlacement
+Beta
+M
+func contentMargins(Edge.Set, EdgeInsets, for: ContentMarginPlacement) -> some View
+Beta
+M
+func contentMargins(Edge.Set, CGFloat?, for: ContentMarginPlacement) -> some View
+Beta
+M
+func contentMargins(CGFloat, for: ContentMarginPlacement) -> some View
+Beta
+Setting margins
+S
+ViewDimensions
+r
+P
+AlignmentID
+Documentation
+Open Menu
+Swift
+Instance Method
+ignoresSafeArea(_:edges:)
+Expands the view out of its safe area.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+func ignoresSafeArea(
+    _ regions: SafeAreaRegions = .all,
+    edges: Edge.Set = .all
+) -> some View
+Parameters
+regions
+the kinds of rectangles removed from the safe area that should be ignored (i.e. added back to the safe area of the new child view).
+edges
+the edges of the view that may be outset, any edges not in this set will be unchanged, even if that edge is abutting a safe area listed in regions.
+Return Value
+a new view with its safe area expanded.
+See Also
+Staying in the safe areas
+func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content beside the modified view.
+func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View
+Shows the specified content above or below the modified view.
+func safeAreaPadding(EdgeInsets) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func safeAreaPadding(CGFloat) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+func safeAreaPadding(Edge.Set, CGFloat?) -> some View
+Adds the provided insets into the safe area of this view.
+Beta
+struct SafeAreaRegions
+A set of symbolic safe area regions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ignoresSafeArea(_:edges:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/realitykit/collisioncastquerytype/hashvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func != (Self, Self) -> Bool
+static func == (Scene, Scene) -> Bool
+Comparing Scenes
+r
+P
+EventSource
+r
+P
+Event
+E
+CollisionEvents
+E
+AudioEvents
+func subscribe<E>(to: E.Type, on: (EventSource)?, componentType: (Component.Type)?, (E) -> Void) -> Cancellable
+func publisher<E>(for: E.Type, on: (EventSource)?, componentType: (Component.Type)?) -> Scene.Publisher<E>
+M
+func hash(into: inout Hasher)
+static func != (Self, Self) -> Bool
+static func == (CollisionCastQueryType, CollisionCastQueryType) -> Bool
+Comparing Collision Cast Queries
+E
+case any
+E
+case all
+E
+case nearest
+Collision Cast Queries
+Documentation
+Open Menu
+Swift
+Instance Property
+hashValue
+The hashed value of the cast query.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+var hashValue: Int { get }
+See Also
+Comparing Collision Cast Queries
+static func == (CollisionCastQueryType, CollisionCastQueryType) -> Bool
+Indicates whether two cast queries are equal.
+static func != (Self, Self) -> Bool
+Indicates whether two cast queries are not equal.
+func hash(into: inout Hasher)
+Hashes the essential components of the cast query by feeding them into the given hash function.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is hashValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

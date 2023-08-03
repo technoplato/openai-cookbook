@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/swiftui/fetchrequest/wrappedvalueSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Lists
+Custom layout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+M
+func update()
+Getting the fetched results
+P
+var projectedValue: Binding<FetchRequest<Result>.Configuration>
+S
+FetchRequest.Configuration
+Configuring a request dynamically
+M
+init(fetchRequest: NSFetchRequest<Result>, transaction: Transaction)
+M
+init(fetchRequest: NSFetchRequest<Result>, animation: Animation?)
+Creating a fully configured fetch request
+Documentation
+Open Menu
+Swift
+Instance Property
+wrappedValue
+The fetched results of the fetch request.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@MainActor
+var wrappedValue: FetchedResults<Result> { get }
+Discussion
+SwiftUI returns the value associated with this property when you use FetchRequest as a property wrapper, and then access the wrapped property by name. For example, consider the following quakes property declaration that fetches a Quake type that the Loading and Displaying a Large Data Feed sample code project defines:
+@FetchRequest(fetchRequest: request)
+private var quakes: FetchedResults<Quake>
+You access the request’s wrappedValue, which contains a FetchedResults instance, by referring to the quakes property by name:
+Text("Found \(quakes.count) earthquakes")
+If you need to separate the request and the result entities, you can declare quakes in two steps by using the request’s wrappedValue to obtain the results:
+var fetchRequest = FetchRequest<Quake>(fetchRequest: request)
+var quakes: FetchedResults<Quake> { fetchRequest.wrappedValue }
+The wrappedValue property returns an empty array when there are no fetched results — for example, because no entities satisfy the predicate, or because the data store is empty.
+See Also
+Getting the fetched results
+func update()
+Updates the fetched results.
+Available when Result conforms to NSFetchRequestResult.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is wrappedValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

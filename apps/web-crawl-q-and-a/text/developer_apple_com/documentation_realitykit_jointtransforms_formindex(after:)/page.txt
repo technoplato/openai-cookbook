@@ -1,0 +1,270 @@
+https://developer.apple.com/documentation/realitykit/jointtransforms/formindex(after:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func prefix(upTo: Self.Index) -> Self.SubSequence
+M
+func prefix(through: Self.Index) -> Self.SubSequence
+M
+func prefix(Int) -> Self.SubSequence
+M
+func partition(by: (Self.Element) throws -> Bool) rethrows -> Self.Index
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func formIndex(inout Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Bool
+M
+func formIndex(inout Self.Index, offsetBy: Int)
+M
+func forEach((Self.Element) throws -> Void) rethrows
+M
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+M
+func firstIndex(of: Self.Element) -> Self.Index?
+M
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func enumerated() -> EnumeratedSequence<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+formIndex(after:)
+Replaces the given index with its successor.
+RealityKit
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+func formIndex(after i: inout Self.Index)
+Parameters
+i
+A valid index of the collection. i must be less than endIndex.
+See Also
+Accessing Joint Transforms
+subscript(JointTransforms.Index) -> Transform
+Accesses a single joint transform in the collection at the given index.
+func allSatisfy((Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value that indicates whether every element of a sequence satisfies a given predicate.
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Provides an array containing the transformed results of the sequence.
+func contains(Self.Element) -> Bool
+Returns a Boolean value that indicates whether the sequence contains the given element.
+Available when Element conforms to Equatable.
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+Provides a Boolean value that indicates whether the sequence contains an element that satisfies the given predicate.
+func difference<C>(from: C) -> CollectionDifference<Self.Element>
+Provides all the elements that differ across this collection and another.
+Available when Element conforms to Equatable.
+func difference<C>(from: C, by: (C.Element, Self.Element) -> Bool) -> CollectionDifference<Self.Element>
+Provides all the elements that differ across this collection and another according to the given closure.
+func distance(from: Self.Index, to: Self.Index) -> Int
+Returns the distance between two indices.
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Provides a subsequence that omits elements according to the given predicate.
+func dropFirst(Int) -> Self.SubSequence
+Provides a subsequence containing all but the given number of initial elements.
+func dropLast(Int) -> Self.SubSequence
+Provides a subsequence containing all but the given number of trailing elements.
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+Checks whether the sequence contains equivalent elements in the same order as another sequence.
+Available when Element conforms to Equatable.
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+Checks whether the sequence contains equivalent elements in the same order as another sequence, according to the given predicate.
+func enumerated() -> EnumeratedSequence<Self>
+Returns a sequence of pairs that each contain the element index followed by the element.
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the first element of the sequence that satisfies the given predicate.
+func firstIndex(of: Self.Element) -> Self.Index?
+Returns the first index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the first index at which an element of the collection satisfies the given predicate.
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+Returns an array containing the concatenated results of calling the given transformation with each element of the sequence.
+func forEach((Self.Element) throws -> Void) rethrows
+Calls the given closure on each element in the sequence.
+func formIndex(inout Self.Index, offsetBy: Int)
+Offsets the given index by the specified distance.
+func formIndex(inout Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Bool
+Offsets the given index by the specified distance, or so that it equals the given limiting index.
+func formIndex(before: inout Self.Index)
+Replaces the given index with its predecessor.
+func formatted<S>(S) -> S.FormatOutput
+Formats a sequence to the given style.
+func index(Self.Index, offsetBy: Int) -> Self.Index
+Returns an index that is the specified distance from the given index.
+func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?
+Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index.
+func index(after: JointTransforms.Index) -> JointTransforms.Index
+Returns the position in the sequence of the joint that follows the given position.
+func index(before: JointTransforms.Index) -> JointTransforms.Index
+Returns the position in the sequence of the joint that preceeds the given position.
+func last(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the last element of the sequence that satisfies the given predicate.
+func lastIndex(of: Self.Element) -> Self.Index?
+Returns the last index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func lastIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the index of the last element in the collection that matches the given predicate.
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+Checks whether the sequence precedes another sequence in lexicographical order, according to the given predicate.
+func makeIterator() -> IndexingIterator<Self>
+Returns an iterator over the elements of the collection.
+Available when Iterator is IndexingIterator<Self>.
+func map<T>((Self.Element) throws -> T) rethrows -> [T]
+Returns an array containing the results of mapping the given closure over the sequence’s elements.
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the maximum element in the sequence, using the given predicate as the comparison between elements.
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the minimum element in the sequence according to the given predicate.
+func partition(by: (Self.Element) throws -> Bool) rethrows -> Self.Index
+Reorders the elements of the collection based on the given predicate criteria.
+func prefix(Int) -> Self.SubSequence
+Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection.
+func prefix(through: Self.Index) -> Self.SubSequence
+Returns a subsequence from the start of the collection through the specified position.
+func prefix(upTo: Self.Index) -> Self.SubSequence
+Returns a subsequence from the start of the collection up to, but not including, the specified position.
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Returns a subsequence that contains the initial elements as decided by a predicate.
+func randomElement() -> Self.Element?
+Returns a random element of the collection.
+func randomElement<T>(using: inout T) -> Self.Element?
+Returns a random element of the collection, using the given generator as a source for randomness.
+func reduce<Result>(Result, (Result, Self.Element) throws -> Result) rethrows -> Result
+Calculates an accumulated value from the sequence members.
+func reduce<Result>(into: Result, (inout Result, Self.Element) throws -> ()) rethrows -> Result
+Calculates an accumulated value for each member of the sequence.
+func reverse()
+Reverses the elements of the collection in place.
+Available when Self conforms to BidirectionalCollection.
+func reversed() -> ReversedCollection<Self>
+Returns a view presenting the elements of the collection in reverse order.
+func shuffled() -> [Self.Element]
+Returns the elements of the sequence, shuffled.
+func shuffled<T>(using: inout T) -> [Self.Element]
+Returns the elements of the sequence, shuffled using the given generator as a source for randomness.
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+Returns the elements of the sequence, sorted using the given predicate as the comparison between elements.
+func sorted<Comparator>(using: Comparator) -> [Self.Element]
+Returns a sorted collection of transforms based on one comparator.
+func sorted<S, Comparator>(using: S) -> [Self.Element]
+Returns a sorted collection of transforms based on more than one comparator.
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate.
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given element.
+Available when Element conforms to Equatable.
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+Checks whether the initial elements of the sequence are the same as the elements in another sequence.
+Available when Element conforms to Equatable.
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+Checks whether the initial elements of the sequence are equivalent to the elements of another sequence according to a predicate.
+func suffix(Int) -> Self.SubSequence
+Returns a subsequence, up to the given maximum length, containing the final elements of the collection.
+func suffix(from: Self.Index) -> Self.SubSequence
+Returns a subsequence from the specified position to the end of the collection.
+func swapAt(Self.Index, Self.Index)
+Exchanges the values at the specified indices of the collection.
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+Executes a closure on the collection’s contiguous storage.
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+Executes a closure on the sequence’s contiguous storage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is formIndex(after:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

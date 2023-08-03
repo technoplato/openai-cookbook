@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/pickerstyle/menuSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+MenuStyle
+M
+func menuStyle<S>(S) -> some View
+Styling menus
+r
+P
+DatePickerStyle
+M
+func datePickerStyle<S>(S) -> some View
+S
+PopUpButtonPickerStyle
+Deprecated
+Deprecated styles
+P
+static var inline: InlinePickerStyle
+P
+static var automatic: DefaultPickerStyle
+Getting built-in picker styles
+r
+P
+PickerStyle
+M
+func pickerStyle<S>(S) -> some View
+Styling pickers
+M
+func signInWithAppleButtonStyle(SignInWithAppleButton.Style) -> some View
+S
+PrimitiveButtonStyleConfiguration
+Documentation
+Open Menu
+Swift
+Type Property
+menu
+A picker style that presents the options as a menu when the user presses a button, or as a submenu when nested within a larger menu.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+static var menu: MenuPickerStyle { get }
+Available when Self is MenuPickerStyle.
+Discussion
+Use this style when there are more than five options. Consider using inline when there are fewer than five options.
+The button itself indicates the selected option. You can include additional controls in the set of options, such as a button to customize the list of options.
+To apply this style to a picker, or to a view that contains pickers, use the pickerStyle(_:) modifier.
+See Also
+Getting built-in picker styles
+static var automatic: DefaultPickerStyle
+The default picker style, based on the picker’s context.
+Available when Self is DefaultPickerStyle.
+static var inline: InlinePickerStyle
+A PickerStyle where each option is displayed inline with other views in the current container.
+Available when Self is InlinePickerStyle.
+static var navigationLink: NavigationLinkPickerStyle
+A picker style represented by a navigation link that presents the options by pushing a List-style picker view.
+Available when Self is NavigationLinkPickerStyle.
+static var palette: PalettePickerStyle
+A picker style that presents the options as a row of compact elements.
+Available when Self is PalettePickerStyle.
+Beta
+static var radioGroup: RadioGroupPickerStyle
+A picker style that presents the options as a group of radio buttons.
+Available when Self is RadioGroupPickerStyle.
+static var segmented: SegmentedPickerStyle
+A picker style that presents the options in a segmented control.
+Available when Self is SegmentedPickerStyle.
+static var wheel: WheelPickerStyle
+A picker style that presents the options in a scrollable wheel that shows the selected option and a few neighboring options.
+Available when Self is WheelPickerStyle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is menu
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

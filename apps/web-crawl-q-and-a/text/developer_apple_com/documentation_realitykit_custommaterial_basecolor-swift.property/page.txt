@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/realitykit/custommaterial/basecolor-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+CustomMaterial.Blending
+P
+var blending: CustomMaterial.Blending
+P
+var opacityThreshold: Float?
+Handling Entity Transparency
+S
+CustomMaterial.EmissiveColor
+P
+var emissiveColor: CustomMaterial.EmissiveColor
+Adding Light Emission
+Specifying the Entity’s Base Color
+S
+CustomMaterial.GeometryModifier
+S
+CustomMaterial.SurfaceShader
+Accessing Shader Functions
+E
+CustomMaterial.LightingModel
+P
+var lightingModel: CustomMaterial.LightingModel
+Setting the Lighting Model
+M
+init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel) throws
+Documentation
+Open Menu
+Swift
+Instance Property
+baseColor
+The color of an entity unmodified by lighting.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+var baseColor: CustomMaterial.BaseColor { get set }
+Discussion
+In physically based rendering, the base color of an entity is its color before RealityKit applies any lighting calculations or other rendering calculations to it. With custom materials, the base color texture and tint are available as inputs in your surface shader. With custom materials, RealityKit doesn’t automatically use the values set on the baseColor property. The material’s surface shader is responsible for calculating or setting the actual base color value for rendering by calling params.surface().set_base_color().
+The following code shows how to create a base color from a tint color and a texture, and then assign it to a custom material:
+// Load entity_basecolor.jpg from the app's bundle.
+if let baseResource = try? TextureResource.load(named: "entity_basecolor") {
+    let baseColor = CustomMaterial.Texture(baseResource)
+    customMaterial.baseColor = CustomMaterial.BaseColor(tint: .blue,
+                                                        texture:baseColor)
+}
+In your surface shader, you can access the tint of the material’s base color property by calling params.material_constants().base_color_tint(). You can access the texture by calling params.textures().base_color().
+The following surface shader function takes the tint and texture values from the baseColor property, multiplies them together, and sets the resulting value as the base color for rendering, which emulates the behavior of PhysicallyBasedMaterial:
+#include <metal_stdlib>
+#include <RealityKit/RealityKit.h>
+using namespace metal;
+
+
+// Use samplers to retrieve a color value from a texture based on // UV
+coordinates. Samplers can be reused with different textures. //
+RealityKit reserves eight samplers for itself, so surface shaders should
+// never define more than eight samplers. constexpr sampler
+textureSampler(address::clamp_to_edge, filter::bicubic);
+
+
+[[visible]] void mySurfaceShader(realitykit::surface_parameters params)
+{
+    // Retrieve the base color tint from the CustomMaterial.
+    half3 baseColorTint = (half3)params.material_constants().base_color_tint();
+
+
+    // Sample a value from the CustomMaterial's base color texture
+    // using the entity's UV coordinates.
+    auto uv = params.geometry().uv0();
+    auto tex = params.textures();
+    half3 color = (half3)tex.base_color().sample(textureSampler, uv).rgb;
+
+
+    // Multiply the tint and color sampled from the base color texture and
+    // assign the result to the shader's base color property.
+    color *= baseColorTint;
+    params.surface().set_base_color(color);
+} ```
+
+
+For more information on creating custom materials and writing shader
+functions, see
+<doc:modifying-realitykit-rendering-using-custom-materials>.
+See Also
+Specifying the Entity’s Base Color
+struct BaseColor
+An object that defines an entity’s base color.
+Current page is baseColor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

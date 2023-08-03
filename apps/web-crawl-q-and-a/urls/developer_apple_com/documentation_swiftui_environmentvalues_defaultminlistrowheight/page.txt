@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/environmentvalues/defaultminlistrowheightSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func disclosureGroupStyle<S>(S) -> some View
+Configuring rows
+M
+func listRowInsets(EdgeInsets?) -> some View
+M
+func listRowHoverEffect(HoverEffect?) -> some View
+Beta
+M
+func listRowHoverEffectDisabled(Bool) -> some View
+Beta
+M
+func listItemTint(Color?) -> some View
+M
+func listItemTint(ListItemTint?) -> some View
+S
+ListItemTint
+S
+ListSectionSpacing
+Configuring backgrounds
+M
+func listRowBackground<V>(V?) -> some View
+M
+func alternatingRowBackgrounds(AlternatingRowBackgroundBehavior) -> some View
+Beta
+S
+AlternatingRowBackgroundBehavior
+Beta
+P
+var backgroundProminence: BackgroundProminence
+Beta
+S
+BackgroundProminence
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+defaultMinListRowHeight
+The default minimum height of a row in a list.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+var defaultMinListRowHeight: CGFloat { get set }
+See Also
+Configuring rows
+func listRowInsets(EdgeInsets?) -> some View
+Applies an inset to the rows in a list.
+func listRowHoverEffect(HoverEffect?) -> some View
+Requests that the containing list row use the provided hover effect.
+Beta
+func listRowHoverEffectDisabled(Bool) -> some View
+Requests that the containing list row have its hover effect disabled.
+Beta
+func listItemTint(Color?) -> some View
+Sets a fixed tint color associated with specific content in a list.
+func listItemTint(ListItemTint?) -> some View
+Sets the tint effect associated with specific content in a list.
+struct ListItemTint
+The configuration of a tint effect applied to content within a List.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is defaultMinListRowHeight
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

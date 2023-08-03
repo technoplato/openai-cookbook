@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftui/text/speechspellsoutcharacters(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+Text.TruncationMode
+Localizing text
+M
+func typesettingLanguage(TypesettingLanguage, isEnabled: Bool) -> Text
+Beta
+M
+func typesettingLanguage(Locale.Language, isEnabled: Bool) -> Text
+Beta
+Configuring voiceover
+M
+func speechAdjustedPitch(Double) -> Text
+M
+func speechAlwaysIncludesPunctuation(Bool) -> Text
+M
+func speechAnnouncementsQueued(Bool) -> Text
+M
+func textFieldStyle<S>(S) -> some View
+S
+SecureField
+S
+TextEditor
+Selecting text
+M
+func textSelection<S>(S) -> some View
+r
+P
+TextSelectability
+Setting a font
+Documentation
+Open Menu
+Swift
+Instance Method
+speechSpellsOutCharacters(_:)
+Sets whether VoiceOver should speak the contents of the text view character by character.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+func speechSpellsOutCharacters(_ value: Bool = true) -> Text
+Parameters
+value
+A Boolean value that when true indicates VoiceOver should speak text as individual characters. Defaults to true.
+Discussion
+Use this modifier when you want VoiceOver to speak text as individual letters, character by character. This is important for text that is not meant to be spoken together, like:
+An acronym that isn’t a word, like APPL, spoken as “A-P-P-L”.
+A number representing a series of digits, like 25, spoken as “two-five” rather than “twenty-five”.
+See Also
+Configuring voiceover
+func speechAdjustedPitch(Double) -> Text
+Raises or lowers the pitch of spoken text.
+func speechAlwaysIncludesPunctuation(Bool) -> Text
+Sets whether VoiceOver should always speak all punctuation in the text view.
+func speechAnnouncementsQueued(Bool) -> Text
+Controls whether to queue pending announcements behind existing speech rather than interrupting speech in progress.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is speechSpellsOutCharacters(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

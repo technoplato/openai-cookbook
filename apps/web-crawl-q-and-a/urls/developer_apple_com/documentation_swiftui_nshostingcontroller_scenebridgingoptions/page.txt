@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/nshostingcontroller/scenebridgingoptionsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Migrating from the Observable Object protocol to the Observable macro
+Managing model data in your app
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+P
+var safeAreaRegions: SafeAreaRegions
+P
+var sizingOptions: NSHostingSizingOptions
+P
+var preferredContentSize: NSSize
+M
+func sizeThatFits(in: CGSize) -> CGSize
+Configuring the controller
+P
+var identifier: NSUserInterfaceItemIdentifier?
+P
+var rootView: Content
+Getting the root view
+Documentation
+Open Menu
+Swift
+Instance Property
+sceneBridgingOptions
+The options for which aspects of the window will be managed by this controller’s hosting view.
+macOS 14.0+ Beta
+@MainActor
+var sceneBridgingOptions: NSHostingSceneBridgingOptions { get set }
+Discussion
+NSHostingController will populate certain aspects of its associated window, depending on which options are specified.
+For example, a hosting controller can manage its window’s toolbar by including the .toolbars option:
+struct RootView: View {
+    var body: some View {
+        ContentView()
+            .toolbar {
+                MyToolbarContent()
+            }
+    }
+}
+
+
+let controller = NSHostingController(rootView: RootView())
+controller.sceneBridgingOptions = [.toolbars]
+When this hosting controller is set as the contentViewController for a window, the default value for this property will be .all, which includes the options for .toolbars and .title. Otherwise, the default value is [].
+See Also
+Configuring the controller
+func sizeThatFits(in: CGSize) -> CGSize
+Calculates and returns the most appropriate size for the current view.
+var preferredContentSize: NSSize
+var sizingOptions: NSHostingSizingOptions
+The options for how the hosting controller’s view creates and updates constraints based on the size of its SwiftUI content.
+var safeAreaRegions: SafeAreaRegions
+The safe area regions that this view controller adds to its view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sceneBridgingOptions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/swiftui/labelstyle/titleandiconSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TableStyle
+M
+func tableStyle<S>(S) -> some View
+r
+P
+ListStyle
+M
+func listStyle<S>(S) -> some View
+Styling collection views
+S
+TextEditorStyleConfiguration
+Beta
+r
+P
+TextEditorStyle
+P
+static var iconOnly: IconOnlyLabelStyle
+P
+static var automatic: DefaultLabelStyle
+Getting built-in label styles
+r
+P
+LabelStyle
+M
+func labelStyle<S>(S) -> some View
+Styling views that display text
+S
+ProgressViewStyleConfiguration
+r
+P
+ProgressViewStyle
+Documentation
+Open Menu
+Swift
+Type Property
+titleAndIcon
+A label style that shows both the title and icon of the label using a system-standard layout.
+iOS 14.5+
+iPadOS 14.5+
+macOS 11.3+
+Mac Catalyst 14.5+
+tvOS 14.5+
+watchOS 7.4+
+visionOS 1.0+ Beta
+static var titleAndIcon: TitleAndIconLabelStyle { get }
+Available when Self is TitleAndIconLabelStyle.
+Discussion
+In most cases, labels show both their title and icon by default. However, some containers might apply a different default label style to their content, such as only showing icons within toolbars on macOS and iOS. To opt in to showing both the title and the icon, you can apply the title and icon label style:
+Label("Lightning", systemImage: "bolt.fill")
+    .labelStyle(.titleAndIcon)
+To apply the title and icon style to a group of labels, apply the style to the view hierarchy that contains the labels:
+VStack {
+    Label("Rain", systemImage: "cloud.rain")
+    Label("Snow", systemImage: "snow")
+    Label("Sun", systemImage: "sun.max")
+}
+.labelStyle(.titleAndIcon)
+The relative layout of the title and icon is dependent on the context it is displayed in. In most cases, however, the label is arranged horizontally with the icon leading.
+See Also
+Getting built-in label styles
+static var automatic: DefaultLabelStyle
+A label style that resolves its appearance automatically based on the current context.
+Available when Self is DefaultLabelStyle.
+static var iconOnly: IconOnlyLabelStyle
+A label style that only displays the icon of the label.
+Available when Self is IconOnlyLabelStyle.
+static var titleOnly: TitleOnlyLabelStyle
+A label style that only displays the title of the label.
+Available when Self is TitleOnlyLabelStyle.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is titleAndIcon
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

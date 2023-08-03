@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/viewspacing/distance(to:along:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Configuring a custom layout
+S
+LayoutProperties
+S
+ProposedViewSize
+S
+ViewSpacing
+Creating spacing instances
+M
+init()
+P
+static let zero: ViewSpacing
+Measuring spacing distance
+View groupings
+Scroll views
+Event handling
+Gestures
+Input events
+Clipboard
+Drag and drop
+Documentation
+Open Menu
+Swift
+Instance Method
+distance(to:along:)
+Gets the preferred spacing distance along the specified axis to the view that returns a specified spacing preference.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func distance(
+    to next: ViewSpacing,
+    along axis: Axis
+) -> CGFloat
+Parameters
+next
+The spacing preferences instance of the adjacent view.
+axis
+The axis that the two views align on.
+Return Value
+A floating point value that represents the smallest distance in points between two views that satisfies the spacing preferences of both this view and the adjacent views on their shared edge.
+Discussion
+Call this method from your implementation of Layout protocol methods if you need to measure the default spacing between two views in a custom layout. Call the method on the first view’s preferences instance, and provide the second view’s preferences instance as input.
+For example, consider two views that appear in a custom horizontal stack. The following distance call gets the preferred spacing between these views, where spacing1 contains the preferences of a first view, and spacing2 contains the preferences of a second view:
+let distance = spacing1.distance(to: spacing2, axis: .horizontal)
+The method first determines, based on the axis and the ordering, that the views abut on the trailing edge of the first view and the leading edge of the second. It then gets the spacing preferences for the corresponding edges of each view, and returns the greater of the two values. This results in the smallest value that provides enough space to satisfy the preferences of both views.
+Note
+This method returns the default spacing between views, but a layout can choose to ignore the value and use custom spacing instead.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is distance(to:along:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

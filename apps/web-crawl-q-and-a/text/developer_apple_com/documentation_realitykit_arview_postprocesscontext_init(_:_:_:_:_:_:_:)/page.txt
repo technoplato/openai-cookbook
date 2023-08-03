@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/realitykit/arview/postprocesscontext/init(_:_:_:_:_:_:_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Happy Beam
+Games
+Runtime Events
+Content synchronization
+Implementing Postprocess Effects Using Metal Compute Functions
+Passing Structured Data to a Metal Compute Function
+Checking the Pixel Format of a Postprocess Effect’s Output Texture
+Initializers
+S
+ARView.PostProcessContext
+Implementing Postprocess Effects Using Metal Compute Functions
+RealityKit effects
+Postprocessing effects
+Physics simulation
+Collision detection
+Body and face tracking
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:_:_:_:_:_:_:)
+Creates a new context object.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+init(
+    _ device: MTLDevice,
+    _ commandBuffer: MTLCommandBuffer,
+    _ sourceColorTexture: MTLTexture,
+    _ sourceDepthTexture: MTLTexture,
+    _ targetColorTexture: MTLTexture,
+    _ projection: float4x4,
+    _ time: TimeInterval
+)
+Parameters
+device
+The Metal device the view renders to.
+commandBuffer
+The Metal command buffer that encodes this view.
+sourceColorTexture
+A texture containing the rendered frame.
+sourceDepthTexture
+A texture containing the frame’s depth buffer.
+targetColorTexture
+A texture the callback function writes to.
+projection
+The projection matrix for this frame.
+time
+The current elapsed time.
+Discussion
+This initializer creates a new postprocess context object. RealityKit creates context objects and passes them to the postprocess render callback. Your code won’t usually need to create context objects directly.
+Current page is init(_:_:_:_:_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

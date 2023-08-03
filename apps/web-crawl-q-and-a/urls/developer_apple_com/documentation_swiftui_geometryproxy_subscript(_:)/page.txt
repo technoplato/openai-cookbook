@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftui/geometryproxy/subscript(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GeometryReader3D
+Beta
+S
+GeometryProxy
+Accessing geometry characteristics
+M
+func bounds(of: NamedCoordinateSpace) -> CGRect?
+Beta
+M
+func frame(in: CoordinateSpace) -> CGRect
+Deprecated
+M
+func frame(in: some CoordinateSpaceProtocol) -> CGRect
+Beta
+P
+var size: CGSize
+P
+var safeAreaInsets: EdgeInsets
+Accessing geometric constructs
+E
+Axis
+S
+Angle
+S
+UnitPoint
+S
+UnitPoint3D
+Beta
+S
+Anchor
+View layout
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Resolves the value of anchor to the container view.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+subscript<T>(anchor: Anchor<T>) -> T { get }
+See Also
+Accessing geometry characteristics
+func bounds(of: NamedCoordinateSpace) -> CGRect?
+Returns the given coordinate space’s bounds rectangle, converted to the local coordinate space.
+Beta
+func frame(in: CoordinateSpace) -> CGRect
+Returns the container view’s bounds rectangle, converted to a defined coordinate space.
+Deprecated
+func frame(in: some CoordinateSpaceProtocol) -> CGRect
+Returns the container view’s bounds rectangle, converted to a defined coordinate space.
+Beta
+var size: CGSize
+The size of the container view.
+var safeAreaInsets: EdgeInsets
+The safe area inset of the container view.
+func transform(in: some CoordinateSpaceProtocol) -> AffineTransform3D?
+The container view’s 3D transform converted to a defined coordinate space. If the view does not have a well-defined transform, such as if it is affected by a projection transform, this function may return nil.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

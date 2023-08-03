@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/swiftui/layoutsubview/place(at:anchor:proposal:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+GridLayout
+S
+ZStackLayout
+S
+VStackLayout
+S
+HStackLayout
+S
+AnyLayout
+Transitioning between layout types
+r
+P
+LayoutValueKey
+Placing the subview
+S
+LayoutSubview
+r
+P
+Layout
+Composing custom layouts with SwiftUI
+Creating a custom layout container
+Custom layout
+Layout adjustments
+Layout fundamentals
+Documentation
+Open Menu
+Swift
+Instance Method
+place(at:anchor:proposal:)
+Assigns a position and proposed size to the subview.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func place(
+    at position: CGPoint,
+    anchor: UnitPoint = .topLeading,
+    proposal: ProposedViewSize
+)
+Parameters
+position
+The place where the anchor of the subview should appear in its container view, relative to container’s bounds.
+anchor
+The unit point on the subview that appears at position. You can use a built-in point, like center, or you can create a custom UnitPoint.
+proposal
+A proposed size for the subview. In SwiftUI, views choose their own size, but can take a size proposal from their parent view into account when doing so.
+Discussion
+Call this method from your implementation of the Layout protocol’s placeSubviews(in:proposal:subviews:cache:) method for each subview arranged by the layout. Provide a position within the container’s bounds where the subview should appear, and an anchor that indicates which part of the subview appears at that point.
+Include a proposed size that the subview can take into account when sizing itself. To learn the subview’s size for a given proposal before calling this method, you can call the dimensions(in:) or sizeThatFits(_:) method on the subview with the same proposal. That enables you to know subview sizes before committing to subview positions.
+Important
+Call this method only from within your Layout type’s implementation of the placeSubviews(in:proposal:subviews:cache:) method.
+If you call this method more than once for a subview, the last call takes precedence. If you don’t call this method for a subview, the subview appears at the center of its layout container and uses the layout container’s size proposal.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is place(at:anchor:proposal:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

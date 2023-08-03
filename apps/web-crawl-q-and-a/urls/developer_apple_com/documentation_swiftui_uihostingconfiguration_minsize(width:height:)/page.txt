@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/swiftui/uihostingconfiguration/minsize(width:height:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Focus Cookbook: Supporting and enhancing focus-driven interactions in your SwiftUI app
+Controlling the timing and movements of your animations
+Building a document-based app using SwiftData
+Backyard Birds: Building an app with SwiftData and widgets
+Articles
+Xcode library customization
+Previews in Xcode
+Setting a size
+M
+func margins(Edge.Set, CGFloat) -> UIHostingConfiguration<Content, Background>
+M
+func margins(Edge.Set, EdgeInsets) -> UIHostingConfiguration<Content, Background>
+Setting margins
+M
+func background<B>(content: () -> B) -> UIHostingConfiguration<Content, B>
+M
+func background<S>(S) -> UIHostingConfiguration<Content, _UIHostingConfigurationBackgroundView<S>>
+Setting the background
+M
+init(content: () -> Content)
+Documentation
+Open Menu
+Swift
+Instance Method
+minSize(width:height:)
+Sets the minimum size for the configuration.
+iOS 16.0+
+iPadOS 16.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func minSize(
+    width: CGFloat? = nil,
+    height: CGFloat? = nil
+) -> UIHostingConfiguration<Content, Background>
+Parameters
+width
+The value to use for the width dimension. A value of nil indicates that the system default should be used.
+height
+The value to use for the height dimension. A value of nil indicates that the system default should be used.
+Discussion
+Use this modifier to indicate that a configuration’s associated cell can be resized to a specific minimum. The following example allows the cell to be compressed to zero size:
+UIHostingConfiguration {
+    Text("My Contents")
+}
+.minSize(width: 0, height: 0)
+See Also
+Setting a size
+func minSize() -> UIHostingConfiguration<Content, Background>
+Sets the minimum size for the configuration.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is minSize(width:height:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

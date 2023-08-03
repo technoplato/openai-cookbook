@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/swiftui/navigationsplitview/init(sidebar:content:detail:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Managing column collapse
+M
+func navigationDestination<D, C>(item: Binding<Optional<D>>, destination: (D) -> C) -> some View
+Beta
+M
+func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View
+M
+func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View
+S
+NavigationPath
+S
+NavigationStack
+Stacking views in one column
+init(columnVisibility: Binding<NavigationSplitViewVisibility>, preferredCompactColumn: Binding<NavigationSplitViewColumn>, sidebar: () -> Sidebar, content: () -> Content, detail: () -> Detail)
+init(columnVisibility: Binding<NavigationSplitViewVisibility>, preferredCompactColumn: Binding<NavigationSplitViewColumn>, sidebar: () -> Sidebar, detail: () -> Detail)
+init(preferredCompactColumn: Binding<NavigationSplitViewColumn>, sidebar: () -> Sidebar, content: () -> Content, detail: () -> Detail)
+init(preferredCompactColumn: Binding<NavigationSplitViewColumn>, sidebar: () -> Sidebar, detail: () -> Detail)
+init(columnVisibility: Binding<NavigationSplitViewVisibility>, sidebar: () -> Sidebar, content: () -> Content, detail: () -> Detail)
+M
+init(sidebar: () -> Sidebar, detail: () -> Detail)
+Creating a navigation split view
+S
+NavigationSplitView
+Migrating to new navigation types
+Bringing robust navigation structure to your SwiftUI app
+Presenting views in columns
+Navigation
+Documents
+Documentation
+Open Menu
+Swift
+Initializer
+init(sidebar:content:detail:)
+Creates a three-column navigation split view.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init(
+    @ViewBuilder sidebar: () -> Sidebar,
+    @ViewBuilder content: () -> Content,
+    @ViewBuilder detail: () -> Detail
+)
+Parameters
+sidebar
+The view to show in the leading column.
+content
+The view to show in the middle column.
+detail
+The view to show in the detail area.
+See Also
+Creating a navigation split view
+init(sidebar: () -> Sidebar, detail: () -> Detail)
+Creates a two-column navigation split view.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(sidebar:content:detail:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

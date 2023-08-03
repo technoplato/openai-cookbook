@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/securefield/init(text:prompt:label:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func labelStyle<S>(S) -> some View
+Getting text input
+S
+TextField
+M
+func textFieldStyle<S>(S) -> some View
+S
+SecureField
+Creating a secure text field
+M
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?)
+M
+init<S>(S, text: Binding<String>, prompt: Text?)
+M
+func fontWidth(Font.Width?) -> some View
+P
+var font: Font?
+S
+Font
+Adjusting text size
+M
+func textScale(Text.Scale, isEnabled: Bool) -> some View
+Beta
+M
+func dynamicTypeSize<T>(T) -> some View
+M
+func dynamicTypeSize(DynamicTypeSize) -> some View
+Documentation
+Open Menu
+Swift
+Initializer
+init(text:prompt:label:)
+Creates a secure field with a prompt generated from a Text.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+init(
+    text: Binding<String>,
+    prompt: Text? = nil,
+    @ViewBuilder label: () -> Label
+)
+Available when Label conforms to View.
+Parameters
+text
+The text to display and edit.
+prompt
+A Text representing the prompt of the secure field which provides users with guidance on what to type into the secure field.
+label
+A view that describes the purpose of the secure field.
+See Also
+Creating a secure text field
+init(LocalizedStringKey, text: Binding<String>, prompt: Text?)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+init<S>(S, text: Binding<String>, prompt: Text?)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+init(LocalizedStringKey, text: Binding<String>)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+init<S>(S, text: Binding<String>)
+Creates a secure field with a prompt generated from a Text.
+Available when Label is Text.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(text:prompt:label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

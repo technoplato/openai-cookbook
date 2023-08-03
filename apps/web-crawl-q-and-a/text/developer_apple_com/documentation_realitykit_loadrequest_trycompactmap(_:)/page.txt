@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/realitykit/loadrequest/trycompactmap(_:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Applying Matching Criteria to Elements
+M
+func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func min() -> Publishers.Comparison<Self>
+M
+func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>
+M
+func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>
+M
+func max() -> Publishers.Comparison<Self>
+func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+M
+func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>
+M
+func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>
+M
+func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>
+Filtering Elements
+M
+func tryScan<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryScan<Self, T>
+M
+func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>
+M
+func replaceNil<T>(with: T) -> Publishers.Map<Self, T>
+M
+func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>
+Documentation
+Open Menu
+Swift
+Instance Method
+tryCompactMap(_:)
+Calls an error-throwing closure with each received element and publishes any returned optional that has a value.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func tryCompactMap<T>(_ transform: @escaping (Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>
+Parameters
+transform
+An error-throwing closure that receives a value and returns an optional value.
+Return Value
+Any non-nil optional results of calling the supplied closure.
+Discussion
+Use Publisher/tryCompactMap(_:) to remove nil elements from a publisher’s stream based on an error-throwing closure you provide. If the closure throws an error, the publisher cancels the upstream publisher and sends the thrown error to the downstream subscriber as a Publisher/Failure.
+The following example uses an array of numbers as the source for a collection-based publisher. A Publisher/tryCompactMap(_:) operator consumes each integer from the publisher and uses a dictionary to transform the numbers from its Arabic to Roman numerals, as an optional String.
+If the closure called by Publisher/tryCompactMap(_:) fails to look up a Roman numeral, it returns the optional String (unknown).
+If the closure called by Publisher/tryCompactMap(_:) determines the input is 0, it throws an error. The Publisher/tryCompactMap(_:) operator catches this error and stops publishing, sending a Subscribers/Completion/failure(_:) that wraps the error.
+struct ParseError: Error {}
+func romanNumeral(from: Int) throws -> String? {
+    let romanNumeralDict: [Int : String] =
+        [1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"]
+    guard from != 0 else { throw ParseError() }
+    return romanNumeralDict[from]
+}
+let numbers = [6, 5, 4, 3, 2, 1, 0]
+cancellable = numbers.publisher
+    .tryCompactMap { try romanNumeral(from: $0) }
+    .sink(
+          receiveCompletion: { print ("\($0)") },
+          receiveValue: { print ("\($0)", terminator: " ") }
+     )
+
+
+// Prints: "(Unknown) V IV III II I failure(ParseError())"
+See Also
+Filtering Elements
+func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>
+Republishes all elements that match a provided closure.
+func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>
+Republishes all elements that match a provided error-throwing closure.
+func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>
+Calls a closure with each received element and publishes any returned optional that has a value.
+func removeDuplicates() -> Publishers.RemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element.
+Available when Output conforms to Equatable.
+func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element, as evaluated by a provided closure.
+func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+Publishes only elements that don’t match the previous element, as evaluated by a provided error-throwing closure.
+func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>
+Replaces an empty stream with the provided element.
+func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>
+Replaces any errors in the stream with the provided element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is tryCompactMap(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

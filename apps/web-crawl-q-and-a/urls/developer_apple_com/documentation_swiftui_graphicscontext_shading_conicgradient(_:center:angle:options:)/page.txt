@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftui/graphicscontext/shading/conicgradient(_:center:angle:options:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func draw(Text, in: CGRect)
+M
+func draw(Text, at: CGPoint, anchor: UnitPoint)
+Drawing text
+S
+GraphicsContext.ResolvedImage
+M
+func resolve(Image) -> GraphicsContext.ResolvedImage
+M
+func draw(GraphicsContext.ResolvedImage, in: CGRect, style: FillStyle)
+M
+func draw(GraphicsContext.ResolvedImage, at: CGPoint, anchor: UnitPoint)
+static func tiledImage(Image, origin: CGPoint, sourceRect: CGRect, scale: CGFloat) -> GraphicsContext.Shading
+static func conicGradient(Gradient, center: CGPoint, angle: Angle, options: GraphicsContext.GradientOptions) -> GraphicsContext.Shading
+M
+static func radialGradient(Gradient, center: CGPoint, startRadius: CGFloat, endRadius: CGFloat, options: GraphicsContext.GradientOptions) -> GraphicsContext.Shading
+M
+static func linearGradient(Gradient, startPoint: CGPoint, endPoint: CGPoint, options: GraphicsContext.GradientOptions) -> GraphicsContext.Shading
+Gradients
+M
+static func color(Color.RGBColorSpace, white: Double, opacity: Double) -> GraphicsContext.Shading
+M
+static func color(Color.RGBColorSpace, red: Double, green: Double, blue: Double, opacity: Double) -> GraphicsContext.Shading
+M
+static func color(Color) -> GraphicsContext.Shading
+Colors
+S
+GraphicsContext.Shading
+Documentation
+Open Menu
+Swift
+Type Method
+conicGradient(_:center:angle:options:)
+Returns a shading instance that fills a conic (angular) gradient.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+static func conicGradient(
+    _ gradient: Gradient,
+    center: CGPoint,
+    angle: Angle = Angle(),
+    options: GraphicsContext.GradientOptions = GradientOptions()
+) -> GraphicsContext.Shading
+Parameters
+gradient
+A Gradient instance that defines the colors of the gradient.
+center
+The point in the current user space on which SwiftUI centers the gradient.
+angle
+The angle about the center that SwiftUI uses to start and finish the gradient. The gradient sweeps all the way around the center.
+options
+Options that you use to configure the gradient.
+Return Value
+A shading instance filled with a conic gradient.
+See Also
+Gradients
+static func linearGradient(Gradient, startPoint: CGPoint, endPoint: CGPoint, options: GraphicsContext.GradientOptions) -> GraphicsContext.Shading
+Returns a shading instance that fills a linear (axial) gradient.
+static func radialGradient(Gradient, center: CGPoint, startRadius: CGFloat, endRadius: CGFloat, options: GraphicsContext.GradientOptions) -> GraphicsContext.Shading
+Returns a shading instance that fills a radial gradient.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is conicGradient(_:center:angle:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

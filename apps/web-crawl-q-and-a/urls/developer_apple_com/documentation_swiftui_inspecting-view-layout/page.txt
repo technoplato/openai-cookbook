@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/swiftui/inspecting-view-layoutSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func layoutPriority(Double) -> some View
+M
+func fixedSize(horizontal: Bool, vertical: Bool) -> some View
+M
+func fixedSize() -> some View
+M
+func containerRelativeFrame(Axis.Set, count: Int, span: Int, spacing: CGFloat, alignment: Alignment) -> some View
+Beta
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment, (CGFloat, Axis) -> CGFloat) -> some View
+Beta
+M
+func containerRelativeFrame(Axis.Set, alignment: Alignment) -> some View
+Beta
+M
+func frame(minDepth: CGFloat?, idealDepth: CGFloat?, maxDepth: CGFloat?, alignment: DepthAlignment) -> some View
+func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View
+Laying out a simple view
+Finetuning a layout
+Layout adjustments
+Layout fundamentals
+View layout
+Drawing and graphics
+Shapes
+Menus and commands
+Documentation
+Open Menu
+Swift
+Article
+Inspecting view layout
+Determine the position and extent of a view using Xcode previews or by adding temporary borders.
+Overview
+To learn how SwiftUI sizes and positions views, take advantage of Xcode previews to inspect a single view’s boundaries. You can also add temporary borders to see how SwiftUI positions and sizes multiple views together.
+Highlight views with Xcode previews
+Using Xcode previews, you can quickly see the size of a specific view element by selecting the view or child view in the editor. To illustrate this, the following example uses a VStack to vertically group an image, provided by SF Symbols, above a name:
+struct StatusRow: View {
+    let name: String
+
+
+    var body: some View {
+        VStack {
+            Image(systemName: "person.circle")
+            Text(name)
+        }            
+    }
+}
+
+
+struct StatusRow_Previews: PreviewProvider {
+    static var previews: some View {
+        StatusRow(name: "Maria")
+    }
+}
+With the VStack selected, you’ll see a blue border around the view in the Xcode preview:
+Use temporary borders to explore complex layouts
+To see the border of more than one view, or to see a border when the view isn’t selected, temporarily add a border with the view modifier border(_:width:). Set the border’s color to something other than blue to easily distinguish it from a border added by Xcode:
+struct StatusRow: View {
+    let name: String
+
+
+    var body: some View {
+        VStack {
+            Image(systemName: "person.circle")
+            Text(name)
+                .border(Color.red)
+        }
+        .padding()
+        .border(Color.gray)
+    }
+}
+See Also
+Finetuning a layout
+Laying out a simple view
+Create a view layout by adjusting the size of views.
+Current page is Inspecting view layout
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

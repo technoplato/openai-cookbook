@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/realitykit/animationresource/repeat(count:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+BindableValue
+E
+BindTarget
+S
+BindPath
+Bindable Animation Targets
+S
+AnimationHandoffType
+Beta
+S
+AnimationGroup
+S
+AnimationFillMode
+M
+static func group(with: [AnimationResource]) throws -> AnimationResource
+M
+static func sequence(with: [AnimationResource]) throws -> AnimationResource
+M
+static func generate(with: AnimationDefinition) throws -> AnimationResource
+Creating an Animation Resource
+C
+AnimationResource
+Animation resources
+E
+AnimationRepeatMode
+E
+AnimationEvents
+Documentation
+Open Menu
+Swift
+Instance Method
+repeat(count:)
+Creates an animation that repeats the specified number of times.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+@MainActor
+func `repeat`(count: Int) -> AnimationResource
+Parameters
+count
+The number of animation repetitions.
+Return Value
+A repeating copy of the calling animation resource.
+See Also
+Creating an Animation Resource
+static func generate(with: AnimationDefinition) throws -> AnimationResource
+Creates an animation resource from a definition.
+static func sequence(with: [AnimationResource]) throws -> AnimationResource
+Creates an animation resource that plays a collection of animations in a specified sequence.
+static func group(with: [AnimationResource]) throws -> AnimationResource
+Creates an animation resource that simultaneously plays back a collection of animations.
+func `repeat`(duration: TimeInterval) -> AnimationResource
+Repeats an animation for the specified amount of time.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is repeat(count:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

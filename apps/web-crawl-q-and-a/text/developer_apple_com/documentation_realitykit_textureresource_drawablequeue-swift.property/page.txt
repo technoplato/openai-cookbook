@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/realitykit/textureresource/drawablequeue-swift.propertySkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Comparing Material Color Parameters
+Equatable Implementations
+Default Implementations
+M
+convenience init(named: String, in: Bundle?, options: TextureResource.CreateOptions) async throws
+Beta
+M
+convenience init(named: String, in: Bundle?) async throws
+Beta
+M
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) async throws
+Beta
+M
+convenience init(dimensions: TextureResource.Dimensions2D, format: TextureResource.Format, contents: TextureResource.Contents) throws
+convenience init(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) async throws
+func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>
+C
+TextureResource.DrawableQueue
+C
+TextureResource.Drawable
+Drawing the Texture
+E
+TextureResource.Semantic
+P
+var semantic: TextureResource.Semantic?
+E
+TextureResource.MipmapsMode
+P
+var mipmapLevelCount: Int
+P
+var width: Int
+Documentation
+Open Menu
+Swift
+Instance Property
+drawableQueue
+The drawable queue that was used to replace the texture.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+@MainActor
+var drawableQueue: TextureResource.DrawableQueue? { get }
+See Also
+Drawing the Texture
+class Drawable
+A drawable associated with a drawable queue
+class DrawableQueue
+A drawable queue that may be used to update a texture resource dynamically
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is drawableQueue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

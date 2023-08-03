@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/swiftui/view/animation(_:value:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Animations
+Adding state-based animation to an action
+func withAnimation<Result>(Animation?, () throws -> Result) rethrows -> Result
+func withAnimation<Result>(Animation?, completionCriteria: AnimationCompletionCriteria, () throws -> Result, completion: () -> Void) rethrows -> Result
+Beta
+S
+AnimationCompletionCriteria
+Beta
+S
+Animation
+Adding state-based animation to a view
+M
+func animation(Animation?) -> some View
+func phaseAnimator<Phase>(some Sequence, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func phaseAnimator<Phase>(some Sequence, trigger: some Equatable, content: (PlaceholderContentView<Self>, Phase) -> some View, animation: (Phase) -> Animation?) -> some View
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+S
+KeyframesBuilder
+r
+P
+KeyframeTrackContent
+Beta
+S
+CubicKeyframe
+Beta
+S
+LinearKeyframe
+Beta
+S
+MoveKeyframe
+Beta
+S
+SpringKeyframe
+Beta
+Creating custom animations
+Documentation
+Open Menu
+Swift
+Instance Method
+animation(_:value:)
+Applies the given animation to this view when the specified value changes.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func animation<V>(
+    _ animation: Animation?,
+    value: V
+) -> some View where V : Equatable
+Parameters
+animation
+The animation to apply. If animation is nil, the view doesn’t animate.
+value
+A value to monitor for changes.
+Return Value
+A view that applies animation to this view whenever value changes.
+See Also
+Adding state-based animation to a view
+func animation(Animation?) -> some View
+Applies the given animation to this view when this view changes.
+Available when Self conforms to Equatable.
+func animation<V>(Animation?, body: (PlaceholderContentView<Self>) -> V) -> some View
+Applies the given animation to all animatable values within the body closure.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is animation(_:value:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/realitykit/scene/publisher/throttle(for:scheduler:latest:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Adding Explicit Connectability
+M
+func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>
+M
+func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>
+Specifying Schedulers
+M
+func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>
+Performing Type Erasure
+M
+func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>
+func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>
+func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>
+M
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+M
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+M
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+Controlling Timing
+M
+func retry(Int) -> Publishers.Retry<Self>
+M
+func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>
+M
+func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>
+M
+func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+throttle(for:scheduler:latest:)
+Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.
+RealityKit
+Combine
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func throttle<S>(
+    for interval: S.SchedulerTimeType.Stride,
+    scheduler: S,
+    latest: Bool
+) -> Publishers.Throttle<Self, S> where S : Scheduler
+Parameters
+interval
+The interval at which to find and emit either the most recent or the first element, expressed in the time system of the scheduler.
+scheduler
+The scheduler on which to publish elements.
+latest
+A Boolean value that indicates whether to publish the most recent element. If false, the publisher emits the first element received during the interval.
+Return Value
+A publisher that emits either the most-recent or first element received during the specified interval.
+Discussion
+Use throttle(for:scheduler:latest:) to selectively republish elements from an upstream publisher during an interval you specify. Other elements received from the upstream in the throttling interval aren’t republished.
+In the example below, a Timer.TimerPublisher produces elements on one-second intervals; the throttle(for:scheduler:latest:) operator delivers the first event, then republishes only the latest event in the following ten second intervals:
+cancellable = Timer.publish(every: 3.0, on: .main, in: .default)
+    .autoconnect()
+    .print("\(Date().description)")
+    .throttle(for: 10.0, scheduler: RunLoop.main, latest: true)
+    .sink(
+        receiveCompletion: { print ("Completion: \($0).") },
+        receiveValue: { print("Received Timestamp \($0).") }
+     )
+
+
+// Prints:
+ //    Publish at: 2020-03-19 18:26:54 +0000: receive value: (2020-03-19 18:26:57 +0000)
+ //    Received Timestamp 2020-03-19 18:26:57 +0000.
+ //    Publish at: 2020-03-19 18:26:54 +0000: receive value: (2020-03-19 18:27:00 +0000)
+ //    Publish at: 2020-03-19 18:26:54 +0000: receive value: (2020-03-19 18:27:03 +0000)
+ //    Publish at: 2020-03-19 18:26:54 +0000: receive value: (2020-03-19 18:27:06 +0000)
+ //    Publish at: 2020-03-19 18:26:54 +0000: receive value: (2020-03-19 18:27:09 +0000)
+ //    Received Timestamp 2020-03-19 18:27:09 +0000.
+See Also
+Controlling Timing
+func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>
+Measures and emits the time interval between events received from an upstream publisher.
+func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>
+Publishes elements only after a specified time interval elapses between events.
+func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>
+Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler.
+func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>
+Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is throttle(for:scheduler:latest:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

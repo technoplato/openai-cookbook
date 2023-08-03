@@ -1,0 +1,274 @@
+https://developer.apple.com/documentation/swiftui/input-eventsSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hoverEffectDisabled(Bool) -> some View
+Beta
+M
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+Beta
+M
+func onContinuousHover(coordinateSpace: some CoordinateSpaceProtocol, perform: (HoverPhase) -> Void) -> some View
+Beta
+M
+func onHover(perform: (Bool) -> Void) -> some View
+Responding to hover events
+S
+EventModifiers
+S
+KeyEquivalent
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Gestures
+Event handling
+Scroll views
+View groupings
+Tables
+Lists
+Custom layout
+Layout adjustments
+Documentation
+Open Menu
+Swift
+Input events
+Respond to input from a hardware device, like a keyboard or a Touch Bar.
+Overview
+SwiftUI provides view modifiers that enable your app to listen for and react to various kinds of user input. For example, you can create keyboard shortcuts, respond to a form submission, or take input from the digital crown of an Apple Watch.
+For design guidance, see Inputs in the Human Interface Guidelines.
+Topics
+Responding to keyboard input
+func onKeyPress(KeyEquivalent, action: () -> KeyPress.Result) -> some View
+Performs an action if the user presses a key on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses any key on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(KeyEquivalent, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses a key on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(characters: CharacterSet, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses one or more keys on a hardware keyboard while the view has focus.
+Beta
+func onKeyPress(keys: Set<KeyEquivalent>, phases: KeyPress.Phases, action: (KeyPress) -> KeyPress.Result) -> some View
+Performs an action if the user presses one or more keys on a hardware keyboard while the view has focus.
+Beta
+struct KeyPress
+Beta
+Creating keyboard shortcuts
+func keyboardShortcut(KeyboardShortcut) -> some View
+Assigns a keyboard shortcut to the modified control.
+func keyboardShortcut(KeyboardShortcut?) -> some View
+Assigns an optional keyboard shortcut to the modified control.
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers) -> some View
+Defines a keyboard shortcut and assigns it to the modified control.
+func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View
+Defines a keyboard shortcut and assigns it to the modified control.
+var keyboardShortcut: KeyboardShortcut?
+The keyboard shortcut that buttons in this environment will be triggered with.
+struct KeyboardShortcut
+Keyboard shortcuts describe combinations of keys on a keyboard that the user can press in order to activate a button or toggle.
+struct KeyEquivalent
+Key equivalents consist of a letter, punctuation, or function key that can be combined with an optional set of modifier keys to specify a keyboard shortcut.
+struct EventModifiers
+A set of key modifiers that you can add to a gesture.
+Responding to hover events
+func onHover(perform: (Bool) -> Void) -> some View
+Adds an action to perform when the user moves the pointer over or away from the view’s frame.
+func onContinuousHover(coordinateSpace: some CoordinateSpaceProtocol, perform: (HoverPhase) -> Void) -> some View
+Adds an action to perform when the pointer enters, moves within, and exits the view’s bounds.
+Beta
+func hoverEffect(HoverEffect, isEnabled: Bool) -> some View
+Applies a hover effect to this view.
+Beta
+func hoverEffectDisabled(Bool) -> some View
+Adds a condition that controls whether this view can display hover effects.
+Beta
+func defaultHoverEffect(HoverEffect?) -> some View
+Sets the default hover effect to use for views within this view.
+Beta
+var isHoverEffectEnabled: Bool
+A Boolean value that indicates whether the view associated with this environment allows hover effects to be displayed.
+Beta
+enum HoverPhase
+The current hovering state and value of the pointer.
+Changing view appearance for hover events
+func hoverEffect(HoverEffect) -> some View
+Applies a hover effect to this view.
+struct HoverEffect
+An effect applied when the pointer hovers over a view.
+Responding to submission events
+func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View
+Adds an action to perform when the user submits a value to this view.
+func submitScope(Bool) -> some View
+Prevents submission triggers originating from this view to invoke a submission action configured by a submission modifier higher up in the view hierarchy.
+struct SubmitTriggers
+A type that defines various triggers that result in the firing of a submission action.
+Labeling a submission event
+func submitLabel(SubmitLabel) -> some View
+Sets the submit label for this view.
+struct SubmitLabel
+A semantic label describing the label of submission within a view hierarchy.
+Responding to commands
+func onMoveCommand(perform: ((MoveCommandDirection) -> Void)?) -> some View
+Adds an action to perform in response to a move command, like when the user presses an arrow key on a Mac keyboard, or taps the edge of the Siri Remote when controlling an Apple TV.
+func onDeleteCommand(perform: (() -> Void)?) -> some View
+Adds an action to perform in response to the system’s Delete command, or pressing either the ⌫ (backspace) or ⌦ (forward delete) keys while the view has focus.
+func pageCommand<V>(value: Binding<V>, in: ClosedRange<V>, step: V) -> some View
+Steps a value through a range in response to page up or page down commands.
+func onExitCommand(perform: (() -> Void)?) -> some View
+Sets up an action that triggers in response to receiving the exit command while the view has focus.
+func onPlayPauseCommand(perform: (() -> Void)?) -> some View
+Adds an action to perform in response to the system’s Play/Pause command.
+func onCommand(Selector, perform: (() -> Void)?) -> some View
+Adds an action to perform in response to the given selector.
+enum MoveCommandDirection
+Specifies the direction of an arrow key movement.
+Controlling hit testing
+func allowsTightening(Bool) -> some View
+Sets whether text in this view can compress the space between characters when necessary to fit text in a line.
+func contentShape<S>(S, eoFill: Bool) -> some View
+Defines the content shape for hit testing.
+func contentShape<S>(ContentShapeKinds, S, eoFill: Bool) -> some View
+Sets the content shape for this view.
+struct ContentShapeKinds
+A kind for the content shape of a view.
+Interacting with the Digital Crown
+func digitalCrownAccessory(Visibility) -> some View
+Specifies the visibility of Digital Crown accessory Views on Apple Watch.
+func digitalCrownAccessory<Content>(content: () -> Content) -> some View
+Places an accessory View next to the Digital Crown on Apple Watch.
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(Binding<V>, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(detent: Binding<V>, from: V, through: V, by: V.Stride, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool, onChange: (DigitalCrownEvent) -> Void, onIdle: () -> Void) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(Binding<V>) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+func digitalCrownRotation<V>(Binding<V>, from: V, through: V, by: V.Stride?, sensitivity: DigitalCrownRotationalSensitivity, isContinuous: Bool, isHapticFeedbackEnabled: Bool) -> some View
+Tracks Digital Crown rotations by updating the specified binding.
+struct DigitalCrownEvent
+An event emitted when the user rotates the Digital Crown.
+enum DigitalCrownRotationalSensitivity
+The amount of Digital Crown rotation needed to move between two integer numbers.
+Managing Touch Bar input
+func touchBar<Content>(content: () -> Content) -> some View
+Sets the content that the Touch Bar displays.
+func touchBar<Content>(TouchBar<Content>) -> some View
+Sets the Touch Bar content to be shown in the Touch Bar when applicable.
+func touchBarItemPrincipal(Bool) -> some View
+Sets principal views that have special significance to this Touch Bar.
+func touchBarCustomizationLabel(Text) -> some View
+Sets a user-visible string that identifies the view’s functionality.
+func touchBarItemPresence(TouchBarItemPresence) -> some View
+Sets the behavior of the user-customized view.
+struct TouchBar
+A container for a view that you can show in the Touch Bar.
+enum TouchBarItemPresence
+Options that affect user customization of the Touch Bar.
+See Also
+Event handling
+API Reference
+Gestures
+Define interactions from taps, clicks, and swipes to fine-grained gestures.
+API Reference
+Clipboard
+Enable people to move or duplicate items by issuing Copy and Paste commands.
+API Reference
+Drag and drop
+Enable people to move or duplicate items by dragging them from one location to another.
+API Reference
+Focus
+Identify and control which visible object responds to user interaction.
+API Reference
+System events
+React to system events, like opening a URL.
+Current page is Input events
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

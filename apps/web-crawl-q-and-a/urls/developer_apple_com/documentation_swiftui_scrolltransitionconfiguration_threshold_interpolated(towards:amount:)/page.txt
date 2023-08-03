@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftui/scrolltransitionconfiguration/threshold/interpolated(towards:amount:)Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ScrollTransitionConfiguration.Threshold
+Getting the threshold
+P
+static var centered: ScrollTransitionConfiguration.Threshold
+P
+static let hidden: ScrollTransitionConfiguration.Threshold
+P
+static let visible: ScrollTransitionConfiguration.Threshold
+M
+static func visible(Double) -> ScrollTransitionConfiguration.Threshold
+Modifying the threshold
+M
+func inset(by: Double) -> ScrollTransitionConfiguration.Threshold
+func interpolated(towards: ScrollTransitionConfiguration.Threshold, amount: Double) -> ScrollTransitionConfiguration.Threshold
+M
+func scrollBounceBehavior(ScrollBounceBehavior, axes: Axis.Set) -> some View
+P
+var horizontalScrollBounceBehavior: ScrollBounceBehavior
+P
+var verticalScrollBounceBehavior: ScrollBounceBehavior
+S
+ScrollBounceBehavior
+Interacting with a software keyboard
+M
+func scrollDismissesKeyboard(ScrollDismissesKeyboardMode) -> some View
+P
+var scrollDismissesKeyboardMode: ScrollDismissesKeyboardMode
+Documentation
+Open Menu
+Swift
+Instance Method
+interpolated(towards:amount:)
+Creates a new threshold that combines this threshold value with another threshold, interpolated by the given amount.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func interpolated(
+    towards other: ScrollTransitionConfiguration.Threshold,
+    amount: Double
+) -> ScrollTransitionConfiguration.Threshold
+Parameters
+other
+The second threshold value.
+amount
+The ratio with which this threshold is combined with the given threshold, where zero is equal to this threshold, 1.0 is equal to other, and values in between combine the two thresholds.
+See Also
+Modifying the threshold
+func inset(by: Double) -> ScrollTransitionConfiguration.Threshold
+Returns a threshold that is met when the target view is closer to the center of the container by distance. Use negative values to move the threshold away from the center.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is interpolated(towards:amount:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

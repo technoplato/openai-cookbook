@@ -1,0 +1,199 @@
+https://developer.apple.com/documentation/swiftui/keyframetrackcontentSkip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Updating a view on a schedule
+S
+EmptyAnimatableData
+r
+P
+VectorArithmetic
+S
+AnimatablePair
+r
+P
+Animatable
+Making data animatable
+S
+Spring
+S
+KeyframesBuilder
+Beta
+S
+KeyframeTrackContentBuilder
+Beta
+S
+KeyframeTrack
+Beta
+S
+KeyframeTimeline
+Beta
+r
+P
+Keyframes
+Beta
+S
+KeyframeAnimator
+Beta
+M
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Beta
+M
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Beta
+Documentation
+Open Menu
+Swift
+Protocol
+KeyframeTrackContent
+A group of keyframes that define an interpolation curve of an animatable value.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+protocol KeyframeTrackContent<Value>
+Topics
+Creating a keyframe
+var body: Self.Body
+The composition of content that comprise the keyframe track.
+Required
+associatedtype Body : KeyframeTrackContent
+Required
+associatedtype Value : Animatable = Self.Body.Value
+Required
+Relationships
+Conforming Types
+CubicKeyframe
+KeyframeTrackContentBuilder.Conditional
+Conforms when Value conforms to Animatable.
+LinearKeyframe
+MoveKeyframe
+SpringKeyframe
+See Also
+Creating keyframe-based animation
+func keyframeAnimator<Value>(initialValue: Value, repeating: Bool, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Loops the given keyframes continuously, updating the view using the modifiers you apply in body.
+Beta
+func keyframeAnimator<Value>(initialValue: Value, trigger: some Equatable, content: (PlaceholderContentView<Self>, Value) -> some View, keyframes: (Value) -> some Keyframes) -> some View
+Plays the given keyframes when the given trigger value changes, updating the view using the modifiers you apply in body.
+Beta
+struct KeyframeAnimator
+A container that animates its content with keyframes.
+Beta
+protocol Keyframes
+A type that defines changes to a value over time.
+Beta
+struct KeyframeTimeline
+A description of how a value changes over time, modeled using keyframes.
+Beta
+struct KeyframeTrack
+A sequence of keyframes animating a single property of a root type.
+Beta
+struct KeyframeTrackContentBuilder
+The builder that creates keyframe track content from the keyframes that you define within a closure.
+Beta
+struct KeyframesBuilder
+A builder that combines keyframe content values into a single value.
+Beta
+struct CubicKeyframe
+A keyframe that uses a cubic curve to smoothly interpolate between values.
+Beta
+struct LinearKeyframe
+A keyframe that uses simple linear interpolation.
+Beta
+struct MoveKeyframe
+A keyframe that immediately moves to the given value without interpolating.
+Beta
+struct SpringKeyframe
+A keyframe that uses a spring function to interpolate to the given value.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is KeyframeTrackContent
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+
