@@ -55,6 +55,14 @@ class WWDCDatabase:
                 UPDATE urls SET {flag_column} = 1, updated_at = ? WHERE id = ?
             """, (datetime.now(), url_id))
 
+    def is_page_downloaded(self, url_id):
+        with self.conn:
+            cursor = self.conn.execute("""
+                SELECT page_downloaded FROM urls WHERE id = ?
+            """, (url_id,))
+            result = cursor.fetchone()
+            return result and result[0]
+
 
 # ####################################################################################################
 # Setup WebDriver and Chrome Options
@@ -72,9 +80,9 @@ driver = webdriver.Chrome(
 
 def comment(message):
     fence = '#' * 80
-    print(fence)
-    print(f"##### {message}")
-    print(fence)
+    # print(fence)
+    print(message)
+    # print(fence)
 
 
 def get_current_year_url():
@@ -93,14 +101,30 @@ def get_wwdc_urls(driver, starting_url):
 
 
 def get_view_code_urls(driver, wwdc_year, wwdc_url, db):
-    url_id = db.save_url(wwdc_year, "View code", wwdc_url)
-    if not db.is_page_downloaded(url_id):
-        comment("Downloading the page")
-        # Code to download the page
-        db.mark_page_downloaded(url_id)
-    comment("Code to process the page if needed")
-    # Code to process the page if needed
-    # ...
+    comment(f"Fetching 'View Code' URLs for {wwdc_year}")
+
+    # Navigate to the WWDC year URL
+    driver.get(wwdc_url)
+    driver.implicitly_wait(10)
+
+    # Get the entire HTML content
+    html_content = driver.page_source
+
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(html_content, "html.parser")
+
+    # Find all the "View Code" links
+    view_code_links = soup.find_all("a", string="View code")
+
+    # Extract and save the URLs
+    view_code_urls = []
+    for link in view_code_links:
+        url = link.get("href")
+        if url:
+            view_code_urls.append(url)
+            db.save_url(wwdc_year, "View code", url)
+
+    return view_code_urls
 
 
 def main():
@@ -113,7 +137,6 @@ def main():
         view_code_urls = get_view_code_urls(driver, wwdc_year, wwdc_url, db)
         for url in view_code_urls:
             comment(f"Processing URL: {url}")
-            # get_view_code_urls(driver, url, db)
 
 
 if __name__ == "__main__":
