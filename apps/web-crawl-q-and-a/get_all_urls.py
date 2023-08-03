@@ -149,33 +149,119 @@ def collect_links(driver, url):
 
     We can cross reference that transcript in order to grab some surrounding context for the code snippets from the "Code" tab. 
 
+    For videos that don't list a "Code" tab explicitly, we can OCR 2hz frames from the video and run some kind of simple analysis to 
+    determine if code is being shown on screen, check the surrounding transcript, and embed that code (fullest example we can gather)
+    with the surrounding spoken explanations. 
+
     
 
     """
 
     """
     TODO: more interesting docs we want
-
-    https://developer.apple.com/airplay/
-    https://developer.apple.com/shareplay/
+    https://developer.apple.com/documentation/replaykit
+    https://developer.apple.com/documentation/visionkit
+    https://developer.apple.com/documentation/screencapturekit
+    https://developer.apple.com/documentation/sharedwithyou
+    https://developer.apple.com/documentation/usernotifications
+    https://developer.apple.com/documentation/RoomPlan
+    https://developer.apple.com/documentation/authenticationservices
+    https://developer.apple.com/documentation/ActivityKit
+    https://developer.apple.com/documentation/app_clips
     https://developer.apple.com/documentation/GroupActivities/
     https://developer.apple.com/documentation/soundanalysis/
     https://developer.apple.com/documentation/multipeerconnectivity
-    https://developer.apple.com/documentation/xcode
-    https://developer.apple.com/documentation/xcode/configuring-app-groups
     https://developer.apple.com/documentation/widgetkit/ 
-    https://developer.apple.com/documentation/uikit/keyboards_and_input/
-    https://developer.apple.com/documentation/quicklook
-    https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG
-    https://developer.apple.com/documentation/corespotlight/
+    https://developer.apple.com/documentation/xcode/configuring-app-groups
     https://developer.apple.com/documentation/usernotificationsui/
     https://developer.apple.com/documentation/nearbyinteraction/
     https://developer.apple.com/documentation/watchconnectivity
     https://developer.apple.com/documentation/watchos-apps
+    https://developer.apple.com/documentation/AppIntents
+    https://developer.apple.com/documentation/docc
+    https://developer.apple.com/documentation/naturallanguage
+    https://developer.apple.com/documentation/MusicKit
+    https://developer.apple.com/documentation/Observation
+    https://developer.apple.com/documentation/PackageDescription
+    https://developer.apple.com/documentation/passkit
+    https://developer.apple.com/documentation/phase
+    https://developer.apple.com/documentation/preferencepanes
+    https://developer.apple.com/documentation/pushtotalk
+    https://developer.apple.com/documentation/pushkit
+    https://developer.apple.com/documentation/sensorkit
+    https://developer.apple.com/documentation/sirikit
+    https://developer.apple.com/documentation/sign_in_with_apple
+    https://developer.apple.com/documentation/shazamkit
+    https://developer.apple.com/documentation/TipKit
+    https://developer.apple.com/documentation/workoutkit
+    https://developer.apple.com/documentation/xctest
 
+https://developer.apple.com/documentation/swift-playgrounds
+    https://developer.apple.com/documentation/playgroundsupport
+    https://developer.apple.com/documentation/playgroundbluetooth
+    https://developer.apple.com/documentation/RegexBuilder
+    https://developer.apple.com/documentation/walletpasses
+    https://developer.apple.com/documentation/watchkit
 
-
-
+https://developer.apple.com/documentation/visionos-release-notes
+https://developer.apple.com/documentation/Xcode-Release-Notes
+https://developer.apple.com/documentation/Xcode/Xcode-Cloud
+https://developer.apple.com/documentation/watchos-release-notes
+    https://developer.apple.com/documentation/photokit
+    https://developer.apple.com/documentation/systemconfiguration
+    https://developer.apple.com/documentation/quicklook
+    https://developer.apple.com/documentation/Updates
+    https://developer.apple.com/documentation/symbols
+    https://developer.apple.com/documentation/quicklookthumbnailing
+    https://developer.apple.com/documentation/Xcode/swift-packages
+    https://developer.apple.com/airplay/
+    https://developer.apple.com/documentation/ProximityReader
+    https://developer.apple.com/documentation/linkpresentation
+    https://developer.apple.com/documentation/macos-release-notes
+    https://developer.apple.com/documentation/mailkit
+    https://developer.apple.com/documentation/safariservices/safari_app_extensions
+    https://developer.apple.com/documentation/matter
+    https://developer.apple.com/shareplay/
+    https://developer.apple.com/documentation/ios-ipados-release-notes
+    https://developer.apple.com/documentation/installer_js
+    https://developer.apple.com/documentation/appstoreconnectapi
+    https://developer.apple.com/documentation/eventkit
+    https://developer.apple.com/documentation/appstorereceipts
+    https://developer.apple.com/documentation/xcode
+    https://developer.apple.com/documentation/uikit/keyboards_and_input/
+    https://developer.apple.com/documentation/quicklook
+    https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG
+    https://developer.apple.com/documentation/corespotlight/
+    https://developer.apple.com/documentation/applearchive
+    https://developer.apple.com/documentation/accelerate
+https://developer.apple.com/documentation/apple-silicon/
+https://developer.apple.com/documentation/scenekit
+https://developer.apple.com/documentation/appstoreservernotifications
+https://developer.apple.com/documentation/appstoreserverapi
+https://developer.apple.com/documentation/applemusicapi
+https://developer.apple.com/documentation/CryptoKit
+https://developer.apple.com/documentation/automator
+https://developer.apple.com/documentation/avfoundation
+https://developer.apple.com/documentation/avkit
+https://developer.apple.com/documentation/AVRouting
+https://developer.apple.com/documentation/carplay
+https://developer.apple.com/documentation/backgroundtasks
+https://developer.apple.com/documentation/backgroundassets
+https://developer.apple.com/documentation/cktooljs
+https://developer.apple.com/documentation/clockkit
+https://developer.apple.com/documentation/Combine
+https://developer.apple.com/documentation/corelocation
+https://developer.apple.com/documentation/coremotion
+https://developer.apple.com/documentation/coremedia/
+https://developer.apple.com/documentation/CoreTransferable
+https://developer.apple.com/documentation/corevideo
+https://developer.apple.com/documentation/CreateMLComponents
+https://developer.apple.com/documentation/DeviceActivity
+https://developer.apple.com/documentation/devicecheck
+https://developer.apple.com/documentation/foundation
+https://developer.apple.com/documentation/security
+https://developer.apple.com/documentation/sensitivecontentanalysis
+https://developer.apple.com/documentation/uikit
     """
 
     # Execute JavaScript to retrieve all href attributes of anchor tags containing specified substrings
