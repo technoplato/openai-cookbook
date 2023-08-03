@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/speech/sfspeechrecognitiontaskstate
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+DataInsertable
+Beta
+Protocols
+C
+SFSpeechLanguageModel
+Beta
+C
+SFCustomLanguageModelData
+Beta
+Classes
+S
+SFSpeechError
+Beta
+Structures
+P
+var state: SFSpeechRecognitionTaskState
+Monitoring Recognition Progress
+P
+var isFinishing: Bool
+M
+func finish()
+Finishing a Speech Recognition Task
+P
+var isCancelled: Bool
+M
+func cancel()
+Canceling a Speech Recognition Task
+Documentation
+Open Menu
+Enumeration
+SFSpeechRecognitionTaskState
+The state of the task associated with the recognition request.
+iOS 10.0+
+iPadOS 10.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+visionOS 1.0+ Beta
+enum SFSpeechRecognitionTaskState : Int, @unchecked Sendable
+Topics
+Enumeration Cases
+case canceling
+Delivery of recognition results has finished, but audio recording may be ongoing.
+case completed
+Delivery of recognition requests has finished and audio recording has stopped.
+case finishing
+Audio recording has stopped, but delivery of recognition results may continue.
+case running
+Speech recognition (potentially including audio recording) is in progress.
+case starting
+Speech recognition (potentially including audio recording) has not yet started.
+Relationships
+Conforms To
+Sendable
+See Also
+Monitoring Recognition Progress
+var state: SFSpeechRecognitionTaskState
+The current state of the speech recognition task.
+var error: Error?
+An error object that specifies the error that occurred during a speech recognition task.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SFSpeechRecognitionTaskState
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

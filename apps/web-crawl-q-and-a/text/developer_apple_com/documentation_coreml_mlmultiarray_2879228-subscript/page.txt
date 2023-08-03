@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/coreml/mlmultiarray/2879228-subscript
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLGPUComputeDevice
+Beta
+C
+MLCPUComputeDevice
+Beta
+E
+MLComputeDevice
+Beta
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Accessing a Multiarray’s Elements
+M
+func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer, [Int]) -> R) -> R
+M
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+M
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+M
+func withUnsafeBufferPointer<S, R>(ofType: S.Type, (UnsafeBufferPointer<S>) -> R) -> R
+Providing buffer access
+P
+var strides: [NSNumber]
+P
+var shape: [NSNumber]
+Documentation
+Open Menu
+Subscript
+subscript(_:)
+Accesses the multiarray by using a linear offset.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+subscript(idx: Int) -> NSNumber { get set }
+Parameters
+idx
+A linear offset index that represents a position the multiarray.
+Return Value
+A number.
+Discussion
+Use the subscript to linearly index a one-dimensional multiarray in the same way as a conventional array.
+let oneDimensionalArray = try MLMultiArray(shape: [42], dataType: .int32)
+let numberValue = oneDimensionalArray[7]
+Multiarrays with more than one dimension order their elements in row-major order. In these cases, calculate a linear offset by summing the products of each dimension’s index with the dimension’s stride (See strides).
+let multiArray = try MLMultiArray(shape: [5, 22, 17], dataType: .double)
+
+
+let dimension0 = 3
+let dimension1 = 5
+let dimension2 = 7
+
+
+var linearIndex = 0
+linearIndex += dimension0 * multiArray.strides[0].intValue
+linearIndex += dimension1 * multiArray.strides[1].intValue
+linearIndex += dimension2 * multiArray.strides[2].intValue
+
+
+let previousNumberValue = multiArray[linearIndex]
+multiArray[linearIndex] = 2.718_28
+See Also
+Accessing a Multiarray’s Elements
+subscript([NSNumber]) -> NSNumber
+Accesses the multiarray by using a number array that has an element for each dimension.
+var pixelBuffer: CVPixelBuffer?
+A reference to the multiarray’s underlying pixel buffer.
+var dataPointer: UnsafeMutableRawPointer
+A pointer to the multiarray’s underlying memory.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

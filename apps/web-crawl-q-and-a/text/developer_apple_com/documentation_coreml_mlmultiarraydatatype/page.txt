@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/coreml/mlmultiarraydatatype
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var pixelBuffer: CVPixelBuffer?
+subscript([NSNumber]) -> NSNumber
+subscript(Int) -> NSNumber
+Accessing a Multiarray’s Elements
+M
+func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer, [Int]) -> R) -> R
+M
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+M
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+M
+init(pixelBuffer: CVPixelBuffer, shape: [NSNumber])
+M
+init(concatenating: [MLMultiArray], axis: Int, dataType: MLMultiArrayDataType)
+M
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+M
+init<ShapedArray>(ShapedArray)
+M
+init(shape: [NSNumber], dataType: MLMultiArrayDataType)
+M
+init<C>(C)
+M
+init<C>(C)
+M
+init<C>(C)
+Documentation
+Open Menu
+Enumeration
+MLMultiArrayDataType
+Constants that define the underlying element types a multiarray can store.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+enum MLMultiArrayDataType : Int, @unchecked Sendable
+Overview
+All elements of an MLMultiArray instance must be of the same type and must be defined in MLMultiArrayDataType.
+Topics
+Multiarray Data Types
+case int32
+Designates the multiarray’s elements as 32-bit integers.
+case float16
+Designates the multiarray’s elements as 16-bit floats.
+case float32
+Designates the multiarray’s elements as 32-bit floats.
+case double
+Designates the multiarray’s elements as doubles.
+static var float: MLMultiArrayDataType
+Designates the multiarray’s elements as floats.
+static var float64: MLMultiArrayDataType
+Designates the multiarray’s elements as 64-bit floats.
+Relationships
+Conforms To
+Sendable
+See Also
+Creating a Multiarray
+init<C>(C)
+Creates a multiarray from a collection of integers.
+init<C>(C)
+Creates a multiarray from a collection of floats.
+init<C>(C)
+Creates a multiarray from a collection of doubles.
+init(shape: [NSNumber], dataType: MLMultiArrayDataType)
+Creates a multidimensional array with a shape and type.
+init<ShapedArray>(ShapedArray)
+Creates a multiarray from a shaped array.
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+Creates a multiarray from a data pointer.
+init(concatenating: [MLMultiArray], axis: Int, dataType: MLMultiArrayDataType)
+Merges an array of multiarrays into one multiarray along an axis.
+init(pixelBuffer: CVPixelBuffer, shape: [NSNumber])
+Creates a multiarray sharing the surface of a pixel buffer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLMultiArrayDataType
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

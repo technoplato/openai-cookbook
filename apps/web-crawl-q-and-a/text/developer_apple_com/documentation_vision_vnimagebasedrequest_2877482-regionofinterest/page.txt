@@ -1,0 +1,131 @@
+https://developer.apple.com/documentation/vision/vnimagebasedrequest/2877482-regionofinterest
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Building a feature-rich app for sports analysis
+Still Image Analysis
+Detecting Objects in Still Images
+Classifying Images for Categorization and Search
+Analyzing Image Similarity with Feature Print
+C
+VNRequest
+C
+VNImageBasedRequest
+Configuring a Request
+C
+VNGenerateObjectnessBasedSaliencyImageRequest
+C
+VNSaliencyImageObservation
+Object Tracking
+Tracking the User’s Face in Real Time
+Tracking Multiple Objects or Rectangles in Video
+C
+VNTrackingRequest
+C
+VNTrackRectangleRequest
+Documentation
+Open Menu
+Instance Property
+regionOfInterest
+The region of the image in which Vision will perform the request.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+var regionOfInterest: CGRect { get set }
+Discussion
+The rectangle is normalized to the dimensions of the processed image. Its origin is specified relative to the image's lower-left corner.
+The default value is { { 0, 0 }, { 1, 1 } }.
+Important
+The request will fail to perform if you set this property to a rectangle outside the normalized coordinate space.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is regionOfInterest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

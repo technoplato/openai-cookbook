@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/3763426-flatmap
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func shuffled<T>(using: inout T) -> [MLShapedArraySlice<Scalar>]
+M
+func sorted<Comparator>(using: Comparator) -> [MLShapedArraySlice<Scalar>]
+M
+func sorted<S, Comparator>(using: S) -> [MLShapedArraySlice<Scalar>]
+M
+func sorted(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+Transforming a Shaped Array Slice
+M
+func map<T>((MLShapedArraySlice<Scalar>) -> T) -> [T]
+M
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+func split<C>(separator: C, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+r
+P
+MLFeatureProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLBatchProvider
+C
+MLArrayBatchProvider
+C
+MLModelAsset
+App Integration
+Downloading and Compiling a Model on the User’s Device
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+flatMap(_:)
+Returns an array containing the concatenated results of calling the given transformation with each element of this sequence.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func flatMap<SegmentOfResult>(_ transform: (MLShapedArraySlice<Scalar>) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element] where SegmentOfResult : Sequence
+Parameters
+transform
+A closure that accepts an element of this sequence as its argument and returns a sequence or collection.
+Return Value
+The resulting flattened array.
+Discussion
+Use this method to receive a single-level collection when your transformation produces a sequence or collection for each element.
+In this example, note the difference in the result of using map and flatMap with a transformation that returns an array.
+let numbers = [1, 2, 3, 4]
+
+
+let mapped = numbers.map { Array(repeating: $0, count: $0) }
+// [[1], [2, 2], [3, 3, 3], [4, 4, 4, 4]]
+
+
+let flatMapped = numbers.flatMap { Array(repeating: $0, count: $0) }
+// [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+In fact, s.flatMap(transform) is equivalent to Array(s.map(transform).joined()).
+Complexity: O(m + n), where n is the length of this sequence and m is the length of the result.
+See Also
+Transforming a Shaped Array Slice
+func map<T>((MLShapedArraySlice<Scalar>) -> T) -> [T]
+Returns an array containing the results of mapping the given closure over the sequence’s elements.
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Returns an array containing the non-nil results of calling the given transformation with each element of this sequence.
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Generates an array that concatenates the sequences from a transform closure that returns an optional.
+Deprecated
+func filter((MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+func reduce<Result>(Result, (Result, MLShapedArraySlice<Scalar>) -> Result) -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func reduce<Result>(into: Result, (inout Result, MLShapedArraySlice<Scalar>) -> ()) -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element.
+func split<C>(separator: C, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given separator.
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is flatMap(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

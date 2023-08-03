@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/createml/mlcreateerror/type(reason:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLModelMetadata
+LocalizedError Implementations
+Error Implementations
+CustomStringConvertible Implementations
+CustomNSError Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+E
+case io(reason: String)
+E
+case modifiedTrainingData
+E
+case incompatibleParameters(parameter: String, originalValue: String, newValue: String)
+E
+case cancelled
+Identifying Errors
+E
+MLCreateError
+Supporting Types
+S
+MLCheckpoint
+Documentation
+Open Menu
+Swift
+Case
+MLCreateError.type(reason:)
+An error that indicates a missing or incorrect type.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+case type(reason: String)
+See Also
+Identifying Errors
+case cancelled
+An error that indicates you canceled the training session.
+case incompatibleParameters(parameter: String, originalValue: String, newValue: String)
+An error that indicates the training session parameters are incompatible.
+case modifiedTrainingData
+An error that indicates the training data is different from the data when you created the session.
+case io(reason: String)
+An error that indicates an I/O failure.
+case generic(reason: String)
+An error that indicates a failure not covered by one of the other errors.
+let MLCreateErrorDomain: String
+A global constant that defines the domain for Create ML errors.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLCreateError.type(reason:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

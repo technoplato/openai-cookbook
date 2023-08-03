@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/createmlcomponents/numericimputer
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+BoostedTreeRegressor
+S
+LinearRegressorModel
+S
+LinearRegressor
+r
+P
+Regressor
+Regressors
+S
+OptionalUnwrapper
+S
+CategoricalImputer
+S
+OrdinalEncoder
+S
+OneHotEncoder
+S
+ImputeTransformer
+S
+LinearTransformer
+Preprocessors
+S
+RobustScaler
+S
+NormalizationScaler
+S
+MinMaxScaler
+Documentation
+Open Menu
+Swift
+Structure
+NumericImputer
+An estimator that replaces missing values in the numeric input.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct NumericImputer<Element> where Element : BinaryFloatingPoint, Element : Decodable, Element : Encodable
+Topics
+Creating the Estimator
+init(NumericImputer<Element>.Strategy)
+Creates an imputer with a strategy.
+init(constant: Element)
+Creates an imputer with a constant value to use when replacing missing values.
+Getting the Properties
+var strategy: NumericImputer<Element>.Strategy
+The imputation strategy.
+Fitting
+typealias Transformer
+The transformer type created by this estimator.
+enum Strategy
+An imputation strategy.
+Instance Methods
+func fitted<S>(to: S, eventHandler: EventHandler?) -> NumericImputer<Element>.Transformer
+Fits a numeric imputer to a sequence of elements.
+Default Implementations
+API Reference
+Estimator Implementations
+API Reference
+UpdatableEstimator Implementations
+Relationships
+Conforms To
+Estimator
+Sendable
+UpdatableEstimator
+Conforms when Element conforms to BinaryFloatingPoint, Decodable, and Encodable.
+See Also
+Preprocessors
+struct LinearTransformer
+A transformer that runs an input through a scale and offset.
+struct ImputeTransformer
+A transformer that replaces missing values with a pre-defined value.
+struct OneHotEncoder
+An estimator that encodes categorical values to an integer array.
+struct OrdinalEncoder
+An ordinal encoder estimator encodes categorical values to ordinal integer values.
+struct Reshaper
+A transformer that reshapes a shaped array.
+struct CategoricalImputer
+An estimator that replaces missing values in the categorical input.
+struct OptionalUnwrapper
+A transformer that unwraps optional elements and throws when encountering missing values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is NumericImputer
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/featureextractortype
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating Parameters
+M
+init(validation: MLTextClassifier.ModelParameters.ValidationData, algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+S
+NLLanguage
+E
+MLTextClassifier.ModelAlgorithmType
+Selecting an Algorithm Type
+E
+case crf(revision: Int?)
+E
+case maxEnt(revision: Int?)
+E
+case transferLearning(MLTextClassifier.FeatureExtractorType, revision: Int?)
+Describing an Algorithm Type
+P
+var description: String
+P
+var debugDescription: String
+P
+var playgroundDescription: Any
+Default Implementations
+CustomDebugStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+Documentation
+Open Menu
+Swift
+Enumeration
+MLTextClassifier.FeatureExtractorType
+The text feature extractor type.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.15+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum FeatureExtractorType
+Topics
+Selecting a Feature Extractor Type
+case customEmbedding(URL)
+A feature extractor that uses a custom embedding contained in a CoreML model file.
+case staticEmbedding
+A feature extractor that uses the standard, built-in word embeddings.
+case bertEmbedding
+A feature extractor that provides BERT contextual word embeddings.
+Beta
+case elmoEmbedding
+A feature extractor that provides ELMo contextual word embeddings.
+Beta
+case dynamicEmbedding
+A feature extractor that provides embeddings for words, based on their in-context use.
+Describing a Feature Extractor Type
+var description: String
+A text representation of a feature extractor type.
+var debugDescription: String
+A text representation of the feature extractor type that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the feature extractor type shown in a playground.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Selecting an Algorithm Type
+case crf(revision: Int?)
+A text classification algorithm that uses a statistical model of transition probabilities between words.
+case maxEnt(revision: Int?)
+A text classification algorithm that uses multinomial logistic regression based on the frequencies of words, independent of context.
+case transferLearning(MLTextClassifier.FeatureExtractorType, revision: Int?)
+A text classification algorithm that uses transfer learning by leveraging a feature extractor to generate embeddings.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLTextClassifier.FeatureExtractorType
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

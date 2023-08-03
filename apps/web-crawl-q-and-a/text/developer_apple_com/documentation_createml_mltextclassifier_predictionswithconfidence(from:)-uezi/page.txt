@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/predictionswithconfidence(from:)-uezi
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+S
+MLWordEmbedding
+S
+MLGazetteer
+S
+MLWordTagger
+M
+func predictionWithConfidence(from: String) throws -> [String : Double]
+M
+func predictions(from: [String]) throws -> [String]
+M
+func prediction(from: String) throws -> String
+Testing a Text Classifier
+M
+func evaluation(on: MLDataTable, textColumn: String, labelColumn: String) -> MLClassifierMetrics
+M
+func evaluation(on: [String : [String]]) -> MLClassifierMetrics
+M
+func evaluation(on: DataFrame, textColumn: String, labelColumn: String) -> MLClassifierMetrics
+M
+func evaluation(on: MLTextClassifier.DataSource) -> MLClassifierMetrics
+Documentation
+Open Menu
+Swift
+Instance Method
+predictionsWithConfidence(from:)
+Predicts multiple possible labels and their confidence scores for each string in the specified array.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func predictionsWithConfidence(from texts: [String]) throws -> [[String : Double]]
+Parameters
+texts
+The array of strings to classify.
+Return Value
+An array of dictionaries. Each dictionary corresponds to a string in the input array. A dictionary entry contains a label prediction with its associated confidence score.
+See Also
+Testing a Text Classifier
+func prediction(from: String) throws -> String
+Classifies a string with a label.
+func predictions(from: [String]) throws -> [String]
+Classifies an array of strings with labels.
+func predictionWithConfidence(from: String) throws -> [String : Double]
+Predicts multiple possible labels and their confidence scores for the specified string.
+func predictions(from: MLDataColumn<String>) throws -> MLDataColumn<String>
+Classifies a data column with labels.
+func predictionsWithConfidence(from: MLDataColumn<String>) throws -> MLDataColumn<[String : Double]>
+Predicts multiple possible labels and their confidence scores for each string in the specified data column.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is predictionsWithConfidence(from:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

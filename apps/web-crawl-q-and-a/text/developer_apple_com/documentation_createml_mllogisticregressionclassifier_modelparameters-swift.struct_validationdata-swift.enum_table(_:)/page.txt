@@ -1,0 +1,131 @@
+https://developer.apple.com/documentation/createml/mllogisticregressionclassifier/modelparameters-swift.struct/validationdata-swift.enum/table(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var debugDescription: String
+P
+var description: String
+P
+var model: MLModel
+Describing a Logistic Regression Classifier
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving a Logistic Regression Classifier
+E
+case split(strategy: MLSplitStrategy)
+E
+case none
+E
+case dataFrame(DataFrame)
+Enumeration Cases
+E
+MLLogisticRegressionClassifier.ModelParameters.ValidationData
+Enumerations
+P
+var validation: MLLogisticRegressionClassifier.ModelParameters.ValidationData
+Instance Properties
+Documentation
+Open Menu
+Swift
+Case
+MLLogisticRegressionClassifier.ModelParameters.ValidationData.table(_:)
+Set validation data from the MLDataTable provided.
+iOS 15.0–17.0 Deprecated
+iPadOS 15.0–17.0 Deprecated
+macOS 10.15–14.0 Deprecated
+Mac Catalyst 15.0–17.0 Deprecated
+tvOS 16.0–17.0 Deprecated
+visionOS 1.0+ Beta
+case table(MLDataTable)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLLogisticRegressionClassifier.ModelParameters.ValidationData.table(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/createmlcomponents/downsampler/downstreamsequence
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TemporalFileSegment
+S
+VideoReader
+TemporalTransformer Implementations
+Default Implementations
+T
+Downsampler.OutputSequence
+Type Aliases
+M
+func encode(to: Encoder) throws
+T
+Downsampler.Output
+T
+Downsampler.Input
+Applying
+P
+let factor: Int
+Getting the Properties
+M
+init(factor: Int)
+M
+init(from: Decoder) throws
+Creating the Transformer
+Documentation
+Open Menu
+Swift
+Structure
+Downsampler.DownStreamSequence
+An async sequence of down stream elements.
+Create ML Components
+CreateMLComponents
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct DownStreamSequence
+Available when Input conforms to Sendable.
+Topics
+Structures
+struct Iterator
+An async iterator of down stream sequence.
+Available when Input conforms to Sendable.
+Instance Properties
+var count: Int?
+The count of elements.
+Instance Methods
+func makeAsyncIterator() -> Downsampler<Input>.DownStreamSequence.Iterator
+Creates the asynchronous iterator that produces elements of this asynchronous sequence.
+Type Aliases
+typealias AsyncIterator
+The type of asynchronous iterator that produces elements of this asynchronous sequence.
+typealias Element
+The type of element produced by this asynchronous sequence.
+typealias Feature
+The feature type.
+Default Implementations
+API Reference
+AsyncSequence Implementations
+Relationships
+Conforms To
+AsyncSequence
+Sendable
+TemporalSequence
+See Also
+Applying
+typealias Input
+The input type.
+typealias Output
+The output type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Downsampler.DownStreamSequence
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

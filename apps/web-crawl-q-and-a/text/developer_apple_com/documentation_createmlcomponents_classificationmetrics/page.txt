@@ -1,0 +1,229 @@
+https://developer.apple.com/documentation/createmlcomponents/classificationmetrics
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func add(predicted: some Sequence<Label>, groundTruth: some Sequence<Label>)
+Beta
+M
+func add(some Sequence<(predicted: Label, label: Label)>)
+Beta
+Instance Methods
+P
+var restrictToKnownLabels: Bool
+Beta
+P
+var labels: Set<Label>
+Beta
+P
+var exampleCount: Int
+Beta
+Instance Properties
+S
+ClassificationDistribution
+S
+Classification
+Metrics
+S
+TreeClassifierModel
+S
+FullyConnectedNetworkClassifierModel
+S
+FullyConnectedNetworkClassifier
+S
+BoostedTreeClassifier
+S
+LogisticRegressionClassifierModel
+Documentation
+Open Menu
+Swift
+Structure
+ClassificationMetrics
+Classification metrics.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct ClassificationMetrics<Label> where Label : Hashable
+Topics
+Creating the Distribution
+init<Predicted, Correct>(Predicted, Correct)
+Creates classification metrics for predicted and ground truth labels.
+Getting the Properties
+var accuracy: Double
+The number of correctly classified examples out of the total number of examples.
+Computing and Scoring
+func makeConfusionMatrix() -> MLShapedArray<Float>
+Computes the confusion matrix.
+func precisionScore(label: Label) -> Double
+Computes the precision score for a class label.
+Available when Label conforms to Hashable.
+func recallScore(label: Label) -> Double
+Computes the recall score for a class label.
+Available when Label conforms to Hashable.
+Initializers
+init()
+Creates empty classification metrics.
+Beta
+init(some Sequence<(predicted: Label, label: Label)>)
+Creates classification metrics for a sequence of predicted and ground truth label pairs.
+Beta
+init<S, Inner>(S) async throws
+Creates classification metrics from a temporal sequence of annotated classifications.
+init(some Sequence<(predicted: Label, label: Label)>, labels: Set<Label>)
+Creates classification metrics for a sequence of predicted and ground truth label pairs.
+Beta
+init<Predicted, Correct>(predicted: Predicted, groundTruth: Correct, labels: Set<Label>)
+Creates classification metrics for predicted and ground truth labels.
+Beta
+Instance Properties
+var exampleCount: Int
+The number of examples used to compute the metrics.
+Beta
+var labels: Set<Label>
+The set of labels.
+Beta
+var restrictToKnownLabels: Bool
+A Boolean value indicating whether to restrict metrics to labels in the labels set.
+Beta
+Instance Methods
+func add(some Sequence<(predicted: Label, label: Label)>)
+Updates the metrics with more predicted and ground truth label pairs.
+Beta
+func add(predicted: some Sequence<Label>, groundTruth: some Sequence<Label>)
+Updates the metrics with more predicted and ground truth labels.
+Beta
+func count(label: Label) -> Int
+Returns the number of times a label appeared in the ground truth collection.
+Beta
+func count(predicted: Label) -> Int
+Returns the number of times a label appeared in the predicted collection.
+Beta
+func count(predicted: Label, label: Label) -> Int
+Returns the number of times a predicted, true label pair appeared in the label collections.
+Beta
+func f1Score(label: Label) -> Double
+Computes the F1 score for a class label.
+Available when Label conforms to Hashable.
+Beta
+func falseNegativeCount(of: Label) -> Int
+Returns the number of times a true label was not predicted.
+Beta
+func falsePositiveCount(of: Label) -> Int
+Returns the number of times the predicted label did not match the true label.
+Beta
+func mapLabels<T>((Label) throws -> T) rethrows -> ClassificationMetrics<T>
+Returns new classification metrics where the labels are the result of applying a transformation.
+Beta
+func trueNegativeCount(of: Label) -> Int
+Returns the number of times a label was not in the predicted or ground truth collections.
+Beta
+func truePositiveCount(of: Label) -> Int
+Returns the number of times the predicted label matched the true label.
+Beta
+Relationships
+Conforms To
+Sendable
+See Also
+Metrics
+struct Classification
+An item in a classification result.
+struct ClassificationDistribution
+A classification distribution that contains a probability for each classification label.
+func rootMeanSquaredError<T>(some Collection, some Collection) -> T
+Computes the root mean squared error between predicted and ground truth values.
+func maximumAbsoluteError<T>(some Collection, some Collection) -> T
+Computes the maximum absolute error between predicted and ground truth values.
+func meanAbsoluteError<T>(some Collection, some Collection) -> T
+Computes the mean absolute error between predicted and ground truth values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ClassificationMetrics
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

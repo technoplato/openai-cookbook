@@ -1,0 +1,190 @@
+https://developer.apple.com/documentation/vision/vnhumanbodypose3dobservation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNHumanBodyRecognizedPoint3D
+Beta
+C
+VNRecognizedPoints3DObservation
+E
+VNHumanBodyPose3DObservation.HeightEstimation
+Enumerations
+M
+func recognizedPoints(VNHumanBodyPose3DObservation.JointsGroupName) -> [VNHumanBodyPose3DObservation.JointName : VNHumanBodyRecognizedPoint3D]
+M
+func pointInImage(VNHumanBodyPose3DObservation.JointName) -> VNPoint
+M
+func cameraRelativePosition(VNHumanBodyPose3DObservation.JointName) -> simd_float4x4
+func parentJointName(VNHumanBodyPose3DObservation.JointName) -> VNHumanBodyPose3DObservation.JointName?
+C
+VNDetectHumanBodyPose3DRequest
+Beta
+Detecting human body poses in 3D with Vision
+Beta
+3D Body Pose Detection
+S
+VNRecognizedPointGroupKey
+S
+VNRecognizedPointKey
+C
+VNRecognizedPoint
+C
+VNDetectedPoint
+C
+VNPoint
+Documentation
+Open Menu
+Class
+VNHumanBodyPose3DObservation
+An observation that provides the three-dimensional body points the request recognizes.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+class VNHumanBodyPose3DObservation : VNRecognizedPoints3DObservation
+Topics
+Accessing Points
+var availableJointNames: [VNHumanBodyPose3DObservation.JointName]
+The names of the available joints in the observation.
+struct VNHumanBodyPose3DObservation.JointName
+The joint names for a 3D body pose.
+var availableJointsGroupNames: [VNHumanBodyPose3DObservation.JointsGroupName]
+The available joint group names in the observation.
+struct VNHumanBodyPose3DObservation.JointsGroupName
+The joint group names for a 3D body pose.
+func recognizedPoint(VNHumanBodyPose3DObservation.JointName) -> VNHumanBodyRecognizedPoint3D
+Returns the point for a joint name that the observation recognizes.
+Inspecting the Observation
+var cameraOriginMatrix: simd_float4x4
+A transform from the skeleton hip to the camera.
+Getting the Parent Joint Name
+func parentJointName(VNHumanBodyPose3DObservation.JointName) -> VNHumanBodyPose3DObservation.JointName?
+Returns the parent joint of the joint name you specify.
+Instance Properties
+var bodyHeight: Float
+var heightEstimation: VNHumanBodyPose3DObservation.HeightEstimation
+Instance Methods
+func cameraRelativePosition(VNHumanBodyPose3DObservation.JointName) -> simd_float4x4
+func pointInImage(VNHumanBodyPose3DObservation.JointName) -> VNPoint
+func recognizedPoints(VNHumanBodyPose3DObservation.JointsGroupName) -> [VNHumanBodyPose3DObservation.JointName : VNHumanBodyRecognizedPoint3D]
+Enumerations
+enum VNHumanBodyPose3DObservation.HeightEstimation
+Relationships
+Inherits From
+VNRecognizedPoints3DObservation
+See Also
+3D Body Pose Detection
+Detecting human body poses in 3D with Vision
+Render skeletons of 3D body pose points in a scene overlaying the input image.
+class VNDetectHumanBodyPose3DRequest
+A request that detects points on human bodies in three-dimensional space, relative to the camera.
+Beta
+class VNRecognizedPoints3DObservation
+An observation that provides the three-dimensional points for a request.
+class VNHumanBodyRecognizedPoint3D
+A recognized three-dimensional point that includes a parent joint.
+Beta
+class VNPoint3D
+An object that represents a three-dimensional point in an image.
+Beta
+class VNRecognizedPoint3D
+A three-dimensional point that includes an identifier to the point.
+Beta
+struct VNHumanBodyPose3DObservation.JointName
+The joint names for a 3D body pose.
+Beta
+struct VNHumanBodyPose3DObservation.JointsGroupName
+The joint group names for a 3D body pose.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNHumanBodyPose3DObservation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

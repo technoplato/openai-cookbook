@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/createml/mlsoundclassifier/modelparameters-swift.struct/featureextractortype
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomDebugStringConvertible Implementations
+Default Implementations
+Equatable Implementations
+Default Implementations
+static func != (Self, Self) -> Bool
+static func == (MLSoundClassifier.ModelParameters.ModelAlgorithmType, MLSoundClassifier.ModelParameters.ModelAlgorithmType) -> Bool
+Comparing Algorithms
+static func == (MLSoundClassifier.ModelParameters.FeatureExtractorType, MLSoundClassifier.ModelParameters.FeatureExtractorType) -> Bool
+E
+case transferLearning(featureExtractor: MLSoundClassifier.ModelParameters.FeatureExtractorType, classifier: MLSoundClassifier.ModelParameters.ClassifierType)
+Designating an Algorithm
+E
+MLSoundClassifier.ModelParameters.ModelAlgorithmType
+E
+MLSoundClassifier.ModelParameters.ValidationData
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Documentation
+Open Menu
+Swift
+Enumeration
+MLSoundClassifier.ModelParameters.FeatureExtractorType
+The feature-extractor options for a sound-classifier training algorithm.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum FeatureExtractorType
+Overview
+Use the MLSoundClassifier.ModelParameters.FeatureExtractorType.audioFeaturePrint(type:revision:) feature extractor to create a model with the following advantages over vggish:
+More accurate predictions
+Lower latency
+Smaller model file size
+Less training time
+Use MLSoundClassifier.ModelParameters.FeatureExtractorType.vggish(revision:) to support older OS versions.
+Topics
+Designating a Feature Extractor
+case audioFeaturePrint(type: MLSoundClassifier.ModelParameters.FeaturePrintType, revision: Int)
+Represents the Audio Feature Print extractor.
+enum FeaturePrintType
+The type options for an Audio Feature Print feature extractor.
+case vggish(revision: Int)
+Represents the VGGish feature extractor, which is compatible with older OS versions.
+Describing a Feature Extractor
+var description: String
+A text representation of the feature-extractor type.
+Comparing Feature Extractors
+static func == (MLSoundClassifier.ModelParameters.FeatureExtractorType, MLSoundClassifier.ModelParameters.FeatureExtractorType) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+static func != (Self, Self) -> Bool
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+CustomStringConvertible
+Equatable
+Sendable
+See Also
+Designating an Algorithm
+case transferLearning(featureExtractor: MLSoundClassifier.ModelParameters.FeatureExtractorType, classifier: MLSoundClassifier.ModelParameters.ClassifierType)
+An algorithm that leverages the knowledge of a general-purpose model built into the operating system.
+enum ClassifierType
+The classifier options for a sound classifier training algorithm.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLSoundClassifier.ModelParameters.FeatureExtractorType
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

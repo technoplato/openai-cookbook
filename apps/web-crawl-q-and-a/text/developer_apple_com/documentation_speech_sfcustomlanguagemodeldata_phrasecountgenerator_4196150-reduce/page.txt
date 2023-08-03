@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/speech/sfcustomlanguagemodeldata/phrasecountgenerator/4196150-reduce
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Speech Constants
+Speech Enumerations
+Reference
+r
+P
+TemplateInsertable
+Beta
+r
+P
+DataInsertable
+Beta
+Protocols
+C
+SFSpeechLanguageModel
+static func == (SFCustomLanguageModelData.PhraseCountGenerator, SFCustomLanguageModelData.PhraseCountGenerator) -> Bool
+static func != (SFCustomLanguageModelData.PhraseCountGenerator, SFCustomLanguageModelData.PhraseCountGenerator) -> Bool
+func reduce<Result>(into: Result, (inout Result, SFCustomLanguageModelData.PhraseCount) -> Void) -> Result
+M
+func prefix(while: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> AsyncPrefixWhileSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+M
+func prefix(Int) -> AsyncPrefixSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+M
+func min(by: (SFCustomLanguageModelData.PhraseCount, SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+M
+func max(by: (SFCustomLanguageModelData.PhraseCount, SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+M
+func map<Transformed>((SFCustomLanguageModelData.PhraseCount) -> Transformed) -> AsyncThrowingMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, Transformed>
+M
+func map<Transformed>((SFCustomLanguageModelData.PhraseCount) -> Transformed) -> AsyncMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, Transformed>
+M
+func makeAsyncIterator() -> SFCustomLanguageModelData.PhraseCountGenerator.Iterator
+M
+func insert(data: SFCustomLanguageModelData)
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+reduce(_:_:)
+Returns the result of combining the elements of the asynchronous sequence using the given closure.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+Xcode 11.0+
+func reduce<Result>(
+    _ initialResult: Result,
+    _ nextPartialResult: (Result, SFCustomLanguageModelData.PhraseCount) async throws -> Result
+) async rethrows -> Result
+Parameters
+initialResult
+The value to use as the initial accumulating value. The nextPartialResult closure receives initialResult the first time the closure runs.
+nextPartialResult
+A closure that combines an accumulating value and an element of the asynchronous sequence into a new accumulating value, for use in the next call of the nextPartialResult closure or returned to the caller.
+Return Value
+The final accumulated value. If the sequence has no elements, the result is initialResult.
+Discussion
+Use the reduce(_:_:) method to produce a single value from the elements of an entire sequence. For example, you can use this method on an sequence of numbers to find their sum or product.
+The nextPartialResult closure executes sequentially with an accumulating value initialized to initialResult and each element of the sequence.
+In this example, an asynchronous sequence called Counter produces Int values from 1 to 4. The reduce(_:_:) method sums the values received from the asynchronous sequence.
+let sum = await Counter(howHigh: 4)
+    .reduce(0) {
+        $0 + $1
+    }
+print(sum)
+// Prints "10"
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is reduce(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

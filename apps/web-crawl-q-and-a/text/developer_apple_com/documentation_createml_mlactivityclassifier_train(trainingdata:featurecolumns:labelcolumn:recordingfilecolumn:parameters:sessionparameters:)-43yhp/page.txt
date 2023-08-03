@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/createml/mlactivityclassifier/train(trainingdata:featurecolumns:labelcolumn:recordingfilecolumn:parameters:sessionparameters:)-43yhp
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var labelColumn: String
+P
+var featureColumns: [String]
+P
+let modelParameters: MLActivityClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting an Activity Classifier Model
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+func evaluation(on: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String) -> MLClassifierMetrics
+func evaluation(on: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?) -> MLClassifierMetrics
+init(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters) throws
+init(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?, parameters: MLActivityClassifier.ModelParameters) throws
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+static func train(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActivityClassifier>
+M
+static func train(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActivityClassifier>
+Training an Activity Classifier Asynchronously
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+S
+MLWordEmbedding
+S
+MLGazetteer
+Documentation
+Open Menu
+Swift
+Type Method
+train(trainingData:featureColumns:labelColumn:recordingFileColumn:parameters:sessionParameters:)
+Begins an asynchronous activity classifier training session with a training dataset represented by a data table.
+macOS 11.0–14.0 Deprecated
+visionOS 1.0+ Beta
+static func train(
+    trainingData: MLDataTable,
+    featureColumns: [String],
+    labelColumn: String,
+    recordingFileColumn: String,
+    parameters: MLActivityClassifier.ModelParameters = ModelParameters(validationData: nil),
+    sessionParameters: MLTrainingSessionParameters = _defaultSessionParameters
+) throws -> MLJob<MLActivityClassifier>
+Parameters
+trainingData
+An MLDataTable instance that contains a collection of sensor data that groups data entries by activity label.
+featureColumns
+The names of the columns in the data table that contain sensor data.
+labelColumn
+The name of the column in the data table that contains activity labels.
+recordingFileColumn
+The name of the column in the data table that contains data filenames.
+parameters
+An MLActivityClassifier.ModelParameters instance you use to configure the model for the training session.
+sessionParameters
+An MLTrainingSessionParameters instance you use to configure the training session.
+Return Value
+An MLJob that represents the activity classifier training session.
+See Also
+Training an Activity Classifier Asynchronously
+static func train(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActivityClassifier>
+Begins an asynchronous activity classifier training session with a training dataset represented by a data source.
+static func resume(MLTrainingSession<MLActivityClassifier>) throws -> MLJob<MLActivityClassifier>
+Begins or continues an asynchronous activity classifier training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+Creates an asynchronous training session for an activity classifier by restoring an existing training session’s state from its parameters.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is train(trainingData:featureColumns:labelColumn:recordingFileColumn:parameters:sessionParameters:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

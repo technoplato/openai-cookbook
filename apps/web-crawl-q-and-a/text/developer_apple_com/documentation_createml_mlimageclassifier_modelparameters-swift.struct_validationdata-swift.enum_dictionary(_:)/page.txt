@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier/modelparameters-swift.struct/validationdata-swift.enum/dictionary(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLHandPoseClassifier
+S
+MLObjectDetector
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+M
+static func makeTrainingSession(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLImageClassifier>
+init(validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentation: MLImageClassifier.ImageAugmentationOptions, algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType)
+E
+case dataSource(MLImageClassifier.DataSource)
+E
+case split(strategy: MLSplitStrategy)
+Designating Validation Data
+E
+MLImageClassifier.ModelParameters.ValidationData
+E
+MLImageClassifier.FeatureExtractorType
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+Documentation
+Open Menu
+Swift
+Case
+MLImageClassifier.ModelParameters.ValidationData.dictionary(_:)
+A validation dataset represented by a dictionary.
+iOS 15.0–16.0 Deprecated
+iPadOS 15.0–16.0 Deprecated
+macOS 10.15–11.0 Deprecated
+Mac Catalyst 15.0–16.0 Deprecated
+visionOS 1.0+ Beta
+case dictionary([String : [URL]])
+See Also
+Designating Validation Data
+case split(strategy: MLSplitStrategy)
+A validation dataset derived by randomly selecting a portion of the image classifier’s training dataset using the split strategy.
+case dataSource(MLImageClassifier.DataSource)
+A validation dataset represented by a data source.
+case none
+An empty validation dataset that skips the model validation phase after training.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLImageClassifier.ModelParameters.ValidationData.dictionary(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

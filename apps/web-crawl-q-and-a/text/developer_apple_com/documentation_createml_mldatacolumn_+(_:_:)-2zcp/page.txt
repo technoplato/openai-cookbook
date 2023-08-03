@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/createml/mldatacolumn/+(_:_:)-2zcp
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func sum() -> Int?
+Getting Sum, Mean, and Standard Deviation Values
+M
+func max() -> Double?
+M
+func max() -> Int?
+M
+func min() -> Double?
+M
+func min() -> Int?
+Getting the Min and Max Element Values
+Combining a Value with a Column to Generate a Column
+static func * (MLDataColumn<Double>, Double) -> MLDataColumn<Double>
+static func * (MLDataColumn<Int>, Int) -> MLDataColumn<Int>
+static func + (MLDataColumn<Double>, Double) -> MLDataColumn<Double>
+static func + (MLDataColumn<Int>, Int) -> MLDataColumn<Int>
+Combining a Column with a Value to Generate a Column
+static func * (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>
+static func * (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>
+Documentation
+Open Menu
+Swift
+Operator
++(_:_:)
+Creates a column of integers by adding the given integer to each element of the given column.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+static func + (a: Int, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+Available when Element is Int.
+Parameters
+a
+An integer.
+b
+A column of integers.
+Return Value
+A new column of integers.
+See Also
+Combining a Value with a Column to Generate a Column
+static func + (Double, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by adding the given double to each element of the given column.
+Available when Element is Double.
+static func * (Int, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by multiplying the given integer by each element of the given column.
+Available when Element is Int.
+static func * (Double, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by multiplying the given double by each element of the given column.
+Available when Element is Double.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is +(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

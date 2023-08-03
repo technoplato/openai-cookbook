@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/coreml/mlpredictionoptions
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+MLFeatureProvider
+C
+MLFeatureValue
+Making Predictions with a Sequence of Inputs
+Model Inputs and Outputs
+Model Personalization
+Model Customization
+P
+static var availableComputeDevices: [MLComputeDevice]
+M
+func predictions(from: MLBatchProvider, options: MLPredictionOptions) -> MLBatchProvider
+M
+func predictions(fromBatch: MLBatchProvider) -> MLBatchProvider
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Beta
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+M
+func prediction(from: MLFeatureProvider) -> MLFeatureProvider
+Making Predictions
+M
+class func compileModel(at: URL) -> URL
+Deprecated
+M
+class func compileModel(at: URL, completionHandler: (Result<URL, Error>) -> Void)
+Documentation
+Open Menu
+Class
+MLPredictionOptions
+The options available when making a prediction.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+class MLPredictionOptions : NSObject
+Topics
+Getting features
+var outputBackings: [String : Any]
+A dictionary of feature names and client-allocated buffers.
+Restricting computation to the CPU
+var usesCPUOnly: Bool
+A Boolean value that indicates whether a prediction is computed using only the CPU.
+Deprecated
+Relationships
+Inherits From
+NSObject
+See Also
+Making Predictions
+func prediction(from: MLFeatureProvider) -> MLFeatureProvider
+Generates a prediction from the feature values within the input feature provider.
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Generates a prediction from the feature values within the input feature provider using the prediction options.
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Generates a prediction asynchronously from the feature values within the input feature provider using the prediction options.
+Beta
+func predictions(fromBatch: MLBatchProvider) -> MLBatchProvider
+Generates predictions for each input feature provider within the batch provider.
+func predictions(from: MLBatchProvider, options: MLPredictionOptions) -> MLBatchProvider
+Generates a prediction for each input feature provider within the batch provider using the prediction options.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLPredictionOptions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

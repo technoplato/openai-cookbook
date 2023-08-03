@@ -1,0 +1,159 @@
+https://developer.apple.com/documentation/vision/vnimagealignmentobservation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+func VNNormalizedPointForImagePoint(CGPoint, Int, Int) -> CGPoint
+func VNImagePointForNormalizedPoint(CGPoint, Int, Int) -> CGPoint
+Coordinate Conversion
+C
+VNCoreMLFeatureValueObservation
+C
+VNPixelBufferObservation
+C
+VNClassificationObservation
+C
+VNCoreMLRequest
+C
+VNTrackHomographicImageRegistrationRequest
+Beta
+C
+VNHomographicImageRegistrationRequest
+C
+VNTrackTranslationalImageRegistrationRequest
+Beta
+C
+VNTranslationalImageRegistrationRequest
+C
+VNImageRegistrationRequest
+C
+VNTargetedImageRequest
+Aligning Similar Images
+Image Alignment
+Documentation
+Open Menu
+Class
+VNImageAlignmentObservation
+The abstract superclass for image analysis results that describe the relative alignment of two images.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNImageAlignmentObservation : VNObservation
+Overview
+This abstract superclass forms the basis of image alignment or registration output. You receive its subclasses, such as VNImageTranslationAlignmentObservation and VNImageHomographicAlignmentObservation, by performing specific registration requests. Don’t create one of these classes yourself.
+Relationships
+Inherits From
+VNObservation
+See Also
+Image Alignment
+Aligning Similar Images
+Construct a composite image from images that capture the same scene.
+class VNTargetedImageRequest
+The abstract superclass for image analysis requests that operate on both the processed image and a secondary image.
+class VNImageRegistrationRequest
+The abstract superclass for image analysis requests that align images according to their content.
+class VNTranslationalImageRegistrationRequest
+An image analysis request that determines the affine transform necessary to align the content of two images.
+class VNTrackTranslationalImageRegistrationRequest
+An image analysis request, as a stateful request you track over time, that determines the affine transform necessary to align the content of two images.
+Beta
+class VNHomographicImageRegistrationRequest
+An image analysis request that determines the perspective warp matrix necessary to align the content of two images.
+class VNTrackHomographicImageRegistrationRequest
+An image analysis request, as a stateful request you track over time, that determines the perspective warp matrix necessary to align the content of two images.
+Beta
+class VNImageTranslationAlignmentObservation
+Affine transform information that an image alignment request produces.
+class VNImageHomographicAlignmentObservation
+An object that represents a perspective warp transformation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNImageAlignmentObservation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

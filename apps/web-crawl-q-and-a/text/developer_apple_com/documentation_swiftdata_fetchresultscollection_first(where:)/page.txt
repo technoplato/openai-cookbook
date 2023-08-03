@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftdata/fetchresultscollection/first(where:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func sorted() -> [Self.Element]
+M
+func shuffled<T>(using: inout T) -> [Self.Element]
+M
+func shuffled() -> [Self.Element]
+M
+func reduce<Result>(into: Result, (inout Result, Self.Element) throws -> ()) rethrows -> Result
+M
+func reduce<Result>(Result, (Result, Self.Element) throws -> Result) rethrows -> Result
+M
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func filter(Predicate<Self.Element>) throws -> [Self.Element]
+M
+func enumerated() -> EnumeratedSequence<Self>
+M
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+M
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+M
+func contains(Self.Element) -> Bool
+M
+func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult
+Documentation
+Open Menu
+Swift
+Instance Method
+first(where:)
+Returns the first element of the sequence that satisfies the given predicate.
+SwiftData
+Swift
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func first(where predicate: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Parameters
+predicate
+A closure that takes an element of the sequence as its argument and returns a Boolean value indicating whether the element is a match.
+Return Value
+The first element of the sequence that satisfies predicate, or nil if there is no element that satisfies predicate.
+Discussion
+The following example uses the first(where:) method to find the first negative number in an array of integers:
+let numbers = [3, 7, 4, -2, 9, -6, 10, 1]
+if let firstNegative = numbers.first(where: { $0 < 0 }) {
+    print("The first negative number is \(firstNegative).")
+}
+// Prints "The first negative number is -2."
+Complexity
+O(n), where n is the length of the sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is first(where:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

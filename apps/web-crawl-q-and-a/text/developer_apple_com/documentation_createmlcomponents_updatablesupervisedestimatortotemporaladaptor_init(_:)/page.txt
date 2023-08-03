@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/createmlcomponents/updatablesupervisedestimatortotemporaladaptor/init(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+EstimatorToSupervisedAdaptor
+Estimator Adaptors
+S
+UpdatableTemporalEstimatorToSupervisedAdaptor
+UpdatableSupervisedTemporalEstimator Implementations
+SupervisedTemporalEstimator Implementations
+Default Implementations
+M
+func fitted<InputSequence, Validation, FeatureSequence>(to: InputSequence, validateOn: Validation, eventHandler: EventHandler?) async throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+func fitted<InputSequence, FeatureSequence>(to: InputSequence, eventHandler: EventHandler?) async throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+func encodeWithOptimizer(UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, to: inout EstimatorEncoder) throws
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+func update<InputSequence, FeatureSequence>(inout UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, with: InputSequence, eventHandler: EventHandler?) async throws
+func decode(from: inout EstimatorDecoder) throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+func encode(UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, to: inout EstimatorEncoder) throws
+Creating the Estimator
+S
+UpdatableSupervisedEstimatorToTemporalAdaptor
+S
+UpdatableEstimatorToSupervisedAdaptor
+S
+UpdatableEstimatorToTemporalAdaptor
+Updatable Adaptors
+S
+TransformerToUpdatableEstimatorAdaptor
+S
+TransformerToTemporalAdaptor
+S
+TransformerToEstimatorAdaptor
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates a temporal supervised estimator from a supervised estimator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init(_ base: Base)
+Discussion
+The resulting estimator collects all elements of the input sequence before calling fit on the underlying estimator. The transformer returned from fit is also converted to a temporal transformer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

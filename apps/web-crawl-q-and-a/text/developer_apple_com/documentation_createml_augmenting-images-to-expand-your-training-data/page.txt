@@ -1,0 +1,245 @@
+https://developer.apple.com/documentation/createml/augmenting-images-to-expand-your-training-data
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Audio Components
+S
+HumanBodyActionPeriodPredictor
+S
+HumanBodyActionCounter
+S
+HumanHandPoseExtractor
+S
+HumanBodyPoseExtractor
+S
+JointsSelector
+E
+PoseSelectionStrategy
+Documentation
+Open Menu
+Article
+Augmenting images to expand your training data
+Improve your model by using transformed versions of your training images.
+Overview
+Training a good image model requires a variety of training images with different characteristics. If you’re training an image classifier to recognize flowers you can improve classification accuracy by providing flower photos with a variety of lighting conditions, angles, and backgrounds. However, collecting and labeling images is a time-consuming process.
+To maximize the potential impact of your data you can use image augmentations. Augmenting images is the process of applying transformations such as flipping, cropping, resizing, adjusting brightness, adding noise, and so on. Image augmentations are not a replacement for a good image data set, but they help maximize the data set’s effectiveness. Each augmentation has the potential to multiply the size of your training data which is helpful when your training sample size is small.
+Keep in mind that performing augmentations has some drawbacks. You can’t reuse extracted features across training iterations because each iteration produces a new set of augmented images. This increase in training time can be significant. Augmentations have the most impact when your dataset is small relative to the number of parameters in your model.
+Write an augmentation
+You can use Augmenter to create a custom augmentation. The augmenter applies each transformer to each image in sequence. For example, this augmenter randomly flips (with 50% probability) and then randomly crops images:
+let augmenter = Augmenter {
+    ApplyRandomly(probability: 0.5) {
+        ImageFlipper(orientation: .horizontal)
+    }
+    RandomImageCropper(scale: 0.8 ..< 0.9, aspectRatio: 1.0)
+}
+To generate a random number each time, use UniformRandomFloatingPointParameter. You can use the random number with any transformer. For instance, to perform a slight rotation using ImageRotator:
+let augmenter = Augmenter {
+    ApplyRandomly(probability: 0.5) {
+        ImageFlipper(orientation: .horizontal)
+    }
+    UniformRandomFloatingPointParameter(range: -10.0 ... 10.0) { angle in
+        ImageRotator(angle: angle * .pi / 180)
+    }
+    RandomImageCropper(scale: 0.8 ..< 0.9, aspectRatio: 1.0)
+}
+Apply augmentations to your training data
+After you create an augmenter, you can use it to augment your training data. You do this with the applied(to:) method:
+let augmentedTrainingData = augmenter.applied(to: trainingData)
+Because augmentations are usually random, it makes sense to do more than one pass over your training data. Each pass results in a different set of images, for instance with different scale factors. You can control the number of passes by using the applied(to:upsampledBy:) method. For instance, to get 10 times the number of images:
+let augmentedTrainingData = augmenter.applied(
+   to: trainingData,
+   upsampledBy: 10
+)
+Note
+The result of the augmentations is an asynchronous sequence. The augmenter doesn’t perform augmentations until you request them to avoid the memory overhead.
+Train an image classifier
+You can now use your augmented data set to train an image classifier. Because augmentations take images, not URLs, you may need to read your files first.
+let reader = ImageReader().adaptedAsAnnotatedFeatureTransformer(annotationType: String.self)
+let trainingImages = try await reader.applied(to: trainingFiles)
+let validationImages = try await reader.applied(to: validationFiles)
+Now that you have annotated images, the next step is to create your pipeline. For an image classifier, create a feature extractor and a classifier.
+let featurePrint = ImageFeaturePrint(revision: 2)
+let classifier = FullyConnectedNetworkClassifier<Float, String>(labels: labels, configuration: configuration)
+let task = featurePrint.appending(classifier)
+Next, create the augmenter that transforms the training images.
+let augmenter = Augmenter {
+    ApplyRandomly(probability: 0.5) {
+        ImageFlipper(orientation: .horizontal)
+    }
+    UniformRandomFloatingPointParameter(range: -10.0 ... 10.0) { angle in
+        ImageRotator(angle: angle * .pi / 180)
+    }
+    RandomImageCropper(scale: 0.8 ..< 0.9, aspectRatio: 1.0)
+}
+Finally, create a model, apply the augmenter to the training data, and progressively train the model using update(_:with:eventHandler:). The following example applies the augmenter to the trainingImages and updates the model up to 100 times:
+var model = task.makeTransformer()
+for iteration in 0 ..< 100 {
+    // Perform one training iteration.
+    let augmentedData = augmenter.applied(to: trainingImages.shuffled())
+    for try await batch in augmentedData.batches(ofSize: 32, dropsLastPartialBatch: false) {
+        try await task.update(&model, with: batch)
+    }
+
+
+    // Compute accuracy on validation data, stop when done.
+    // ...
+}
+The example above applies the augmenter to shuffled images. Shuffling images creates more variation, which helps prevent over-fitting. The example breaks the data into batches after each augmentation, and updates the model with each batch. Using a smaller batch size typically produces a better model, while using a larger batch size can speed up training.
+Tip
+A batch size of 32 is often a good starting point.
+Stop training
+Training your model progressively using the update(_:with:eventHandler:) method lets you control when to stop training. Stop training when the validation accuracy stops improving, for example:
+var accuracies = [Double](repeating: 0, count 5)
+for iteration in 0 ..< 100 {
+    // Perform one training iteration.
+    // ...
+
+
+    // Compute the accuracy on the validation data.
+    let predictions = try await model.prediction(from: validationImages)
+    let validationMetrics = ClassificationMetrics(
+        predictions.map(\.prediction.mostLikelyLabel),
+        predictions.map(\.annotation)
+    )
+    let validationAccuracy = validationMetrics.accuracy
+
+
+    // Save the accuracy in a circular buffer.
+    metrics[iteration % accuracies.count] = validationAccuracy
+
+
+    // Stop when there has been no significant improvement in the last 5 iterations.
+    if accuracies.allSatisfy({ $0 >= validationAccuracy - 0.01 }) {
+        break
+    }
+}
+See Also
+Related Documentation
+struct Augmenter
+An augmenter.
+Beta
+struct ApplyEachRandomly
+Applies each transformer randomly given a probability.
+Beta
+struct ApplyRandomly
+Randomly applies the transformer with the given probability.
+Beta
+struct ChooseRandomly
+Apply single transformation randomly chosen from a list of transformers.
+Beta
+struct RandomImageCropper
+Crops an image at a random location.
+Beta
+protocol RandomTransformer
+A transformer that takes an input and a random number generator and produces a randomized output.
+Beta
+struct ShuffleRandomly
+Apply transformations in a random order.
+Beta
+struct UniformRandomFloatingPointParameter
+Applies the transformer with a randomly generated input parameter.
+Beta
+class UniformRandomIntegerParameter
+Applies the transformer with a randomly generated input parameter.
+Beta
+Image Components
+Creating a multi-label image classifier
+Train a machine learning model to assign multiple labels to an image.
+struct ImageReader
+An image file reader.
+protocol ImageFeatureExtractor
+A transformer that takes an image and outputs image features.
+struct ImageCropper
+An image crop transformer.
+struct ImageScaler
+An image scaling transformer.
+struct ImageFeaturePrint
+ImageFeaturePrint image feature extractor.
+struct MLModelImageFeatureExtractor
+An image feature extractor provided by an MLModel.
+Current page is Augmenting images to expand your training data
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/init(multiarrays:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func column<T>(type: T.Type) -> MLDataColumn<T>?
+P
+var multiArrays: MLDataColumn<MLDataValue.MultiArrayType>?
+P
+var dictionaries: MLDataColumn<MLDataValue.DictionaryType>?
+P
+var sequences: MLDataColumn<MLDataValue.SequenceType>?
+P
+var strings: MLDataColumn<String>?
+P
+var doubles: MLDataColumn<Double>?
+P
+var ints: MLDataColumn<Int>?
+M
+init(dictionaries: MLUntypedColumn)
+M
+init(sequences: MLUntypedColumn)
+M
+init(strings: MLUntypedColumn)
+M
+init(doubles: MLUntypedColumn)
+M
+init(ints: MLUntypedColumn)
+Creating an Untyped Column by Converting Another Column
+M
+init()
+M
+init<S>(S)
+Documentation
+Open Menu
+Swift
+Initializer
+init(multiArrays:)
+Creates a MLUntypedColumn of type MLMultiArray from the specified MLUntypedColumn if the values of the given MLUntypedColumn are convertible to MLDataValue.MultiArrayType.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init(multiArrays: MLUntypedColumn)
+Parameters
+dictionaries
+a MLUntypedColumn from which to create a MLUntypedColumn with type MLDataValue.DictionaryType
+Return Value
+a MLUntypedColumn of type MultiArray from the specified MLUntypedColumn if the given MLUntypedColumn’s values are convertible to MLDataValue.MultiArrayType. Returns an invalid MLUntypedColumn if the elements in the given MLUntypedColumn are not convertible to MLDataValue.MultiArrayType.
+See Also
+Creating an Untyped Column by Converting Another Column
+init(ints: MLUntypedColumn)
+Creates a new column of integers by converting the elements of another column.
+init(doubles: MLUntypedColumn)
+Creates a new column of doubles by converting the elements of another column.
+init(strings: MLUntypedColumn)
+Creates a new column of strings by converting the elements of another column.
+init(sequences: MLUntypedColumn)
+Creates a new column of machine learning sequences by converting the elements of another column.
+init(dictionaries: MLUntypedColumn)
+Creates a new column of machine learning dictionaries by converting the elements of another column.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(multiArrays:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/createmlcomponents/minmaxscaler
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+Regressor
+Regressors
+S
+OptionalUnwrapper
+S
+CategoricalImputer
+S
+Reshaper
+S
+NumericImputer
+S
+OrdinalEncoder
+S
+MaxAbsScaler
+S
+StandardScaler
+Scalers
+S
+MetricsKey
+T
+EventHandler
+S
+Event
+Event Handling
+S
+DataFrameTemporalAnnotationParameters
+Documentation
+Open Menu
+Swift
+Structure
+MinMaxScaler
+An estimator that scales the input values so that they all lie in a closed range.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MinMaxScaler<Element> where Element : BinaryFloatingPoint, Element : Decodable, Element : Encodable
+Topics
+Creating the Estimator
+init(range: ClosedRange<Element>)
+Creates a min max scaler.
+Getting the Properties
+var range: ClosedRange<Element>
+The desired range of transformed values.
+Instance Methods
+func fitted<S>(to: S, eventHandler: EventHandler?) throws -> MinMaxScaler<Element>.Transformer
+Fits a min max scaler to a sequence of elements.
+Default Implementations
+API Reference
+Estimator Implementations
+Relationships
+Conforms To
+Estimator
+Sendable
+See Also
+Scalers
+struct StandardScaler
+An estimator that standardizes the input by removing the mean and scaling to unit variance.
+struct MaxAbsScaler
+An estimator that scales the input values so that the maximum absolute value is 1.0.
+struct NormalizationScaler
+An estimator that normalizes the input values using a normalization strategy.
+struct RobustScaler
+An estimator that scales the input using statistics that are robust to outliers.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MinMaxScaler
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/coreml/mlfeaturedescription
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessing Prediction Names
+S
+MLModelMetadataKey
+P
+var metadata: [MLModelMetadataKey : Any]
+P
+var classLabels: [Any]?
+Accessing Metadata
+C
+MLSequenceConstraint
+P
+var sequenceConstraint: MLSequenceConstraint?
+P
+var outputDescriptionsByName: [String : MLFeatureDescription]
+P
+var inputDescriptionsByName: [String : MLFeatureDescription]
+Accessing Feature Descriptions
+C
+MLModelDescription
+P
+var modelDescription: MLModelDescription
+P
+var configuration: MLModelConfiguration
+Inspecting a Model
+C
+MLPredictionOptions
+Documentation
+Open Menu
+Class
+MLFeatureDescription
+The name, type, and constraints of an input or output feature.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+class MLFeatureDescription : NSObject
+Overview
+In Core ML, a feature is a single input or output of a model. A model can have any number of input features or output features. Each feature has a name and a value type, which are defined in the feature's MLFeatureDescription. Model authors use feature descriptions to help developers integrate their model properly. Each MLFeatureDescription instance has read-only properties that indicate the feature's name, its type, and whether it's optional.
+For examples of features, see Integrating a Core ML Model into Your App. Note the three input features named solarPanels, greenhouses, and size, and the output feature is named price. All four features are of type Double.
+An MLFeatureDescription may also include constraints, which specify the limitations of the model's input and output features. For each input feature, the constraints describe what values the model expects from your app. For each output feature, the constraints describe what values your app should expect from the model. You can also write code to inspect these descriptions before using the model in your app.
+Topics
+Inspecting a Feature
+var name: String
+The name of this feature.
+var type: MLFeatureType
+The type of this feature.
+enum MLFeatureType
+The possible types for feature values, input features, and output features.
+var isOptional: Bool
+A Boolean value that indicates whether this feature is optional.
+Checking for Validity
+func isAllowedValue(MLFeatureValue) -> Bool
+Checks whether the model will accept an input feature value.
+Accessing Feature Constraints
+var imageConstraint: MLImageConstraint?
+The size and format constraints for an image feature.
+class MLImageConstraint
+The width, height, and pixel format constraints of an image feature.
+var dictionaryConstraint: MLDictionaryConstraint?
+The constraint for a dictionary feature.
+class MLDictionaryConstraint
+The constraint on the keys for a dictionary feature.
+var multiArrayConstraint: MLMultiArrayConstraint?
+The constraints on a multidimensional array feature.
+class MLMultiArrayConstraint
+The shape and data type constraints for a multidimensional array feature.
+var sequenceConstraint: MLSequenceConstraint?
+The constraints for a sequence feature.
+class MLSequenceConstraint
+The constraints for a sequence feature.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSCopying
+NSSecureCoding
+See Also
+Accessing Feature Descriptions
+var inputDescriptionsByName: [String : MLFeatureDescription]
+A dictionary of input feature descriptions, which the model keys by the input’s name.
+var outputDescriptionsByName: [String : MLFeatureDescription]
+A dictionary of output feature descriptions, which the model keys by the output’s name.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLFeatureDescription
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

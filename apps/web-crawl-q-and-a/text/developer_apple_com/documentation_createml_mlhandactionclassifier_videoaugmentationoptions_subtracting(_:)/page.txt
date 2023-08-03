@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/createml/mlhandactionclassifier/videoaugmentationoptions/subtracting(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+S
+MLWordEmbedding
+S
+MLGazetteer
+S
+MLWordTagger
+M
+func subtract(Self)
+M
+func isSuperset(of: Self) -> Bool
+M
+func isSubset(of: Self) -> Bool
+M
+func isStrictSuperset(of: Self) -> Bool
+M
+func isStrictSubset(of: Self) -> Bool
+M
+func isDisjoint(with: Self) -> Bool
+Instance Methods
+P
+var isEmpty: Bool
+Documentation
+Open Menu
+Swift
+Instance Method
+subtracting(_:)
+Returns a new set containing the elements of this set that do not occur in the given set.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func subtracting(_ other: Self) -> Self
+Parameters
+other
+A set of the same type as the current set.
+Return Value
+A new set.
+Discussion
+In the following example, the nonNeighbors set is made up of the elements of the employees set that are not elements of neighbors:
+let employees: Set = ["Alicia", "Bethany", "Chris", "Diana", "Eric"]
+let neighbors: Set = ["Bethany", "Eric", "Forlani", "Greta"]
+let nonNeighbors = employees.subtracting(neighbors)
+print(nonNeighbors)
+// Prints "["Diana", "Chris", "Alicia"]"
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subtracting(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

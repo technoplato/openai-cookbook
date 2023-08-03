@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/createmlcomponents/slidingwindowtransformer/windowsequence/prefix(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+ColumnSelector
+r
+P
+SupervisedTabularEstimator
+r
+P
+TabularEstimator
+r
+P
+TabularTransformer
+Tabular Components
+S
+PreprocessedFeatureSequence
+S
+AnyTemporalSequence
+func applied<S>(to: S, eventHandler: EventHandler?) throws -> SlidingWindowTransformer<Input>.WindowSequence
+func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result
+M
+func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?
+M
+func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?
+M
+func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>
+M
+func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>
+M
+func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>
+M
+func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>
+M
+func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?
+M
+func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+prefix(_:)
+Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence.
+Create ML Components
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+func prefix(_ count: Int) -> AsyncPrefixSequence<Self>
+Parameters
+count
+The maximum number of elements to return. The value of count must be greater than or equal to zero.
+Return Value
+An asynchronous sequence starting at the beginning of the base sequence with at most count elements.
+Discussion
+Use prefix(_:) to reduce the number of elements produced by the asynchronous sequence.
+In this example, an asynchronous sequence called Counter produces Int values from 1 to 10. The prefix(_:) method causes the modified sequence to pass through the first six values, then end.
+for await number in Counter(howHigh: 10).prefix(6) {
+    print(number, terminator: " ")
+}
+// Prints "1 2 3 4 5 6 "
+If the count passed to prefix(_:) exceeds the number of elements in the base sequence, the result contains all of the elements in the sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is prefix(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

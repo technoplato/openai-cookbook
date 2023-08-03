@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/coreml/mlcustomlayer/2935525-outputshapes
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+M
+func setWeightData([Data])
+Integrating a Layer
+M
+init(parameters: [String : Any])
+Creating a Layer
+r
+P
+MLCustomLayer
+Creating and Integrating a Model with Custom Layers
+Custom Model Layers
+Reducing the Size of Your Core ML App
+Documentation
+Open Menu
+Instance Method
+outputShapes(forInputShapes:)
+Calculates the shapes of the output of this layer for the given input shapes.
+iOS 11.2+
+iPadOS 11.2+
+macOS 10.13.2+
+Mac Catalyst 13.1+
+tvOS 11.2+
+watchOS 4.2+
+visionOS 1.0+ Beta
+func outputShapes(forInputShapes inputShapes: [[NSNumber]]) throws -> [[NSNumber]]
+Required
+Parameters
+inputShapes
+The shapes of the input for this layer.
+Return Value
+The shapes of the output for the given input shapes.
+Discussion
+Implement this method to define the layer's interface with the rest of the network. It will be called at least once at load time and any time the size of the inputs changes in a call to prediction(from:).
+This method consumes and returns arrays of shapes, for inputs and outputs of the custom layer, respectively. See the Core ML Neural Network specification for more details about shapes and how layers use them.
+See Also
+Integrating a Layer
+func setWeightData([Data])
+Assigns the weights for the connections within the layer.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is outputShapes(forInputShapes:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

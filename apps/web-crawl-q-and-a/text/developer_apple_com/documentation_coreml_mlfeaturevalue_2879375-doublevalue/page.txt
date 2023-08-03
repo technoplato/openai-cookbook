@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/coreml/mlfeaturevalue/2879375-doublevalue
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+P
+var int64Value: Int64
+P
+var isUndefined: Bool
+Accessing the Feature’s Value
+P
+var type: MLFeatureType
+Accessing the Feature’s Type
+M
+init(undefined: MLFeatureType)
+Creating Undefined Feature Values
+S
+MLFeatureValue.ImageOption
+Documentation
+Open Menu
+Instance Property
+doubleValue
+The underlying double of the feature value.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+var doubleValue: Double { get }
+See Also
+Accessing the Feature’s Value
+var isUndefined: Bool
+A Boolean value that indicates whether the feature value is undefined or missing.
+var int64Value: Int64
+The underlying integer of the feature value.
+var stringValue: String
+The underlying string of the feature value.
+var imageBufferValue: CVPixelBuffer?
+The underlying image of the feature value as a pixel buffer.
+func shapedArrayValue<Scalar>(of: Scalar.Type) -> MLShapedArray<Scalar>?
+Returns the underlying shaped array of the feature value.
+var multiArrayValue: MLMultiArray?
+The underlying multiarray of the feature value.
+var sequenceValue: MLSequence?
+The underlying sequence of the feature value.
+var dictionaryValue: [AnyHashable : NSNumber]
+The underlying dictionary of the feature value.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is doubleValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

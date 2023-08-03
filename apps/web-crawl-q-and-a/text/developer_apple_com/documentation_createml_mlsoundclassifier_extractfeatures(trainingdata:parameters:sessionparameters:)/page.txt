@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/createml/mlsoundclassifier/extractfeatures(trainingdata:parameters:sessionparameters:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+let modelParameters: MLSoundClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting a Sound Classifier Model
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving a Sound Classifier
+M
+func predictions(from: [URL], overlapFactor: Double, predictionTimeWindowSize: TimeInterval) throws -> [String]
+static func extractFeatures(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.FeatureExtractionParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLSoundClassifier.DataSource>
+M
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLSoundClassifier>
+M
+static func resume(MLTrainingSession<MLSoundClassifier>) throws -> MLJob<MLSoundClassifier>
+M
+static func makeTrainingSession(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLSoundClassifier>
+M
+static func train(trainingData: [String : [URL]], parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLSoundClassifier>
+M
+static func train(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLSoundClassifier>
+Training a Sound Classifier Asynchronously
+S
+MLSoundClassifier
+Sound Models
+Documentation
+Open Menu
+Swift
+Type Method
+extractFeatures(trainingData:parameters:sessionParameters:)
+Begins an asynchronous session that extracts sound features from a data source of sound files.
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+static func extractFeatures(
+    trainingData: MLSoundClassifier.DataSource,
+    parameters: MLSoundClassifier.FeatureExtractionParameters = FeatureExtractionParameters(),
+    sessionParameters: MLTrainingSessionParameters = _defaultSessionParameters
+) throws -> MLJob<MLSoundClassifier.DataSource>
+Parameters
+trainingData
+An MLSoundClassifier.DataSource instance that contains a collection of labeled audio files.
+parameters
+An MLSoundClassifier.FeatureExtractionParameters instance you use to configure the feature extraction session.
+sessionParameters
+An MLTrainingSessionParameters instance you use to configure the feature extraction session.
+Return Value
+An MLJob that represents the sound feature extraction session.
+Discussion
+Use this method to reduce the training time for multiple sound classifiers that use the same training data. Use the MLJob instance this method returns to save the audio features as an MLSoundClassifier.DataSource. Then use the audio features data source to train one or more sound classifiers.
+You can also create a data source from a DataFrame or an MLDataTable that contains audio features by using MLSoundClassifier.DataSource.featuresDataFrame(_:featureColumn:labelColumn:parameters:) or MLSoundClassifier.DataSource.features(table:featureColumn:labelColumn:parameters:), respectively.
+See Also
+Training a Sound Classifier Asynchronously
+static func train(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLSoundClassifier>
+Begins an asynchronous sound classifier training session with a training dataset represented by a data source.
+static func train(trainingData: [String : [URL]], parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLSoundClassifier>
+Begins an asynchronous sound classifier training session with a training dataset represented by a dictionary.
+static func makeTrainingSession(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLSoundClassifier>
+Creates an asynchronous training session for a sound classifier.
+static func resume(MLTrainingSession<MLSoundClassifier>) throws -> MLJob<MLSoundClassifier>
+Begins or continues an asynchronous training session for a sound classifier.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLSoundClassifier>
+Creates an asynchronous training session for a sound classifier by restoring an existing training session’s state from its parameters.
+struct FeatureExtractionParameters
+Parameters that affect the process of extracting sound features from audio files.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is extractFeatures(trainingData:parameters:sessionParameters:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

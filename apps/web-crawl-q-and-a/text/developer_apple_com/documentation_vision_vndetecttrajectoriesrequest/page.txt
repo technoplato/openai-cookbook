@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/vision/vndetecttrajectoriesrequest
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectBarcodesRequest
+Barcode Detection
+C
+VNTrackOpticalFlowRequest
+Beta
+C
+VNGenerateOpticalFlowRequest
+Optical Flow
+C
+VNDetectContoursRequest
+Contour Detection
+Detecting moving objects in a video
+Identifying Trajectories in Video
+Trajectory Detection
+C
+VNAnimalBodyPoseObservation
+Beta
+C
+VNDetectAnimalBodyPoseRequest
+Beta
+Detecting animal body poses with Vision
+Beta
+Animal Body Pose Detection
+C
+VNRecognizeAnimalsRequest
+Documentation
+Open Menu
+Class
+VNDetectTrajectoriesRequest
+A request that detects the trajectories of shapes moving along a parabolic path.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+class VNDetectTrajectoriesRequest : VNStatefulRequest
+Overview
+After the request detects a trajectory, it produces an observation that contains the shape’s detected points and an equation describing the parabola.
+Topics
+Creating a Request
+init(frameAnalysisSpacing: CMTime, trajectoryLength: Int, completionHandler: VNRequestCompletionHandler?)
+Creates a new request to detect trajectories.
+Configuring the Request
+var targetFrameTime: CMTime
+The requested target frame time for processing trajectory detection.
+var trajectoryLength: Int
+The number of points to detect before calculating a trajectory.
+var objectMinimumNormalizedRadius: Float
+The minimum radius of the bounding circle of the object to track.
+var objectMaximumNormalizedRadius: Float
+The maximum radius of the bounding circle of the object to track.
+var minimumObjectSize: Float
+The minimum radius of the tracked shape’s bounding circle.
+Deprecated
+var maximumObjectSize: Float
+The maximum radius of the tracked shape’s bounding circle.
+Deprecated
+Inspecting the Results
+var results: [VNTrajectoryObservation]?
+The array of detected trajectory observations.
+class VNTrajectoryObservation
+An observation that describes a detected trajectory.
+Identifying Request Revisions
+let VNDetectTrajectoriesRequestRevision1: Int
+A constant for specifying revision 1 of the trajectories detection request.
+Relationships
+Inherits From
+VNStatefulRequest
+See Also
+Trajectory Detection
+Identifying Trajectories in Video
+Gain new insights into your video data by using Vision to detect trajectories.
+Detecting moving objects in a video
+Identify the trajectory of a thrown object by using Vision.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNDetectTrajectoriesRequest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

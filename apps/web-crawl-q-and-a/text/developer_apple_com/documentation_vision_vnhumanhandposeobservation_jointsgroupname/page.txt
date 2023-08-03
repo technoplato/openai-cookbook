@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/vision/vnhumanhandposeobservation/jointsgroupname
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Detecting human body poses in 3D with Vision
+Beta
+3D Body Pose Detection
+S
+VNRecognizedPointGroupKey
+S
+VNRecognizedPointKey
+C
+VNRecognizedPoint
+C
+VNDetectedPoint
+C
+VNPoint
+func recognizedPoints(VNHumanHandPoseObservation.JointsGroupName) -> [VNHumanHandPoseObservation.JointName : VNRecognizedPoint]
+P
+var availableJointsGroupNames: [VNHumanHandPoseObservation.JointsGroupName]
+S
+VNHumanHandPoseObservation.JointName
+P
+var availableJointNames: [VNHumanHandPoseObservation.JointName]
+Retrieving Points
+C
+VNHumanHandPoseObservation
+C
+VNHumanBodyPoseObservation
+C
+VNRecognizedPointsObservation
+C
+VNDetectHumanHandPoseRequest
+Documentation
+Open Menu
+Structure
+VNHumanHandPoseObservation.JointsGroupName
+The supported joint group names for the hand pose.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+struct JointsGroupName
+Topics
+Group Names
+static let thumb: VNHumanHandPoseObservation.JointsGroupName
+The thumb.
+static let indexFinger: VNHumanHandPoseObservation.JointsGroupName
+The index finger.
+static let littleFinger: VNHumanHandPoseObservation.JointsGroupName
+The little finger.
+static let middleFinger: VNHumanHandPoseObservation.JointsGroupName
+The middle finger.
+static let ringFinger: VNHumanHandPoseObservation.JointsGroupName
+The ring finger.
+static let all: VNHumanHandPoseObservation.JointsGroupName
+All hand group names.
+Initializers
+init(rawValue: VNRecognizedPointGroupKey)
+Creates a joint group name with a recognized point group key.
+Relationships
+Conforms To
+Hashable
+RawRepresentable
+Sendable
+See Also
+Retrieving Points
+var availableJointNames: [VNHumanHandPoseObservation.JointName]
+The names of the available joints in the observation.
+struct VNHumanHandPoseObservation.JointName
+The supported joint names for the hand pose.
+var availableJointsGroupNames: [VNHumanHandPoseObservation.JointsGroupName]
+The joint group names available in the observation.
+func recognizedPoint(VNHumanHandPoseObservation.JointName) -> VNRecognizedPoint
+Retrieves the recognized point for a joint name.
+func recognizedPoints(VNHumanHandPoseObservation.JointsGroupName) -> [VNHumanHandPoseObservation.JointName : VNRecognizedPoint]
+Retrieves the recognized points associated with the joint group name.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNHumanHandPoseObservation.JointsGroupName
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

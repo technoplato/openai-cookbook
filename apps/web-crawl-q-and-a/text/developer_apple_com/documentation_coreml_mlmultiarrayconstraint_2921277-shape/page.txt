@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/coreml/mlmultiarrayconstraint/2921277-shape
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessing Feature Constraints
+P
+var imageConstraint: MLImageConstraint?
+C
+MLImageConstraint
+P
+var dictionaryConstraint: MLDictionaryConstraint?
+C
+MLDictionaryConstraint
+P
+var multiArrayConstraint: MLMultiArrayConstraint?
+C
+MLMultiArrayConstraint
+Accessing the Constraints
+P
+var trainingInputDescriptionsByName: [String : MLFeatureDescription]
+P
+var parameterDescriptionsByKey: [MLParameterKey : MLParameterDescription]
+C
+MLParameterDescription
+M
+func parameterValue(for: MLParameterKey) -> Any
+C
+MLParameterKey
+Supporting Types
+C
+MLModelConfiguration
+Documentation
+Open Menu
+Instance Property
+shape
+The shape of the multi array.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+var shape: [NSNumber] { get }
+See Also
+Accessing the Constraints
+var dataType: MLMultiArrayDataType
+The type for the multi array.
+var shapeConstraint: MLMultiArrayShapeConstraint
+The constraint on the shape of the multiarray.
+class MLMultiArrayShapeConstraint
+The lists of shapes or ranges of shapes that constrain a multiarray feature.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is shape
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

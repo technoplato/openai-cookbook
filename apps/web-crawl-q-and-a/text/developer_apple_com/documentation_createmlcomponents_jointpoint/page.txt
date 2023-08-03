@@ -1,0 +1,170 @@
+https://developer.apple.com/documentation/createmlcomponents/jointpoint
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TemporalFeature
+Time-Based Components
+S
+AudioConvertingTransformer
+S
+AudioFeaturePrint
+S
+AudioReader
+Audio Components
+S
+HumanBodyActionPeriodPredictor
+S
+JointKey
+S
+Pose
+Counting human body action repetitions in a live video feed
+Pose Components
+S
+MLModelImageFeatureExtractor
+S
+ImageFeaturePrint
+S
+ImageScaler
+S
+ImageCropper
+Documentation
+Open Menu
+Swift
+Structure
+JointPoint
+A joint in a pose that contains a location and scoring information.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct JointPoint
+Topics
+Creating the Joint
+init(JointKey, location: CGPoint, confidence: Float)
+Creates a joint point with its key, location and confidence.
+Getting the Properties
+var confidence: Float
+A detection confidence of the joint
+let key: JointKey
+The key name for the joint
+var location: CGPoint
+The location of the joint point
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Sendable
+See Also
+Pose Components
+struct Pose
+A pose that contains joint keypoints from a person, a hand, or a combination.
+struct JointKey
+A key that uniquely identifies a joint.
+struct PoseSelector
+A transformer that selects one pose from an array of poses.
+enum PoseSelectionStrategy
+Pose selection strategy.
+struct JointsSelector
+Joints selector from a pose.
+struct HumanBodyPoseExtractor
+The human body pose image feature extractor.
+struct HumanHandPoseExtractor
+The human hand pose image feature extractor.
+struct HumanBodyActionCounter
+A human body action repetition counting transformer that takes window of human body poses and produces cumulative human body action repetition counts.
+struct HumanBodyActionPeriodPredictor
+A human body action period predictor transformer that takes window of poses and produces a window of predictions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is JointPoint
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/createmlcomponents/annotatedfiles/init(labeledbynamesat:separator:index:type:continueonfailure:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AnnotatedFeature
+Sequence Implementations
+Hashable Implementations
+Equatable Implementations
+Encodable Implementations
+Decodable Implementations
+Collection Implementations
+init(labeledByNamesAt: URL, separator: Character, index: Int, type: UTType, continueOnFailure: Bool) throws
+M
+init(labeledBySubdirectoryNamesAt: URL, type: UTType, continueOnFailure: Bool) throws
+Creating the Feature
+S
+AnnotatedFiles
+Annotations
+S
+MLModelRegressorAdaptor
+S
+MLModelClassifierAdaptor
+S
+MLModelTransformerAdaptor
+Core ML Adaptors
+Documentation
+Open Menu
+Swift
+Initializer
+init(labeledByNamesAt:separator:index:type:continueOnFailure:)
+Reads training examples from a directory containing files having their labels in the name. The name can contain multiple words separated by a separator. So the index tells the position of the label in the file name. Files with incorrect name format are ignored.
+Create ML Components
+CreateMLComponents
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init(
+    labeledByNamesAt url: URL,
+    separator: Character = ".",
+    index: Int = 0,
+    type: UTType,
+    continueOnFailure: Bool = false
+) throws
+Parameters
+url
+URL of directory containing the files.
+separator
+The separator used in the name. Default value is “.”
+index
+Index of the label in the file name. Default value is 0.
+type
+Type of files.
+continueOnFailure
+A Boolean value indicating whether to continue reading files after encountering a file that is not readable. The default value is false.
+Discussion
+Take for example this directory structure:
+/
+    fold1-foo-file1.png
+    fold1-foo-file2.png
+    fold2-foo-file3.png
+    fold1-bar-file4.png
+    fold1-bar-file5.png
+    fold2-bar-file6.png
+When we specify separator as “-” and index as 1, it would produce two labels (foo and bar) with three URLs each.
+See Also
+Creating the Feature
+init(labeledBySubdirectoryNamesAt: URL, type: UTType, continueOnFailure: Bool) throws
+Reads training examples from a directory containing files in labeled sub-directories.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(labeledByNamesAt:separator:index:type:continueOnFailure:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

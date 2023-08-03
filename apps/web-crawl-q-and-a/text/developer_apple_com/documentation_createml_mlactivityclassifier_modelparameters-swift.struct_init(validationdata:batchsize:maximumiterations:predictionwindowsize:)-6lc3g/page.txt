@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/createml/mlactivityclassifier/modelparameters-swift.struct/init(validationdata:batchsize:maximumiterations:predictionwindowsize:)-6lc3g
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func predictions(from: DataFrame, perWindowPrediction: Bool?) throws -> [String]
+Instance Methods
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+E
+MLActivityClassifier.ModelParameters.Validation
+init(validation: MLActivityClassifier.ModelParameters.Validation, batchSize: Int?, maximumIterations: Int?, predictionWindowSize: Int?)
+M
+init(validationData: MLActivityClassifier.DataSource, batchSize: Int?, maximumIterations: Int?, predictionWindowSize: Int?)
+Creating Parameters
+S
+MLActivityClassifier.ModelParameters
+E
+MLActivityClassifier.DataSource
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Documentation
+Open Menu
+Swift
+Initializer
+init(validationData:batchSize:maximumIterations:predictionWindowSize:)
+Creates a set of activity classifier parameters that includes a validation dataset in a data table.
+macOS 10.15–14.0 Deprecated
+visionOS 1.0+ Beta
+init(
+    validationData: MLDataTable?,
+    batchSize: Int? = 32,
+    maximumIterations: Int? = 10,
+    predictionWindowSize: Int? = 100
+)
+Parameters
+validationData
+An MLDataTable instance that contains a validation dataset.
+batchSize
+The number of activity entries the training session uses for each of its training iterations.
+maxIterations
+The largest number of training iterations the training session can use.
+predictionWindowSize
+The number of time increments the training session uses to train an activity classifier.
+See Also
+Creating Parameters
+init(validationData: MLActivityClassifier.DataSource, batchSize: Int?, maximumIterations: Int?, predictionWindowSize: Int?)
+Creates a set of activity classifier parameters that includes a validation dataset in a data source.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(validationData:batchSize:maximumIterations:predictionWindowSize:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

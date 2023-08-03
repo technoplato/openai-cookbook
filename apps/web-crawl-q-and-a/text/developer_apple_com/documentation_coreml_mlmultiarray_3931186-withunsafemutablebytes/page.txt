@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/coreml/mlmultiarray/3931186-withunsafemutablebytes
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLComputeDevice
+Beta
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+M
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+M
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+M
+func withUnsafeBufferPointer<S, R>(ofType: S.Type, (UnsafeBufferPointer<S>) -> R) -> R
+Providing buffer access
+P
+var strides: [NSNumber]
+P
+var shape: [NSNumber]
+P
+var dataType: MLMultiArrayDataType
+P
+var count: Int
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+withUnsafeMutableBytes(_:)
+Calls a given closure with a raw pointer to the multiarray’s mutable storage.
+iOS 15.4+
+iPadOS 15.4+
+macOS 12.3+
+Mac Catalyst 16.0+
+tvOS 15.4+
+watchOS 8.5+
+visionOS 1.0+ Beta
+Xcode 13.3+
+func withUnsafeMutableBytes<R>(_ body: (_ ptr: UnsafeMutableRawBufferPointer, _ strides: [Int]) throws -> R) rethrows -> R
+Parameters
+body
+A closure with an UnsafeMutableRawBufferPointer parameter that points to the storage for the multiarray and its strides. This closure takes the following parameters:
+ptr
+The pointer to the buffer.
+strides
+The strides of the buffer in scalars. Note that this may be different from strides’s value prior to this method invocation.
+Discussion
+The buffer contains a collection of int32, float16, float32, or float64 values, depending on the multiarray’s data type. It may not store these scalar values contiguously; use strides to get the buffer layout.
+See Also
+Providing buffer access
+func withUnsafeBufferPointer<S, R>(ofType: S.Type, (UnsafeBufferPointer<S>) -> R) -> R
+Calls a given closure with a raw pointer to the multiarray’s storage.
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+Calls a given closure with a raw pointer to the multiarray’s storage.
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+Calls a given closure with a raw pointer to the multiarray’s mutable storage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is withUnsafeMutableBytes(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

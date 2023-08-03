@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/createml/mldatavalue/dictionarytype/subscript(_:)-2a1cc
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var hashValue: Int
+static func == (MLDataValue, MLDataValue) -> Bool
+static func != (Self, Self) -> Bool
+Comparing Data Values
+S
+MLDataValue.MultiArrayType
+P
+var multiArrayValue: MLDataValue.MultiArrayType?
+S
+MLDataValue.SequenceType
+Subscripts
+M
+func trimmingPrefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func suffix(from: Self.Index) -> Self.SubSequence
+M
+func suffix(Int) -> Self.SubSequence
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Accesses the contiguous subrange of the collection’s elements specified by a range expression.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+subscript<R>(r: R) -> Self.SubSequence where R : RangeExpression, Self.Index == R.Bound { get }
+Parameters
+bounds
+A range of the collection’s indices. The bounds of the range must be valid indices of the collection.
+Overview
+The range expression is converted to a concrete subrange relative to this collection. For example, using a PartialRangeFrom range expression with an array accesses the subrange from the start of the range expression until the end of the array.
+let streets = ["Adams", "Bryant", "Channing", "Douglas", "Evarts"]
+let streetsSlice = streets[2...]
+print(streetsSlice)
+// ["Channing", "Douglas", "Evarts"]
+The accessed slice uses the same indices for the same elements as the original collection uses. This example searches streetsSlice for one of the strings in the slice, and then uses that index in the original array.
+let index = streetsSlice.firstIndex(of: "Evarts")    // 4
+print(streets[index!])
+// "Evarts"
+Always use the slice’s startIndex property instead of assuming that its indices start at a particular value. Attempting to access an element by using an index outside the bounds of the slice’s indices may result in a runtime error, even if that index is valid for the original collection.
+print(streetsSlice.startIndex)
+// 2
+print(streetsSlice[2])
+// "Channing"
+
+
+print(streetsSlice[0])
+// error: Index out of bounds
+Complexity
+O(1)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

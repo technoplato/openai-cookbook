@@ -1,0 +1,188 @@
+https://developer.apple.com/documentation/coreml/mlmultiarray/2879232-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLSequence
+P
+var dataPointer: UnsafeMutableRawPointer
+Deprecated
+P
+var pixelBuffer: CVPixelBuffer?
+subscript([NSNumber]) -> NSNumber
+subscript(Int) -> NSNumber
+Accessing a Multiarray’s Elements
+M
+func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer, [Int]) -> R) -> R
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+M
+init<C>(C)
+M
+init<C>(C)
+M
+init<C>(C)
+Creating a Multiarray
+C
+MLMultiArray
+r
+P
+MLShapedArrayProtocol
+S
+MLShapedArray
+E
+MLFeatureType
+Documentation
+Open Menu
+Initializer
+init(shape:dataType:)
+Creates a multidimensional array with a shape and type.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+init(
+    shape: [NSNumber],
+    dataType: MLMultiArrayDataType
+) throws
+Parameters
+shape
+An integer array that has an element for each dimension in a multiarray that represents its length.
+dataType
+An element type defined by MLMultiArrayDataType.
+Discussion
+This method allocates a contiguous region of memory for the multiarray’s shape. You must set the contents of memory. The multiarray frees the memory in its deinitializer.
+The following code creates a 3 x 3 multiarray and sets its contents to the value 3.14159.
+// Create a 2D multiarray with dimension 3 x 3.
+let shape3x3 = [3, 3] as [NSNumber]
+
+
+guard let multiarray3x3 = try? MLMultiArray(shape: shape3x3, dataType: .float) else {
+    // Handle the error.
+    return
+}
+
+
+print("Before: \(multiarray3x3)")
+
+
+// Initialize the multiarray.
+for xCoordinate in 0..<3 {
+    for yCoordinate in 0..<3 {
+        let key = [xCoordinate, yCoordinate] as [NSNumber]
+        multiarray3x3[key] = 3.141_59
+    }
+}
+
+
+print("After: \(multiarray3x3)")
+See Also
+Creating a Multiarray
+init<C>(C)
+Creates a multiarray from a collection of integers.
+init<C>(C)
+Creates a multiarray from a collection of floats.
+init<C>(C)
+Creates a multiarray from a collection of doubles.
+init<ShapedArray>(ShapedArray)
+Creates a multiarray from a shaped array.
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+Creates a multiarray from a data pointer.
+init(concatenating: [MLMultiArray], axis: Int, dataType: MLMultiArrayDataType)
+Merges an array of multiarrays into one multiarray along an axis.
+init(pixelBuffer: CVPixelBuffer, shape: [NSNumber])
+Creates a multiarray sharing the surface of a pixel buffer.
+enum MLMultiArrayDataType
+Constants that define the underlying element types a multiarray can store.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(shape:dataType:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

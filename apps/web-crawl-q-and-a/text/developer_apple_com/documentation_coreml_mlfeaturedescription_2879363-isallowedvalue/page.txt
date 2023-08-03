@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/coreml/mlfeaturedescription/2879363-isallowedvalue
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLParameterDescription
+P
+var parameterDescriptionsByKey: [MLParameterKey : MLParameterDescription]
+P
+var trainingInputDescriptionsByName: [String : MLFeatureDescription]
+P
+var isUpdatable: Bool
+Accessing Update Descriptions
+P
+var predictedProbabilitiesName: String?
+P
+var predictedFeatureName: String?
+Checking for Validity
+P
+var isOptional: Bool
+E
+MLFeatureType
+P
+var type: MLFeatureType
+P
+var name: String
+Inspecting a Feature
+C
+MLFeatureDescription
+P
+var outputDescriptionsByName: [String : MLFeatureDescription]
+Documentation
+Open Menu
+Instance Method
+isAllowedValue(_:)
+Checks whether the model will accept an input feature value.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+func isAllowedValue(_ value: MLFeatureValue) -> Bool
+Parameters
+value
+Given the MLFeatureValue, is it compatible with the MLFeatureType of this MLFeatureDescription.
+Return Value
+True if the given MLFeatureValue is acceptable to the model's input feature, false otherwise.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is isAllowedValue(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

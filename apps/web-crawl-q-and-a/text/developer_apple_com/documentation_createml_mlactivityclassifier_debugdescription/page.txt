@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createml/mlactivityclassifier/debugdescription
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLDataTable
+Tabular Data
+S
+MLRecommender
+E
+MLRegressor
+E
+MLClassifier
+Creating a Model from Tabular Data
+Tabular Models
+static func makeTrainingSession(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+static func makeTrainingSession(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+P
+var description: String
+Describing an Activity Classifier
+P
+var recordingFileColumn: String
+P
+var labelColumn: String
+P
+var featureColumns: [String]
+P
+let modelParameters: MLActivityClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting an Activity Classifier Model
+Documentation
+Open Menu
+Swift
+Instance Property
+debugDescription
+A text representation of the activity classifier that’s suitable for output during debugging.
+Create ML
+CreateML
+macOS 10.15+
+visionOS 1.0+ Beta
+var debugDescription: String { get }
+See Also
+Describing an Activity Classifier
+var description: String
+A text representation of the activity classifier.
+var playgroundDescription: Any
+A description of the activity classifier shown in a playground.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is debugDescription
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/vision/vngenerateattentionbasedsaliencyimagerequest
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectHumanRectanglesRequest
+C
+VNDetectFaceRectanglesRequest
+C
+VNDetectFaceLandmarksRequest
+C
+VNDetectFaceCaptureQualityRequest
+Selecting a selfie based on capture quality
+Face and Body Detection
+C
+VNDetectRectanglesRequest
+Highlighting Areas of Interest in an Image Using Saliency
+Cropping Images Using Saliency
+Saliency Analysis
+C
+VNSequenceRequestHandler
+C
+VNDetectDocumentSegmentationRequest
+C
+VNGeneratePersonSegmentationRequest
+C
+VNStatefulRequest
+Applying Matte Effects to People in Images and Video
+Documentation
+Open Menu
+Class
+VNGenerateAttentionBasedSaliencyImageRequest
+An object that produces a heat map that identifies the parts of an image most likely to draw attention.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+tvOS 13.0+
+visionOS 1.0+ Beta
+class VNGenerateAttentionBasedSaliencyImageRequest : VNImageBasedRequest
+Topics
+Accessing the Results
+var results: [VNSaliencyImageObservation]?
+The results of the image saliency request.
+Identifying Request Revisions
+let VNGenerateAttentionBasedSaliencyImageRequestRevision1: Int
+A constant for specifying revision 1 of the image saliency request.
+Relationships
+Inherits From
+VNImageBasedRequest
+See Also
+Saliency Analysis
+Cropping Images Using Saliency
+Isolate regions in an image that are most likely to draw people's attention.
+Highlighting Areas of Interest in an Image Using Saliency
+Quantify and visualize where people are likely to look in an image.
+class VNGenerateObjectnessBasedSaliencyImageRequest
+A request that generates a heat map that identifies the parts of an image most likely to represent objects.
+class VNSaliencyImageObservation
+An observation that contains a grayscale heat map of important areas across an image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNGenerateAttentionBasedSaliencyImageRequest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,188 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/4135037-firstindex
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func shuffle<T>(using: inout T)
+M
+func shuffle()
+M
+func reverse()
+M
+func removeLast(Int)
+M
+func removeFirst(Int)
+M
+func removeLast() -> MLShapedArraySlice<Scalar>
+M
+func removeFirst() -> MLShapedArraySlice<Scalar>
+M
+func firstIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+M
+func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool
+M
+func formIndex(inout Int, offsetBy: Int)
+M
+func formIndex(after: inout Int)
+M
+func formIndex(before: inout Int)
+M
+func index(of: MLShapedArraySlice<Scalar>) -> Int?
+Deprecated
+M
+func index(Int, offsetBy: Int, limitedBy: Int) -> Int?
+M
+func index(Int, offsetBy: Int) -> Int
+Documentation
+Open Menu
+Swift
+Instance Method
+firstIndex(of:)
+Returns the first index where the specified value appears in the collection.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 17.0+ Beta
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func firstIndex(of element: MLShapedArraySlice<Scalar>) -> Int?
+Parameters
+element
+An element to search for in the collection.
+Return Value
+The first index where element is found. If element is not found in the collection, returns nil.
+Discussion
+After using firstIndex(of:) to find the position of a particular element in a collection, you can use it to access the element by subscripting. This example shows how you can modify one of the names in an array of students.
+var students = ["Ben", "Ivy", "Jordell", "Maxime"]
+if let i = students.firstIndex(of: "Maxime") {
+    students[i] = "Max"
+}
+print(students)
+// Prints "["Ben", "Ivy", "Jordell", "Max"]"
+Complexity: O(n), where n is the length of the collection.
+See Also
+Finding an Index in a Shaped Array Slice
+var startIndex: Int
+The index of the first element in the shaped array slice.
+var endIndex: Int
+The index of the last element in the shaped array slice.
+func index(after: Int) -> Int
+Returns the index immediately after an index you provide.
+func index(Int, offsetBy: Int) -> Int
+Returns the index at a relative distance to an index you provide.
+func index(Int, offsetBy: Int, limitedBy: Int) -> Int?
+Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index.
+func index(of: MLShapedArraySlice<Scalar>) -> Int?
+Returns the first index where the specified value appears in the collection.
+Deprecated
+func formIndex(before: inout Int)
+Replaces the given index with its predecessor.
+func formIndex(after: inout Int)
+Replaces the given index with its successor.
+func formIndex(inout Int, offsetBy: Int)
+Offsets the given index by the specified distance.
+func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool
+Offsets the given index by the specified distance, or so that it equals the given limiting index.
+func firstIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+Returns the first index in which an element of the collection satisfies the given predicate.
+func firstRange<C>(of: C) -> Range<Int>?
+Finds and returns the range of the first occurrence of a given collection within this collection.
+func lastIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+Returns the index of the last element in the collection that matches the given predicate.
+func lastIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+Returns the last index where the specified value appears in the collection.
+func ranges<C>(of: C) -> [Range<Int>]
+Finds and returns the ranges of the all occurrences of a given sequence within the collection.
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is firstIndex(of:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

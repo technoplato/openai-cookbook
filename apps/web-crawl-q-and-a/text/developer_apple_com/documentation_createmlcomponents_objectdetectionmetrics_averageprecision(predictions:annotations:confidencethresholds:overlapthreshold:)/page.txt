@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/createmlcomponents/objectdetectionmetrics/averageprecision(predictions:annotations:confidencethresholds:overlapthreshold:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+OptimizationStrategy
+func meanAveragePrecision<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float], overlapThreshold: Double) -> Scalar
+func averagePrecision<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float], overlapThreshold: Double) -> [Label : Scalar]
+M
+func averageOfMeanAveragePrecisionAtVariedThresholds<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float]) -> Scalar
+M
+func averageOfAveragePrecisionAtVariedThresholds<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float]) -> [Label : Scalar]
+Instance Methods
+P
+var labels: Set<Label>
+P
+var defaultConfidenceThreshold: Float
+Instance Properties
+M
+init()
+Initializers
+Documentation
+Open Menu
+Swift
+Instance Method
+averagePrecision(predictions:annotations:confidenceThresholds:overlapThreshold:)
+Calculates average precision for all the labels at the bounding box overlap threshold.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func averagePrecision<Scalar>(
+    predictions: [[DetectedObject<Label>]],
+    annotations: [ObjectDetectionAnnotation<Label>],
+    confidenceThresholds: [Label : Float] = [:],
+    overlapThreshold: Double = 0.5
+) -> [Label : Scalar] where Scalar : BinaryFloatingPoint
+Parameters
+predictions
+A list of all the predictions from an object detection model. Each element in the list is a list of predictions from one image.
+annotations
+A list of all the annotations. Each element is an ObjectDetectionAnnotation object from one image.
+confidenceThresholds
+Probability thresholds for each label. The values will always be between 0.0 and 1.0. If any label does not have a threshold, the defaultConfidenceThreshold is used for that label. The default value is [:].
+overlapThreshold
+The overlap threshold for the bounding boxes. The value will always be between 0.0 and 1.0. The default value is 0.5
+Return Value
+Average precision for all the labels at the overlap threshold.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is averagePrecision(predictions:annotations:confidenceThresholds:overlapThreshold:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

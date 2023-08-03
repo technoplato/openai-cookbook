@@ -1,0 +1,193 @@
+https://developer.apple.com/documentation/createmlcomponents/lineartransformer
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Equatable Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+T
+LinearTransformer.Output
+T
+LinearTransformer.Input
+Type Aliases
+M
+func hash(into: inout Hasher)
+Preprocessors
+S
+RobustScaler
+S
+NormalizationScaler
+S
+MinMaxScaler
+S
+MaxAbsScaler
+S
+StandardScaler
+Scalers
+S
+MetricsKey
+Documentation
+Open Menu
+Swift
+Structure
+LinearTransformer
+A transformer that runs an input through a scale and offset.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct LinearTransformer<Element> where Element : BinaryFloatingPoint, Element : Decodable, Element : Encodable
+Topics
+Creating the Regressor
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder.
+init(scale: Element, offset: Element)
+Creates a linear transformer.
+Getting the Properties
+var offset: Element
+The amount to be offset after scaling.
+var scale: Element
+The amount to be scaled.
+Operators
+static func == (LinearTransformer<Element>, LinearTransformer<Element>) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Instance Properties
+var hashValue: Int
+The hash value.
+Instance Methods
+func applied<S>(to: S, eventHandler: EventHandler?) -> [Element]
+Scales a sequence of inputs.
+func applied(to: Element, eventHandler: EventHandler?) -> Element
+Scales an input.
+func encode(to: Encoder) throws
+Encodes this value into the given encoder.
+func hash(into: inout Hasher)
+Hashes the essential components of this value by feeding them into the given hasher.
+Type Aliases
+typealias Input
+The input type.
+typealias Output
+The output type.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+Equatable Implementations
+API Reference
+Transformer Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+Decodable
+Encodable
+Equatable
+Hashable
+Sendable
+Transformer
+See Also
+Preprocessors
+struct ImputeTransformer
+A transformer that replaces missing values with a pre-defined value.
+struct OneHotEncoder
+An estimator that encodes categorical values to an integer array.
+struct OrdinalEncoder
+An ordinal encoder estimator encodes categorical values to ordinal integer values.
+struct NumericImputer
+An estimator that replaces missing values in the numeric input.
+struct Reshaper
+A transformer that reshapes a shaped array.
+struct CategoricalImputer
+An estimator that replaces missing values in the categorical input.
+struct OptionalUnwrapper
+A transformer that unwraps optional elements and throws when encountering missing values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is LinearTransformer
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/swiftdata/modelcontext/registeredmodel(for:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Performing undo and redo
+P
+var container: ModelContainer
+Accessing the container
+M
+func fetchIdentifiers<T>(FetchDescriptor<T>, batchSize: Int) throws -> FetchResultsCollection<PersistentIdentifier>
+M
+func fetchIdentifiers<T>(FetchDescriptor<T>) throws -> [PersistentIdentifier]
+Fetching only model identifiers
+M
+func rollback()
+M
+func object(with: PersistentIdentifier) -> PersistentModel
+M
+func enumerate<T>(FetchDescriptor<T>, batchSize: Int, allowEscapingMutations: Bool?, block: (T) throws -> Void) throws
+S
+FetchResultsCollection
+M
+func fetch<T>(FetchDescriptor<T>, batchSize: Int) throws -> FetchResultsCollection<T>
+S
+FetchDescriptor
+M
+func fetchCount<T>(FetchDescriptor<T>) throws -> Int
+M
+func fetch<T>(FetchDescriptor<T>) throws -> [T]
+Fetching models
+Documentation
+Open Menu
+Swift
+Instance Method
+registeredModel(for:)
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+Swift 5.9+
+func registeredModel<T>(for objectID: PersistentIdentifier) -> T? where T : PersistentModel
+See Also
+Fetching models
+func fetch<T>(FetchDescriptor<T>) throws -> [T]
+func fetchCount<T>(FetchDescriptor<T>) throws -> Int
+struct FetchDescriptor
+A type that describes the criteria, sort order, and any additional configuration to use when performing a fetch.
+func fetch<T>(FetchDescriptor<T>, batchSize: Int) throws -> FetchResultsCollection<T>
+struct FetchResultsCollection
+A collection that efficiently provides the results of a completed fetch.
+func enumerate<T>(FetchDescriptor<T>, batchSize: Int, allowEscapingMutations: Bool?, block: (T) throws -> Void) throws
+func object(with: PersistentIdentifier) -> PersistentModel
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is registeredModel(for:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

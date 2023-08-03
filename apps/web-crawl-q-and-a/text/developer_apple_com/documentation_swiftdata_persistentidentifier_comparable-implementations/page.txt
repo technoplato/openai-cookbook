@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/swiftdata/persistentidentifier/comparable-implementations
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func setValue<Value>(for: KeyPath<Self, Value?>, to: Value?)
+M
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+M
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+Modifying a value by key path
+M
+func getValue<Value, OtherModel>(for: KeyPath<Self, Value>) -> Value
+M
+func getValue<Value, OtherModel>(for: KeyPath<Self, Value>) -> Value
+M
+func getValue<Value>(for: KeyPath<Self, Value?>) -> Value?
+Default Implementations
+static func < (PersistentIdentifier, PersistentIdentifier) -> Bool
+static func == (PersistentIdentifier, PersistentIdentifier) -> Bool
+Comparing identifiers
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+Hashing
+M
+init(from: Decoder) throws
+Documentation
+Open Menu
+Swift
+Comparable Implementations
+Topics
+Operators
+static func ... (Self) -> PartialRangeThrough<Self>
+Returns a partial range up to, and including, its upper bound.
+static func ... (Self) -> PartialRangeFrom<Self>
+Returns a partial range extending upward from a lower bound.
+static func ... (Self, Self) -> ClosedRange<Self>
+Returns a closed range that contains both of its bounds.
+static func ..< (Self) -> PartialRangeUpTo<Self>
+Returns a partial range up to, but not including, its upper bound.
+static func ..< (Self, Self) -> Range<Self>
+Returns a half-open range that contains its lower bound but not its upper bound.
+static func > (Self, Self) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument.
+static func <= (Self, Self) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument.
+static func >= (Self, Self) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument.
+Current page is Comparable Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

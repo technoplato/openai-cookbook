@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createmlcomponents/multilabelclassificationmetrics/thresholdselectionstrategy/precision(_:minimumrecall:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+ModelUpdateError
+E
+CompatibilityError
+Beta
+Enumerations
+func rootMeanSquaredError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+func meanAbsolutePercentageError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+func meanAbsoluteError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+func maximumAbsoluteError<T>([AnnotatedPrediction<T, T>]) -> T
+E
+case fixed([Label : Float])
+E
+case balancedPrecisionAndRecall
+Enumeration Cases
+static func == (MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy, MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy) -> Bool
+Operators
+E
+MultiLabelClassificationMetrics.ThresholdSelectionStrategy
+Enumerations
+M
+static func meanAveragePrecisionScore(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>, labels: Set<Label>) -> Float
+Documentation
+Open Menu
+Swift
+Case
+MultiLabelClassificationMetrics.ThresholdSelectionStrategy.precision(_:minimumRecall:)
+A confidence threshold strategy for a specific precision that has at least a minimum recall value.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+case precision(
+    Float,
+    minimumRecall: Float
+)
+Discussion
+This strategy selects a threshold for each label by searching for the specified precision value on the label’s precision-recall curve. At the precision, the recall must be greater than or equal to the minimum recall value, otherwise a NaN threshold for the corresponding label is returned.
+Use this strategy to reduce the rate of false-positive predictions while constraining the false-negative predictions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MultiLabelClassificationMetrics.ThresholdSelectionStrategy.precision(_:minimumRecall:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

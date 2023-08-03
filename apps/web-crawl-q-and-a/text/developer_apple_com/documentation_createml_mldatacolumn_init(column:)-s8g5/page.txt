@@ -1,0 +1,185 @@
+https://developer.apple.com/documentation/createml/mldatacolumn/init(column:)-s8g5
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Selecting Elements to Generate a Column
+M
+func dropDuplicates() -> MLDataColumn<Element>
+M
+func dropMissing() -> MLDataColumn<Element>
+Discarding Elements to Generate a Column
+subscript(MLDataColumn<Bool>) -> MLDataColumn<Element>
+Masking Elements to Generate a Column
+M
+func mapMissing<T>((Element?) -> T?) -> MLDataColumn<T>
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Documentation
+Open Menu
+Swift
+Initializer
+init(column:)
+Creates a new column of machine learning dictionaries from a given column whose elements can be converted to dictionaries.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init<T>(column: MLDataColumn<T>) where T : MLDataValueConvertible
+Available when Element is MLDataValue.DictionaryType.
+Discussion
+Use this initializer to create a column of dictionaries from another column. Start by creating a column that is convertible to a column of dictionaries.
+let intDictionaryString2 = "{4:\"four\", 5:\"five\", 6:\"six\"}" let
+stringsColumn = MLDataColumn([intDictionaryString,
+intDictionaryString2])
+
+
+print(stringsColumn) // Prints ["{1:"one", 2:"two", 3:"three"}",
+"{4:"four", 5:"five", 6:"six"}"] ```
+
+
+Then use ``MLDataColumn/init(column:)-s8g5`` to convert the column to a
+column of dictionaries.
+
+
+```swift let dictionaryColumn =
+MLDataColumn<MLDataValue.DictionaryType>(column: stringsColumn)
+print(dictionaryColumn) // Prints [[1: one, 2: two, 3: three], // [5:
+five, 4: four, 6: six]] ```
+
+
+- Parameters:
+- column: An ``MLDataColumn`` of elements convertible to
+``MLDataValue/DictionaryType``.
+See Also
+Creating a Data Column by Converting Another Column
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Creates a new column by converting this column to the given type.
+Available when Element conforms to MLDataValueConvertible.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of integers from a given column whose elements can be converted to integers.
+Available when Element is Int.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of integers from a given column whose elements can be converted to an array of integers.
+Available when Element is [Int].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of doubles from a given column whose elements can be converted to doubles.
+Available when Element is Double.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of doubles from a given column whose elements can be converted to an array of doubles.
+Available when Element is [Double].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of strings from a given column whose elements can be converted to strings.
+Available when Element is String.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of strings from a given column whose elements can be converted to an array of strings.
+Available when Element is [String].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of machine learning sequences from a given column whose elements can be converted to sequences.
+Available when Element is MLDataValue.SequenceType.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(column:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/createmlcomponents/imageexposureadjuster
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+Augmenter
+Beta
+S
+BoostedTreeConfiguration
+S
+DetectedObject
+Beta
+S
+FullyConnectedNetworkConfiguration
+S
+FullyConnectedNetworkMultiLabelClassifierConfiguration
+Beta
+S
+FullyConnectedNetworkMultiLabelClassifierModel
+Beta
+S
+ImageBlur
+Beta
+S
+ImageColorTransformer
+Beta
+S
+MultiLabelClassificationMetrics
+S
+ObjectDetectionAnnotation
+Beta
+S
+ObjectDetectionMetrics
+Beta
+S
+RandomImageNoiseGenerator
+Beta
+S
+UpsampledAugmentationSequence
+Beta
+Functions
+func maximumAbsoluteError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+ImageExposureAdjuster
+An image exposure adjusting transformer.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+struct ImageExposureAdjuster
+Topics
+Initializers
+init(amount: Double)
+Creates an image exposure adjusting transformer.
+Instance Properties
+var amount: Double
+The amount to adjust the exposure of the image. The larger the value, the brighter the exposure.
+Instance Methods
+func applied(to: CIImage, eventHandler: EventHandler?) -> CIImage
+Adjusts the exposure of the input image.
+Type Aliases
+typealias Input
+The input type.
+typealias Output
+The output type.
+Default Implementations
+API Reference
+Transformer Implementations
+Relationships
+Conforms To
+Sendable
+Transformer
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ImageExposureAdjuster
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

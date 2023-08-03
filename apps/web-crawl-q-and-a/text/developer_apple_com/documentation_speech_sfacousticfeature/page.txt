@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/speech/sfacousticfeature
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Speech Constants
+Speech Enumerations
+Reference
+r
+P
+TemplateInsertable
+Analyzing voice
+C
+SFVoiceAnalytics
+Voice analytics
+C
+SFTranscriptionSegment
+C
+SFTranscription
+C
+SFSpeechRecognitionMetadata
+C
+SFSpeechRecognitionResult
+Transcription results
+Documentation
+Open Menu
+Class
+SFAcousticFeature
+The value of a voice analysis metric.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+class SFAcousticFeature : NSObject
+Topics
+Inspecting a feature
+var frameDuration: TimeInterval
+The duration of the audio frame.
+var acousticFeatureValuePerFrame: [Double]
+An array of feature values, one value per audio frame, corresponding to a transcript segment of recorded audio.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSCopying
+NSSecureCoding
+See Also
+Analyzing voice
+var voicing: SFAcousticFeature
+The likelihood of a voice in each frame of a transcription segment.
+var pitch: SFAcousticFeature
+The highness or lowness of the tone (fundamental frequency) in each frame of a transcription segment, expressed as a logarithm.
+var jitter: SFAcousticFeature
+The variation in pitch in each frame of a transcription segment, expressed as a percentage of the frame’s fundamental frequency.
+var shimmer: SFAcousticFeature
+The variation in vocal volume stability (amplitude) in each frame of a transcription segment, expressed in decibels.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SFAcousticFeature
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

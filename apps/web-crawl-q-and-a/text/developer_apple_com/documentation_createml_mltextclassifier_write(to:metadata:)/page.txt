@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/write(to:metadata:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLRegressor
+E
+MLClassifier
+Creating a Model from Tabular Data
+Tabular Models
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Saving a Text Classifier
+M
+func predictionsWithConfidence(from: MLDataColumn<String>) throws -> MLDataColumn<[String : Double]>
+M
+func predictions(from: MLDataColumn<String>) throws -> MLDataColumn<String>
+M
+func predictionsWithConfidence(from: [String]) throws -> [[String : Double]]
+M
+func predictionWithConfidence(from: String) throws -> [String : Double]
+M
+func predictions(from: [String]) throws -> [String]
+M
+func prediction(from: String) throws -> String
+Testing a Text Classifier
+Documentation
+Open Menu
+Swift
+Instance Method
+write(to:metadata:)
+Exports the text classifier as a Core ML model file at the specified URL.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func write(
+    to fileURL: URL,
+    metadata: MLModelMetadata? = nil
+) throws
+Parameters
+fileURL
+The location in the file system to which the file should be written.
+metadata
+Descriptive information to include with the exported model file.
+See Also
+Saving a Text Classifier
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports the text classifier as a Core ML model file at the specified file path.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is write(to:metadata:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

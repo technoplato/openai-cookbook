@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3763283-reduce
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLComputeDevice
+Beta
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+M
+func filter((MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Deprecated
+M
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+M
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+M
+func map<T>((MLShapedArraySlice<Scalar>) -> T) -> [T]
+Transforming a Shaped Array
+M
+func trimmingPrefix(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+M
+func trimmingPrefix<Prefix>(Prefix) -> MLShapedArraySlice<Scalar>
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+reduce(_:_:)
+Returns the result of combining the elements of the sequence using the given closure.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func reduce<Result>(
+    _ initialResult: Result,
+    _ nextPartialResult: (Result, MLShapedArraySlice<Scalar>) throws -> Result
+) rethrows -> Result
+Parameters
+initialResult
+The value to use as the initial accumulating value. initialResult is passed to nextPartialResult the first time the closure is executed.
+nextPartialResult
+A closure that combines an accumulating value and an element of the sequence into a new accumulating value, to be used in the next call of the nextPartialResult closure or returned to the caller.
+Return Value
+The final accumulated value. If the sequence has no elements, the result is initialResult.
+Discussion
+Use the reduce(_:_:) method to produce a single value from the elements of an entire sequence. For example, you can use this method on an array of numbers to find their sum or product.
+The nextPartialResult closure is called sequentially with an accumulating value initialized to initialResult and each element of the sequence. This example shows how to find the sum of an array of numbers.
+let numbers = [1, 2, 3, 4]
+let numberSum = numbers.reduce(0, { x, y in
+    x + y
+})
+// numberSum == 10
+When numbers.reduce(_:_:) is called, the following steps occur:
+The nextPartialResult closure is called with initialResult—0 in this case—and the first element of numbers, returning the sum: 1.
+The closure is called again repeatedly with the previous call’s return value and each element of the sequence.
+When the sequence is exhausted, the last value returned from the closure is returned to the caller.
+If the sequence has no elements, nextPartialResult is never executed and initialResult is the result of the call to reduce(_:_:).
+Complexity: O(n), where n is the length of the sequence.
+See Also
+Transforming a Shaped Array
+func map<T>((MLShapedArraySlice<Scalar>) -> T) -> [T]
+Returns an array containing the results of mapping the given closure over the sequence’s elements.
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Returns an array containing the non-nil results of calling the given transformation with each element of this sequence.
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+Returns an array containing the concatenated results of calling the given transformation with each element of this sequence.
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Generates an array that concatenates the sequences from a transform closure that returns an optional.
+Deprecated
+func filter((MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.
+func reduce<Result>(into: Result, (inout Result, MLShapedArraySlice<Scalar>) -> ()) -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is reduce(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

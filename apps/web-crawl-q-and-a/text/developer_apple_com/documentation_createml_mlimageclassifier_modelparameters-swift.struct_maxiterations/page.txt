@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier/modelparameters-swift.struct/maxiterations
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLImageClassifier.ModelParameters
+Creating Parameters
+M
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+M
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: MLImageClassifier.DataSource, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+M
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: [String : [URL]]?, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+Accessing the Training Parameters
+P
+var featureExtractor: MLImageClassifier.FeatureExtractorType
+P
+var validation: MLImageClassifier.ModelParameters.ValidationData
+init(validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentation: MLImageClassifier.ImageAugmentationOptions, algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType)
+Enumerations
+E
+MLImageClassifier.ModelParameters.ClassifierType
+E
+MLImageClassifier.ModelParameters.ModelAlgorithmType
+Default Implementations
+CustomDebugStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomStringConvertible Implementations
+Documentation
+Open Menu
+Swift
+Instance Property
+maxIterations
+The maximum number of iterations the training session can use.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var maxIterations: Int
+See Also
+Accessing the Training Parameters
+var featureExtractor: MLImageClassifier.FeatureExtractorType
+The underlying base model the training session uses to extract image features as it trains an image classifier.
+var validation: MLImageClassifier.ModelParameters.ValidationData
+The image classifier’s validation dataset.
+var augmentationOptions: MLImageClassifier.ImageAugmentationOptions
+The variations the training session uses to generate more variety in the training dataset.
+var validationData: [String : [URL]]?
+A set of images that the training process uses for validation.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is maxIterations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

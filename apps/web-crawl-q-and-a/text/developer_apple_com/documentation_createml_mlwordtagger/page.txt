@@ -1,0 +1,210 @@
+https://developer.apple.com/documentation/createml/mlwordtagger
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var model: MLModel
+Describing a Word Tagger
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving a Word Tagger
+M
+func predictionWithConfidence(from: [MLWordTagger.Token]) throws -> [[String : Double]]
+M
+func predictionWithConfidence(from: String) throws -> [[String : Double]]
+init(trainingData: [(tokens: [MLWordTagger.Token], labels: [String])], parameters: MLWordTagger.ModelParameters) throws
+S
+MLTextClassifier
+Creating a text classifier model
+Text Models
+S
+MLStyleTransfer
+S
+MLHandActionClassifier
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Documentation
+Open Menu
+Swift
+Structure
+MLWordTagger
+A word-tagging model you train to classify natural language text at the word level.
+macOS 10.14+
+visionOS 1.0+ Beta
+struct MLWordTagger
+Overview
+Use an MLWordTagger to create a custom word tagger to identify content that’s relevant for your app, like product names and points of interest.
+To use your custom word tagger in the Natural Language framework, save it to a model file and import it into an NLModel. Then add your custom NLModel to an NLTagger with its setModels(_:forTagScheme:) method.
+Topics
+Creating and Training a Word Tagger
+init(trainingData: [(tokens: [MLWordTagger.Token], labels: [String])], parameters: MLWordTagger.ModelParameters) throws
+Creates a word tagger.
+typealias Token
+The token type of a word tagger, which is a string.
+struct ModelParameters
+Parameters that specify model training parameters and validation data.
+let modelParameters: MLWordTagger.ModelParameters
+The configuration parameters that the word tagger used for training during initialization.
+Assessing Model Accuracy
+let trainingMetrics: MLWordTaggerMetrics
+Measurements of the tagger’s performance on the training data set.
+let validationMetrics: MLWordTaggerMetrics
+Measurements of the tagger’s performance on the validation data set.
+struct MLWordTaggerMetrics
+Metrics you use to evaluate a word tagger’s performance.
+Evaluating a Word Tagger
+func evaluation(on: [(tokens: [MLWordTagger.Token], labels: [String])]) -> MLWordTaggerMetrics
+Computes evaluation metrics.
+Testing a Word Tagger
+func prediction(from: [MLWordTagger.Token]) throws -> [String]
+Predicts a tag for each token in the specified array.
+func prediction(from: String) throws -> [String]
+Predicts a tag for the input string.
+func predictionWithConfidence(from: String) throws -> [[String : Double]]
+Predicts tags and confidence scores for the input string. Predicts tags and confidence scores for the input string.
+func predictionWithConfidence(from: [MLWordTagger.Token]) throws -> [[String : Double]]
+Predicts tags and confidence scores for each token in the specified token array.
+Saving a Word Tagger
+func write(to: URL, metadata: MLModelMetadata?) throws
+Exports the word tagger as a Core ML model file at the specified URL.
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports the word tagger as a Core ML model file at the specified file path.
+Describing a Word Tagger
+var model: MLModel
+The underlying Core ML model of the word tagger.
+var description: String
+A text representation of the word tagger.
+var debugDescription: String
+A text representation of the word tagger that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the word tagger in a playground.
+Initializers
+init(trainingData: MLDataTable, tokenColumn: String, labelColumn: String, parameters: MLWordTagger.ModelParameters) throws
+Creates a word tagger.
+init(trainingData: DataFrame, tokenColumn: String, labelColumn: String, parameters: MLWordTagger.ModelParameters) throws
+Creates a word tagger.
+Instance Methods
+func evaluation(on: MLDataTable, tokenColumn: String, labelColumn: String) -> MLWordTaggerMetrics
+Computes evaluation metrics.
+func evaluation(on: DataFrame, tokenColumn: String, labelColumn: String) -> MLWordTaggerMetrics
+Computes evaluation metrics.
+func predictions<S>(from: S) throws -> DataFrame
+Predicts sequences of labels, token locations, and token lengths from the input strings.
+func predictions(from: MLDataColumn<String>) throws -> MLDataTable
+Predicts sequences of labels, token locations, and token lengths from the input column containing strings.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Text Models
+Creating a text classifier model
+Train a machine learning model to classify natural language text.
+struct MLTextClassifier
+A model you train to classify natural language text.
+struct MLGazetteer
+A collection of terms and their labels, which augments a tagger that analyzes natural language text.
+struct MLWordEmbedding
+A map of strings in a vector space that enable your app to find similar strings by looking at a string’s neighbors.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLWordTagger
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

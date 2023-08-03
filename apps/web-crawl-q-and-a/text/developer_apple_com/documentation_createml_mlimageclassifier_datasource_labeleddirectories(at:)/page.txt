@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier/datasource/labeleddirectories(at:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+S
+MLObjectDetector
+CustomStringConvertible Implementations
+static func makeTrainingSession(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLImageClassifier>
+Creating a Data Source
+E
+MLImageClassifier.DataSource
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an Image Classifier
+P
+let modelParameters: MLImageClassifier.ModelParameters
+Documentation
+Open Menu
+Swift
+Case
+MLImageClassifier.DataSource.labeledDirectories(at:)
+An image classifier data source that uses the directory structure to label images.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+case labeledDirectories(at: URL)
+Discussion
+Use this case to create a data source based on a directory structure on disk that contains your training images. The associated value is a URL that represents a directory with subdirectories that are named as the labels for your images. Each subdirectory should contain the images associated with the label for which that subdirectory is named.
+For example, you might initialize a data source with a file URL that indicates a directory called Training Data that contains subdirectories called Elephant and Cheetah. The subdirectory Cheetah, in turn, contains images of cheetahs, with names like Image001.png, Image02.jpg, and so on, while the subdirectory Elephant contains images of elephants, called Image545.jpg, Image657.png, and so on. The individual image names aren’t important in this case because the directory that an image appears in indicates the image’s label.
+If you want to create a data source with labels based on file names, use MLImageClassifier.DataSource.labeledFiles(at:) instead.
+See Also
+Creating a Data Source
+case labeledFiles(at: URL)
+An image classifier data source that uses file names to label images.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLImageClassifier.DataSource.labeledDirectories(at:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

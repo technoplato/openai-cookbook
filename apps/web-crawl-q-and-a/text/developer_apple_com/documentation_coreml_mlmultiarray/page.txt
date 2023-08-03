@@ -1,0 +1,215 @@
+https://developer.apple.com/documentation/coreml/mlmultiarray
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessing a Multiarray’s Elements
+M
+func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer, [Int]) -> R) -> R
+M
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+M
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+M
+func withUnsafeBufferPointer<S, R>(ofType: S.Type, (UnsafeBufferPointer<S>) -> R) -> R
+Providing buffer access
+P
+var strides: [NSNumber]
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+r
+P
+MLShapedArrayProtocol
+S
+MLShapedArray
+E
+MLFeatureType
+Supporting Types
+M
+func isEqual(to: MLFeatureValue) -> Bool
+Comparing Feature Values
+P
+var dictionaryValue: [AnyHashable : NSNumber]
+P
+var sequenceValue: MLSequence?
+Documentation
+Open Menu
+Class
+MLMultiArray
+A machine learning collection type that stores numeric values in an array with multiple dimensions.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+class MLMultiArray : NSObject
+Overview
+A multidimensional array, or multiarray, is one of the underlying types of an MLFeatureValue that stores numeric values in multiple dimensions. All elements in an MLMultiArray instance are one of the same type, and one of the types that MLMultiArrayDataType defines:
+MLMultiArrayDataType.int32
+32-bit integer
+MLMultiArrayDataType.float16
+16-bit floating point number
+MLMultiArrayDataType.float32
+32-bit floating point number (also known as float)
+float64
+64-bit floating point number (also known as double)
+Each dimension in a multiarray is typically significant or meaningful. For example, a model could have an input that accepts images as a multiarray of pixels with three dimensions, C x H x W. The first dimension, C, represents the number of color channels, and the second and third dimensions, H and W, represent the image’s height and width, respectively. The number of dimensions and size of each dimension define the multiarray’s shape.
+Note
+Some models use a one-dimensional multiarray for an input or output. This type of multiarray is conceptually identical to a conventional array.
+The shape property is an integer array that has an element for each dimension in the multiarray. Each element in shape defines the size of the corresponding dimension. To inspect the shape and constraints of a model’s multiarray input or output feature:
+Access the model’s modelDescription property.
+Find the multiarray input or output feature in the model description’s inputDescriptionsByName or outputDescriptionsByName property, respectively.
+Access the feature description’s multiArrayConstraint property.
+Inspect the multiarray constraint’s shape and shapeConstraint.
+Topics
+Creating a Multiarray
+init<C>(C)
+Creates a multiarray from a collection of integers.
+init<C>(C)
+Creates a multiarray from a collection of floats.
+init<C>(C)
+Creates a multiarray from a collection of doubles.
+init(shape: [NSNumber], dataType: MLMultiArrayDataType)
+Creates a multidimensional array with a shape and type.
+init<ShapedArray>(ShapedArray)
+Creates a multiarray from a shaped array.
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+Creates a multiarray from a data pointer.
+init(concatenating: [MLMultiArray], axis: Int, dataType: MLMultiArrayDataType)
+Merges an array of multiarrays into one multiarray along an axis.
+init(pixelBuffer: CVPixelBuffer, shape: [NSNumber])
+Creates a multiarray sharing the surface of a pixel buffer.
+enum MLMultiArrayDataType
+Constants that define the underlying element types a multiarray can store.
+Inspecting a Multiarray
+var count: Int
+The total number of elements in the multiarray.
+var dataType: MLMultiArrayDataType
+The underlying type of the multiarray.
+var shape: [NSNumber]
+The multiarray’s multidimensional shape as a number array in which each element’s value is the size of the corresponding dimension.
+var strides: [NSNumber]
+A number array in which each element is the number of memory locations that span the length of the corresponding dimension.
+Providing buffer access
+func withUnsafeBufferPointer<S, R>(ofType: S.Type, (UnsafeBufferPointer<S>) -> R) -> R
+Calls a given closure with a raw pointer to the multiarray’s storage.
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+Calls a given closure with a raw pointer to the multiarray’s storage.
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+Calls a given closure with a raw pointer to the multiarray’s mutable storage.
+func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer, [Int]) -> R) -> R
+Calls a given closure with a raw pointer to the multiarray’s mutable storage.
+Accessing a Multiarray’s Elements
+subscript(Int) -> NSNumber
+Accesses the multiarray by using a linear offset.
+subscript([NSNumber]) -> NSNumber
+Accesses the multiarray by using a number array that has an element for each dimension.
+var pixelBuffer: CVPixelBuffer?
+A reference to the multiarray’s underlying pixel buffer.
+var dataPointer: UnsafeMutableRawPointer
+A pointer to the multiarray’s underlying memory.
+Deprecated
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSSecureCoding
+See Also
+Supporting Types
+enum MLFeatureType
+The possible types for feature values, input features, and output features.
+struct MLShapedArray
+A machine learning collection type that stores scalar values in a multidimensional array.
+protocol MLShapedArrayProtocol
+An interface that defines a shaped array type.
+class MLSequence
+A machine learning collection type that stores a series of strings or integers.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLMultiArray
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

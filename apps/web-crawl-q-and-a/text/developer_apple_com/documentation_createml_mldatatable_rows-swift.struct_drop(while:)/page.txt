@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/createml/mldatatable/rows-swift.struct/drop(while:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+Comparing Row Collections
+M
+func joined<Separator>(separator: Separator) -> JoinedSequence<Self>
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+M
+func dropLast(Int) -> Self.SubSequence
+M
+func dropFirst(Int) -> Self.SubSequence
+Excluding Rows
+M
+func suffix(from: Self.Index) -> Self.SubSequence
+M
+func suffix(Int) -> Self.SubSequence
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func prefix(upTo: Self.Index) -> Self.SubSequence
+M
+func prefix(through: Self.Index) -> Self.SubSequence
+Documentation
+Open Menu
+Swift
+Instance Method
+drop(while:)
+Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func drop(while predicate: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Parameters
+predicate
+A closure that takes an element of the sequence as its argument and returns true if the element should be skipped or false if it should be included. Once the predicate returns false it will not be called again.
+Discussion
+Complexity
+O(n), where n is the length of the collection.
+See Also
+Excluding Rows
+func dropFirst(Int) -> Self.SubSequence
+Returns a subsequence containing all but the given number of initial elements.
+func dropLast(Int) -> Self.SubSequence
+Returns a subsequence containing all but the specified number of final elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is drop(while:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

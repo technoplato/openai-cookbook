@@ -1,0 +1,207 @@
+https://developer.apple.com/documentation/createml
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Tabular Models
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+S
+MLWordEmbedding
+S
+MLGazetteer
+Documentation
+Open Menu
+Swift
+Framework
+Create ML
+Create machine learning models for use in your app.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+Overview
+Use Create ML with familiar tools like Swift and macOS playgrounds to create and train custom machine learning models on your Mac. You can train models to perform tasks like recognizing images, extracting meaning from text, or finding relationships between numerical values.
+You train a model to recognize patterns by showing it representative samples. For example, you can train a model to recognize dogs by showing it lots of images of different dogs. After you’ve trained the model, you test it out on data it hasn’t seen before, and evaluate how well it performed the task. When the model is performing well enough, you’re ready to integrate it into your app using Core ML.
+Create ML leverages the machine learning infrastructure built in to Apple products like Photos and Siri. This means your image classification and natural language models are smaller and take much less time to train.
+Topics
+Image Models
+Creating an Image Classifier Model
+Train a machine learning model to classify images, and add it to your Core ML app.
+struct MLImageClassifier
+A model you train to classify images.
+struct MLObjectDetector
+A model you train to classify one or more objects within an image.
+struct MLHandPoseClassifier
+A task that creates a hand pose classification model by training with images of people’s hands that you provide.
+Video Models
+API Reference
+Creating an Action Classifier Model
+Train a machine learning model to recognize a person’s body movements.
+Detecting Human Actions in a Live Video Feed
+Identify body movements by sending a person’s pose data from a series of video frames to an action-classification model.
+struct MLActionClassifier
+A model you train with videos to classify a person’s body movements.
+struct MLHandActionClassifier
+A task that creates a hand action classification model by training with videos of people’s hand movements that you provide.
+struct MLStyleTransfer
+A model you train to apply an image’s style to other images or videos.
+Text Models
+Creating a text classifier model
+Train a machine learning model to classify natural language text.
+struct MLTextClassifier
+A model you train to classify natural language text.
+struct MLWordTagger
+A word-tagging model you train to classify natural language text at the word level.
+struct MLGazetteer
+A collection of terms and their labels, which augments a tagger that analyzes natural language text.
+struct MLWordEmbedding
+A map of strings in a vector space that enable your app to find similar strings by looking at a string’s neighbors.
+Sound Models
+struct MLSoundClassifier
+A machine learning model you train with audio files to recognize and identify sounds on a device.
+Motion Models
+struct MLActivityClassifier
+A model you train to classify motion sensor data.
+Tabular Models
+Model types for general tasks, such as labeling, estimating, or finding similarities. The models learn from columns of data values in a data table.
+Creating a Model from Tabular Data
+Train a machine learning model by using Core ML to import and manage tabular data.
+enum MLClassifier
+A model you train to classify data into discrete categories.
+enum MLRegressor
+A model you train to estimate continuous values.
+struct MLRecommender
+A model you train to make recommendations based on item similarity, grouping, and, optionally, item ratings.
+Tabular Data
+struct MLDataTable
+A table of data for training or evaluating a machine learning model.
+enum MLDataValue
+The value of a cell in a data table.
+API Reference
+Data Visualizations
+Render images of data tables and columns in a playground.
+Model Accuracy
+Improving Your Model’s Accuracy
+Use metrics to tune the performance of your machine learning model.
+struct MLClassifierMetrics
+Metrics you use to evaluate a classifier’s performance.
+struct MLRegressorMetrics
+Metrics you use to evaluate a regressor’s performance.
+struct MLWordTaggerMetrics
+Metrics you use to evaluate a word tagger’s performance.
+struct MLRecommenderMetrics
+Metrics you use to evaluate a recommender’s performance.
+struct MLObjectDetectorMetrics
+Metrics you use to evaluate an object detector’s performance.
+Model Training Control
+class MLJob
+The representation of a model’s asynchronous training session you use to monitor the session’s progress or terminate its execution.
+class MLTrainingSession
+The current state of a model’s asynchronous training session.
+struct MLTrainingSessionParameters
+The configuration settings for a training session.
+struct MLCheckpoint
+The state of a model’s asynchronous training session at a specific point in time during the feature extraction or training phase.
+Supporting Types
+Communal types that Create ML uses in all of its model-creation tasks.
+enum MLCreateError
+The errors Create ML throws while performing various operations, such as training models, making predictions, writing models to a file system, and so on.
+struct MLModelMetadata
+Information about a model that’s stored in a Core ML model file.
+enum MLSplitStrategy
+Data partitioning approaches, typically for creating a validation dataset from a training dataset.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Create ML
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

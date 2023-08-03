@@ -1,0 +1,465 @@
+https://developer.apple.com/documentation/createml/mldatacolumn
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Duplicating a Column
+M
+func append(contentsOf: MLDataColumn<Element>)
+Appending to a Data Column
+M
+func element(at: Int) -> Element?
+subscript(Int) -> Element
+Getting an Element
+P
+var count: Int
+M
+func addColumn<Element>(MLDataColumn<Element>, named: String)
+Adding Columns
+M
+func map<T>((MLDataTable.Row) -> T?) -> MLDataColumn<T>
+M
+func map<T>((MLDataTable.Row) -> T) -> MLDataColumn<T>
+Transforming Rows to Generate a Data Column
+P
+var size: (rows: Int, columns: Int)
+Getting the Size of a Data Table
+M
+init()
+Documentation
+Open Menu
+Swift
+Structure
+MLDataColumn
+A column of typed values in a data table.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MLDataColumn<Element> where Element : MLDataValueConvertible
+Overview
+A column is a homogenous collection of data values, similar to an Array. Columns are the main components of an MLDataTable and are designed to efficiently scale with large data sets.
+Typically you use MLDataColumn, the typed equivalent to MLUntypedColumn, to work directly with the column’s element type. A data column has extra math and statistics functionality when its element type is Int or Double.
+Topics
+Creating a Data Column
+init(repeating: Element, count: Int)
+Creates a new column with a repeating element.
+init<S>(S)
+Creates a new column from a given sequence of elements.
+Creating a Data Column by Converting Another Column
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Creates a new column by converting this column to the given type.
+Available when Element conforms to MLDataValueConvertible.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of integers from a given column whose elements can be converted to integers.
+Available when Element is Int.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of integers from a given column whose elements can be converted to an array of integers.
+Available when Element is [Int].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of doubles from a given column whose elements can be converted to doubles.
+Available when Element is Double.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of doubles from a given column whose elements can be converted to an array of doubles.
+Available when Element is [Double].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of strings from a given column whose elements can be converted to strings.
+Available when Element is String.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of strings from a given column whose elements can be converted to an array of strings.
+Available when Element is [String].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of machine learning sequences from a given column whose elements can be converted to sequences.
+Available when Element is MLDataValue.SequenceType.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of machine learning dictionaries from a given column whose elements can be converted to dictionaries.
+Available when Element is MLDataValue.DictionaryType.
+Getting the Number of Elements
+var count: Int
+The number of elements in the column.
+Getting an Element
+subscript(Int) -> Element
+Accesses the element at the given row.
+Available when Element conforms to MLDataValueConvertible.
+func element(at: Int) -> Element?
+Accesses the element at the given index.
+Available when Element conforms to MLDataValueConvertible.
+Appending to a Data Column
+func append(contentsOf: MLDataColumn<Element>)
+Appends the elements of the given column to the end of this column.
+Duplicating a Column
+func copy() -> MLDataColumn<Element>
+Returns a new MLDataColumn by copying the original MLDataColumn
+Available when Element conforms to MLDataValueConvertible.
+Sorting Elements to Generate a Column
+func sort(byIncreasingOrder: Bool) -> MLDataColumn<Element>
+Returns a new MLDataColumn containing values sorted by the specified order.
+Available when Element conforms to MLDataValueConvertible.
+Transforming Elements to Generate a Column
+func map<T>((Element) -> T) -> MLDataColumn<T>
+Creates a new column by applying the given thread-safe transform to every non-missing element of this column.
+Available when Element conforms to MLDataValueConvertible.
+func map<T>((Element) -> T?) -> MLDataColumn<T>
+Creates a new column, potentially with missing values, by applying the given thread-safe transform to every non-missing element of this column.
+Available when Element conforms to MLDataValueConvertible.
+func mapMissing<T>((Element?) -> T?) -> MLDataColumn<T>
+Creates a new column, potentially with missing elements, by applying the given thread-safe transform to every element of the column, including missing elements.
+Available when Element conforms to MLDataValueConvertible.
+Masking Elements to Generate a Column
+subscript(MLDataColumn<Bool>) -> MLDataColumn<Element>
+Creates a subset of the column by masking its elements with a column of Booleans.
+Available when Element conforms to MLDataValueConvertible.
+Discarding Elements to Generate a Column
+func dropMissing() -> MLDataColumn<Element>
+Creates a subset of the column by removing all elements without a value.
+Available when Element conforms to MLDataValueConvertible.
+func dropDuplicates() -> MLDataColumn<Element>
+Creates a subset of the column by removing all duplicate elements.
+Available when Element conforms to MLDataValueConvertible.
+Selecting Elements to Generate a Column
+subscript(Range<Int>) -> MLDataColumn<Element>
+Creates a subset of the column, given a range of elements.
+Available when Element conforms to MLDataValueConvertible.
+subscript<R>(R) -> MLDataColumn<Element>
+Creates a subset of the column, given a range expression of elements.
+Available when Element conforms to MLDataValueConvertible.
+func prefix(Int) -> MLDataColumn<Element>
+Creates a subset of the column, given a number of initial elements.
+Available when Element conforms to MLDataValueConvertible.
+func suffix(Int) -> MLDataColumn<Element>
+Creates a subset of the column, given a number of final elements.
+Available when Element conforms to MLDataValueConvertible.
+Filling in Missing Elements to Generate a Column
+func fillMissing(with: Element) -> MLDataColumn<Element>
+Creates a modified copy of the column such that every missing element is replaced with the given value.
+Available when Element conforms to MLDataValueConvertible.
+Evaluating Elements to Generate a Column
+func materialize() throws -> MLDataColumn<Element>
+Creates a new column by immediately evaluating any lazily applied data processing operations stored in the column.
+Available when Element conforms to MLDataValueConvertible.
+Combining Columns to Generate a Column
+static func + (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by adding each element in the first column to the corresponding element in the second column.
+Available when Element is Int.
+static func + (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by adding each element in the first column to the corresponding element in the second column.
+Available when Element is Double.
+static func * (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by multiplying each element in the first column by the corresponding element in the second column.
+Available when Element is Int.
+static func * (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by multiplying each element in the first column by the corresponding element in the second column.
+Available when Element is Double.
+Combining a Column with a Value to Generate a Column
+static func + (MLDataColumn<Int>, Int) -> MLDataColumn<Int>
+Creates a column of integers by adding each element of the given column to the given integer.
+Available when Element is Int.
+static func + (MLDataColumn<Double>, Double) -> MLDataColumn<Double>
+Creates a column of doubles by adding each element of the given column to the given double.
+Available when Element is Double.
+static func * (MLDataColumn<Int>, Int) -> MLDataColumn<Int>
+Creates a column of integers by multiplying each element of the given column by the given integer.
+Available when Element is Int.
+static func * (MLDataColumn<Double>, Double) -> MLDataColumn<Double>
+Creates a column of doubles by multiplying each element of the given column by the given double.
+Available when Element is Double.
+Combining a Value with a Column to Generate a Column
+static func + (Int, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by adding the given integer to each element of the given column.
+Available when Element is Int.
+static func + (Double, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by adding the given double to each element of the given column.
+Available when Element is Double.
+static func * (Int, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by multiplying the given integer by each element of the given column.
+Available when Element is Int.
+static func * (Double, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by multiplying the given double by each element of the given column.
+Available when Element is Double.
+Comparing Columns to Generate a Column of Booleans
+static func == (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the first column is equal to the corresponding element in the second column.
+Available when Element conforms to MLDataValueConvertible.
+static func != (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the first column is not equal to the corresponding element in the second column.
+Available when Element conforms to MLDataValueConvertible.
+Comparing a Column with a Value to Generate a Column of Booleans
+static func == (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the given column is equal to the given value.
+Available when Element conforms to MLDataValueConvertible.
+static func != (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the given column is not equal to the given value.
+Available when Element conforms to MLDataValueConvertible.
+Comparing a Value with a Column to Generate a Column of Booleans
+static func == (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether the given value is equal to each element in the given column.
+Available when Element conforms to MLDataValueConvertible.
+static func != (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether the given value is not equal to each element in the given column.
+Available when Element conforms to MLDataValueConvertible.
+Combining Columns of Booleans to Generate a Column of Booleans
+static func && (MLDataColumn<Bool>, MLDataColumn<Bool>) -> MLDataColumn<Bool>
+Creates a column of Booleans by performing a logical AND operation on each element in the first column with the corresponding element in the second column.
+Available when Element is Bool.
+Getting the Min and Max Element Values
+func min() -> Int?
+Returns the element with the lowest value in a column of integers.
+Available when Element is Int.
+func min() -> Double?
+Returns the element with the lowest value in a column of doubles.
+Available when Element is Double.
+func max() -> Int?
+Returns the element with the highest value in a column of integers.
+Available when Element is Int.
+func max() -> Double?
+Returns the element with the highest value in a column of doubles.
+Available when Element is Double.
+Getting Sum, Mean, and Standard Deviation Values
+func sum() -> Int?
+Returns the sum of the elements in a column of integers.
+Available when Element is Int.
+func sum() -> Double?
+Returns the sum of the elements in a column of doubles.
+Available when Element is Double.
+func mean() -> Double?
+Returns the arithmetic mean of the elements in a column of integers.
+Available when Element is Int.
+func mean() -> Double?
+Returns the arithmetic mean of the elements in a column of doubles.
+Available when Element is Double.
+func std() -> Double?
+Returns the standard deviation of the elements in a column of integers.
+Available when Element is Int.
+func stdev() -> Double?
+Returns the standard deviation of the elements in a column of doubles.
+Available when Element is Double.
+func std() -> Double?
+Returns the standard deviation of the elements in a column of doubles.
+Available when Element is Double.
+Visualizing a Column
+func show() -> MLStreamingVisualizable
+Provides a visualization for the data in the column.
+Available when Element conforms to MLDataValueConvertible.
+Getting a Description of a Data Column
+var description: String
+A text representation of the column.
+Available when Element conforms to MLDataValueConvertible.
+var playgroundDescription: Any
+A description of the column shown in a playground.
+Available when Element conforms to MLDataValueConvertible.
+var debugDescription: String
+A text representation of the column for debugging.
+Available when Element conforms to MLDataValueConvertible.
+Handling Data Column Errors
+var isValid: Bool
+A Boolean value that indicates whether the column is valid.
+var error: (Error)?
+The underlying error present when the column is invalid.
+Operators
+static func - (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by subtracting each element in the second column from the corresponding element in the first column.
+Available when Element is Int.
+static func - (Double, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by subtracting each element of the given column from the given double.
+Available when Element is Double.
+static func - (MLDataColumn<Int>, Int) -> MLDataColumn<Int>
+Creates a column of integers by subtracting the given integer from each element of the given column.
+Available when Element is Int.
+static func - (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by subtracting each element in the second column from the corresponding element in the first column.
+Available when Element is Double.
+static func - (Int, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by subtracting each element of the given column from the given integer.
+Available when Element is Int.
+static func - (MLDataColumn<Double>, Double) -> MLDataColumn<Double>
+Creates a column of doubles by subtracting the given double from each element of the given column.
+Available when Element is Double.
+static func / (Double, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by dividing the given double by each element of the given column.
+Available when Element is Double.
+static func / (MLDataColumn<Int>, Int) -> MLDataColumn<Int>
+Creates a column of integers by dividing each element of the given column by the given integer.
+Available when Element is Int.
+static func / (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by dividing each element in the first column by the corresponding element in the second column.
+Available when Element is Int.
+static func / (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>
+Creates a column of doubles by dividing each element in the first column by the corresponding element in the second column.
+Available when Element is Double.
+static func / (MLDataColumn<Double>, Double) -> MLDataColumn<Double>
+Creates a column of doubles by dividing each element of the given column by the given double.
+Available when Element is Double.
+static func / (Int, MLDataColumn<Int>) -> MLDataColumn<Int>
+Creates a column of integers by dividing the given integer by each element of the given column.
+Available when Element is Int.
+static func > (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the first column is greater than the corresponding element in the second column.
+Available when Element conforms to MLDataValueConvertible.
+static func < (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether the given value is less than each element in the given column.
+Available when Element conforms to MLDataValueConvertible.
+static func < (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the first column is less than the corresponding element in the second column.
+Available when Element conforms to MLDataValueConvertible.
+static func < (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the given column is less than the given value.
+Available when Element conforms to MLDataValueConvertible.
+static func > (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether the given value is greater than each element in the given column.
+Available when Element conforms to MLDataValueConvertible.
+static func > (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the given column is greater than the given value.
+Available when Element conforms to MLDataValueConvertible.
+static func >= (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the given column is greater than or equal to the given value.
+Available when Element conforms to MLDataValueConvertible.
+static func <= (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether the given value is less than or equal to each element in the given column.
+Available when Element conforms to MLDataValueConvertible.
+static func >= (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the first column is greater than or equal to the corresponding element in the second column.
+Available when Element conforms to MLDataValueConvertible.
+static func <= (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the first column is less than or equal to the corresponding element in the second column.
+Available when Element conforms to MLDataValueConvertible.
+static func <= (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether each element in the given column is less than or equal to the given value.
+Available when Element conforms to MLDataValueConvertible.
+static func >= (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>
+Creates a column of Booleans by testing whether the given value is greater than or equal to each element in the given column.
+Available when Element conforms to MLDataValueConvertible.
+static func || (MLDataColumn<Bool>, MLDataColumn<Bool>) -> MLDataColumn<Bool>
+Creates a column of Booleans by performing a logical OR operation on each element in the first column with the corresponding element in the second column.
+Available when Element is Bool.
+Initializers
+init()
+Constructs an invalid Column.
+init(repeating: MLDataValue, count: Int)
+Constructs a new Column containing the specified number of a single, repeated MLDataValue.
+Instance Properties
+var isEmpty: Bool
+Instance Methods
+func stdev() -> Double?
+Standard deviation of the Elements in the MLDataColumn.
+Available when Element is Int.
+Subscripts
+subscript(MLUntypedColumn) -> MLDataColumn<Element>
+Returns a MLDataColumn containing only the elements for which the corresponding mask has a nonzero or non-default value.
+Available when Element conforms to MLDataValueConvertible.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomReflectable Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomReflectable
+CustomStringConvertible
+Sendable
+See Also
+Related Documentation
+struct MLUntypedColumn
+A column of untyped values in a data table.
+Adding Columns
+func addColumn<Element>(MLDataColumn<Element>, named: String)
+Adds a data column to the table.
+func addColumn(MLUntypedColumn, named: String)
+Adds an untyped column to the table.
+struct MLUntypedColumn
+A column of untyped values in a data table.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLDataColumn
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

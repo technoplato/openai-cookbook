@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/4135031-contains
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func index(Int, offsetBy: Int) -> Int
+M
+func index(after: Int) -> Int
+P
+var endIndex: Int
+P
+var startIndex: Int
+Finding an Index in a Shaped Array Slice
+M
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func contains(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+M
+func allSatisfy((MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Inspecting a Slice of a Shaped Array Slice
+P
+var lazy: LazySequence<MLShapedArraySlice<Scalar>>
+P
+var publisher: Publishers.Sequence<MLShapedArraySlice<Scalar>, Never>
+P
+var last: MLShapedArraySlice<Scalar>?
+P
+var first: MLShapedArraySlice<Scalar>?
+Inspecting a Shaped Array’s Scalars
+Documentation
+Open Menu
+Swift
+Instance Method
+contains(_:)
+Returns a Boolean value indicating whether the sequence contains the given element.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 17.0+ Beta
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func contains(_ element: MLShapedArraySlice<Scalar>) -> Bool
+Parameters
+element
+The element to find in the sequence.
+Return Value
+true if the element was found in the sequence; otherwise, false.
+Discussion
+This example checks to see whether a favorite actor is in an array storing a movie’s cast.
+let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+print(cast.contains("Marlon"))
+// Prints "true"
+print(cast.contains("James"))
+// Prints "false"
+Complexity: O(n), where n is the length of the sequence.
+See Also
+Inspecting a Slice of a Shaped Array Slice
+func allSatisfy((MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+func contains(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func contains<C>(C) -> Bool
+Returns a Boolean value indicating whether the collection contains the given sequence.
+subscript<R>(R) -> MLShapedArraySlice<Scalar>
+Accesses the contiguous subrange of the collection’s elements specified by a range expression.
+func makeIterator() -> IndexingIterator<MLShapedArraySlice<Scalar>>
+Returns an iterator over the elements of the collection.
+func forEach((MLShapedArraySlice<Scalar>) -> Void)
+Calls the given closure on each element in the sequence in the same order as a for-in loop.
+func enumerated() -> EnumeratedSequence<MLShapedArraySlice<Scalar>>
+Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence.
+func randomElement() -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection.
+func randomElement<T>(using: inout T) -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection, using the given generator as a source for randomness.
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+Executes a closure on the sequence’s contiguous storage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contains(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

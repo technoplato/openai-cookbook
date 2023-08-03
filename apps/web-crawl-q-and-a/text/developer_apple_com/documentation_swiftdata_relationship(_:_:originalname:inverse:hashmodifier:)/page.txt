@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/swiftdata/relationship(_:_:originalname:inverse:hashmodifier:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Concurrency support
+S
+FetchResultsCollection
+S
+Predicate
+S
+FetchDescriptor
+#
+macro Query(transaction: Transaction)
+#
+macro Query<Element>(filter: Predicate<Element>?, sort: [SortDescriptor<Element>], transaction: Transaction?)
+#
+macro Query<Value, Element>(filter: Predicate<Element>?, sort: KeyPath<Element, Value?>, order: SortOrder, transaction: Transaction?)
+macro Query<Value, Element>(filter: Predicate<Element>?, sort: KeyPath<Element, Value>, order: SortOrder, transaction: Transaction?)
+macro Relationship(Relationship.DeleteRule, PropertyOptions..., originalName: String?, inverse: AnyKeyPath?, hashModifier: String?)
+#
+macro Transient()
+#
+macro Attribute(PropertyOptions..., originalName: String?, hashModifier: String?)
+r
+P
+PersistentModel
+#
+macro Model()
+Model definition
+Adopting SwiftData for a Core Data app
+Building a document-based app using SwiftData
+Preserving your app’s model data across launches
+Documentation
+Open Menu
+Swift
+Macro
+Relationship(_:_:originalName:inverse:hashModifier:)
+Specifies the options that SwiftData needs to manage the annotated property as a relationship between two models.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+Swift 5.9+
+@attached(member)
+macro Relationship(
+    _ deleteRule: Relationship.DeleteRule = .nullify,
+    _ options: PropertyOptions...,
+    originalName: String? = nil,
+    inverse: AnyKeyPath? = nil,
+    hashModifier: String? = nil
+)
+See Also
+Model definition
+macro Model()
+Converts a Swift class into a stored model that’s managed by SwiftData.
+protocol PersistentModel
+An interface that enables SwiftData to manage a Swift class as a stored model.
+macro Attribute(PropertyOptions..., originalName: String?, hashModifier: String?)
+Specifies the custom behavior that SwiftData applies to the annotated property when managing the owning class.
+macro Transient()
+Tells SwiftData not to persist the annotated property when managing the owning class.
+protocol RelationshipCollection
+class PropertyOptions
+An object that defines the behavior of a property when SwiftData manages the owning class.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Relationship(_:_:originalName:inverse:hashModifier:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

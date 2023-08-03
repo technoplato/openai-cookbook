@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/swiftdata/fetchresultscollection/split(separator:maxsplits:omittingemptysubsequences:)-2z2n1
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var autosaveEnabled: Bool
+Persisting unsaved changes
+M
+func delete<T>(T)
+M
+func delete<T>(model: T.Type, where: Predicate<T>?, includeSubclasses: Bool) throws
+P
+var deletedObjectsArray: [PersistentModel]
+Deleting models
+P
+var changedObjectsArray: [PersistentModel]
+func enumerate<T>(FetchDescriptor<T>, batchSize: Int, allowEscapingMutations: Bool?, block: (T) throws -> Void) throws
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func ranges<C>(of: C) -> [Range<Self.Index>]
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func prefix(upTo: Self.Index) -> Self.SubSequence
+M
+func prefix(through: Self.Index) -> Self.SubSequence
+M
+func prefix(Int) -> Self.SubSequence
+Documentation
+Open Menu
+Swift
+Instance Method
+split(separator:maxSplits:omittingEmptySubsequences:)
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given element.
+SwiftData
+Swift
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func split(
+    separator: Self.Element,
+    maxSplits: Int = Int.max,
+    omittingEmptySubsequences: Bool = true
+) -> [Self.SubSequence]
+Available when Element conforms to Equatable.
+Parameters
+separator
+The element that should be split upon.
+maxSplits
+The maximum number of times to split the collection, or one less than the number of subsequences to return. If maxSplits + 1 subsequences are returned, the last one is a suffix of the original collection containing the remaining elements. maxSplits must be greater than or equal to zero. The default value is Int.max.
+omittingEmptySubsequences
+If false, an empty subsequence is returned in the result for each consecutive pair of separator elements in the collection and for each instance of separator at the start or end of the collection. If true, only nonempty subsequences are returned. The default value is true.
+Return Value
+An array of subsequences, split from this collection’s elements.
+Discussion
+The resulting array consists of at most maxSplits + 1 subsequences. Elements that are used to split the collection are not returned as part of any subsequence.
+The following examples show the effects of the maxSplits and omittingEmptySubsequences parameters when splitting a string at each space character (” “). The first use of split returns each word that was originally separated by one or more spaces.
+let line = "BLANCHE:   I don't want realism. I want magic!"
+print(line.split(separator: " "))
+// Prints "["BLANCHE:", "I", "don\'t", "want", "realism.", "I", "want", "magic!"]"
+The second example passes 1 for the maxSplits parameter, so the original string is split just once, into two new strings.
+print(line.split(separator: " ", maxSplits: 1))
+// Prints "["BLANCHE:", "  I don\'t want realism. I want magic!"]"
+The final example passes false for the omittingEmptySubsequences parameter, so the returned array contains empty strings where spaces were repeated.
+print(line.split(separator: " ", omittingEmptySubsequences: false))
+// Prints "["BLANCHE:", "", "", "I", "don\'t", "want", "realism.", "I", "want", "magic!"]"
+Complexity
+O(n), where n is the length of the collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is split(separator:maxSplits:omittingEmptySubsequences:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

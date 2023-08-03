@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/createml/mldatavalue/dictionarytype/index
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func formIndex(inout Self.Index, offsetBy: Int)
+M
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+M
+func dropLast(Int) -> Self.SubSequence
+M
+func dropFirst(Int) -> Self.SubSequence
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func distance(from: Self.Index, to: Self.Index) -> Int
+Instance Methods
+Structures
+Collection Implementations
+Default Implementations
+T
+MLDataValue.DictionaryType.Value
+T
+MLDataValue.DictionaryType.Key
+Type Aliases
+subscript(MLDataValue.DictionaryType.Key) -> MLDataValue.DictionaryType.Value?
+Subscripts
+Documentation
+Open Menu
+Swift
+Structure
+MLDataValue.DictionaryType.Index
+A type that represents a position in the collection.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct Index
+Overview
+Valid indices consist of the position of every element and a “past the end” position that’s not valid for use as a subscript argument.
+Topics
+Operators
+static func == (MLDataValue.DictionaryType.Index, MLDataValue.DictionaryType.Index) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+static func < (MLDataValue.DictionaryType.Index, MLDataValue.DictionaryType.Index) -> Bool
+Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument.
+Default Implementations
+API Reference
+Comparable Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Comparable
+Equatable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLDataValue.DictionaryType.Index
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

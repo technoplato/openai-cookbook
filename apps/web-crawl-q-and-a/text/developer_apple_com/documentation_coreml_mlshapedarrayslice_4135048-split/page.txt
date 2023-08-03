@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/4135048-split
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+func split<C>(separator: C, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+M
+func reduce<Result>(into: Result, (inout Result, MLShapedArraySlice<Scalar>) -> ()) -> Result
+M
+func reduce<Result>(Result, (Result, MLShapedArraySlice<Scalar>) -> Result) -> Result
+M
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+M
+func filter((MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Deprecated
+M
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+M
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+split(separator:maxSplits:omittingEmptySubsequences:)
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given separator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 17.0+ Beta
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+Xcode 14.0+
+func split<C>(
+    separator: C,
+    maxSplits: Int = .max,
+    omittingEmptySubsequences: Bool = true
+) -> [MLShapedArraySlice<Scalar>] where C : Collection, MLShapedArraySlice<Scalar> == C.Element
+Parameters
+separator
+The element to be split upon.
+Return Value
+A collection of subsequences, split from this collection’s elements.
+See Also
+Transforming a Shaped Array Slice
+func map<T>((MLShapedArraySlice<Scalar>) -> T) -> [T]
+Returns an array containing the results of mapping the given closure over the sequence’s elements.
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Returns an array containing the non-nil results of calling the given transformation with each element of this sequence.
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+Returns an array containing the concatenated results of calling the given transformation with each element of this sequence.
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Generates an array that concatenates the sequences from a transform closure that returns an optional.
+Deprecated
+func filter((MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+func reduce<Result>(Result, (Result, MLShapedArraySlice<Scalar>) -> Result) -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func reduce<Result>(into: Result, (inout Result, MLShapedArraySlice<Scalar>) -> ()) -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element.
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is split(separator:maxSplits:omittingEmptySubsequences:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/vision/vndetecttrajectoriesrequest/3675670-objectmaximumnormalizedradius
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Structuring Recognized Text on a Document
+Recognizing Text in Images
+Text Recognition
+C
+VNTextObservation
+C
+VNDetectTextRectanglesRequest
+Text Detection
+E
+VNBarcodeCompositeType
+P
+var objectMinimumNormalizedRadius: Float
+P
+var trajectoryLength: Int
+P
+var targetFrameTime: CMTime
+Configuring the Request
+M
+init(frameAnalysisSpacing: CMTime, trajectoryLength: Int, completionHandler: VNRequestCompletionHandler?)
+Creating a Request
+C
+VNDetectTrajectoriesRequest
+Detecting moving objects in a video
+Documentation
+Open Menu
+Instance Property
+objectMaximumNormalizedRadius
+The maximum radius of the bounding circle of the object to track.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+var objectMaximumNormalizedRadius: Float { get set }
+See Also
+Configuring the Request
+var targetFrameTime: CMTime
+The requested target frame time for processing trajectory detection.
+var trajectoryLength: Int
+The number of points to detect before calculating a trajectory.
+var objectMinimumNormalizedRadius: Float
+The minimum radius of the bounding circle of the object to track.
+var minimumObjectSize: Float
+The minimum radius of the tracked shape’s bounding circle.
+Deprecated
+var maximumObjectSize: Float
+The maximum radius of the tracked shape’s bounding circle.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is objectMaximumNormalizedRadius
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

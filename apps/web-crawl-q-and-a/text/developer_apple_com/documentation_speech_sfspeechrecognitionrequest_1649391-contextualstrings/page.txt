@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/speech/sfspeechrecognitionrequest/1649391-contextualstrings
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Audio sources
+Recognizing speech in live audio
+C
+SFSpeechURLRecognitionRequest
+C
+SFSpeechAudioBufferRecognitionRequest
+C
+SFSpeechRecognitionRequest
+Recognition Request Configuration
+P
+var requiresOnDeviceRecognition: Bool
+P
+var shouldReportPartialResults: Bool
+C
+SFTranscription
+C
+SFTranscriptionSegment
+Voice analytics
+C
+SFVoiceAnalytics
+Structures
+S
+SFSpeechError
+Beta
+Classes
+Documentation
+Open Menu
+Instance Property
+contextualStrings
+An array of phrases that should be recognized, even if they are not in the system vocabulary.
+iOS 10.0+
+iPadOS 10.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+visionOS 1.0+ Beta
+var contextualStrings: [String] { get set }
+Discussion
+Use this property to specify short custom phrases that are unique to your app. You might include phrases with the names of characters, products, or places that are specific to your app. You might also include domain-specific terminology or unusual or made-up words. Assigning custom phrases to this property improves the likelihood of those phrases being recognized.
+Keep phrases relatively brief, limiting them to one or two words whenever possible. Lengthy phrases are less likely to be recognized. In addition, try to limit each phrase to something the user can say without pausing.
+Limit the total number of phrases to no more than 100.
+See Also
+Recognition Request Configuration
+var requiresOnDeviceRecognition: Bool
+A Boolean value that determines whether a request must keep its audio data on the device.
+var shouldReportPartialResults: Bool
+A Boolean value that indicates whether you want intermediate results returned for each utterance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contextualStrings
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

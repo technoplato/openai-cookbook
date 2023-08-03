@@ -1,0 +1,415 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func append(contentsOf: MLUntypedColumn)
+Appending to an Untyped Column
+subscript(Int) -> MLDataValue
+Getting an Element
+P
+var count: Int
+Getting the Number of Elements
+M
+init(multiArrays: MLUntypedColumn)
+M
+func addColumn(MLUntypedColumn, named: String)
+S
+MLDataColumn
+M
+func addColumn<Element>(MLDataColumn<Element>, named: String)
+Adding Columns
+M
+func map<T>((MLDataTable.Row) -> T?) -> MLDataColumn<T>
+M
+func map<T>((MLDataTable.Row) -> T) -> MLDataColumn<T>
+Transforming Rows to Generate a Data Column
+P
+var size: (rows: Int, columns: Int)
+Documentation
+Open Menu
+Swift
+Structure
+MLUntypedColumn
+A column of untyped values in a data table.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MLUntypedColumn
+Overview
+A column is a homogenous collection of data values, similar to an Array. Columns are the main components of an MLDataTable and are designed to efficiently scale with large data sets.
+Typically you use MLDataColumn, the typed equivalent to MLUntypedColumn, for its type-specific functionality.
+Untyped columns are especially useful when:
+You’re initializing a data table with columns by using init(namedColumns:). - You’re using columns of a non-Boolean type to filter a data table with subscript(_:). - You don’t need to work directly with the underlying type.
+Each element of an untyped column is an MLDataValue, and has an underlying type that conforms to MLDataValueConvertible. The underlying type is hidden from the Swift compiler and is what makes an MLUntypedColumn untyped. Using an untyped column allows you to quickly write type-agnostic code with Create ML.
+column / 2 print(columnOver2) /* Prints...
+ ValueType: Double
+ Values:        [1.0, 1.5, 2.5, 3.5, 5.5]
+ */ ```
+
+
+However, by avoiding type safety at compile time, you expose your code to
+errors at runtime. When an error occurs during an operation, Create ML marks
+the product of that operation _invalid_ by setting
+``MLUntypedColumn/isValid`` to `false` and by setting
+``MLUntypedColumn/error`` with a value. For example, using a slash (`/`)
+operator to divide a column of integers with a string produces an invalid
+column.
+
+
+```swift let column = MLUntypedColumn([2, 3, 5, 7, 11]) let invalidColumn =
+column / "foo" print(invalidColumn.isValid) // Prints "false" ```
+
+
+- Important: A mismatch between the underlying types of two columns, or
+between the underlying type of a column and the type of a value, will result
+in an invalid column.
+
+
+Once a column becomes invalid, you can’t use it for any subsequent operation
+because it will only produce further invalid columns or invalid tables.
+
+
+Each comparison operator of ``MLUntypedColumn`` returns a column of
+Booleans. However, ``MLUntypedColumn`` uses integers as its underlying type
+for columns of Booleans, because ``MLDataValue`` does not have a case for
+<doc://com.apple.documentation/documentation/swift/bool>.
+
+
+For example, create an untyped column of Booleans using the less-than
+comparison operator(``MLUntypedColumn/_(_:_:)-7zms0``).
+
+
+```swift let column = MLUntypedColumn([2, 3, 5, 7, 11]) let lessThan5 =
+column < 5 ```
+
+
+Then print the column to see that its underlying `ValueType` is `Int`, and
+each Boolean value of `true` or `false` is represented in the column by an
+integer value of `1` or `0`, respectively.
+
+
+```swift print(lessThan5) /* Prints...
+ ValueType: Int
+ Values:        [1, 1, 0, 0, 0]
+ */ ```
+
+
+Use these untyped columns of Booleans just as you would with a typed column
+of Booleans
+(``MLDataColumn```<`<doc://com.apple.documentation/documentation/swift/bool>`>`)
+to:
+
+
+- Filter another untyped column with ``MLUntypedColumn/subscript(_:)-9hr32``
+- Logically combine with another untyped column of Booleans with the
+``MLUntypedColumn/&&(_:_:)`` and ``MLUntypedColumn/__(_:_:)`` operators -
+Mask rows of an ``MLDataTable`` with its ``MLDataTable/subscript(_:)-3opgl``
+Topics
+Creating an Untyped Column
+init<T>(repeating: T, count: Int)
+Creates a new column with a repeating value.
+init(repeating: MLDataValue, count: Int)
+Creates a new column with a repeating value.
+init(Range<Int>)
+Creates a new column of integers from a given range.
+init(ClosedRange<Int>)
+Creates a new column of integers from a given closed range.
+init<S>(S)
+Creates a new column from a given sequence of elements that can be converted to machine learning data values.
+init<S>(S)
+Creates a new column from a given sequence of machine learning data values.
+init()
+Creates an empty, invalid column used to remove an existing column from a data table.
+Creating an Untyped Column by Converting Another Column
+init(ints: MLUntypedColumn)
+Creates a new column of integers by converting the elements of another column.
+init(doubles: MLUntypedColumn)
+Creates a new column of doubles by converting the elements of another column.
+init(strings: MLUntypedColumn)
+Creates a new column of strings by converting the elements of another column.
+init(sequences: MLUntypedColumn)
+Creates a new column of machine learning sequences by converting the elements of another column.
+init(dictionaries: MLUntypedColumn)
+Creates a new column of machine learning dictionaries by converting the elements of another column.
+init(multiArrays: MLUntypedColumn)
+Creates a MLUntypedColumn of type MLMultiArray from the specified MLUntypedColumn if the values of the given MLUntypedColumn are convertible to MLDataValue.MultiArrayType.
+Getting the Number of Elements
+var count: Int
+The number of elements in the column.
+Getting an Element
+subscript(Int) -> MLDataValue
+Accesses the element at the given position.
+Appending to an Untyped Column
+func append(contentsOf: MLUntypedColumn)
+Appends the elements of the given column to the end of this column.
+Duplicating a Column
+func copy() -> MLUntypedColumn
+Returns a new MLUntypedColumn by copying the original MLUntypedColumn
+Sorting Elements to Generate a Column
+func sort(byIncreasingOrder: Bool) -> MLUntypedColumn
+Returns a new MLUntypedColumn containing values sorted by the specified order.
+Converting a Column to Generate a Data Column
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Creates a new column of typed values by converting this untyped column to the given type.
+Exposing the Underlying Type to Generate a Data Column
+var type: MLDataValue.ValueType
+The underlying type of the column.
+var ints: MLDataColumn<Int>?
+A cloned data column of integers.
+var doubles: MLDataColumn<Double>?
+A cloned data column of doubles.
+var strings: MLDataColumn<String>?
+A cloned data column of strings.
+var sequences: MLDataColumn<MLDataValue.SequenceType>?
+A cloned data column of machine learning sequences.
+var dictionaries: MLDataColumn<MLDataValue.DictionaryType>?
+A cloned data column of machine learning dictionaries.
+var multiArrays: MLDataColumn<MLDataValue.MultiArrayType>?
+A cloned data column of machine learning multi-arrays.
+func column<T>(type: T.Type) -> MLDataColumn<T>?
+Clones the column to a data column of the given type.
+Transforming Elements to Generate a Data Column
+func map<T>((MLDataValue) -> T) -> MLDataColumn<T>
+Creates a new column of typed values by applying the given thread-safe transform to every non-missing element of this untyped column.
+func map<T>((MLDataValue) -> T?) -> MLDataColumn<T>
+Creates a new column of typed values, potentially with missing values, by applying the given thread-safe transform to every non-missing element of this untyped column.
+func mapMissing<T>((MLDataValue) -> T?) -> MLDataColumn<T>
+Creates a new column of typed values by applying the given thread-safe transform to every element of this untyped column, including missing elements.
+Masking Elements to Generate an Untyped Column
+subscript(MLDataColumn<Bool>) -> MLUntypedColumn
+Creates a subset of the column by masking its elements with a data column of Booleans.
+subscript(MLUntypedColumn) -> MLUntypedColumn
+Creates a subset of the column by masking its elements with another untyped column.
+Discarding Elements to Generate an Untyped Column
+func dropMissing() -> MLUntypedColumn
+Creates a subset of the column by removing all elements without a value.
+func dropDuplicates() -> MLUntypedColumn
+Creates a subset of the column by removing all duplicate elements.
+Selecting Elements to Generate an Untyped Column
+subscript(Range<Int>) -> MLUntypedColumn
+Creates a subset of the column, given a range of elements.
+subscript<R>(R) -> MLUntypedColumn
+Creates a subset of the column, given a range expression of elements.
+func prefix(Int) -> MLUntypedColumn
+Creates a subset of the column, given a number of initial elements.
+func suffix(Int) -> MLUntypedColumn
+Creates a subset of the column, given a number of final elements.
+Filling in Missing Elements to Generate an Untyped Column
+func fillMissing(with: MLDataValue) -> MLUntypedColumn
+Creates a modified copy of the column such that every missing element is replaced with the given value.
+Evaluating Elements to Generate an Untyped Column
+func materialize() throws -> MLUntypedColumn
+Creates a new column by immediately evaluating any lazily applied data processing operations stored in the column.
+Combining Columns to Generate an Untyped Column
+static func + (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by adding each element in the first column to the corresponding element in the second column.
+static func * (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by multiplying each element in the first column by the corresponding element in the second column.
+Combining a Column with a Value to Generate an Untyped Column
+static func + (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column by adding each element of the given column to the given value.
+static func * (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column by multiplying each element of the given column by the given value.
+Combining a Value with a Column to Generate an Untyped Column
+static func + (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by adding the given value to each element of the given column.
+static func * (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by multiplying the given value by each element of the given column.
+Comparing Columns to Generate an Untyped Column of Booleans
+static func == (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the first column is equal to the corresponding element in the second column.
+static func != (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the first column is not equal to the corresponding element in the second column.
+Comparing a Column with a Value to Generate an Untyped Column of Booleans
+static func == (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the given column is equal to the given value.
+static func != (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the given column is not equal to the given value.
+Comparing a Value with a Column to Generate an Untyped Column of Booleans
+static func == (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether the given value is equal to each element in the given column.
+static func != (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether the given value is not equal to each element in the given column.
+Combining Columns of Booleans to Generate an Untyped Column of Booleans
+static func && (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by performing a logical AND operation on each row of two columns of Booleans.
+Visualizing a Column
+func show() -> MLStreamingVisualizable
+Provides a visualization for the data in the column.
+Getting a Description of an Untyped Column
+var description: String
+A text representation of the column.
+var playgroundDescription: Any
+A description of the column shown in a playground.
+var debugDescription: String
+A text representation of the column for debugging.
+var customMirror: Mirror
+A view of the column for Xcode Playgrounds and lldb.
+Handling Untyped Column Errors
+var isValid: Bool
+A Boolean value that indicates whether the column is valid.
+var error: (Error)?
+The underlying error present when the column is invalid.
+Operators
+static func - (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by subtracting each element in the second column from the corresponding element in the first column.
+static func - (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column by subtracting the given value from each element of the given column.
+static func - (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by subtracting each element of the given column from the given value.
+static func / (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column by dividing each element of the given column by the given value.
+static func / (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by dividing each element in the first column by the corresponding element in the second column.
+static func / (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column by dividing the given value by each element of the given column.
+static func > (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the given column is greater than the given value.
+static func > (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether the given value is greater than each element in the given column.
+static func < (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether the given value is less than each element in the given column.
+static func < (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the first column is less than the corresponding element in the second column.
+static func < (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the given column is less than the given value.
+static func > (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the first column is greater than the corresponding element in the second column.
+static func <= (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the given column is less than or equal to the given value.
+static func >= (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the given column is greater than or equal to the given value.
+static func >= (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the first column is greater than or equal to the corresponding element in the second column.
+static func <= (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether each element in the first column is less than or equal to the corresponding element in the second column.
+static func >= (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether the given value is greater than or equal to each element in the given column.
+static func <= (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by testing whether the given value is less than or equal to each element in the given column.
+static func || (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Creates a column of Booleans by performing a logical OR operation on each row of two columns of Booleans.
+Instance Properties
+var isEmpty: Bool
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomReflectable Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomReflectable
+CustomStringConvertible
+Sendable
+See Also
+Related Documentation
+struct MLDataColumn
+A column of typed values in a data table.
+struct MLDataTable
+A table of data for training or evaluating a machine learning model.
+Adding Columns
+func addColumn<Element>(MLDataColumn<Element>, named: String)
+Adds a data column to the table.
+struct MLDataColumn
+A column of typed values in a data table.
+func addColumn(MLUntypedColumn, named: String)
+Adds an untyped column to the table.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLUntypedColumn
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

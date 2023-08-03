@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/coreml/mlmodel/2921516-compilemodel
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Inputs and Outputs
+Model Personalization
+Model Customization
+P
+static var availableComputeDevices: [MLComputeDevice]
+Beta
+Type Properties
+C
+MLKey
+C
+MLModelConfiguration
+M
+class func compileModel(at: URL, completionHandler: (Result<URL, Error>) -> Void)
+M
+class func compileModel(at: URL) -> URL
+Compiling a Model
+M
+init(contentsOf: URL, configuration: MLModelConfiguration)
+M
+init(contentsOf: URL)
+M
+class func load(contentsOf: URL, configuration: MLModelConfiguration, completionHandler: (Result<MLModel, Error>) -> Void)
+M
+class func load(MLModelAsset, configuration: MLModelConfiguration, completionHandler: (MLModel?, Error?) -> Void)
+M
+class func load(contentsOf: URL, configuration: MLModelConfiguration) -> MLModel
+Documentation
+Open Menu
+Type Method
+compileModel(at:)
+Compiles a model on the device to update the model in your app.
+iOS 11.0–16.0 Deprecated
+iPadOS 11.0–16.0 Deprecated
+macOS 10.13–13.0 Deprecated
+Mac Catalyst 13.1–16.0 Deprecated
+tvOS 11.0–16.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+class func compileModel(at modelURL: URL) throws -> URL
+Parameters
+modelURL
+The local file path to your downloaded .mlmodel file.
+Return Value
+The local file path to the compiled model (the .mlmodelc file).
+Discussion
+The source .mlmodel file must be on the device. Pass the compiled model to init(contentsOf:) to initialize an MLModel instance.
+Listing 1 Compiling a model file and creating an MLModel instance from the compiled version
+let compiledUrl = try MLModel.compileModel(at: modelUrl)
+let model = try MLModel(contentsOf: compiledUrl)
+Compiling can be time consuming and shouldn't be done on the main thread.
+See Downloading and Compiling a Model on the User’s Device for more details.
+See Also
+Compiling a Model
+class func compileModel(at: URL) -> URL
+Compile a model for a device.
+class func compileModel(at: URL, completionHandler: (Result<URL, Error>) -> Void)
+Compile a model for a device.
+Related Documentation
+Downloading and Compiling a Model on the User’s Device
+Install Core ML models on the user’s device dynamically at runtime.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is compileModel(at:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

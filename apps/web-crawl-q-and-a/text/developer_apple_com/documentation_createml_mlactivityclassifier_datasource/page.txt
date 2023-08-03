@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/createml/mlactivityclassifier/datasource
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+M
+static func makeTrainingSession(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+Beta
+M
+static func makeTrainingSession(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+Type Methods
+func gatherAnnotatedFeatures(featureColumns: [String], labelColumn: String, recordingFileColumn: String?) throws -> DataFrame
+func stratifiedSplit(proportions: [Double], seed: Int, featureColumns: [String], labelColumn: String, recordingFileColumn: String) throws -> MLDataTable
+func labeledSensorData(featureColumns: [String], labelColumn: String?, recordingFileColumn: String?) throws -> MLDataTable
+case directoryWithDataAndAnnotation(at: URL, annotationFileName: String, timeStampColumn: String, labelStartTimeColumn: String, labelEndTimeColumn: String)
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an Activity Classifier
+P
+var recordingFileColumn: String
+P
+var labelColumn: String
+P
+var featureColumns: [String]
+Documentation
+Open Menu
+Swift
+Enumeration
+MLActivityClassifier.DataSource
+A data source for an activity classifier.
+Create ML
+CreateML
+macOS 10.15+
+visionOS 1.0+ Beta
+enum DataSource
+Topics
+Creating a Data Source
+case labeledDirectories(at: URL)
+An activity classifier data source that uses a directory of directories that contain sensor data files.
+case directoryWithDataAndAnnotation(at: URL, annotationFileName: String, timeStampColumn: String, labelStartTimeColumn: String, labelEndTimeColumn: String)
+An activity classifier data source that uses a directory that contains sensor data files and one annotation file.
+Generating Data Tables from a Data Source
+func labeledSensorData(featureColumns: [String], labelColumn: String?, recordingFileColumn: String?) throws -> MLDataTable
+Generates a data table from the contents of the data source.
+func stratifiedSplit(proportions: [Double], seed: Int, featureColumns: [String], labelColumn: String, recordingFileColumn: String) throws -> MLDataTable
+Generates a data table by splitting the data source into strata.
+Enumeration Cases
+case dataFrame(DataFrame)
+An activity classifier data source that uses a data frame containing sensor features and labels.
+Beta
+Instance Methods
+func gatherAnnotatedFeatures(featureColumns: [String], labelColumn: String, recordingFileColumn: String?) throws -> DataFrame
+Processes the data source and returns a data frame that contains features, labels and file names.
+Beta
+Relationships
+Conforms To
+Sendable
+See Also
+Supporting Types
+struct ModelParameters
+Model training parameters that direct the training process for an activity classifier model.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLActivityClassifier.DataSource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

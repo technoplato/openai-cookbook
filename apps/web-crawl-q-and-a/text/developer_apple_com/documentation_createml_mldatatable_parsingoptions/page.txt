@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/createml/mldatatable/parsingoptions
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(namedColumns: [String : MLUntypedColumn]) throws
+M
+init(dictionary: [String : MLDataValueConvertible]) throws
+P
+var missingValues: [String]
+Representing Missing Values
+P
+var selectColumns: [String]?
+P
+var maxRows: Int?
+Limiting Rows and Columns
+init(containsHeader: Bool, delimiter: String, comment: String, escape: String, doubleQuote: Bool, quote: String, skipInitialSpaces: Bool, missingValues: [String], lineTerminator: String, selectColumns: [String]?, maxRows: Int?, skipRows: Int)
+Parsing Options
+M
+init(contentsOf: URL, options: MLDataTable.ParsingOptions) throws
+Creating a Model from Tabular Data
+Creating a Data Table
+S
+MLDataTable
+Tabular Data
+S
+MLRecommender
+E
+MLRegressor
+Documentation
+Open Menu
+Swift
+Structure
+MLDataTable.ParsingOptions
+The options for parsing a comma-separated values (CSV) file into a data table for a machine learning model.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct ParsingOptions
+Overview
+Use ParsingOptions only when importing a CSV file with init(contentsOf:options:), especially if your CSV file has special formatting or your data table only needs to import specific rows or columns.
+Topics
+Creating the CSV Parsing Options
+init(containsHeader: Bool, delimiter: String, comment: String, escape: String, doubleQuote: Bool, quote: String, skipInitialSpaces: Bool, missingValues: [String], lineTerminator: String, selectColumns: [String]?, maxRows: Int?, skipRows: Int)
+Creates CSV parsing options.
+Specifing the CSV File Format
+var containsHeader: Bool
+A Boolean value indicating whether an input CSV file contains a header.
+var delimiter: String
+The character that separates the data fields in a CSV file.
+var lineTerminator: String
+The character that represents the end of a line in a CSV file.
+Handling Special Characters
+var escape: String
+The character that marks a C escape sequence in a CSV file.
+var quote: String
+The character that represents a quote (") in a CSV file.
+var doubleQuote: Bool
+A Boolean value indicating whether two consecutive quotes ("") represent a single quote (") in a CSV file.
+Ignoring CSV Components
+var skipRows: Int
+The number of starting rows to skip from the start of a CSV file.
+var skipInitialSpaces: Bool
+A Boolean value indicating whether to ignore leading spaces of a data field.
+var comment: String
+The character that marks the beginning of a comment, or text to ignore, in a CSV file.
+Limiting Rows and Columns
+var maxRows: Int?
+The maximum number of rows to import form a CSV file; otherwise nil to import all rows.
+var selectColumns: [String]?
+The list of column names to import from a CSV file; otherwise nil to import all columns.
+Representing Missing Values
+var missingValues: [String]
+A list of strings that represent missing values in a CSV file.
+Relationships
+Conforms To
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLDataTable.ParsingOptions
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

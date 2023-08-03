@@ -1,0 +1,193 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3763199-enumerated
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func formIndex(before: inout Int)
+M
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+M
+func index(of: MLShapedArraySlice<Scalar>) -> Int?
+Deprecated
+M
+func index(Int, offsetBy: Int, limitedBy: Int) -> Int?
+M
+func index(Int, offsetBy: Int) -> Int
+M
+func index(after: Int) -> Int
+P
+var indices: Range<Int>
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func forEach((MLShapedArraySlice<Scalar>) -> Void)
+M
+func makeIterator() -> IndexingIterator<MLShapedArray<Scalar>>
+subscript<R>(R) -> MLShapedArraySlice<Scalar>
+M
+func contains(MLShapedArraySlice<Scalar>) -> Bool
+M
+func contains(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+M
+func contains<C>(C) -> Bool
+M
+func allSatisfy((MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Inspecting a Slice of a Shaped Array
+Documentation
+Open Menu
+Swift
+Instance Method
+enumerated()
+Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func enumerated() -> EnumeratedSequence<MLShapedArray<Scalar>>
+Return Value
+A sequence of pairs enumerating the sequence.
+Discussion
+This example enumerates the characters of the string “Swift” and prints each character along with its place in the string.
+for (n, c) in "Swift".enumerated() {
+    print("\(n): '\(c)'")
+}
+// Prints "0: 'S'"
+// Prints "1: 'w'"
+// Prints "2: 'i'"
+// Prints "3: 'f'"
+// Prints "4: 't'"
+When you enumerate a collection, the integer part of each pair is a counter for the enumeration, but is not necessarily the index of the paired value. These counters can be used as indices only in instances of zero-based, integer-indexed collections, such as Array and ContiguousArray. For other collections the counters may be out of range or of the wrong type to use as an index. To iterate over the elements of a collection with its indices, use the zip(_:_:) function.
+This example iterates over the indices and elements of a set, building a list consisting of indices of names with five or fewer letters.
+let names: Set = ["Sofia", "Camilla", "Martina", "Mateo", "Nicolás"]
+var shorterIndices: [Set<String>.Index] = []
+for (i, name) in zip(names.indices, names) {
+    if name.count <= 5 {
+        shorterIndices.append(i)
+    }
+}
+Now that the shorterIndices array holds the indices of the shorter names in the names set, you can use those indices to access elements in the set.
+for i in shorterIndices {
+    print(names[i])
+}
+// Prints "Sofia"
+// Prints "Mateo"
+Complexity: O(1)
+See Also
+Inspecting a Slice of a Shaped Array
+func allSatisfy((MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+func contains<C>(C) -> Bool
+Returns a Boolean value indicating whether the collection contains the given sequence.
+func contains(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func contains(MLShapedArraySlice<Scalar>) -> Bool
+Returns a Boolean value indicating whether the sequence contains the given element.
+subscript<R>(R) -> MLShapedArraySlice<Scalar>
+Accesses the contiguous subrange of the collection’s elements specified by a range expression.
+func makeIterator() -> IndexingIterator<MLShapedArray<Scalar>>
+Returns an iterator over the elements of the collection.
+func forEach((MLShapedArraySlice<Scalar>) -> Void)
+Calls the given closure on each element in the sequence in the same order as a for-in loop.
+func randomElement() -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection.
+func randomElement<T>(using: inout T) -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection, using the given generator as a source for randomness.
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+Executes a closure on the sequence’s contiguous storage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is enumerated()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

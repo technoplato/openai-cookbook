@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/createml/mlboundingboxunits
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+E
+case boundingBox(units: MLBoundingBoxUnits, origin: MLBoundingBoxCoordinatesOrigin, anchor: MLBoundingBoxAnchor)
+Bounding Box Annotations
+E
+MLObjectDetector.AnnotationType
+E
+MLObjectDetector.DataSource
+Supporting types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Documentation
+Open Menu
+Swift
+Enumeration
+MLBoundingBoxUnits
+The units a bounding box annotation uses to define its position and size.
+macOS 10.15+
+visionOS 1.0+ Beta
+enum MLBoundingBoxUnits
+Overview
+All bounding box annotations in an annotation file must use the same units for their coordinates and size. See MLObjectDetector.AnnotationType.boundingBox(units:origin:anchor:).
+Topics
+Designating Units
+case pixel
+A unit of measurement in pixels for an image.
+case normalized
+A unit of measurement as a portion of an image’s overall width or height.
+Hashing Units
+var hashValue: Int
+The hash value.
+func hash(into: inout Hasher)
+Hashes the essential components of this value by feeding them into the given hasher.
+static func == (MLBoundingBoxUnits, MLBoundingBoxUnits) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+static func != (Self, Self) -> Bool
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Hashable
+Sendable
+See Also
+Bounding Box Annotations
+case boundingBox(units: MLBoundingBoxUnits, origin: MLBoundingBoxCoordinatesOrigin, anchor: MLBoundingBoxAnchor)
+An annotation type that defines a rectangle around an object within an image.
+enum MLBoundingBoxAnchor
+A location within a bounding box that an annotation’s coordinates use as their reference point.
+enum MLBoundingBoxCoordinatesOrigin
+The location within an image that an annotation’s coordinates use as their origin.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLBoundingBoxUnits
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

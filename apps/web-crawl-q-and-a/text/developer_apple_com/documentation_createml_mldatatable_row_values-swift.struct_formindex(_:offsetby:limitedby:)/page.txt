@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/createml/mldatatable/row/values-swift.struct/formindex(_:offsetby:limitedby:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+RandomAccessCollection Implementations
+Equatable Implementations
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+M
+func trimmingPrefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func trimmingPrefix<Prefix>(Prefix) -> Self.SubSequence
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func formIndex(inout Self.Index, offsetBy: Int)
+M
+func firstRange<C>(of: C) -> Range<Self.Index>?
+M
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+M
+func firstIndex(of: Self.Element) -> Self.Index?
+M
+func dropFirst(Int) -> Self.SubSequence
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Instance Methods
+P
+var underestimatedCount: Int
+Documentation
+Open Menu
+Swift
+Instance Method
+formIndex(_:offsetBy:limitedBy:)
+Offsets the given index by the specified distance, or so that it equals the given limiting index.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func formIndex(
+    _ i: inout Self.Index,
+    offsetBy distance: Int,
+    limitedBy limit: Self.Index
+) -> Bool
+Parameters
+i
+A valid index of the collection.
+distance
+The distance to offset i. distance must not be negative unless the collection conforms to the BidirectionalCollection protocol.
+limit
+A valid index of the collection to use as a limit. If distance > 0, a limit that is less than i has no effect. Likewise, if distance < 0, a limit that is greater than i has no effect.
+Return Value
+true if i has been offset by exactly distance steps without going beyond limit; otherwise, false. When the return value is false, the value of i is equal to limit.
+Discussion
+The value passed as distance must not offset i beyond the bounds of the collection, unless the index passed as limit prevents offsetting beyond those bounds.
+Complexity
+O(1) if the collection conforms to RandomAccessCollection; otherwise, O(k), where k is the absolute value of distance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is formIndex(_:offsetBy:limitedBy:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

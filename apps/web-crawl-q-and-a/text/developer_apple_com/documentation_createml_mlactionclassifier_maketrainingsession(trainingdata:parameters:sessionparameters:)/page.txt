@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/createml/mlactionclassifier/maketrainingsession(trainingdata:parameters:sessionparameters:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Describing an Action Classifier
+P
+let modelParameters: MLActionClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting an Action Classifier Model
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving an Action Classifier
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActionClassifier>
+static func makeTrainingSession(trainingData: MLActionClassifier.DataSource, parameters: MLActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActionClassifier>
+M
+static func train(trainingData: MLActionClassifier.DataSource, parameters: MLActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActionClassifier>
+Training an Action Classifier Asynchronously
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+S
+MLObjectDetector
+Documentation
+Open Menu
+Swift
+Type Method
+makeTrainingSession(trainingData:parameters:sessionParameters:)
+Creates an asynchronous training session for an action classifier.
+macOS 11.0+
+visionOS 1.0+ Beta
+static func makeTrainingSession(
+    trainingData: MLActionClassifier.DataSource,
+    parameters: MLActionClassifier.ModelParameters = .init(),
+    sessionParameters: MLTrainingSessionParameters = _defaultSessionParameters
+) throws -> MLTrainingSession<MLActionClassifier>
+Return Value
+An MLTrainingSession that represents the action classifier training session.
+Discussion
+trainingData: A collection of labeled videos represented by a data source.
+sessionParameters: An MLTrainingSessionParameters instance you use to configure the training session.
+See Also
+Training an Action Classifier Asynchronously
+static func train(trainingData: MLActionClassifier.DataSource, parameters: MLActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActionClassifier>
+Begins an asynchronous action classifier training session.
+static func resume(MLTrainingSession<MLActionClassifier>) throws -> MLJob<MLActionClassifier>
+Begins or continues an asynchronous action classifier training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActionClassifier>
+Creates an asynchronous training session for an action classifier by restoring an existing training session’s state from its parameters.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is makeTrainingSession(trainingData:parameters:sessionParameters:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

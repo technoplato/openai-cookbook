@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/swiftdata/persistentidentifier/'...(_:)-403wm
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func setValue<Value, OtherModel>(for: KeyPath<Self, Value>, to: Value)
+M
+func setValue<Value, OtherModel>(for: KeyPath<Self, Value>, to: Value)
+M
+func setValue<Value>(for: KeyPath<Self, Value?>, to: Value?)
+M
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+M
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+Modifying a value by key path
+M
+func getValue<Value, OtherModel>(for: KeyPath<Self, Value>) -> Value
+Operators
+Comparable Implementations
+Default Implementations
+static func < (PersistentIdentifier, PersistentIdentifier) -> Bool
+static func == (PersistentIdentifier, PersistentIdentifier) -> Bool
+Comparing identifiers
+P
+var hashValue: Int
+M
+func hash(into: inout Hasher)
+Documentation
+Open Menu
+Swift
+Operator
+...(_:)
+Returns a partial range up to, and including, its upper bound.
+SwiftData
+Swift
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+static func ... (maximum: Self) -> PartialRangeThrough<Self>
+Parameters
+maximum
+The upper bound for the range.
+Discussion
+Use the prefix closed range operator (prefix ...) to create a partial range of any type that conforms to the Comparable protocol. This example creates a PartialRangeThrough<Double> instance that includes any value less than or equal to 5.0.
+let throughFive = ...5.0
+
+
+throughFive.contains(4.0)     // true
+throughFive.contains(5.0)     // true
+throughFive.contains(6.0)     // false
+You can use this type of partial range of a collection’s indices to represent the range from the start of the collection up to, and including, the partial range’s upper bound.
+let numbers = [10, 20, 30, 40, 50, 60, 70]
+print(numbers[...3])
+// Prints "[10, 20, 30, 40]"
+Precondition
+maximum must compare equal to itself (i.e. cannot be NaN).
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ...(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

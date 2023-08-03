@@ -1,0 +1,177 @@
+https://developer.apple.com/documentation/createml/mldatatable/subscript(_:)-3opgl
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLDataTable.PackType
+M
+func pack(columnsNamed: String..., to: String, type: MLDataTable.PackType, filling: MLDataValue) -> MLDataTable
+Compacting Columns
+M
+func expand(columnNamed: String, to: String) -> MLDataTable
+Expanding Rows
+M
+func condense(columnNamed: String, to: String) -> MLDataTable
+Compacting Rows
+Masking Rows
+M
+func fillMissing(columnNamed: String, with: MLDataValue) -> MLDataTable
+Filling in Missing Values
+E
+MLDataTable.JoinType
+M
+func join(with: MLDataTable, on: String..., type: MLDataTable.JoinType) -> MLDataTable
+Merging Data Tables
+M
+func randomSplit(by: Double, seed: Int) -> (MLDataTable, MLDataTable)
+Splitting a Data Table
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Creates a subset of the table by masking the rows with the given column of Booleans.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+subscript(mask: MLDataColumn<Bool>) -> MLDataTable { get }
+Overview
+Use this Boolean column–based subscript to create a new table by masking a subset of the table rows.
+For example, to filter the values in a data table as shown above, begin by creating a table with the original data.
+    "Title": ["Alice in Wonderland", "Hamlet", "Treasure Island", "Peter Pan"],
+    "Genre": ["Fantasy", "Drama", "Adventure", "Fantasy"]
+]
+
+
+let table = try? MLDataTable(dictionary: data) else {
+    fatalError("Invalid dictionary data")
+} ```
+
+
+After you create the table, use column arithmetic operators or the
+``MLDataTable/map(_:)-92wrj`` method to build a row mask. The subscript
+uses the Boolean values in the row mask to determine whether to keep a
+row.
+
+
+```swift // Retrieve the "Genre" column from the table. guard let
+genreColumn = table["Genre", String.self] else {
+    fatalError("Missing or invalid 'genre' column in table.")
+}
+
+
+// Create a new column of Booleans by comparing all of the values // in
+`Genre` with `Fantasy` using the // `!=(MLDataColumn<String>, String) ->
+MLDataColumn<Bool>` operator. let noFantasyMask = genreColumn !=
+"Fantasy" ```
+
+
+Use `subscript(mask: MLDataColumn<Bool>)` with the Boolean column–row
+mask to create a filtered table.
+
+
+```swift let noFantasyTable = table[noFantasyMask] ```
+
+
+- Parameters:
+- mask: A Boolean column indicating whether rows should be kept (`true`)
+or removed (`false`) in the derived table.
+
+
+- Returns: A new data table.
+See Also
+Masking Rows
+subscript(MLUntypedColumn) -> MLDataTable
+Creates a subset of the table by masking the rows with the given untyped column.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

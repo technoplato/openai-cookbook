@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/createml/mldatacolumn/mapmissing(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func append(contentsOf: MLDataColumn<Element>)
+Duplicating a Column
+M
+func copy() -> MLDataColumn<Element>
+Sorting Elements to Generate a Column
+M
+func sort(byIncreasingOrder: Bool) -> MLDataColumn<Element>
+Transforming Elements to Generate a Column
+M
+func map<T>((Element) -> T) -> MLDataColumn<T>
+M
+func map<T>((Element) -> T?) -> MLDataColumn<T>
+Combining Columns to Generate a Column
+static func + (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>
+static func + (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>
+static func * (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>
+static func * (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>
+Combining a Column with a Value to Generate a Column
+static func + (MLDataColumn<Int>, Int) -> MLDataColumn<Int>
+Documentation
+Open Menu
+Swift
+Instance Method
+mapMissing(_:)
+Creates a new column, potentially with missing elements, by applying the given thread-safe transform to every element of the column, including missing elements.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func mapMissing<T>(_ lazyTransform: @escaping (Element?) -> T?) -> MLDataColumn<T> where T : MLDataValueConvertible
+Available when Element conforms to MLDataValueConvertible.
+Return Value
+A new column.
+Discussion
+lazyTransform: A thread-safe element transformation function. The implementation of the transform you provide should accept an Element of the column and return a transformed value of a type that conforms to MLDataValueConvertible. If the transform returns nil for a given element, the corresponding element in the new column will have a missing value.
+See Also
+Transforming Elements to Generate a Column
+func map<T>((Element) -> T) -> MLDataColumn<T>
+Creates a new column by applying the given thread-safe transform to every non-missing element of this column.
+Available when Element conforms to MLDataValueConvertible.
+func map<T>((Element) -> T?) -> MLDataColumn<T>
+Creates a new column, potentially with missing values, by applying the given thread-safe transform to every non-missing element of this column.
+Available when Element conforms to MLDataValueConvertible.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is mapMissing(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

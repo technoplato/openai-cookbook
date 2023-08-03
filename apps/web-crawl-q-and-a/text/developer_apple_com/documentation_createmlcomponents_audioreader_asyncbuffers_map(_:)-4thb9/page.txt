@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/createmlcomponents/audioreader/asyncbuffers/map(_:)-4thb9
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Transformer Implementations
+Default Implementations
+T
+AudioReader.Output
+T
+AudioReader.Input
+Type Aliases
+M
+func applied(to: URL, eventHandler: EventHandler?) throws -> AudioReader.AsyncBuffers
+Applying
+static func readMicrophone(configuration: AudioReader.Configuration) async throws -> AudioReader.MicrophoneAsyncBuffers
+static func read<S, Annotation>(S, configuration: AudioReader.Configuration) throws -> [AnnotatedFeature<AudioReader.AsyncBuffers, Annotation>]
+static func read(contentsOf: URL, configuration: AudioReader.Configuration) throws -> AudioReader.AsyncBuffers
+func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result
+func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>
+func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>
+M
+func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>
+M
+func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>
+M
+func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?
+M
+func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>
+M
+func dropFirst(Int) -> AsyncDropFirstSequence<Self>
+M
+func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>
+M
+func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool
+M
+func contains(Self.Element) async rethrows -> Bool
+Documentation
+Open Menu
+Swift
+Instance Method
+map(_:)
+Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements.
+Create ML Components
+Swift
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+tvOS 13.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+@preconcurrency
+func map<Transformed>(_ transform: @escaping (Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>
+Parameters
+transform
+A mapping closure. transform accepts an element of this sequence as its parameter and returns a transformed value of the same or of a different type.
+Return Value
+An asynchronous sequence that contains, in order, the elements produced by the transform closure.
+Discussion
+Use the map(_:) method to transform every element received from a base asynchronous sequence. Typically, you use this to transform from one type of element to another.
+In this example, an asynchronous sequence called Counter produces Int values from 1 to 5. The closure provided to the map(_:) method takes each Int and looks up a corresponding String from a romanNumeralDict dictionary. This means the outer for await in loop iterates over String instances instead of the underlying Int values that Counter produces:
+let romanNumeralDict: [Int: String] =
+    [1: "I", 2: "II", 3: "III", 5: "V"]
+
+
+let stream = Counter(howHigh: 5)
+    .map { romanNumeralDict[$0] ?? "(unknown)" }
+for await numeral in stream {
+    print(numeral, terminator: " ")
+}
+// Prints "I II III (unknown) V "
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is map(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,210 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier/modelparameters-swift.struct
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Properties
+M
+init(validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentation: MLImageClassifier.ImageAugmentationOptions, algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType)
+Initializers
+S
+MLImageClassifier.ImageAugmentationOptions
+E
+MLImageClassifier.ModelParameters.ValidationData
+E
+MLImageClassifier.FeatureExtractorType
+Supporting Types
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: [String : [URL]]?, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: MLImageClassifier.DataSource, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+E
+MLImageClassifier.DataSource
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an Image Classifier
+P
+let modelParameters: MLImageClassifier.ModelParameters
+P
+var model: MLModel
+Documentation
+Open Menu
+Swift
+Structure
+MLImageClassifier.ModelParameters
+Parameters that affect the process of training an image classifier model.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct ModelParameters
+Overview
+Use this structure to configure the model training session. With it you can:
+Set a limit to the number of training iterations the session can use
+Provide your own validation dataset. See MLImageClassifier.ModelParameters.ValidationData.
+Enable specific image augmentations. See MLImageClassifier.ImageAugmentationOptions.
+Designate a custom feature extractor. See MLImageClassifier.FeatureExtractorType.custom(_:).
+Once you configure an MLImageClassifier.ModelParameters instance, use it to configure a training session with one of the applicable MLImageClassifier asynchronous type methods or synchronous initializers.
+Topics
+Creating Parameters
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+Creates a new set of training parameters for an image classifier with a validation dataset.
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: MLImageClassifier.DataSource, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+Creates a new set of image classifier parameters with validation data represented by a data source.
+init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: [String : [URL]]?, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)
+Creates a new set of image classifier parameters with validation data represented by a dictionary.
+Accessing the Training Parameters
+var featureExtractor: MLImageClassifier.FeatureExtractorType
+The underlying base model the training session uses to extract image features as it trains an image classifier.
+var validation: MLImageClassifier.ModelParameters.ValidationData
+The image classifier’s validation dataset.
+var maxIterations: Int
+The maximum number of iterations the training session can use.
+var augmentationOptions: MLImageClassifier.ImageAugmentationOptions
+The variations the training session uses to generate more variety in the training dataset.
+var validationData: [String : [URL]]?
+A set of images that the training process uses for validation.
+Describing Parameters
+var description: String
+A text representation of the model parameters.
+var debugDescription: String
+A text representation of the model parameters that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the model parameters shown in a playground.
+Supporting Types
+enum FeatureExtractorType
+The underlying base model that extracts image features for image classifier training session.
+enum ValidationData
+The source of a validation dataset for an image classifier.
+struct ImageAugmentationOptions
+The variations that the training process can use to generate more training data from the training data you provide.
+Initializers
+init(validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentation: MLImageClassifier.ImageAugmentationOptions, algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType)
+Creates model training parameters.
+Instance Properties
+var algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType
+Model algorithm to be used
+Enumerations
+enum ClassifierType
+Type of classifier to be used.
+enum ModelAlgorithmType
+The model algorithm to use for training an image classifier.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Related Documentation
+static func train(trainingData: MLActionClassifier.DataSource, parameters: MLActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActionClassifier>
+Begins an asynchronous action classifier training session.
+init(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters) throws
+Creates an image classifier with a training dataset represented by a data source.
+init(trainingData: [String : [URL]], parameters: MLImageClassifier.ModelParameters) throws
+Creates an image classifier with a training dataset represented by a dictionary.
+Supporting Types
+enum DataSource
+A data source for an image classifier.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLImageClassifier.ModelParameters
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

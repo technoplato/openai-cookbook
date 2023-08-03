@@ -1,0 +1,203 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func predictions(from: [URL]) throws -> [String]
+M
+func prediction(from: URL) throws -> String
+M
+func prediction(from: CGImage) throws -> String
+Testing an Image Classifier
+M
+func evaluation(on: [String : [URL]]) -> MLClassifierMetrics
+M
+func evaluation(on: MLImageClassifier.DataSource) -> MLClassifierMetrics
+Evaluating an Image Classifier
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLImageClassifier>
+static func train(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLImageClassifier>
+Documentation
+Open Menu
+Swift
+Structure
+MLImageClassifier
+A model you train to classify images.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+struct MLImageClassifier
+Overview
+Use an image classifier to train a machine learning model that you can include in your app to categorize images.
+When you create the model, you give it a training dataset made up of labeled images, along with parameters that control the training process. For example, you can provide the model with images of elephants and giraffes, in two folders labeled Elephant and Giraffe, to train it to recognize these animals.
+After training completes, you evaluate the trained model by showing it a testing dataset containing labeled images that the model hasn’t seen before. The metrics that come from this evaluation tell you whether the model performs well enough. For example, you can see how often the elephant and giraffe classifier mistakes a giraffe for an elephant. When the model makes too many mistakes, you can add more or better training data, or change the parameters, and try again.
+When your model does perform well enough, you save it as a Core ML model file with the mlmodel extension. You can then import this model file into an app—like the Classifying Images with Vision and Core ML sample code project—that uses a Core ML model file to classify images.
+Topics
+Training an Image Classifier Asynchronously
+static func train(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLImageClassifier>
+Begins an asynchronous image classifier training session with a training dataset represented by a data source.
+static func resume(MLTrainingSession<MLImageClassifier>) throws -> MLJob<MLImageClassifier>
+Begins or continues an asynchronous image classifier training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLImageClassifier>
+Creates an asynchronous training session for an image classifier by restoring an existing training session’s state from its parameters.
+Creating an Image Classifier from a Checkpoint
+init(checkpoint: MLCheckpoint) throws
+Creates an image classifier from a training session checkpoint.
+Training an Image Classifier Synchronously
+init(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters) throws
+Creates an image classifier with a training dataset represented by a data source.
+init(trainingData: [String : [URL]], parameters: MLImageClassifier.ModelParameters) throws
+Creates an image classifier with a training dataset represented by a dictionary.
+Assessing Model Accuracy
+var trainingMetrics: MLClassifierMetrics
+Measurements of the classifier’s performance on the training data set.
+var validationMetrics: MLClassifierMetrics
+Measurements of the image classifier’s performance on the validation dataset.
+Evaluating an Image Classifier
+func evaluation(on: MLImageClassifier.DataSource) -> MLClassifierMetrics
+Generates metrics describing the image classifier’s performance on labeled images represented by a data source.
+func evaluation(on: [String : [URL]]) -> MLClassifierMetrics
+Generates metrics describing the image classifier’s performance on labeled images represented by a dictionary.
+Testing an Image Classifier
+func prediction(from: CGImage) throws -> String
+Generates a prediction for an image.
+func prediction(from: URL) throws -> String
+Generates a prediction for an image at the URL.
+func predictions(from: [URL]) throws -> [String]
+Generates predictions for an array of images.
+Saving an Image Classifier
+func write(to: URL, metadata: MLModelMetadata?) throws
+Exports the image classifier as a Core ML model file to a location in the file system.
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports the image classifier as a Core ML model file to the file path.
+Inspecting an Image Classifier Model
+var model: MLModel
+The underlying Core ML model of the image classifier stored in memory.
+let modelParameters: MLImageClassifier.ModelParameters
+The model configuration parameters the image classifier used during its training session.
+Describing an Image Classifier
+var description: String
+A text representation of the image classifier.
+var debugDescription: String
+A text representation of the image classifier that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the image classifier shown in a playground.
+Supporting Types
+enum DataSource
+A data source for an image classifier.
+struct ModelParameters
+Parameters that affect the process of training an image classifier model.
+Type Methods
+static func makeTrainingSession(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLImageClassifier>
+Creates or restores a training session.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Image Models
+Creating an Image Classifier Model
+Train a machine learning model to classify images, and add it to your Core ML app.
+struct MLObjectDetector
+A model you train to classify one or more objects within an image.
+struct MLHandPoseClassifier
+A task that creates a hand pose classification model by training with images of people’s hands that you provide.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLImageClassifier
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

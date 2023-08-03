@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/createml/mldatatable/packtype/==(_:_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var description: String
+Describing a Data Table
+M
+func show() -> MLStreamingVisualizable
+Visualizing a Data Table
+M
+func writeCSV(toFile: String) throws
+M
+func writeCSV(to: URL) throws
+M
+func write(toDirectory: String) throws
+func unpack(columnNamed: String, valueTypes: [MLDataValue.ValueType]?, indexSubset: [Int]?, keySubset: [String]?) -> MLDataTable
+Comparing Packing Operations
+M
+func hash(into: inout Hasher)
+P
+var hashValue: Int
+Describing a Packing Operation
+E
+case dictionary
+E
+case sequence
+Selecting a Packing Operation
+E
+MLDataTable.PackType
+Documentation
+Open Menu
+Swift
+Operator
+==(_:_:)
+Returns a Boolean value indicating whether two values are equal.
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+static func == (a: MLDataTable.PackType, b: MLDataTable.PackType) -> Bool
+Parameters
+lhs
+A value to compare.
+rhs
+Another value to compare.
+Discussion
+Equality is the inverse of inequality. For any values a and b, a == b implies that a != b is false.
+See Also
+Comparing Packing Operations
+static func != (Self, Self) -> Bool
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ==(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

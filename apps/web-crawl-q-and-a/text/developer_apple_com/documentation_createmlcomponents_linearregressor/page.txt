@@ -1,0 +1,185 @@
+https://developer.apple.com/documentation/createmlcomponents/linearregressor
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+FullyConnectedNetworkRegressor
+S
+BoostedTreeRegressor
+S
+LinearRegressorModel
+UpdatableSupervisedEstimator Implementations
+SupervisedEstimator Implementations
+Default Implementations
+M
+func fitted<Input, Validation>(to: Input, validateOn: Validation, eventHandler: EventHandler?) async throws -> LinearRegressorModel<Scalar>
+r
+P
+Regressor
+Regressors
+S
+OptionalUnwrapper
+S
+CategoricalImputer
+S
+Reshaper
+S
+NumericImputer
+S
+OrdinalEncoder
+S
+OneHotEncoder
+Documentation
+Open Menu
+Swift
+Structure
+LinearRegressor
+A linear regressor.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct LinearRegressor<Scalar> where Scalar : MLShapedArrayScalar, Scalar : BinaryFloatingPoint
+Topics
+Encoding and Decoding
+func encode(LinearRegressorModel<Scalar>, to: inout EstimatorEncoder) throws
+Encodes a fitted transformer.
+func decode(from: inout EstimatorDecoder) throws -> LinearRegressorModel<Scalar>
+Decodes a previously fitted transformer.
+Fitting
+typealias Annotation
+The annotation type.
+typealias Transformer
+The transformer type created by this estimator.
+Structures
+struct Configuration
+A linear regressor configuration.
+Available when Scalar conforms to MLShapedArrayScalar and BinaryFloatingPoint.
+Initializers
+init(configuration: LinearRegressor<Scalar>.Configuration)
+Creates a linear regressor.
+Instance Properties
+var configuration: LinearRegressor<Scalar>.Configuration
+The linear regressor configuration.
+Instance Methods
+func fitted<Input>(to: Input, eventHandler: EventHandler?) async throws -> LinearRegressorModel<Scalar>
+Fits a linear regressor model to a sequence of examples.
+func fitted<Input, Validation>(to: Input, validateOn: Validation, eventHandler: EventHandler?) async throws -> LinearRegressorModel<Scalar>
+Fits a linear regressor model to a sequence of examples.
+Default Implementations
+API Reference
+SupervisedEstimator Implementations
+API Reference
+UpdatableSupervisedEstimator Implementations
+Relationships
+Conforms To
+Sendable
+SupervisedEstimator
+Conforms when Scalar conforms to MLShapedArrayScalar and BinaryFloatingPoint.
+UpdatableSupervisedEstimator
+Conforms when Scalar conforms to MLShapedArrayScalar and BinaryFloatingPoint.
+See Also
+Regressors
+protocol Regressor
+A transformer that predicts a float value.
+struct LinearRegressorModel
+A trained linear regressor model.
+struct BoostedTreeRegressor
+A gradient boosted decision tree regressor.
+struct FullyConnectedNetworkRegressor
+A regressor that uses a fully connected network.
+struct FullyConnectedNetworkRegressorModel
+A regressor model that uses a fully connected network.
+struct TreeRegressorModel
+A trained tree regressor model.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is LinearRegressor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

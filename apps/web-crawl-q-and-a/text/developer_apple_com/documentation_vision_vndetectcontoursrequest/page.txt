@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/vision/vndetectcontoursrequest
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Text Recognition
+C
+VNTextObservation
+C
+VNDetectTextRectanglesRequest
+Text Detection
+E
+VNBarcodeCompositeType
+Beta
+C
+VNDetectBarcodesRequest
+Barcode Detection
+Contour Detection
+C
+VNDetectTrajectoriesRequest
+Detecting moving objects in a video
+Identifying Trajectories in Video
+Trajectory Detection
+C
+VNAnimalBodyPoseObservation
+Beta
+C
+VNDetectAnimalBodyPoseRequest
+Beta
+Detecting animal body poses with Vision
+Beta
+Documentation
+Open Menu
+Class
+VNDetectContoursRequest
+A request that detects the contours of the edges of an image.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+class VNDetectContoursRequest : VNImageBasedRequest
+Topics
+Configuring the Request
+var contrastAdjustment: Float
+The amount by which to adjust the image contrast.
+var contrastPivot: NSNumber?
+The pixel value to use as a pivot for the contrast.
+var detectsDarkOnLight: Bool
+A Boolean value that indicates whether the request detects a dark object on a light background to aid in detection.
+var maximumImageDimension: Int
+The maximum image dimension to use for contour detection.
+var detectDarkOnLight: Bool
+A Boolean value that indicates whether the request detects a dark object on a light background.
+Deprecated
+Accessing the Results
+var results: [VNContoursObservation]?
+The results of the request to detect contours.
+class VNContoursObservation
+An object that represents the detected contours in an image.
+Identifying Request Revisions
+let VNDetectContourRequestRevision1: Int
+A constant for specifying revision 1 of the contours detection request.
+Relationships
+Inherits From
+VNImageBasedRequest
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNDetectContoursRequest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

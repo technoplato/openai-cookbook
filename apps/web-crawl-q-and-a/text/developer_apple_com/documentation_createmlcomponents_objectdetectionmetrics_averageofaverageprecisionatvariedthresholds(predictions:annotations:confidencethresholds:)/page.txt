@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/createmlcomponents/objectdetectionmetrics/averageofaverageprecisionatvariedthresholds(predictions:annotations:confidencethresholds:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+OptimizationStrategy
+Beta
+E
+OptimizationError
+Beta
+E
+ModelUpdateError
+func meanAveragePrecision<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float], overlapThreshold: Double) -> Scalar
+func averagePrecision<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float], overlapThreshold: Double) -> [Label : Scalar]
+func averageOfMeanAveragePrecisionAtVariedThresholds<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float]) -> Scalar
+func averageOfAveragePrecisionAtVariedThresholds<Scalar>(predictions: [[DetectedObject<Label>]], annotations: [ObjectDetectionAnnotation<Label>], confidenceThresholds: [Label : Float]) -> [Label : Scalar]
+Instance Methods
+P
+var labels: Set<Label>
+P
+var defaultConfidenceThreshold: Float
+Instance Properties
+M
+init()
+Initializers
+S
+ObjectDetectionMetrics
+Beta
+S
+ObjectDetectionAnnotation
+Beta
+Documentation
+Open Menu
+Swift
+Instance Method
+averageOfAveragePrecisionAtVariedThresholds(predictions:annotations:confidenceThresholds:)
+Calculates average of average precision for all the labels, computed at varied bounding box overlap thresholds. The overlap thresholds range is from [0.05, 0.95] with a stride of 0.05.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func averageOfAveragePrecisionAtVariedThresholds<Scalar>(
+    predictions: [[DetectedObject<Label>]],
+    annotations: [ObjectDetectionAnnotation<Label>],
+    confidenceThresholds: [Label : Float] = [:]
+) -> [Label : Scalar] where Scalar : BinaryFloatingPoint
+Parameters
+predictions
+A list of all the predictions from an object detection model. Each element in the list is a list of predictions from one image.
+annotations
+A list of all the annotations. Each element is an ObjectDetectionAnnotation object from one image.
+confidenceThresholds
+Confidence thresholds for each label. The values will always be between 0.0 and 1.0. If any label does not have a threshold, the defaultConfidenceThreshold is used for that label. The default value is [:].
+Return Value
+Average of average precision for all the labels, computed at varied bounding box overlap thresholds.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is averageOfAveragePrecisionAtVariedThresholds(predictions:annotations:confidenceThresholds:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

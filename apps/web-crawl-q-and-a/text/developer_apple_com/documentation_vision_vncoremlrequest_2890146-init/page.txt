@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/vision/vncoremlrequest/2890146-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+V
+let VNNormalizedIdentityRect: CGRect
+func VNNormalizedRectForImageRectUsingRegionOfInterest(CGRect, Int, Int, CGRect) -> CGRect
+func VNImageRectForNormalizedRectUsingRegionOfInterest(CGRect, Int, Int, CGRect) -> CGRect
+func VNNormalizedRectForImageRect(CGRect, Int, Int) -> CGRect
+func VNImageRectForNormalizedRect(CGRect, Int, Int) -> CGRect
+func VNNormalizedPointForImagePointUsingRegionOfInterest(CGPoint, Int, Int, CGRect) -> CGPoint
+func VNImagePointForNormalizedPointUsingRegionOfInterest(CGPoint, Int, Int, CGRect) -> CGPoint
+Initializing with a Core ML Model
+C
+VNCoreMLRequest
+Training a Create ML Model to Classify Flowers
+Classifying Images with Vision and Core ML
+Machine Learning Image Analysis
+Understanding a Dice Roll with Vision and Object Detection
+C
+VNRecognizedObjectObservation
+Recognizing Objects in Live Capture
+Documentation
+Open Menu
+Initializer
+init(model:)
+Creates a model container to use with an image analysis request based on the model you provide.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+convenience init(model: VNCoreMLModel)
+Parameters
+model
+The Core ML model on which to base the Vision request.
+Discussion
+Initialization can fail if the Core ML model you provide isn’t supported in Vision, such as if the model doesn’t accept an image as input.
+See Also
+Initializing with a Core ML Model
+init(model: VNCoreMLModel, completionHandler: VNRequestCompletionHandler?)
+Creates a model container to use with an image analysis request based on the model you provide, with an optional completion handler.
+var model: VNCoreMLModel
+The model to base the image analysis request on.
+class VNCoreMLModel
+A container for the model to use with Vision requests.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(model:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

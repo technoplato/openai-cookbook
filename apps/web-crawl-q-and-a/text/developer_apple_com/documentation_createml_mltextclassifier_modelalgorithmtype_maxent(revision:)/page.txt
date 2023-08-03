@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/modelalgorithmtype/maxent(revision:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(validationData: [String : [String]], algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+Deprecated
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing Parameters
+P
+var validation: MLTextClassifier.ModelParameters.ValidationData
+E
+case crf(revision: Int?)
+Selecting an Algorithm Type
+E
+MLTextClassifier.ModelAlgorithmType
+S
+NLLanguage
+M
+init(validation: MLTextClassifier.ModelParameters.ValidationData, algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+Creating Parameters
+S
+MLTextClassifier.ModelParameters
+E
+MLTextClassifier.DataSource
+Documentation
+Open Menu
+Swift
+Case
+MLTextClassifier.ModelAlgorithmType.maxEnt(revision:)
+A text classification algorithm that uses multinomial logistic regression based on the frequencies of words, independent of context.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+case maxEnt(revision: Int?)
+Parameters
+revision
+The algorithm version. The only supported version is 1. If nil defaults to the latest version.
+See Also
+Selecting an Algorithm Type
+case crf(revision: Int?)
+A text classification algorithm that uses a statistical model of transition probabilities between words.
+case transferLearning(MLTextClassifier.FeatureExtractorType, revision: Int?)
+A text classification algorithm that uses transfer learning by leveraging a feature extractor to generate embeddings.
+enum FeatureExtractorType
+The text feature extractor type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLTextClassifier.ModelAlgorithmType.maxEnt(revision:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

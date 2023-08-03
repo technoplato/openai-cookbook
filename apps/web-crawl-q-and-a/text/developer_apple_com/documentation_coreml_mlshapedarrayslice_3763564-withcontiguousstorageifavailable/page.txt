@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/3763564-withcontiguousstorageifavailable
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func firstIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+M
+func firstIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+M
+func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool
+M
+func formIndex(inout Int, offsetBy: Int)
+M
+func formIndex(after: inout Int)
+M
+func formIndex(before: inout Int)
+M
+func index(of: MLShapedArraySlice<Scalar>) -> Int?
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func randomElement<T>(using: inout T) -> MLShapedArraySlice<Scalar>?
+M
+func randomElement() -> MLShapedArraySlice<Scalar>?
+M
+func enumerated() -> EnumeratedSequence<MLShapedArraySlice<Scalar>>
+M
+func forEach((MLShapedArraySlice<Scalar>) -> Void)
+M
+func makeIterator() -> IndexingIterator<MLShapedArraySlice<Scalar>>
+subscript<R>(R) -> MLShapedArraySlice<Scalar>
+M
+func contains<C>(C) -> Bool
+M
+func contains(MLShapedArraySlice<Scalar>) -> Bool
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+withContiguousStorageIfAvailable(_:)
+Executes a closure on the sequence’s contiguous storage.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func withContiguousStorageIfAvailable<R>(_ body: (UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) throws -> R) rethrows -> R?
+Parameters
+body
+A closure that receives an UnsafeBufferPointer to the sequence’s contiguous storage.
+Return Value
+The value returned from body, unless the sequence doesn’t support contiguous storage, in which case the method ignores body and returns nil.
+Discussion
+This method calls body(buffer), where buffer is a pointer to the collection’s contiguous storage. If the contiguous storage doesn’t exist, the collection creates it. If the collection doesn’t support an internal representation in a form of contiguous storage, the method doesn’t call body — it immediately returns nil.
+The optimizer can often eliminate bounds- and uniqueness-checking within an algorithm. When that fails, however, invoking the same algorithm on the buffer argument may let you trade safety for speed.
+Successive calls to this method may provide a different pointer on each call. Don’t store buffer outside of this method.
+A Collection that provides its own implementation of this method must provide contiguous storage to its elements in the same order as they appear in the collection. This guarantees that it’s possible to generate contiguous mutable storage to any of its subsequences by slicing buffer with a range formed from the distances to the subsequence’s startIndex and endIndex, respectively.
+Note
+This documentation comment was inherited from Sequence.
+See Also
+Inspecting a Slice of a Shaped Array Slice
+func allSatisfy((MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+func contains(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func contains(MLShapedArraySlice<Scalar>) -> Bool
+Returns a Boolean value indicating whether the sequence contains the given element.
+func contains<C>(C) -> Bool
+Returns a Boolean value indicating whether the collection contains the given sequence.
+subscript<R>(R) -> MLShapedArraySlice<Scalar>
+Accesses the contiguous subrange of the collection’s elements specified by a range expression.
+func makeIterator() -> IndexingIterator<MLShapedArraySlice<Scalar>>
+Returns an iterator over the elements of the collection.
+func forEach((MLShapedArraySlice<Scalar>) -> Void)
+Calls the given closure on each element in the sequence in the same order as a for-in loop.
+func enumerated() -> EnumeratedSequence<MLShapedArraySlice<Scalar>>
+Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence.
+func randomElement() -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection.
+func randomElement<T>(using: inout T) -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection, using the given generator as a source for randomness.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is withContiguousStorageIfAvailable(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

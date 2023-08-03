@@ -1,0 +1,122 @@
+https://developer.apple.com/documentation/coreml/encrypting_a_model_in_your_app
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+Documentation
+Open Menu
+Article
+Encrypting a Model in Your App
+Encrypt your app’s built-in model at compile time by adding a compiler flag.
+Overview
+Tell Xcode to encrypt your model as it compiles your app by adding a compiler flag to your build target.
+Add a Compiler Flag
+In Xcode, navigate to your project’s target and open its Build Phases tab. Expand the Compile Sources section and select the model you want Xcode to encrypt at compile time. Open the model’s compiler flags editor by double-clicking the model’s entry.
+In the editor, add:
+The encryption flag “--encrypt”
+A space character
+The absolute path to the model’s encryption key file you created (see Generating a Model Encryption Key), between quotation marks
+Press the Return key or click outside the editor to close it.
+Load the Model
+At runtime, you load the encrypted model the same way you load any other built-in model by using its load(completionHandler:completionHandler:) type method. This method behaves similarly to the MLModel type method load(contentsOf:configuration:completionHandler:) and creates an instance of the model using the convenience class that Xcode generates.
+See Also
+Model Encryption
+Generating a Model Encryption Key
+Create a model encryption key to encrypt a compiled model or model archive.
+Current page is Encrypting a Model in Your App
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

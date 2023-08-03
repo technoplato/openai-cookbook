@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/vision/vnvector/3548346-unitvector
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Vision Constants
+Vision Enumerations
+Reference
+C
+VNGeneratePersonInstanceMaskRequest
+Beta
+Classes
+V
+let VNDetectBarcodesRequestRevision4: Int
+Beta
+V
+let VNDetectFaceCaptureQualityRequestRevision3: Int
+M
+class func dotProduct(of: VNVector, vector: VNVector) -> Double
+P
+var y: Double
+P
+var x: Double
+P
+var squaredLength: Double
+P
+var theta: Double
+P
+var r: Double
+P
+var length: Double
+Inspecting a Vector
+Documentation
+Open Menu
+Type Method
+unitVector(for:)
+Calculates a vector that’s normalized by preserving its direction, so that the vector length equals 1.0.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+class func unitVector(for vector: VNVector) -> VNVector
+Parameters
+vector
+The vector whose unit vector you want to calculate.
+Return Value
+The unit vector.
+See Also
+Inspecting a Vector
+var length: Double
+The length, or absolute value, of the vector.
+var r: Double
+The radius, absolute value, or length of the vector.
+var theta: Double
+The angle between the vector direction and the positive direction of the x-axis.
+var squaredLength: Double
+The squared length of the vector.
+var x: Double
+A signed projection that indicates the vector’s direction on the x-axis.
+var y: Double
+A signed projection that indicates the vector’s direction on the y-axis.
+class func dotProduct(of: VNVector, vector: VNVector) -> Double
+Caclulates the dot product of two vectors.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is unitVector(for:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

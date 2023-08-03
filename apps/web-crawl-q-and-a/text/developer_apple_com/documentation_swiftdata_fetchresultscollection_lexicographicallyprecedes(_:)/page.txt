@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/swiftdata/fetchresultscollection/lexicographicallyprecedes(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func registeredModel<T>(for: PersistentIdentifier) -> T?
+M
+func object(with: PersistentIdentifier) -> PersistentModel
+M
+func enumerate<T>(FetchDescriptor<T>, batchSize: Int, allowEscapingMutations: Bool?, block: (T) throws -> Void) throws
+M
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Self.Element>]
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func joined<Separator>(separator: Separator) -> JoinedSequence<Self>
+M
+func joined(separator: String) -> String
+M
+func joined() -> FlattenSequence<Self>
+M
+func formatted<S>(S) -> S.FormatOutput
+M
+func formatted() -> String
+M
+func forEach((Self.Element) throws -> Void) rethrows
+M
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+M
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+Documentation
+Open Menu
+Swift
+Instance Method
+lexicographicallyPrecedes(_:)
+Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements.
+SwiftData
+Swift
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func lexicographicallyPrecedes<OtherSequence>(_ other: OtherSequence) -> Bool where OtherSequence : Sequence, Self.Element == OtherSequence.Element
+Available when Element conforms to Comparable.
+Parameters
+other
+A sequence to compare to this sequence.
+Return Value
+true if this sequence precedes other in a dictionary ordering; otherwise, false.
+Discussion
+This example uses the lexicographicallyPrecedes method to test which array of integers comes first in a lexicographical ordering.
+let a = [1, 2, 2, 2]
+let b = [1, 2, 3, 4]
+
+
+print(a.lexicographicallyPrecedes(b))
+// Prints "true"
+print(b.lexicographicallyPrecedes(b))
+// Prints "false"
+Note
+This method implements the mathematical notion of lexicographical ordering, which has no connection to Unicode. If you are sorting strings to present to the end user, use String APIs that perform localized comparison.
+Complexity
+O(m), where m is the lesser of the length of the sequence and the length of other.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is lexicographicallyPrecedes(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

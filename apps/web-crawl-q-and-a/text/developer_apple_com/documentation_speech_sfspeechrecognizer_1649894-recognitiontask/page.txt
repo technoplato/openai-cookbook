@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/speech/sfspeechrecognizer/1649894-recognitiontask
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Classes
+S
+SFSpeechError
+Beta
+Structures
+C
+SFVoiceAnalytics
+Voice analytics
+C
+SFTranscriptionSegment
+C
+SFTranscription
+func recognitionTask(with: SFSpeechRecognitionRequest, delegate: SFSpeechRecognitionTaskDelegate) -> SFSpeechRecognitionTask
+M
+func recognitionTask(with: SFSpeechRecognitionRequest, resultHandler: (SFSpeechRecognitionResult?, Error?) -> Void) -> SFSpeechRecognitionTask
+Performing Speech Recognition on Audio
+P
+var queue: OperationQueue
+P
+var defaultTaskHint: SFSpeechRecognitionTaskHint
+Configuring the Speech Recognizer
+E
+SFSpeechRecognizerAuthorizationStatus
+M
+class func authorizationStatus() -> SFSpeechRecognizerAuthorizationStatus
+M
+class func requestAuthorization((SFSpeechRecognizerAuthorizationStatus) -> Void)
+Documentation
+Open Menu
+Instance Method
+recognitionTask(with:delegate:)
+Recognizes speech from the audio source associated with the specified request, using the specified delegate to manage the results.
+iOS 10.0+
+iPadOS 10.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+visionOS 1.0+ Beta
+func recognitionTask(
+    with request: SFSpeechRecognitionRequest,
+    delegate: SFSpeechRecognitionTaskDelegate
+) -> SFSpeechRecognitionTask
+Parameters
+request
+A request (encapsulated in an SFSpeechRecognitionRequest object) to recognize speech from an audio source.
+delegate
+An object that can handle results from the speech recognition task. This object must conform to the SFSpeechRecognitionTaskDelegate protocol.
+Return Value
+The task object you can use to manage an in-progress recognition request.
+Discussion
+Use this method to initiate the speech recognition process on the audio contained in the request object. This method executes asynchronously and returns a SFSpeechRecognitionTask object that you can use to cancel or finalize the recognition process later. As results become available, the method calls the methods of the provided delegate object.
+Note that the SFSpeechRecognitionTask object returned by this method does not retain your delegate object. You must maintain a strong reference to your delegate while speech recognition is in progress.
+See Also
+Performing Speech Recognition on Audio
+func recognitionTask(with: SFSpeechRecognitionRequest, resultHandler: (SFSpeechRecognitionResult?, Error?) -> Void) -> SFSpeechRecognitionTask
+Executes the speech recognition request and delivers the results to the specified handler block.
+protocol SFSpeechRecognitionTaskDelegate
+A protocol with methods for managing multi-utterance speech recognition requests.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is recognitionTask(with:delegate:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createml/mlsoundclassifier/featureextractionparameters/featureextractor
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+let modelParameters: MLSoundClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting a Sound Classifier Model
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving a Sound Classifier
+M
+func predictions(from: [URL], overlapFactor: Double, predictionTimeWindowSize: TimeInterval) throws -> [String]
+P
+var overlapFactor: Double
+Accessing Feature Extraction Parameters
+M
+init(overlapFactor: Double, featureExtractor: MLSoundClassifier.ModelParameters.FeatureExtractorType)
+M
+init(overlapFactor: Double, featureExtractor: MLSoundClassifier.ModelParameters.FeatureExtractorType, featureExtractionTimeWindowSize: TimeInterval?)
+Creating Feature Extraction Parameters
+S
+MLSoundClassifier.FeatureExtractionParameters
+M
+static func extractFeatures(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.FeatureExtractionParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLSoundClassifier.DataSource>
+M
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLSoundClassifier>
+Documentation
+Open Menu
+Swift
+Instance Property
+featureExtractor
+The algorithm type the session uses to extract features from audio files.
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+var featureExtractor: MLSoundClassifier.ModelParameters.FeatureExtractorType
+See Also
+Accessing Feature Extraction Parameters
+var overlapFactor: Double
+The proportion of overlap that the feature-extraction session uses to analyze two consecutive windows in the audio data.
+var featureExtractionTimeWindowSize: TimeInterval
+A time duration, in seconds, that determines how much audio data the feature-extraction session reads each time it samples an audio file.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is featureExtractor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

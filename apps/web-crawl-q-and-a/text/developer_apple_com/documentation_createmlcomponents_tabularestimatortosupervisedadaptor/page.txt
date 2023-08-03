@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/createmlcomponents/tabularestimatortosupervisedadaptor
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+UpdatableEstimatorToSupervisedAdaptor
+S
+UpdatableSupervisedEstimatorToTemporalAdaptor
+S
+UpdatableTemporalEstimatorToSupervisedAdaptor
+Estimator Adaptors
+S
+EstimatorToSupervisedAdaptor
+S
+EstimatorToTemporalAdaptor
+S
+SupervisedEstimatorToTemporalAdaptor
+Tabular Adaptors
+func fitted(to: DataFrame, validateOn: DataFrame?, eventHandler: EventHandler?) async throws -> Estimator.Transformer
+S
+TabularTransformerToEstimatorAdaptor
+Temporal Adaptors
+S
+TemporalTransformerToEstimatorAdaptor
+S
+TemporalEstimatorToSupervisedAdaptor
+S
+TemporalTransformerToUpdatableEstimatorAdaptor
+Composition with Preprocessing
+S
+PreprocessingEstimator
+Documentation
+Open Menu
+Swift
+Structure
+TabularEstimatorToSupervisedAdaptor
+An adaptor that exposes a tabular estimator as a tabular supervised estimator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct TabularEstimatorToSupervisedAdaptor<Estimator, Annotation> where Estimator : TabularEstimator
+Topics
+Getting the Properties
+var annotationColumnID: ColumnID<Annotation>
+The annotation column identifier.
+let estimator: Estimator
+The wrapped estimator.
+Encoding and Decoding
+func decode(from: inout EstimatorDecoder) throws -> Estimator.Transformer
+Decodes a previously fitted transformer.
+Fitting
+typealias Transformer
+The transformer type created by this estimator.
+Initializers
+init(Estimator, annotationColumnID: ColumnID<Annotation>)
+Creates a tabular estimator supervised adaptor.
+Instance Methods
+func encode(Estimator.Transformer, to: inout EstimatorEncoder) throws
+Encodes a fitted transformer.
+func fitted(to: DataFrame, validateOn: DataFrame?, eventHandler: EventHandler?) async throws -> Estimator.Transformer
+Returns the tabular transformer fitted using the provided tabular estimator.
+Default Implementations
+API Reference
+SupervisedTabularEstimator Implementations
+Relationships
+Conforms To
+Sendable
+SupervisedTabularEstimator
+See Also
+Tabular Adaptors
+struct TabularTransformerToEstimatorAdaptor
+A tabular estimator that always returns a predefined tabular transformer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TabularEstimatorToSupervisedAdaptor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

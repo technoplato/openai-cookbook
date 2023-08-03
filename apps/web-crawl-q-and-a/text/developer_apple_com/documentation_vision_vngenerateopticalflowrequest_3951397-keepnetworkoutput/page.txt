@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/vision/vngenerateopticalflowrequest/3951397-keepnetworkoutput
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+VNRequestProgressProviding
+Request Progress Tracking
+C
+VNRecognizedTextObservation
+C
+VNRecognizeTextRequest
+Locating and Displaying Recognized Text
+Extracting phone numbers from text in images
+Structuring Recognized Text on a Document
+P
+var outputPixelFormat: OSType
+E
+VNGenerateOpticalFlowRequest.ComputationAccuracy
+P
+var computationAccuracy: VNGenerateOpticalFlowRequest.ComputationAccuracy
+Configuring the Request
+C
+VNGenerateOpticalFlowRequest
+Optical Flow
+C
+VNDetectContoursRequest
+Contour Detection
+Documentation
+Open Menu
+Instance Property
+keepNetworkOutput
+A Boolean value that indicates whether to keep the raw pixel buffer coming from the machine learning network.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+var keepNetworkOutput: Bool { get set }
+Discussion
+The default is false. When you set this to true, the system ignores outputPixelFormat. Setting this for revision 1 has no effect because it’s not machine learning-based.
+See Also
+Configuring the Request
+var computationAccuracy: VNGenerateOpticalFlowRequest.ComputationAccuracy
+The accuracy level for computing optical flow.
+enum VNGenerateOpticalFlowRequest.ComputationAccuracy
+The supported optical flow accuracy levels.
+var outputPixelFormat: OSType
+The output buffer’s pixel format.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is keepNetworkOutput
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

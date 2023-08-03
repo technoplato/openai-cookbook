@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/createml/mlhandposeclassifier/imageaugmentationoptions/intersection(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLHandActionClassifier
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+M
+func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)
+M
+func formUnion(Self)
+M
+func formSymmetricDifference(Self)
+M
+func formIntersection(Self)
+M
+func contains(Self) -> Bool
+Instance Methods
+M
+init()
+Initializers
+Documentation
+Open Menu
+Swift
+Instance Method
+intersection(_:)
+Returns a new option set with only the elements contained in both this set and the given set.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func intersection(_ other: Self) -> Self
+Parameters
+other
+An option set.
+Return Value
+A new option set with only the elements contained in both this set and other.
+Discussion
+This example uses the intersection(_:) method to limit the available shipping options to what can be used with a PO Box destination.
+// Can only ship standard or priority to PO Boxes
+let poboxShipping: ShippingOptions = [.standard, .priority]
+let memberShipping: ShippingOptions =
+        [.standard, .priority, .secondDay]
+
+
+let availableOptions = memberShipping.intersection(poboxShipping)
+print(availableOptions.contains(.priority))
+// Prints "true"
+print(availableOptions.contains(.secondDay))
+// Prints "false"
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is intersection(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

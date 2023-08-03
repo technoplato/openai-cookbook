@@ -1,0 +1,188 @@
+https://developer.apple.com/documentation/createmlcomponents/downsampler
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+PreprocessedFeatureSequence
+S
+AnyTemporalSequence
+S
+AnyTemporalIterator
+S
+TemporalFileSegment
+S
+VideoReader
+TemporalTransformer Implementations
+Default Implementations
+S
+SlidingWindowTransformer
+S
+TemporalSegmentIdentifier
+r
+P
+TemporalSequence
+S
+TemporalFeature
+Time-Based Components
+S
+AudioConvertingTransformer
+S
+AudioFeaturePrint
+S
+AudioReader
+Documentation
+Open Menu
+Swift
+Structure
+Downsampler
+A temporal transformer that down samples the input stream.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct Downsampler<Input> where Input : Sendable
+Topics
+Creating the Transformer
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder.
+init(factor: Int)
+Creates a down sample temporal transformer.
+Getting the Properties
+let factor: Int
+The down sample factor to the input stream.
+Applying
+typealias Input
+The input type.
+typealias Output
+The output type.
+struct DownStreamSequence
+An async sequence of down stream elements.
+Available when Input conforms to Sendable.
+Instance Methods
+func applied<S>(to: S, eventHandler: EventHandler?) throws -> Downsampler<Input>.DownStreamSequence
+Down samples the input sequence
+func encode(to: Encoder) throws
+Encodes this value into the given encoder.
+Type Aliases
+typealias OutputSequence
+The output async sequence type.
+Default Implementations
+API Reference
+TemporalTransformer Implementations
+Relationships
+Conforms To
+Decodable
+Encodable
+Sendable
+TemporalTransformer
+See Also
+Time-Based Components
+struct TemporalFeature
+A temporal feature contains a segment identifier and a feature value.
+protocol TemporalSequence
+Async sequence for temporal features.
+struct TemporalSegmentIdentifier
+Uniquely identifiers a segment of a temporal sequence.
+struct SlidingWindowTransformer
+A temporal transformer that groups input elements.
+struct VideoReader
+A video file reader.
+struct TemporalFileSegment
+A URL and a time range identifying a specific segment of a time-based (temporal) file.
+struct AnyTemporalIterator
+A type-erased async iterator.
+struct AnyTemporalSequence
+A type-erased temporal sequence.
+struct PreprocessedFeatureSequence
+An asynchronous sequence of eagerly stored temporal features.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Downsampler
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

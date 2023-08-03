@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/createml/mldatatable/columnnames-swift.struct/bidirectionalcollection-implementations
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Sequence Implementations
+RandomAccessCollection Implementations
+Equatable Implementations
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Collection Implementations
+Default Implementations
+T
+MLDataTable.ColumnNames.SubSequence
+T
+MLDataTable.ColumnNames.Iterator
+T
+MLDataTable.ColumnNames.Indices
+T
+MLDataTable.ColumnNames.Index
+T
+MLDataTable.ColumnNames.Element
+Type Aliases
+subscript(Int) -> String
+Documentation
+Open Menu
+BidirectionalCollection Implementations
+Topics
+Instance Properties
+var last: Self.Element?
+The last element of the collection.
+Instance Methods
+func difference<C>(from: C) -> CollectionDifference<Self.Element>
+Returns the difference needed to produce this collection’s ordered elements from the given collection.
+Available when Element conforms to Equatable.
+func difference<C>(from: C, by: (C.Element, Self.Element) -> Bool) -> CollectionDifference<Self.Element>
+Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test.
+func dropLast(Int) -> Self.SubSequence
+Returns a subsequence containing all but the specified number of final elements.
+func firstRange<C>(of: C) -> Range<Self.Index>?
+Finds and returns the range of the first occurrence of a given collection within this collection.
+Available when Element conforms to Comparable.
+func formIndex(before: inout Self.Index)
+Replaces the given index with its predecessor.
+func joined(separator: String) -> String
+Returns a new string by concatenating the elements of the sequence, adding the given separator between each element.
+Available when Element is String.
+func last(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the last element of the sequence that satisfies the given predicate.
+func lastIndex(of: Self.Element) -> Self.Index?
+Returns the last index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func lastIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the index of the last element in the collection that matches the given predicate.
+func reversed() -> ReversedCollection<Self>
+Returns a view presenting the elements of the collection in reverse order.
+func suffix(Int) -> Self.SubSequence
+Returns a subsequence, up to the given maximum length, containing the final elements of the collection.
+Current page is BidirectionalCollection Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

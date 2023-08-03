@@ -1,0 +1,209 @@
+https://developer.apple.com/documentation/createml/mlobjectdetector/annotationtype/boundingbox(units:origin:anchor:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLWordEmbedding
+S
+MLGazetteer
+S
+MLWordTagger
+S
+MLTextClassifier
+Creating a text classifier model
+Text Models
+S
+MLStyleTransfer
+case boundingBox(units: MLBoundingBoxUnits, origin: MLBoundingBoxCoordinatesOrigin, anchor: MLBoundingBoxAnchor)
+Bounding Box Annotations
+E
+MLObjectDetector.AnnotationType
+E
+MLObjectDetector.DataSource
+Supporting types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an object detector
+Documentation
+Open Menu
+Swift
+Case
+MLObjectDetector.AnnotationType.boundingBox(units:origin:anchor:)
+An annotation type that defines a rectangle around an object within an image.
+macOS 10.15+
+visionOS 1.0+ Beta
+case boundingBox(
+    units: MLBoundingBoxUnits = .pixel,
+    origin: MLBoundingBoxCoordinatesOrigin = .topLeft,
+    anchor: MLBoundingBoxAnchor = .center
+)
+Discussion
+To use bounding box annotations, you must tell Create ML how to interpret your annotations.
+Use MLBoundingBoxUnits to specify the coordinate units of your bounding boxes. - Use MLBoundingBoxAnchor to specify the location in the bounding box its coordinates refer to. - Use MLBoundingBoxCoordinatesOrigin to specify the part of the image the annotations use as their origin.
+Formatting a Bounding Box JSON Annotation File
+The base of the JSON file must contain an array of the following JSON object structure.
+Name
+Type
+Value
+imagefilename
+String
+The name of the image’s file.
+annotation
+Array
+An array of annotation JSON objects.
+Each JSON object in the annotation array must have the following JSON object structure.
+Name
+Type
+Value
+label
+String
+The name of the annotated object.
+coordinates
+JSON object
+The location of the object and the area it occupies in the image.
+The coordinate JSON object must have the following structure. The origin of the image is the upper-left corner. The x-values increase from left to right, and the y-values increase from the top to the bottom.
+Name
+Type
+Value
+x
+Number
+The x-coordinate of the annotation’s origin, which MLBoundingBoxCoordinatesOrigin defines.
+y
+Number
+The y-coordinate of the annotation’s origin, which MLBoundingBoxCoordinatesOrigin defines.
+width
+Number
+The width of the annotation’s bounding box.
+height
+Number
+The height of the annotation’s bounding box.
+As an example, the following JSON file has correct structure with one image file ("cat and dog.png") in its base array, which has two annotations.
+// JSON file
+  [{
+    "imagefilename": "cat and dog.png",
+    "annotation":
+    [
+      {
+        "label": "cat",
+        "coordinates":
+        {
+          "y": 2.0,
+          "x": 3.9,
+          "height": 40.1,
+          "width": 20.0
+        }
+      }, {
+        "label": "dog",
+        "coordinates":
+        {
+          "y": 40.0,
+          "x": 38.9,
+          "height": 100.1,
+          "width": 70.0
+        }
+      }
+    ]
+  },
+  ... ]
+A typical annotation JSON file has many more objects in its base array, one for each image file.
+See Also
+Bounding Box Annotations
+enum MLBoundingBoxUnits
+The units a bounding box annotation uses to define its position and size.
+enum MLBoundingBoxAnchor
+A location within a bounding box that an annotation’s coordinates use as their reference point.
+enum MLBoundingBoxCoordinatesOrigin
+The location within an image that an annotation’s coordinates use as their origin.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLObjectDetector.AnnotationType.boundingBox(units:origin:anchor:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

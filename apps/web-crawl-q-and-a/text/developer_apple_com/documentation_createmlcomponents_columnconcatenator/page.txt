@@ -1,0 +1,209 @@
+https://developer.apple.com/documentation/createmlcomponents/columnconcatenator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+SupervisedTemporalEstimator
+r
+P
+SupervisedEstimator
+r
+P
+TemporalEstimator
+r
+P
+Estimator
+r
+P
+TemporalTransformer
+r
+P
+Transformer
+Protocols
+E
+ColumnSelection
+S
+ColumnSelectorTransformer
+S
+ColumnSelector
+r
+P
+SupervisedTabularEstimator
+r
+P
+TabularEstimator
+r
+P
+TabularTransformer
+Tabular Components
+S
+PreprocessedFeatureSequence
+Documentation
+Open Menu
+Swift
+Structure
+ColumnConcatenator
+A transformer that concatenates every numerical column in a dataframe into to a shaped array for each row.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct ColumnConcatenator<Scalar> where Scalar : MLShapedArrayScalar, Scalar : BinaryFloatingPoint
+Overview
+The resulting concatenated column contains MLShapedArray<Scalar> elements. For example
+┏━━━┳━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ label    ┃ price   ┃ rooms ┃ A     ┃ B     ┃ C     ┃
+┃   ┃ <String> ┃ <Int>   ┃ <Int> ┃ <Int> ┃ <Int> ┃ <Int> ┃
+┡━━━╇━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ good     │ 850,000 │     4 │     1 │     0 │     0 │
+│ 1 │ bad      │ 700,000 │     3 │     0 │     1 │     0 │
+│ 2 │ bad      │ 650,000 │     3 │     0 │     0 │     1 │
+│ 3 │ good     │ 600,000 │     2 │     0 │     1 │     0 │
+└───┴──────────┴─────────┴───────┴───────┴───────┴───────┘
+would be concatenated as:
+┏━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃   ┃ label    ┃ features               ┃
+┃   ┃ <String> ┃ <MLShapedArray<Float>> ┃
+┡━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ 0 │ good     │ [850,000, 4, 1, 0, 0]  │
+│ 1 │ bad      │ [700,000, 3, 0, 1, 0]  │
+│ 2 │ bad      │ [650,000, 3, 0, 0, 1]  │
+│ 3 │ good     │ [600,000, 2, 0, 1, 0]  │
+└───┴──────────┴────────────────────────┘
+Non-numerical columns are left in the data frame unchanged. Supported numeric types are Int, UInt8, Float, and Double. Arrays and shaped arrays of those types as supported, but every array in a given column must have the same shape and shaped arrays across columns must have the same shape except for the last dimension.
+Topics
+Creating the Concatenator
+init(columnSelection: ColumnSelection, concatenatedColumnName: String)
+Creates a concatenator that concatenates numeric columns into a new column of ML shaped array.
+Getting the Properties
+var columnSelection: ColumnSelection
+The selection of columns to concatenate.
+var concatenatedColumnName: String
+The name of the concatenated column containing the shaped arrays.
+Applying
+func applied(to: DataFrame, eventHandler: EventHandler?) throws -> DataFrame
+Combines every numerical column in a data frame into to a shaped array for each row.
+Type Aliases
+typealias Input
+The input type.
+typealias Output
+The output type.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+TabularTransformer Implementations
+API Reference
+Transformer Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+Sendable
+TabularTransformer
+Transformer
+See Also
+Tabular Components
+protocol TabularTransformer
+A tabular transformer that transforms a data frame.
+protocol TabularEstimator
+A tabular estimator that creates a transformer by fitting to a data set in a data frame.
+protocol SupervisedTabularEstimator
+A tabular estimator that creates a transformer by fitting to a data set in a data frame.
+struct ColumnSelector
+An operation that applies an estimator to a selection of columns.
+struct ColumnSelectorTransformer
+A transformer that applies a base transformer to specific columns in a data frame.
+enum ColumnSelection
+A selection of columns from a data frame.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ColumnConcatenator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

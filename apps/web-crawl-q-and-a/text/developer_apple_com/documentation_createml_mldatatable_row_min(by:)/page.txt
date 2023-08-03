@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/createml/mldatatable/row/min(by:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Collection Implementations
+BidirectionalCollection Implementations
+Default Implementations
+T
+MLDataTable.Rows.Element
+T
+MLDataTable.Row.Element
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+func randomSplit<Feature, Annotation, Generator>(by: Double, using: inout Generator) -> ([AnnotatedFeature<Feature, Annotation>], [AnnotatedFeature<Feature, Annotation>])
+M
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func mapFeatures<Input, Output, Annotation>((Input) async throws -> Output) async rethrows -> [AnnotatedFeature<Output, Annotation>]
+M
+func mapFeatures<Input, Output, Annotation>((Input) throws -> Output) rethrows -> [AnnotatedFeature<Output, Annotation>]
+M
+func mapAnnotations<Feature, Input, Output>((Input) throws -> Output) rethrows -> [AnnotatedFeature<Feature, Output>]
+M
+func mapAnnotations<Feature, Input, Output>((Input) async throws -> Output) async rethrows -> [AnnotatedFeature<Feature, Output>]
+M
+func map<T>((Self.Element) throws -> T) rethrows -> [T]
+M
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func formatted<S>(S) -> S.FormatOutput
+Documentation
+Open Menu
+Swift
+Instance Method
+min(by:)
+Returns the minimum element in the sequence, using the given predicate as the comparison between elements.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+@warn_unqualified_access
+func min(by areInIncreasingOrder: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Parameters
+areInIncreasingOrder
+A predicate that returns true if its first argument should be ordered before its second argument; otherwise, false.
+Return Value
+The sequence’s minimum element, according to areInIncreasingOrder. If the sequence has no elements, returns nil.
+Discussion
+The predicate must be a strict weak ordering over the elements. That is, for any elements a, b, and c, the following conditions must hold:
+areInIncreasingOrder(a, a) is always false. (Irreflexivity)
+If areInIncreasingOrder(a, b) and areInIncreasingOrder(b, c) are both true, then areInIncreasingOrder(a, c) is also true. (Transitive comparability)
+Two elements are incomparable if neither is ordered before the other according to the predicate. If a and b are incomparable, and b and c are incomparable, then a and c are also incomparable. (Transitive incomparability)
+This example shows how to use the min(by:) method on a dictionary to find the key-value pair with the lowest value.
+let hues = ["Heliotrope": 296, "Coral": 16, "Aquamarine": 156]
+let leastHue = hues.min { a, b in a.value < b.value }
+print(leastHue)
+// Prints "Optional((key: "Coral", value: 16))"
+Complexity
+O(n), where n is the length of the sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is min(by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

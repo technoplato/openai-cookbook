@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier/imageaugmentationoptions/rawvalue-swift.typealias
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+M
+static func makeTrainingSession(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLImageClassifier>
+Type Methods
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+init(validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentation: MLImageClassifier.ImageAugmentationOptions, algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType)
+T
+MLImageClassifier.ImageAugmentationOptions.Element
+Supporting Types
+static func != (Self, Self) -> Bool
+Testing for Equality
+M
+func isDisjoint(with: Self) -> Bool
+M
+func isSuperset(of: Self) -> Bool
+M
+func isStrictSuperset(of: Self) -> Bool
+M
+func isSubset(of: Self) -> Bool
+Documentation
+Open Menu
+Swift
+Type Alias
+MLImageClassifier.ImageAugmentationOptions.RawValue
+The raw type that can be used to represent all values of the conforming type.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+typealias RawValue = Int
+Discussion
+Every distinct value of the conforming type has a corresponding unique value of the RawValue type, but there may be values of the RawValue type that don’t have a corresponding value of the conforming type.
+See Also
+Supporting Types
+typealias Element
+The element type of the option set.
+typealias ArrayLiteralElement
+The type of the elements of an array literal.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLImageClassifier.ImageAugmentationOptions.RawValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/createml/mldatacolumn/init(column:)-23pmx
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+subscript(MLDataColumn<Bool>) -> MLDataColumn<Element>
+Masking Elements to Generate a Column
+M
+func mapMissing<T>((Element?) -> T?) -> MLDataColumn<T>
+M
+func map<T>((Element) -> T?) -> MLDataColumn<T>
+M
+func map<T>((Element) -> T) -> MLDataColumn<T>
+Transforming Elements to Generate a Column
+M
+func sort(byIncreasingOrder: Bool) -> MLDataColumn<Element>
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+init<T>(column: MLDataColumn<T>)
+M
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Creating a Data Column by Converting Another Column
+M
+init<S>(S)
+M
+init(repeating: Element, count: Int)
+Creating a Data Column
+Documentation
+Open Menu
+Swift
+Initializer
+init(column:)
+Creates a new column of arrays of doubles from a given column whose elements can be converted to an array of doubles.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init<T>(column: MLDataColumn<T>) where T : MLDataValueConvertible
+Available when Element is [Double].
+Discussion
+Use this initializer to create a column of arrays of doubles from another column. Start by creating a column that is convertible to a column of arrays of doubles.
+doubleArrayString2 = "[4.0, 5.0, 6.0]" let stringsColumn =
+MLDataColumn([doubleArrayString, doubleArrayString2])
+print(stringsColumn) // Prints ["[1.0, 2.0, 3.0]", "[4.0, 5.0, 6.0]"]
+Then use init(column:) to convert the column to a column of arrays of doubles.
+stringsColumn) print(doubleArrayColumn) // Prints [[1.0, 2.0, 3.0],
+[4.0, 5.0, 6.0]] ```
+
+
+- Parameters:
+- column: An ``MLDataColumn`` of elements convertible to an
+<doc://com.apple.documentation/documentation/swift/array> of
+<doc://com.apple.documentation/documentation/swift/double>.
+See Also
+Creating a Data Column by Converting Another Column
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Creates a new column by converting this column to the given type.
+Available when Element conforms to MLDataValueConvertible.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of integers from a given column whose elements can be converted to integers.
+Available when Element is Int.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of integers from a given column whose elements can be converted to an array of integers.
+Available when Element is [Int].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of doubles from a given column whose elements can be converted to doubles.
+Available when Element is Double.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of strings from a given column whose elements can be converted to strings.
+Available when Element is String.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of arrays of strings from a given column whose elements can be converted to an array of strings.
+Available when Element is [String].
+init<T>(column: MLDataColumn<T>)
+Creates a new column of machine learning sequences from a given column whose elements can be converted to sequences.
+Available when Element is MLDataValue.SequenceType.
+init<T>(column: MLDataColumn<T>)
+Creates a new column of machine learning dictionaries from a given column whose elements can be converted to dictionaries.
+Available when Element is MLDataValue.DictionaryType.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(column:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

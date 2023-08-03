@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/createml/mlhandposeclassifier/modelparameters-swift.struct/validationdata
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a text classifier model
+Text Models
+S
+MLStyleTransfer
+S
+MLHandActionClassifier
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+S
+MLHandPoseClassifier.ImageAugmentationOptions
+Parameter Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing Hand Pose Model Parameters
+P
+var validation: MLHandPoseClassifier.ModelParameters.ValidationData
+P
+var augmentationOptions: MLHandPoseClassifier.ImageAugmentationOptions
+Documentation
+Open Menu
+Swift
+Enumeration
+MLHandPoseClassifier.ModelParameters.ValidationData
+A dataset a hand pose classifier task uses to validate the model during a training session.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum ValidationData
+Topics
+Designating Validation Data
+case dataSource(MLHandPoseClassifier.DataSource)
+Creates a validation dataset from a data source.
+case split(strategy: MLSplitStrategy)
+Creates a validation dataset by randomly selecting a portion of the hand pose classifier task’s training dataset with a split strategy.
+case none
+Creates an empty validation dataset, which tells the task to skip the model validation phase in a training session.
+Relationships
+Conforms To
+Sendable
+See Also
+Parameter Supporting Types
+struct ImageAugmentationOptions
+Options a hand pose classification training session can use to generate additional training data from the images you provide.
+enum ModelAlgorithmType
+The hand pose classifier training algorithm options.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLHandPoseClassifier.ModelParameters.ValidationData
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

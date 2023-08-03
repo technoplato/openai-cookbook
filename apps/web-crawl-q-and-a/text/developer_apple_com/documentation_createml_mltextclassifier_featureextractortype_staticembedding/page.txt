@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/featureextractortype/staticembedding
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessing Parameters
+E
+MLTextClassifier.ModelParameters.ValidationData
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+P
+var playgroundDescription: Any
+E
+case customEmbedding(URL)
+Selecting a Feature Extractor Type
+E
+MLTextClassifier.FeatureExtractorType
+E
+case transferLearning(MLTextClassifier.FeatureExtractorType, revision: Int?)
+E
+case maxEnt(revision: Int?)
+E
+case crf(revision: Int?)
+Selecting an Algorithm Type
+E
+MLTextClassifier.ModelAlgorithmType
+Documentation
+Open Menu
+Swift
+Case
+MLTextClassifier.FeatureExtractorType.staticEmbedding
+A feature extractor that uses the standard, built-in word embeddings.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.15+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+case staticEmbedding
+Discussion
+The standard word embeddings are the same as those that NLEmbedding provides with its wordEmbedding(for:) method.
+See Also
+Selecting a Feature Extractor Type
+case customEmbedding(URL)
+A feature extractor that uses a custom embedding contained in a CoreML model file.
+case bertEmbedding
+A feature extractor that provides BERT contextual word embeddings.
+Beta
+case elmoEmbedding
+A feature extractor that provides ELMo contextual word embeddings.
+Beta
+case dynamicEmbedding
+A feature extractor that provides embeddings for words, based on their in-context use.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLTextClassifier.FeatureExtractorType.staticEmbedding
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

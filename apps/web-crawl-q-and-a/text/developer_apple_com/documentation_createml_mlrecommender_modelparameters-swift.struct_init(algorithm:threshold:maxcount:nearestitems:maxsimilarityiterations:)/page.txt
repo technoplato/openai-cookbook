@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/createml/mlrecommender/modelparameters-swift.struct/init(algorithm:threshold:maxcount:nearestitems:maxsimilarityiterations:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+MLIdentifier
+M
+func recommendations(fromUsers: [MLIdentifier], maxCount: Int, restrictingToItems: [MLIdentifier]?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+M
+func recommendations<T>(fromUsers: MLDataColumn<T>, maxCount: Int, restrictingToItems: MLDataColumn<T>?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+Testing a Recommender
+S
+MLRecommenderMetrics
+Evaluating a Recommender
+P
+var ratingColumn: String?
+init(algorithm: MLRecommender.ModelAlgorithmType, threshold: Double, maxCount: Int, nearestItemsDataFrame: DataFrame?, maxSimilarityIterations: Int)
+init(algorithm: MLRecommender.ModelAlgorithmType, threshold: Double, maxCount: Int, nearestItems: MLDataTable?, maxSimilarityIterations: Int)
+Creating Parameters
+S
+MLRecommender.ModelParameters
+Creating and Training a Recommender
+S
+MLRecommender
+E
+MLRegressor
+E
+MLClassifier
+Creating a Model from Tabular Data
+Tabular Models
+Documentation
+Open Menu
+Swift
+Initializer
+init(algorithm:threshold:maxCount:nearestItems:maxSimilarityIterations:)
+Creates a new set of recommender configuration parameters.
+macOS 10.15–14.0 Deprecated
+visionOS 1.0+ Beta
+init(
+    algorithm: MLRecommender.ModelAlgorithmType = .itemSimilarity(.cosine),
+    threshold: Double = 0.001,
+    maxCount: Int = 64,
+    nearestItems: MLDataTable?,
+    maxSimilarityIterations: Int = 1024
+)
+See Also
+Creating Parameters
+enum ModelAlgorithmType
+The algorithms a recommender can use to make recommendations.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(algorithm:threshold:maxCount:nearestItems:maxSimilarityIterations:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

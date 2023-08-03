@@ -1,0 +1,219 @@
+https://developer.apple.com/documentation/createmlcomponents/supervisedtemporalestimator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func fitted<InputSequence, Validation, FeatureSequence>(to: InputSequence, validateOn: Validation) async throws -> Self.Transformer
+M
+func fitted<InputSequence, FeatureSequence>(to: InputSequence, eventHandler: EventHandler?) async throws -> Self.Transformer
+M
+func fitted<InputSequence, FeatureSequence>(to: InputSequence) async throws -> Self.Transformer
+M
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, TransformerToTemporalAdaptor<Other>>, Self.Annotation>
+M
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, TransformerToTemporalAdaptor<Other.Transformer>>, Self.Annotation>
+M
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+M
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, Other>, Self.Annotation>
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, TransformerToTemporalAdaptor<Other.Transformer>>, Self.Annotation>
+r
+P
+SupervisedEstimator
+r
+P
+TemporalEstimator
+r
+P
+Estimator
+r
+P
+TemporalTransformer
+r
+P
+Transformer
+Protocols
+S
+ColumnConcatenator
+E
+ColumnSelection
+Documentation
+Open Menu
+Swift
+Protocol
+SupervisedTemporalEstimator
+An estimator that creates a transformer by fitting to a sequence of annotated temporal features.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+protocol SupervisedTemporalEstimator<Transformer, Annotation>
+Topics
+Getting the Properties
+associatedtype Annotation : Equatable, Sendable
+The annotation type.
+Required
+associatedtype Transformer : TemporalTransformer
+The transformer type created by this estimator.
+Required
+Reading and Writing
+func read(from: URL) throws -> Self.Transformer
+Reads the encoded transformer from a file.
+func write(Self.Transformer, to: URL, overwrite: Bool) throws
+Writes the encoded transformer to a file.
+associatedtype Annotation : Equatable, Sendable
+The annotation type.
+Required
+associatedtype Transformer : TemporalTransformer
+The transformer type created by this estimator.
+Required
+Encoding and Decoding
+func encode(Self.Transformer, to: inout EstimatorEncoder) throws
+Encodes a fitted transformer.
+Required
+func decode(from: inout EstimatorDecoder) throws -> Self.Transformer
+Decodes a previously fitted transformer.
+Required
+Instance Methods
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, TransformerToTemporalAdaptor<Other.Transformer>>, Self.Annotation>
+Composes this supervised temporal estimator with a supervised estimator.
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, Other>, Self.Annotation>
+Composes this supervised temporal estimator with a transformer.
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this supervised temporal estimator with another supervised temporal estimator.
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this supervised temporal estimator with a temporal estimator.
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, TransformerToTemporalAdaptor<Other.Transformer>>, Self.Annotation>
+Composes this supervised temporal estimator with an estimator.
+func appending<Other>(Other) -> some SupervisedTemporalEstimator<ComposedTemporalTransformer<Self.Transformer, TransformerToTemporalAdaptor<Other>>, Self.Annotation>
+Composes this supervised temporal estimator with a transformer.
+func fitted<InputSequence, FeatureSequence>(to: InputSequence) async throws -> Self.Transformer
+func fitted<InputSequence, FeatureSequence>(to: InputSequence, eventHandler: EventHandler?) async throws -> Self.Transformer
+Fits a transformer to a sequence of examples.
+Required
+func fitted<InputSequence, Validation, FeatureSequence>(to: InputSequence, validateOn: Validation) async throws -> Self.Transformer
+func fitted<InputSequence, Validation, FeatureSequence>(to: InputSequence, validateOn: Validation, eventHandler: EventHandler?) async throws -> Self.Transformer
+Fits a transformer to a sequence of examples while validating with a validation sequence.
+Required
+Relationships
+Inherited By
+UpdatableSupervisedTemporalEstimator
+Conforming Types
+PreprocessingSupervisedTemporalEstimator
+PreprocessingUpdatableSupervisedTemporalEstimator
+SupervisedEstimatorToTemporalAdaptor
+TemporalEstimatorToSupervisedAdaptor
+UpdatableSupervisedEstimatorToTemporalAdaptor
+UpdatableTemporalEstimatorToSupervisedAdaptor
+See Also
+Protocols
+protocol Transformer
+A transformer that takes an input and produces an output.
+protocol TemporalTransformer
+A transformer that takes an asynchronous input sequence of temporal features and produces an asynchronous output sequence.
+protocol Estimator
+An estimator that creates a transformer by fitting to a data set.
+protocol TemporalEstimator
+An estimator that creates a transformer by fitting to a sequence of temporal features.
+protocol SupervisedEstimator
+An estimator that creates a transformer by fitting to a data set.
+protocol UpdatableEstimator
+An estimator that can be incrementally updated.
+protocol UpdatableSupervisedEstimator
+A supervised estimator that can be incrementally updated.
+protocol UpdatableSupervisedTemporalEstimator
+A supervised temporal estimator that can be incrementally updated.
+protocol UpdatableTemporalEstimator
+A temporal estimator that can be incrementally updated.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SupervisedTemporalEstimator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

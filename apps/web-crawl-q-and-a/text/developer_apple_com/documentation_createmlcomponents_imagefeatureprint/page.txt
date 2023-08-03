@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/createmlcomponents/imagefeatureprint
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+ImageFeaturePrint.Output
+T
+ImageFeaturePrint.Input
+Type Aliases
+P
+var revision: Int
+Beta
+Instance Properties
+M
+init(revision: Int, cropAndScale: VNImageCropAndScaleOption, context: CIContext)
+Beta
+Initializers
+Documentation
+Open Menu
+Swift
+Structure
+ImageFeaturePrint
+ImageFeaturePrint image feature extractor.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct ImageFeaturePrint
+Topics
+Creating the Extractor
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder.
+init(cropAndScale: VNImageCropAndScaleOption, context: CIContext)
+Creates a FeaturePrint feature extractor.
+Getting the Properties
+let cropAndScale: VNImageCropAndScaleOption
+The crop and scale options.
+Applying
+func applied(to: CIImage, eventHandler: EventHandler?) async throws -> MLShapedArray<Float>
+Extracts image features from an image.
+Initializers
+init(revision: Int, cropAndScale: VNImageCropAndScaleOption, context: CIContext)
+Creates a FeaturePrint feature extractor.
+Beta
+Instance Properties
+var revision: Int
+The feature extractor revision number.
+Beta
+Type Aliases
+typealias Input
+The input type.
+typealias Output
+The output type.
+Type Properties
+static let latestRevision: Int
+The latest feature extractor revision.
+Beta
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+Decodable Implementations
+API Reference
+Encodable Implementations
+API Reference
+Transformer Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+Decodable
+Encodable
+ImageFeatureExtractor
+Sendable
+Transformer
+See Also
+Image Components
+Augmenting images to expand your training data
+Improve your model by using transformed versions of your training images.
+Creating a multi-label image classifier
+Train a machine learning model to assign multiple labels to an image.
+struct ImageReader
+An image file reader.
+protocol ImageFeatureExtractor
+A transformer that takes an image and outputs image features.
+struct ImageCropper
+An image crop transformer.
+struct ImageScaler
+An image scaling transformer.
+struct MLModelImageFeatureExtractor
+An image feature extractor provided by an MLModel.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ImageFeaturePrint
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

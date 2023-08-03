@@ -1,0 +1,196 @@
+https://developer.apple.com/documentation/speech/sfcustomlanguagemodeldata/phrasecountgenerator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func flatMap<SegmentOfResult>((SFCustomLanguageModelData.PhraseCount) -> SegmentOfResult) -> AsyncFlatMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, SegmentOfResult>
+M
+func flatMap<SegmentOfResult>((SFCustomLanguageModelData.PhraseCount) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, SegmentOfResult>
+M
+func first(where: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+M
+func filter((SFCustomLanguageModelData.PhraseCount) -> Bool) -> AsyncFilterSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+M
+func encode(to: Encoder)
+M
+func dropFirst(Int) -> AsyncDropFirstSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+M
+func drop(while: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> AsyncDropWhileSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+func compactMap<ElementOfResult>((SFCustomLanguageModelData.PhraseCount) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, ElementOfResult>
+func compactMap<ElementOfResult>((SFCustomLanguageModelData.PhraseCount) -> ElementOfResult?) -> AsyncCompactMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, ElementOfResult>
+Classes
+static func == (SFCustomLanguageModelData, SFCustomLanguageModelData) -> Bool
+static func != (SFCustomLanguageModelData, SFCustomLanguageModelData) -> Bool
+Operator Functions
+M
+static func supportedPhonemes(locale: Locale) -> [String]
+Type Methods
+M
+func insert(term: SFCustomLanguageModelData.CustomPronunciation)
+M
+func insert(phraseCountGenerator: SFCustomLanguageModelData.PhraseCountGenerator)
+Documentation
+Open Menu
+Swift
+Class
+SFCustomLanguageModelData.PhraseCountGenerator
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+Xcode 15.0+ Beta
+class SFCustomLanguageModelData.PhraseCountGenerator
+Topics
+Type Aliases
+typealias SFCustomLanguageModelData.PhraseCountGenerator.AsyncIterator
+typealias SFCustomLanguageModelData.PhraseCountGenerator.Element
+Initializers
+init()
+init(from: Decoder)
+Instance Properties
+var hashValue: Int
+Instance Methods
+func allSatisfy((SFCustomLanguageModelData.PhraseCount) -> Bool) -> Bool
+Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfy the given predicate.
+func compactMap<ElementOfResult>((SFCustomLanguageModelData.PhraseCount) -> ElementOfResult?) -> AsyncCompactMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, ElementOfResult>
+Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value.
+func compactMap<ElementOfResult>((SFCustomLanguageModelData.PhraseCount) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, ElementOfResult>
+Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value.
+func contains(SFCustomLanguageModelData.PhraseCount) -> Bool
+Returns a Boolean value that indicates whether the asynchronous sequence contains the given element.
+func contains(where: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> Bool
+Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate.
+func drop(while: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> AsyncDropWhileSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements.
+func dropFirst(Int) -> AsyncDropFirstSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements.
+func encode(to: Encoder)
+func filter((SFCustomLanguageModelData.PhraseCount) -> Bool) -> AsyncFilterSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate.
+func first(where: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+Returns the first element of the sequence that satisfies the given predicate.
+func flatMap<SegmentOfResult>((SFCustomLanguageModelData.PhraseCount) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, SegmentOfResult>
+Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence.
+func flatMap<SegmentOfResult>((SFCustomLanguageModelData.PhraseCount) -> SegmentOfResult) -> AsyncFlatMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, SegmentOfResult>
+Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence.
+func hash(into: inout Hasher)
+func insert(data: SFCustomLanguageModelData)
+func makeAsyncIterator() -> SFCustomLanguageModelData.PhraseCountGenerator.Iterator
+func map<Transformed>((SFCustomLanguageModelData.PhraseCount) -> Transformed) -> AsyncMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, Transformed>
+Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements.
+func map<Transformed>((SFCustomLanguageModelData.PhraseCount) -> Transformed) -> AsyncThrowingMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, Transformed>
+Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements.
+func max(by: (SFCustomLanguageModelData.PhraseCount, SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements.
+func min(by: (SFCustomLanguageModelData.PhraseCount, SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements.
+func prefix(Int) -> AsyncPrefixSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence.
+func prefix(while: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> AsyncPrefixWhileSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate.
+func reduce<Result>(Result, (Result, SFCustomLanguageModelData.PhraseCount) -> Result) -> Result
+Returns the result of combining the elements of the asynchronous sequence using the given closure.
+func reduce<Result>(into: Result, (inout Result, SFCustomLanguageModelData.PhraseCount) -> Void) -> Result
+Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value.
+Operator Functions
+static func != (SFCustomLanguageModelData.PhraseCountGenerator, SFCustomLanguageModelData.PhraseCountGenerator) -> Bool
+static func == (SFCustomLanguageModelData.PhraseCountGenerator, SFCustomLanguageModelData.PhraseCountGenerator) -> Bool
+Classes
+class SFCustomLanguageModelData.PhraseCountGenerator.Iterator
+Relationships
+Conforms To
+AsyncSequence
+DataInsertable
+Decodable
+Encodable
+Hashable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SFCustomLanguageModelData.PhraseCountGenerator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

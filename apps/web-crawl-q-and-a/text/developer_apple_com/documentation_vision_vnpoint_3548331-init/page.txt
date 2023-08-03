@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/vision/vnpoint/3548331-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNPoint3D
+Beta
+C
+VNHumanBodyRecognizedPoint3D
+Beta
+C
+VNRecognizedPoints3DObservation
+C
+VNHumanBodyPose3DObservation
+Beta
+C
+VNDetectHumanBodyPose3DRequest
+Beta
+Detecting human body poses in 3D with Vision
+Beta
+3D Body Pose Detection
+Creating a Point
+C
+VNPoint
+C
+VNHumanHandPoseObservation
+C
+VNHumanBodyPoseObservation
+C
+VNRecognizedPointsObservation
+C
+VNDetectHumanHandPoseRequest
+C
+VNDetectHumanBodyPoseRequest
+Detecting Hand Poses with Vision
+Documentation
+Open Menu
+Initializer
+init(x:y:)
+Creates a point object with the specified coordinates.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+init(
+    x: Double,
+    y: Double
+)
+Parameters
+x
+The x-coordinate value.
+y
+The y-coordinate value.
+See Also
+Creating a Point
+init(location: CGPoint)
+Creates a point object from the specified Core Graphics point.
+class func apply(VNVector, to: VNPoint) -> VNPoint
+Creates a point object that’s shifted by the X and Y offsets of the specified vector.
+class var zero: VNPoint
+A point object that represents the origin.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(x:y:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

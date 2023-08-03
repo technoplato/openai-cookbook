@@ -1,0 +1,206 @@
+https://developer.apple.com/documentation/createml/mlprogress/metric
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hash(into: inout Hasher)
+Providing a Key’s Hash Value
+M
+init(from: Decoder) throws
+M
+func encode(to: Encoder) throws
+Encoding and Decoding a Key
+T
+MLProgress.Metric.RawValue
+P
+var rawValue: String
+P
+var metrics: [MLProgress.Metric : Any]
+Assessing a Checkpoint
+P
+var url: URL
+P
+var date: Date
+P
+var iteration: Int
+P
+var phase: MLPhase
+Inspecting a Checkpoint
+S
+MLCheckpoint
+Documentation
+Open Menu
+Swift
+Enumeration
+MLProgress.Metric
+Metrics you use to evaluate a model’s performance during a training session.
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+enum Metric
+Topics
+Retrieving Metric Keys
+case accuracy
+The metric for the model’s accuracy.
+case contentLoss
+The metric for the style transfer model’s content loss.
+case loss
+The metric for the model’s loss.
+case styleLoss
+The metric for the style transfer model’s style loss.
+case stylizedImageURL
+The location of the stylized image content in the file system.
+case validationAccuracy
+The metric for the model’s validation accuracy.
+case validationLoss
+The metric for the model’s validation loss.
+Iterating All Metric Keys
+static var allCases: [MLProgress.Metric]
+A collection of all values of this type.
+typealias AllCases
+A type that can represent a collection of all values of this type.
+Creating a Key from a String
+init?(rawValue: String)
+Creates a new instance with the specified raw value.
+Getting a Key’s String Value
+var rawValue: String
+The corresponding value of the raw type.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+Encoding and Decoding a Key
+func encode(to: Encoder) throws
+Encodes this value into the given encoder, when the type’s RawValue is String.
+Available when Self conforms to Encodable and RawValue is String.
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder, when the type’s RawValue is String.
+Available when Self conforms to Decodable and RawValue is String.
+Providing a Key’s Hash Value
+func hash(into: inout Hasher)
+Available when Self conforms to Hashable and RawValue conforms to Hashable.
+var hashValue: Int
+Available when Self conforms to Hashable and RawValue conforms to Hashable.
+Comparing Metric Keys
+static func != (Self, Self) -> Bool
+Enumeration Cases
+case maximumError
+The metric for the model’s maximum error.
+Beta
+case rootMeanSquaredError
+The metric for the model’s root mean squared error (RMSE).
+Beta
+case validationMaximumError
+The metric for the model’s validation maximum error.
+Beta
+case validationRootMeanSquaredError
+The metric for the model’s validation root mean squared error (RMSE).
+Beta
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+RawRepresentable Implementations
+Relationships
+Conforms To
+CaseIterable
+Decodable
+Encodable
+Equatable
+Hashable
+RawRepresentable
+Sendable
+See Also
+Assessing a Checkpoint
+var metrics: [MLProgress.Metric : Any]
+Measurements of the model’s performance at the time the session saved the checkpoint.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLProgress.Metric
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

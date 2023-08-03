@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/createml/mlactionclassifier/videoaugmentationoptions/rawvalue-swift.property
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func isStrictSuperset(of: Self) -> Bool
+M
+func isSuperset(of: Self) -> Bool
+M
+func isStrictSubset(of: Self) -> Bool
+M
+func isSubset(of: Self) -> Bool
+M
+func isDisjoint(with: Self) -> Bool
+Comparing Options
+M
+func subtract(Self)
+P
+var isEmpty: Bool
+Inspecting Options
+M
+init(arrayLiteral: Self.Element...)
+M
+init<S>(S)
+M
+init()
+M
+init(rawValue: Int)
+Creating Augmentation Options
+P
+static let horizontalFlip: MLActionClassifier.VideoAugmentationOptions
+Documentation
+Open Menu
+Swift
+Instance Property
+rawValue
+The corresponding value of the raw type.
+macOS 11.0+
+visionOS 1.0+ Beta
+let rawValue: Int
+Discussion
+A new instance initialized with rawValue will be equivalent to this instance. For example:
+enum PaperSize: String {
+    case A4, A5, Letter, Legal
+}
+
+
+let selectedSize = PaperSize.Letter
+print(selectedSize.rawValue)
+// Prints "Letter"
+
+
+print(selectedSize == PaperSize(rawValue: selectedSize.rawValue)!)
+// Prints "true"
+See Also
+Inspecting Options
+var isEmpty: Bool
+A Boolean value that indicates whether the set has no elements.
+func contains(Self) -> Bool
+Returns a Boolean value that indicates whether a given element is a member of the option set.
+Available when Self is Self.Element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is rawValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

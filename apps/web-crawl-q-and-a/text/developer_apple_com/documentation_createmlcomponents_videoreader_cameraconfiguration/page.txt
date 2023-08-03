@@ -1,0 +1,175 @@
+https://developer.apple.com/documentation/createmlcomponents/videoreader/cameraconfiguration
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TemporalFileSegment
+Transformer Implementations
+Default Implementations
+T
+VideoReader.Output
+T
+VideoReader.Input
+Type Aliases
+M
+func applied(to: URL, eventHandler: EventHandler?) async throws -> VideoReader.AsyncFrames
+init(position: VideoReader.CameraConfiguration.Position, pixelFormat: VideoReader.CameraConfiguration.PixelFormat, resolution: VideoReader.CameraConfiguration.Resolution, frameRate: Double)
+S
+VideoReader.CameraAsyncBuffers
+S
+VideoReader.AsyncFrames
+M
+static func read(contentsOf: URL) async throws -> VideoReader.AsyncFrames
+M
+static func readCamera(configuration: VideoReader.CameraConfiguration) async throws -> VideoReader.CameraAsyncBuffers
+M
+static func read<S, Annotation>(S) async throws -> [AnnotatedFeature<VideoReader.AsyncFrames, Annotation>]
+M
+static func read<S>(S) async throws -> [VideoReader.AsyncFrames]
+Reading
+M
+init()
+Documentation
+Open Menu
+Swift
+Structure
+VideoReader.CameraConfiguration
+The configuration of the camera to pass to the readCamera method.
+Create ML Components
+CreateMLComponents
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+visionOS 1.0+ Beta
+struct CameraConfiguration
+Topics
+Initializers
+init()
+Creates a camera configuration.
+init(position: VideoReader.CameraConfiguration.Position, pixelFormat: VideoReader.CameraConfiguration.PixelFormat, resolution: VideoReader.CameraConfiguration.Resolution, frameRate: Double)
+Creates a camera configuration.
+Instance Properties
+var cameraPosition: VideoReader.CameraConfiguration.Position
+The camera position. For an iOS device this can be either .front or .rear. For devices with just one camera this value is ignored. The default value is .front.
+var frameRate: Double
+The camera frame rate. The default value is 30.0 frames per second.
+var pixelFormat: VideoReader.CameraConfiguration.PixelFormat
+The camera pixel format. The default is .bgra32.
+var position: VideoReader.CameraConfiguration.Position
+The camera position. For an iOS device this can be either .front or .rear. For devices with just one camera this value is ignored. The default value is .front.
+var resolution: VideoReader.CameraConfiguration.Resolution
+The camera resolution specifying the quality of the video output. The default values is .high
+Enumerations
+enum PixelFormat
+The camera pixel format.
+enum Position
+The position of the camera for an iOS device.
+enum Resolution
+The camera resolution.
+Relationships
+Conforms To
+Sendable
+See Also
+Reading
+static func read<S>(S) async throws -> [VideoReader.AsyncFrames]
+Reads a sequence of files as an array of async sequences of video frames.
+static func read<S, Annotation>(S) async throws -> [AnnotatedFeature<VideoReader.AsyncFrames, Annotation>]
+Reads a sequence of annotated files as an array of annotated async sequences of video frames.
+static func readCamera(configuration: VideoReader.CameraConfiguration) async throws -> VideoReader.CameraAsyncBuffers
+Reads an async sequence of video frames captured with a video camera.
+static func read(contentsOf: URL) async throws -> VideoReader.AsyncFrames
+Reads a video file as an async sequence of video frames.
+struct AsyncFrames
+An async sequence of video frames.
+struct CameraAsyncBuffers
+An async sequence of video frames.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VideoReader.CameraConfiguration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

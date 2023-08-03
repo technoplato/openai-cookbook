@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/createml/mlsupportvectorclassifier/modelparameters-swift.struct/init(validationdata:maxiterations:penalty:convergencethreshold:featurerescaling:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLRandomForestClassifier
+S
+MLBoostedTreeClassifier
+S
+MLLogisticRegressionClassifier
+S
+MLSupportVectorClassifier
+Creating and Training a Support Vector Classifier
+M
+init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLSupportVectorClassifier.ModelParameters) throws
+S
+MLSupportVectorClassifier.ModelParameters
+Creating Parameters
+init(validationData: MLDataTable?, maxIterations: Int, penalty: Double, convergenceThreshold: Double, featureRescaling: Bool)
+init(validation: MLSupportVectorClassifier.ModelParameters.ValidationData, maxIterations: Int, penalty: Double, convergenceThreshold: Double, featureRescaling: Bool)
+Enumerations
+E
+MLSupportVectorClassifier.ModelParameters.ValidationData
+Default Implementations
+CustomDebugStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomStringConvertible Implementations
+P
+let modelParameters: MLSupportVectorClassifier.ModelParameters
+Documentation
+Open Menu
+Swift
+Initializer
+init(validationData:maxIterations:penalty:convergenceThreshold:featureRescaling:)
+Creates a new set of parameters.
+macOS 10.14–10.15 Deprecated
+visionOS 1.0+ Beta
+init(
+    validationData: MLDataTable?,
+    maxIterations: Int = 11,
+    penalty: Double = 1.0,
+    convergenceThreshold: Double = 0.01,
+    featureRescaling: Bool = true
+)
+Parameters
+validationData
+The dataset used to monitor how well the model is generalizing.
+The default value is nil which will use an automatically sampled validation set.
+maxIterations
+The maximum number of passes through the data.
+The default value is 11.
+penalty
+Weight of the regularizer. The larger the penalty the less variance in the model.
+The default value is 1.0.
+convergenceThreshold
+The threshold with which to determine if the model has converged. Consider reducing this value for higher training accuracy, but beware of overfitting.
+The default value is 0.01.
+featureRescaling
+Determines if the features should be preprocessed to ensure all features are on the same scale.
+The default value is true.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(validationData:maxIterations:penalty:convergenceThreshold:featureRescaling:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

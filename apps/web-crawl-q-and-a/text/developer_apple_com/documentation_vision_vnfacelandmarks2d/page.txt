@@ -1,0 +1,175 @@
+https://developer.apple.com/documentation/vision/vnfacelandmarks2d
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var pitch: NSNumber?
+P
+var yaw: NSNumber?
+P
+var roll: NSNumber?
+Determining Facial Orientation
+C
+VNFaceLandmarkRegion
+C
+VNFaceLandmarks
+C
+VNFaceLandmarkRegion2D
+P
+var landmarks: VNFaceLandmarks2D?
+Identifying Landmarks
+M
+init(requestRevision: Int, boundingBox: CGRect, roll: NSNumber?, yaw: NSNumber?)
+Deprecated
+M
+init(requestRevision: Int, boundingBox: CGRect, roll: NSNumber?, yaw: NSNumber?, pitch: NSNumber?)
+Creating an Observation
+C
+VNFaceObservation
+P
+var results: [VNFaceObservation]?
+Accessing the Results
+Documentation
+Open Menu
+Class
+VNFaceLandmarks2D
+A collection of facial features that a request detects.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNFaceLandmarks2D : VNFaceLandmarks
+Overview
+This class represents the set of all detectable 2D face landmarks and regions, exposed as properties. The coordinates of the face landmarks are normalized to the dimensions of the face observation’s boundingBox, with the origin at the bounding box’s lower-left corner. Use the VNImagePointForFaceLandmarkPoint(_:_:_:_:) function to convert normalized face landmark points into absolute points within the image’s coordinate system.
+Topics
+Face Landmark Points
+var allPoints: VNFaceLandmarkRegion2D?
+The region containing all face landmark points.
+var faceContour: VNFaceLandmarkRegion2D?
+The region containing points that trace the face contour from the left cheek, over the chin, to the right cheek.
+var leftEye: VNFaceLandmarkRegion2D?
+The region containing points that outline the left eye.
+var rightEye: VNFaceLandmarkRegion2D?
+The region containing points that outline the right eye.
+var leftEyebrow: VNFaceLandmarkRegion2D?
+The region containing points that trace the left eyebrow.
+var rightEyebrow: VNFaceLandmarkRegion2D?
+The region containing points that trace the right eyebrow.
+var nose: VNFaceLandmarkRegion2D?
+The region containing points that outline the nose.
+var noseCrest: VNFaceLandmarkRegion2D?
+The region containing points that trace the center crest of the nose.
+var medianLine: VNFaceLandmarkRegion2D?
+The region containing points that trace a vertical line down the center of the face.
+var outerLips: VNFaceLandmarkRegion2D?
+The region containing points that outline the outside of the lips.
+var innerLips: VNFaceLandmarkRegion2D?
+The region containing points that outline the space between the lips.
+var leftPupil: VNFaceLandmarkRegion2D?
+The region containing the point where the left pupil is located.
+var rightPupil: VNFaceLandmarkRegion2D?
+The region containing the point where the right pupil is located.
+Relationships
+Inherits From
+VNFaceLandmarks
+See Also
+Identifying Landmarks
+var landmarks: VNFaceLandmarks2D?
+The facial features of the detected face.
+class VNFaceLandmarkRegion2D
+2D geometry information for a specific facial feature.
+class VNFaceLandmarks
+The abstract superclass for containers of face landmark information.
+class VNFaceLandmarkRegion
+The abstract superclass for information about a specific face landmark.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNFaceLandmarks2D
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

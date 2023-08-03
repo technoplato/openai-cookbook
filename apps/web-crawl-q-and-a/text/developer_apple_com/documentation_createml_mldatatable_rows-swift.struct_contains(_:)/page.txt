@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/createml/mldatatable/rows-swift.struct/contains(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func dropLast(Int) -> Self.SubSequence
+M
+func dropFirst(Int) -> Self.SubSequence
+Excluding Rows
+M
+func suffix(from: Self.Index) -> Self.SubSequence
+M
+func suffix(Int) -> Self.SubSequence
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Finding Rows
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+P
+var last: Self.Element?
+P
+var first: Self.Element?
+subscript(Int) -> MLDataTable.Rows.Element
+Accessing Rows
+P
+var count: Int
+Documentation
+Open Menu
+Swift
+Instance Method
+contains(_:)
+Returns a Boolean value indicating whether the sequence contains the given element.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func contains(_ element: Self.Element) -> Bool
+Available when Element conforms to Equatable.
+Parameters
+element
+The element to find in the sequence.
+Return Value
+true if the element was found in the sequence; otherwise, false.
+Discussion
+This example checks to see whether a favorite actor is in an array storing a movie’s cast.
+let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+print(cast.contains("Marlon"))
+// Prints "true"
+print(cast.contains("James"))
+// Prints "false"
+Complexity
+O(n), where n is the length of the sequence.
+See Also
+Finding Rows
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func allSatisfy((Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the first element of the sequence that satisfies the given predicate.
+func firstIndex(of: Self.Element) -> Self.Index?
+Returns the first index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the first index in which an element of the collection satisfies the given predicate.
+func last(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the last element of the sequence that satisfies the given predicate.
+func lastIndex(of: Self.Element) -> Self.Index?
+Returns the last index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func lastIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the index of the last element in the collection that matches the given predicate.
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the minimum element in the sequence, using the given predicate as the comparison between elements.
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the maximum element in the sequence, using the given predicate as the comparison between elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is contains(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

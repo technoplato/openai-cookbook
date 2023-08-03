@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3856537-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+subscript<R>(R) -> MLShapedArraySlice<Scalar>
+subscript(Range<Int>) -> MLShapedArraySlice<Scalar>
+subscript(Int) -> MLShapedArraySlice<Scalar>
+Accessing a Slice from the First Dimension
+subscript<C>(scalarAt: C) -> Scalar
+subscript(scalarAt: Int...) -> Scalar
+P
+var scalars: [Scalar]
+M
+init(data: Data, shape: [Int])
+Creating a shaped array from data
+M
+init(unsafeUninitializedShape: [Int], initializingWith: (inout UnsafeMutableBufferPointer<Scalar>, [Int]) -> Void)
+M
+init(bytesNoCopy: UnsafeRawPointer, shape: [Int], strides: [Int], deallocator: Data.Deallocator)
+M
+init(bytesNoCopy: UnsafeRawPointer, shape: [Int], deallocator: Data.Deallocator)
+Creating a shaped array with pointers to memory
+M
+init<S>(concatenating: S, alongAxis: Int)
+M
+init<T>(converting: T)
+Documentation
+Open Menu
+Swift
+Initializer
+init(data:shape:strides:)
+Creates a shaped array from a block of data, a shape, and strides.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+init(
+    data: Data,
+    shape: [Int],
+    strides: [Int]
+)
+Parameters
+data
+The block of data that holds the contents of the shaped array.
+shape
+The shape of the array.
+strides
+The strides of the array.
+See Also
+Creating a shaped array from data
+init(data: Data, shape: [Int])
+Creates a shaped array from a block of data and a shape.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(data:shape:strides:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

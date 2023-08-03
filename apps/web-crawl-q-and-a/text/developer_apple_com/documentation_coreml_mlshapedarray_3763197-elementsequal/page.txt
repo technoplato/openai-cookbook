@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3763197-elementsequal
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func ranges<C>(of: C) -> [Range<Int>]
+M
+func lastIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+M
+func lastIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+M
+func firstIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+M
+func firstIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+M
+func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool
+M
+func formIndex(inout Int, offsetBy: Int)
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+M
+func difference<C>(from: C) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+M
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+M
+func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult
+Comparing Shaped Arrays
+M
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func randomElement<T>(using: inout T) -> MLShapedArraySlice<Scalar>?
+M
+func randomElement() -> MLShapedArraySlice<Scalar>?
+M
+func enumerated() -> EnumeratedSequence<MLShapedArray<Scalar>>
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+elementsEqual(_:by:)
+Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func elementsEqual<OtherSequence>(
+    _ other: OtherSequence,
+    by areEquivalent: (MLShapedArraySlice<Scalar>, OtherSequence.Element) throws -> Bool
+) rethrows -> Bool where OtherSequence : Sequence
+Parameters
+other
+A sequence to compare to this sequence.
+areEquivalent
+A predicate that returns true if its two arguments are equivalent; otherwise, false.
+Return Value
+true if this sequence and other contain equivalent items, using areEquivalent as the equivalence test; otherwise, false.
+Discussion
+At least one of the sequences must be finite.
+The predicate must be a equivalence relation over the elements. That is, for any elements a, b, and c, the following conditions must hold:
+Complexity: O(m), where m is the lesser of the length of the sequence and the length of other.
+areEquivalent(a, a) is always true. (Reflexivity)
+areEquivalent(a, b) implies areEquivalent(b, a). (Symmetry)
+If areEquivalent(a, b) and areEquivalent(b, c) are both true, then areEquivalent(a, c) is also true. (Transitivity)
+See Also
+Comparing Shaped Arrays
+func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult
+Returns a comparison result by comparing two shaped array slices.
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test.
+func difference<C>(from: C) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+Returns the difference needed to produce this collection’s ordered elements from the given collection.
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order.
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test.
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is elementsEqual(_:by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

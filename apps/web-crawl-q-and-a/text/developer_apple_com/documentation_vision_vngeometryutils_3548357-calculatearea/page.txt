@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/vision/vngeometryutils/3548357-calculatearea
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+V
+let VNDetectBarcodesRequestRevision4: Int
+Beta
+V
+let VNDetectFaceCaptureQualityRequestRevision3: Int
+Beta
+V
+let VNGenerateImageFeaturePrintRequestRevision2: Int
+Beta
+V
+let VNGenerateAttentionBasedSaliencyImageRequestRevision2: Int
+Beta
+V
+let VNGenerateObjectnessBasedSaliencyImageRequestRevision2: Int
+Beta
+V
+let VNClassifyImageRequestRevision2: Int
+Beta
+V
+let VNTrackOpticalFlowRequestRevision1: Int
+Calculating Area and Perimeter
+M
+class func boundingCircle(forSIMDPoints: UnsafePointer<simd_float2>, pointCount: Int) -> VNCircle
+M
+class func boundingCircle(for: [VNPoint]) -> VNCircle
+M
+class func boundingCircle(for: VNContour) -> VNCircle
+Calculating Bounding Circles
+C
+VNGeometryUtils
+S
+VNComputeStage
+Beta
+Utilities
+Documentation
+Open Menu
+Type Method
+calculateArea(_:for:orientedArea:)
+Calculates the area for the specified contour.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+class func calculateArea(
+    _ area: UnsafeMutablePointer<Double>,
+    for contour: VNContour,
+    orientedArea: Bool
+) throws
+Parameters
+area
+The output parameter to populate with the calculated contour area.
+contour
+The contour object for which to calculate the area.
+orientedArea
+A Boolean value that indicates whether to calculate the signed area (positive for counterclockwise-oriented contours and negative for clockwise-oriented contours). If you specify false, the returned area is always positive.
+Discussion
+Attempting to calculate the area for a contour containing random points, or with self-crossing edges, produces undefined results.
+See Also
+Calculating Area and Perimeter
+class func calculatePerimeter(UnsafeMutablePointer<Double>, for: VNContour)
+Calculates the perimeter of a closed contour.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is calculateArea(_:for:orientedArea:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

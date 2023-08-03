@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/vision/vncontour/3548321-childcontour
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+VNRequestProgressHandler
+r
+P
+VNRequestProgressProviding
+Request Progress Tracking
+C
+VNRecognizedTextObservation
+C
+VNRecognizeTextRequest
+Locating and Displaying Recognized Text
+Extracting phone numbers from text in images
+P
+var childContours: [VNContour]
+P
+var childContourCount: Int
+Accessing Child Contours
+M
+func polygonApproximation(epsilon: Float) -> VNContour
+P
+var normalizedPoints: [simd_float2]
+P
+var pointCount: Int
+P
+var normalizedPath: CGPath
+P
+var indexPath: IndexPath
+Documentation
+Open Menu
+Instance Method
+childContour(at:)
+Retrieves the child contour object at the specified index.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+func childContour(at childContourIndex: Int) throws -> VNContour
+Parameters
+childContourIndex
+The child contour index value.
+Return Value
+The child contour object.
+See Also
+Accessing Child Contours
+var childContourCount: Int
+The total number of detected child contours.
+var childContours: [VNContour]
+An array of contours that this contour encloses.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is childContour(at:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

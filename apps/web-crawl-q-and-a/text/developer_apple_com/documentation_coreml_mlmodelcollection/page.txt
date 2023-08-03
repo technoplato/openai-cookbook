@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/coreml/mlmodelcollection
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLModelError
+Model Errors
+r
+P
+MLComputeDeviceProtocol
+Beta
+C
+MLNeuralEngineComputeDevice
+Beta
+C
+MLGPUComputeDevice
+class func beginAccessing(identifier: String, completionHandler: (Result<MLModelCollection, Error>) -> Void) -> Progress
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+Documentation
+Open Menu
+Class
+MLModelCollection
+A set of Core ML models from a model deployment.
+iOS 14.0–16.4 Deprecated
+iPadOS 14.0–16.4 Deprecated
+macOS 11.0–13.3 Deprecated
+Mac Catalyst 14.0–16.4 Deprecated
+visionOS 1.0–1.0 Deprecated
+class MLModelCollection : NSObject
+Deprecated
+Use Background Assets or URLSession instead.
+Overview
+Use a model collection to access the models from a Core ML Model Deployment. For example, you can use a model collection to replace one or more of your app’s built-in models with a newer version.
+To access the newest model collection from a deployment, call the beginAccessing(identifier:completionHandler:) type method. Your app can also get a notification when Core ML receives an update to a model collection (see didChangeNotification).
+Topics
+Accessing a Model Collection
+class func beginAccessing(identifier: String, completionHandler: (Result<MLModelCollection, Error>) -> Void) -> Progress
+Requests access to a model collection.
+class func endAccessing(identifier: String, completionHandler: (Result<Void, Error>) -> Void)
+Terminates access to a model collection.
+Identifying a Model Collection
+var identifier: String
+The name of the model collection, unique to the development team.
+var deploymentID: String
+The unique identifier of the model collection’s deployment.
+Retreiving Models from a Collection
+var entries: [String : MLModelCollection.Entry]
+A dictionary of model entries keyed to the models’ identifiers.
+class MLModelCollection.Entry
+A model and its identifier within a model collection.
+Registering for Model Collection Updates
+class let didChangeNotification: NSNotification.Name
+The notification the framework sends when it receives an update to a model collection.
+Relationships
+Inherits From
+NSObject
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLModelCollection
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

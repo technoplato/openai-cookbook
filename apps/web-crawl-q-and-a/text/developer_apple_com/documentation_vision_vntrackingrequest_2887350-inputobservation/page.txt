@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/vision/vntrackingrequest/2887350-inputobservation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectHumanHandPoseRequest
+C
+VNDetectHumanBodyPoseRequest
+Detecting Hand Poses with Vision
+Detecting Human Body Poses in Images
+Body and Hand Pose Detection
+C
+VNHumanObservation
+C
+VNDetectHumanRectanglesRequest
+E
+VNRequestTrackingLevel
+Configuring a Tracking Request
+C
+VNTrackingRequest
+Tracking Multiple Objects or Rectangles in Video
+Tracking the User’s Face in Real Time
+Object Tracking
+C
+VNSaliencyImageObservation
+C
+VNGenerateObjectnessBasedSaliencyImageRequest
+Documentation
+Open Menu
+Instance Property
+inputObservation
+The observation object defining a region to track.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+var inputObservation: VNDetectedObjectObservation { get set }
+Discussion
+Providing an observation not returned from a tracker, such as a user-defined observation, begins a new tracker for the sequence. Providing an observation that was returned from a tracker continues the use of that tracker, to track the region to the next frame.
+In general, unless specified in the request's documentation or header file, you must define the rectangle in normalized coordinates, with the origin at the lower-left corner.
+See Also
+Configuring a Tracking Request
+enum VNRequestTrackingLevel
+An enumeration of tracking priorities.
+var trackingLevel: VNRequestTrackingLevel
+A value for specifying whether to prioritize speed or location accuracy.
+var isLastFrame: Bool
+A Boolean that indicates the last frame in a tracking sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is inputObservation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

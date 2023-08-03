@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/createmlcomponents/preprocessingupdatabletabularestimator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Audio Components
+S
+HumanBodyActionPeriodPredictor
+S
+HumanBodyActionCounter
+S
+HumanHandPoseExtractor
+S
+HumanBodyPoseExtractor
+S
+JointsSelector
+E
+PoseSelectionStrategy
+Documentation
+Open Menu
+Swift
+Structure
+PreprocessingUpdatableTabularEstimator
+An updatable estimator that composes a preprocessing transformer and an updatable estimator.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+struct PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator> where Preprocessor : TabularTransformer, Estimator : UpdatableTabularEstimator
+Topics
+Initializers
+init(Preprocessor, Estimator)
+Creates a composed updatable estimator from a preprocessing transformer and an estimator.
+Instance Properties
+var estimator: Estimator
+The estimator.
+var preprocessor: Preprocessor
+The preprocessing transformer.
+Instance Methods
+func decode(from: inout EstimatorDecoder) throws -> PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer
+Decodes a previously fitted transformer.
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer
+Reads the encoded transformer and optimizer.
+func encode(PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer, to: inout EstimatorEncoder) throws
+Encodes a fitted transformer.
+func encodeWithOptimizer(PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+func fitted(to: DataFrame, eventHandler: EventHandler?) async throws -> PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer
+Fits a composed transformer to a data frame of examples.
+func fitted(toPreprocessed: DataFrame, eventHandler: EventHandler?) async throws -> PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer
+Fits a transformer to a data frame of preprocessed features.
+func makeTransformer() -> PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer
+Creates a default-initialized transformer suitable for incremental fitting.
+func preprocessed(from: DataFrame, eventHandler: EventHandler?) async throws -> DataFrame
+Preprocesses a data frame of examples.
+func update(inout PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer, with: DataFrame, eventHandler: EventHandler?) async throws
+Updates a transformer with a new data frame of examples.
+func update(inout PreprocessingUpdatableTabularEstimator<Preprocessor, Estimator>.Transformer, withPreprocessed: DataFrame, eventHandler: EventHandler?) async throws
+Updates a transformer with a new data frame of preprocessed features.
+Type Aliases
+typealias Input
+The input type.
+typealias Intermediate
+The intermediate type.
+typealias Output
+The output type.
+typealias Transformer
+The transformer type created by this estimator.
+Default Implementations
+API Reference
+TabularEstimator Implementations
+API Reference
+UpdatableTabularEstimator Implementations
+Relationships
+Conforms To
+Sendable
+TabularEstimator
+UpdatableTabularEstimator
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PreprocessingUpdatableTabularEstimator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier/datasource/labeledfiles(at:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLHandActionClassifier
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+S
+MLObjectDetector
+static func makeTrainingSession(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLImageClassifier>
+E
+case labeledDirectories(at: URL)
+Creating a Data Source
+E
+MLImageClassifier.DataSource
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an Image Classifier
+Documentation
+Open Menu
+Swift
+Case
+MLImageClassifier.DataSource.labeledFiles(at:)
+An image classifier data source that uses file names to label images.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+case labeledFiles(at: URL)
+Discussion
+Use this case to create a data source based on a files on disk that contain your training images. The associated value is a URL that represents a directory containing files with names based on each image’s associated label. The image’s label is taken as the part of the file name up to the first period.
+For example, you can initialize a data source with a file URL that indicates a directory called Training Data that contains the files buffalo.1.jpg, buffalo.2.jpg, cheetah.1.jpg, and cheetah.2.jpg. The first two images receive the label buffalo, while the second two images receive the label cheetah. The part of the name after the first period can be any arbitrary string.
+If you want to create a data source with labels based on how you sort your images into directories, use MLImageClassifier.DataSource.labeledDirectories(at:) instead.
+See Also
+Creating a Data Source
+case labeledDirectories(at: URL)
+An image classifier data source that uses the directory structure to label images.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLImageClassifier.DataSource.labeledFiles(at:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

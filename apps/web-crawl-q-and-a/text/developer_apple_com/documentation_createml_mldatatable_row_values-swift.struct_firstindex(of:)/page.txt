@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/createml/mldatatable/row/values-swift.struct/firstindex(of:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomDebugStringConvertible Implementations
+M
+func trimmingPrefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func trimmingPrefix<Prefix>(Prefix) -> Self.SubSequence
+M
+func suffix(from: Self.Index) -> Self.SubSequence
+M
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func ranges<C>(of: C) -> [Range<Self.Index>]
+M
+func dropFirst(Int) -> Self.SubSequence
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Instance Methods
+P
+var underestimatedCount: Int
+P
+var isEmpty: Bool
+P
+var first: Self.Element?
+P
+var count: Int
+Instance Properties
+Documentation
+Open Menu
+Swift
+Instance Method
+firstIndex(of:)
+Returns the first index where the specified value appears in the collection.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func firstIndex(of element: Self.Element) -> Self.Index?
+Available when Element conforms to Equatable.
+Parameters
+element
+An element to search for in the collection.
+Return Value
+The first index where element is found. If element is not found in the collection, returns nil.
+Discussion
+After using firstIndex(of:) to find the position of a particular element in a collection, you can use it to access the element by subscripting. This example shows how you can modify one of the names in an array of students.
+var students = ["Ben", "Ivy", "Jordell", "Maxime"]
+if let i = students.firstIndex(of: "Maxime") {
+    students[i] = "Max"
+}
+print(students)
+// Prints "["Ben", "Ivy", "Jordell", "Max"]"
+Complexity
+O(n), where n is the length of the collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is firstIndex(of:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

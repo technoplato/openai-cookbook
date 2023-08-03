@@ -1,0 +1,195 @@
+https://developer.apple.com/documentation/coreml/mlmodelerror
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Protocol Support
+P
+static var errorDomain: String
+V
+let MLModelErrorDomain: String
+Error Domain
+P
+var localizedDescription: String
+P
+var errorUserInfo: [String : Any]
+P
+var errorCode: Int
+Model Errors
+r
+P
+MLComputeDeviceProtocol
+Beta
+C
+MLNeuralEngineComputeDevice
+Beta
+C
+MLGPUComputeDevice
+Beta
+C
+MLCPUComputeDevice
+Beta
+E
+MLComputeDevice
+Beta
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Documentation
+Open Menu
+Swift
+Structure
+MLModelError
+Information about a Core ML model error.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.0+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+Xcode 9.0+
+struct MLModelError
+Topics
+Error Codes
+static var featureType: MLModelError.Code
+An error code for problems related to model features.
+static var parameters: MLModelError.Code
+An error code for problems related to model parameters.
+static var modelCollection: MLModelError.Code
+An error code for problems related to retrieving a model collection from the deployment system.
+static var modelDecryptionKeyFetch: MLModelError.Code
+An error code for problems related to retrieving a model’s decryption key.
+static var modelDecryption: MLModelError.Code
+An error code for problems related to decrypting models.
+static var update: MLModelError.Code
+An error code for problems related to on-device model updates.
+static var customLayer: MLModelError.Code
+An error code for problems related to custom layers.
+static var customModel: MLModelError.Code
+An error code for problems related to custom models.
+static var io: MLModelError.Code
+An error code for problems related to the system’s input or output.
+static var predictionCancelled: MLModelError.Code
+An error code for problems related to cancelling the prediction before it completes.
+Beta
+static var generic: MLModelError.Code
+An error code for runtime issues that don’t apply to the other error codes.
+enum MLModelError.Code
+The categories of model-specific errors.
+Error Details
+var errorCode: Int
+An integer value that represents an error case.
+var errorUserInfo: [String : Any]
+A dictionary of additional information about the error.
+var localizedDescription: String
+The localized string that describes the error.
+Error Domain
+let MLModelErrorDomain: String
+The domain for Core ML errors.
+static var errorDomain: String
+The current model error domain.
+Protocol Support
+init(Code, userInfo: [String : Any])
+Creates a model error with an error code.
+var code: Code
+An integer value that represents the code.
+var userInfo: [String : Any]
+A dictionary of additional information.
+var hashValue: Int
+The hashed value of the error.
+func hash(into: inout Hasher)
+Hashes the essential components of the error by feeding them into a hasher.
+static func == (MLModelError, MLModelError) -> Bool
+Returns a Boolean value indicating whether the two values are equal.
+static func != (MLModelError, MLModelError) -> Bool
+Returns a Boolean value indicating whether the two values are unequal.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLModelError
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

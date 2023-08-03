@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/coreml/mlbatchprovider
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLTask
+Personalizing a Model with On-Device Updates
+C
+MLUpdateTask
+Creating an Update Task
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, completionHandler: (MLUpdateContext) -> Void)
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, progressHandlers: MLUpdateProgressHandlers)
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, configuration: MLModelConfiguration?, completionHandler: (MLUpdateContext) -> Void)
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, configuration: MLModelConfiguration?, progressHandlers: MLUpdateProgressHandlers)
+r
+P
+MLBatchProvider
+C
+MLArrayBatchProvider
+C
+MLModelAsset
+App Integration
+Downloading and Compiling a Model on the User’s Device
+Model Integration Samples
+Model Encryption
+Documentation
+Open Menu
+Protocol
+MLBatchProvider
+An interface that represents a collection of feature providers.
+iOS 12.0+
+iPadOS 12.0+
+macOS 10.14+
+Mac Catalyst 13.1+
+tvOS 12.0+
+watchOS 5.0+
+visionOS 1.0+ Beta
+protocol MLBatchProvider
+Overview
+Similar to the MLFeatureProvider, this interface allows you to define your own batch provider. If you collect your data asynchronously or it is memory intensive, implement this protocol on your data structure to optimize performance with batch processing.
+Topics
+Accessing Values
+func features(at: Int) -> MLFeatureProvider
+Returns the feature provider at the given index.
+Required
+var count: Int
+The number of feature providers in this batch.
+Required
+Relationships
+Conforming Types
+MLArrayBatchProvider
+See Also
+Model Inputs and Outputs
+Making Predictions with a Sequence of Inputs
+Integrate a recurrent neural network model to process sequences of inputs.
+class MLFeatureValue
+A generic wrapper around an underlying value and the value’s type.
+protocol MLFeatureProvider
+An interface that represents a collection of values for either a model's input or its output.
+class MLDictionaryFeatureProvider
+A convenience wrapper for the given dictionary of data.
+class MLArrayBatchProvider
+A convenience wrapper for batches of feature providers.
+class MLModelAsset
+An abstraction of a compiled Core ML model asset.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLBatchProvider
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

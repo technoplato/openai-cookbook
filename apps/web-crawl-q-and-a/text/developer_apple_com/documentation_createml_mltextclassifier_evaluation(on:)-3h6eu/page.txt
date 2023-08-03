@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/evaluation(on:)-3h6eu
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLWordTagger
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+M
+func evaluation(on: DataFrame, textColumn: String, labelColumn: String) -> MLClassifierMetrics
+M
+func evaluation(on: MLTextClassifier.DataSource) -> MLClassifierMetrics
+Evaluating a Text Classifier
+P
+let validationMetrics: MLClassifierMetrics
+P
+let trainingMetrics: MLClassifierMetrics
+Assessing Model Accuracy
+M
+init(trainingData: MLDataTable, textColumn: String, labelColumn: String, parameters: MLTextClassifier.ModelParameters) throws
+P
+let modelParameters: MLTextClassifier.ModelParameters
+Documentation
+Open Menu
+Swift
+Instance Method
+evaluation(on:)
+Computes evaluation metrics.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func evaluation(on labeledTexts: [String : [String]]) -> MLClassifierMetrics
+Parameters
+labeledTexts
+A dictionary of labeled texts to evaluate.
+Return Value
+Classifier metrics.
+See Also
+Evaluating a Text Classifier
+func evaluation(on: MLTextClassifier.DataSource) -> MLClassifierMetrics
+Computes evaluation metrics.
+func evaluation(on: DataFrame, textColumn: String, labelColumn: String) -> MLClassifierMetrics
+Computes evaluation metrics.
+func evaluation(on: MLDataTable, textColumn: String, labelColumn: String) -> MLClassifierMetrics
+Computes evaluation metrics.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is evaluation(on:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

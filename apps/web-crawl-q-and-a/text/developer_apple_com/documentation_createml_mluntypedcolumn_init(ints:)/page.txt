@@ -1,0 +1,173 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/init(ints:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var doubles: MLDataColumn<Double>?
+P
+var ints: MLDataColumn<Int>?
+P
+var type: MLDataValue.ValueType
+Exposing the Underlying Type to Generate a Data Column
+M
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Converting a Column to Generate a Data Column
+M
+func sort(byIncreasingOrder: Bool) -> MLUntypedColumn
+Creating an Untyped Column by Converting Another Column
+M
+init()
+M
+init<S>(S)
+M
+init<S>(S)
+M
+init(ClosedRange<Int>)
+M
+init(Range<Int>)
+M
+init(repeating: MLDataValue, count: Int)
+M
+init<T>(repeating: T, count: Int)
+Documentation
+Open Menu
+Swift
+Initializer
+init(ints:)
+Creates a new column of integers by converting the elements of another column.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init(ints: MLUntypedColumn)
+Discussion
+Use this initializer to create a column of integers from another column. As an example, to create a column with this initializer, first start with a column that is convertible to integers.
+print(stringColumn) /* Prints...
+ ValueType: String
+ Values:        [1, 2, 3, 4, 5]
+ */ ```
+
+
+Then use ``MLUntypedColumn/init(ints:)`` to convert the column to a
+column of integers.
+
+
+```swift let intsColumn = MLUntypedColumn(ints: stringColumn)
+print(intsColumn) /* Prints...
+ ValueType: Int
+ Values:        [1, 2, 3, 4, 5]
+ */ ```
+
+
+- Parameters:
+  - ints: A column with elements that are convertible to integers.
+
+
+- Returns: A new untyped column of integers; otherwise an invalid column
+if any element of the given column cannot be converted to
+<doc://com.apple.documentation/documentation/swift/int>.
+See Also
+Creating an Untyped Column by Converting Another Column
+init(doubles: MLUntypedColumn)
+Creates a new column of doubles by converting the elements of another column.
+init(strings: MLUntypedColumn)
+Creates a new column of strings by converting the elements of another column.
+init(sequences: MLUntypedColumn)
+Creates a new column of machine learning sequences by converting the elements of another column.
+init(dictionaries: MLUntypedColumn)
+Creates a new column of machine learning dictionaries by converting the elements of another column.
+init(multiArrays: MLUntypedColumn)
+Creates a MLUntypedColumn of type MLMultiArray from the specified MLUntypedColumn if the values of the given MLUntypedColumn are convertible to MLDataValue.MultiArrayType.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(ints:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

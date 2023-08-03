@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/createml/mlrecommender/evaluation(on:usercolumn:itemcolumn:ratingcolumn:cutoffs:excludingobserved:)-50o7t
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLSplitStrategy
+S
+MLModelMetadata
+E
+MLCreateError
+Supporting Types
+S
+MLCheckpoint
+S
+MLTrainingSessionParameters
+C
+MLTrainingSession
+func evaluation(on: DataFrame, userColumn: String, itemColumn: String, ratingColumn: String?, cutoffs: [Int], excludingObserved: Bool) -> MLRecommenderMetrics
+func evaluation(on: MLDataTable, userColumn: String, itemColumn: String, ratingColumn: String?, cutoffs: [Int], excludingObserved: Bool) -> MLRecommenderMetrics
+Instance Methods
+M
+init(trainingData: MLDataTable, userColumn: String, itemColumn: String, ratingColumn: String?, parameters: MLRecommender.ModelParameters) throws
+M
+init(trainingData: DataFrame, userColumn: String, itemColumn: String, ratingColumn: String?, parameters: MLRecommender.ModelParameters) throws
+Initializers
+P
+var model: MLModel
+Describing a Recommender
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Documentation
+Open Menu
+Swift
+Instance Method
+evaluation(on:userColumn:itemColumn:ratingColumn:cutoffs:excludingObserved:)
+Computes the metrics for the given testing data.
+macOS 10.15–13.0 Deprecated
+visionOS 1.0+ Beta
+func evaluation(
+    on testingData: MLDataTable,
+    userColumn: String,
+    itemColumn: String,
+    ratingColumn: String? = nil,
+    cutoffs: [Int] = [1, 2, 3, 4, 5],
+    excludingObserved: Bool = true
+) -> MLRecommenderMetrics
+Parameters
+testingData
+A MLDataTable containing testing data.
+userColumn
+Name of the Int or String typed column in the testing data containing user identifiers.
+itemColumn
+Name of the Int or String typed column in the testing data containing item identifiers.
+ratingColumn
+Name of an Int or Double typed column optionally in the testing data containing scores or ratings. The default is nil, which corresponds to no rating column.
+cutoffs
+A list of Ints corresponding to each value at which the precision and recall will be evaluated. The default is [1,2,3,4,5].
+Definition: Let P𝑘 be a vector of the first k items recommended by the model for a particular user and let A be the set of items in the provided testingData for the same user.
+The “precision at cutoff k” for this user is: precision(k) = |A ∩ P𝑘| / k while “recall at cutoff k” for this user is: recall(k) = |A ∩ P𝑘| / |A| where |A ∩ P𝑘| is the number of elements in the intersection of A and P𝑘 and |A| is the number of elements in A.
+excludingObserved
+Specifies whether user-item interactions observed in the training data are excluded when generating evaluation result. The default is true.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is evaluation(on:userColumn:itemColumn:ratingColumn:cutoffs:excludingObserved:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

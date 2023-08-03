@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/coreml/mlimageconstraint/2921268-pixelshigh
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func isEqual(to: MLFeatureValue) -> Bool
+Comparing Feature Values
+P
+var dictionaryValue: [AnyHashable : NSNumber]
+P
+var sequenceValue: MLSequence?
+P
+var multiArrayValue: MLMultiArray?
+M
+func shapedArrayValue<Scalar>(of: Scalar.Type) -> MLShapedArray<Scalar>?
+P
+var imageBufferValue: CVPixelBuffer?
+P
+var pixelsWide: Int
+Accessing the Constraints
+C
+MLImageConstraint
+M
+init(imageAt: URL, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(imageAt: URL, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(imageAt: URL, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(imageAt: URL, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Documentation
+Open Menu
+Instance Property
+pixelsHigh
+The model's default height for an image feature.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+var pixelsHigh: Int { get }
+See Also
+Accessing the Constraints
+var pixelsWide: Int
+The model's default width for an image feature.
+var pixelFormatType: OSType
+The model's pixel format for an image feature.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is pixelsHigh
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

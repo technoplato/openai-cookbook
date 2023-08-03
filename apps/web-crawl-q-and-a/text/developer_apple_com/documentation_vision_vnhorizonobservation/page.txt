@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/vision/vnhorizonobservation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Object Recognition
+V
+let VNGenerateForegroundInstanceMaskRequestRevision1: Int
+Beta
+C
+VNGenerateForegroundInstanceMaskRequest
+Beta
+C
+VNInstanceMaskObservation
+Beta
+Applying visual effects to foreground subjects
+Beta
+Image Background Removal
+C
+VNImageHomographicAlignmentObservation
+C
+VNDetectHorizonRequest
+Horizon Detection
+T
+VNRequestProgressHandler
+r
+P
+VNRequestProgressProviding
+Request Progress Tracking
+C
+VNRecognizedTextObservation
+C
+VNRecognizeTextRequest
+Locating and Displaying Recognized Text
+Documentation
+Open Menu
+Class
+VNHorizonObservation
+The horizon angle information that an image analysis request detects.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNHorizonObservation : VNObservation
+Overview
+Instances of this class result from invoking a VNDetectHorizonRequest, and report the angle and transform of the horizon in an image.
+Topics
+Evaluating the Horizon
+var angle: CGFloat
+The angle of the observed horizon.
+var transform: CGAffineTransform
+The transform to apply to the detected horizon.
+func transform(forImageWidth: Int, height: Int) -> CGAffineTransform
+Creates an affine transform for the specified image width and height.
+Relationships
+Inherits From
+VNObservation
+See Also
+Horizon Detection
+class VNDetectHorizonRequest
+An image analysis request that determines the horizon angle in an image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNHorizonObservation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

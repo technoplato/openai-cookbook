@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/vision/vncoremlfeaturevalueobservation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNRecognizedObjectObservation
+Understanding a Dice Roll with Vision and Object Detection
+Machine Learning Image Analysis
+Classifying Images with Vision and Core ML
+Training a Create ML Model to Classify Flowers
+C
+VNCoreMLRequest
+C
+VNClassificationObservation
+C
+VNPixelBufferObservation
+func VNImagePointForFaceLandmarkPoint(vector_float2, CGRect, Int, Int) -> CGPoint
+func VNNormalizedFaceBoundingBoxPointForLandmarkPoint(vector_float2, CGRect, Int, Int) -> CGPoint
+Utilities
+S
+VNComputeStage
+Beta
+C
+VNGeometryUtils
+C
+VNVideoProcessor
+Common Data Types
+Documentation
+Open Menu
+Class
+VNCoreMLFeatureValueObservation
+An object that represents a collection of key-value information that a Core ML image analysis request produces.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNCoreMLFeatureValueObservation : VNObservation
+Overview
+This type of observation results from performing a VNCoreMLRequest image analysis with a Core ML model whose role is prediction rather than classification or image-to-image processing.
+Vision infers that an MLModel object is a predictor model if that model predicts multiple features. You can tell that a model predicts multiple features when its modelDescription object has a nil value for its predictedFeatureName property, or when it inserts its output in an outputDescriptionsByName dictionary.
+Topics
+Obtaining Feature Values
+var featureValue: MLFeatureValue
+The feature result of a VNCoreMLRequest that outputs neither a classification nor an image.
+var featureName: String
+The name used in the model description of the CoreML model that produced this observation.
+Relationships
+Inherits From
+VNObservation
+See Also
+Machine Learning Image Analysis
+Classifying Images with Vision and Core ML
+Crop and scale photos using the Vision framework and classify them with a Core ML model.
+Training a Create ML Model to Classify Flowers
+Train a flower classifier using Create ML in Swift Playgrounds, and apply the resulting model to real-time image classification using Vision.
+class VNCoreMLRequest
+An image analysis request that uses a Core ML model to process images.
+class VNClassificationObservation
+An object that represents classification information that an image analysis request produces.
+class VNPixelBufferObservation
+An object that represents an image that an image analysis request produces.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNCoreMLFeatureValueObservation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

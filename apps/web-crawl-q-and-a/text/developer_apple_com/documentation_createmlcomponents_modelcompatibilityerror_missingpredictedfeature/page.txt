@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/createmlcomponents/modelcompatibilityerror/missingpredictedfeature
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+AnnotatedPrediction
+Beta
+Structures
+r
+P
+UpdatableTabularEstimator
+r
+P
+UpdatableSupervisedTabularEstimator
+r
+P
+RandomTransformer
+Beta
+Protocols
+Classes
+E
+case missingOutput(name: String)
+E
+case missingLabelProbabilities
+E
+case missingLabel
+E
+case missingInput(name: String)
+E
+case incompatibleOutputDataFormat(expected: MLFeatureType, actual: MLFeatureType)
+E
+case incompatibleOutputCount(expected: Int, actual: Int)
+E
+case incompatibleLabelType
+E
+case incompatibleInputMultiArrayDataType(MLMultiArrayDataType)
+Documentation
+Open Menu
+Swift
+Case
+ModelCompatibilityError.missingPredictedFeature
+An error that indicates that the regressor model output is missing.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+case missingPredictedFeature
+See Also
+Analyzing the Error
+case incompatibleInputCount(expected: Int, actual: Int)
+An error that indicates that the number of model inputs is wrong.
+case incompatibleInputDataFormat(expected: MLFeatureType, actual: MLFeatureType)
+An error that indicates that the input data has the wrong format.
+case incompatibleInputMultiArrayDataType(MLMultiArrayDataType)
+An error that indicates that the input multi array has the wrong value type.
+case incompatibleLabelType
+An error that indicates that the label has the wrong type.
+case incompatibleOutputCount(expected: Int, actual: Int)
+An error that indicates that the number of model outputs is wrong.
+case incompatibleOutputDataFormat(expected: MLFeatureType, actual: MLFeatureType)
+An error that indicates that the output data has the wrong format.
+case missingInput(name: String)
+An error that indicates that the input is missing from the model.
+case missingLabel
+An error that indicates that the label output is missing from the model.
+case missingLabelProbabilities
+An error that indicates that the label probabilities output is missing from the model.
+case missingOutput(name: String)
+An error that indicates that the output is missing from the model.
+var errorDescription: String?
+A localized message describing what error occurred.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModelCompatibilityError.missingPredictedFeature
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,186 @@
+https://developer.apple.com/documentation/swiftdata/attribute
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hash(into: inout Hasher)
+Hashing
+M
+init(from: Decoder) throws
+M
+func encode(to: Encoder) throws
+Encoding and decoding
+P
+var hashModifier: String?
+Versioning
+init(name: String, originalName: String?, options: PropertyOptions, valueType: Any.Type, defaultValue: Any?, hashModifier: String?, nested: Bool)
+Attributes
+C
+Entity
+Entities
+Schema components
+M
+init()
+r
+P
+VersionedSchema
+M
+convenience init(versionedSchema: VersionedSchema.Type)
+M
+init(Entity...)
+Documentation
+Open Menu
+Swift
+Class
+Attribute
+An object that describes the configuration and behavior of a specific property of a model class.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+Swift 5.9+
+class Attribute
+Topics
+Creating an attribute
+init(PropertyOptions..., originalName: String?, hashModifier: String?)
+init(name: String, originalName: String?, options: PropertyOptions, valueType: Any.Type, defaultValue: Any?, hashModifier: String?, nested: Bool)
+Specifying value information
+var defaultValue: Any?
+var valueType: Any.Type
+Managing identity
+var name: String
+var originalName: String
+Determining behavior
+var options: PropertyOptions
+func isAttribute() -> Bool
+func isTransformable() -> Bool
+var nested: Bool
+Versioning
+var hashModifier: String?
+Encoding and decoding
+func encode(to: Encoder) throws
+Encodes this value into the given encoder.
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder.
+Hashing
+func hash(into: inout Hasher)
+Hashes the essential components of this value by feeding them into the given hasher.
+var hashValue: Int
+The hash value.
+Comparing attributes
+static func == (Attribute, Attribute) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Debugging
+var debugDescription: String
+A textual representation of this instance, suitable for debugging.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+Property Implementations
+Relationships
+Inherited By
+CompositeAttribute
+Conforms To
+CustomDebugStringConvertible
+Decodable
+Encodable
+Equatable
+Hashable
+Property
+See Also
+Attributes
+class CompositeAttribute
+An object that describes an attribute that derives its value by composing other attributes.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Attribute
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

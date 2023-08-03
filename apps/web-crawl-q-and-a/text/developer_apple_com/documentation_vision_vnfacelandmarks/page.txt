@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/vision/vnfacelandmarks
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Body and Hand Pose Detection
+C
+VNHumanObservation
+C
+VNDetectHumanRectanglesRequest
+C
+VNDetectFaceRectanglesRequest
+V
+let VNDetectFaceLandmarksRequestRevision1: Int
+Deprecated
+V
+let VNDetectFaceLandmarksRequestRevision2: Int
+V
+let VNDetectFaceLandmarksRequestRevision3: Int
+C
+VNFaceLandmarkRegion2D
+C
+VNFaceLandmarks2D
+P
+var landmarks: VNFaceLandmarks2D?
+Identifying Landmarks
+M
+init(requestRevision: Int, boundingBox: CGRect, roll: NSNumber?, yaw: NSNumber?)
+Deprecated
+M
+init(requestRevision: Int, boundingBox: CGRect, roll: NSNumber?, yaw: NSNumber?, pitch: NSNumber?)
+Creating an Observation
+C
+VNFaceObservation
+Documentation
+Open Menu
+Class
+VNFaceLandmarks
+The abstract superclass for containers of face landmark information.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNFaceLandmarks : NSObject
+Overview
+This class represents the set of all detectable facial landmarks and regions, exposed as properties.
+Topics
+Determining Accuracy
+var confidence: VNConfidence
+A confidence estimate for the detected landmarks.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSCopying
+NSSecureCoding
+VNRequestRevisionProviding
+See Also
+Identifying Landmarks
+var landmarks: VNFaceLandmarks2D?
+The facial features of the detected face.
+class VNFaceLandmarks2D
+A collection of facial features that a request detects.
+class VNFaceLandmarkRegion2D
+2D geometry information for a specific facial feature.
+class VNFaceLandmarkRegion
+The abstract superclass for information about a specific face landmark.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNFaceLandmarks
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

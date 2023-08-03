@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/createml/mlobjectdetector/modelparameters-swift.struct
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+E
+MLObjectDetector.ModelParameters.ModelAlgorithmType
+E
+MLObjectDetector.ModelParameters.ValidationData
+Supporting Types
+init(validation: MLObjectDetector.ModelParameters.ValidationData, batchSize: Int?, maxIterations: Int?, gridSize: CGSize, algorithm: MLObjectDetector.ModelParameters.ModelAlgorithmType)
+E
+MLObjectDetector.AnnotationType
+E
+MLObjectDetector.DataSource
+Supporting types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an object detector
+P
+let modelParameters: MLObjectDetector.ModelParameters
+Documentation
+Open Menu
+Swift
+Structure
+MLObjectDetector.ModelParameters
+Parameters that affect the process of training an object detection model.
+macOS 10.15+
+visionOS 1.0+ Beta
+struct ModelParameters
+Overview
+Customize the training process of an object detector by creating an MLObjectDetector.ModelParameters instance and passing it to an object detector’s initializer. You can explicitly set values for maxIterations and batchSize. You can also explicitly define the validation dataset to override the default behavior, which uses a random selection of your training dataset for validation.
+Topics
+Creating Object Detector Parameters
+init(validation: MLObjectDetector.ModelParameters.ValidationData, batchSize: Int?, maxIterations: Int?)
+Creates a model parameters instance for an object-detector training session set to use the full network algorithm.
+init(validation: MLObjectDetector.ModelParameters.ValidationData, batchSize: Int?, maxIterations: Int?, gridSize: CGSize, algorithm: MLObjectDetector.ModelParameters.ModelAlgorithmType)
+Creates a model parameters instance for an object-detector training session.
+init(validationData: MLObjectDetector.DataSource, batchSize: Int?, maxIterations: Int?) throws
+Creates a model parameters instance for an object-detector training session set to use the full network algorithm.
+Accessing the Training Parameters
+var validation: MLObjectDetector.ModelParameters.ValidationData
+The object detector’s validation dataset for the training session.
+var batchSize: Int?
+The number of images the training session can use in a training iteration.
+var maxIterations: Int?
+The maximum number of iterations the training session can use.
+var algorithm: MLObjectDetector.ModelParameters.ModelAlgorithmType
+The algorithm the training session uses to train the object detector.
+var gridSize: CGSize
+The number of rectangles, vertically and horizontally, the training algorithm uses to analyze each input image.
+Describing the Model Parameters
+var description: String
+A text representation of the model parameters.
+var debugDescription: String
+A text representation of the model parameters that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the model parameters within a playground.
+Supporting Types
+enum ValidationData
+A validation dataset for an object detector.
+enum ModelAlgorithmType
+An object-detector training algorithm.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Supporting types
+enum DataSource
+A data source for an object detector.
+enum AnnotationType
+The available types of image annotations.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLObjectDetector.ModelParameters
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

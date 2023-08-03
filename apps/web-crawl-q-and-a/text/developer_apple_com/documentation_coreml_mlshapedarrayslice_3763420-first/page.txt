@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/3763420-first
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+M
+func difference<C>(from: C) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+M
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+M
+func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult
+Comparing Shaped Array Slices
+M
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+Inspecting a Shaped Array’s Scalars
+Shaped Array Slice Collection Operations
+T
+MLShapedArraySlice.ArrayLiteralElement
+T
+MLShapedArraySlice.SubSequence
+T
+MLShapedArraySlice.Iterator
+T
+MLShapedArraySlice.Indices
+T
+MLShapedArraySlice.Index
+T
+MLShapedArraySlice.Element
+Documentation
+Open Menu
+Swift
+Instance Property
+first
+The first element of the collection.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+var first: MLShapedArraySlice<Scalar>? { get }
+Discussion
+If the collection is empty, the value of this property is nil.
+let numbers = [10, 20, 30, 40, 50]
+if let firstNumber = numbers.first {
+    print(firstNumber)
+}
+// Prints "10"
+See Also
+Inspecting a Shaped Array’s Scalars
+var last: MLShapedArraySlice<Scalar>?
+The last element of the collection.
+var publisher: Publishers.Sequence<MLShapedArraySlice<Scalar>, Never>
+A publisher that produces the element in the shaped array slice as separate values.
+var lazy: LazySequence<MLShapedArraySlice<Scalar>>
+A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is first
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

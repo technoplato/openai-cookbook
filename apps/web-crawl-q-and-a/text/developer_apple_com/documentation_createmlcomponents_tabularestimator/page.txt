@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/createmlcomponents/tabularestimator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Protocols
+S
+ColumnConcatenator
+E
+ColumnSelection
+S
+ColumnSelectorTransformer
+S
+ColumnSelector
+r
+P
+SupervisedTabularEstimator
+M
+func fitted(to: DataFrame) async throws -> Self.Transformer
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Other.Annotation>
+func appending<Other>(Other) -> some TabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>>
+func appending<Other>(Other) -> some TabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>>
+func adaptedAsSupervised<Annotation>(annotationColumnID: ColumnID<Annotation>) -> TabularEstimatorToSupervisedAdaptor<Self, Annotation>
+r
+P
+TabularTransformer
+Tabular Components
+S
+PreprocessedFeatureSequence
+S
+AnyTemporalSequence
+S
+AnyTemporalIterator
+S
+TemporalFileSegment
+S
+VideoReader
+S
+Downsampler
+Documentation
+Open Menu
+Swift
+Protocol
+TabularEstimator
+A tabular estimator that creates a transformer by fitting to a data set in a data frame.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+protocol TabularEstimator<Transformer>
+Topics
+Reading and Writing
+func read(from: URL) throws -> Self.Transformer
+Reads the encoded transformer from a file.
+func write(Self.Transformer, to: URL, overwrite: Bool) throws
+Writes the encoded transformer to a file.
+associatedtype Transformer : TabularTransformer
+The transformer type created by this estimator.
+Required
+Adapting and Fitting
+func adaptedAsSupervised<Annotation>(annotationColumnID: ColumnID<Annotation>) -> TabularEstimatorToSupervisedAdaptor<Self, Annotation>
+Exposes this tabular estimator as a supervised tabular estimator.
+func fitted(to: DataFrame, eventHandler: EventHandler?) async throws -> Self.Transformer
+Fits a transformer to a data frame
+Required
+Encoding and Decoding
+func encode(Self.Transformer, to: inout EstimatorEncoder) throws
+Encodes a fitted transformer.
+Required Default implementation provided.
+func decode(from: inout EstimatorDecoder) throws -> Self.Transformer
+Decodes a previously fitted transformer.
+Required Default implementation provided.
+Instance Methods
+func appending<Other>(Other) -> some TabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>>
+Compose this tabular estimator with another tabular estimator.
+func appending<Other>(Other) -> some TabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>>
+Compose this tabular estimator with a tabular transformer.
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Other.Annotation>
+Composes this tabular estimator with a supervised tabular estimator.
+func fitted(to: DataFrame) async throws -> Self.Transformer
+Available when Transformer conforms to Encodable.
+Relationships
+Inherited By
+UpdatableTabularEstimator
+Conforming Types
+ColumnSelector
+PreprocessingTabularEstimator
+PreprocessingUpdatableTabularEstimator
+TabularTransformerToEstimatorAdaptor
+TabularTransformerToUpdatableEstimatorAdaptor
+See Also
+Tabular Components
+protocol TabularTransformer
+A tabular transformer that transforms a data frame.
+protocol SupervisedTabularEstimator
+A tabular estimator that creates a transformer by fitting to a data set in a data frame.
+struct ColumnSelector
+An operation that applies an estimator to a selection of columns.
+struct ColumnSelectorTransformer
+A transformer that applies a base transformer to specific columns in a data frame.
+enum ColumnSelection
+A selection of columns from a data frame.
+struct ColumnConcatenator
+A transformer that concatenates every numerical column in a dataframe into to a shaped array for each row.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TabularEstimator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

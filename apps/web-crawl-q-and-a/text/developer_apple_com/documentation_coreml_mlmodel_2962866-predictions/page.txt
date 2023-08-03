@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/coreml/mlmodel/2962866-predictions
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+C
+MLFeatureValue
+Making Predictions with a Sequence of Inputs
+Model Inputs and Outputs
+M
+func predictions(fromBatch: MLBatchProvider) -> MLBatchProvider
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Beta
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+M
+func prediction(from: MLFeatureProvider) -> MLFeatureProvider
+Making Predictions
+M
+class func compileModel(at: URL) -> URL
+Deprecated
+M
+class func compileModel(at: URL, completionHandler: (Result<URL, Error>) -> Void)
+M
+class func compileModel(at: URL) -> URL
+Documentation
+Open Menu
+Instance Method
+predictions(from:options:)
+Generates a prediction for each input feature provider within the batch provider using the prediction options.
+iOS 12.0+
+iPadOS 12.0+
+macOS 10.14+
+Mac Catalyst 13.1+
+tvOS 12.0+
+watchOS 5.0+
+visionOS 1.0+ Beta
+func predictions(
+    from inputBatch: MLBatchProvider,
+    options: MLPredictionOptions
+) throws -> MLBatchProvider
+Parameters
+inputBatch
+A batch provider that contains multiple input feature providers. The model makes a prediction for each feature provider.
+options
+The runtime settings the model uses as it makes a prediction.
+Return Value
+A batch provider that contains an output feature provider for each prediction.
+Discussion
+Use this method to make more than one prediction at one time.
+See Also
+Making Predictions
+func prediction(from: MLFeatureProvider) -> MLFeatureProvider
+Generates a prediction from the feature values within the input feature provider.
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Generates a prediction from the feature values within the input feature provider using the prediction options.
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Generates a prediction asynchronously from the feature values within the input feature provider using the prediction options.
+Beta
+func predictions(fromBatch: MLBatchProvider) -> MLBatchProvider
+Generates predictions for each input feature provider within the batch provider.
+class MLPredictionOptions
+The options available when making a prediction.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is predictions(from:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

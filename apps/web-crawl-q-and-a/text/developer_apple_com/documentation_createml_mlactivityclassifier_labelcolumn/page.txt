@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/createml/mlactivityclassifier/labelcolumn
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLClassifier
+Creating a Model from Tabular Data
+Tabular Models
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+static func makeTrainingSession(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+static func makeTrainingSession(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+P
+var featureColumns: [String]
+P
+let modelParameters: MLActivityClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting an Activity Classifier Model
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving an Activity Classifier
+M
+func evaluation(on: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String) -> MLClassifierMetrics
+Documentation
+Open Menu
+Swift
+Instance Property
+labelColumn
+The name of the label column the activity classifier used during its training session.
+macOS 10.15+
+visionOS 1.0+ Beta
+var labelColumn: String
+Discussion
+This property reflects the name of the data table column or annotation file column the training session used to label each activity.
+Note
+The MLActivityClassifier instance provides a default name if you trained it with a data source that’s set to MLActivityClassifier.DataSource.labeledDirectories(at:).
+Changing the value of this property doesn’t retrain the model or affect its behavior.
+See Also
+Inspecting an Activity Classifier Model
+var model: MLModel
+The underlying Core ML model of the activity classifier stored in memory.
+let modelParameters: MLActivityClassifier.ModelParameters
+The model configuration parameters the activity classifier used during its training session.
+var featureColumns: [String]
+The names of the feature columns the activity classifier used during its training session.
+var recordingFileColumn: String
+The name of the column that contains the data files the activity classifier used during its training session.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is labelColumn
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

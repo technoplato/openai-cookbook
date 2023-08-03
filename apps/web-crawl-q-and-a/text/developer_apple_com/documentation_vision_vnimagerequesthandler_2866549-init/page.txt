@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/vision/vnimagerequesthandler/2866549-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectDocumentSegmentationRequest
+C
+VNGeneratePersonSegmentationRequest
+C
+VNStatefulRequest
+Applying Matte Effects to People in Images and Video
+Image Sequence Analysis
+C
+VNObservation
+S
+VNImageOption
+init(cmSampleBuffer: CMSampleBuffer, depthData: AVDepthData, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+init(cmSampleBuffer: CMSampleBuffer, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+init(cvPixelBuffer: CVPixelBuffer, depthData: AVDepthData, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+M
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+M
+init(cgImage: CGImage, options: [VNImageOption : Any])
+Creating a Request Handler
+C
+VNImageRequestHandler
+C
+VNGenerateImageFeaturePrintRequest
+C
+VNClassifyImageRequest
+C
+VNImageBasedRequest
+C
+VNRequest
+Documentation
+Open Menu
+Initializer
+init(ciImage:options:)
+Creates a handler to be used for performing requests on CIImage data.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+init(
+    ciImage image: CIImage,
+    options: [VNImageOption : Any] = [:]
+)
+Parameters
+image
+A CIImage containing the image to be used for performing the requests. Image content is immutable.
+options
+An optional dictionary containing properties keys to auxiliary image data.
+See Also
+Creating a Request Handler
+init(cgImage: CGImage, options: [VNImageOption : Any])
+Creates a handler to be used for performing requests on Core Graphics images.
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Creates a handler to be used for performing requests on a Core Graphics image with known orientation.
+init(ciImage: CIImage, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Creates a handler to be used for performing requests on CIImage data of a known orientation.
+init(cvPixelBuffer: CVPixelBuffer, options: [VNImageOption : Any])
+Creates a handler for performing requests on a Core Video pixel buffer.
+init(cvPixelBuffer: CVPixelBuffer, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Creates a handler for performing requests on a Core Video pixel buffer of a known orientation.
+init(cvPixelBuffer: CVPixelBuffer, depthData: AVDepthData, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Beta
+init(cmSampleBuffer: CMSampleBuffer, options: [VNImageOption : Any])
+Creates a request handler that performs requests on an image contained within a sample buffer.
+init(cmSampleBuffer: CMSampleBuffer, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Creates a request handler that performs requests on an image of a specified orientation contained within a sample buffer.
+init(cmSampleBuffer: CMSampleBuffer, depthData: AVDepthData, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Creates a request handler that performs requests on an image in a sample buffer that contains depth data.
+Beta
+init(data: Data, options: [VNImageOption : Any])
+Creates a handler to be used for performing requests on an image contained in an NSData object.
+init(data: Data, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Creates a handler to be used for performing requests on an image of known orientation, contained in an NSData object.
+init(url: URL, options: [VNImageOption : Any])
+Creates a handler to be used for performing requests on an image at the specified URL.
+init(url: URL, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Creates a handler to be used for performing requests on an image with known orientation, at the specified URL.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(ciImage:options:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,217 @@
+https://developer.apple.com/documentation/createml/mlactivityclassifier
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var model: MLModel
+Inspecting an Activity Classifier Model
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving an Activity Classifier
+M
+func evaluation(on: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String) -> MLClassifierMetrics
+M
+func evaluation(on: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?) -> MLClassifierMetrics
+init(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters) throws
+init(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?, parameters: MLActivityClassifier.ModelParameters) throws
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+static func train(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActivityClassifier>
+static func train(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActivityClassifier>
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+S
+MLWordEmbedding
+S
+MLGazetteer
+S
+MLWordTagger
+S
+MLTextClassifier
+Creating a text classifier model
+Documentation
+Open Menu
+Swift
+Structure
+MLActivityClassifier
+A model you train to classify motion sensor data.
+macOS 10.15+
+visionOS 1.0+ Beta
+struct MLActivityClassifier
+Overview
+An activity classifier is a machine-learning model that your app can use to categorize user activities, based on the motion of the user’s device.
+You create an activity classifier by gathering a training dataset of a device’s motion sensors, such as the accelerometer and gyroscope on an Apple Watch. For example, you can create an activity classifier that recognizes a person waving, shaking hands, or throwing a ball by gathering the motion-sensor data from people performing those activities.
+Evaluate your trained activity classifier by calling evaluation(on:featureColumns:labelColumn:recordingFileColumn:) evaluation(on:) with a dataset that’s completely distinct from the training and validation datasets. Inspect the metrics the method returns and decide whether the activity classifier performs with enough accuracy. For example, you can assess how often the activity classifier confuses a person waving for shaking hands, or vice versa. If the classifier makes too many mistakes, you can train another classifier with different parameters, or with a training dataset that has more or better motion-sensor examples.
+When you’re satisfied with an activity classifier, save it as a Core ML model file, and add it to your Xcode project. Use it to predict the user’s activity based on the motion-sensor data your app captures from the user’s device.
+Topics
+Training an Activity Classifier Asynchronously
+static func train(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActivityClassifier>
+Begins an asynchronous activity classifier training session with a training dataset represented by a data source.
+static func train(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLActivityClassifier>
+Begins an asynchronous activity classifier training session with a training dataset represented by a data table.
+static func resume(MLTrainingSession<MLActivityClassifier>) throws -> MLJob<MLActivityClassifier>
+Begins or continues an asynchronous activity classifier training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+Creates an asynchronous training session for an activity classifier by restoring an existing training session’s state from its parameters.
+Creating an Activity Classifier from a Checkpoint
+init(checkpoint: MLCheckpoint) throws
+Creates an activity classifier from a training session checkpoint.
+Training an Activity Classifier Synchronously
+init(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?, parameters: MLActivityClassifier.ModelParameters) throws
+Creates an activity classifier with a training dataset represented by a data source.
+init(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters) throws
+Creates an activity classifier with a training dataset represented by a data table.
+Assessing Model Accuracy
+var trainingMetrics: MLClassifierMetrics
+Measurements of the activity classifier’s performance on the training dataset.
+var validationMetrics: MLClassifierMetrics
+Measurements of the activity classifier’s performance on the validation dataset.
+Evaluating an Activity Classifier
+func evaluation(on: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?) -> MLClassifierMetrics
+Generates metrics describing the activity classifier’s performance on labeled activities in a data source.
+func evaluation(on: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String) -> MLClassifierMetrics
+Generates metrics describing the activity classifier’s performance on labeled activities in a data table.
+Saving an Activity Classifier
+func write(to: URL, metadata: MLModelMetadata?) throws
+Exports the activity classifier as a Core ML model file to a location in the file system.
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports the activity classifier as a Core ML model file to the file path.
+Inspecting an Activity Classifier Model
+var model: MLModel
+The underlying Core ML model of the activity classifier stored in memory.
+let modelParameters: MLActivityClassifier.ModelParameters
+The model configuration parameters the activity classifier used during its training session.
+var featureColumns: [String]
+The names of the feature columns the activity classifier used during its training session.
+var labelColumn: String
+The name of the label column the activity classifier used during its training session.
+var recordingFileColumn: String
+The name of the column that contains the data files the activity classifier used during its training session.
+Describing an Activity Classifier
+var description: String
+A text representation of the activity classifier.
+var debugDescription: String
+A text representation of the activity classifier that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the activity classifier shown in a playground.
+Supporting Types
+enum DataSource
+A data source for an activity classifier.
+struct ModelParameters
+Model training parameters that direct the training process for an activity classifier model.
+Instance Methods
+func predictions(from: DataFrame, perWindowPrediction: Bool?) throws -> [String]
+Predict activities from new observations.
+func predictions(from: MLDataTable, perWindowPrediction: Bool?) throws -> [String]
+Predict activities from new observations.
+Type Methods
+static func makeTrainingSession(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+Creates an asynchronous training session for an activity classifier.
+static func makeTrainingSession(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLActivityClassifier>
+Creates an asynchronous training session for an activity classifier.
+Beta
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLActivityClassifier
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/vision/vndetectdocumentsegmentationrequest
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectRectanglesRequest
+Rectangle Detection
+C
+VNDetectedObjectObservation
+C
+VNTrackObjectRequest
+C
+VNTrackRectangleRequest
+C
+VNTrackingRequest
+Tracking Multiple Objects or Rectangles in Video
+C
+VNGeneratePersonSegmentationRequest
+C
+VNStatefulRequest
+Applying Matte Effects to People in Images and Video
+Image Sequence Analysis
+C
+VNObservation
+C
+VNImageRequestHandler
+C
+VNGenerateImageFeaturePrintRequest
+C
+VNClassifyImageRequest
+Documentation
+Open Menu
+Class
+VNDetectDocumentSegmentationRequest
+An object that detects rectangular regions that contain text in the input image.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+visionOS 1.0+ Beta
+class VNDetectDocumentSegmentationRequest : VNImageBasedRequest
+Overview
+Perform this request to detect a document in an image. The result that the request generates contains the four corner points of a document’s quadrilateral and saliency mask.
+Topics
+Accessing the Results
+var results: [VNRectangleObservation]?
+The results of a document segmentation request.
+class VNRectangleObservation
+An object that represents the four vertices of a detected rectangle.
+Identifying Request Revisions
+let VNDetectDocumentSegmentationRequestRevision1: Int
+A constant for specifying revision 1 of the document segmentation request.
+Relationships
+Inherits From
+VNImageBasedRequest
+See Also
+Image Sequence Analysis
+Applying Matte Effects to People in Images and Video
+Generate image masks for people automatically by using semantic person-segmentation.
+class VNStatefulRequest
+An abstract request type that builds evidence of a condition over time.
+class VNGeneratePersonSegmentationRequest
+An object that produces a matte image for a person it finds in the input image.
+class VNSequenceRequestHandler
+An object that processes image analysis requests for each frame in a sequence.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNDetectDocumentSegmentationRequest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

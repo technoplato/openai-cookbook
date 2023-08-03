@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/init(_:)-33tcv
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func sort(byIncreasingOrder: Bool) -> MLUntypedColumn
+Sorting Elements to Generate a Column
+M
+func copy() -> MLUntypedColumn
+Duplicating a Column
+M
+func append(contentsOf: MLUntypedColumn)
+Appending to an Untyped Column
+subscript(Int) -> MLDataValue
+M
+init(repeating: MLDataValue, count: Int)
+M
+init<T>(repeating: T, count: Int)
+Creating an Untyped Column
+S
+MLUntypedColumn
+M
+func addColumn(MLUntypedColumn, named: String)
+S
+MLDataColumn
+M
+func addColumn<Element>(MLDataColumn<Element>, named: String)
+Adding Columns
+Documentation
+Open Menu
+Swift
+Initializer
+init(_:)
+Creates a new column of integers from a given range.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init(_ range: Range<Int>)
+Discussion
+Use this initializer to create a column of incrementing values from a range.
+MLUntypedColumn(3..<7)
+
+
+print(rangeColumn) /* Prints...
+ ValueType: Int
+ Values:        [3, 4, 5, 6]
+ */ ```
+
+
+- Parameters:
+  - range: A range of integer elements for the new column.
+See Also
+Creating an Untyped Column
+init<T>(repeating: T, count: Int)
+Creates a new column with a repeating value.
+init(repeating: MLDataValue, count: Int)
+Creates a new column with a repeating value.
+init(ClosedRange<Int>)
+Creates a new column of integers from a given closed range.
+init<S>(S)
+Creates a new column from a given sequence of elements that can be converted to machine learning data values.
+init<S>(S)
+Creates a new column from a given sequence of machine learning data values.
+init()
+Creates an empty, invalid column used to remove an existing column from a data table.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

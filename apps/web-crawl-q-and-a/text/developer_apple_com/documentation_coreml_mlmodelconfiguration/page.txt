@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/coreml/mlmodelconfiguration
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+C
+MLFeatureValue
+Making Predictions with a Sequence of Inputs
+Model Inputs and Outputs
+Model Personalization
+Supporting Types
+C
+MLParameterKey
+M
+func parameterValue(for: MLParameterKey) -> Any
+C
+MLModelDescription
+P
+var modelDescription: MLModelDescription
+P
+var configuration: MLModelConfiguration
+Inspecting a Model
+C
+MLPredictionOptions
+Documentation
+Open Menu
+Class
+MLModelConfiguration
+The settings for creating or updating a machine learning model.
+iOS 12.0+
+iPadOS 12.0+
+macOS 10.14+
+Mac Catalyst 13.1+
+tvOS 12.0+
+watchOS 5.0+
+visionOS 1.0+ Beta
+class MLModelConfiguration : NSObject
+Overview
+Use a model configuration to:
+Set or override model parameters.
+Designate which device the model uses to make predictions, such as a GPU.
+Restrict the model to use a specific computational device category, such as a CPU.
+You typically use a model configuration instance to configure an MLModel instance as you create it with init(contentsOf:configuration:) or create an MLUpdateTask. See Personalizing a Model with On-Device Updates.
+Configure your model parameters by setting values for each relevant MLParameterKey in the parameters property.
+Topics
+Configuring Model Parameters
+var modelDisplayName: String?
+A human readable name of a model for display purposes.
+var parameters: [MLParameterKey : Any]?
+A dictionary of configuration settings your app can override when loading a model.
+class MLParameterKey
+The keys for the parameter dictionary in a model configuration or a model update context.
+Configuring GPU Usage
+var preferredMetalDevice: MTLDevice?
+The metal device you prefer this model use to make predictions (inference) and update the model.
+var allowLowPrecisionAccumulationOnGPU: Bool
+A Boolean value that determines whether to allow low-precision accumulation on a GPU.
+Allowing Access to Processing Units
+var computeUnits: MLComputeUnits
+The processing unit or units the model uses to make predictions.
+enum MLComputeUnits
+The set of processing-unit configurations the model can use to make predictions.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSCopying
+NSSecureCoding
+See Also
+Supporting Types
+class MLKey
+An abstract base class for machine learning key types.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLModelConfiguration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

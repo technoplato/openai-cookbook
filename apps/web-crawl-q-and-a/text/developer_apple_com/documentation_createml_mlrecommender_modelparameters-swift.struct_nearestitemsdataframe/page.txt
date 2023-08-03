@@ -1,0 +1,130 @@
+https://developer.apple.com/documentation/createml/mlrecommender/modelparameters-swift.struct/nearestitemsdataframe
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Instance Methods
+M
+init(trainingData: MLDataTable, userColumn: String, itemColumn: String, ratingColumn: String?, parameters: MLRecommender.ModelParameters) throws
+M
+init(trainingData: DataFrame, userColumn: String, itemColumn: String, ratingColumn: String?, parameters: MLRecommender.ModelParameters) throws
+Initializers
+P
+var model: MLModel
+Describing a Recommender
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+func recommendations(fromUsers: [MLIdentifier], maxCount: Int, restrictingToItems: [MLIdentifier]?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+func recommendations<T>(fromUsers: MLDataColumn<T>, maxCount: Int, restrictingToItems: MLDataColumn<T>?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+Instance Properties
+M
+init(algorithm: MLRecommender.ModelAlgorithmType, threshold: Double, maxCount: Int, nearestItemsDataFrame: DataFrame?, maxSimilarityIterations: Int)
+Beta
+Initializers
+P
+var nearestItems: MLDataTable?
+P
+var threshold: Double
+P
+var maxSimilarityIterations: Int
+P
+var maxCount: Int
+P
+var algorithm: MLRecommender.ModelAlgorithmType
+Documentation
+Open Menu
+Swift
+Instance Property
+nearestItemsDataFrame
+A data frame that lists each item’s nearest items.
+macOS 14.0+ Beta
+visionOS 1.0+ Beta
+var nearestItemsDataFrame: DataFrame?
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is nearestItemsDataFrame
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

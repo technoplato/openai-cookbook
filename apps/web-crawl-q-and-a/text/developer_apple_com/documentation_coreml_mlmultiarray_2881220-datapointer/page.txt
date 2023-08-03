@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/coreml/mlmultiarray/2881220-datapointer
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Errors
+r
+P
+MLComputeDeviceProtocol
+Beta
+C
+MLNeuralEngineComputeDevice
+Beta
+C
+MLGPUComputeDevice
+Beta
+C
+MLCPUComputeDevice
+Beta
+E
+MLComputeDevice
+Beta
+Compute Devices
+P
+var pixelBuffer: CVPixelBuffer?
+subscript([NSNumber]) -> NSNumber
+subscript(Int) -> NSNumber
+Accessing a Multiarray’s Elements
+M
+func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer, [Int]) -> R) -> R
+M
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+M
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+M
+func withUnsafeBufferPointer<S, R>(ofType: S.Type, (UnsafeBufferPointer<S>) -> R) -> R
+Documentation
+Open Menu
+Instance Property
+dataPointer
+A pointer to the multiarray’s underlying memory.
+iOS 11.0–16.0 Deprecated
+iPadOS 11.0–16.0 Deprecated
+macOS 10.13–13.0 Deprecated
+Mac Catalyst 13.1–16.0 Deprecated
+tvOS 11.0–16.0 Deprecated
+watchOS 4.0–9.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+var dataPointer: UnsafeMutableRawPointer { get }
+See Also
+Accessing a Multiarray’s Elements
+subscript(Int) -> NSNumber
+Accesses the multiarray by using a linear offset.
+subscript([NSNumber]) -> NSNumber
+Accesses the multiarray by using a number array that has an element for each dimension.
+var pixelBuffer: CVPixelBuffer?
+A reference to the multiarray’s underlying pixel buffer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is dataPointer
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

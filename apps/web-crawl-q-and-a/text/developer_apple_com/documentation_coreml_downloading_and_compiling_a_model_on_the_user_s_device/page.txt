@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/coreml/downloading_and_compiling_a_model_on_the_user_s_device
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+C
+MLFeatureValue
+Making Predictions with a Sequence of Inputs
+Documentation
+Open Menu
+Article
+Downloading and Compiling a Model on the User’s Device
+Install Core ML models on the user’s device dynamically at runtime.
+Overview
+Download and compile models within your app as an alternative to bundling with the app. Scenarios where this is a practical approach include:
+Reducing the app’s download size of your app on the App Store
+Determining the right models for the user after installation, based on their location, specific interests, and so on
+Providing model updates over the network
+Download and Compile the Model in the Background
+Download the model definition file (ending in .mlmodel) onto the user’s device by using URLSession, CloudKit, or another networking toolkit. Then compile the model definition by calling compileModel(at:).
+let compiledModelURL = try MLModel.compileModel(at: modelDescriptionURL)
+This creates a new, compiled model file with the same name as the model description but ends in .mlmodelc. Create a new MLModel instance by passing the compiled model URL to its initializer.
+let model = try MLModel(contentsOf: compiledModelURL)
+Model instances you create from model files you’ve downloaded have the same capabilities as those you create from model files that you bundle with your app.
+Save Reusable Models to a Permanent Location
+MLModel saves models it compiles to a temporary location. If your app can reuse the model at a later time, reduce your app’s resource consumption by saving the compiled model to a permanent location.
+Build the URL to a permanent location that your app can access in the future, such as Application Support.
+let fileManager = FileManager.default
+let appSupportURL = fileManager.urls(for: .applicationSupportDirectory,
+                                     in: .userDomainMask).first!
+Create the URL for the permanent compiled model file.
+let compiledModelName = compiledModelURL.lastPathComponentlet
+permanentURL = appSupportURL.appendingPathComponent(compiledModelName)
+Move or copy the file to its permanent location.
+// Copy the file to the to the permanent location, replacing it if necessary.
+_ = try fileManager.replaceItemAt(permanentURL,
+                                  withItemAt: compiledModelURL)
+See Also
+App Integration
+API Reference
+Model Integration Samples
+Integrate tabluar, image, and text classifcation models into your app.
+Related Documentation
+class func compileModel(at: URL) -> URL
+Compiles a model on the device to update the model in your app.
+Current page is Downloading and Compiling a Model on the User’s Device
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

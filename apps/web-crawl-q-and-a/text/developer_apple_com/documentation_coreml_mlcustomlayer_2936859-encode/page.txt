@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/coreml/mlcustomlayer/2936859-encode
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLComputeDevice
+Beta
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+M
+func evaluate(inputs: [MLMultiArray], outputs: [MLMultiArray])
+Evaluating a Layer
+M
+func outputShapes(forInputShapes: [[NSNumber]]) -> [[NSNumber]]
+M
+func setWeightData([Data])
+Integrating a Layer
+M
+init(parameters: [String : Any])
+Creating a Layer
+r
+P
+MLCustomLayer
+Documentation
+Open Menu
+Instance Method
+encode(commandBuffer:inputs:outputs:)
+Encodes GPU commands to evaluate the custom layer.
+iOS 11.2+
+iPadOS 11.2+
+macOS 10.13.2+
+Mac Catalyst 13.1+
+tvOS 11.2+
+watchOS 4.2+
+visionOS 1.0+ Beta
+optional func encode(
+    commandBuffer: MTLCommandBuffer,
+    inputs: [MTLTexture],
+    outputs: [MTLTexture]
+) throws
+Parameters
+commandBuffer
+A command buffer that defines the work the layer performs on the GPU.
+inputs
+A texture array that represents the layer’s inputs.
+outputs
+A texture array that represents the layer’s outputs.
+Return Value
+true if the method successfully filled commandBuffer; otherwise false.
+Discussion
+Implement this method to use the GPU to evaluate your layer. Fill commandBuffer with the GPU commands that evaluate the layer. Don’t commit the command buffer in this method; Core ML executes the command buffer after this method returns.
+Improve your layer’s performance by caching the MTLComputePipelineState instances you create and intend to reuse in subsequent calls.
+Implementing this method doesn’t guarantee that Core ML evaluates this layer on the GPU. For example, Core ML may evaluate the layer on the CPU if the system doesn’t have enough GPU’s resources to run the custom layer.
+Important
+The GPU works with 16-bit floats, not 32-bit floats. Verify that lower precision values don’t impact your network’s behavior.
+If you don’t implement this method, Core ML instead uses evaluate(inputs:outputs:).
+For more information about using the GPU for general purpose programming, see Compute Processing.
+See Also
+Evaluating a Layer
+func evaluate(inputs: [MLMultiArray], outputs: [MLMultiArray])
+Evaluates the custom layer with the given inputs.
+Required
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is encode(commandBuffer:inputs:outputs:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

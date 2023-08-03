@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/coreml/mlmultiarrayconstraint
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLParameterKey
+M
+func parameterValue(for: MLParameterKey) -> Any
+C
+MLParameterDescription
+P
+var parameterDescriptionsByKey: [MLParameterKey : MLParameterDescription]
+P
+var trainingInputDescriptionsByName: [String : MLFeatureDescription]
+P
+var isUpdatable: Bool
+Accessing Update Descriptions
+P
+var multiArrayConstraint: MLMultiArrayConstraint?
+C
+MLDictionaryConstraint
+P
+var dictionaryConstraint: MLDictionaryConstraint?
+C
+MLImageConstraint
+P
+var imageConstraint: MLImageConstraint?
+Accessing Feature Constraints
+M
+func isAllowedValue(MLFeatureValue) -> Bool
+Checking for Validity
+Documentation
+Open Menu
+Class
+MLMultiArrayConstraint
+The shape and data type constraints for a multidimensional array feature.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+class MLMultiArrayConstraint : NSObject
+Topics
+Accessing the Constraints
+var shape: [NSNumber]
+The shape of the multi array.
+var dataType: MLMultiArrayDataType
+The type for the multi array.
+var shapeConstraint: MLMultiArrayShapeConstraint
+The constraint on the shape of the multiarray.
+class MLMultiArrayShapeConstraint
+The lists of shapes or ranges of shapes that constrain a multiarray feature.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSSecureCoding
+See Also
+Accessing Feature Constraints
+var imageConstraint: MLImageConstraint?
+The size and format constraints for an image feature.
+class MLImageConstraint
+The width, height, and pixel format constraints of an image feature.
+var dictionaryConstraint: MLDictionaryConstraint?
+The constraint for a dictionary feature.
+class MLDictionaryConstraint
+The constraint on the keys for a dictionary feature.
+var multiArrayConstraint: MLMultiArrayConstraint?
+The constraints on a multidimensional array feature.
+var sequenceConstraint: MLSequenceConstraint?
+The constraints for a sequence feature.
+class MLSequenceConstraint
+The constraints for a sequence feature.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLMultiArrayConstraint
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

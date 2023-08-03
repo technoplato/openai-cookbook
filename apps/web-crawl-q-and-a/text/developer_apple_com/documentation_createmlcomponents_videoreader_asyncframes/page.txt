@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/createmlcomponents/videoreader/asyncframes
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func applied(to: URL, eventHandler: EventHandler?) async throws -> VideoReader.AsyncFrames
+Applying
+S
+VideoReader.CameraConfiguration
+S
+VideoReader.CameraAsyncBuffers
+AsyncSequence Implementations
+Default Implementations
+T
+VideoReader.AsyncFrames.Feature
+M
+static func read(contentsOf: URL) async throws -> VideoReader.AsyncFrames
+M
+static func readCamera(configuration: VideoReader.CameraConfiguration) async throws -> VideoReader.CameraAsyncBuffers
+M
+static func read<S, Annotation>(S) async throws -> [AnnotatedFeature<VideoReader.AsyncFrames, Annotation>]
+M
+static func read<S>(S) async throws -> [VideoReader.AsyncFrames]
+Reading
+M
+init()
+Creating the Reader
+S
+VideoReader
+Documentation
+Open Menu
+Swift
+Structure
+VideoReader.AsyncFrames
+An async sequence of video frames.
+Create ML Components
+CreateMLComponents
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct AsyncFrames
+Overview
+This sequence allows iterating through the file only once.
+Topics
+Structures
+struct Iterator
+An async iterator of video frames.
+Instance Properties
+var count: Int?
+The number of frames. For this sequence count is always nil.
+let frameSize: CGSize
+The frame size.
+let nominalFrameRate: Float
+The nominal frame rate.
+let timescale: CMTimeScale
+The timescale of the video track.
+let url: URL
+The video file URL, used when throwing an error.
+let videoDuration: CMTime
+The video duration.
+Instance Methods
+func makeAsyncIterator() -> VideoReader.AsyncFrames.Iterator
+Constructs an iterator.
+Type Aliases
+typealias AsyncIterator
+The type of asynchronous iterator that produces elements of this asynchronous sequence.
+typealias Element
+The type of element produced by this asynchronous sequence.
+typealias Feature
+The feature type.
+Default Implementations
+API Reference
+AsyncSequence Implementations
+Relationships
+Conforms To
+AsyncSequence
+Sendable
+TemporalSequence
+See Also
+Reading
+static func read<S>(S) async throws -> [VideoReader.AsyncFrames]
+Reads a sequence of files as an array of async sequences of video frames.
+static func read<S, Annotation>(S) async throws -> [AnnotatedFeature<VideoReader.AsyncFrames, Annotation>]
+Reads a sequence of annotated files as an array of annotated async sequences of video frames.
+static func readCamera(configuration: VideoReader.CameraConfiguration) async throws -> VideoReader.CameraAsyncBuffers
+Reads an async sequence of video frames captured with a video camera.
+static func read(contentsOf: URL) async throws -> VideoReader.AsyncFrames
+Reads a video file as an async sequence of video frames.
+struct CameraAsyncBuffers
+An async sequence of video frames.
+struct CameraConfiguration
+The configuration of the camera to pass to the readCamera method.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VideoReader.AsyncFrames
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/createml/mlactionclassifier/datasource/directorywithvideosandannotation(at:annotationfile:videocolumn:labelcolumn:starttimecolumn:endtimecolumn:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLStyleTransfer
+S
+MLHandActionClassifier
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+S
+MLActionClassifier.ModelParameters
+case labeledKeypointsDataFrame(DataFrame, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+case labeledVideoDataFrame(DataFrame, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+case labeledKeypointsData(table: MLDataTable, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+case labeledVideoData(table: MLDataTable, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+case directoryWithVideosAndAnnotation(at: URL, annotationFile: URL, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+E
+case labeledFiles(at: URL)
+E
+case labeledDirectories(at: URL)
+Creating a Data Source
+E
+MLActionClassifier.DataSource
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Documentation
+Open Menu
+Swift
+Case
+MLActionClassifier.DataSource.directoryWithVideosAndAnnotation(at:annotationFile:videoColumn:labelColumn:startTimeColumn:endTimeColumn:)
+The location of a directory of video files, and the location of an action annotation file.
+macOS 11.0+
+visionOS 1.0+ Beta
+case directoryWithVideosAndAnnotation(
+    at: URL,
+    annotationFile: URL,
+    videoColumn: String,
+    labelColumn: String,
+    startTimeColumn: String? = nil,
+    endTimeColumn: String? = nil
+)
+Parameters
+at
+The location of a directory that contains video files.
+Discussion
+annotationFile: The location of a JSON or CSV file with object annotations for the images.
+videoColumn: The name of the column that contains the URLs to the video files.
+labelColumn: The name of the column that contains the labels of the action the person demonstrates in the video file.
+startTimeColumn: The name of the column that contains the action’s starting-time in the video file.
+endTimeColumn : The name of the column that contains the action’s ending-time in the video file.
+See Also
+Creating a Data Source
+case labeledDirectories(at: URL)
+The location of a folder with subfolders each of which contain sample videos of an action.
+case labeledFiles(at: URL)
+The location of a folder that contains video files whose names you use to label corresponding actions.
+case labeledVideoData(table: MLDataTable, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+A data table that contains the locations of the video files and the action annotations.
+case labeledKeypointsData(table: MLDataTable, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+A data table that contains the human body landmark movement data.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLActionClassifier.DataSource.directoryWithVideosAndAnnotation(at:annotationFile:videoColumn:labelColumn:startTimeColumn:endTimeColumn:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

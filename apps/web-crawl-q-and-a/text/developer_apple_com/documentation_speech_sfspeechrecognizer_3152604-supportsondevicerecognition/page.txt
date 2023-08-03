@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/speech/sfspeechrecognizer/3152604-supportsondevicerecognition
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+SFSpeechRecognitionTask
+In-progress requests
+C
+SFSpeechRecognitionRequest
+C
+SFSpeechAudioBufferRecognitionRequest
+C
+SFSpeechURLRecognitionRequest
+Recognizing speech in live audio
+Audio sources
+func recognitionTask(with: SFSpeechRecognitionRequest, delegate: SFSpeechRecognitionTaskDelegate) -> SFSpeechRecognitionTask
+func recognitionTask(with: SFSpeechRecognitionRequest, resultHandler: (SFSpeechRecognitionResult?, Error?) -> Void) -> SFSpeechRecognitionTask
+P
+var isAvailable: Bool
+r
+P
+SFSpeechRecognizerDelegate
+P
+var delegate: SFSpeechRecognizerDelegate?
+Monitoring the Availability of Speech Recognition
+M
+init?(locale: Locale)
+M
+init?()
+Creating a Speech Recognizer
+C
+SFSpeechRecognizer
+Documentation
+Open Menu
+Instance Property
+supportsOnDeviceRecognition
+A Boolean value that indicates whether the speech recognizer can operate without network access.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.0+
+visionOS 1.0+ Beta
+var supportsOnDeviceRecognition: Bool { get set }
+Discussion
+An SFSpeechRecognitionRequest can only honor its requiresOnDeviceRecognition property if supportsOnDeviceRecognition is true. If supportsOnDeviceRecognition is false, the SFSpeechRecognizer requires a network in order to recognize speech.
+See Also
+Monitoring the Availability of Speech Recognition
+var delegate: SFSpeechRecognizerDelegate?
+The delegate object that handles changes to the availability of speech recognition services.
+protocol SFSpeechRecognizerDelegate
+A protocol that you adopt in your objects to track the availability of a speech recognizer.
+var isAvailable: Bool
+A Boolean value that indicates whether the speech recognizer is currently available.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is supportsOnDeviceRecognition
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

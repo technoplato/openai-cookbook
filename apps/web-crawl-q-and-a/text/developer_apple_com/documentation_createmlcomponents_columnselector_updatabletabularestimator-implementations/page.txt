@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/createmlcomponents/columnselector/updatabletabularestimator-implementations
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+UpdatableEstimator
+r
+P
+SupervisedTemporalEstimator
+r
+P
+SupervisedEstimator
+r
+P
+TemporalEstimator
+r
+P
+Estimator
+r
+P
+TemporalTransformer
+r
+P
+Transformer
+func update(inout ColumnSelector<Estimator, UnwrappedInput>.Transformer, with: DataFrame, eventHandler: EventHandler?) async throws
+func encodeWithOptimizer(ColumnSelector<Estimator, UnwrappedInput>.Transformer, to: inout EstimatorEncoder) throws
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> ColumnSelector<Estimator, UnwrappedInput>.Transformer
+func appending<Other>(Other) -> some UpdatableTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>>
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Other.Annotation>
+func appending<Other>(Other) -> some UpdatableTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>>
+func adaptedAsSupervised<Annotation>(annotationColumnID: ColumnID<Annotation>) -> UpdatableTabularEstimatorToSupervisedAdaptor<Self, Annotation>
+TabularEstimator Implementations
+Default Implementations
+T
+ColumnSelector.Transformer
+T
+ColumnSelector.Output
+T
+ColumnSelector.Input
+M
+func fitted(to: DataFrame, eventHandler: EventHandler?) async throws -> ColumnSelector<Estimator, UnwrappedInput>.Transformer
+Fitting
+M
+func decode(from: inout EstimatorDecoder) throws -> ColumnSelector<Estimator, UnwrappedInput>.Transformer
+Documentation
+Open Menu
+UpdatableTabularEstimator Implementations
+Topics
+Instance Methods
+func adaptedAsSupervised<Annotation>(annotationColumnID: ColumnID<Annotation>) -> UpdatableTabularEstimatorToSupervisedAdaptor<Self, Annotation>
+Exposes this updatable tabular estimator as a supervised tabular estimator.
+func appending<Other>(Other) -> some UpdatableTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>>
+Composes this updatable tabular estimator with a tabular transformer.
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Other.Annotation>
+Composes this updatable tabular estimator with an updatable supervised tabular estimator.
+func appending<Other>(Other) -> some UpdatableTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>>
+Composes this updatable tabular estimator with another updatable tabular estimator.
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> ColumnSelector<Estimator, UnwrappedInput>.Transformer
+Reads the encoded transformer and optimizer with a decoder.
+Available when Estimator conforms to UpdatableEstimator and Estimator.Transformer.Input is UnwrappedInput?.
+Beta
+func encodeWithOptimizer(ColumnSelector<Estimator, UnwrappedInput>.Transformer, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+Available when Estimator conforms to UpdatableEstimator and Estimator.Transformer.Input is UnwrappedInput?.
+Beta
+func makeTransformer() -> ColumnSelectorTransformer<Estimator.Transformer, UnwrappedInput>
+Creates a default-initialized transformer suitable for incremental fitting.
+Available when Estimator conforms to UpdatableEstimator and Estimator.Transformer.Input is UnwrappedInput?.
+Beta
+func update(inout Self.Transformer, with: DataFrame) async throws
+func update(inout ColumnSelector<Estimator, UnwrappedInput>.Transformer, with: DataFrame, eventHandler: EventHandler?) async throws
+Updates a transformer with a new sequence of examples.
+Available when Estimator conforms to UpdatableEstimator and Estimator.Transformer.Input is UnwrappedInput?.
+Beta
+Current page is UpdatableTabularEstimator Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

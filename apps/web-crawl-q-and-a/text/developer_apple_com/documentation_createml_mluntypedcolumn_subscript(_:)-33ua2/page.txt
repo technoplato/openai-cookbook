@@ -1,0 +1,138 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/subscript(_:)-33ua2
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func == (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Comparing a Column with a Value to Generate an Untyped Column of Booleans
+static func != (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+static func == (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Comparing Columns to Generate an Untyped Column of Booleans
+static func * (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+static func + (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Selecting Elements to Generate an Untyped Column
+M
+func dropDuplicates() -> MLUntypedColumn
+M
+func dropMissing() -> MLUntypedColumn
+Discarding Elements to Generate an Untyped Column
+subscript(MLUntypedColumn) -> MLUntypedColumn
+subscript(MLDataColumn<Bool>) -> MLUntypedColumn
+Masking Elements to Generate an Untyped Column
+M
+func mapMissing<T>((MLDataValue) -> T?) -> MLDataColumn<T>
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Creates a subset of the column, given a range of elements.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+subscript(slice: Range<Int>) -> MLUntypedColumn { get }
+Return Value
+A new column.
+Overview
+slice: A range of integers indicating which elements to include in the new column.
+See Also
+Selecting Elements to Generate an Untyped Column
+subscript<R>(R) -> MLUntypedColumn
+Creates a subset of the column, given a range expression of elements.
+func prefix(Int) -> MLUntypedColumn
+Creates a subset of the column, given a number of initial elements.
+func suffix(Int) -> MLUntypedColumn
+Creates a subset of the column, given a number of final elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

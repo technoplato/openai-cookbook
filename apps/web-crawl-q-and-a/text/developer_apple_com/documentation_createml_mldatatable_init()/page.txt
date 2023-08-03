@@ -1,0 +1,139 @@
+https://developer.apple.com/documentation/createml/mldatatable/init()
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Generating New Data Tables
+M
+func append(contentsOf: MLDataTable)
+Appending to a Data Table
+M
+func removeColumn(named: String)
+Removing Columns
+M
+func renameColumn(named: String, to: String)
+Renaming Columns
+M
+init(namedColumns: [String : MLUntypedColumn]) throws
+M
+init(dictionary: [String : MLDataValueConvertible]) throws
+M
+init(contentsOf: URL, options: MLDataTable.ParsingOptions) throws
+Creating a Model from Tabular Data
+Creating a Data Table
+S
+MLDataTable
+Tabular Data
+S
+MLRecommender
+Documentation
+Open Menu
+Swift
+Initializer
+init()
+Creates an empty table containing no rows or columns.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init()
+Discussion
+Use this initializer to create an empty data table. Then, you add data columns with addColumn(_:named:), untyped columns with addColumn(_:named:), or another table with append(contentsOf:).
+See Also
+Creating a Data Table
+init(contentsOf: URL, options: MLDataTable.ParsingOptions) throws
+Creates a data table from an imported JSON or CSV file.
+init(dictionary: [String : MLDataValueConvertible]) throws
+Creates a data table from a dictionary of column names and data values.
+init(namedColumns: [String : MLUntypedColumn]) throws
+Creates a data table from a dictionary of column names and untyped columns.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,235 @@
+https://developer.apple.com/documentation/coreml/mlfeaturevalue
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(imageAt: URL, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(imageAt: URL, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(imageAt: URL, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(imageAt: URL, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(cgImage: CGImage, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+M
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+init(cgImage: CGImage, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Making Predictions with a Sequence of Inputs
+Model Inputs and Outputs
+Model Personalization
+Model Customization
+C
+MLModel
+Integrating a Core ML Model into Your App
+Updating a Model File to a Model Package
+Getting a Core ML Model
+Documentation
+Open Menu
+Class
+MLFeatureValue
+A generic wrapper around an underlying value and the value’s type.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+class MLFeatureValue : NSObject
+Overview
+A Core ML feature value wraps an underlying value and bundles it with that value’s type, which is one of the types that MLFeatureType defines. Apps typically access feature values indirectly by using the methods in the wrapper class Xcode automatically generates for Core ML model files.
+If your app accesses an MLModel directly, it must create and consume MLFeatureProvider instances. For each prediction, Core ML accepts a feature provider for its inputs, and generates a separate feature provider for its outputs. The input feature provider contains one MLFeatureValue instance per input, and the output feature provider contains one per output. See MLFeatureDescription for more information about the model input and output features.
+Topics
+Creating Numeric Feature Values
+init(int64: Int64)
+Creates a feature value that contains an integer.
+init(double: Double)
+Creates a feature value that contains a double.
+Creating String Feature Values
+init(string: String)
+Creates a feature value that contains a string.
+Creating Multidimensional Feature Values
+init(multiArray: MLMultiArray)
+Creates a feature value that contains a multidimensional array.
+init<Scalar>(shapedArray: MLShapedArray<Scalar>)
+Creates a feature value that contains a shaped array.
+Creating Collection Feature Values
+init(dictionary: [AnyHashable : NSNumber])
+Creates a feature value that contains a dictionary of numbers.
+init(sequence: MLSequence)
+Creates a feature value that contains a sequence.
+Creating Image Feature Values
+init(pixelBuffer: CVPixelBuffer)
+Creates a feature value that contains an image from a pixel buffer.
+init(cgImage: CGImage, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image and its size and pixel format.
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image and its orientation, size, and pixel format.
+init(cgImage: CGImage, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image and a constraint.
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image, an orientation, and a constraint.
+init(imageAt: URL, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL and the image’s size and pixel format.
+init(imageAt: URL, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL and the image’s orientation, size, and pixel format.
+init(imageAt: URL, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL and a constraint.
+init(imageAt: URL, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL, an orientation, and a constraint.
+class MLImageConstraint
+The width, height, and pixel format constraints of an image feature.
+struct MLFeatureValue.ImageOption
+The initializer options you use to crop and scale an image when creating an image feature value.
+Creating Undefined Feature Values
+init(undefined: MLFeatureType)
+Creates a feature value with a type that represents an undefined or missing value.
+Accessing the Feature’s Type
+var type: MLFeatureType
+The type of the feature value.
+Accessing the Feature’s Value
+var isUndefined: Bool
+A Boolean value that indicates whether the feature value is undefined or missing.
+var int64Value: Int64
+The underlying integer of the feature value.
+var doubleValue: Double
+The underlying double of the feature value.
+var stringValue: String
+The underlying string of the feature value.
+var imageBufferValue: CVPixelBuffer?
+The underlying image of the feature value as a pixel buffer.
+func shapedArrayValue<Scalar>(of: Scalar.Type) -> MLShapedArray<Scalar>?
+Returns the underlying shaped array of the feature value.
+var multiArrayValue: MLMultiArray?
+The underlying multiarray of the feature value.
+var sequenceValue: MLSequence?
+The underlying sequence of the feature value.
+var dictionaryValue: [AnyHashable : NSNumber]
+The underlying dictionary of the feature value.
+Comparing Feature Values
+func isEqual(to: MLFeatureValue) -> Bool
+Returns a Boolean value that indicates whether a feature value is equal to another.
+Supporting Types
+enum MLFeatureType
+The possible types for feature values, input features, and output features.
+struct MLShapedArray
+A machine learning collection type that stores scalar values in a multidimensional array.
+protocol MLShapedArrayProtocol
+An interface that defines a shaped array type.
+class MLMultiArray
+A machine learning collection type that stores numeric values in an array with multiple dimensions.
+class MLSequence
+A machine learning collection type that stores a series of strings or integers.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSCopying
+NSSecureCoding
+See Also
+Model Inputs and Outputs
+Making Predictions with a Sequence of Inputs
+Integrate a recurrent neural network model to process sequences of inputs.
+protocol MLFeatureProvider
+An interface that represents a collection of values for either a model's input or its output.
+class MLDictionaryFeatureProvider
+A convenience wrapper for the given dictionary of data.
+protocol MLBatchProvider
+An interface that represents a collection of feature providers.
+class MLArrayBatchProvider
+A convenience wrapper for batches of feature providers.
+class MLModelAsset
+An abstraction of a compiled Core ML model asset.
+Related Documentation
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLFeatureValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

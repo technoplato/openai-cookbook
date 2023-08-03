@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/createmlcomponents/maximumabsoluteerror(_:_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TemporalTransformerToUpdatableEstimatorAdaptor
+S
+TemporalEstimatorToSupervisedAdaptor
+S
+TemporalTransformerToEstimatorAdaptor
+Temporal Adaptors
+S
+TabularTransformerToEstimatorAdaptor
+S
+TabularEstimatorToSupervisedAdaptor
+Tabular Adaptors
+func rootMeanSquaredError<T>(some Collection, some Collection) -> T
+S
+ClassificationMetrics
+S
+ClassificationDistribution
+S
+Classification
+Metrics
+S
+TreeClassifierModel
+S
+FullyConnectedNetworkClassifierModel
+S
+FullyConnectedNetworkClassifier
+Documentation
+Open Menu
+Swift
+Function
+maximumAbsoluteError(_:_:)
+Computes the maximum absolute error between predicted and ground truth values.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+@_backDeploy(before: macOS 14.0, iOS 17.0, tvOS 17.0)
+func maximumAbsoluteError<T>(
+    _ predicted: some Collection,
+    _ groundTruth: some Collection
+) -> T where T : FloatingPoint
+Parameters
+predicted
+The predicted values.
+groundTruth
+The ground truth values. The collection must have same number of elements as the predicted values.
+Return Value
+The maximum absolute error.
+Discussion
+Empty collections of predicted and ground truth values will return a value of NaN.
+See Also
+Metrics
+struct Classification
+An item in a classification result.
+struct ClassificationDistribution
+A classification distribution that contains a probability for each classification label.
+struct ClassificationMetrics
+Classification metrics.
+func rootMeanSquaredError<T>(some Collection, some Collection) -> T
+Computes the root mean squared error between predicted and ground truth values.
+func meanAbsoluteError<T>(some Collection, some Collection) -> T
+Computes the mean absolute error between predicted and ground truth values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is maximumAbsoluteError(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

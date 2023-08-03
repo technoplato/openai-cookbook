@@ -1,0 +1,222 @@
+https://developer.apple.com/documentation/createmlcomponents/multilabelclassificationmetrics
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func trueNegativeCount(of: Label) -> Int
+M
+func recallScore(for: Label) -> Float
+M
+func precisionScore(for: Label) -> Float
+M
+func falsePositiveCount(of: Label) -> Int
+M
+func falseNegativeCount(of: Label) -> Int
+M
+func f1Score(for: Label) -> Float
+M
+func count(of: Label) -> Int
+func add(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>)
+init(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy, labels: Set<Label>) throws
+init(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy) throws
+init(some Sequence<(classification: ClassificationDistribution<Label>, labels: Set<Label>)>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy, labels: Set<Label>) throws
+init(some Sequence<(classification: ClassificationDistribution<Label>, labels: Set<Label>)>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy) throws
+S
+ModelMetadata
+Beta
+S
+ImageRotator
+Beta
+S
+ImageFlipper
+Beta
+S
+ImageExposureAdjuster
+Beta
+S
+ImageColorTransformer
+Beta
+S
+ImageBlur
+Beta
+S
+FullyConnectedNetworkMultiLabelClassifierModel
+Beta
+S
+FullyConnectedNetworkMultiLabelClassifierConfiguration
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+MultiLabelClassificationMetrics
+Multi-label classification metrics.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+struct MultiLabelClassificationMetrics<Label> where Label : Hashable
+Topics
+Initializers
+init(some Sequence<(classification: ClassificationDistribution<Label>, labels: Set<Label>)>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy) throws
+Creates multi-label classification metrics for classifications and ground truth labels.
+init(some Sequence<(classification: ClassificationDistribution<Label>, labels: Set<Label>)>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy, labels: Set<Label>) throws
+Creates multi-label classification metrics for classifications and ground truth labels.
+init(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy) throws
+Creates multi-label classification metrics for classifications and ground truth labels.
+init(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>, strategy: MultiLabelClassificationMetrics<Label>.ThresholdSelectionStrategy, labels: Set<Label>) throws
+Creates multi-label classification metrics for classifications and ground truth labels.
+init(confidenceThresholds: [Label : Float])
+Creates empty multi-label classification metrics.
+Available when Label conforms to Hashable.
+Instance Properties
+var confidenceThresholds: [Label : Float]
+A dictionary of label and confidence thresholds.
+var exampleCount: Int
+The number of examples used to compute the metrics.
+var labels: Set<Label>
+The classifier labels.
+var meanAveragePrecision: Float
+The mean average precision.
+Instance Methods
+func add(some Sequence<(classification: ClassificationDistribution<Label>, labels: Set<Label>)>)
+Updates the metrics with more pairs of classifications and ground truth labels.
+Available when Label conforms to Hashable.
+func add(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>)
+Updates the metrics with more classifications and ground truth labels.
+Available when Label conforms to Hashable.
+func count(of: Label) -> Int
+Returns the number of times a label appeared in the ground truth collection.
+Available when Label conforms to Hashable.
+func f1Score(for: Label) -> Float
+Computes the F1 score from predicted and ground truth values.
+Available when Label conforms to Hashable.
+func falseNegativeCount(of: Label) -> Int
+Returns the number of times a true label was not predicted.
+Available when Label conforms to Hashable.
+func falsePositiveCount(of: Label) -> Int
+Returns the number of times the predicted label did not match the true label.
+Available when Label conforms to Hashable.
+func precisionScore(for: Label) -> Float
+Computes the precision score for a class label.
+Available when Label conforms to Hashable.
+func recallScore(for: Label) -> Float
+Computes the recall score for a class label.
+Available when Label conforms to Hashable.
+func trueNegativeCount(of: Label) -> Int
+Returns the number of times a label was not in the predicted or ground truth collections.
+Available when Label conforms to Hashable.
+func truePositiveCount(of: Label) -> Int
+Returns the number of times the predicted label matched the true label.
+Available when Label conforms to Hashable.
+Type Methods
+static func meanAveragePrecisionScore(some Sequence<(classification: ClassificationDistribution<Label>, labels: Set<Label>)>) -> Float
+Computes the mean average precision.
+Available when Label conforms to Hashable.
+static func meanAveragePrecisionScore(some Sequence<(classification: ClassificationDistribution<Label>, labels: Set<Label>)>, labels: Set<Label>) -> Float
+Computes the mean average precision.
+Available when Label conforms to Hashable.
+static func meanAveragePrecisionScore(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>) -> Float
+Computes the mean average precision.
+Available when Label conforms to Hashable.
+static func meanAveragePrecisionScore(classifications: some Sequence<ClassificationDistribution<Label>>, groundTruth: some Sequence<Set<Label>>, labels: Set<Label>) -> Float
+Computes the mean average precision.
+Available when Label conforms to Hashable.
+Enumerations
+enum ThresholdSelectionStrategy
+A strategy for selecting a confidence threshold.
+Available when Label conforms to Hashable.
+Relationships
+Conforms To
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MultiLabelClassificationMetrics
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

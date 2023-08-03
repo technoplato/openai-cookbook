@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/coreml/mlfeaturedescription/2879359-name
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var predictedProbabilitiesName: String?
+P
+var predictedFeatureName: String?
+Accessing Prediction Names
+S
+MLModelMetadataKey
+P
+var metadata: [MLModelMetadataKey : Any]
+P
+var classLabels: [Any]?
+Accessing Metadata
+Inspecting a Feature
+C
+MLFeatureDescription
+P
+var outputDescriptionsByName: [String : MLFeatureDescription]
+P
+var inputDescriptionsByName: [String : MLFeatureDescription]
+Accessing Feature Descriptions
+C
+MLModelDescription
+P
+var modelDescription: MLModelDescription
+P
+var configuration: MLModelConfiguration
+Documentation
+Open Menu
+Instance Property
+name
+The name of this feature.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+var name: String { get }
+See Also
+Inspecting a Feature
+var type: MLFeatureType
+The type of this feature.
+enum MLFeatureType
+The possible types for feature values, input features, and output features.
+var isOptional: Bool
+A Boolean value that indicates whether this feature is optional.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is name
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

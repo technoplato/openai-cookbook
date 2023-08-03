@@ -1,0 +1,171 @@
+https://developer.apple.com/documentation/createmlcomponents/anytemporaliterator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+UpdatableSupervisedEstimator
+r
+P
+UpdatableEstimator
+r
+P
+SupervisedTemporalEstimator
+r
+P
+SupervisedEstimator
+r
+P
+TemporalEstimator
+r
+P
+Estimator
+r
+P
+TemporalTransformer
+S
+TemporalFileSegment
+S
+VideoReader
+S
+Downsampler
+S
+SlidingWindowTransformer
+S
+TemporalSegmentIdentifier
+r
+P
+TemporalSequence
+S
+TemporalFeature
+Time-Based Components
+Documentation
+Open Menu
+Swift
+Structure
+AnyTemporalIterator
+A type-erased async iterator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct AnyTemporalIterator<Element>
+Topics
+Iterating
+func next() async throws -> Element?
+Asynchronously advances to the next element and returns it, or ends the sequence if there is no next element.
+Relationships
+Conforms To
+AsyncIteratorProtocol
+Sendable
+See Also
+Time-Based Components
+struct TemporalFeature
+A temporal feature contains a segment identifier and a feature value.
+protocol TemporalSequence
+Async sequence for temporal features.
+struct TemporalSegmentIdentifier
+Uniquely identifiers a segment of a temporal sequence.
+struct SlidingWindowTransformer
+A temporal transformer that groups input elements.
+struct Downsampler
+A temporal transformer that down samples the input stream.
+struct VideoReader
+A video file reader.
+struct TemporalFileSegment
+A URL and a time range identifying a specific segment of a time-based (temporal) file.
+struct AnyTemporalSequence
+A type-erased temporal sequence.
+struct PreprocessedFeatureSequence
+An asynchronous sequence of eagerly stored temporal features.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is AnyTemporalIterator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

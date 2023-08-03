@@ -1,0 +1,206 @@
+https://developer.apple.com/documentation/createml/mlobjectdetector
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func evaluation(on: MLDataTable, imageColumn: String, annotationColumn: String) -> MLObjectDetectorMetrics
+M
+func evaluation(on: MLObjectDetector.DataSource) -> MLObjectDetectorMetrics
+Evaluating an object detector
+P
+var validationMetrics: MLObjectDetectorMetrics
+P
+var trainingMetrics: MLObjectDetectorMetrics
+Assessing model accuracy
+M
+init(trainingData: MLDataTable, imageColumn: String, annotationColumn: String, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters) throws
+init(trainingData: MLObjectDetector.DataSource, parameters: MLObjectDetector.ModelParameters, annotationType: MLObjectDetector.AnnotationType) throws
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLObjectDetector>
+static func makeTrainingSession(trainingData: MLObjectDetector.DataSource, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLObjectDetector>
+static func train(trainingData: MLObjectDetector.DataSource, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLObjectDetector>
+Documentation
+Open Menu
+Swift
+Structure
+MLObjectDetector
+A model you train to classify one or more objects within an image.
+macOS 10.15+
+visionOS 1.0+ Beta
+struct MLObjectDetector
+Overview
+Use an MLObjectDetector task to train a machine learning model that can identify items, or objects, within an image. For example, you can train an object detector to recognize breakfast items on a table, such as bananas, croissants, and beverages.
+You create an object detector training it with a combination of images and annotations for each object within an image. Then save it as a Core ML model and use it in your app to recognize similar items.
+Topics
+Creating a data source
+Building an object detector data source
+Arrange your training data for an object detector in one of several different structured ways.
+Training an object detector asynchronously
+static func train(trainingData: MLObjectDetector.DataSource, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLObjectDetector>
+Begins an asynchronous object-detector training session.
+static func makeTrainingSession(trainingData: MLObjectDetector.DataSource, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLObjectDetector>
+Creates an asynchronous object-detector training session.
+static func resume(MLTrainingSession<MLObjectDetector>) throws -> MLJob<MLObjectDetector>
+Begins or continues an asynchronous object-detector training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLObjectDetector>
+Creates an asynchronous training session for an object detector by restoring an existing training session’s state from its parameters.
+Creating an object detector from a checkpoint
+init(checkpoint: MLCheckpoint) throws
+Creates an object detector from a training session checkpoint.
+Training an object detector synchronously
+init(trainingData: MLObjectDetector.DataSource, parameters: MLObjectDetector.ModelParameters, annotationType: MLObjectDetector.AnnotationType) throws
+Creates an object detector with a data source.
+init(trainingData: MLDataTable, imageColumn: String, annotationColumn: String, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters) throws
+Creates an object detector with a data table.
+Assessing model accuracy
+var trainingMetrics: MLObjectDetectorMetrics
+Measurements of the object detector’s performance on the training dataset.
+var validationMetrics: MLObjectDetectorMetrics
+Measurements of the object detector’s performance on the validation dataset.
+Evaluating an object detector
+func evaluation(on: MLObjectDetector.DataSource) -> MLObjectDetectorMetrics
+Generates metrics by evaluating the object detector’s performance using annotated images in a data source.
+func evaluation(on: MLDataTable, imageColumn: String, annotationColumn: String) -> MLObjectDetectorMetrics
+Generates metrics by evaluating the object detector’s performance using annotated images in a data table.
+Testing an object detector
+func prediction(from: URL) throws -> MLObjectDetector.DetectedObjects
+Locates objects in an image and generates an annotation for each object it detects.
+func predictions(from: [URL]) throws -> [MLObjectDetector.DetectedObjects]
+Locates objects in an array of images and generates an array of annotation collections, one for each input image.
+typealias DetectedObjects
+An array of annotations that represent the items an object detector found in an image.
+struct ObjectAnnotation
+The label, location, and confidence score of an item the object detector found in an image.
+Saving an object detector
+func write(to: URL, metadata: MLModelMetadata?) throws
+Exports the object detector as a Core ML model file to a location in the file system.
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports the object detector as a Core ML model file to the file path.
+Inspecting an object detector model
+var model: MLModel
+The object detector’s underlying Core ML model instance.
+let modelParameters: MLObjectDetector.ModelParameters
+The object detector’s model configuration parameters you provided to its training session.
+Describing an object detector
+var description: String
+A text representation of the object detector.
+var debugDescription: String
+A text representation of the object detector that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the object detector within a playground.
+Supporting types
+enum DataSource
+A data source for an object detector.
+enum AnnotationType
+The available types of image annotations.
+struct ModelParameters
+Parameters that affect the process of training an object detection model.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Image Models
+Creating an Image Classifier Model
+Train a machine learning model to classify images, and add it to your Core ML app.
+struct MLImageClassifier
+A model you train to classify images.
+struct MLHandPoseClassifier
+A task that creates a hand pose classification model by training with images of people’s hands that you provide.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLObjectDetector
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

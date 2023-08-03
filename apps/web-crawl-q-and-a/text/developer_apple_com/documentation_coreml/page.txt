@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/coreml
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+Documentation
+Open Menu
+Framework
+Core ML
+Integrate machine learning models into your app.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.0+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+Overview
+Core ML applies a machine learning algorithm to a set of training data to create a model. You use a model to make predictions based on new input data. Models can accomplish a wide variety of tasks that would be difficult or impractical to write in code. For example, you can train a model to categorize photos, or detect specific objects within a photo directly from its pixels.
+After you create the model, integrate it in your app and deploy it on the user’s device. Your app uses Core ML APIs and user data to make predictions and to train or fine-tune the model.
+You can build and train a model with the Create ML app bundled with Xcode. Models trained using Create ML are in the Core ML model format and are ready to use in your app. Alternatively, you can use a wide variety of other machine learning libraries and then use Core ML Tools to convert the model into the Core ML format. Once a model is on a user’s device, you can use Core ML to retrain or fine-tune it on-device, with that user’s data.
+Core ML optimizes on-device performance by leveraging the CPU, GPU, and Neural Engine while minimizing its memory footprint and power consumption. Running a model strictly on the user’s device removes any need for a network connection, which helps keep the user’s data private and your app responsive.
+Core ML is the foundation for domain-specific frameworks and functionality. Core ML supports Vision for analyzing images, Natural Language for processing text, Speech for converting audio to text, and Sound Analysis for identifying sounds in audio. Core ML itself builds on top of low-level primitives like Accelerate and BNNS, as well as Metal Performance Shaders.
+Topics
+Core ML Models
+Getting a Core ML Model
+Obtain a Core ML model to use in your app.
+Updating a Model File to a Model Package
+Convert a Core ML model file into a model package in Xcode.
+Integrating a Core ML Model into Your App
+Add a simple model to an app, pass input data to the model, and process the model’s predictions.
+class MLModel
+An encapsulation of all the details of your machine learning model.
+API Reference
+Model Customization
+Expand and modify your model with new layers.
+API Reference
+Model Personalization
+Update your model to adapt to new data.
+Model Inputs and Outputs
+Making Predictions with a Sequence of Inputs
+Integrate a recurrent neural network model to process sequences of inputs.
+class MLFeatureValue
+A generic wrapper around an underlying value and the value’s type.
+protocol MLFeatureProvider
+An interface that represents a collection of values for either a model's input or its output.
+class MLDictionaryFeatureProvider
+A convenience wrapper for the given dictionary of data.
+protocol MLBatchProvider
+An interface that represents a collection of feature providers.
+class MLArrayBatchProvider
+A convenience wrapper for batches of feature providers.
+class MLModelAsset
+An abstraction of a compiled Core ML model asset.
+App Integration
+Downloading and Compiling a Model on the User’s Device
+Install Core ML models on the user’s device dynamically at runtime.
+API Reference
+Model Integration Samples
+Integrate tabluar, image, and text classifcation models into your app.
+Model Encryption
+Generating a Model Encryption Key
+Create a model encryption key to encrypt a compiled model or model archive.
+Encrypting a Model in Your App
+Encrypt your app’s built-in model at compile time by adding a compiler flag.
+Model Deployments
+class MLModelCollection
+A set of Core ML models from a model deployment.
+Deprecated
+Compute Devices
+enum MLComputeDevice
+Compute devices for framework operations.
+Beta
+class MLCPUComputeDevice
+An object that represents a CPU compute device.
+Beta
+class MLGPUComputeDevice
+An object that represents a GPU compute device.
+Beta
+class MLNeuralEngineComputeDevice
+An object that represents a Neural Engine compute device.
+Beta
+protocol MLComputeDeviceProtocol
+An interface that represents a compute device type.
+Beta
+Model Errors
+struct MLModelError
+Information about a Core ML model error.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Core ML
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

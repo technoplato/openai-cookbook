@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/createml/mldatatable/subscript(_:_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func writeCSV(to: URL) throws
+M
+func write(toDirectory: String) throws
+M
+func write(to: URL) throws
+Saving a Data Table
+P
+var columnTypes: [String : MLDataValue.ValueType]
+S
+MLDataTable.ColumnNames
+P
+var columnNames: MLDataTable.ColumnNames
+Accessing Columns
+S
+MLUntypedColumn
+M
+func addColumn(MLUntypedColumn, named: String)
+S
+MLDataColumn
+M
+func addColumn<Element>(MLDataColumn<Element>, named: String)
+Adding Columns
+M
+func map<T>((MLDataTable.Row) -> T?) -> MLDataColumn<T>
+M
+func map<T>((MLDataTable.Row) -> T) -> MLDataColumn<T>
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:_:)
+Retrieves a column with the specified name and type.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+subscript<T>(columnName: String, columnType: T.Type) -> MLDataColumn<T>? where T : MLDataValueConvertible { get }
+Parameters
+columnName
+The name of the column to extract.
+columnType
+The underlying type of the column’s content.
+Return Value
+A new MLDataColumn with the specified name and type, if it exists; otherwise nil.
+Overview
+Use this subscript to get a typed MLDataColumn, which is easier to work with than a MLUntypedColumn returned from subscript(_:).
+See Also
+Related Documentation
+subscript(String) -> MLUntypedColumn
+Retrieves or adds an untyped column with the specified name.
+Accessing Columns
+subscript<Element>(String) -> MLDataColumn<Element>
+Retrieves or adds a typed column with the specified name.
+subscript(String) -> MLUntypedColumn
+Retrieves or adds an untyped column with the specified name.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

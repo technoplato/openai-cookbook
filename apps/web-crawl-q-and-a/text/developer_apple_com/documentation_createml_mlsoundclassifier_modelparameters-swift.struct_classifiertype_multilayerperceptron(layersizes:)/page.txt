@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createml/mlsoundclassifier/modelparameters-swift.struct/classifiertype/multilayerperceptron(layersizes:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+Equatable Implementations
+Default Implementations
+static func != (Self, Self) -> Bool
+static func == (MLSoundClassifier.ModelParameters.ModelAlgorithmType, MLSoundClassifier.ModelParameters.ModelAlgorithmType) -> Bool
+static func == (MLSoundClassifier.ModelParameters.ClassifierType, MLSoundClassifier.ModelParameters.ClassifierType) -> Bool
+E
+case logisticRegressor
+Designating an Algorithm’s Classifier
+E
+MLSoundClassifier.ModelParameters.ClassifierType
+E
+MLSoundClassifier.ModelParameters.FeatureExtractorType
+E
+case transferLearning(featureExtractor: MLSoundClassifier.ModelParameters.FeatureExtractorType, classifier: MLSoundClassifier.ModelParameters.ClassifierType)
+Designating an Algorithm
+E
+MLSoundClassifier.ModelParameters.ModelAlgorithmType
+E
+MLSoundClassifier.ModelParameters.ValidationData
+Documentation
+Open Menu
+Swift
+Case
+MLSoundClassifier.ModelParameters.ClassifierType.multilayerPerceptron(layerSizes:)
+A neural network model that uses three or more layers to classify an input into a category.
+macOS 11.0+
+visionOS 1.0+ Beta
+case multilayerPerceptron(layerSizes: [Int])
+Parameters
+layerSizes
+An array of positive integers. Each element represents the number of units for that hidden layer.
+Discussion
+The neural network has a minimum of three layers:
+An input layer
+One or more hidden layers
+An output layer
+The number of integers in your layerSizes array determines the number of hidden layers in the neural network. Each integer in the array determines the size of that hidden layer.
+See Also
+Designating an Algorithm’s Classifier
+case logisticRegressor
+A statistical model that uses logistic regression to classify an input vector into a category.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLSoundClassifier.ModelParameters.ClassifierType.multilayerPerceptron(layerSizes:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

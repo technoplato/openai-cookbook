@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/createml/mlprogress/elapsedtime
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func encode(to: Encoder) throws
+Encoding and Decocing a Session’s Progress
+P
+static let stylizedImageKey: ProgressUserInfoKey
+P
+static let styleLossKey: ProgressUserInfoKey
+P
+static let contentLossKey: ProgressUserInfoKey
+Accessing Style Transfer Metrics
+P
+static let validationLossKey: ProgressUserInfoKey
+Inspecting a Session’s Progress
+M
+init?(progress: Progress)
+M
+init(phase: MLPhase)
+Creating a Training Progress Update
+S
+MLProgress
+P
+let progress: Progress
+P
+let startDate: Date
+Inspecting a Job
+Documentation
+Open Menu
+Swift
+Instance Property
+elapsedTime
+The time, in seconds, since the training session started.
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+var elapsedTime: TimeInterval
+See Also
+Inspecting a Session’s Progress
+var phase: MLPhase
+The current phase of the training session.
+var itemCount: Int
+The current number of files processed during a feature extraction phase, or the completed iterations during a training phase.
+var totalItemCount: Int?
+The total number of files during a feature extraction phase, or total iterations during a training phase.
+var metrics: [MLProgress.Metric : Any]
+Measurements of the model’s performance during the training or evaluation phases of a training session.
+enum Metric
+Metrics you use to evaluate a model’s performance during a training session.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is elapsedTime
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

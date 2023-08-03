@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/createml/mldatatable/columnnames-swift.struct/prefix(while:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Visualizing a Data Table
+M
+func writeCSV(toFile: String) throws
+M
+func writeCSV(to: URL) throws
+M
+func write(toDirectory: String) throws
+M
+func write(to: URL) throws
+Saving a Data Table
+P
+var columnTypes: [String : MLDataValue.ValueType]
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func prefix(upTo: Self.Index) -> Self.SubSequence
+M
+func prefix(through: Self.Index) -> Self.SubSequence
+M
+func prefix(Int) -> Self.SubSequence
+M
+func map<T>((Self.Element) throws -> T) rethrows -> [T]
+M
+func makeIterator() -> IndexingIterator<Self>
+M
+func index(of: Self.Element) -> Self.Index?
+M
+func formIndex(after: inout Self.Index)
+M
+func formIndex(inout Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Bool
+Documentation
+Open Menu
+Swift
+Instance Method
+prefix(while:)
+Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func prefix(while predicate: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+Parameters
+predicate
+A closure that takes an element of the sequence as its argument and returns true if the element should be included or false if it should be excluded. Once the predicate returns false it will not be called again.
+Discussion
+Complexity
+O(n), where n is the length of the collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is prefix(while:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

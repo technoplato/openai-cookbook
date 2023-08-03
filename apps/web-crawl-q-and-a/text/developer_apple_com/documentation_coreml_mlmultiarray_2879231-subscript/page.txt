@@ -1,0 +1,192 @@
+https://developer.apple.com/documentation/coreml/mlmultiarray/2879231-subscript
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLNeuralEngineComputeDevice
+Beta
+C
+MLGPUComputeDevice
+Beta
+C
+MLCPUComputeDevice
+Beta
+E
+MLComputeDevice
+Beta
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+subscript(Int) -> NSNumber
+Accessing a Multiarray’s Elements
+M
+func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer, [Int]) -> R) -> R
+M
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+M
+func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R
+M
+func withUnsafeBufferPointer<S, R>(ofType: S.Type, (UnsafeBufferPointer<S>) -> R) -> R
+Providing buffer access
+P
+var strides: [NSNumber]
+Documentation
+Open Menu
+Subscript
+subscript(_:)
+Accesses the multiarray by using a number array that has an element for each dimension.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+subscript(key: [NSNumber]) -> NSNumber { get set }
+Parameters
+key
+An NSNumber array that represents a position in a multiarray in which each element is an index in the corresponding dimension.
+Return Value
+A number.
+Discussion
+Use this subscript to access the multiarray by using an NSNumber array in which each element is an index in the multiarray’s corresponding dimension.
+// A multiarray with three dimensions.
+let multiarray = try MLMultiArray(shape: [5, 29, 17], dataType: .double)
+
+
+// The subscript key with three elements.
+let key = [3, 5, 7] as [NSNumber]
+
+
+// Set the element to π, a sentinel value.
+multiarray[key] = 3.141_59
+
+
+// Retrieve the element as a number.
+let numberValue = multiarray[key]
+print(numberValue.doubleValue)
+// Prints: 3.14159
+For better performance, directly access the multiarray’s underlying pointer by using a linear offset. Calculate the linear offset by summing the products of each dimension’s index with the dimension’s stride (See strides).
+// Get a pointer to the multiarray’s contents.
+let pointer = UnsafeMutablePointer<Double>(OpaquePointer(multiarray.dataPointer))
+var linearOffset = 0
+
+
+// Sum the products of each dimension’s number with its stride.
+for (dimension, stride) in zip(key, multiarray.strides) {
+    linearOffset += dimension.intValue * stride.intValue
+}
+
+
+// Check that the linear offset resolves to the same element as the subscript.
+assert(pointer[linearOffset] == multiarray[key].doubleValue)
+
+
+print(pointer[linearOffset])
+// Prints: 3.14159
+
+
+// Set the element to a different sentinel value.
+pointer[linearOffset] = 2.718_28
+print(pointer[linearOffset])
+// Prints: 2.71828
+See Also
+Accessing a Multiarray’s Elements
+subscript(Int) -> NSNumber
+Accesses the multiarray by using a linear offset.
+var pixelBuffer: CVPixelBuffer?
+A reference to the multiarray’s underlying pixel buffer.
+var dataPointer: UnsafeMutableRawPointer
+A pointer to the multiarray’s underlying memory.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,207 @@
+https://developer.apple.com/documentation/createml/mlprogress
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessing Style Transfer Metrics
+P
+static let validationLossKey: ProgressUserInfoKey
+P
+static let validationAccuracyKey: ProgressUserInfoKey
+P
+static let lossKey: ProgressUserInfoKey
+P
+static let accuracyKey: ProgressUserInfoKey
+Accessing Assessment Metrics
+P
+static let totalItemCountKey: ProgressUserInfoKey
+P
+let progress: Progress
+P
+let startDate: Date
+Inspecting a Job
+P
+var isCanceled: Bool
+M
+func cancel()
+M
+func store(in: inout Set<AnyCancellable>)
+Managing a Job
+P
+var result: AnyPublisher<Result, Error>
+Documentation
+Open Menu
+Swift
+Structure
+MLProgress
+A convenience type that exposes information about the progress of a training session.
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MLProgress
+Overview
+Create ML uses this type to exposes specific values within a Progress instance as properties.
+Topics
+Creating a Training Progress Update
+init(phase: MLPhase)
+Creates a training session progress instance from a training phase.
+init?(progress: Progress)
+Creates a training session progress instance from a foundation progress object.
+Inspecting a Session’s Progress
+var elapsedTime: TimeInterval
+The time, in seconds, since the training session started.
+var phase: MLPhase
+The current phase of the training session.
+var itemCount: Int
+The current number of files processed during a feature extraction phase, or the completed iterations during a training phase.
+var totalItemCount: Int?
+The total number of files during a feature extraction phase, or total iterations during a training phase.
+var metrics: [MLProgress.Metric : Any]
+Measurements of the model’s performance during the training or evaluation phases of a training session.
+enum Metric
+Metrics you use to evaluate a model’s performance during a training session.
+Accessing General Information
+static let elapsedTimeKey: ProgressUserInfoKey
+The key that accesses the elapsed time value.
+static let phaseKey: ProgressUserInfoKey
+The key that accesses the current phase value.
+static let itemCountKey: ProgressUserInfoKey
+The key that accesses the current item count value.
+static let totalItemCountKey: ProgressUserInfoKey
+The key that accesses the total item count value.
+Accessing Assessment Metrics
+static let accuracyKey: ProgressUserInfoKey
+The key that accesses the training accuracy value.
+static let lossKey: ProgressUserInfoKey
+The key that accesses the training loss value.
+static let validationAccuracyKey: ProgressUserInfoKey
+The key that accesses the validation accuracy value.
+static let validationLossKey: ProgressUserInfoKey
+The key that accesses the validation loss value.
+Accessing Style Transfer Metrics
+static let contentLossKey: ProgressUserInfoKey
+The key that accesses the content image loss value.
+static let styleLossKey: ProgressUserInfoKey
+The key that accesses the style image loss value.
+static let stylizedImageKey: ProgressUserInfoKey
+The key that accesses the stylized image value.
+Encoding and Decocing a Session’s Progress
+func encode(to: Encoder) throws
+Encodes the progress value into the given encoder.
+init(from: Decoder) throws
+Creates a progress instance by decoding from the given decoder.
+Type Properties
+static let maximumErrorKey: ProgressUserInfoKey
+They key that accesses the maximum error value.
+Beta
+static let rootMeanSquaredErrorKey: ProgressUserInfoKey
+They key that accesses the root-mean-squared error value.
+Beta
+static let validationMaximumErrorKey: ProgressUserInfoKey
+They key that accesses the validation maximum error value.
+Beta
+static let validationRootMeanSquaredErrorKey: ProgressUserInfoKey
+They key that accesses the validation root-mean-squared error value.
+Beta
+Relationships
+Conforms To
+Decodable
+Encodable
+Sendable
+See Also
+Inspecting a Job
+let startDate: Date
+The date and time when the training session began.
+let progress: Progress
+The training session’s current progress.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLProgress
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

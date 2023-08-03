@@ -1,0 +1,194 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3763337-suffix
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLSequence
+C
+MLMultiArray
+r
+P
+MLShapedArrayProtocol
+M
+func formatted<S>(S) -> S.FormatOutput
+Formatting a Shaped Array
+M
+func reduce<Result>(into: Result, (inout Result, MLShapedArraySlice<Scalar>) -> ()) -> Result
+M
+func reduce<Result>(Result, (Result, MLShapedArraySlice<Scalar>) -> Result) -> Result
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+func sorted(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func prefix(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+M
+func prefix(through: Int) -> MLShapedArraySlice<Scalar>
+M
+func prefix(upTo: Int) -> MLShapedArraySlice<Scalar>
+M
+func prefix(Int) -> MLShapedArraySlice<Scalar>
+M
+func max(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+M
+func min(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+M
+func drop(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+M
+func dropLast(Int) -> MLShapedArraySlice<Scalar>
+Documentation
+Open Menu
+Swift
+Instance Method
+suffix(_:)
+Returns a subsequence, up to the given maximum length, containing the final elements of the collection.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func suffix(_ maxLength: Int) -> MLShapedArraySlice<Scalar>
+Parameters
+maxLength
+The maximum number of elements to return. maxLength must be greater than or equal to zero.
+Return Value
+A subsequence terminating at the end of the collection with at most maxLength elements.
+Discussion
+If the maximum length exceeds the number of elements in the collection, the result contains the entire collection.
+let numbers = [1, 2, 3, 4, 5]
+print(numbers.suffix(2))
+// Prints "[4, 5]"
+print(numbers.suffix(10))
+// Prints "[1, 2, 3, 4, 5]"
+Complexity: O(1) if the collection conforms to RandomAccessCollection; otherwise, O(k), where k is equal to maxLength.
+See Also
+Generating a Shaped Array Slice
+func first(where: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+Returns the first element of the sequence that satisfies the given predicate.
+func last(where: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+Returns the last element of the sequence that satisfies the given predicate.
+func dropFirst(Int) -> MLShapedArraySlice<Scalar>
+Returns a subsequence containing all but the given number of initial elements.
+func dropLast(Int) -> MLShapedArraySlice<Scalar>
+Returns a subsequence containing all but the specified number of final elements.
+func drop(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements.
+func min(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+Returns the minimum element in the sequence, using the given predicate as the comparison between elements.
+func max(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+Returns the maximum element in the sequence, using the given predicate as the comparison between elements.
+func prefix(Int) -> MLShapedArraySlice<Scalar>
+Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection.
+func prefix(upTo: Int) -> MLShapedArraySlice<Scalar>
+Returns a subsequence from the start of the collection up to, but not including, the specified position.
+func prefix(through: Int) -> MLShapedArraySlice<Scalar>
+Returns a subsequence from the start of the collection through the specified position.
+func prefix(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements.
+func suffix(from: Int) -> MLShapedArraySlice<Scalar>
+Returns a subsequence from the specified position to the end of the collection.
+func sorted<Comparator>(using: Comparator) -> [MLShapedArraySlice<Scalar>]
+Generates a copy of the shaped array by sorting its slices with a comparator.
+func sorted<S, Comparator>(using: S) -> [MLShapedArraySlice<Scalar>]
+Generates a copy of the shaped array by sorting its slices with a sequence of comparators.
+func sorted(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the elements of the sequence, sorted using the given predicate as the comparison between elements.
+func shuffled() -> [MLShapedArraySlice<Scalar>]
+Returns the elements of the sequence, shuffled.
+func shuffled<T>(using: inout T) -> [MLShapedArraySlice<Scalar>]
+Returns the elements of the sequence, shuffled using the given generator as a source for randomness.
+func trimmingPrefix<Prefix>(Prefix) -> MLShapedArraySlice<Scalar>
+Returns a new collection of the same type by removing initial elements that satisfy the given predicate from the start.
+func trimmingPrefix(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is suffix(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

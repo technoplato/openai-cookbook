@@ -1,0 +1,181 @@
+https://developer.apple.com/documentation/vision/vntargetedimagerequest/2923451-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+V
+let VNGenerateForegroundInstanceMaskRequestRevision1: Int
+Beta
+C
+VNGenerateForegroundInstanceMaskRequest
+Beta
+C
+VNInstanceMaskObservation
+Beta
+Applying visual effects to foreground subjects
+Beta
+Image Background Removal
+C
+VNImageHomographicAlignmentObservation
+C
+VNImageTranslationAlignmentObservation
+init(targetedImageURL: URL, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedImageURL: URL, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedImageData: Data, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedImageData: Data, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedCMSampleBuffer: CMSampleBuffer, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedCMSampleBuffer: CMSampleBuffer, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedCVPixelBuffer: CVPixelBuffer, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedCVPixelBuffer: CVPixelBuffer, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+init(targetedCIImage: CIImage, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+M
+init(targetedCIImage: CIImage, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+M
+init(targetedCGImage: CGImage, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+M
+init(targetedCGImage: CGImage, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creating a Request
+C
+VNTargetedImageRequest
+Aligning Similar Images
+Image Alignment
+C
+VNHorizonObservation
+Documentation
+Open Menu
+Initializer
+init(targetedCIImage:orientation:options:completionHandler:)
+Creates a new request targeting a CIImage of known orientation, executing the completion handler when done.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+init(
+    targetedCIImage ciImage: CIImage,
+    orientation: CGImagePropertyOrientation,
+    options: [VNImageOption : Any] = [:],
+    completionHandler: VNRequestCompletionHandler? = nil
+)
+Parameters
+ciImage
+The CIImage encapsulating the targeted image.
+orientation
+The orientation of the image buffer, based on EXIF specification and superseding other orientation information. The value must be an integer from 1 to 8; see kCGImagePropertyOrientation for details.
+options
+A dictionary with options specifying auxiliary information for the image.
+completionHandler
+The block to invoke when the request has finished executing.
+See Also
+Creating a Request
+init(targetedCGImage: CGImage, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting a Core Graphics image, executing the completion handler when done.
+init(targetedCGImage: CGImage, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting a Core Graphics image of known orientation, executing the completion handler when done.
+init(targetedCIImage: CIImage, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting a CIImage, executing the completion handler when done.
+init(targetedCVPixelBuffer: CVPixelBuffer, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting an image in a CVPixelBuffer, executing the completion handler when done.
+init(targetedCVPixelBuffer: CVPixelBuffer, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting an image in a CVPixelBuffer of known orientation, executing the completion handler when done.
+init(targetedCMSampleBuffer: CMSampleBuffer, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request with a completion handler that targets an image in a sample buffer.
+init(targetedCMSampleBuffer: CMSampleBuffer, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request with a completion handler that targets an image of a known orientation in a sample buffer.
+init(targetedImageData: Data, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting an image as raw data, executing the completion handler when done.
+init(targetedImageData: Data, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting a raw data image of known orientation, executing the completion handler when done.
+init(targetedImageURL: URL, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting an image at the specified URL, executing the completion handler when done.
+init(targetedImageURL: URL, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any], completionHandler: VNRequestCompletionHandler?)
+Creates a new request targeting an image of known orientation, at the specified URL, executing the completion handler when done.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(targetedCIImage:orientation:options:completionHandler:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

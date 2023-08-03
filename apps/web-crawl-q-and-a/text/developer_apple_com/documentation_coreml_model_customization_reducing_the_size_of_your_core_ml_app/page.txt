@@ -1,0 +1,116 @@
+https://developer.apple.com/documentation/coreml/model_customization/reducing_the_size_of_your_core_ml_app
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Making Predictions with a Sequence of Inputs
+C
+MLFeatureValue
+r
+P
+MLFeatureProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLBatchProvider
+C
+MLArrayBatchProvider
+C
+MLModelAsset
+Documentation
+Open Menu
+Article
+Reducing the Size of Your Core ML App
+Reduce the storage used by the Core ML model inside your app bundle.
+Overview
+Bundling your machine learning model in your app is the easiest way to get started with Core ML. As models get more advanced, they can become large and take up significant storage space. For a neural-network based model, consider reducing its footprint by using a lower precision representation for its weight parameters. If your model isn’t a neural network that can use lower precision or you need to further reduce your app’s size, add functionality to download and compile your models on the user’s device instead of bundling the models with your app.
+Convert to a Lower Precision Model
+The Core ML Tools provide utilities to convert a neural network model’s floating point weights from full-precision into half-precision values — reducing the number of bits used in the representation from 32 down to 16 — or lower precisions of 1 to 8 bits. For more information about using these utilities, see the Core ML Tools Neural Network Quantization documentation.
+Download and Compile a Model
+Another option to reduce the size of your app is to have the app download the model onto the user’s device and compile it in the background. For example, if users use only a subset of the models your app supports, you don’t need to bundle all the possible models with your app. Instead, the models can be downloaded later based on user behavior. See Downloading and Compiling a Model on the User’s Device.
+Current page is Reducing the Size of Your Core ML App
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

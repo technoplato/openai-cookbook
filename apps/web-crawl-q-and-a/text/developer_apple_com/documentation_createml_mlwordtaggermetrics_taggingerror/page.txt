@@ -1,0 +1,134 @@
+https://developer.apple.com/documentation/createml/mlwordtaggermetrics/taggingerror
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Saving a Word Tagger
+M
+func predictionWithConfidence(from: [MLWordTagger.Token]) throws -> [[String : Double]]
+M
+func predictionWithConfidence(from: String) throws -> [[String : Double]]
+M
+func prediction(from: String) throws -> [String]
+M
+func prediction(from: [MLWordTagger.Token]) throws -> [String]
+Testing a Word Tagger
+M
+func evaluation(on: [(tokens: [MLWordTagger.Token], labels: [String])]) -> MLWordTaggerMetrics
+Analyzing the Tagger’s Performance
+S
+MLWordTaggerMetrics
+P
+let validationMetrics: MLWordTaggerMetrics
+P
+let trainingMetrics: MLWordTaggerMetrics
+Assessing Model Accuracy
+P
+let modelParameters: MLWordTagger.ModelParameters
+S
+MLWordTagger.ModelParameters
+T
+MLWordTagger.Token
+Documentation
+Open Menu
+Swift
+Instance Property
+taggingError
+The fraction of incorrectly tagged examples.
+macOS 10.14+
+visionOS 1.0+ Beta
+var taggingError: Double { get }
+See Also
+Analyzing the Tagger’s Performance
+var precisionRecall: MLDataTable
+A data table listing the precision and recall percentages for each category.
+var confusion: MLDataTable
+A table comparing the actual and predicted labels for each tagging category.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is taggingError
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

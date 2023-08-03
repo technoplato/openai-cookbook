@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/vision/vnrecognizedpoints3dobservation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectedPoint
+C
+VNRecognizedPoint
+S
+VNRecognizedPointKey
+S
+VNRecognizedPointGroupKey
+3D Body Pose Detection
+Detecting human body poses in 3D with Vision
+Beta
+C
+VNDetectHumanBodyPose3DRequest
+Beta
+C
+VNHumanBodyPose3DObservation
+Beta
+func recognizedPoints(forGroupKey: VNRecognizedPointGroupKey) -> [VNRecognizedPointKey : VNRecognizedPoint3D]
+C
+VNDetectAnimalBodyPoseRequest
+C
+VNAnimalBodyPoseObservation
+Beta
+Trajectory Detection
+Identifying Trajectories in Video
+Detecting moving objects in a video
+C
+VNDetectTrajectoriesRequest
+Contour Detection
+Documentation
+Open Menu
+Class
+VNRecognizedPoints3DObservation
+An observation that provides the three-dimensional points for a request.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+class VNRecognizedPoints3DObservation : VNObservation
+Topics
+Inspecting the Observation
+var availableKeys: [VNRecognizedPointKey]
+The available point keys in the observation.
+var availableGroupKeys: [VNRecognizedPointGroupKey]
+The available point group keys in the observation.
+func recognizedPoint(forKey: VNRecognizedPointKey) -> VNRecognizedPoint3D
+Returns a point for a key you specify.
+func recognizedPoints(forGroupKey: VNRecognizedPointGroupKey) -> [VNRecognizedPointKey : VNRecognizedPoint3D]
+Returns a point for a group key you specify.
+Relationships
+Inherits From
+VNObservation
+See Also
+3D Body Pose Detection
+Detecting human body poses in 3D with Vision
+Render skeletons of 3D body pose points in a scene overlaying the input image.
+class VNDetectHumanBodyPose3DRequest
+A request that detects points on human bodies in three-dimensional space, relative to the camera.
+Beta
+class VNHumanBodyPose3DObservation
+An observation that provides the three-dimensional body points the request recognizes.
+Beta
+class VNHumanBodyRecognizedPoint3D
+A recognized three-dimensional point that includes a parent joint.
+Beta
+class VNPoint3D
+An object that represents a three-dimensional point in an image.
+Beta
+class VNRecognizedPoint3D
+A three-dimensional point that includes an identifier to the point.
+Beta
+struct VNHumanBodyPose3DObservation.JointName
+The joint names for a 3D body pose.
+Beta
+struct VNHumanBodyPose3DObservation.JointsGroupName
+The joint group names for a 3D body pose.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNRecognizedPoints3DObservation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

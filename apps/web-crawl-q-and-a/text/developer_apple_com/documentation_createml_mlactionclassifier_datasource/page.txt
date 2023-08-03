@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/createml/mlactionclassifier/datasource
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomDebugStringConvertible Implementations
+Default Implementations
+S
+MLActionClassifier.ModelParameters
+M
+func extractKeypoints(targetFrameRate: Double) throws -> DataFrame
+Beta
+Instance Methods
+E
+case labeledKeypointsDataFrame(DataFrame, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+Enumeration Cases
+case labeledVideoDataFrame(DataFrame, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+case labeledKeypointsData(table: MLDataTable, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+case labeledVideoData(table: MLDataTable, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+case directoryWithVideosAndAnnotation(at: URL, annotationFile: URL, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an Action Classifier
+P
+let modelParameters: MLActionClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting an Action Classifier Model
+Documentation
+Open Menu
+Swift
+Enumeration
+MLActionClassifier.DataSource
+A data source for an action classifier.
+Create ML
+CreateML
+macOS 11.0+
+visionOS 1.0+ Beta
+enum DataSource
+Topics
+Creating a Data Source
+case labeledDirectories(at: URL)
+The location of a folder with subfolders each of which contain sample videos of an action.
+case labeledFiles(at: URL)
+The location of a folder that contains video files whose names you use to label corresponding actions.
+case directoryWithVideosAndAnnotation(at: URL, annotationFile: URL, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+The location of a directory of video files, and the location of an action annotation file.
+case labeledVideoData(table: MLDataTable, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+A data table that contains the locations of the video files and the action annotations.
+case labeledKeypointsData(table: MLDataTable, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+A data table that contains the human body landmark movement data.
+Extracting Keypoints
+case labeledVideoDataFrame(DataFrame, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+A data source made up of video references in a data frame.
+Getting Annotated File Names
+func gatherAnnotatedFileNames() throws -> DataFrame?
+Processes the data source and returns a data frame that contains file URLs and annotations.
+Beta
+Generating Data Tables from a Data Source
+func videosWithAnnotations() throws -> MLDataTable
+Generates a data table of the data source’s video URL locations and action annotations.
+func keypointsWithAnnotations(targetFrameRate: Double) throws -> MLDataTable
+Generates a data table with action annotations of the data source.
+func stratifiedSplit(proportions: [Double], seed: Int, labelColumn: String) throws -> MLDataTable
+Generates a data table by splitting the data source into strata.
+Enumeration Cases
+case labeledKeypointsDataFrame(DataFrame, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+A data source made up of keypoints in a data frame.
+Instance Methods
+func extractKeypoints(targetFrameRate: Double) throws -> DataFrame
+Extracts key points from video files if necessary.
+Beta
+Relationships
+Conforms To
+Sendable
+See Also
+Supporting Types
+struct ModelParameters
+Parameters that affect the training process of an action classifier.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLActionClassifier.DataSource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

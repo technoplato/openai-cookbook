@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/createml/mlactionclassifier/modelparameters-swift.struct/validation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLTextClassifier
+Creating a text classifier model
+Text Models
+S
+MLStyleTransfer
+S
+MLHandActionClassifier
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+P
+var augmentationOptions: MLActionClassifier.VideoAugmentationOptions
+P
+var algorithm: MLActionClassifier.ModelParameters.ModelAlgorithmType
+P
+var predictionWindowSize: Int
+P
+var targetFrameRate: Double
+P
+var batchSize: Int
+P
+var maximumIterations: Int
+Accessing the Training Parameters
+M
+init(validation: MLActionClassifier.ModelParameters.ValidationData, batchSize: Int, maximumIterations: Int, predictionWindowSize: Int, augmentationOptions: MLActionClassifier.VideoAugmentationOptions, algorithm: MLActionClassifier.ModelParameters.ModelAlgorithmType, targetFrameRate: Double)
+Documentation
+Open Menu
+Swift
+Instance Property
+validation
+The action classifier’s validation dataset.
+macOS 11.0+
+visionOS 1.0+ Beta
+var validation: MLActionClassifier.ModelParameters.ValidationData
+See Also
+Accessing the Training Parameters
+var maximumIterations: Int
+The largest number of training iterations the training session can use.
+var batchSize: Int
+The number of videos the training session uses for each of its training iterations.
+var targetFrameRate: Double
+The number of frames the training session uses per second of video to train an action classifier.
+var predictionWindowSize: Int
+The number of frames the training session uses to train an action classifier.
+var algorithm: MLActionClassifier.ModelParameters.ModelAlgorithmType
+The algorithm the training session uses to train the action classifier.
+var augmentationOptions: MLActionClassifier.VideoAugmentationOptions
+The variations the training session uses to generate more variety in the training dataset.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is validation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

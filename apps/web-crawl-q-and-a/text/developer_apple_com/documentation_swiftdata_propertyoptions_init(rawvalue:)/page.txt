@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/swiftdata/propertyoptions/init(rawvalue:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+#
+macro Query(animation: Animation)
+#
+macro Query<Element>(FetchDescriptor<Element>, transaction: Transaction?)
+#
+macro Query<Element>(FetchDescriptor<Element>, animation: Animation)
+#
+macro Query()
+S
+Query
+Model fetch
+S
+ModelDocument
+Creating property options
+P
+static let unique: PropertyOptions
+P
+static let transient: PropertyOptions
+P
+static let transformable: PropertyOptions
+P
+static let spotlight: PropertyOptions
+P
+static let preserveValueOnDeletion: PropertyOptions
+P
+static let externalStorage: PropertyOptions
+P
+static let encrypt: PropertyOptions
+Documentation
+Open Menu
+Swift
+Initializer
+init(rawValue:)
+Creates a new option set from the given raw value.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+Swift 5.9+
+required init(rawValue: UInt)
+Parameters
+rawValue
+The raw value of the option set to create. Each bit of rawValue potentially represents an element of the option set, though raw values may include bits that are not defined as distinct values of the OptionSet type.
+Discussion
+This initializer always succeeds, even if the value passed as rawValue exceeds the static properties declared as part of the option set. This example creates an instance of ShippingOptions with a raw value beyond the highest element, with a bit mask that effectively contains all the declared static members.
+let extraOptions = ShippingOptions(rawValue: 255)
+print(extraOptions.isStrictSuperset(of: .all))
+// Prints "true"
+See Also
+Creating property options
+let rawValue: UInt
+The corresponding value of the raw type.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(rawValue:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

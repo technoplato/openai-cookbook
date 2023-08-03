@@ -1,0 +1,206 @@
+https://developer.apple.com/documentation/createmlcomponents/classificationdistribution
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+ClassificationDistribution.Indices
+T
+ClassificationDistribution.Index
+T
+ClassificationDistribution.Element
+Type Aliases
+subscript(Label) -> Float?
+subscript(Int) -> Classification<Label>
+subscript(Range<Int>) -> Slice<ClassificationDistribution<Label>>
+S
+Classification
+Metrics
+S
+TreeClassifierModel
+S
+FullyConnectedNetworkClassifierModel
+S
+FullyConnectedNetworkClassifier
+S
+BoostedTreeClassifier
+S
+LogisticRegressionClassifierModel
+S
+LogisticRegressionClassifier
+Documentation
+Open Menu
+Swift
+Structure
+ClassificationDistribution
+A classification distribution that contains a probability for each classification label.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct ClassificationDistribution<Label> where Label : Hashable
+Topics
+Creating the Distribution
+init<C>(C)
+Creates a classification distribution.
+Getting the Properties
+var endIndex: Int
+The index of the final element in the classification distribution.
+var labelsSortedByProbability: [Label]
+The labels sorted by decreasing probability.
+var mostLikelyLabel: Label?
+The label with the highest probability.
+var startIndex: Int
+The index of the initial element in the classification distribution.
+Getting the Index
+func index(after: Int) -> Int
+Returns the index immediately after an element index.
+func index(before: Int) -> Int
+Returns the index immediately before an element index.
+Labeling and Mapping
+func topLabels(Int) -> [Label]
+Computes the most likely labels in the classification set.
+func map<T>((Classification<Label>) throws -> Classification<T>) rethrows -> ClassificationDistribution<T>
+Creates a new classification distribution by applying a transformation to every element.
+Accessing by Subscript
+subscript(Range<Int>) -> Slice<ClassificationDistribution<Label>>
+Accesses a contiguous range of elements.
+subscript(Int) -> Classification<Label>
+Accesses a classification at an index.
+subscript(Label) -> Float?
+Accesses a probability with label.
+Type Aliases
+typealias Element
+A type representing the sequence’s elements.
+typealias Index
+A type that represents a position in the collection.
+typealias Indices
+A type that represents the indices that are valid for subscripting the collection, in ascending order.
+typealias Iterator
+A type that provides the collection’s iteration interface and encapsulates its iteration state.
+typealias SubSequence
+A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection.
+Default Implementations
+API Reference
+Collection Implementations
+API Reference
+Decodable Implementations
+API Reference
+Encodable Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+API Reference
+Sequence Implementations
+Relationships
+Conforms To
+Collection
+Decodable
+Encodable
+Equatable
+Hashable
+Sendable
+Sequence
+See Also
+Metrics
+struct Classification
+An item in a classification result.
+struct ClassificationMetrics
+Classification metrics.
+func rootMeanSquaredError<T>(some Collection, some Collection) -> T
+Computes the root mean squared error between predicted and ground truth values.
+func maximumAbsoluteError<T>(some Collection, some Collection) -> T
+Computes the maximum absolute error between predicted and ground truth values.
+func meanAbsoluteError<T>(some Collection, some Collection) -> T
+Computes the mean absolute error between predicted and ground truth values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ClassificationDistribution
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,155 @@
+https://developer.apple.com/documentation/swiftdata/query(filter:sort:animation:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+macro Query<Value, Element>(filter: Predicate<Element>?, sort: KeyPath<Element, Value?>, order: SortOrder, transaction: Transaction?)
+macro Query<Value, Element>(filter: Predicate<Element>?, sort: KeyPath<Element, Value>, order: SortOrder, transaction: Transaction?)
+#
+macro Query(animation: Animation)
+#
+macro Query<Element>(FetchDescriptor<Element>, transaction: Transaction?)
+#
+macro Query<Element>(FetchDescriptor<Element>, animation: Animation)
+#
+macro Query()
+S
+Query
+Model fetch
+S
+ModelDocument
+C
+ModelContext
+Documentation
+Open Menu
+Swift
+Macro
+Query(filter:sort:animation:)
+SwiftData
+SwiftUI
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+@attached(accessor) @attached(peer, names: prefixed(`_`))
+macro Query<Element>(
+    filter: Predicate<Element>? = nil,
+    sort descriptors: [SortDescriptor<Element>] = [],
+    animation: Animation
+) where Element : PersistentModel
+See Also
+Model fetch
+struct Query
+A property wrapper that fetches a set of models and keeps those models in sync with the underlying data.
+Beta
+macro Query()
+Beta
+macro Query<Element>(FetchDescriptor<Element>, animation: Animation)
+Beta
+macro Query<Element>(FetchDescriptor<Element>, transaction: Transaction?)
+Beta
+macro Query(animation: Animation)
+Beta
+macro Query<Value, Element>(filter: Predicate<Element>?, sort: KeyPath<Element, Value>, order: SortOrder, transaction: Transaction?)
+Beta
+macro Query<Value, Element>(filter: Predicate<Element>?, sort: KeyPath<Element, Value?>, order: SortOrder, transaction: Transaction?)
+Beta
+macro Query<Element>(filter: Predicate<Element>?, sort: [SortDescriptor<Element>], transaction: Transaction?)
+Beta
+macro Query(transaction: Transaction)
+Beta
+struct FetchDescriptor
+A type that describes the criteria, sort order, and any additional configuration to use when performing a fetch.
+struct FetchResultsCollection
+A collection that efficiently provides the results of a completed fetch.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is Query(filter:sort:animation:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

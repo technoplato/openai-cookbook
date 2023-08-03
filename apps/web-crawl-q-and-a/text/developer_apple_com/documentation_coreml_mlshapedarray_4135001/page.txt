@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/4135001
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+static func == (MLShapedArray<Scalar>, MLShapedArray<Scalar>) -> Bool
+Beta
+Comparing Shaped Arrays
+M
+func withUnsafeMutableShapedBufferPointer<R>((inout UnsafeMutableBufferPointer<Scalar>, [Int], [Int]) -> R) -> R
+M
+func fill<C>(with: C)
+M
+func fill(with: Scalar)
+Modifying a Shaped Array
+M
+func withUnsafeShapedBufferPointer<R>((UnsafeBufferPointer<Scalar>, [Int], [Int]) -> R) -> R
+Inspecting the Underlying Memory of a Shaped Array
+Documentation
+Open Menu
+Swift
+Operator
+!=(_:_:)
+Returns a Boolean value that indicates whether two values are not equal.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+Xcode 15.0+ Beta
+static func != (lhs: MLShapedArray<Scalar>, rhs: MLShapedArray<Scalar>) -> Bool
+Available when Scalar conforms to Equatable.
+Parameters
+lhs
+A value to compare.
+rhs
+Another value to compare.
+See Also
+Comparing Shaped Arrays
+static func == (MLShapedArray<Scalar>, MLShapedArray<Scalar>) -> Bool
+Returns a Boolean value that indicates whether two values are equal.
+Available when Scalar conforms to Equatable.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is !=(_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

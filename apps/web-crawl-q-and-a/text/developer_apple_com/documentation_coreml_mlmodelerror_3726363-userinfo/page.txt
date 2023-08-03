@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/coreml/mlmodelerror/3726363-userinfo
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Error Domain
+P
+var localizedDescription: String
+P
+var errorUserInfo: [String : Any]
+P
+var errorCode: Int
+Error Details
+E
+MLModelError.Code
+P
+static var generic: MLModelError.Code
+P
+static var predictionCancelled: MLModelError.Code
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+userInfo
+A dictionary of additional information.
+iOS 8.0+
+iPadOS 8.0+
+macOS 10.10+
+Mac Catalyst 14.5+
+tvOS 9.0+
+watchOS 2.0+
+visionOS 1.0+ Beta
+Xcode 12.5+
+var userInfo: [String : Any] { get }
+See Also
+Protocol Support
+init(Code, userInfo: [String : Any])
+Creates a model error with an error code.
+var code: Code
+An integer value that represents the code.
+var hashValue: Int
+The hashed value of the error.
+func hash(into: inout Hasher)
+Hashes the essential components of the error by feeding them into a hasher.
+static func == (MLModelError, MLModelError) -> Bool
+Returns a Boolean value indicating whether the two values are equal.
+static func != (MLModelError, MLModelError) -> Bool
+Returns a Boolean value indicating whether the two values are unequal.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is userInfo
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

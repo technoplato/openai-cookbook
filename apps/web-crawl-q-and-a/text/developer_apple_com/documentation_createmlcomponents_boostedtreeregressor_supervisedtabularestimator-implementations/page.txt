@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/createmlcomponents/boostedtreeregressor/supervisedtabularestimator-implementations
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+FullyConnectedNetworkClassifierModel
+S
+FullyConnectedNetworkClassifier
+S
+BoostedTreeClassifier
+S
+LogisticRegressionClassifierModel
+S
+LogisticRegressionClassifier
+r
+P
+Classifier
+Classifiers
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>, Self.Annotation>
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Default Implementations
+T
+BoostedTreeRegressor.Transformer
+Type Aliases
+M
+func fitted(to: DataFrame, validateOn: DataFrame?, eventHandler: EventHandler?) async throws -> TreeRegressorModel
+M
+func encode(TreeRegressorModel, to: inout EstimatorEncoder) throws
+M
+func decode(from: inout EstimatorDecoder) throws -> TreeRegressorModel
+Instance Methods
+P
+var featureColumnNames: [String]
+Documentation
+Open Menu
+SupervisedTabularEstimator Implementations
+Topics
+Instance Methods
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this supervised tabular estimator with another supervised tabular estimator.
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this tabular supervised estimator with a tabular estimator.
+func appending<Other>(Other) -> some SupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>, Self.Annotation>
+Composes this supervised tabular estimator with a tabular transformer.
+func fitted(to: DataFrame, validateOn: DataFrame?) async throws -> Self.Transformer
+func read(from: URL) throws -> Self.Transformer
+Reads the encoded transformer from a file.
+func write(Self.Transformer, to: URL, overwrite: Bool) throws
+Writes the encoded transformer to a file.
+Current page is SupervisedTabularEstimator Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

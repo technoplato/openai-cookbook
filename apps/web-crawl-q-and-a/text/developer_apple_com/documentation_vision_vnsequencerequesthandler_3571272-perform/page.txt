@@ -1,0 +1,164 @@
+https://developer.apple.com/documentation/vision/vnsequencerequesthandler/3571272-perform
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Face and Body Detection
+C
+VNDetectRectanglesRequest
+Rectangle Detection
+C
+VNDetectedObjectObservation
+C
+VNTrackObjectRequest
+C
+VNTrackRectangleRequest
+C
+VNTrackingRequest
+M
+func perform([VNRequest], on: CVPixelBuffer, orientation: CGImagePropertyOrientation)
+M
+func perform([VNRequest], on: CVPixelBuffer)
+M
+func perform([VNRequest], on: CIImage, orientation: CGImagePropertyOrientation)
+M
+func perform([VNRequest], on: CIImage)
+M
+func perform([VNRequest], on: CGImage, orientation: CGImagePropertyOrientation)
+M
+func perform([VNRequest], on: CGImage)
+Performing a Sequence Request
+M
+init()
+Documentation
+Open Menu
+Instance Method
+perform(_:on:)
+Performs one or more requests on an image contained within a sample buffer.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+func perform(
+    _ requests: [VNRequest],
+    on sampleBuffer: CMSampleBuffer
+) throws
+Parameters
+requests
+The array of requests to perform.
+sampleBuffer
+A sample buffer containing a valid imageBuffer.
+See Also
+Performing a Sequence Request
+func perform([VNRequest], on: CGImage)
+Schedules Vision requests to be performed on a Core Graphics image.
+func perform([VNRequest], on: CGImage, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on a Core Graphics image with known orientation.
+func perform([VNRequest], on: CIImage)
+Schedules one or more Vision requests to be performed on CIImage data.
+func perform([VNRequest], on: CIImage, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on CIImage data with known orientation.
+func perform([VNRequest], on: CVPixelBuffer)
+Schedules one or more Vision requests to be performed on a Core Video pixel buffer.
+func perform([VNRequest], on: CVPixelBuffer, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on a Core Video pixel buffer with known orientation.
+func perform([VNRequest], on: CMSampleBuffer, orientation: CGImagePropertyOrientation)
+Performs one or more requests on an image of a specified orientation contained within a sample buffer.
+func perform([VNRequest], onImageData: Data)
+Schedules one or more Vision requests to be performed on raw image data.
+func perform([VNRequest], onImageData: Data, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on raw data containing an image with known orientation.
+func perform([VNRequest], onImageURL: URL)
+Schedules one or more Vision requests to be performed on an image.
+func perform([VNRequest], onImageURL: URL, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on an image with known orientation, at a specific URL.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is perform(_:on:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

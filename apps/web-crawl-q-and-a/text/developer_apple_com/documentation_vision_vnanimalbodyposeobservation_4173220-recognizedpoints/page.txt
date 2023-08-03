@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/vision/vnanimalbodyposeobservation/4173220-recognizedpoints
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNRecognizeTextRequest
+Locating and Displaying Recognized Text
+Extracting phone numbers from text in images
+Structuring Recognized Text on a Document
+Recognizing Text in Images
+Text Recognition
+C
+VNTextObservation
+func recognizedPoints(VNAnimalBodyPoseObservation.JointsGroupName) -> [VNAnimalBodyPoseObservation.JointName : VNRecognizedPoint]
+M
+func recognizedPoint(VNAnimalBodyPoseObservation.JointName) -> VNRecognizedPoint
+S
+VNAnimalBodyPoseObservation.JointsGroupName
+P
+var availableJointGroupNames: [VNAnimalBodyPoseObservation.JointsGroupName]
+S
+VNAnimalBodyPoseObservation.JointName
+P
+var availableJointNames: [VNAnimalBodyPoseObservation.JointName]
+Accessing Points
+C
+VNAnimalBodyPoseObservation
+Beta
+C
+VNDetectAnimalBodyPoseRequest
+Beta
+Documentation
+Open Menu
+Instance Method
+recognizedPoints(_:)
+Returns the points for a joint group name the observation recognizes.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func recognizedPoints(_ jointsGroupName: VNAnimalBodyPoseObservation.JointsGroupName) throws -> [VNAnimalBodyPoseObservation.JointName : VNRecognizedPoint]
+Parameters
+jointsGroupName
+The joint group of the points to retrieve.
+Return Value
+The dictionary of points the observation associates with the group name.
+See Also
+Accessing Points
+var availableJointNames: [VNAnimalBodyPoseObservation.JointName]
+The names of the available joints in the observation.
+Beta
+struct VNAnimalBodyPoseObservation.JointName
+The joint names for an animal body pose.
+Beta
+var availableJointGroupNames: [VNAnimalBodyPoseObservation.JointsGroupName]
+The available joint group names in the observation.
+Beta
+struct VNAnimalBodyPoseObservation.JointsGroupName
+The joint group names for an animal body pose.
+Beta
+func recognizedPoint(VNAnimalBodyPoseObservation.JointName) -> VNRecognizedPoint
+Returns the point for a joint name the observation recognizes.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is recognizedPoints(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

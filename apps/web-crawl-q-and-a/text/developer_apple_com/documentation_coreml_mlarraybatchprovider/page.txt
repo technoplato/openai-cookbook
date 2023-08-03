@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/coreml/mlarraybatchprovider
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Errors
+r
+P
+MLComputeDeviceProtocol
+Beta
+C
+MLNeuralEngineComputeDevice
+Beta
+C
+MLGPUComputeDevice
+Beta
+C
+MLCPUComputeDevice
+Beta
+E
+MLComputeDevice
+Beta
+Compute Devices
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+C
+MLFeatureValue
+Making Predictions with a Sequence of Inputs
+Model Inputs and Outputs
+Model Personalization
+Model Customization
+Documentation
+Open Menu
+Class
+MLArrayBatchProvider
+A convenience wrapper for batches of feature providers.
+iOS 12.0+
+iPadOS 12.0+
+macOS 10.14+
+Mac Catalyst 13.1+
+tvOS 12.0+
+watchOS 5.0+
+visionOS 1.0+ Beta
+class MLArrayBatchProvider : NSObject
+Overview
+This batch provider supports an array of feature providers or a dictionary of arrays of feature values.
+Topics
+Initializers
+init(array: [MLFeatureProvider])
+Creates the batch provider based on the array of feature providers.
+init(dictionary: [String : [Any]])
+Creates a batch provider based on feature names and their associated arrays of data.
+Accessing the Feature Providers
+var array: [MLFeatureProvider]
+The array of feature providers.
+Relationships
+Inherits From
+NSObject
+Conforms To
+MLBatchProvider
+See Also
+Model Inputs and Outputs
+Making Predictions with a Sequence of Inputs
+Integrate a recurrent neural network model to process sequences of inputs.
+class MLFeatureValue
+A generic wrapper around an underlying value and the value’s type.
+protocol MLFeatureProvider
+An interface that represents a collection of values for either a model's input or its output.
+class MLDictionaryFeatureProvider
+A convenience wrapper for the given dictionary of data.
+protocol MLBatchProvider
+An interface that represents a collection of feature providers.
+class MLModelAsset
+An abstraction of a compiled Core ML model asset.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLArrayBatchProvider
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

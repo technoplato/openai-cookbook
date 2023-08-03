@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/coreml/mlfeaturevalue/2879346-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func shapedArrayValue<Scalar>(of: Scalar.Type) -> MLShapedArray<Scalar>?
+P
+var imageBufferValue: CVPixelBuffer?
+P
+var stringValue: String
+P
+var doubleValue: Double
+P
+var int64Value: Int64
+P
+var isUndefined: Bool
+Accessing the Feature’s Value
+init(imageAt: URL, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+init(imageAt: URL, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+init(imageAt: URL, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+init(cgImage: CGImage, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creating Image Feature Values
+M
+init(sequence: MLSequence)
+M
+init(dictionary: [AnyHashable : NSNumber])
+Creating Collection Feature Values
+M
+init<Scalar>(shapedArray: MLShapedArray<Scalar>)
+M
+init(multiArray: MLMultiArray)
+Creating Multidimensional Feature Values
+M
+init(string: String)
+Documentation
+Open Menu
+Initializer
+init(pixelBuffer:)
+Creates a feature value that contains an image from a pixel buffer.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+convenience init(pixelBuffer value: CVPixelBuffer)
+Parameters
+value
+A CVPixelBuffer instance.
+See Also
+Creating Image Feature Values
+init(cgImage: CGImage, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image and its size and pixel format.
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image and its orientation, size, and pixel format.
+init(cgImage: CGImage, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image and a constraint.
+init(cgImage: CGImage, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by a core graphics image, an orientation, and a constraint.
+init(imageAt: URL, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL and the image’s size and pixel format.
+init(imageAt: URL, orientation: CGImagePropertyOrientation, pixelsWide: Int, pixelsHigh: Int, pixelFormatType: OSType, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL and the image’s orientation, size, and pixel format.
+init(imageAt: URL, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL and a constraint.
+init(imageAt: URL, orientation: CGImagePropertyOrientation, constraint: MLImageConstraint, options: [MLFeatureValue.ImageOption : Any]?)
+Creates a feature value that contains an image defined by an image URL, an orientation, and a constraint.
+class MLImageConstraint
+The width, height, and pixel format constraints of an image feature.
+struct MLFeatureValue.ImageOption
+The initializer options you use to crop and scale an image when creating an image feature value.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(pixelBuffer:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/coreml/mlmultiarray/3882834-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a Multiarray
+M
+init<C>(C)
+M
+init<C>(C)
+M
+init<C>(C)
+M
+init(shape: [NSNumber], dataType: MLMultiArrayDataType)
+M
+init<ShapedArray>(ShapedArray)
+M
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+M
+init(concatenating: [MLMultiArray], axis: Int, dataType: MLMultiArrayDataType)
+func withUnsafeMutableBufferPointer<S, R>(ofType: S.Type, (UnsafeMutableBufferPointer<S>, [Int]) -> R) -> R
+P
+var pixelBuffer: CVPixelBuffer?
+P
+var dataPointer: UnsafeMutableRawPointer
+Deprecated
+C
+MLSequence
+r
+P
+MLFeatureProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLBatchProvider
+C
+MLArrayBatchProvider
+Documentation
+Open Menu
+Initializer
+init(pixelBuffer:shape:)
+Creates a multiarray sharing the surface of a pixel buffer.
+iOS 16.0+
+iPadOS 16.0+
+macOS 12.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+init(
+    pixelBuffer: CVPixelBuffer,
+    shape: [NSNumber]
+)
+Parameters
+pixelBuffer
+The pixel buffer owned by the instance.
+shape
+The shape of the MLMultiArray. The last dimension of shape must match the pixel buffer’s width. The product of the rest of the dimensions must match the height.
+Discussion
+Use this initializer to create an IOSurface-backed MLMultiArray that reduces the inference latency by avoiding the buffer copy to and from some compute units.
+The instance will own the pixel buffer and release it on the deallocation.
+The pixel buffer’s pixel format type must be kCVPixelFormatType_OneComponent16Half. The MLMultiArray data type is MLMultiArrayDataType.float16.
+See Also
+Creating a Multiarray
+init<C>(C)
+Creates a multiarray from a collection of integers.
+init<C>(C)
+Creates a multiarray from a collection of floats.
+init<C>(C)
+Creates a multiarray from a collection of doubles.
+init(shape: [NSNumber], dataType: MLMultiArrayDataType)
+Creates a multidimensional array with a shape and type.
+init<ShapedArray>(ShapedArray)
+Creates a multiarray from a shaped array.
+init(dataPointer: UnsafeMutableRawPointer, shape: [NSNumber], dataType: MLMultiArrayDataType, strides: [NSNumber], deallocator: ((UnsafeMutableRawPointer) -> Void)?)
+Creates a multiarray from a data pointer.
+init(concatenating: [MLMultiArray], axis: Int, dataType: MLMultiArrayDataType)
+Merges an array of multiarrays into one multiarray along an axis.
+enum MLMultiArrayDataType
+Constants that define the underlying element types a multiarray can store.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(pixelBuffer:shape:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/createmlcomponents/mlmodelregressoradaptor
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+T
+EventHandler
+S
+Event
+Event Handling
+S
+DataFrameTemporalAnnotationParameters
+S
+AnnotatedFeatureProvider
+S
+AnnotatedFeature
+S
+AnnotatedFiles
+S
+MLModelClassifierAdaptor
+S
+MLModelTransformerAdaptor
+Core ML Adaptors
+r
+P
+UpdatableTemporalEstimator
+r
+P
+UpdatableSupervisedTemporalEstimator
+r
+P
+UpdatableSupervisedEstimator
+r
+P
+UpdatableEstimator
+r
+P
+SupervisedTemporalEstimator
+Documentation
+Open Menu
+Swift
+Structure
+MLModelRegressorAdaptor
+A transformer that uses a Core ML model as a regressor.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MLModelRegressorAdaptor<Scalar> where Scalar : MLShapedArrayScalar, Scalar : BinaryFloatingPoint
+Topics
+Creating the Adaptor
+init(model: MLModel) throws
+Creates a MLModel regressor adaptor from a model.
+init(contentsOf: URL, configuration: MLModelConfiguration) throws
+Creates a model adaptor from a CoreML model URL.
+Getting the Properties
+let model: MLModel
+The CoreML model.
+Instance Methods
+func applied(to: MLShapedArray<Scalar>, eventHandler: EventHandler?) async throws -> Double
+Performs a prediction from a single input.
+Type Aliases
+typealias Input
+The input type.
+typealias Output
+The output type.
+Default Implementations
+API Reference
+Regressor Implementations
+API Reference
+Transformer Implementations
+Relationships
+Conforms To
+Regressor
+Sendable
+Transformer
+See Also
+Core ML Adaptors
+struct MLModelTransformerAdaptor
+A transformer that uses a Core ML model.
+struct MLModelClassifierAdaptor
+A transformer that uses a Core ML model as a classifier.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLModelRegressorAdaptor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

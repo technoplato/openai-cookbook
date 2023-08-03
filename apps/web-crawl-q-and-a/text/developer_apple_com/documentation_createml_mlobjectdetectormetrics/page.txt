@@ -1,0 +1,176 @@
+https://developer.apple.com/documentation/createml/mlobjectdetectormetrics
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLCheckpoint
+S
+MLTrainingSessionParameters
+C
+MLTrainingSession
+C
+MLJob
+Model Training Control
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+init(averagePrecision: (variedIoU: [String : Double], IoU50: [String : Double]), meanAveragePrecision: (variedIoU: Double, IoU50: Double))
+S
+MLRecommenderMetrics
+S
+MLWordTaggerMetrics
+S
+MLRegressorMetrics
+S
+MLClassifierMetrics
+Improving Your Model’s Accuracy
+Model Accuracy
+Data Visualizations
+E
+MLDataValue
+Documentation
+Open Menu
+Swift
+Structure
+MLObjectDetectorMetrics
+Metrics you use to evaluate an object detector’s performance.
+macOS 10.15+
+visionOS 1.0+ Beta
+struct MLObjectDetectorMetrics
+Overview
+An object detector generates intersection-over-union (IoU) metrics, which is a way to measure the similarity of two bounding boxes. The IoU metric is the overlapping area divided by the area of the union of the bounding boxes.
+For example, two bounding boxes that overlap perfectly have an IoU of 1.0, because their overlap is the same area as the union. Two bounding boxes that have no overlap have an IoU of 0.0. Anything between 0.0 and 1.0 either means the two bounding boxes partially overlap or one box completely encases the other.
+Topics
+Creating Metrics
+init(averagePrecision: (variedIoU: [String : Double], IoU50: [String : Double]), meanAveragePrecision: (variedIoU: Double, IoU50: Double))
+Creates metrics for an object detector given an average precision and a mean average precision.
+Assessing the Model
+var averagePrecision: (variedIoU: [String : Double], IoU50: [String : Double])
+Two dictionaries of average precisions at different thresholds.
+var meanAveragePrecision: (variedIoU: Double, IoU50: Double)
+Two mean-average precisions at different thresholds.
+Handling Errors
+var isValid: Bool
+A Boolean value indicating whether the object detector model was able to calculate metrics.
+var error: (Error)?
+The underlying error present when the metrics are invalid.
+Describing Metrics
+var description: String
+A text representation of the object detector metrics.
+var debugDescription: String
+A text representation of the object detector metrics that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the object detector metrics shown in a playground.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Model Accuracy
+Improving Your Model’s Accuracy
+Use metrics to tune the performance of your machine learning model.
+struct MLClassifierMetrics
+Metrics you use to evaluate a classifier’s performance.
+struct MLRegressorMetrics
+Metrics you use to evaluate a regressor’s performance.
+struct MLWordTaggerMetrics
+Metrics you use to evaluate a word tagger’s performance.
+struct MLRecommenderMetrics
+Metrics you use to evaluate a recommender’s performance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLObjectDetectorMetrics
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

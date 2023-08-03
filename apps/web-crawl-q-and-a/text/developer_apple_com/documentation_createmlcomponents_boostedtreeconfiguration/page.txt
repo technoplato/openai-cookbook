@@ -1,0 +1,193 @@
+https://developer.apple.com/documentation/createmlcomponents/boostedtreeconfiguration
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func hash(into: inout Hasher)
+M
+func encode(to: Encoder) throws
+Instance Methods
+P
+var stepSize: Double
+P
+var rowSubsample: Double
+P
+var randomSeed: Int
+P
+var parallelTreeCount: Int
+S
+Augmenter
+Beta
+S
+AugmentationSequence
+Beta
+S
+AugmentationBuilder
+Beta
+S
+AnnotatedPrediction
+Beta
+Structures
+r
+P
+UpdatableTabularEstimator
+r
+P
+UpdatableSupervisedTabularEstimator
+r
+P
+RandomTransformer
+Beta
+Documentation
+Open Menu
+Swift
+Structure
+BoostedTreeConfiguration
+A boosted tree configuration.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct BoostedTreeConfiguration
+Topics
+Operators
+static func == (BoostedTreeConfiguration, BoostedTreeConfiguration) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Initializers
+init()
+Creates a default boosted tree configuration.
+init(from: Decoder) throws
+Creates a new instance by decoding from the given decoder.
+Instance Properties
+var columnSubsample: Double
+Subsample ratio of the columns in each iteration of tree construction.
+var earlyStoppingIterationCount: Int?
+Stops training after this number of iterations where the validation metric does not improve.
+var hashValue: Int
+The hash value.
+var learningRate: Double
+The learning rate.
+Beta
+var maximumDepth: Int
+Maximum tree depth.
+var maximumIterations: Int
+Maximum number of iterations.
+var minimumChildWeight: Double
+The minimum weight of each leaf node.
+var minimumLossReduction: Double
+Minimum loss reduction required to further split a node during the tree learning phase.
+var parallelTreeCount: Int
+The number of parallel trees constructed during each iteration.
+Beta
+var randomSeed: Int
+A seed to generate reproducible results from random operations such as column and row subsampling.
+var rowSubsample: Double
+Subsample ratio of the training set in each iteration of tree construction.
+var stepSize: Double
+The step size shrinking.
+Instance Methods
+func encode(to: Encoder) throws
+Encodes this value into the given encoder.
+func hash(into: inout Hasher)
+Hashes the essential components of this value by feeding them into the given hasher.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Decodable
+Encodable
+Equatable
+Hashable
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is BoostedTreeConfiguration
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

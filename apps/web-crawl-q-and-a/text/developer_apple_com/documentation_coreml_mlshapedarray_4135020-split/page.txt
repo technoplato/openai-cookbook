@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/4135020-split
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func shuffled<T>(using: inout T) -> [MLShapedArraySlice<Scalar>]
+M
+func shuffled() -> [MLShapedArraySlice<Scalar>]
+M
+func sorted(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func sorted<S, Comparator>(using: S) -> [MLShapedArraySlice<Scalar>]
+M
+func sorted<Comparator>(using: Comparator) -> [MLShapedArraySlice<Scalar>]
+M
+func suffix(from: Int) -> MLShapedArraySlice<Scalar>
+M
+func suffix(Int) -> MLShapedArraySlice<Scalar>
+func max(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+func min(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+func split<C>(separator: C, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func reversed() -> ReversedCollection<MLShapedArray<Scalar>>
+M
+func joined<Separator>(separator: Separator) -> JoinedSequence<MLShapedArray<Scalar>>
+M
+func joined() -> FlattenSequence<MLShapedArray<Scalar>>
+Generating a Shaped Array
+M
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func shuffle<T>(using: inout T)
+M
+func shuffle()
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+split(separator:maxSplits:omittingEmptySubsequences:)
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given separator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 17.0+ Beta
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+Xcode 14.0+
+func split<C>(
+    separator: C,
+    maxSplits: Int = .max,
+    omittingEmptySubsequences: Bool = true
+) -> [MLShapedArraySlice<Scalar>] where C : Collection, MLShapedArraySlice<Scalar> == C.Element
+Parameters
+separator
+The element to be split upon.
+Return Value
+A collection of subsequences, split from this collection’s elements.
+See Also
+Generating a Shaped Array
+func joined() -> FlattenSequence<MLShapedArray<Scalar>>
+Returns the elements of this sequence of sequences, concatenated.
+func joined<Separator>(separator: Separator) -> JoinedSequence<MLShapedArray<Scalar>>
+Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element.
+func reversed() -> ReversedCollection<MLShapedArray<Scalar>>
+Returns a view presenting the elements of the collection in reverse order.
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate.
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element.
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is split(separator:maxSplits:omittingEmptySubsequences:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

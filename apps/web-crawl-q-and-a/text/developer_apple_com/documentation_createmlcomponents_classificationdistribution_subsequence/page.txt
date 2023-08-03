@@ -1,0 +1,132 @@
+https://developer.apple.com/documentation/createmlcomponents/classificationdistribution/subsequence
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Estimator Adaptors
+S
+UpdatableTemporalEstimatorToSupervisedAdaptor
+S
+UpdatableSupervisedEstimatorToTemporalAdaptor
+S
+UpdatableEstimatorToSupervisedAdaptor
+S
+UpdatableEstimatorToTemporalAdaptor
+Updatable Adaptors
+S
+TransformerToUpdatableEstimatorAdaptor
+T
+ClassificationDistribution.Iterator
+T
+ClassificationDistribution.Indices
+T
+ClassificationDistribution.Index
+T
+ClassificationDistribution.Element
+Type Aliases
+subscript(Label) -> Float?
+subscript(Int) -> Classification<Label>
+subscript(Range<Int>) -> Slice<ClassificationDistribution<Label>>
+Documentation
+Open Menu
+Swift
+Type Alias
+ClassificationDistribution.SubSequence
+A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+typealias SubSequence = Slice<ClassificationDistribution<Label>>
+Discussion
+The default subsequence type for collections that don’t define their own is Slice.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ClassificationDistribution.SubSequence
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

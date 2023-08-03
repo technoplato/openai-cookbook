@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/coreml/mlmodel/3600218-load
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLPredictionOptions
+M
+func predictions(from: MLBatchProvider, options: MLPredictionOptions) -> MLBatchProvider
+M
+func predictions(fromBatch: MLBatchProvider) -> MLBatchProvider
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Beta
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+M
+func prediction(from: MLFeatureProvider) -> MLFeatureProvider
+Making Predictions
+class func load(contentsOf: URL, configuration: MLModelConfiguration, completionHandler: (Result<MLModel, Error>) -> Void)
+class func load(MLModelAsset, configuration: MLModelConfiguration, completionHandler: (MLModel?, Error?) -> Void)
+Documentation
+Open Menu
+Type Method
+load(contentsOf:configuration:completionHandler:)
+Creates a Core ML model instance asynchronously from a compiled model file, a custom configuration, and a completion handler.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+watchOS 7.0+
+visionOS 1.0+ Beta
+Xcode 12.0+
+class func load(
+    contentsOf url: URL,
+    configuration: MLModelConfiguration = MLModelConfiguration(),
+    completionHandler handler: @escaping (Result<MLModel, Error>) -> Void
+)
+Parameters
+url
+The path to a compiled model file (ModelName.mlmodelc), typically with the URL that compileModel(at:) returns.
+configuration
+The runtime settings for the new model instance.
+handler
+A closure the method calls when it finishes loading the model.
+error
+On return, if an error occurs, a pointer to an error information instance; otherwise nil.
+Discussion
+Use this method to load a model asynchronously. Core ML calls your completion handler after it successfully loads the model, or encounters an error attempting to load it.
+MLModel.load(contentsOf: modelURL) { result in
+    switch result {
+    case .success(let loadedModel):
+        print("Successfully loaded model `\(loadedModel)`.")
+
+
+        // Use the loaded model for predictions.
+        // ...
+
+
+    case .failure(let error):
+        print("Error loading model: \(error).")
+    }
+}
+If the model loaded successfully, you can use the instance from the Result.success(_:) associated value; otherwise, use the Result.failure(_:) associated value to address the error. See MLModelError for the list of error codes.
+See Also
+Loading a Model
+class func load(contentsOf: URL, configuration: MLModelConfiguration) -> MLModel
+Construct a model asynchronously from a compiled model asset.
+class func load(MLModelAsset, configuration: MLModelConfiguration, completionHandler: (MLModel?, Error?) -> Void)
+Construct a model asynchronously from a compiled model asset.
+init(contentsOf: URL)
+Creates a Core ML model instance from a compiled model file.
+init(contentsOf: URL, configuration: MLModelConfiguration)
+Creates a Core ML model instance from a compiled model file and a custom configuration.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is load(contentsOf:configuration:completionHandler:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

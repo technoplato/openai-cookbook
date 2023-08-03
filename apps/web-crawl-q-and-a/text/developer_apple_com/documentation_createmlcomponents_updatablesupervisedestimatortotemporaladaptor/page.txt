@@ -1,0 +1,183 @@
+https://developer.apple.com/documentation/createmlcomponents/updatablesupervisedestimatortotemporaladaptor
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+UpdatableTemporalEstimatorToSupervisedAdaptor
+UpdatableSupervisedTemporalEstimator Implementations
+SupervisedTemporalEstimator Implementations
+Default Implementations
+M
+func fitted<InputSequence, Validation, FeatureSequence>(to: InputSequence, validateOn: Validation, eventHandler: EventHandler?) async throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+M
+func fitted<InputSequence, FeatureSequence>(to: InputSequence, eventHandler: EventHandler?) async throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+M
+func encodeWithOptimizer(UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, to: inout EstimatorEncoder) throws
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+func update<InputSequence, FeatureSequence>(inout UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, with: InputSequence, eventHandler: EventHandler?) async throws
+func decode(from: inout EstimatorDecoder) throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+func encode(UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, to: inout EstimatorEncoder) throws
+S
+UpdatableEstimatorToSupervisedAdaptor
+S
+UpdatableEstimatorToTemporalAdaptor
+Updatable Adaptors
+S
+TransformerToUpdatableEstimatorAdaptor
+S
+TransformerToTemporalAdaptor
+S
+TransformerToEstimatorAdaptor
+Transformer Adaptors
+func meanAbsoluteError<T>(some Collection, some Collection) -> T
+Documentation
+Open Menu
+Swift
+Structure
+UpdatableSupervisedEstimatorToTemporalAdaptor
+An updatable supervised temporal estimator wrapping an updatable supervised estimator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct UpdatableSupervisedEstimatorToTemporalAdaptor<Base> where Base : UpdatableSupervisedEstimator, Base.Annotation : Sendable
+Topics
+Creating the Estimator
+init(Base)
+Creates a temporal supervised estimator from a supervised estimator.
+Encoding and Decoding
+func encode(UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, to: inout EstimatorEncoder) throws
+Encodes a fitted transformer.
+func decode(from: inout EstimatorDecoder) throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+Decodes the transformer.
+Fitting and Updating
+func makeTransformer() -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+Creates a default-initialized transformer suitable for incremental fitting.
+func update<InputSequence, FeatureSequence>(inout UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, with: InputSequence, eventHandler: EventHandler?) async throws
+Updates a transformer with a new sequence of examples.
+typealias Annotation
+The annotation type.
+typealias Input
+The input type.
+typealias Output
+The output type.
+typealias Transformer
+The transformer type created by this estimator.
+Instance Methods
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+Reads the encoded transformer and optimizer with a decoder.
+func encodeWithOptimizer(UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+func fitted<InputSequence, FeatureSequence>(to: InputSequence, eventHandler: EventHandler?) async throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+Fits a transformer to a sequence of examples.
+func fitted<InputSequence, Validation, FeatureSequence>(to: InputSequence, validateOn: Validation, eventHandler: EventHandler?) async throws -> UpdatableSupervisedEstimatorToTemporalAdaptor<Base>.Transformer
+Fits a transformer to a sequence of examples while validating with a validation sequence.
+Default Implementations
+API Reference
+SupervisedTemporalEstimator Implementations
+API Reference
+UpdatableSupervisedTemporalEstimator Implementations
+Relationships
+Conforms To
+Sendable
+SupervisedTemporalEstimator
+UpdatableSupervisedTemporalEstimator
+See Also
+Updatable Adaptors
+struct UpdatableEstimatorToTemporalAdaptor
+An updatable temporal estimator wrapping an updatable estimator.
+struct UpdatableEstimatorToSupervisedAdaptor
+An adaptor that exposes an updatable estimator as an updatable supervised estimator.
+struct UpdatableTemporalEstimatorToSupervisedAdaptor
+An adaptor that exposes an updatable temporal estimator as an updatable supervised temporal estimator.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UpdatableSupervisedEstimatorToTemporalAdaptor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

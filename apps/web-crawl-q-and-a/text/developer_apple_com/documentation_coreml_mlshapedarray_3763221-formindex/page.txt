@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3763221-formindex
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Generating a Shaped Array
+M
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func shuffle<T>(using: inout T)
+M
+func shuffle()
+M
+func reverse()
+M
+func sort(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool)
+M
+func sort<S, Comparator>(using: S)
+M
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+M
+func index(of: MLShapedArraySlice<Scalar>) -> Int?
+Deprecated
+M
+func index(Int, offsetBy: Int, limitedBy: Int) -> Int?
+M
+func index(Int, offsetBy: Int) -> Int
+M
+func index(after: Int) -> Int
+P
+var indices: Range<Int>
+P
+var endIndex: Int
+P
+var startIndex: Int
+Documentation
+Open Menu
+Swift
+Instance Method
+formIndex(before:)
+Replaces the given index with its predecessor.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func formIndex(before i: inout Int)
+Parameters
+i
+A valid index of the collection. i must be greater than startIndex.
+Discussion
+Note
+This documentation comment was inherited from BidirectionalCollection.
+See Also
+Finding an Index in a Shaped Array
+var startIndex: Int
+The index of the first element in the shaped array.
+var endIndex: Int
+The index of the last element in the shaped array.
+var indices: Range<Int>
+The index range of all the elements in the shaped array.
+func index(after: Int) -> Int
+Returns the index immediately after an index you provide.
+func index(Int, offsetBy: Int) -> Int
+Returns the index at a relative distance to an index you provide.
+func index(Int, offsetBy: Int, limitedBy: Int) -> Int?
+Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index.
+func index(of: MLShapedArraySlice<Scalar>) -> Int?
+Returns the first index where the specified value appears in the collection.
+Deprecated
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+func formIndex(after: inout Int)
+Replaces the given index with its successor.
+func formIndex(inout Int, offsetBy: Int)
+Offsets the given index by the specified distance.
+func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool
+Offsets the given index by the specified distance, or so that it equals the given limiting index.
+func firstIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+Returns the first index in which an element of the collection satisfies the given predicate.
+func firstIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+Returns the first index where the specified value appears in the collection.
+func lastIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+Returns the index of the last element in the collection that matches the given predicate.
+func lastIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+Returns the last index where the specified value appears in the collection.
+func ranges<C>(of: C) -> [Range<Int>]
+Finds and returns the ranges of the all occurrences of a given sequence within the collection.
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence.
+func firstRange<C>(of: C) -> Range<Int>?
+Finds and returns the range of the first occurrence of a given collection within this collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is formIndex(before:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

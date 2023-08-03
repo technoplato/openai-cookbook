@@ -1,0 +1,178 @@
+https://developer.apple.com/documentation/createmlcomponents/logisticregressionclassifiermodel
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+func rootMeanSquaredError<T>(some Collection, some Collection) -> T
+S
+ClassificationMetrics
+S
+ClassificationDistribution
+S
+Classification
+Metrics
+S
+TreeClassifierModel
+S
+FullyConnectedNetworkClassifierModel
+func applied(to: MLShapedArray<Scalar>, eventHandler: EventHandler?) async throws -> ClassificationDistribution<Label>
+S
+LogisticRegressionClassifier
+r
+P
+Classifier
+Classifiers
+r
+P
+EstimatorEncoder
+r
+P
+EstimatorDecoder
+Serializers
+S
+TreeRegressorModel
+S
+FullyConnectedNetworkRegressorModel
+Documentation
+Open Menu
+Swift
+Structure
+LogisticRegressionClassifierModel
+A trained logistic regression classifier model.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct LogisticRegressionClassifierModel<Scalar, Label> where Scalar : MLShapedArrayScalar, Scalar : BinaryFloatingPoint, Label : Comparable, Label : Decodable, Label : Encodable, Label : Hashable
+Topics
+Initializers
+init(coefficients: some Sequence<Scalar>, labels: Set<Label>)
+Creates a logistic regression model.
+Beta
+Instance Properties
+var coefficients: [Scalar]
+The linear coefficients.
+Beta
+var featureCount: Int
+The number of features expected in the input.
+Beta
+Instance Methods
+func applied(to: MLShapedArray<Scalar>, eventHandler: EventHandler?) async throws -> ClassificationDistribution<Label>
+Performs a classification on a single input.
+Type Aliases
+typealias Input
+The input type.
+typealias Output
+The output type.
+Default Implementations
+API Reference
+Transformer Implementations
+Relationships
+Conforms To
+Classifier
+Sendable
+Transformer
+See Also
+Classifiers
+protocol Classifier
+An estimator that predicts classification probabilities.
+struct LogisticRegressionClassifier
+A logistic regression classifier.
+struct BoostedTreeClassifier
+A gradient boosted decision tree classifier.
+struct FullyConnectedNetworkClassifier
+A classifier that uses a fully connected network.
+struct FullyConnectedNetworkClassifierModel
+A classifier model that uses a fully connected network.
+struct TreeClassifierModel
+A trained tree classifier model.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is LogisticRegressionClassifierModel
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,271 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(from: Decoder)
+Encoding and Decoding an Array Slice
+M
+init(data: Data, shape: [Int], strides: [Int])
+M
+init(data: Data, shape: [Int])
+Creating a Shaped Array Slice with Data
+M
+init(unsafeUninitializedShape: [Int], initializingWith: (inout UnsafeMutableBufferPointer<Scalar>, [Int]) -> Void)
+M
+init(bytesNoCopy: UnsafeRawPointer, shape: [Int], strides: [Int], deallocator: Data.Deallocator)
+Scalar
+Supporting Types
+M
+func withUnsafeMutableShapedBufferPointer<R>((inout UnsafeMutableBufferPointer<Self.Scalar>, [Int], [Int]) -> R) -> R
+M
+func fill<C>(with: C)
+M
+func fill(with: Self.Scalar)
+Modifying a Shaped Array Type
+subscript<C>(C) -> MLShapedArraySlice<Self.Scalar>
+subscript<C>(C) -> MLShapedArraySlice<Self.Scalar>
+Documentation
+Open Menu
+Swift
+Generic Structure
+MLShapedArraySlice
+A multidimensional subset of elements from a shaped array type.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+struct MLShapedArraySlice<Scalar> where Scalar : MLShapedArrayScalar
+Topics
+Creating a Shaped Array Slice
+init(scalar: Scalar)
+Creates a shaped array slice with exactly one value and zero dimensions.
+init(arrayLiteral: Scalar...)
+Creates a shaped array slice from a list of values.
+init<S>(scalars: S, shape: [Int])
+Creates a shaped array slice from an array of values.
+init(repeating: Scalar, shape: [Int])
+Creates a shaped array slice that initializes every element to the same value.
+init(identityMatrixOfSize: Int)
+Creates a shaped array slice that’s an identity matrix of integers.
+Available when Scalar conforms to FixedWidthInteger.
+init(randomScalarsIn: Range<Scalar>, shape: [Int])
+Creates a shaped array that initializes the elements to random integer values within a range.
+Available when Scalar conforms to FixedWidthInteger.
+Creating a Shaped Array Slice from Another Type
+init(MLMultiArray)
+Creates a shaped array slice from a multiarray.
+init(converting: MLMultiArray)
+Creates a shaped array slice by converting a multiarray.
+init<T>(converting: T)
+Creates a shaped array slice by converting another shaped array type.
+init<S>(concatenating: S, alongAxis: Int)
+Merges a sequence of shaped arrays into one shaped array along an axis.
+Creating a Shaped Array Slice with Pointers to Memory
+init(bytesNoCopy: UnsafeRawPointer, shape: [Int], deallocator: Data.Deallocator)
+Creates a shaped array slice from a data pointer.
+init(bytesNoCopy: UnsafeRawPointer, shape: [Int], strides: [Int], deallocator: Data.Deallocator)
+Creates a shaped array slice from a data pointer with memory strides.
+init(unsafeUninitializedShape: [Int], initializingWith: (inout UnsafeMutableBufferPointer<Scalar>, [Int]) -> Void)
+Creates a shaped array slice from a shape and a closure that initializes its memory.
+Creating a Shaped Array Slice with Data
+init(data: Data, shape: [Int])
+Creates a shaped array with a defined data and shape.
+init(data: Data, shape: [Int], strides: [Int])
+Creates a shaped array with defined data, shape, and strides.
+Encoding and Decoding an Array Slice
+init(from: Decoder)
+Creates an array slice from the passed decoder.
+Available when Scalar conforms to Decodable.
+func encode(to: Encoder)
+Encodes the array slice.
+Available when Scalar conforms to Encodable.
+Inspecting a Shaped Array Slice
+var isScalar: Bool
+A Boolean value that indicates whether the shaped array slice has zero dimensions.
+let shape: [Int]
+An integer array in which each element represents the size of the corresponding dimension.
+var strides: [Int]
+An integer array in which each element is the number of memory locations that spans the length of the corresponding dimension.
+var isEmpty: Bool
+A Boolean value indicating whether the collection is empty.
+var scalarCount: Int
+The total number of elements in the shaped array slice.
+var count: Int
+The number of elements in the collection.
+var underestimatedCount: Int
+A value less than or equal to the number of elements in the collection.
+Accessing an Element
+var scalar: Scalar?
+A computed property that returns the first element when the shape isn’t empty, or sets the shaped array’s underlying scalar type.
+var scalars: [Scalar]
+A computed property that generates a linear array that contains every element, or assigns the elements of an array to the shaped array’s elements.
+subscript(scalarAt: Int...) -> Scalar
+Accesses an element in the shaped array using a list of indices that represent a multidimensional location.
+subscript<C>(scalarAt: C) -> Scalar
+Accesses an element in the shaped array using a collection of indices that represent a multidimensional location.
+Accessing a Slice from the First Dimension
+subscript(Int) -> MLShapedArraySlice<Scalar>
+Accesses a slice at an index in the shaped array slice’s first dimension.
+subscript<R>(R) -> MLShapedArraySlice<Scalar>
+Accesses a slice with an integer range expression in the shaped array slice’s first dimension.
+subscript(MLShapedArrayRangeExpression) -> MLShapedArraySlice<Scalar>
+Accesses a slice with a shaped-array range expression in the shaped array slice’s first dimension.
+subscript((UnboundedRange_) -> Void) -> MLShapedArraySlice<Scalar>
+Accesses a slice with an unbounded range in the shaped array slice’s first dimension.
+subscript((UnboundedRange_) -> ()) -> MLShapedArraySlice<Scalar>
+Accesses a slice with an unbounded range in the shaped array slice’s first dimension.
+Accessing a Slice from Multiple Dimensions
+subscript(Int...) -> MLShapedArraySlice<Scalar>
+Accesses a slice using a list of integers, in which each element is an index in the corresponding dimension.
+subscript<C>(C) -> MLShapedArraySlice<Scalar>
+Accesses a slice using a collection of integers, in which each element is an index in the corresponding dimension.
+subscript<C>(C) -> MLShapedArraySlice<Scalar>
+Accesses a slice using a collection of integer ranges, in which each element is a range in the corresponding dimension.
+subscript(MLShapedArrayRangeExpression...) -> MLShapedArraySlice<Scalar>
+Accesses a slice using a list of range expressions, in which each element is a range in the corresponding dimension.
+subscript<C>(C) -> MLShapedArraySlice<Scalar>
+Accesses a slice using a collection of range expressions, in which each element is a range in the corresponding dimension.
+Inspecting the Underlying Memory of a Shaped Array
+func withUnsafeShapedBufferPointer<R>((UnsafeBufferPointer<Scalar>, [Int], [Int]) -> R) -> R
+Provides a closure with a read-only pointer to the shaped array slice’s underlying memory.
+Modifying a Shaped Array
+func fill(with: Scalar)
+Sets all the shaped array’s elements to a scalar value.
+func fill<C>(with: C)
+Assigns the shaped array’s elements to the elements in a collection, repeatedly, if necessary.
+func withUnsafeMutableShapedBufferPointer<R>((inout UnsafeMutableBufferPointer<Scalar>, [Int], [Int]) -> R) -> R
+Provides a closure with a read-write pointer to the shaped array slice’s underlying memory.
+Comparing Slices
+static func == (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool
+Returns a Boolean value that indicates whether two values are equal.
+Available when Scalar conforms to Equatable.
+Beta
+static func != (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool
+Returns a Boolean value that indicates whether two values are not equal.
+Available when Scalar conforms to Equatable.
+Beta
+Supporting Types
+typealias MLShapedArraySlice.Element
+A type that defines the shaped array’s elements.
+typealias MLShapedArraySlice.Index
+A type that defines the shaped array’s indices.
+typealias MLShapedArraySlice.Indices
+A type that defines the shaped array’s index ranges.
+typealias MLShapedArraySlice.Iterator
+A type that defines the shaped array’s iterator.
+typealias MLShapedArraySlice.SubSequence
+A type that defines the shaped array’s slices.
+typealias MLShapedArraySlice.ArrayLiteralElement
+A type that restricts the elements of an array literal that initializes the shaped array.
+API Reference
+Shaped Array Slice Collection Operations
+Relationships
+Conforms To
+Decodable
+Conforms when Scalar conforms to Decodable.
+Encodable
+Conforms when Scalar conforms to Encodable.
+MLShapedArrayProtocol
+See Also
+Supporting Types
+associatedtype Scalar
+Represents the underlying scalar type of the shaped array type.
+Required
+protocol MLShapedArrayScalar
+A type that associates a scalar with a shaped array.
+protocol MLShapedArrayRangeExpression
+An interface for a range expression, which you typically use with subscripts of shaped array types.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLShapedArraySlice
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/createml/mldatatable/join(with:on:type:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func condense(columnNamed: String, to: String) -> MLDataTable
+Compacting Rows
+subscript<S>(S) -> MLDataTable
+Selecting Columns
+M
+func intersect<T>(T..., of: String) -> MLDataTable
+M
+func suffix(Int) -> MLDataTable
+M
+func prefix(Int) -> MLDataTable
+Merging Data Tables
+M
+func randomSplit(by: Double, seed: Int) -> (MLDataTable, MLDataTable)
+Splitting a Data Table
+M
+func sort(columnNamed: String, byIncreasingOrder: Bool) -> MLDataTable
+Sorting Rows
+S
+MLDataTable.Aggregator
+M
+func group<S>(columnsNamed: String..., aggregators: S) -> MLDataTable
+Aggregating Rows
+Documentation
+Open Menu
+Swift
+Instance Method
+join(with:on:type:)
+Creates a new data table by merging two data tables by the given columns.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func join(
+    with: MLDataTable,
+    on columnsNamed: String...,
+    type: MLDataTable.JoinType = .inner
+) -> MLDataTable
+Parameters
+with
+Another data table to merge with this data table.
+Return Value
+A new data table.
+Discussion
+columnsNamed: The name of the columns to perform the join operation on. The method merges all rows with matching values in these columns.
+Note
+If you do not provide any column names, the method uses all the columns present in both tables.
+type: The type of join operation, which are equivalent to SQL join types.
+See Also
+Merging Data Tables
+enum JoinType
+Join types available for MLDataTable join operations.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is join(with:on:type:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

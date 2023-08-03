@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/speech/sfcustomlanguagemodeldata/phrasecountgenerator/4196148-prefix
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Speech Enumerations
+Reference
+r
+P
+TemplateInsertable
+Beta
+r
+P
+DataInsertable
+Beta
+Protocols
+C
+SFSpeechLanguageModel
+Beta
+S
+SFCustomLanguageModelData.TemplateInsertableBuilder
+static func == (SFCustomLanguageModelData.PhraseCountGenerator, SFCustomLanguageModelData.PhraseCountGenerator) -> Bool
+static func != (SFCustomLanguageModelData.PhraseCountGenerator, SFCustomLanguageModelData.PhraseCountGenerator) -> Bool
+func reduce<Result>(into: Result, (inout Result, SFCustomLanguageModelData.PhraseCount) -> Void) -> Result
+func prefix(while: (SFCustomLanguageModelData.PhraseCount) -> Bool) -> AsyncPrefixWhileSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+M
+func prefix(Int) -> AsyncPrefixSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+M
+func min(by: (SFCustomLanguageModelData.PhraseCount, SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+M
+func max(by: (SFCustomLanguageModelData.PhraseCount, SFCustomLanguageModelData.PhraseCount) -> Bool) -> SFCustomLanguageModelData.PhraseCount?
+M
+func map<Transformed>((SFCustomLanguageModelData.PhraseCount) -> Transformed) -> AsyncThrowingMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, Transformed>
+M
+func map<Transformed>((SFCustomLanguageModelData.PhraseCount) -> Transformed) -> AsyncMapSequence<SFCustomLanguageModelData.PhraseCountGenerator, Transformed>
+M
+func makeAsyncIterator() -> SFCustomLanguageModelData.PhraseCountGenerator.Iterator
+M
+func insert(data: SFCustomLanguageModelData)
+M
+func hash(into: inout Hasher)
+Documentation
+Open Menu
+Swift
+Instance Method
+prefix(while:)
+Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 17.0+ Beta
+visionOS 1.0+ Beta
+Xcode 11.0+
+@preconcurrency
+func prefix(while predicate: @escaping @Sendable (SFCustomLanguageModelData.PhraseCount) async -> Bool) rethrows -> AsyncPrefixWhileSequence<SFCustomLanguageModelData.PhraseCountGenerator>
+Parameters
+predicate
+A closure that takes an element as a parameter and returns a Boolean value indicating whether the element should be included in the modified sequence.
+Return Value
+An asynchronous sequence of the initial, consecutive elements that satisfy predicate.
+Discussion
+Use prefix(while:) to produce values while elements from the base sequence meet a condition you specify. The modified sequence ends when the predicate closure returns false.
+In this example, an asynchronous sequence called Counter produces Int values from 1 to 10. The prefix(while:) method causes the modified sequence to pass along values so long as they aren’t divisible by 2 and 3. Upon reaching 6, the sequence ends:
+let stream = Counter(howHigh: 10)
+    .prefix { $0 % 2 != 0 || $0 % 3 != 0 }
+for try await number in stream {
+    print(number, terminator: " ")
+}
+// Prints "1 2 3 4 5 "
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is prefix(while:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

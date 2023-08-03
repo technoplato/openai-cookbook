@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/doubles
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Filling in Missing Elements to Generate an Untyped Column
+M
+func suffix(Int) -> MLUntypedColumn
+M
+func prefix(Int) -> MLUntypedColumn
+subscript<R>(R) -> MLUntypedColumn
+subscript(Range<Int>) -> MLUntypedColumn
+Selecting Elements to Generate an Untyped Column
+M
+func dropDuplicates() -> MLUntypedColumn
+P
+var ints: MLDataColumn<Int>?
+P
+var type: MLDataValue.ValueType
+Exposing the Underlying Type to Generate a Data Column
+M
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Converting a Column to Generate a Data Column
+M
+func sort(byIncreasingOrder: Bool) -> MLUntypedColumn
+Sorting Elements to Generate a Column
+M
+func copy() -> MLUntypedColumn
+Documentation
+Open Menu
+Swift
+Instance Property
+doubles
+A cloned data column of doubles.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+var doubles: MLDataColumn<Double>? { get }
+Return Value
+A new data column if the underlying type of the column is Double; otherwise nil.
+Discussion
+This property is functionally equivalent to passing Double.self to column(type:). Typically you ensure type is equal to MLDataValue.ValueType.double before getting this property.
+See Also
+Exposing the Underlying Type to Generate a Data Column
+var type: MLDataValue.ValueType
+The underlying type of the column.
+var ints: MLDataColumn<Int>?
+A cloned data column of integers.
+var strings: MLDataColumn<String>?
+A cloned data column of strings.
+var sequences: MLDataColumn<MLDataValue.SequenceType>?
+A cloned data column of machine learning sequences.
+var dictionaries: MLDataColumn<MLDataValue.DictionaryType>?
+A cloned data column of machine learning dictionaries.
+var multiArrays: MLDataColumn<MLDataValue.MultiArrayType>?
+A cloned data column of machine learning multi-arrays.
+func column<T>(type: T.Type) -> MLDataColumn<T>?
+Clones the column to a data column of the given type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is doubles
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

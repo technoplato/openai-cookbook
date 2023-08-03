@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/coreml/mlmodel/2879179-modeldescription
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+P
+var configuration: MLModelConfiguration
+Inspecting a Model
+C
+MLPredictionOptions
+M
+func predictions(from: MLBatchProvider, options: MLPredictionOptions) -> MLBatchProvider
+M
+func predictions(fromBatch: MLBatchProvider) -> MLBatchProvider
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+Beta
+M
+func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider
+M
+func prediction(from: MLFeatureProvider) -> MLFeatureProvider
+Documentation
+Open Menu
+Instance Property
+modelDescription
+Model information you use at runtime during development, which Xcode also displays in its Core ML model editor view.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+var modelDescription: MLModelDescription { get }
+See Also
+Inspecting a Model
+var configuration: MLModelConfiguration
+The configuration of the model set during initialization.
+class MLModelDescription
+Information about a model, primarily the input and output format for each feature the model expects, and optional metadata.
+func parameterValue(for: MLParameterKey) -> Any
+Returns a model parameter value for a key.
+class MLParameterKey
+The keys for the parameter dictionary in a model configuration or a model update context.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is modelDescription
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

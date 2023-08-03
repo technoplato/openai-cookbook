@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/speech/sfspeechaudiobufferrecognitionrequest/1649395-appendaudiosamplebuffer
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+r
+P
+TemplateInsertable
+Beta
+r
+P
+DataInsertable
+Beta
+Protocols
+C
+SFSpeechLanguageModel
+Beta
+C
+SFCustomLanguageModelData
+Beta
+Classes
+S
+SFSpeechError
+M
+func append(AVAudioPCMBuffer)
+Appending Audio Buffers
+C
+SFSpeechAudioBufferRecognitionRequest
+C
+SFSpeechURLRecognitionRequest
+Recognizing speech in live audio
+Audio sources
+C
+SFSpeechRecognizer
+Asking Permission to Use Speech Recognition
+Documentation
+Open Menu
+Instance Method
+appendAudioSampleBuffer(_:)
+Appends audio to the end of the recognition request.
+iOS 10.0+
+iPadOS 10.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+visionOS 1.0+ Beta
+func appendAudioSampleBuffer(_ sampleBuffer: CMSampleBuffer)
+Parameters
+sampleBuffer
+A buffer of audio.
+Discussion
+The audio must be in a native format.
+See Also
+Appending Audio Buffers
+func append(AVAudioPCMBuffer)
+Appends audio in the PCM format to the end of the recognition request.
+func endAudio()
+Marks the end of audio input for the recognition request.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is appendAudioSampleBuffer(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,162 @@
+https://developer.apple.com/documentation/speech/sfspeechrecognitiontaskdelegate
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+SFSpeechRecognitionResult
+Transcription results
+C
+SFSpeechRecognitionTask
+In-progress requests
+C
+SFSpeechRecognitionRequest
+C
+SFSpeechAudioBufferRecognitionRequest
+C
+SFSpeechURLRecognitionRequest
+M
+func recognitionTask(with: SFSpeechRecognitionRequest, delegate: SFSpeechRecognitionTaskDelegate) -> SFSpeechRecognitionTask
+M
+func recognitionTask(with: SFSpeechRecognitionRequest, resultHandler: (SFSpeechRecognitionResult?, Error?) -> Void) -> SFSpeechRecognitionTask
+Performing Speech Recognition on Audio
+P
+var queue: OperationQueue
+P
+var defaultTaskHint: SFSpeechRecognitionTaskHint
+Configuring the Speech Recognizer
+E
+SFSpeechRecognizerAuthorizationStatus
+M
+class func authorizationStatus() -> SFSpeechRecognizerAuthorizationStatus
+Documentation
+Open Menu
+Protocol
+SFSpeechRecognitionTaskDelegate
+A protocol with methods for managing multi-utterance speech recognition requests.
+iOS 10.0+
+iPadOS 10.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+visionOS 1.0+ Beta
+protocol SFSpeechRecognitionTaskDelegate
+Overview
+The methods of this protocol give you fine-grained control over the speech recognition process. Specifically, you use this protocol when you want to know the following:
+When the first utterances of speech occur in the audio.
+When the speech recognizer stops accepting audio.
+When the speech recognition process finishes or is canceled.
+When the speech recognizer generates a potential transcription.
+Adopt the methods of this protocol in an object and pass that object in to the delegate parameter of recognitionTask(with:delegate:) when starting your speech recognition task.
+Topics
+Tracking the Task Progress
+func speechRecognitionDidDetectSpeech(SFSpeechRecognitionTask)
+Tells the delegate when the task first detects speech in the source audio.
+func speechRecognitionTaskFinishedReadingAudio(SFSpeechRecognitionTask)
+Tells the delegate when the task is no longer accepting new audio input, even if final processing is in progress.
+Getting Transcriptions
+func speechRecognitionTask(SFSpeechRecognitionTask, didHypothesizeTranscription: SFTranscription)
+Tells the delegate that a hypothesized transcription is available.
+Finishing a Speech Recognition Task
+func speechRecognitionTask(SFSpeechRecognitionTask, didFinishRecognition: SFSpeechRecognitionResult)
+Tells the delegate when the final utterance is recognized.
+func speechRecognitionTask(SFSpeechRecognitionTask, didFinishSuccessfully: Bool)
+Tells the delegate when the recognition of all requested utterances is finished.
+func speechRecognitionTaskWasCancelled(SFSpeechRecognitionTask)
+Tells the delegate that the task has been canceled.
+Relationships
+Inherits From
+NSObjectProtocol
+See Also
+Performing Speech Recognition on Audio
+func recognitionTask(with: SFSpeechRecognitionRequest, resultHandler: (SFSpeechRecognitionResult?, Error?) -> Void) -> SFSpeechRecognitionTask
+Executes the speech recognition request and delivers the results to the specified handler block.
+func recognitionTask(with: SFSpeechRecognitionRequest, delegate: SFSpeechRecognitionTaskDelegate) -> SFSpeechRecognitionTask
+Recognizes speech from the audio source associated with the specified request, using the specified delegate to manage the results.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SFSpeechRecognitionTaskDelegate
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

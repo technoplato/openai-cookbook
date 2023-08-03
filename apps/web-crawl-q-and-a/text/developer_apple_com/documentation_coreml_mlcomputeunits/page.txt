@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/coreml/mlcomputeunits
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+P
+var computeUnits: MLComputeUnits
+Allowing Access to Processing Units
+P
+var allowLowPrecisionAccumulationOnGPU: Bool
+P
+var preferredMetalDevice: MTLDevice?
+Configuring GPU Usage
+C
+MLParameterKey
+P
+var parameters: [MLParameterKey : Any]?
+P
+var modelDisplayName: String?
+Documentation
+Open Menu
+Enumeration
+MLComputeUnits
+The set of processing-unit configurations the model can use to make predictions.
+iOS 12.0+
+iPadOS 12.0+
+macOS 10.14+
+Mac Catalyst 13.1+
+tvOS 12.0+
+watchOS 5.0+
+visionOS 1.0+ Beta
+enum MLComputeUnits : Int, @unchecked Sendable
+Overview
+Use this enumeration to set or inspect the processing units you allow a model to use when it makes a prediction.
+Use all to allow the OS to select the best processing unit to use (including the neural engine, if available).
+Use MLComputeUnits.cpuOnly to restrict the model to the CPU, if your app might run in the background or runs other GPU intensive tasks.
+Topics
+Processing Unit Configurations
+case all
+The option you choose to allow the model to use all compute units available, including the neural engine.
+case cpuOnly
+The option you choose to limit the model to only use the CPU.
+case cpuAndGPU
+The option you choose to allow the model to use both the CPU and GPU, but not the neural engine.
+case cpuAndNeuralEngine
+The option you choose to allow the model to use both the CPU and neural engine, but not the GPU.
+Relationships
+Conforms To
+Sendable
+See Also
+Allowing Access to Processing Units
+var computeUnits: MLComputeUnits
+The processing unit or units the model uses to make predictions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLComputeUnits
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

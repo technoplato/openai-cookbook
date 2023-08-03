@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/createml/mlrecommender/modelparameters-swift.struct/threshold
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLRecommender.ModelParameters
+Creating Parameters
+M
+init(algorithm: MLRecommender.ModelAlgorithmType, threshold: Double, maxCount: Int, nearestItems: MLDataTable?, maxSimilarityIterations: Int)
+E
+MLRecommender.ModelAlgorithmType
+Configuring the Parameters
+P
+var algorithm: MLRecommender.ModelAlgorithmType
+P
+var maxCount: Int
+P
+var maxSimilarityIterations: Int
+init(algorithm: MLRecommender.ModelAlgorithmType, threshold: Double, maxCount: Int, nearestItemsDataFrame: DataFrame?, maxSimilarityIterations: Int)
+func recommendations<T>(fromUsers: MLDataColumn<T>, maxCount: Int, restrictingToItems: MLDataColumn<T>?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+func recommendations(fromUsers: [MLIdentifier], maxCount: Int, restrictingToItems: [MLIdentifier]?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+r
+P
+MLIdentifier
+M
+func getSimilarItems<T>(fromItems: MLDataColumn<T>, maxCount: Int) throws -> MLDataTable
+M
+func getSimilarItems(fromItems: [MLIdentifier], maxCount: Int) throws -> MLDataTable
+Saving a Recommender
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Describing a Recommender
+Documentation
+Open Menu
+Swift
+Instance Property
+threshold
+The item confidence value cutoff, below which the recommender omits those items from its recommendations.
+macOS 10.15+
+visionOS 1.0+ Beta
+var threshold: Double
+Discussion
+The default value is 0.001.
+See Also
+Configuring the Parameters
+var algorithm: MLRecommender.ModelAlgorithmType
+The algorithm the recommender uses to make recommendations.
+var maxCount: Int
+The largest number of similar items the model stores for each item.
+var maxSimilarityIterations: Int
+The largest number of iterations the recommender uses to build its lookup table.
+var nearestItems: MLDataTable?
+A data table that lists each item’s nearest items.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is threshold
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

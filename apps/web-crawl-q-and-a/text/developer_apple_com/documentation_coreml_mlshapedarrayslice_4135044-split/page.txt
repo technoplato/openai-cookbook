@@ -1,0 +1,190 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/4135044-split
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+func split<C>(separator: C, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+M
+func reduce<Result>(into: Result, (inout Result, MLShapedArraySlice<Scalar>) -> ()) -> Result
+M
+func reduce<Result>(Result, (Result, MLShapedArraySlice<Scalar>) -> Result) -> Result
+M
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+M
+func filter((MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+M
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Deprecated
+M
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+M
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+M
+func map<T>((MLShapedArraySlice<Scalar>) -> T) -> [T]
+Documentation
+Open Menu
+Swift
+Instance Method
+split(separator:maxSplits:omittingEmptySubsequences:)
+Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 17.0+ Beta
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func split(
+    separator: MLShapedArraySlice<Scalar>,
+    maxSplits: Int = Int.max,
+    omittingEmptySubsequences: Bool = true
+) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+Parameters
+separator
+The element that should be split upon.
+maxSplits
+The maximum number of times to split the sequence, or one less than the number of subsequences to return. If maxSplits + 1 subsequences are returned, the last one is a suffix of the original sequence containing the remaining elements. maxSplits must be greater than or equal to zero. The default value is Int.max.
+omittingEmptySubsequences
+If false, an empty subsequence is returned in the result for each consecutive pair of separator elements in the sequence and for each instance of separator at the start or end of the sequence. If true, only nonempty subsequences are returned. The default value is true.
+Return Value
+An array of subsequences, split from this sequence’s elements.
+Discussion
+The resulting array consists of at most maxSplits + 1 subsequences. Elements that are used to split the sequence are not returned as part of any subsequence.
+The following examples show the effects of the maxSplits and omittingEmptySubsequences parameters when splitting a string at each space character (” “). The first use of split returns each word that was originally separated by one or more spaces.
+let line = "BLANCHE:   I don't want realism. I want magic!"
+print(line.split(separator: " ")
+          .map(String.init))
+// Prints "["BLANCHE:", "I", "don\'t", "want", "realism.", "I", "want", "magic!"]"
+The second example passes 1 for the maxSplits parameter, so the original string is split just once, into two new strings.
+print(line.split(separator: " ", maxSplits: 1)
+          .map(String.init))
+// Prints "["BLANCHE:", "  I don\'t want realism. I want magic!"]"
+The final example passes false for the omittingEmptySubsequences parameter, so the returned array contains empty strings where spaces were repeated.
+print(line.split(separator: " ", omittingEmptySubsequences: false)
+          .map(String.init))
+// Prints "["BLANCHE:", "", "", "I", "don\'t", "want", "realism.", "I", "want", "magic!"]"
+Complexity: O(n), where n is the length of the sequence.
+See Also
+Transforming a Shaped Array Slice
+func map<T>((MLShapedArraySlice<Scalar>) -> T) -> [T]
+Returns an array containing the results of mapping the given closure over the sequence’s elements.
+func compactMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Returns an array containing the non-nil results of calling the given transformation with each element of this sequence.
+func flatMap<SegmentOfResult>((MLShapedArraySlice<Scalar>) -> SegmentOfResult) -> [SegmentOfResult.Element]
+Returns an array containing the concatenated results of calling the given transformation with each element of this sequence.
+func flatMap<ElementOfResult>((MLShapedArraySlice<Scalar>) -> ElementOfResult?) -> [ElementOfResult]
+Generates an array that concatenates the sequences from a transform closure that returns an optional.
+Deprecated
+func filter((MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.
+func filter(Predicate<MLShapedArraySlice<Scalar>>) -> [MLShapedArraySlice<Scalar>]
+Beta
+func reduce<Result>(Result, (Result, MLShapedArraySlice<Scalar>) -> Result) -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func reduce<Result>(into: Result, (inout Result, MLShapedArraySlice<Scalar>) -> ()) -> Result
+Returns the result of combining the elements of the sequence using the given closure.
+func split<C>(separator: C, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given separator.
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+Returns the longest possible subsequences of the collection, in order, around elements equal to the given element.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is split(separator:maxSplits:omittingEmptySubsequences:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

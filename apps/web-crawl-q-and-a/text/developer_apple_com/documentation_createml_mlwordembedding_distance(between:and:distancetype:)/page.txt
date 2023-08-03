@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/createml/mlwordembedding/distance(between:and:distancetype:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+M
+func prediction(from: String, maxCount: Int, maxDistance: Double, distanceType: NLDistanceType) throws -> [(text: String, distance: Double)]
+Testing a Word Embedding
+P
+let modelParameters: MLWordEmbedding.ModelParameters
+S
+MLWordEmbedding.ModelParameters
+M
+init(dictionary: [String : [Double]], parameters: MLWordEmbedding.ModelParameters) throws
+Creating a Word Embedding
+S
+MLWordEmbedding
+S
+MLGazetteer
+Documentation
+Open Menu
+Swift
+Instance Method
+distance(between:and:distanceType:)
+Calculates the distance between two strings in the vocabulary space.
+Create ML
+CreateML
+macOS 10.15+
+visionOS 1.0+ Beta
+func distance(
+    between first: String,
+    and second: String,
+    distanceType: NLDistanceType = .cosine
+) -> Double
+Parameters
+first
+A string in the embedding vocabulary.
+second
+Another string in the embedding vocabulary.
+distanceType
+The metric to use to calculate the distance between the first and second strings.
+Return Value
+The distance
+See Also
+Testing a Word Embedding
+func prediction(from: String, maxCount: Int, maxDistance: Double, distanceType: NLDistanceType) throws -> [(text: String, distance: Double)]
+Predicts neighbors.
+func contains(String) -> Bool
+Returns a Boolean value indicating whether the vocabulary contains the given string.
+func vector(for: String) -> [Double]?
+Accesses the vector associated with the given string in the vocabulary.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is distance(between:and:distanceType:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

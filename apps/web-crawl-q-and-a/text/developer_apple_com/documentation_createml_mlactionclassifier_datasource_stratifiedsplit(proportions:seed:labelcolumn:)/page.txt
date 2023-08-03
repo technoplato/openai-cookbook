@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/createml/mlactionclassifier/datasource/stratifiedsplit(proportions:seed:labelcolumn:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+S
+MLWordEmbedding
+S
+MLGazetteer
+S
+MLWordTagger
+case labeledKeypointsDataFrame(DataFrame, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+M
+func keypointsWithAnnotations(targetFrameRate: Double) throws -> MLDataTable
+M
+func videosWithAnnotations() throws -> MLDataTable
+Generating Data Tables from a Data Source
+M
+func gatherAnnotatedFileNames() throws -> DataFrame?
+Beta
+Getting Annotated File Names
+E
+case labeledVideoDataFrame(DataFrame, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+Extracting Keypoints
+E
+case labeledKeypointsData(table: MLDataTable, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+Documentation
+Open Menu
+Swift
+Instance Method
+stratifiedSplit(proportions:seed:labelColumn:)
+Generates a data table by splitting the data source into strata.
+macOS 11.0–14.0 Deprecated
+visionOS 1.0+ Beta
+func stratifiedSplit(
+    proportions: [Double],
+    seed: Int = timestampSeed(),
+    labelColumn: String
+) throws -> MLDataTable
+Return Value
+A new data table.
+Discussion
+proportions: An array of proportions, each in the range [0.0, 1.0].
+seed: A seed number for the random-number generator.
+labelColumn: The name of the column that you want to stratify.
+See Also
+Generating Data Tables from a Data Source
+func videosWithAnnotations() throws -> MLDataTable
+Generates a data table of the data source’s video URL locations and action annotations.
+func keypointsWithAnnotations(targetFrameRate: Double) throws -> MLDataTable
+Generates a data table with action annotations of the data source.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is stratifiedSplit(proportions:seed:labelColumn:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

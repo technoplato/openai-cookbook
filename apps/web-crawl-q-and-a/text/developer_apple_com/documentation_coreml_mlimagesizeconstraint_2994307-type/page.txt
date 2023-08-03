@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/coreml/mlimagesizeconstraint/2994307-type
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var sequenceValue: MLSequence?
+P
+var multiArrayValue: MLMultiArray?
+M
+func shapedArrayValue<Scalar>(of: Scalar.Type) -> MLShapedArray<Scalar>?
+P
+var imageBufferValue: CVPixelBuffer?
+P
+var stringValue: String
+P
+var doubleValue: Double
+P
+var int64Value: Int64
+Determining Relevant Constraints
+C
+MLImageSizeConstraint
+P
+var sizeConstraint: MLImageSizeConstraint
+Inspecting Acceptable Sizes
+P
+var pixelFormatType: OSType
+P
+var pixelsHigh: Int
+P
+var pixelsWide: Int
+Accessing the Constraints
+Documentation
+Open Menu
+Instance Property
+type
+Indicator of which properties to inspect for this image size constraint.
+iOS 12.0+
+iPadOS 12.0+
+macOS 10.14+
+Mac Catalyst 13.1+
+tvOS 12.0+
+watchOS 5.0+
+visionOS 1.0+ Beta
+var type: MLImageSizeConstraintType { get }
+See Also
+Determining Relevant Constraints
+enum MLImageSizeConstraintType
+The modes that determine how the model defines a feature's image size constraint.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is type
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

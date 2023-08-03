@@ -1,0 +1,165 @@
+https://developer.apple.com/documentation/createml/mldatatable/rows-swift.struct/foreach(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func formIndex(after: inout Self.Index)
+P
+var endIndex: Int
+P
+var startIndex: Int
+Manipulating Indices
+M
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) throws -> Bool) rethrows -> Bool
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+Iterating Over a Row Collection’s Rows
+P
+var lazy: LazySequence<Self>
+M
+func reduce<Result>(Result, (Result, Self.Element) throws -> Result) rethrows -> Result
+M
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Transforming a Row Collection
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func dropLast(Int) -> Self.SubSequence
+M
+func dropFirst(Int) -> Self.SubSequence
+Documentation
+Open Menu
+Swift
+Instance Method
+forEach(_:)
+Calls the given closure on each element in the sequence in the same order as a for-in loop.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func forEach(_ body: (Self.Element) throws -> Void) rethrows
+Parameters
+body
+A closure that takes an element of the sequence as a parameter.
+Discussion
+The two loops in the following example produce the same output:
+let numberWords = ["one", "two", "three"]
+for word in numberWords {
+    print(word)
+}
+// Prints "one"
+// Prints "two"
+// Prints "three"
+
+
+numberWords.forEach { word in
+    print(word)
+}
+// Same as above
+Using the forEach method is distinct from a for-in loop in two important ways:
+You cannot use a break or continue statement to exit the current call of the body closure or skip subsequent calls.
+Using the return statement in the body closure will exit only from the current call to body, not from any outer scope, and won’t skip subsequent calls.
+See Also
+Iterating Over a Row Collection’s Rows
+func enumerated() -> EnumeratedSequence<Self>
+Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence.
+func makeIterator() -> IndexingIterator<Self>
+Returns an iterator over the elements of the collection.
+Available when Iterator is IndexingIterator<Self>.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is forEach(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

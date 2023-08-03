@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/vision/vnsequencerequesthandler
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNSaliencyImageObservation
+C
+VNGenerateObjectnessBasedSaliencyImageRequest
+C
+VNGenerateAttentionBasedSaliencyImageRequest
+Highlighting Areas of Interest in an Image Using Saliency
+Cropping Images Using Saliency
+Saliency Analysis
+M
+func perform([VNRequest], onImageURL: URL, orientation: CGImagePropertyOrientation)
+C
+VNDetectDocumentSegmentationRequest
+C
+VNGeneratePersonSegmentationRequest
+C
+VNStatefulRequest
+Applying Matte Effects to People in Images and Video
+Image Sequence Analysis
+C
+VNObservation
+C
+VNImageRequestHandler
+C
+VNGenerateImageFeaturePrintRequest
+Documentation
+Open Menu
+Class
+VNSequenceRequestHandler
+An object that processes image analysis requests for each frame in a sequence.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNSequenceRequestHandler : NSObject
+Overview
+Instantiate this handler to perform Vision requests on a series of images. Unlike the VNImageRequestHandler, you don’t specify the image on creation. Instead, you supply each image frame one by one as you continue to call one of the perform methods.
+Topics
+Initializing a Sequence Request
+init()
+Initializes a sequence request handler.
+Performing a Sequence Request
+func perform([VNRequest], on: CGImage)
+Schedules Vision requests to be performed on a Core Graphics image.
+func perform([VNRequest], on: CGImage, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on a Core Graphics image with known orientation.
+func perform([VNRequest], on: CIImage)
+Schedules one or more Vision requests to be performed on CIImage data.
+func perform([VNRequest], on: CIImage, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on CIImage data with known orientation.
+func perform([VNRequest], on: CVPixelBuffer)
+Schedules one or more Vision requests to be performed on a Core Video pixel buffer.
+func perform([VNRequest], on: CVPixelBuffer, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on a Core Video pixel buffer with known orientation.
+func perform([VNRequest], on: CMSampleBuffer)
+Performs one or more requests on an image contained within a sample buffer.
+func perform([VNRequest], on: CMSampleBuffer, orientation: CGImagePropertyOrientation)
+Performs one or more requests on an image of a specified orientation contained within a sample buffer.
+func perform([VNRequest], onImageData: Data)
+Schedules one or more Vision requests to be performed on raw image data.
+func perform([VNRequest], onImageData: Data, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on raw data containing an image with known orientation.
+func perform([VNRequest], onImageURL: URL)
+Schedules one or more Vision requests to be performed on an image.
+func perform([VNRequest], onImageURL: URL, orientation: CGImagePropertyOrientation)
+Schedules one or more Vision requests to be performed on an image with known orientation, at a specific URL.
+Relationships
+Inherits From
+NSObject
+See Also
+Image Sequence Analysis
+Applying Matte Effects to People in Images and Video
+Generate image masks for people automatically by using semantic person-segmentation.
+class VNStatefulRequest
+An abstract request type that builds evidence of a condition over time.
+class VNGeneratePersonSegmentationRequest
+An object that produces a matte image for a person it finds in the input image.
+class VNDetectDocumentSegmentationRequest
+An object that detects rectangular regions that contain text in the input image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNSequenceRequestHandler
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

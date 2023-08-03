@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/coreml/mlcustomlayer
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+Creating and Integrating a Model with Custom Layers
+Custom Model Layers
+Reducing the Size of Your Core ML App
+Model File Size
+Model Customization
+C
+MLModel
+Integrating a Core ML Model into Your App
+Updating a Model File to a Model Package
+Documentation
+Open Menu
+Protocol
+MLCustomLayer
+An interface that defines the behavior of a custom layer in your neural network model.
+iOS 11.2+
+iPadOS 11.2+
+macOS 10.13.2+
+Mac Catalyst 13.1+
+tvOS 11.2+
+watchOS 4.2+
+visionOS 1.0+ Beta
+protocol MLCustomLayer
+Overview
+You use the MLCustomLayer protocol to define the behavior of your own neural network layers in Core ML models. You can deploy novel or proprietary models on your own release schedule. Custom layers also provide a mechanism for pre- or post-processing during model evaluation.
+Topics
+Creating a Layer
+init(parameters: [String : Any])
+Initializes the custom layer implementation.
+Required
+Integrating a Layer
+func setWeightData([Data])
+Assigns the weights for the connections within the layer.
+Required
+func outputShapes(forInputShapes: [[NSNumber]]) -> [[NSNumber]]
+Calculates the shapes of the output of this layer for the given input shapes.
+Required
+Evaluating a Layer
+func evaluate(inputs: [MLMultiArray], outputs: [MLMultiArray])
+Evaluates the custom layer with the given inputs.
+Required
+func encode(commandBuffer: MTLCommandBuffer, inputs: [MTLTexture], outputs: [MTLTexture])
+Encodes GPU commands to evaluate the custom layer.
+See Also
+Custom Model Layers
+Creating and Integrating a Model with Custom Layers
+Add models with custom neural-network layers to your app.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLCustomLayer
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

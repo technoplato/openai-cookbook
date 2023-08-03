@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/createml/mldatatable/isvalid
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLJob
+Model Training Control
+S
+MLObjectDetectorMetrics
+S
+MLRecommenderMetrics
+S
+MLWordTaggerMetrics
+S
+MLRegressorMetrics
+S
+MLClassifierMetrics
+func stratifiedSplitBySequence<RNG>(proportions: [Double], by: String, on: String, generator: inout RNG) throws -> MLDataTable
+func randomSplitBySequence(proportion: Double, by: String, on: String, seed: Int) -> (MLDataTable, remaining: MLDataTable)
+Handling Data Table Errors
+P
+var playgroundDescription: Any
+P
+var description: String
+Describing a Data Table
+M
+func show() -> MLStreamingVisualizable
+Visualizing a Data Table
+M
+func writeCSV(toFile: String) throws
+M
+func writeCSV(to: URL) throws
+Documentation
+Open Menu
+Swift
+Instance Property
+isValid
+A Boolean value that indicates whether the data table is valid.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+var isValid: Bool { get }
+Discussion
+Check isValid after you create or mutate a data table to ensure the data table is still valid. If it’s false, the data table encountered an error and you can’t use it for training or subsequent operations. The following are some of the actions that can invalidate a data table:
+Adding a column with the name of a column that already exists in the data table - Adding an invalid column - Appending another data table with different column names - Appending another data table with different column types (for a given column name)
+See Also
+Handling Data Table Errors
+var error: (Error)?
+The underlying error present when the data table is invalid.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is isValid
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

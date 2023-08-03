@@ -1,0 +1,140 @@
+https://developer.apple.com/documentation/createml/mlhandposeclassifier/datasource/imageswithannotations()
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+case labeledImageData(table: MLDataTable, imageColumn: String, labelColumn: String)
+E
+case labeledKeypointsData(table: MLDataTable, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+Extracting Keypoints
+M
+func extractKeypoints() throws -> DataFrame
+Beta
+Getting Annotated File Names
+M
+func gatherAnnotatedFileNames() throws -> DataFrame?
+Beta
+Exporting a Data Source
+M
+func labeledMedia() throws -> [String : [URL]]
+Creating a text classifier model
+S
+MLTextClassifier
+S
+MLWordTagger
+S
+MLGazetteer
+S
+MLWordEmbedding
+Sound Models
+S
+MLSoundClassifier
+Documentation
+Open Menu
+Swift
+Instance Method
+imagesWithAnnotations()
+Generates a data table that contains a column for the data source’s image file URLs and a column of annotations.
+iOS 15.0–17.0 Deprecated
+iPadOS 15.0–17.0 Deprecated
+macOS 12.0–14.0 Deprecated
+Mac Catalyst 15.0–17.0 Deprecated
+visionOS 1.0+ Beta
+func imagesWithAnnotations() throws -> MLDataTable
+See Also
+Exporting a Data Source
+func labeledMedia() throws -> [String : [URL]]
+Generates a dictionary that contains the data source’s classification labels paired with an array of URLs to the label’s image files.
+func keypointsWithAnnotations() throws -> MLDataTable
+Generates a data table that contains a column for hand joint locations and hand pose annotations.
+func stratifiedSplit(proportions: [Double], seed: Int, labelColumn: String) throws -> MLDataTable
+Generates a data table by splitting the data source into strata.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is imagesWithAnnotations()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

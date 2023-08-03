@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/vision/vndetectrectanglesrequest/2875378-minimumaspectratio
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Body and Hand Pose Detection
+C
+VNHumanObservation
+C
+VNDetectHumanRectanglesRequest
+C
+VNDetectFaceRectanglesRequest
+C
+VNDetectFaceLandmarksRequest
+C
+VNDetectFaceCaptureQualityRequest
+Selecting a selfie based on capture quality
+Configuring Detection
+C
+VNDetectRectanglesRequest
+Rectangle Detection
+C
+VNDetectedObjectObservation
+C
+VNTrackObjectRequest
+C
+VNTrackRectangleRequest
+C
+VNTrackingRequest
+Tracking Multiple Objects or Rectangles in Video
+Documentation
+Open Menu
+Instance Property
+minimumAspectRatio
+A float specifying the minimum aspect ratio of the rectangle to detect, defined as the shorter dimension over the longer dimension.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+var minimumAspectRatio: VNAspectRatio { get set }
+Discussion
+The value should range from 0.0 to 1.0, inclusive. The default value is 0.5.
+See Also
+Configuring Detection
+var maximumAspectRatio: VNAspectRatio
+A float specifying the maximum aspect ratio of the rectangle to detect, defined as the shorter dimension over the longer dimension.
+typealias VNAspectRatio
+A type alias for expressing rectangle aspect ratios in Vision.
+var quadratureTolerance: VNDegrees
+A float specifying the number of degrees a rectangle corner angle can deviate from 90°.
+typealias VNDegrees
+A typealias for expressing tolerance angles in Vision.
+var minimumSize: Float
+The minimum size of a rectangle to detect, as a proportion of the smallest dimension.
+var minimumConfidence: VNConfidence
+A value specifying the minimum acceptable confidence level.
+typealias VNConfidence
+A type alias for the confidence value of an observation.
+var maximumObservations: Int
+An integer specifying the maximum number of rectangles Vision returns.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is minimumAspectRatio
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

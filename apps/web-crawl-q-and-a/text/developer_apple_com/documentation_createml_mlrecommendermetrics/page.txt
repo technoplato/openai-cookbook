@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/createml/mlrecommendermetrics
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var model: MLModel
+Describing a Recommender
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving a Recommender
+M
+func getSimilarItems(fromItems: [MLIdentifier], maxCount: Int) throws -> MLDataTable
+M
+func getSimilarItems<T>(fromItems: MLDataColumn<T>, maxCount: Int) throws -> MLDataTable
+func recommendations(fromUsers: [MLIdentifier], maxCount: Int, restrictingToItems: [MLIdentifier]?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+func recommendations<T>(fromUsers: MLDataColumn<T>, maxCount: Int, restrictingToItems: MLDataColumn<T>?, excluding: MLDataTable?, excludingObserved: Bool) throws -> MLDataTable
+Evaluating a Recommender
+P
+var ratingColumn: String?
+P
+var itemIdentifierColumn: String
+P
+var userIdentifierColumn: String
+P
+let modelParameters: MLRecommender.ModelParameters
+S
+MLRecommender.ModelParameters
+Creating and Training a Recommender
+S
+MLRecommender
+Documentation
+Open Menu
+Swift
+Structure
+MLRecommenderMetrics
+Metrics you use to evaluate a recommender’s performance.
+macOS 10.15+
+visionOS 1.0+ Beta
+struct MLRecommenderMetrics
+Topics
+Assessing the Model
+let excludingObserved: Bool
+A Boolean value that indicates whether the recommender omitted training data from the recommendations.
+var precisionRecall: MLDataTable
+A data table with the recall and precision for each item.
+Handling Errors
+var isValid: Bool
+A Boolean value indicating whether the recommender model was able to calculate metrics.
+let error: (Error)?
+The underlying error present when the metrics are invalid.
+Creating Metrics
+init(precisionRecall: MLDataTable, excludingObserved: Bool)
+Creates metrics for a recommender, given a data table with precision and recall metric columns, and whether the recommender omitted training data.
+Instance Properties
+var precisionRecallDataFrame: DataFrame
+A data table with the recall and precision for each item.
+Beta
+Relationships
+Conforms To
+Sendable
+See Also
+Model Accuracy
+Improving Your Model’s Accuracy
+Use metrics to tune the performance of your machine learning model.
+struct MLClassifierMetrics
+Metrics you use to evaluate a classifier’s performance.
+struct MLRegressorMetrics
+Metrics you use to evaluate a regressor’s performance.
+struct MLWordTaggerMetrics
+Metrics you use to evaluate a word tagger’s performance.
+struct MLObjectDetectorMetrics
+Metrics you use to evaluate an object detector’s performance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLRecommenderMetrics
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

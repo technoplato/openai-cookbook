@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/vision/vnclassifyimagerequest/3750957-supportedidentifiers
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Still Image Analysis
+Detecting Objects in Still Images
+Classifying Images for Categorization and Search
+Analyzing Image Similarity with Feature Print
+C
+VNRequest
+C
+VNImageBasedRequest
+C
+VNClassifyImageRequest
+Accessing Results
+Saliency Analysis
+Cropping Images Using Saliency
+Highlighting Areas of Interest in an Image Using Saliency
+C
+VNGenerateAttentionBasedSaliencyImageRequest
+C
+VNGenerateObjectnessBasedSaliencyImageRequest
+C
+VNSaliencyImageObservation
+Object Tracking
+Documentation
+Open Menu
+Instance Method
+supportedIdentifiers()
+Returns the classification identifiers that the request supports in its current configuration.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+visionOS 1.0+ Beta
+func supportedIdentifiers() throws -> [String]
+Parameters
+error
+A pointer to an error object.
+If an error occurs, the system sets the pointer an NSError instance that contains the error details. Specify nil for this parameter if you don’t want error details.
+Return Value
+An array of supported identifiers.
+See Also
+Accessing Results
+var results: [VNClassificationObservation]?
+The results of the image classification request.
+class VNClassificationObservation
+An object that represents classification information that an image analysis request produces.
+class func knownClassifications(forRevision: Int) -> [VNClassificationObservation]
+Requests the collection of classifications that the Vision framework recognizes.
+Deprecated
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is supportedIdentifiers()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

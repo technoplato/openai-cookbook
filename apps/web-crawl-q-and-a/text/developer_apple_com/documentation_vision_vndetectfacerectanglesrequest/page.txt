@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/vision/vndetectfacerectanglesrequest
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+VNRecognizedPointKey
+C
+VNRecognizedPoint
+C
+VNDetectedPoint
+C
+VNPoint
+C
+VNHumanHandPoseObservation
+C
+VNHumanBodyPoseObservation
+C
+VNRecognizedPointsObservation
+C
+VNDetectFaceLandmarksRequest
+C
+VNDetectFaceCaptureQualityRequest
+Selecting a selfie based on capture quality
+Face and Body Detection
+C
+VNDetectRectanglesRequest
+Rectangle Detection
+C
+VNDetectedObjectObservation
+C
+VNTrackObjectRequest
+Documentation
+Open Menu
+Class
+VNDetectFaceRectanglesRequest
+A request that finds faces within an image.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNDetectFaceRectanglesRequest : VNImageBasedRequest
+Overview
+This request returns faces as rectangular bounding boxes with origin and size.
+Topics
+Accessing the Results
+var results: [VNFaceObservation]?
+The results of the face detection request.
+class VNFaceObservation
+Face or facial-feature information that an image analysis request detects.
+Identifying Request Revisions
+let VNDetectFaceRectanglesRequestRevision3: Int
+A constant for specifying revision 3 of the face rectangles detection request.
+let VNDetectFaceRectanglesRequestRevision2: Int
+A constant for specifying revision 2 of the face rectangles detection request.
+let VNDetectFaceRectanglesRequestRevision1: Int
+A constant for specifying revision 1 of the face rectangles detection request.
+Deprecated
+Relationships
+Inherits From
+VNImageBasedRequest
+See Also
+Face and Body Detection
+Selecting a selfie based on capture quality
+Compare face-capture quality in a set of images by using Vision.
+class VNDetectFaceCaptureQualityRequest
+A request that produces a floating-point number that represents the capture quality of a face in a photo.
+class VNDetectFaceLandmarksRequest
+An image analysis request that finds facial features like eyes and mouth in an image.
+class VNDetectHumanRectanglesRequest
+A request that finds rectangular regions that contain people in an image.
+class VNHumanObservation
+An object that represents a person that the request detects.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNDetectFaceRectanglesRequest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

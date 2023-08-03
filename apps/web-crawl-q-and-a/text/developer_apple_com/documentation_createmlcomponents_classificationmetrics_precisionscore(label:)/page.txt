@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/createmlcomponents/classificationmetrics/precisionscore(label:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func mapLabels<T>((Label) throws -> T) rethrows -> ClassificationMetrics<T>
+Beta
+M
+func falsePositiveCount(of: Label) -> Int
+Beta
+M
+func falseNegativeCount(of: Label) -> Int
+Beta
+M
+func f1Score(label: Label) -> Double
+Beta
+M
+func count(predicted: Label, label: Label) -> Int
+Beta
+M
+func count(predicted: Label) -> Int
+Beta
+M
+func count(label: Label) -> Int
+M
+func makeConfusionMatrix() -> MLShapedArray<Float>
+Computing and Scoring
+P
+var accuracy: Double
+Getting the Properties
+M
+init<Predicted, Correct>(Predicted, Correct)
+Creating the Distribution
+S
+ClassificationMetrics
+S
+ClassificationDistribution
+Documentation
+Open Menu
+Swift
+Instance Method
+precisionScore(label:)
+Computes the precision score for a class label.
+Create ML Components
+CreateMLComponents
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func precisionScore(label: Label) -> Double
+Available when Label conforms to Hashable.
+Parameters
+label
+The label to use as true positive.
+Return Value
+The precision score for the given label.
+Discussion
+Precision score is computed as the ratio tp / (tp + fp) where tp is the number of true positives and fp is the number of false positives.
+See Also
+Computing and Scoring
+func makeConfusionMatrix() -> MLShapedArray<Float>
+Computes the confusion matrix.
+func recallScore(label: Label) -> Double
+Computes the recall score for a class label.
+Available when Label conforms to Hashable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is precisionScore(label:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

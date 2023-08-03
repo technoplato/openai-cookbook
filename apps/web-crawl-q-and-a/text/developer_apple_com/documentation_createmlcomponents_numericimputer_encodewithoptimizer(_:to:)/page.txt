@@ -1,0 +1,150 @@
+https://developer.apple.com/documentation/createmlcomponents/numericimputer/encodewithoptimizer(_:to:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+LogisticRegressionClassifierModel
+S
+LogisticRegressionClassifier
+r
+P
+Classifier
+Classifiers
+r
+P
+EstimatorEncoder
+r
+P
+EstimatorDecoder
+Serializers
+func update(inout ImputeTransformer<Element>, with: some Sequence<Optional<Element>>, eventHandler: EventHandler?) throws
+M
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> NumericImputer<Element>.Transformer
+Beta
+M
+func appending<Other>(Other) -> some UpdatableSupervisedEstimator<ComposedTransformer<Self.Transformer, Other.Transformer>, Other.Annotation>
+M
+func appending<Other>(Other) -> some UpdatableTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other.Transformer>>
+M
+func appending<Other>(Other) -> some UpdatableTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other>>
+M
+func appending<Other>(Other) -> some UpdatableSupervisedTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other.Transformer>, Other.Annotation>
+M
+func appending<Other>(Other) -> some UpdatableEstimator<ComposedTransformer<Self.Transformer, Other>>
+M
+func appending<Other>(Other) -> some UpdatableEstimator<ComposedTransformer<Self.Transformer, Other.Transformer>>
+M
+func adaptedAsTemporal() -> UpdatableEstimatorToTemporalAdaptor<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+encodeWithOptimizer(_:to:)
+Encodes the transformer to an encoder.
+Create ML Components
+CreateMLComponents
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+visionOS 1.0+ Beta
+func encodeWithOptimizer(
+    _ transformer: NumericImputer<Element>.Transformer,
+    to encoder: inout EstimatorEncoder
+) throws
+Available when Element conforms to BinaryFloatingPoint, Decodable, and Encodable.
+Parameters
+transformer
+A transformer this estimator creates.
+encoder
+An encoder.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is encodeWithOptimizer(_:to:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

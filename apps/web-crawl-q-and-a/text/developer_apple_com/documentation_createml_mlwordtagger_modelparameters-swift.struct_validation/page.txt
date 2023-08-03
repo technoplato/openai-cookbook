@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createml/mlwordtagger/modelparameters-swift.struct/validation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLWordTaggerMetrics
+P
+let validationMetrics: MLWordTaggerMetrics
+P
+let trainingMetrics: MLWordTaggerMetrics
+Assessing Model Accuracy
+P
+let modelParameters: MLWordTagger.ModelParameters
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+init(validationData: [(tokens: [MLWordTagger.Token], labels: [String])], algorithm: MLWordTagger.ModelAlgorithmType, language: NLLanguage?)
+init(validationData: MLDataTable?, algorithm: MLWordTagger.ModelAlgorithmType, language: NLLanguage?, tokenColumnValidationData: String?, labelColumnValidationData: String?)
+P
+var language: NLLanguage?
+P
+var algorithm: MLWordTagger.ModelAlgorithmType
+Accessing Parameters
+E
+MLWordTagger.ModelParameters.ValidationData
+E
+MLWordTagger.ModelAlgorithmType
+M
+init(validation: MLWordTagger.ModelParameters.ValidationData, algorithm: MLWordTagger.ModelAlgorithmType, language: NLLanguage?)
+Creating Parameters
+S
+MLWordTagger.ModelParameters
+Documentation
+Open Menu
+Swift
+Instance Property
+validation
+The validation dataset.
+macOS 10.15+
+visionOS 1.0+ Beta
+var validation: MLWordTagger.ModelParameters.ValidationData { get set }
+Discussion
+The default value is an MLWordTagger.ModelParameters.ValidationData.split(strategy:) instance with the MLSplitStrategy.automatic split strategy``, which automatically generates the validation dataset by partitioning up to 10% of the training dataset.
+See Also
+Accessing Parameters
+var algorithm: MLWordTagger.ModelAlgorithmType
+The algorithm type.
+var language: NLLanguage?
+The language setting.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is validation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

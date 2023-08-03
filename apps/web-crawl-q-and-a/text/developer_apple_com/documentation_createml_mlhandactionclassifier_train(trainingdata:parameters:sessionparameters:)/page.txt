@@ -1,0 +1,152 @@
+https://developer.apple.com/documentation/createml/mlhandactionclassifier/train(trainingdata:parameters:sessionparameters:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+let modelParameters: MLHandActionClassifier.ModelParameters
+P
+var model: MLModel
+Inspecting a Hand Action Classifier Model
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+Saving a Hand Action Classifier
+S
+MLHandActionClassifier.Prediction
+init(trainingData: MLHandActionClassifier.DataSource, parameters: MLHandActionClassifier.ModelParameters) throws
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLHandActionClassifier>
+static func makeTrainingSession(trainingData: MLHandActionClassifier.DataSource, parameters: MLHandActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLHandActionClassifier>
+static func train(trainingData: MLHandActionClassifier.DataSource, parameters: MLHandActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLHandActionClassifier>
+Training a Hand Action Classifier Asynchronously
+S
+MLHandActionClassifier
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+S
+MLObjectDetector
+Documentation
+Open Menu
+Swift
+Type Method
+train(trainingData:parameters:sessionParameters:)
+Begins an asynchronous hand action classifier’s training session.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+static func train(
+    trainingData: MLHandActionClassifier.DataSource,
+    parameters: MLHandActionClassifier.ModelParameters = ModelParameters(),
+    sessionParameters: MLTrainingSessionParameters = _defaultSessionParameters
+) throws -> MLJob<MLHandActionClassifier>
+Parameters
+trainingData
+An MLHandActionClassifier.DataSource instance.
+Return Value
+An MLJob that represents the hand action classifier’s training session.
+Discussion
+sessionParameters: An MLTrainingSessionParameters instance you use to configure the training session.
+See Also
+Training a Hand Action Classifier Asynchronously
+static func makeTrainingSession(trainingData: MLHandActionClassifier.DataSource, parameters: MLHandActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLHandActionClassifier>
+Creates an asynchronous hand action classifier’s training session.
+static func resume(MLTrainingSession<MLHandActionClassifier>) throws -> MLJob<MLHandActionClassifier>
+Begins or continues an asynchronous hand action classifier’s training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLHandActionClassifier>
+Recreates an asynchronous hand action classifier’s training session by restoring its saved state from the file system.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is train(trainingData:parameters:sessionParameters:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

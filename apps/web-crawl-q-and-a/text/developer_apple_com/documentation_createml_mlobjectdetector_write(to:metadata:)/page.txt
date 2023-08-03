@@ -1,0 +1,135 @@
+https://developer.apple.com/documentation/createml/mlobjectdetector/write(to:metadata:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+Saving an object detector
+S
+MLObjectDetector.ObjectAnnotation
+T
+MLObjectDetector.DetectedObjects
+M
+func predictions(from: [URL]) throws -> [MLObjectDetector.DetectedObjects]
+M
+func prediction(from: URL) throws -> MLObjectDetector.DetectedObjects
+Testing an object detector
+M
+func evaluation(on: MLDataTable, imageColumn: String, annotationColumn: String) -> MLObjectDetectorMetrics
+M
+func evaluation(on: MLObjectDetector.DataSource) -> MLObjectDetectorMetrics
+Documentation
+Open Menu
+Swift
+Instance Method
+write(to:metadata:)
+Exports the object detector as a Core ML model file to a location in the file system.
+macOS 10.15+
+visionOS 1.0+ Beta
+func write(
+    to fileURL: URL,
+    metadata: MLModelMetadata? = MLModelMetadata()
+) throws
+Discussion
+fileURL: The location URL in the file system where you want to save the model.
+metadata: The model’s description, author, version, and license information the method embeds in the Core ML model file.
+See Also
+Saving an object detector
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports the object detector as a Core ML model file to the file path.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is write(to:metadata:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

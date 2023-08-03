@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3802062-sort
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func max(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+M
+func min(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+M
+func drop(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+M
+func dropLast(Int) -> MLShapedArraySlice<Scalar>
+M
+func dropFirst(Int) -> MLShapedArraySlice<Scalar>
+M
+func last(where: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+M
+func first(where: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+func split(separator: MLShapedArraySlice<Scalar>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<MLShapedArraySlice<Scalar>>]
+func split<C>(separator: C, maxSplits: Int, omittingEmptySubsequences: Bool) -> [MLShapedArraySlice<Scalar>]
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (MLShapedArraySlice<Scalar>) -> Bool) -> [MLShapedArraySlice<Scalar>]
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func sort<Comparator>(using: Comparator)
+M
+func partition(by: (MLShapedArraySlice<Scalar>) -> Bool) -> Int
+M
+func swapAt(Int, Int)
+Modifying a Shaped Array
+M
+func firstRange<C>(of: C) -> Range<Int>?
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+M
+func ranges<C>(of: C) -> [Range<Int>]
+M
+func lastIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+sort(using:)
+Reorders a shaped array by sorting its slices with a sequence of comparators.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+mutating func sort<S, Comparator>(using comparators: S) where S : Sequence, Comparator : SortComparator, Comparator == S.Element, MLShapedArraySlice<Scalar> == Comparator.Compared
+Parameters
+comparators
+A sequence of shaped-array slice comparators.
+See Also
+Modifying a Shaped Array
+func swapAt(Int, Int)
+Exchanges the values at the specified indices of the collection.
+func partition(by: (MLShapedArraySlice<Scalar>) -> Bool) -> Int
+Reorders the elements of the collection such that all the elements that match the given predicate are after all the elements that don’t match.
+func sort<Comparator>(using: Comparator)
+Reorders a shaped array by sorting its slices with a comparator.
+func sort(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool)
+Sorts the collection in place, using the given predicate as the comparison between elements.
+func reverse()
+Reverses the elements of the collection in place.
+func shuffle()
+Shuffles the collection in place.
+func shuffle<T>(using: inout T)
+Shuffles the collection in place, using the given generator as a source for randomness.
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+Executes a closure on the collection’s contiguous storage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sort(using:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

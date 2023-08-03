@@ -1,0 +1,174 @@
+https://developer.apple.com/documentation/createml/mldatatable/rows-swift.struct/first(where:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func reduce<Result>(Result, (Result, Self.Element) throws -> Result) rethrows -> Result
+M
+func compactMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+Transforming a Row Collection
+M
+func drop(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func dropLast(Int) -> Self.SubSequence
+M
+func dropFirst(Int) -> Self.SubSequence
+Excluding Rows
+M
+func allSatisfy((Self.Element) throws -> Bool) rethrows -> Bool
+M
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+M
+func contains(Self.Element) -> Bool
+Finding Rows
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+P
+var last: Self.Element?
+P
+var first: Self.Element?
+Documentation
+Open Menu
+Swift
+Instance Method
+first(where:)
+Returns the first element of the sequence that satisfies the given predicate.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func first(where predicate: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Parameters
+predicate
+A closure that takes an element of the sequence as its argument and returns a Boolean value indicating whether the element is a match.
+Return Value
+The first element of the sequence that satisfies predicate, or nil if there is no element that satisfies predicate.
+Discussion
+The following example uses the first(where:) method to find the first negative number in an array of integers:
+let numbers = [3, 7, 4, -2, 9, -6, 10, 1]
+if let firstNegative = numbers.first(where: { $0 < 0 }) {
+    print("The first negative number is \(firstNegative).")
+}
+// Prints "The first negative number is -2."
+Complexity
+O(n), where n is the length of the sequence.
+See Also
+Finding Rows
+func contains(Self.Element) -> Bool
+Returns a Boolean value indicating whether the sequence contains the given element.
+Available when Element conforms to Equatable.
+func contains(where: (Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func allSatisfy((Self.Element) throws -> Bool) rethrows -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+func firstIndex(of: Self.Element) -> Self.Index?
+Returns the first index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func firstIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the first index in which an element of the collection satisfies the given predicate.
+func last(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the last element of the sequence that satisfies the given predicate.
+func lastIndex(of: Self.Element) -> Self.Index?
+Returns the last index where the specified value appears in the collection.
+Available when Element conforms to Equatable.
+func lastIndex(where: (Self.Element) throws -> Bool) rethrows -> Self.Index?
+Returns the index of the last element in the collection that matches the given predicate.
+func min(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the minimum element in the sequence, using the given predicate as the comparison between elements.
+func max(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Self.Element?
+Returns the maximum element in the sequence, using the given predicate as the comparison between elements.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is first(where:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

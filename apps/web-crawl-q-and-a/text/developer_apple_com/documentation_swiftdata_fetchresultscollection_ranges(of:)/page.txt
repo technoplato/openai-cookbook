@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/swiftdata/fetchresultscollection/ranges(of:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func delete<T>(T)
+M
+func delete<T>(model: T.Type, where: Predicate<T>?, includeSubclasses: Bool) throws
+P
+var deletedObjectsArray: [PersistentModel]
+Deleting models
+P
+var changedObjectsArray: [PersistentModel]
+P
+var hasChanges: Bool
+Modifying models
+func enumerate<T>(FetchDescriptor<T>, batchSize: Int, allowEscapingMutations: Bool?, block: (T) throws -> Void) throws
+func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Self.SubSequence]
+func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
+M
+func randomElement<T>(using: inout T) -> Self.Element?
+M
+func randomElement() -> Self.Element?
+M
+func prefix(while: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+M
+func prefix(upTo: Self.Index) -> Self.SubSequence
+M
+func prefix(through: Self.Index) -> Self.SubSequence
+M
+func prefix(Int) -> Self.SubSequence
+M
+func map<T>((Self.Element) throws -> T) rethrows -> [T]
+M
+func makeIterator() -> IndexingIterator<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+ranges(of:)
+Finds and returns the ranges of the all occurrences of a given sequence within the collection.
+SwiftData
+Swift
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+watchOS 9.0+
+visionOS 1.0+ Beta
+func ranges<C>(of other: C) -> [Range<Self.Index>] where C : Collection, Self.Element == C.Element
+Available when Element conforms to Equatable.
+Parameters
+other
+The sequence to search for.
+Return Value
+A collection of ranges of all occurrences of other. Returns an empty collection if other is not found.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ranges(of:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

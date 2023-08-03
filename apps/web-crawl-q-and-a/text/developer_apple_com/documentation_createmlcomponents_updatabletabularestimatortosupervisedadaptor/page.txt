@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/createmlcomponents/updatabletabularestimatortosupervisedadaptor
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Audio Components
+S
+HumanBodyActionPeriodPredictor
+S
+HumanBodyActionCounter
+S
+HumanHandPoseExtractor
+S
+HumanBodyPoseExtractor
+S
+JointsSelector
+E
+PoseSelectionStrategy
+Documentation
+Open Menu
+Swift
+Structure
+UpdatableTabularEstimatorToSupervisedAdaptor
+An adaptor that exposes an updatable tabular estimator as an updatable supervised tabular estimator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct UpdatableTabularEstimatorToSupervisedAdaptor<Estimator, Annotation> where Estimator : UpdatableTabularEstimator, Annotation : Equatable
+Topics
+Initializers
+init(Estimator, annotationColumnID: ColumnID<Annotation>)
+Creates an updatable tabular estimator supervised adaptor.
+Instance Properties
+var annotationColumnID: ColumnID<Annotation>
+The annotation column identifier.
+let estimator: Estimator
+The wrapped estimator.
+Instance Methods
+func decode(from: inout EstimatorDecoder) throws -> UpdatableTabularEstimatorToSupervisedAdaptor<Estimator, Annotation>.Transformer
+Returns the pre-defined transformer.
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> UpdatableTabularEstimatorToSupervisedAdaptor<Estimator, Annotation>.Transformer
+Reads the encoded transformer and optimizer.
+func encode(UpdatableTabularEstimatorToSupervisedAdaptor<Estimator, Annotation>.Transformer, to: inout EstimatorEncoder) throws
+Does nothing since this estimator uses a pre-defined transformer.
+func encodeWithOptimizer(UpdatableTabularEstimatorToSupervisedAdaptor<Estimator, Annotation>.Transformer, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+func fitted(to: DataFrame, validateOn: DataFrame?, eventHandler: EventHandler?) async throws -> UpdatableTabularEstimatorToSupervisedAdaptor<Estimator, Annotation>.Transformer
+Fits a transformer to a data frame.
+func makeTransformer() -> Estimator.Transformer
+Creates a default-initialized transformer suitable for incremental fitting.
+func update(inout UpdatableTabularEstimatorToSupervisedAdaptor<Estimator, Annotation>.Transformer, with: DataFrame, eventHandler: EventHandler?) async throws
+Updates a transformer with a new data frame containing examples.
+Type Aliases
+typealias Transformer
+The transformer type created by this estimator.
+Default Implementations
+API Reference
+SupervisedTabularEstimator Implementations
+API Reference
+UpdatableSupervisedTabularEstimator Implementations
+Relationships
+Conforms To
+Sendable
+SupervisedTabularEstimator
+UpdatableSupervisedTabularEstimator
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UpdatableTabularEstimatorToSupervisedAdaptor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

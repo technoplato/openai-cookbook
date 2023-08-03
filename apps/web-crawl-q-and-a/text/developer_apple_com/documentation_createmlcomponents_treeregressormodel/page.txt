@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/createmlcomponents/treeregressormodel
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+FullyConnectedNetworkClassifier
+S
+BoostedTreeClassifier
+S
+LogisticRegressionClassifierModel
+S
+LogisticRegressionClassifier
+r
+P
+Classifier
+Classifiers
+r
+P
+EstimatorEncoder
+S
+FullyConnectedNetworkRegressorModel
+S
+FullyConnectedNetworkRegressor
+S
+BoostedTreeRegressor
+S
+LinearRegressorModel
+S
+LinearRegressor
+r
+P
+Regressor
+Regressors
+S
+OptionalUnwrapper
+Documentation
+Open Menu
+Swift
+Structure
+TreeRegressorModel
+A trained tree regressor model.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct TreeRegressorModel
+Topics
+Applying
+func applied(to: DataFrame, eventHandler: EventHandler?) async throws -> DataFrame
+Performs a regression on a data frame.
+Instance Properties
+var featureColumnNames: [String]
+The names of the columns containing feature values.
+Beta
+var predictionColumnName: String
+The name of the column containing the predicted values.
+Beta
+Type Aliases
+typealias Input
+The input type.
+typealias Output
+The output type.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+TabularTransformer Implementations
+API Reference
+Transformer Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+Sendable
+TabularTransformer
+Transformer
+See Also
+Regressors
+protocol Regressor
+A transformer that predicts a float value.
+struct LinearRegressor
+A linear regressor.
+struct LinearRegressorModel
+A trained linear regressor model.
+struct BoostedTreeRegressor
+A gradient boosted decision tree regressor.
+struct FullyConnectedNetworkRegressor
+A regressor that uses a fully connected network.
+struct FullyConnectedNetworkRegressorModel
+A regressor model that uses a fully connected network.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is TreeRegressorModel
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

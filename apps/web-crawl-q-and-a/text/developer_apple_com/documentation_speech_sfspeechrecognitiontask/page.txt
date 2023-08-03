@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/speech/sfspeechrecognitiontask
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+SFCustomLanguageModelData
+Beta
+Classes
+S
+SFSpeechError
+Beta
+Structures
+C
+SFVoiceAnalytics
+Voice analytics
+C
+SFTranscriptionSegment
+In-progress requests
+C
+SFSpeechRecognitionRequest
+C
+SFSpeechAudioBufferRecognitionRequest
+C
+SFSpeechURLRecognitionRequest
+Recognizing speech in live audio
+Audio sources
+C
+SFSpeechRecognizer
+Asking Permission to Use Speech Recognition
+Documentation
+Open Menu
+Class
+SFSpeechRecognitionTask
+A task object for monitoring the speech recognition progress.
+iOS 10.0+
+iPadOS 10.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+visionOS 1.0+ Beta
+class SFSpeechRecognitionTask : NSObject
+Overview
+Use an SFSpeechRecognitionTask object to determine the state of a speech recognition task, to cancel an ongoing task, or to signal the end of the task.
+You don’t create speech recognition task objects directly. Instead, you receive one of these objects after calling recognitionTask(with:resultHandler:) or recognitionTask(with:delegate:) on your SFSpeechRecognizer object.
+Topics
+Canceling a Speech Recognition Task
+func cancel()
+Cancels the current speech recognition task.
+var isCancelled: Bool
+A Boolean value that indicates whether the speech recognition task was canceled.
+Finishing a Speech Recognition Task
+func finish()
+Stops accepting new audio and finishes processing on the audio input that has already been accepted.
+var isFinishing: Bool
+A Boolean value that indicates whether audio input has stopped.
+Monitoring Recognition Progress
+var state: SFSpeechRecognitionTaskState
+The current state of the speech recognition task.
+enum SFSpeechRecognitionTaskState
+The state of the task associated with the recognition request.
+var error: Error?
+An error object that specifies the error that occurred during a speech recognition task.
+Relationships
+Inherits From
+NSObject
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SFSpeechRecognitionTask
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

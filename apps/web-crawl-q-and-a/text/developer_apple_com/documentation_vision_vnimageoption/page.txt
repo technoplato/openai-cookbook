@@ -1,0 +1,149 @@
+https://developer.apple.com/documentation/vision/vnimageoption
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Tracking the User’s Face in Real Time
+Object Tracking
+C
+VNSaliencyImageObservation
+C
+VNGenerateObjectnessBasedSaliencyImageRequest
+C
+VNGenerateAttentionBasedSaliencyImageRequest
+Highlighting Areas of Interest in an Image Using Saliency
+Cropping Images Using Saliency
+Setting Image Options
+M
+func perform([VNRequest])
+Executing a Request Handler
+M
+init(url: URL, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+M
+init(url: URL, options: [VNImageOption : Any])
+M
+init(data: Data, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+M
+init(data: Data, options: [VNImageOption : Any])
+M
+init(cmSampleBuffer: CMSampleBuffer, depthData: AVDepthData, orientation: CGImagePropertyOrientation, options: [VNImageOption : Any])
+Beta
+Documentation
+Open Menu
+Structure
+VNImageOption
+An option key passed into VNImageRequestHandler creations or requests that take an auxiliary image.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.0+
+tvOS 11.0+
+visionOS 1.0+ Beta
+struct VNImageOption
+Overview
+Pass an option key into the VNImageRequestHandler instance on creation or request. Option keys are used to describe specific properties of an image or specify how an image needs to be handled.
+Topics
+Initializers
+init(rawValue: String)
+Initializes an option key using its string name.
+Options Dictionary Keys
+static let properties: VNImageOption
+The dictionary from CGImageSourceCopyPropertiesAtIndex(_:_:_:) containing metadata for algorithms like horizon detection.
+static let cameraIntrinsics: VNImageOption
+An option to specify the camera intrinstics as an NSData or CFData object representing a matrix_float3x3.
+static let ciContext: VNImageOption
+An option key to specify the CIContext to be used in the handler's Core Image operations.
+Relationships
+Conforms To
+Equatable
+Hashable
+RawRepresentable
+Sendable
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNImageOption
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

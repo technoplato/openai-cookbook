@@ -1,0 +1,167 @@
+https://developer.apple.com/documentation/coreml/mldictionaryfeatureprovider
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Integrating a Core ML Model into Your App
+C
+MLModel
+Model Customization
+Model Personalization
+Model Inputs and Outputs
+Making Predictions with a Sequence of Inputs
+C
+MLFeatureValue
+r
+P
+MLFeatureProvider
+Model Deployments
+C
+MLModelCollection
+Deprecated
+Compute Devices
+E
+MLComputeDevice
+Beta
+C
+MLCPUComputeDevice
+Beta
+C
+MLGPUComputeDevice
+Beta
+C
+MLNeuralEngineComputeDevice
+Beta
+Documentation
+Open Menu
+Class
+MLDictionaryFeatureProvider
+A convenience wrapper for the given dictionary of data.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+watchOS 4.0+
+visionOS 1.0+ Beta
+class MLDictionaryFeatureProvider : NSObject
+Overview
+If your input data is stored in a dictionary, consider this type of MLFeatureProvider that is backed by a dictionary. It is a convenience interface, saving you the trouble of iterating through the dictionary to assign all of its values.
+Topics
+Creating the Provider
+init(dictionary: [String : Any])
+Creates the feature provider based on a dictionary.
+Accessing the Features
+subscript(String) -> MLFeatureValue?
+Subscript interface for the feature provider to pass through to the dictionary.
+var dictionary: [String : MLFeatureValue]
+The backing dictionary.
+Relationships
+Inherits From
+NSObject
+Conforms To
+MLFeatureProvider
+NSFastEnumeration
+NSSecureCoding
+See Also
+Model Inputs and Outputs
+Making Predictions with a Sequence of Inputs
+Integrate a recurrent neural network model to process sequences of inputs.
+class MLFeatureValue
+A generic wrapper around an underlying value and the value’s type.
+protocol MLFeatureProvider
+An interface that represents a collection of values for either a model's input or its output.
+protocol MLBatchProvider
+An interface that represents a collection of feature providers.
+class MLArrayBatchProvider
+A convenience wrapper for batches of feature providers.
+class MLModelAsset
+An abstraction of a compiled Core ML model asset.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLDictionaryFeatureProvider
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

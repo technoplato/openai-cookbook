@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/createml/mldecisiontreeregressor/train(trainingdata:targetcolumn:featurecolumns:parameters:sessionparameters:)-6ldjt
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Accuracy
+Data Visualizations
+E
+MLDataValue
+S
+MLDataTable
+Tabular Data
+S
+MLRecommender
+CustomStringConvertible Implementations
+static func train(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLDecisionTreeRegressor>
+M
+static func train(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLDecisionTreeRegressor>
+M
+static func resume(MLTrainingSession<MLDecisionTreeRegressor>) throws -> MLJob<MLDecisionTreeRegressor>
+M
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLDecisionTreeRegressor>
+M
+static func makeTrainingSession(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLDecisionTreeRegressor>
+M
+static func makeTrainingSession(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLDecisionTreeRegressor>
+Type Methods
+M
+func predictions(from: DataFrame) throws -> AnyColumn
+M
+func evaluation(on: DataFrame) -> MLRegressorMetrics
+Documentation
+Open Menu
+Swift
+Type Method
+train(trainingData:targetColumn:featureColumns:parameters:sessionParameters:)
+Trains a decision tree regressor.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+static func train(
+    trainingData: DataFrame,
+    targetColumn: String,
+    featureColumns: [String]? = nil,
+    parameters: MLDecisionTreeRegressor.ModelParameters = .init(validation: .split(strategy: .automatic)),
+    sessionParameters: MLTrainingSessionParameters = _defaultSessionParameters
+) throws -> MLJob<MLDecisionTreeRegressor>
+Parameters
+trainingData
+A DataFrame specifying training data.
+targetColumn
+A String specifying the target column name in the trainingData
+featureColumns
+An optional list of Strings specifying feature columns to be used to predict the target, if not provided, default to use all the other columns in the trainingData, except the one specified by targetColumn
+parameters
+Model training parameters. See MLDecisionTreeRegressor.ModelParameters for the defaults.
+sessionParameters
+Training session parameters. See MLTrainingSessionParameters for the defaults.
+Return Value
+A MLJob that can be used to observe training progress.
+Discussion
+If sessionDirectory is provided it will save training progress. If there is progress already saved training will resume from the last checkpoint.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is train(trainingData:targetColumn:featureColumns:parameters:sessionParameters:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

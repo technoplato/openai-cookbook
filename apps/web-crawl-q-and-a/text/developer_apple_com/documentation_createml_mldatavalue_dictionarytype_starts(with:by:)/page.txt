@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/createml/mldatavalue/dictionarytype/starts(with:by:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+CustomStringConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+P
+var isValid: Bool
+E
+case invalid
+Handling Errors
+P
+var debugDescription: String
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+M
+func sorted<S, Comparator>(using: S) -> [Self.Element]
+M
+func sorted<Comparator>(using: Comparator) -> [Self.Element]
+M
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func shuffled<T>(using: inout T) -> [Self.Element]
+M
+func shuffled() -> [Self.Element]
+M
+func reversed() -> [Self.Element]
+M
+func reduce<Result>(into: Result, (inout Result, Self.Element) throws -> ()) rethrows -> Result
+M
+func reduce<Result>(Result, (Result, Self.Element) throws -> Result) rethrows -> Result
+Documentation
+Open Menu
+Swift
+Instance Method
+starts(with:by:)
+Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func starts<PossiblePrefix>(
+    with possiblePrefix: PossiblePrefix,
+    by areEquivalent: (Self.Element, PossiblePrefix.Element) throws -> Bool
+) rethrows -> Bool where PossiblePrefix : Sequence
+Parameters
+possiblePrefix
+A sequence to compare to this sequence.
+areEquivalent
+A predicate that returns true if its two arguments are equivalent; otherwise, false.
+Return Value
+true if the initial elements of the sequence are equivalent to the elements of possiblePrefix; otherwise, false. If possiblePrefix has no elements, the return value is true.
+Discussion
+The predicate must be a equivalence relation over the elements. That is, for any elements a, b, and c, the following conditions must hold:
+areEquivalent(a, a) is always true. (Reflexivity)
+areEquivalent(a, b) implies areEquivalent(b, a). (Symmetry)
+If areEquivalent(a, b) and areEquivalent(b, c) are both true, then areEquivalent(a, c) is also true. (Transitivity)
+Complexity
+O(m), where m is the lesser of the length of the sequence and the length of possiblePrefix.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is starts(with:by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

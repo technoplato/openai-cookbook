@@ -1,0 +1,142 @@
+https://developer.apple.com/documentation/coreml/mlmetrickey/3180091-lossvalue
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLModelAsset
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+Getting the Keys
+C
+MLMetricKey
+P
+var metrics: [MLMetricKey : Any]
+Evaluating the Update
+C
+MLParameterKey
+P
+var parameters: [MLParameterKey : Any]
+P
+var task: MLUpdateTask
+S
+MLUpdateProgressEvent
+Documentation
+Open Menu
+Type Property
+lossValue
+The key you use to access the current loss (a float value).
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+tvOS 14.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+class var lossValue: MLMetricKey { get }
+Discussion
+Use this key to fetch the loss value in the metrics dictionary.
+See Also
+Getting the Keys
+class var epochIndex: MLMetricKey
+The key you use to access the epoch index (an Int64 value).
+class var miniBatchIndex: MLMetricKey
+The key you use to access the mini-batch index (an Int64 value) within an epoch.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is lossValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

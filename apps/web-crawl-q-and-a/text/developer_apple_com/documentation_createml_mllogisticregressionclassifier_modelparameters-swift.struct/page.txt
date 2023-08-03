@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/createml/mllogisticregressionclassifier/modelparameters-swift.struct
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+E
+MLLogisticRegressionClassifier.ModelParameters.ValidationData
+Enumerations
+P
+var validation: MLLogisticRegressionClassifier.ModelParameters.ValidationData
+Instance Properties
+M
+init(validation: MLLogisticRegressionClassifier.ModelParameters.ValidationData, maxIterations: Int, l1Penalty: Double, l2Penalty: Double, stepSize: Double, convergenceThreshold: Double, featureRescaling: Bool)
+Initializers
+init(validationData: MLDataTable?, maxIterations: Int, l1Penalty: Double, l2Penalty: Double, stepSize: Double, convergenceThreshold: Double, featureRescaling: Bool)
+M
+init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLLogisticRegressionClassifier.ModelParameters) throws
+Creating and Training a Logistic Regression Classifier
+S
+MLLogisticRegressionClassifier
+S
+MLBoostedTreeClassifier
+S
+MLRandomForestClassifier
+S
+MLDecisionTreeClassifier
+Supporting Classifier Types
+E
+case supportVector(MLSupportVectorClassifier)
+Documentation
+Open Menu
+Swift
+Structure
+MLLogisticRegressionClassifier.ModelParameters
+Parameters that affect the process of training a model.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct ModelParameters
+Topics
+Creating Parameters
+init(validationData: MLDataTable?, maxIterations: Int, l1Penalty: Double, l2Penalty: Double, stepSize: Double, convergenceThreshold: Double, featureRescaling: Bool)
+Creates a new set of parameters.
+Accessing Parameters
+var convergenceThreshold: Double
+var featureRescaling: Bool
+var l1Penalty: Double
+var l2Penalty: Double
+var maxIterations: Int
+var stepSize: Double
+var validationData: MLDataTable?
+Validation data represented as a MLDataTable.
+Describing Parameters
+var description: String
+A text representation of the model parameters for a logistic regression classifier.
+var debugDescription: String
+A text representation of the model parameters for a logistic regression classifier that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the model parameters for a logistic regression classifier shown in a playground.
+Initializers
+init(validation: MLLogisticRegressionClassifier.ModelParameters.ValidationData, maxIterations: Int, l1Penalty: Double, l2Penalty: Double, stepSize: Double, convergenceThreshold: Double, featureRescaling: Bool)
+Instance Properties
+var validation: MLLogisticRegressionClassifier.ModelParameters.ValidationData
+Validation data.
+Enumerations
+enum ValidationData
+Values for specifying validation data.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Creating and Training a Logistic Regression Classifier
+init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLLogisticRegressionClassifier.ModelParameters) throws
+Creates a Logistic Regression Classifier from the feature columns in the training data to predict the categories in the target column.
+let modelParameters: MLLogisticRegressionClassifier.ModelParameters
+The underlying parameters used when training the model.
+var targetColumn: String
+The name of the column you selected at initialization to define which categories the classifier predicts.
+var featureColumns: [String]
+The names of the columns you selected at initialization to train the classifier.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLLogisticRegressionClassifier.ModelParameters
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

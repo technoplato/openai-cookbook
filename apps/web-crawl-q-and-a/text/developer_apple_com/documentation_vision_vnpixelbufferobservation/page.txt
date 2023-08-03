@@ -1,0 +1,154 @@
+https://developer.apple.com/documentation/vision/vnpixelbufferobservation
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNTrackRectangleRequest
+C
+VNTrackingRequest
+Tracking Multiple Objects or Rectangles in Video
+Tracking the User’s Face in Real Time
+Object Tracking
+C
+VNSaliencyImageObservation
+C
+VNGenerateObjectnessBasedSaliencyImageRequest
+P
+var results: [VNPixelBufferObservation]?
+Accessing the Results
+E
+VNGeneratePersonSegmentationRequest.QualityLevel
+P
+var qualityLevel: VNGeneratePersonSegmentationRequest.QualityLevel
+P
+var outputPixelFormat: OSType
+Configuring the Request
+C
+VNGeneratePersonSegmentationRequest
+C
+VNStatefulRequest
+Documentation
+Open Menu
+Class
+VNPixelBufferObservation
+An object that represents an image that an image analysis request produces.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNPixelBufferObservation : VNObservation
+Overview
+This type of observation results from performing a VNCoreMLRequest image analysis with a Core ML model that has an image-to-image processing role. For example, this observation might result from a model that analyzes the style of one image and then transfers that style to a different image.
+Vision infers that an MLModel object is an image-to-image model if that model includes an image. Its modelDescription object includes an image-typed feature description in its outputDescriptionsByName dictionary.
+Topics
+Parsing Observation Content
+var pixelBuffer: CVPixelBuffer
+The image that results from a request with image output.
+var featureName: String?
+A feature name that the CoreML model defines.
+Relationships
+Inherits From
+VNObservation
+See Also
+Machine Learning Image Analysis
+Classifying Images with Vision and Core ML
+Crop and scale photos using the Vision framework and classify them with a Core ML model.
+Training a Create ML Model to Classify Flowers
+Train a flower classifier using Create ML in Swift Playgrounds, and apply the resulting model to real-time image classification using Vision.
+class VNCoreMLRequest
+An image analysis request that uses a Core ML model to process images.
+class VNClassificationObservation
+An object that represents classification information that an image analysis request produces.
+class VNCoreMLFeatureValueObservation
+An object that represents a collection of key-value information that a Core ML image analysis request produces.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNPixelBufferObservation
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

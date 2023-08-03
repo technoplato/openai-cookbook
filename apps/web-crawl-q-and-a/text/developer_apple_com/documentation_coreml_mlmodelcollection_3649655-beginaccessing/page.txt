@@ -1,0 +1,184 @@
+https://developer.apple.com/documentation/coreml/mlmodelcollection/3649655-beginaccessing
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLModelError
+Model Errors
+r
+P
+MLComputeDeviceProtocol
+class func beginAccessing(identifier: String, completionHandler: (Result<MLModelCollection, Error>) -> Void) -> Progress
+Accessing a Model Collection
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+Documentation
+Open Menu
+Type Method
+beginAccessing(identifier:completionHandler:)
+Requests access to a model collection.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+visionOS 1.0+ Beta
+Xcode 12.0+
+class func beginAccessing(
+    identifier: String,
+    completionHandler handler: @escaping (Result<MLModelCollection, Error>) -> Void
+) -> Progress
+Deprecated
+Use Background Assets or URLSession instead.
+Parameters
+identifier
+The name of the model collection.
+handler
+A closure that Core ML calls when the model finishes loading.
+The closure has one Result parameter with the following associated values:
+Result.success(_:)
+An MLModelCollection instance if the collection loaded successfully.
+Result.failure(_:)
+An Error instance if the model collection failed to load (see MLModelError).
+Discussion
+Use this method to access a model collection from a deployment. Your app can call this method multiple times, typically each time it needs to access the models in the collection.
+let progress = MLModelCollection.beginAccessing(identifier: modelCollectionName,
+                                         completionHandler: modelCollectionAvailable)
+Core ML calls your completion app’s completion handler once the entire collection is on the user’s device. If the model collection isn’t already on the user’s device, Core ML immediately begins fetching it over the network.
+func modelCollectionAvailable(result: Result<MLModelCollection, Error>) {
+    switch result {
+    case .success(let collection):
+        print("Model collection `\(collection.identifier)` is now available.")
+        
+        // Load a model from the collection.
+        loadModel("DeploymentModel", from: collection)
+        
+    case .failure(let error):
+        print("Error accessing a model collection: \(error)")
+    }
+}
+Once your app has the model collection, use the model’s identifier that you assigned it in the deployment (see Creating and Deploying a Model Collection).
+func loadModel(_ modelName: String, from collection: MLModelCollection) {
+    guard let entry = collection.entries[modelName] else {
+        print("Couldn't find model `\(modelName)` in `\(collection.identifier)`.")
+        return
+    }
+
+
+    MLModel.load(contentsOf: entry.modelURL) { result in
+        switch result {
+        case .success(let modelFromCollection):
+            // Use the `modelFromCollection` instance.
+            ...
+
+
+        case .failure(let error):
+            print("Error loading model `\(modelName)` in `\(collection.identifier)`: \(error).")
+        }
+    }
+    ...
+}
+Create an instance of a collection’s model by passing its entry’s modelURL — from the model collection’s entries property — to the load(contentsOf:configuration:completionHandler:) class method.
+Tip
+Use a default model from your app’s bundle while your app waits for the model collection. When your app gets the model collection, switch to the collection’s newer model.
+If your app uses a default model from the app bundle, you can use an initializer from its convenience wrapper class that Xcode automatically generated.
+let modelFromCollection = try? BuiltInModel(contentsOf: entry.modelURL)
+See Also
+Accessing a Model Collection
+class func endAccessing(identifier: String, completionHandler: (Result<Void, Error>) -> Void)
+Terminates access to a model collection.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is beginAccessing(identifier:completionHandler:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

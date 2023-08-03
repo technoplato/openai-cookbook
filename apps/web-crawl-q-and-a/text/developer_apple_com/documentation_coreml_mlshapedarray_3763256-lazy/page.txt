@@ -1,0 +1,144 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3763256-lazy
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Finding an Index in a Shaped Array
+M
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+M
+func difference<C>(from: C) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+M
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+P
+var publisher: Publishers.Sequence<MLShapedArray<Scalar>, Never>
+P
+var last: MLShapedArraySlice<Scalar>?
+P
+var first: MLShapedArraySlice<Scalar>?
+Inspecting a Shaped Array’s Scalars
+Shaped Array Collection Operations
+T
+MLShapedArray.ArrayLiteralElement
+T
+MLShapedArray.SubSequence
+T
+MLShapedArray.Iterator
+Documentation
+Open Menu
+Swift
+Instance Property
+lazy
+A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+var lazy: LazySequence<MLShapedArray<Scalar>> { get }
+See Also
+Inspecting a Shaped Array’s Scalars
+var first: MLShapedArraySlice<Scalar>?
+The first element of the collection.
+var last: MLShapedArraySlice<Scalar>?
+The last element of the collection.
+var publisher: Publishers.Sequence<MLShapedArray<Scalar>, Never>
+A publisher that produces the element in the shaped array as separate values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is lazy
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

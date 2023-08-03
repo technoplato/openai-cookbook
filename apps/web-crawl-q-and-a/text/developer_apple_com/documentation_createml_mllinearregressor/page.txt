@@ -1,0 +1,215 @@
+https://developer.apple.com/documentation/createml/mllinearregressor
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+P
+var model: MLModel
+Describing a Linear Regressor
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLLinearRegressor.ModelParameters) throws
+Supporting Regressor Types
+E
+case randomForest(MLRandomForestRegressor)
+E
+case boostedTree(MLBoostedTreeRegressor)
+E
+case decisionTree(MLDecisionTreeRegressor)
+E
+case linear(MLLinearRegressor)
+Regressor Cases
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+Documentation
+Open Menu
+Swift
+Structure
+MLLinearRegressor
+A regressor that estimates the target as a linear function of the features.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MLLinearRegressor
+Topics
+Creating and Training a Linear Regressor
+init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLLinearRegressor.ModelParameters) throws
+Creates a Linear Regressor from the feature columns in the training data to predict the values in the target column.
+struct ModelParameters
+Parameters that affect the process of training a model.
+let modelParameters: MLLinearRegressor.ModelParameters
+The underlying parameters used when training the model.
+var targetColumn: String
+The name of the column you selected at initialization to define which feature the regressor predicts.
+var featureColumns: [String]
+The names of the columns you selected at initialization to train the regressor.
+Assessing Model Accuracy
+var trainingMetrics: MLRegressorMetrics
+Measurements of the regressor’s performance on the training data set.
+var validationMetrics: MLRegressorMetrics
+Measurements of the regressor’s performance on the validation data set.
+Evaluating a Linear Regressor
+func evaluation(on: MLDataTable) -> MLRegressorMetrics
+Evaluates the classifier on the provided labeled data.
+Testing a Linear Regressor
+func predictions(from: MLDataTable) throws -> MLUntypedColumn
+Predicts the target value from the provided data.
+Saving a Linear Regressor
+func write(to: URL, metadata: MLModelMetadata?) throws
+Exports a Core ML model file for use in your app.
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports a Core ML model file for use in your app.
+Describing a Linear Regressor
+var model: MLModel
+The Core ML model.
+var description: String
+A text representation of the linear regressor.
+var debugDescription: String
+A text representation of the linear regressor that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the linear regressor shown in a playground.
+Initializers
+init(checkpoint: MLCheckpoint) throws
+Creates a linear regressor from a checkpoint.
+init(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLLinearRegressor.ModelParameters) throws
+Creates a linear regressor.
+Instance Methods
+func evaluation(on: DataFrame) -> MLRegressorMetrics
+Evaluates the classifier on the provided labeled data.
+func predictions(from: DataFrame) throws -> AnyColumn
+Predicts a column of labels for the given testing data.
+Type Methods
+static func makeTrainingSession(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLLinearRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLLinearRegressor>
+Creates or restores a training session.
+static func makeTrainingSession(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLLinearRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLLinearRegressor>
+Creates or restores a training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLLinearRegressor>
+Restores an existing training session.
+static func resume(MLTrainingSession<MLLinearRegressor>) throws -> MLJob<MLLinearRegressor>
+Resumes a training session from the last checkpoint if available.
+static func train(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLLinearRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLLinearRegressor>
+Trains a linear regressor.
+static func train(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLLinearRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLLinearRegressor>
+Trains a linear regressor.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Supporting Regressor Types
+struct MLDecisionTreeRegressor
+A regressor that estimates the target by learning rules to split the data.
+struct MLRandomForestRegressor
+A regressor based on a collection of decision trees trained on subsets of the data.
+struct MLBoostedTreeRegressor
+A regressor based on a collection of decision trees combined with gradient boosting.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLLinearRegressor
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/vision/vnrecognizedpoints3dobservation/4173237-recognizedpoint
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+3D Body Pose Detection
+Detecting human body poses in 3D with Vision
+Beta
+C
+VNDetectHumanBodyPose3DRequest
+Beta
+C
+VNHumanBodyPose3DObservation
+Beta
+C
+VNRecognizedPoints3DObservation
+Inspecting the Observation
+P
+var availableKeys: [VNRecognizedPointKey]
+P
+var availableGroupKeys: [VNRecognizedPointGroupKey]
+func recognizedPoints(forGroupKey: VNRecognizedPointGroupKey) -> [VNRecognizedPointKey : VNRecognizedPoint3D]
+Detecting moving objects in a video
+C
+VNDetectTrajectoriesRequest
+Contour Detection
+C
+VNDetectContoursRequest
+Optical Flow
+C
+VNGenerateOpticalFlowRequest
+C
+VNTrackOpticalFlowRequest
+Beta
+Documentation
+Open Menu
+Instance Method
+recognizedPoint(forKey:)
+Returns a point for a key you specify.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+func recognizedPoint(forKey pointKey: VNRecognizedPointKey) throws -> VNRecognizedPoint3D
+Parameters
+pointKey
+The key of the point to retrieve.
+Return Value
+The point the observation associates with the key.
+See Also
+Inspecting the Observation
+var availableKeys: [VNRecognizedPointKey]
+The available point keys in the observation.
+var availableGroupKeys: [VNRecognizedPointGroupKey]
+The available point group keys in the observation.
+func recognizedPoints(forGroupKey: VNRecognizedPointGroupKey) -> [VNRecognizedPointKey : VNRecognizedPoint3D]
+Returns a point for a group key you specify.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is recognizedPoint(forKey:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

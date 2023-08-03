@@ -1,0 +1,172 @@
+https://developer.apple.com/documentation/createml/mldatavalue/sequencetype
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var description: String
+Describing a Data Value
+P
+var hashValue: Int
+static func == (MLDataValue, MLDataValue) -> Bool
+static func != (Self, Self) -> Bool
+Comparing Data Values
+S
+MLDataValue.MultiArrayType
+P
+var sequenceValue: MLDataValue.SequenceType?
+Accessing Array Values
+S
+MLDataValue.DictionaryType
+P
+var dictionaryValue: MLDataValue.DictionaryType?
+Accessing Dictionary Values
+P
+var stringValue: String?
+Accessing String Values
+P
+var doubleValue: Double?
+Documentation
+Open Menu
+Swift
+Structure
+MLDataValue.SequenceType
+A sequence of data values.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct SequenceType
+Topics
+Initializers
+init<S>(S)
+init<S>(S)
+Default Implementations
+API Reference
+BidirectionalCollection Implementations
+API Reference
+Collection Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+API Reference
+Equatable Implementations
+API Reference
+ExpressibleByArrayLiteral Implementations
+API Reference
+MLDataValueConvertible Implementations
+API Reference
+RandomAccessCollection Implementations
+API Reference
+Sequence Implementations
+Relationships
+Conforms To
+BidirectionalCollection
+Collection
+CustomDebugStringConvertible
+CustomStringConvertible
+Equatable
+ExpressibleByArrayLiteral
+MLDataValueConvertible
+RandomAccessCollection
+Sendable
+Sequence
+See Also
+Accessing Array Values
+var sequenceValue: MLDataValue.SequenceType?
+The underlying sequence.
+var multiArrayValue: MLDataValue.MultiArrayType?
+The underlying multidimensional array.
+struct MultiArrayType
+A multidimensional array of data values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLDataValue.SequenceType
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

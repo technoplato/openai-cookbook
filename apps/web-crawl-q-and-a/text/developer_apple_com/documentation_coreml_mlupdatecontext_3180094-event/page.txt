@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/coreml/mlupdatecontext/3180094-event
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLArrayBatchProvider
+r
+P
+MLBatchProvider
+C
+MLDictionaryFeatureProvider
+r
+P
+MLFeatureProvider
+C
+MLFeatureValue
+Making Predictions with a Sequence of Inputs
+Model Inputs and Outputs
+Getting the Update Context
+C
+MLUpdateContext
+C
+MLModelConfiguration
+r
+P
+MLBatchProvider
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, configuration: MLModelConfiguration?, progressHandlers: MLUpdateProgressHandlers)
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, configuration: MLModelConfiguration?, completionHandler: (MLUpdateContext) -> Void)
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, progressHandlers: MLUpdateProgressHandlers)
+M
+init(forModelAt: URL, trainingData: MLBatchProvider, completionHandler: (MLUpdateContext) -> Void)
+Documentation
+Open Menu
+Instance Property
+event
+The event type that triggered an update task to notify your app’s completion and update progress handlers.
+iOS 13.0+
+iPadOS 13.0+
+macOS 10.15+
+Mac Catalyst 13.1+
+tvOS 14.0+
+watchOS 6.0+
+visionOS 1.0+ Beta
+var event: MLUpdateProgressEvent { get }
+See Also
+Getting the Update Context
+struct MLUpdateProgressEvent
+A type of event during a model update task.
+var task: MLUpdateTask
+The update task that generated the update context.
+var parameters: [MLParameterKey : Any]
+The parameters for the update task.
+class MLParameterKey
+The keys for the parameter dictionary in a model configuration or a model update context.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is event
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

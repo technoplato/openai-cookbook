@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/createmlcomponents/updatablesupervisedtabularestimator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+FullyConnectedNetworkMultiLabelClassifierConfiguration
+Beta
+S
+FullyConnectedNetworkConfiguration
+S
+DetectedObject
+Beta
+S
+BoostedTreeConfiguration
+S
+Augmenter
+Beta
+S
+AugmentationSequence
+Beta
+S
+AugmentationBuilder
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+r
+P
+RandomTransformer
+Beta
+Protocols
+Classes
+E
+VideoReaderError
+E
+TabularPipelineDataError
+E
+SerializationError
+E
+PipelineDataError
+E
+ModelCompatibilityError
+Documentation
+Open Menu
+Swift
+Protocol
+UpdatableSupervisedTabularEstimator
+A supervised tabular estimator that can be incrementally updated.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+protocol UpdatableSupervisedTabularEstimator<Transformer, Annotation> : SupervisedTabularEstimator
+Topics
+Instance Methods
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this supervised tabular estimator with another supervised tabular estimator.
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this supervised tabular estimator with an updatable tabular estimator.
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>, Self.Annotation>
+Composes this supervised tabular estimator with a tabular transformer.
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> Self.Transformer
+Reads the encoded transformer and optimizer with a decoder.
+Required
+func encodeWithOptimizer(Self.Transformer, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+Required
+func makeTransformer() -> Self.Transformer
+Creates a default-initialized transformer suitable for incremental fitting.
+Required
+func readWithOptimizer(from: URL) throws -> Self.Transformer
+Reads the encoded transformer and optimizer from a file.
+func update(inout Self.Transformer, with: DataFrame) async throws
+func update(inout Self.Transformer, with: DataFrame, eventHandler: EventHandler?) async throws
+Updates a transformer with a new sequence of examples.
+Required
+func writeWithOptimizer(Self.Transformer, to: URL, overwrite: Bool) throws
+Writes the encoded transformer and optimizer to a file.
+Relationships
+Inherits From
+SupervisedTabularEstimator
+Conforming Types
+AnnotatedFeatureProvider
+Conforms when Base conforms to UpdatableSupervisedEstimator and Base.Transformer.Input is UnwrappedInput?.
+BoostedTreeClassifier
+Conforms when Label conforms to Comparable, Decodable, Encodable, and Hashable.
+BoostedTreeRegressor
+PreprocessingUpdatableSupervisedTabularEstimator
+UpdatableTabularEstimatorToSupervisedAdaptor
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is UpdatableSupervisedTabularEstimator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

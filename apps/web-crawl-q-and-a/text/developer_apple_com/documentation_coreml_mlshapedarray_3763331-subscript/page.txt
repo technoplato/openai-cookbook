@@ -1,0 +1,186 @@
+https://developer.apple.com/documentation/coreml/mlshapedarray/3763331-subscript
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func index(Int, offsetBy: Int, limitedBy: Int) -> Int?
+M
+func index(Int, offsetBy: Int) -> Int
+M
+func index(after: Int) -> Int
+P
+var indices: Range<Int>
+P
+var endIndex: Int
+P
+var startIndex: Int
+Finding an Index in a Shaped Array
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func contains(MLShapedArraySlice<Scalar>) -> Bool
+M
+func contains(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+M
+func contains<C>(C) -> Bool
+M
+func allSatisfy((MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Inspecting a Slice of a Shaped Array
+P
+var lazy: LazySequence<MLShapedArray<Scalar>>
+P
+var publisher: Publishers.Sequence<MLShapedArray<Scalar>, Never>
+P
+var last: MLShapedArraySlice<Scalar>?
+Documentation
+Open Menu
+Swift
+Generic Subscript
+subscript(_:)
+Accesses the contiguous subrange of the collection’s elements specified by a range expression.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+subscript<R>(r: R) -> MLShapedArraySlice<Scalar> where R : RangeExpression, Int == R.Bound { get }
+Parameters
+bounds
+A range of the collection’s indices. The bounds of the range must be valid indices of the collection.
+Discussion
+The range expression is converted to a concrete subrange relative to this collection. For example, using a PartialRangeFrom range expression with an array accesses the subrange from the start of the range expression until the end of the array.
+let streets = ["Adams", "Bryant", "Channing", "Douglas", "Evarts"]
+let streetsSlice = streets[2...]
+print(streetsSlice)
+// ["Channing", "Douglas", "Evarts"]
+The accessed slice uses the same indices for the same elements as the original collection uses. This example searches streetsSlice for one of the strings in the slice, and then uses that index in the original array.
+let index = streetsSlice.firstIndex(of: "Evarts")    // 4
+print(streets[index!])
+// "Evarts"
+Always use the slice’s startIndex property instead of assuming that its indices start at a particular value. Attempting to access an element by using an index outside the bounds of the slice’s indices may result in a runtime error, even if that index is valid for the original collection.
+print(streetsSlice.startIndex)
+// 2
+print(streetsSlice[2])
+// "Channing"
+
+
+print(streetsSlice[0])
+// error: Index out of bounds
+Complexity: O(1)
+See Also
+Inspecting a Slice of a Shaped Array
+func allSatisfy((MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate.
+func contains<C>(C) -> Bool
+Returns a Boolean value indicating whether the collection contains the given sequence.
+func contains(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate.
+func contains(MLShapedArraySlice<Scalar>) -> Bool
+Returns a Boolean value indicating whether the sequence contains the given element.
+func makeIterator() -> IndexingIterator<MLShapedArray<Scalar>>
+Returns an iterator over the elements of the collection.
+func forEach((MLShapedArraySlice<Scalar>) -> Void)
+Calls the given closure on each element in the sequence in the same order as a for-in loop.
+func enumerated() -> EnumeratedSequence<MLShapedArray<Scalar>>
+Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence.
+func randomElement() -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection.
+func randomElement<T>(using: inout T) -> MLShapedArraySlice<Scalar>?
+Returns a random element of the collection, using the given generator as a source for randomness.
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+Executes a closure on the sequence’s contiguous storage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

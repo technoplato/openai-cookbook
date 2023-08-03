@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/createml/mlobjectdetector/datasource
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+Supporting types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing an object detector
+P
+let modelParameters: MLObjectDetector.ModelParameters
+P
+var model: MLModel
+Inspecting an object detector model
+Documentation
+Open Menu
+Swift
+Enumeration
+MLObjectDetector.DataSource
+A data source for an object detector.
+Create ML
+CreateML
+macOS 10.15+
+visionOS 1.0+ Beta
+enum DataSource
+Overview
+You use a data source to specify the training dataset for an MLObjectDetector training session. An object-detector data source represents a set of images and an annotation for each object in an image.
+Each object annotation consists of the object’s name, or label, and its location in the image. A single image can have multiple objects and, therefore, multiple annotations. For example, you can train an object detector with images of dining tables, along with annotations for bananas, croissants, and beverages. Each image can have one or more instances of an object, or any combination of objects.
+Topics
+Creating a Data Source
+case directoryWithImagesAndJsonAnnotation(at: URL)
+An object-detector data source you create by selecting a directory that contains image files and exactly one JSON annotation file.
+case directoryWithImages(at: URL, annotationFile: URL)
+An object-detector data source you create by selecting the location of a directory of image files, and the location of a JSON annotation file.
+case table(MLDataTable, imageColumn: String, annotationColumn: String)
+An object-detector data source you create with a data table.
+Getting the Annotated File Names
+func gatherAnnotatedFileNames() throws -> DataFrame
+Processes the data source and returns a data frame that contains file URLs and annotations.
+Beta
+Getting the Data Frame
+case frame(DataFrame, imageColumn: String, annotationColumn: String)
+Data specified by a DataFrame containing a column for image file paths and a column with annotations.
+Retrieving the Data
+func imagesWithObjectAnnotations() throws -> MLDataTable
+Generates a data table where each row represents an image, and its columns are the image file URLs and its annotations.
+Splitting the Data
+func stratifiedSplit(proportions: [Double], seed: Int, annotationColumn: String) throws -> MLDataTable
+Generates a new data table by splitting the data source using the specified proportions.
+Relationships
+Conforms To
+Sendable
+See Also
+Supporting types
+enum AnnotationType
+The available types of image annotations.
+struct ModelParameters
+Parameters that affect the process of training an object detection model.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLObjectDetector.DataSource
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

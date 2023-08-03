@@ -1,0 +1,166 @@
+https://developer.apple.com/documentation/createml/mldatatable/rows-swift.struct/joined()
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+M
+func sorted<Comparator>(using: Comparator) -> [Self.Element]
+M
+func sorted<S, Comparator>(using: S) -> [Self.Element]
+M
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func shuffled<T>(using: inout T) -> [Self.Element]
+M
+func shuffled() -> [Self.Element]
+func randomSplit<Feature, Annotation, Generator>(by: Double, using: inout Generator) -> ([AnnotatedFeature<Feature, Annotation>], [AnnotatedFeature<Feature, Annotation>])
+func mapFeatures<Input, Output, Annotation>((Input) throws -> Output) rethrows -> [AnnotatedFeature<Output, Annotation>]
+func mapFeatures<Input, Output, Annotation>((Input) async throws -> Output) async rethrows -> [AnnotatedFeature<Output, Annotation>]
+func mapAnnotations<Feature, Input, Output>((Input) throws -> Output) rethrows -> [AnnotatedFeature<Feature, Output>]
+func mapAnnotations<Feature, Input, Output>((Input) async throws -> Output) async rethrows -> [AnnotatedFeature<Feature, Output>]
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func formatted<S>(S) -> S.FormatOutput
+M
+func forEach((Self.Element) throws -> Void) rethrows
+M
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+M
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func filter(Predicate<Self.Element>) throws -> [Self.Element]
+Beta
+M
+func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func enumerated() -> EnumeratedSequence<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+joined()
+Returns the elements of this sequence of sequences, concatenated.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func joined() -> FlattenSequence<Self>
+Return Value
+A flattened view of the elements of this sequence of sequences.
+Discussion
+In this example, an array of three ranges is flattened so that the elements of each range can be iterated in turn.
+let ranges = [0..<3, 8..<10, 15..<17]
+
+
+// A for-in loop over 'ranges' accesses each range:
+for range in ranges {
+  print(range)
+}
+// Prints "0..<3"
+// Prints "8..<10"
+// Prints "15..<17"
+
+
+// Use 'joined()' to access each element of each range:
+for index in ranges.joined() {
+    print(index, terminator: " ")
+}
+// Prints: "0 1 2 8 9 15 16"
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is joined()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

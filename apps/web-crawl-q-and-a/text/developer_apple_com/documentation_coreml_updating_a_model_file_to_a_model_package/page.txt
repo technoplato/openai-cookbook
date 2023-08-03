@@ -1,0 +1,122 @@
+https://developer.apple.com/documentation/coreml/updating_a_model_file_to_a_model_package
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+Documentation
+Open Menu
+Article
+Updating a Model File to a Model Package
+Convert a Core ML model file into a model package in Xcode.
+Overview
+A Core ML model package is a file-system structure that can store a model in separate files, similar to an app bundle. Model packages offer more flexibility and extensibility than Core ML model files, including editable metadata and separation of a model’s architecture from its weights and biases. Update your model file to a model package by converting the model in Xcode.
+Open or select a Core ML model in Xcode and update it to an ML package by either clicking the Edit button or the Update to Model Package button in the Utilities tab.
+Xcode presents a confirmation dialog before it converts the model to the ML package format. By default, Xcode moves the original model file to the Trash. You can keep your original model file by deselecting the checkbox in the Xcode dialog. Click Update and Edit when you’re ready to convert the model to a package.
+Once Xcode finishes converting the model, it opens the model’s General tab, where you can edit any of the metadata text fields, including Description, Author, and License.
+You can also add a new metadata field in an ML package by entering a new property name and value in the Additional Metadata section.
+See Also
+Core ML Models
+Getting a Core ML Model
+Obtain a Core ML model to use in your app.
+Integrating a Core ML Model into Your App
+Add a simple model to an app, pass input data to the model, and process the model’s predictions.
+class MLModel
+An encapsulation of all the details of your machine learning model.
+API Reference
+Model Customization
+Expand and modify your model with new layers.
+API Reference
+Model Personalization
+Update your model to adapt to new data.
+Current page is Updating a Model File to a Model Package
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

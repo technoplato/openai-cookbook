@@ -1,0 +1,158 @@
+https://developer.apple.com/documentation/vision/vntrackobjectrequest
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectHumanHandPoseRequest
+C
+VNDetectHumanBodyPoseRequest
+Detecting Hand Poses with Vision
+Detecting Human Body Poses in Images
+Body and Hand Pose Detection
+C
+VNHumanObservation
+C
+VNDetectHumanRectanglesRequest
+init(detectedObjectObservation: VNDetectedObjectObservation, completionHandler: VNRequestCompletionHandler?)
+C
+VNTrackRectangleRequest
+C
+VNTrackingRequest
+Tracking Multiple Objects or Rectangles in Video
+Tracking the User’s Face in Real Time
+Object Tracking
+C
+VNSaliencyImageObservation
+C
+VNGenerateObjectnessBasedSaliencyImageRequest
+C
+VNGenerateAttentionBasedSaliencyImageRequest
+Documentation
+Open Menu
+Class
+VNTrackObjectRequest
+An image analysis request that tracks the movement of a previously identified object across multiple images or video frames.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+class VNTrackObjectRequest : VNTrackingRequest
+Overview
+Use this type of request to track the bounding boxes around objects previously identified in an image. Vision attempts to locate the same object from the input observation throughout the sequence.
+Topics
+Initializing an Object Tracking Request
+init(detectedObjectObservation: VNDetectedObjectObservation)
+Creates a new object tracking request with a detected object observation.
+init(detectedObjectObservation: VNDetectedObjectObservation, completionHandler: VNRequestCompletionHandler?)
+Creates a new object tracking request with a detected object observation.
+Identifying Request Revisions
+let VNTrackObjectRequestRevision2: Int
+A constant for specifying revision 2 of the object tracking request.
+let VNTrackObjectRequestRevision1: Int
+A constant for specifying revision 1 of the object tracking request.
+Relationships
+Inherits From
+VNTrackingRequest
+See Also
+Object Tracking
+Tracking the User’s Face in Real Time
+Detect and track faces from the selfie cam feed in real time.
+Tracking Multiple Objects or Rectangles in Video
+Apply Vision algorithms to track objects or rectangles throughout a video.
+class VNTrackingRequest
+The abstract superclass for image analysis requests that track unique features across multiple images or video frames.
+class VNTrackRectangleRequest
+An image analysis request that tracks movement of a previously identified rectangular object across multiple images or video frames.
+class VNDetectedObjectObservation
+An observation that provides the position and extent of an image feature that an image analysis request detects.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNTrackObjectRequest
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

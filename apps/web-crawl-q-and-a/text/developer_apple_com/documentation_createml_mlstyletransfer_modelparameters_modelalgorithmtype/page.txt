@@ -1,0 +1,180 @@
+https://developer.apple.com/documentation/createml/mlstyletransfer/modelparameters/modelalgorithmtype
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+RawRepresentable Implementations
+Equatable Implementations
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+T
+MLStyleTransfer.ModelParameters.ModelAlgorithmType.RawValue
+Describing Parameters
+P
+var validation: MLStyleTransfer.ModelParameters.ValidationData
+P
+var textelDensity: Int
+P
+var styleStrength: Int
+P
+var playgroundDescription: Any
+P
+var maxIterations: Int
+P
+var description: String
+P
+var debugDescription: String
+Documentation
+Open Menu
+Swift
+Enumeration
+MLStyleTransfer.ModelParameters.ModelAlgorithmType
+The style transfer training algorithm options.
+iOS 15.0+
+iPadOS 15.0+
+macOS 11.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum ModelAlgorithmType
+Overview
+This object uses a convolutional neural network for training the style transfer model, giving more detailed style It’s ideal for cases where latency is not the main concern, such as single images.
+Topics
+Selecting an Algorithm Type
+case cnn
+A style-transfer training algorithm that generates a model that prioritizes image quality over speed.
+case cnnLite
+A style-transfer training algorithm that generates a model that prioritizes speed over image quality.
+Describing an Algorithm Type
+var description: String
+A text representation of the model parameters.
+var debugDescription: String
+A text representation of the model parameters that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the model parameters shown in a playground.
+Hashing an Algorithm Type
+var hashValue: Int
+Available when Self conforms to Hashable and RawValue conforms to Hashable.
+func hash(into: inout Hasher)
+Available when Self conforms to Hashable and RawValue conforms to Hashable.
+static func != (Self, Self) -> Bool
+Working with Raw Values
+init?(rawValue: String)
+Creates a new instance with the specified raw value.
+var rawValue: String
+The corresponding value of the raw type.
+typealias RawValue
+The raw type that can be used to represent all values of the conforming type.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+API Reference
+Equatable Implementations
+API Reference
+RawRepresentable Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Equatable
+Hashable
+RawRepresentable
+Sendable
+See Also
+Describing Parameters
+enum ValidationData
+The source of a validation dataset for a style transfer model.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLStyleTransfer.ModelParameters.ModelAlgorithmType
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

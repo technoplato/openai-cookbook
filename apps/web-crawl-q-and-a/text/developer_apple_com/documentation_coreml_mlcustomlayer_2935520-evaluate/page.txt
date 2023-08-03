@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/coreml/mlcustomlayer/2935520-evaluate
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Evaluating a Layer
+M
+func outputShapes(forInputShapes: [[NSNumber]]) -> [[NSNumber]]
+M
+func setWeightData([Data])
+Integrating a Layer
+M
+init(parameters: [String : Any])
+Creating a Layer
+r
+P
+MLCustomLayer
+Creating and Integrating a Model with Custom Layers
+Documentation
+Open Menu
+Instance Method
+evaluate(inputs:outputs:)
+Evaluates the custom layer with the given inputs.
+iOS 11.2+
+iPadOS 11.2+
+macOS 10.13.2+
+Mac Catalyst 13.1+
+tvOS 11.2+
+watchOS 4.2+
+visionOS 1.0+ Beta
+func evaluate(
+    inputs: [MLMultiArray],
+    outputs: [MLMultiArray]
+) throws
+Required
+Parameters
+inputs
+The array of inputs to be evaluated.
+outputs
+The array of outputs to be populated by evaluating the given inputs.
+Discussion
+Implement this method to evaluate the inputs using your layer's custom behavior and to populate the output arrays. It will be called for each evaluation of your model performed on the CPU.
+The memory for both input and output arrays is preallocated; don't copy or move it. The inputs and outputs will have the shapes of the most recent call to outputShapes(forInputShapes:). Don't modify the input values.
+Investigate vecLib for methods that could optimize your implementation significantly.
+See Also
+Evaluating a Layer
+func encode(commandBuffer: MTLCommandBuffer, inputs: [MTLTexture], outputs: [MTLTexture])
+Encodes GPU commands to evaluate the custom layer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is evaluate(inputs:outputs:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

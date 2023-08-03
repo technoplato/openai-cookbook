@@ -1,0 +1,143 @@
+https://developer.apple.com/documentation/createml/mlactionclassifier/datasource/labeledkeypointsdataframe(_:sessionidcolumn:labelcolumn:featurecolumn:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Creating a Model from Tabular Data
+Tabular Models
+S
+MLActivityClassifier
+Motion Models
+S
+MLSoundClassifier
+Sound Models
+S
+MLWordEmbedding
+case labeledKeypointsDataFrame(DataFrame, sessionIdColumn: String, labelColumn: String, featureColumn: String)
+Enumeration Cases
+M
+func stratifiedSplit(proportions: [Double], seed: Int, labelColumn: String) throws -> MLDataTable
+M
+func keypointsWithAnnotations(targetFrameRate: Double) throws -> MLDataTable
+M
+func videosWithAnnotations() throws -> MLDataTable
+Generating Data Tables from a Data Source
+M
+func gatherAnnotatedFileNames() throws -> DataFrame?
+Beta
+Getting Annotated File Names
+E
+case labeledVideoDataFrame(DataFrame, videoColumn: String, labelColumn: String, startTimeColumn: String?, endTimeColumn: String?)
+Documentation
+Open Menu
+Swift
+Case
+MLActionClassifier.DataSource.labeledKeypointsDataFrame(_:sessionIdColumn:labelColumn:featureColumn:)
+A data source made up of keypoints in a data frame.
+macOS 12.0+
+visionOS 1.0+ Beta
+case labeledKeypointsDataFrame(
+    DataFrame,
+    sessionIdColumn: String = __Defaults.sessionIdColumnName,
+    labelColumn: String = __Defaults.labelColumnName,
+    featureColumn: String = __Defaults.featureColumnName
+)
+Parameters
+dataFrame
+A DataFrame containing keypoints and labels.
+sessionIdColumn
+The name of the column containing session identifiers. Defaults to “session_id”.
+labelColumn
+The name of the column containing the labels. Defaults to “label”.
+featureColumn
+The name of the column containing the keypoints. Defaults to “keypoints”.
+Discussion
+The data frame must contain a column of session identifiers, a column of labels, and a column of keypoints. Each set of keypoints must be a multi-dimensional 1x3x18 array containing the x, y, z coordinates of each of the 18 keypoints. See VNRecognizedPointsObservation for more details.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLActionClassifier.DataSource.labeledKeypointsDataFrame(_:sessionIdColumn:labelColumn:featureColumn:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,151 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/modelparameters-swift.struct/init(validation:algorithm:language:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+P
+var maxIterations: Int?
+Instance Properties
+P
+var labelColumnValidationData: String?
+P
+var textColumnValidationData: String?
+P
+var validationData: MLDataTable?
+M
+init(validationData: MLTextClassifier.DataSource, algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+init(validationData: MLDataTable?, algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?, textColumnValidationData: String?, labelColumnValidationData: String?)
+init(validationData: [String : [String]], algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+init(validation: MLTextClassifier.ModelParameters.ValidationData, algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+Creating Parameters
+S
+MLTextClassifier.ModelParameters
+E
+MLTextClassifier.DataSource
+M
+init(trainingData: MLTextClassifier.DataSource, parameters: MLTextClassifier.ModelParameters) throws
+M
+init(trainingData: DataFrame, textColumn: String, labelColumn: String, parameters: MLTextClassifier.ModelParameters) throws
+M
+init(trainingData: [String : [String]], parameters: MLTextClassifier.ModelParameters) throws
+Creating and Training a Text Classifier
+S
+MLTextClassifier
+Documentation
+Open Menu
+Swift
+Initializer
+init(validation:algorithm:language:)
+Creates model parameters for a text classifier with the specified validation data, algorithm, and language.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.15+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+init(
+    validation: MLTextClassifier.ModelParameters.ValidationData = .split(strategy: .automatic),
+    algorithm: MLTextClassifier.ModelAlgorithmType = .maxEnt(revision: 1),
+    language: NLLanguage? = nil
+)
+Parameters
+validation
+The validation data to use during text classifier training.
+algorithm
+An algorithm type for the classifier.
+language
+The language of the text to classify.
+See Also
+Creating Parameters
+enum ModelAlgorithmType
+The type of algorithm that a text classifier uses.
+enum ValidationData
+The validation data that a text classifier uses.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(validation:algorithm:language:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

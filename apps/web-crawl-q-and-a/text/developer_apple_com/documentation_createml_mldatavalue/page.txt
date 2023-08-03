@@ -1,0 +1,216 @@
+https://developer.apple.com/documentation/createml/mldatavalue
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Accessing Array Values
+S
+MLDataValue.DictionaryType
+P
+var dictionaryValue: MLDataValue.DictionaryType?
+Accessing Dictionary Values
+P
+var stringValue: String?
+Accessing String Values
+P
+var doubleValue: Double?
+S
+MLDataTable
+Tabular Data
+S
+MLRecommender
+E
+MLRegressor
+E
+MLClassifier
+Creating a Model from Tabular Data
+Tabular Models
+S
+MLActivityClassifier
+Documentation
+Open Menu
+Swift
+Enumeration
+MLDataValue
+The value of a cell in a data table.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+enum MLDataValue
+Overview
+The MLDataValue enumeration is the fundamental type that you use to store training data in a table. Classifiers use data values to store information like evaluation metrics. Data values wrap all of the possible data types you can use with Create ML.
+To access the underlying information in a data value, you can use the properties that correspond to the type’s enumeration cases. If you aren’t sure which kind of value a data value wrapper contains, use a switch statement to unwrap the value, or check the value of the type property.
+Topics
+Converting Between Types and Data Values
+protocol MLDataValueConvertible
+A type that can convert itself to and from a data value.
+Creating a Data Value
+case int(Int)
+An integer value.
+case double(Double)
+A double value.
+case string(String)
+A string value.
+case dictionary(MLDataValue.DictionaryType)
+A dictionary of named data values.
+case sequence(MLDataValue.SequenceType)
+A sequence of data values.
+case multiArray(MLDataValue.MultiArrayType)
+A multidimensional array of data values.
+Inspecting the Type
+var type: MLDataValue.ValueType
+The kind of the underlying value that the data value wraps.
+enum ValueType
+An enumeration describing the supported underlying types that an MLDataValue wraps.
+Accessing Numeric Values
+var intValue: Int?
+The underlying integer value.
+var doubleValue: Double?
+The underlying double value.
+Accessing String Values
+var stringValue: String?
+The underlying string value.
+Accessing Dictionary Values
+var dictionaryValue: MLDataValue.DictionaryType?
+The underlying dictionary.
+struct DictionaryType
+A dictionary of named data values.
+Accessing Array Values
+var sequenceValue: MLDataValue.SequenceType?
+The underlying sequence.
+struct SequenceType
+A sequence of data values.
+var multiArrayValue: MLDataValue.MultiArrayType?
+The underlying multidimensional array.
+struct MultiArrayType
+A multidimensional array of data values.
+Comparing Data Values
+static func != (Self, Self) -> Bool
+static func == (MLDataValue, MLDataValue) -> Bool
+Returns a Boolean value indicating whether two data values wrap the same underlying value.
+var hashValue: Int
+The hash value.
+Describing a Data Value
+var description: String
+A text representation of the data value.
+var debugDescription: String
+A text representation of the data value that’s suitable for output during debugging.
+Handling Errors
+case invalid
+An invalid value.
+var isValid: Bool
+A Boolean value indicating whether the data value is valid.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomStringConvertible
+Equatable
+Hashable
+Sendable
+See Also
+Tabular Data
+struct MLDataTable
+A table of data for training or evaluating a machine learning model.
+API Reference
+Data Visualizations
+Render images of data tables and columns in a playground.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLDataValue
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

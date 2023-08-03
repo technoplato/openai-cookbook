@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/swiftdata/persistentmodel
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+M
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+Modifying a value by key path
+M
+func getValue<Value, OtherModel>(for: KeyPath<Self, Value>) -> Value
+M
+func getValue<Value, OtherModel>(for: KeyPath<Self, Value>) -> Value
+M
+func getValue<Value>(for: KeyPath<Self, Value?>) -> Value?
+M
+func getValue<Value>(for: KeyPath<Self, Value>) -> Value
+Documentation
+Open Menu
+Swift
+Protocol
+PersistentModel
+An interface that enables SwiftData to manage a Swift class as a stored model.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+Swift 5.9+
+protocol PersistentModel : AnyObject, Observable, Hashable, Identifiable
+Topics
+Creating a persistent model
+init(backingData: BackingData<Self>)
+Required
+Identifying the model instance
+var objectID: PersistentIdentifier
+struct PersistentIdentifier
+A type that describes the aggregate identity of a SwiftData model.
+var context: ModelContext?
+Accessing a value by key path
+func getValue<Value>(for: KeyPath<Self, Value>) -> Value
+func getValue<Value>(for: KeyPath<Self, Value>) -> Value
+func getValue<Value>(for: KeyPath<Self, Value?>) -> Value?
+func getValue<Value, OtherModel>(for: KeyPath<Self, Value>) -> Value
+func getValue<Value, OtherModel>(for: KeyPath<Self, Value>) -> Value
+Modifying a value by key path
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+func setValue<Value>(for: KeyPath<Self, Value>, to: Value)
+func setValue<Value>(for: KeyPath<Self, Value?>, to: Value?)
+func setValue<Value, OtherModel>(for: KeyPath<Self, Value>, to: Value)
+func setValue<Value, OtherModel>(for: KeyPath<Self, Value>, to: Value)
+Accessing supplementary information
+static func schemaMetadata() -> [(String, AnyKeyPath, Any?, Any?)]
+Required
+var backingData: BackingData<Self>
+Required
+func hasChanges() -> Bool
+func isDeleted() -> Bool
+Internal
+API Reference
+Internal symbols
+Restricted-use symbols that the framework requires for macro expansion and other internal tasks.
+Default Implementations
+API Reference
+Equatable Implementations
+API Reference
+Hashable Implementations
+API Reference
+Identifiable Implementations
+Relationships
+Inherits From
+Equatable
+Hashable
+Identifiable
+Observable
+See Also
+Model definition
+macro Model()
+Converts a Swift class into a stored model that’s managed by SwiftData.
+macro Attribute(PropertyOptions..., originalName: String?, hashModifier: String?)
+Specifies the custom behavior that SwiftData applies to the annotated property when managing the owning class.
+macro Transient()
+Tells SwiftData not to persist the annotated property when managing the owning class.
+macro Relationship(Relationship.DeleteRule, PropertyOptions..., originalName: String?, inverse: AnyKeyPath?, hashModifier: String?)
+Specifies the options that SwiftData needs to manage the annotated property as a relationship between two models.
+protocol RelationshipCollection
+class PropertyOptions
+An object that defines the behavior of a property when SwiftData manages the owning class.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PersistentModel
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,190 @@
+https://developer.apple.com/documentation/createml/mlclassifiermetrics
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLRegressorMetrics
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Default Implementations
+P
+var precisionRecallDataFrame: DataFrame
+Beta
+P
+var confusionDataFrame: DataFrame
+Improving Your Model’s Accuracy
+Model Accuracy
+Data Visualizations
+E
+MLDataValue
+S
+MLDataTable
+Tabular Data
+S
+MLRecommender
+E
+MLRegressor
+Documentation
+Open Menu
+Swift
+Structure
+MLClassifierMetrics
+Metrics you use to evaluate a classifier’s performance.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MLClassifierMetrics
+Overview
+Use MLClassifierMetrics to evaluate your model’s ability to distinguish between different categories when it’s classifying data.
+You can determine the model’s accuracy using the classificationError metric. For information about how your model is mislabeling or missing a certain category, use the precisionRecall metric. To determine specific cases where your model is mistaking one label for another, use the confusion property.
+Accuracy can be a misleading metric if you use unbalanced data, which means the number of examples for some categories are much larger than others. Instead, use precisionRecall or confusion.
+Note
+Each trained model contains different metrics for its various data sets (training, validation, and testing). Improving Your Model’s Accuracy compares these metrics between different data sets.
+Topics
+Understanding the Model
+var classificationError: Double
+The fraction of incorrectly labeled examples.
+var precisionRecall: MLDataTable
+A data table listing the precision and recall percentages for each class.
+var confusion: MLDataTable
+A table comparing the actual and predicted labels for each classification category.
+Handling Errors
+var isValid: Bool
+A Boolean value indicating whether the classifier model was able to calculate metrics.
+var error: (Error)?
+The underlying error present when the metrics are invalid.
+Creating Metrics
+init(classificationError: Double, confusion: MLDataTable, precisionRecall: MLDataTable)
+Creates empty classifier metrics.
+Describing Metrics
+var description: String
+A text representation of the classifier metrics.
+var debugDescription: String
+A text representation of the classifier metrics that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the classifier metrics shown in a playground.
+Instance Properties
+var confusionDataFrame: DataFrame
+A data frame comparing the actual and predicted labels for each class.
+Beta
+var precisionRecallDataFrame: DataFrame
+A data frame listing the precision and recall percentages for each class.
+Beta
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Model Accuracy
+Improving Your Model’s Accuracy
+Use metrics to tune the performance of your machine learning model.
+struct MLRegressorMetrics
+Metrics you use to evaluate a regressor’s performance.
+struct MLWordTaggerMetrics
+Metrics you use to evaluate a word tagger’s performance.
+struct MLRecommenderMetrics
+Metrics you use to evaluate a recommender’s performance.
+struct MLObjectDetectorMetrics
+Metrics you use to evaluate an object detector’s performance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLClassifierMetrics
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/3763469-lexicographicallyprecedes
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func swapAt(Int, Int)
+subscript(Range<Int>) -> MLShapedArraySlice<Scalar>
+Modifying a Shaped Array Slice
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+M
+func ranges<C>(of: C) -> [Range<Int>]
+M
+func lastIndex(of: MLShapedArraySlice<Scalar>) -> Int?
+M
+func lastIndex(where: (MLShapedArraySlice<Scalar>) -> Bool) -> Int?
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> Bool
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+M
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+M
+func difference<C>(from: C) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+M
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+M
+func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult
+Comparing Shaped Array Slices
+M
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+Documentation
+Open Menu
+Swift
+Generic Instance Method
+lexicographicallyPrecedes(_:by:)
+Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+func lexicographicallyPrecedes<OtherSequence>(
+    _ other: OtherSequence,
+    by areInIncreasingOrder: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) throws -> Bool
+) rethrows -> Bool where OtherSequence : Sequence, MLShapedArraySlice<Scalar> == OtherSequence.Element
+Parameters
+other
+A sequence to compare to this sequence.
+areInIncreasingOrder
+A predicate that returns true if its first argument should be ordered before its second argument; otherwise, false.
+Return Value
+true if this sequence precedes other in a dictionary ordering as ordered by areInIncreasingOrder; otherwise, false.
+Discussion
+The predicate must be a strict weak ordering over the elements. That is, for any elements a, b, and c, the following conditions must hold:
+Note
+This method implements the mathematical notion of lexicographical ordering, which has no connection to Unicode. If you are sorting strings to present to the end user, use String APIs that perform localized comparison instead.
+Complexity: O(m), where m is the lesser of the length of the sequence and the length of other.
+areInIncreasingOrder(a, a) is always false. (Irreflexivity)
+If areInIncreasingOrder(a, b) and areInIncreasingOrder(b, c) are both true, then areInIncreasingOrder(a, c) is also true. (Transitive comparability)
+Two elements are incomparable if neither is ordered before the other according to the predicate. If a and b are incomparable, and b and c are incomparable, then a and c are also incomparable. (Transitive incomparability)
+See Also
+Comparing Shaped Array Slices
+func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult
+Returns a comparison result by comparing two shaped array slices.
+func difference<C>(from: C, by: (C.Element, MLShapedArraySlice<Scalar>) -> Bool) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test.
+func difference<C>(from: C) -> CollectionDifference<MLShapedArraySlice<Scalar>>
+Returns the difference needed to produce this collection’s ordered elements from the given collection.
+func elementsEqual<OtherSequence>(OtherSequence, by: (MLShapedArraySlice<Scalar>, OtherSequence.Element) -> Bool) -> Bool
+Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test.
+func elementsEqual<OtherSequence>(OtherSequence) -> Bool
+Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order.
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (MLShapedArraySlice<Scalar>, PossiblePrefix.Element) -> Bool) -> Bool
+Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is lexicographicallyPrecedes(_:by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

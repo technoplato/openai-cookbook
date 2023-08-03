@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/createml/mlrandomforestclassifier/modelparameters-swift.struct/rowsubsample
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var validationMetrics: MLClassifierMetrics
+P
+var trainingMetrics: MLClassifierMetrics
+Assessing Model Accuracy
+P
+var featureColumns: [String]
+P
+var targetColumn: String
+P
+let modelParameters: MLRandomForestClassifier.ModelParameters
+CustomStringConvertible Implementations
+init(validation: MLRandomForestClassifier.ModelParameters.ValidationData, maxDepth: Int, maxIterations: Int, minLossReduction: Double, minChildWeight: Double, randomSeed: Int, rowSubsample: Double, columnSubsample: Double)
+P
+var randomSeed: Int
+P
+var minLossReduction: Double
+P
+var minChildWeight: Double
+P
+var maxIterations: Int
+P
+var maxDepth: Int
+P
+var columnSubsample: Double
+Accessing Parameters
+M
+init(validationData: MLDataTable?, maxDepth: Int, maxIterations: Int, minLossReduction: Double, minChildWeight: Double, randomSeed: Int, rowSubsample: Double, columnSubsample: Double)
+Documentation
+Open Menu
+Swift
+Instance Property
+rowSubsample
+Must be in the range (0, 1).
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+var rowSubsample: Double
+See Also
+Accessing Parameters
+var columnSubsample: Double
+Must be in the range (0, 1).
+var maxDepth: Int
+var maxIterations: Int
+var minChildWeight: Double
+var minLossReduction: Double
+var randomSeed: Int
+var validationData: MLDataTable?
+Validation data represented as a MLDataTable.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is rowSubsample
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

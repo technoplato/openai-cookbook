@@ -1,0 +1,210 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/init()
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var type: MLDataValue.ValueType
+Exposing the Underlying Type to Generate a Data Column
+M
+func map<T>(to: T.Type) -> MLDataColumn<T>
+Converting a Column to Generate a Data Column
+M
+func sort(byIncreasingOrder: Bool) -> MLUntypedColumn
+Sorting Elements to Generate a Column
+M
+func copy() -> MLUntypedColumn
+M
+init<S>(S)
+M
+init<S>(S)
+M
+init(ClosedRange<Int>)
+M
+init(Range<Int>)
+M
+init(repeating: MLDataValue, count: Int)
+M
+init<T>(repeating: T, count: Int)
+Creating an Untyped Column
+S
+MLUntypedColumn
+Documentation
+Open Menu
+Swift
+Initializer
+init()
+Creates an empty, invalid column used to remove an existing column from a data table.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+init()
+Discussion
+Use this initializer to create an empty column that, when assigned to the name of an existing column within a data table, will remove that column from the table.
+For example, to remove a column from a data table, first start with a variable data table.
+    "Day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "Temperature": [91.3, 85.8, 79.5, 83.4, 72.2]
+]
+
+
+var table = try MLDataTable(dictionary: data)
+
+
+print(table) /* Prints...
+ Columns:
+ Day    string
+ Temperature    float
+ Rows: 5
+ Data:
+ +----------------+----------------+
+ | Day            | Temperature    |
+ +----------------+----------------+
+ | Monday         | 91.3           |
+ | Tuesday        | 85.8           |
+ | Wednesday      | 79.5           |
+ | Thursday       | 83.4           |
+ | Friday         | 72.2           |
+ +----------------+----------------+
+ [5 rows x 2 columns]
+ */ ```
+
+
+Then use ``MLUntypedColumn/init()`` to create an empty column.
+
+
+```swift let emptyColumn = MLUntypedColumn() ```
+
+
+Finally, use ``MLUntypedColumn/subscript(_:)-9hr32`` to remove the
+existing column from the data table by setting the empty column to the
+name of that existing column.
+
+
+```swift // Remove the "Temperature" column from the data table
+table["Temperature"] = emptyColumn
+
+
+print(table) /* Prints...
+ Columns:
+ Day    string
+ Rows: 5
+ Data:
+ +----------------+
+ | Day            |
+ +----------------+
+ | Monday         |
+ | Tuesday        |
+ | Wednesday      |
+ | Thursday       |
+ | Friday         |
+ +----------------+
+ [5 rows x 1 columns]
+ */ ```
+
+
+- Returns: An empty, invalid column.
+See Also
+Creating an Untyped Column
+init<T>(repeating: T, count: Int)
+Creates a new column with a repeating value.
+init(repeating: MLDataValue, count: Int)
+Creates a new column with a repeating value.
+init(Range<Int>)
+Creates a new column of integers from a given range.
+init(ClosedRange<Int>)
+Creates a new column of integers from a given closed range.
+init<S>(S)
+Creates a new column from a given sequence of elements that can be converted to machine learning data values.
+init<S>(S)
+Creates a new column from a given sequence of machine learning data values.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init()
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

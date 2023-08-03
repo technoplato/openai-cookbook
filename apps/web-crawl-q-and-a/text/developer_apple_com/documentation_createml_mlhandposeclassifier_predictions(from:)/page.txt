@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createml/mlhandposeclassifier/predictions(from:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+M
+func prediction(from: URL) throws -> [(label: String, confidence: Double)]
+Testing a Hand Pose Classifier
+M
+func evaluation(on: MLHandPoseClassifier.DataSource) throws -> MLClassifierMetrics
+P
+var validationMetrics: MLClassifierMetrics
+P
+var trainingMetrics: MLClassifierMetrics
+Evaluating a Hand Pose Classifier
+M
+init(trainingData: MLHandPoseClassifier.DataSource, parameters: MLHandPoseClassifier.ModelParameters) throws
+Training a Hand Pose Classifier Synchronously
+Documentation
+Open Menu
+Swift
+Instance Method
+predictions(from:)
+Generates an array of hand pose predictions for each image in a URL array.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+func predictions(from images: [URL]) throws -> [[(label: String, confidence: Double)]]
+Parameters
+images
+An array of image file URLs.
+Return Value
+An array of a prediction tuple arrays.
+Discussion
+Each prediction consists of an array of tuples that pair a classification label with the model’s confidence for that label. The method returns an array of prediction arrays, where each element of the outer array is the prediction for the corresponding URL element in images.
+See Also
+Testing a Hand Pose Classifier
+func prediction(from: URL) throws -> [(label: String, confidence: Double)]
+Generates a hand pose prediction for an image.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is predictions(from:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

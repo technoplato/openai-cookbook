@@ -1,0 +1,157 @@
+https://developer.apple.com/documentation/createml/mldatatable/columnnames-swift.struct/index(_:offsetby:limitedby:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func stratifiedSplitBySequence(proportions: [Double], by: String, on: String, seed: Int) throws -> MLDataTable
+M
+func stratifiedSplitBySequence<RNG>(proportions: [Double], by: String, on: String, generator: inout RNG) throws -> MLDataTable
+M
+func stratifiedSplit(proportions: [Double], on: String, seed: Int) throws -> MLDataTable
+M
+func stratifiedSplit<RNG>(proportions: [Double], on: String, generator: inout RNG) throws -> MLDataTable
+M
+func randomSplitBySequence(proportion: Double, by: String, on: String, seed: Int) -> (MLDataTable, remaining: MLDataTable)
+Instance Methods
+P
+var error: (Error)?
+Instance Methods
+RandomAccessCollection Implementations
+Equatable Implementations
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+CustomDebugStringConvertible Implementations
+Collection Implementations
+BidirectionalCollection Implementations
+Documentation
+Open Menu
+Swift
+Instance Method
+index(_:offsetBy:limitedBy:)
+Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func index(
+    _ i: Self.Index,
+    offsetBy distance: Int,
+    limitedBy limit: Self.Index
+) -> Self.Index?
+Parameters
+i
+A valid index of the array.
+distance
+The distance to offset i.
+limit
+A valid index of the collection to use as a limit. If distance > 0, limit should be greater than i to have any effect. Likewise, if distance < 0, limit should be less than i to have any effect.
+Return Value
+An index offset by distance from the index i, unless that index would be beyond limit in the direction of movement. In that case, the method returns nil.
+Discussion
+The following example obtains an index advanced four positions from an array’s starting index and then prints the element at that position. The operation doesn’t require going beyond the limiting numbers.endIndex value, so it succeeds.
+let numbers = [10, 20, 30, 40, 50]
+let i = numbers.index(numbers.startIndex, offsetBy: 4)
+print(numbers[i])
+// Prints "50"
+The next example attempts to retrieve an index ten positions from numbers.startIndex, but fails, because that distance is beyond the index passed as limit.
+let j = numbers.index(numbers.startIndex,
+                      offsetBy: 10,
+                      limitedBy: numbers.endIndex)
+print(j)
+// Prints "nil"
+The value passed as distance must not offset i beyond the bounds of the collection, unless the index passed as limit prevents offsetting beyond those bounds.
+Complexity
+O(1)
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is index(_:offsetBy:limitedBy:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

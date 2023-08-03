@@ -1,0 +1,221 @@
+https://developer.apple.com/documentation/createml/mlboostedtreeclassifier
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+P
+var model: MLModel
+Describing a Boosted Tree Classifier
+M
+func write(toFile: String, metadata: MLModelMetadata?) throws
+M
+func write(to: URL, metadata: MLModelMetadata?) throws
+init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLBoostedTreeClassifier.ModelParameters) throws
+S
+MLRandomForestClassifier
+S
+MLDecisionTreeClassifier
+Supporting Classifier Types
+E
+case supportVector(MLSupportVectorClassifier)
+E
+case logisticRegression(MLLogisticRegressionClassifier)
+E
+case boostedTree(MLBoostedTreeClassifier)
+E
+case randomForest(MLRandomForestClassifier)
+E
+case decisionTree(MLDecisionTreeClassifier)
+Documentation
+Open Menu
+Swift
+Structure
+MLBoostedTreeClassifier
+A classifier based on a collection of decision trees combined with gradient boosting.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct MLBoostedTreeClassifier
+Overview
+A boosted tree classifier combines several MLDecisionTreeClassifier models (a technique known as ensemble learning) by training each model to correct the errors of the preceding model.
+This model is useful for handling numerical and categorical features, but is less suitable for sparse data such as text.
+Topics
+Creating and Training a Boosted Tree Classifier
+init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLBoostedTreeClassifier.ModelParameters) throws
+Creates a Boosted Tree Classifier from the feature columns in the training data to predict the categories in the target column.
+struct ModelParameters
+Parameters that affect the process of training a model.
+let modelParameters: MLBoostedTreeClassifier.ModelParameters
+The underlying parameters used when training the model.
+var targetColumn: String
+The name of the column you selected at initialization to define which categories the classifier predicts.
+var featureColumns: [String]
+The names of the columns you selected at initialization to train the classifier.
+Assessing Model Accuracy
+var trainingMetrics: MLClassifierMetrics
+Measurements of the classifier’s performance on the training data set.
+var validationMetrics: MLClassifierMetrics
+Measurements of the classifier’s performance on the validation data set.
+Evaluating the Boosted Tree Classifier
+func evaluation(on: MLDataTable) -> MLClassifierMetrics
+Evaluates the classifier on the provided labeled data.
+Testing a Boosted Tree Classifier
+func predictions(from: MLDataTable) throws -> MLUntypedColumn
+Classifies the provided data into the target categories.
+Saving a Boosted Tree Classifier
+func write(to: URL, metadata: MLModelMetadata?) throws
+Exports a Core ML model file for use in your app.
+func write(toFile: String, metadata: MLModelMetadata?) throws
+Exports a Core ML model file for use in your app.
+Describing a Boosted Tree Classifier
+var model: MLModel
+The Core ML model.
+var description: String
+A text representation of the boosted tree classifier.
+var debugDescription: String
+A text representation of the boosted tree classifier that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the boosted tree classifier shown in a playground.
+Initializers
+init(checkpoint: MLCheckpoint) throws
+Creates a boosted tree classifier from a checkpoint.
+init(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLBoostedTreeClassifier.ModelParameters) throws
+Creates a boosted tree classifier.
+Instance Methods
+func evaluation(on: DataFrame) -> MLClassifierMetrics
+Evaluates the classifier on the provided labeled data.
+func predictions(from: DataFrame) throws -> AnyColumn
+Predicts a column of labels for the given testing data.
+Type Methods
+static func makeTrainingSession(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLBoostedTreeClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLBoostedTreeClassifier>
+Creates or restores a training session.
+static func makeTrainingSession(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLBoostedTreeClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLBoostedTreeClassifier>
+Creates or restores a training session.
+static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) throws -> MLTrainingSession<MLBoostedTreeClassifier>
+Restores an existing training session.
+static func resume(MLTrainingSession<MLBoostedTreeClassifier>) throws -> MLJob<MLBoostedTreeClassifier>
+Resumes a training session from the last checkpoint if available.
+static func train(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLBoostedTreeClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLBoostedTreeClassifier>
+Trains a boosted tree classifier.
+static func train(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLBoostedTreeClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) throws -> MLJob<MLBoostedTreeClassifier>
+Trains a boosted tree classifier.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Supporting Classifier Types
+struct MLDecisionTreeClassifier
+A classifier that predicts the target by creating rules to split the data.
+struct MLRandomForestClassifier
+A classifier based on a collection of decision trees trained on subsets of the data.
+struct MLLogisticRegressionClassifier
+A classifier that predicts a discrete target value as a function of data features.
+struct MLSupportVectorClassifier
+A classifier that predicts a binary target value by maximizing the separation between categories.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLBoostedTreeClassifier
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

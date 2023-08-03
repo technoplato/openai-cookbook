@@ -1,0 +1,161 @@
+https://developer.apple.com/documentation/coreml/mlsequence
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Model Deployments
+Encrypting a Model in Your App
+Generating a Model Encryption Key
+Model Encryption
+Model Integration Samples
+Downloading and Compiling a Model on the User’s Device
+App Integration
+C
+MLMultiArray
+r
+P
+MLShapedArrayProtocol
+S
+MLShapedArray
+E
+MLFeatureType
+Supporting Types
+M
+func isEqual(to: MLFeatureValue) -> Bool
+Comparing Feature Values
+P
+var dictionaryValue: [AnyHashable : NSNumber]
+Documentation
+Open Menu
+Class
+MLSequence
+A machine learning collection type that stores a series of strings or integers.
+iOS 12.0+
+iPadOS 12.0+
+macOS 10.14+
+Mac Catalyst 13.1+
+tvOS 12.0+
+watchOS 5.0+
+visionOS 1.0+ Beta
+class MLSequence : NSObject
+Overview
+A sequence stores a series of integers or strings of any length as the underlying type of an MLFeatureValue. Some classifier models — typically natural language models, such as an NLTagger — produce an MLSequence feature value from their output features.
+Topics
+Creating a Sequence
+init(strings: [String])
+Creates a sequence of strings from a string array.
+init(int64s: [NSNumber])
+Creates a sequence of integers from an array of numbers.
+init(empty: MLFeatureType)
+Creates an empty sequence of strings or integers.
+Identifying the Sequence’s Element Type
+var type: MLFeatureType
+The underlying type of the sequence’s elements.
+Retrieving the Sequence’s Values
+var stringValues: [String]
+An array of strings in the sequence.
+var int64Values: [NSNumber]
+An array of 64-bit integers in the sequence.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSSecureCoding
+See Also
+Supporting Types
+enum MLFeatureType
+The possible types for feature values, input features, and output features.
+struct MLShapedArray
+A machine learning collection type that stores scalar values in a multidimensional array.
+protocol MLShapedArrayProtocol
+An interface that defines a shaped array type.
+class MLMultiArray
+A machine learning collection type that stores numeric values in an array with multiple dimensions.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLSequence
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

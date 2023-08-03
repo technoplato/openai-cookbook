@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/createml/mlimageclassifier/featureextractortype
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+E
+MLImageClassifier.ModelParameters.ModelAlgorithmType
+E
+MLImageClassifier.ModelParameters.ClassifierType
+Enumerations
+P
+var algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType
+Instance Properties
+M
+init(validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentation: MLImageClassifier.ImageAugmentationOptions, algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType)
+Initializers
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing Parameters
+P
+var validationData: [String : [URL]]?
+P
+var augmentationOptions: MLImageClassifier.ImageAugmentationOptions
+P
+var maxIterations: Int
+Documentation
+Open Menu
+Swift
+Enumeration
+MLImageClassifier.FeatureExtractorType
+The underlying base model that extracts image features for image classifier training session.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+enum FeatureExtractorType
+Overview
+Create ML has one built-in feature extractor: scenePrint. Alternatively, you can provide your own custom feature extractor from an .mlmodel file or a specific layer within a model file.
+Topics
+Selecting a Feature Extractor Type
+case scenePrint(revision: Int?)
+A feature extractor trained on millions of images.
+case custom(MLImageClassifier.CustomFeatureExtractor)
+A feature extractor that you provide as a Core ML model file or a layer within that file.
+struct CustomFeatureExtractor
+A custom feature extractor a training session uses to train an image classifier.
+Describing a Feature Extractor Type
+var description: String
+A text representation of the feature extractor.
+var debugDescription: String
+A text representation of the feature extractor that’s suitable for output during debugging.
+var playgroundDescription: Any
+A description of the feature extractor shown in a playground.
+Default Implementations
+API Reference
+CustomDebugStringConvertible Implementations
+API Reference
+CustomPlaygroundDisplayConvertible Implementations
+API Reference
+CustomStringConvertible Implementations
+Relationships
+Conforms To
+CustomDebugStringConvertible
+CustomPlaygroundDisplayConvertible
+CustomStringConvertible
+Sendable
+See Also
+Supporting Types
+enum ValidationData
+The source of a validation dataset for an image classifier.
+struct ImageAugmentationOptions
+The variations that the training process can use to generate more training data from the training data you provide.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLImageClassifier.FeatureExtractorType
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

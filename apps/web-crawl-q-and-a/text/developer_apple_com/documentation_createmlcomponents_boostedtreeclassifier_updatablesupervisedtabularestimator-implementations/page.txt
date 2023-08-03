@@ -1,0 +1,148 @@
+https://developer.apple.com/documentation/createmlcomponents/boostedtreeclassifier/updatablesupervisedtabularestimator-implementations
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+func meanAbsoluteError<T>(some Collection, some Collection) -> T
+func maximumAbsoluteError<T>(some Collection, some Collection) -> T
+func rootMeanSquaredError<T>(some Collection, some Collection) -> T
+S
+ClassificationMetrics
+S
+ClassificationDistribution
+S
+Classification
+Metrics
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>, Self.Annotation>
+SupervisedTabularEstimator Implementations
+Default Implementations
+M
+func fitted(to: DataFrame, validateOn: DataFrame?, eventHandler: EventHandler?) async throws -> TreeClassifierModel<Label>
+M
+func encodeLabels(some Collection<Optional<Label>>) throws -> (labels: [String?], encoded: [Int])
+M
+func encode(TreeClassifierModel<Label>, to: inout EstimatorEncoder) throws
+M
+func decode(from: inout EstimatorDecoder) throws -> TreeClassifierModel<Label>
+Instance Methods
+P
+var labels: Set<Label?>
+Documentation
+Open Menu
+UpdatableSupervisedTabularEstimator Implementations
+Topics
+Instance Methods
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other>, Self.Annotation>
+Composes this supervised tabular estimator with a tabular transformer.
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this supervised tabular estimator with another supervised tabular estimator.
+func appending<Other>(Other) -> some UpdatableSupervisedTabularEstimator<ComposedTabularTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this supervised tabular estimator with an updatable tabular estimator.
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> TreeClassifierModel<Label>
+Reads the encoded transformer and optimizer with a decoder.
+Available when Label conforms to Comparable, Decodable, Encodable, and Hashable.
+Beta
+func encodeWithOptimizer(TreeClassifierModel<Label>, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+Available when Label conforms to Comparable, Decodable, Encodable, and Hashable.
+Beta
+func makeTransformer() -> TreeClassifierModel<Label>
+Creates a default-initialized transformer suitable for incremental fitting.
+Available when Label conforms to Comparable, Decodable, Encodable, and Hashable.
+Beta
+func readWithOptimizer(from: URL) throws -> Self.Transformer
+Reads the encoded transformer and optimizer from a file.
+func update(inout Self.Transformer, with: DataFrame) async throws
+func update(inout TreeClassifierModel<Label>, with: DataFrame, eventHandler: EventHandler?) async throws
+Updates a transformer with a new sequence of examples.
+Available when Label conforms to Comparable, Decodable, Encodable, and Hashable.
+Beta
+func writeWithOptimizer(Self.Transformer, to: URL, overwrite: Bool) throws
+Writes the encoded transformer and optimizer to a file.
+Current page is UpdatableSupervisedTabularEstimator Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

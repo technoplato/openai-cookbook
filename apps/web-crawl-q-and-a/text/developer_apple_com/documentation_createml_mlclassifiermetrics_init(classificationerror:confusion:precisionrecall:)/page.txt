@@ -1,0 +1,146 @@
+https://developer.apple.com/documentation/createml/mlclassifiermetrics/init(classificationerror:confusion:precisionrecall:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Understanding the Model
+P
+var classificationError: Double
+P
+var precisionRecall: MLDataTable
+P
+var confusion: MLDataTable
+Handling Errors
+P
+var isValid: Bool
+P
+var error: (Error)?
+Creating Metrics
+S
+MLObjectDetectorMetrics
+Model Training Control
+C
+MLJob
+C
+MLTrainingSession
+S
+MLTrainingSessionParameters
+S
+MLCheckpoint
+Supporting Types
+Documentation
+Open Menu
+Swift
+Initializer
+init(classificationError:confusion:precisionRecall:)
+Creates empty classifier metrics.
+iOS 15.0–17.0 Deprecated
+iPadOS 15.0–17.0 Deprecated
+macOS 10.14–14.0 Deprecated
+Mac Catalyst 15.0–17.0 Deprecated
+tvOS 16.0–17.0 Deprecated
+visionOS 1.0+ Beta
+init(
+    classificationError: Double,
+    confusion: MLDataTable,
+    precisionRecall: MLDataTable
+)
+Parameters
+classificationError
+The fraction of incorrectly labeled examples.
+confusion
+A confusion matrix describing the classifications for each category.
+precisionRecall
+A two-dimensional table describing the precision and recall for each category.
+Discussion
+You typically don’t initialize metrics directly. Instead you get metrics about your model after training. For example, when you train an MLClassifier, you can look at its trainingMetrics and validationMetrics properties. Additionally, you can check the performance on a test set with the evaluation(on:) method.
+Warning
+This initializer should not be used, it creates an empty instance.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(classificationError:confusion:precisionRecall:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/createml/mlsoundclassifier/datasource/features(table:featurecolumn:labelcolumn:parameters:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLDataTable
+Tabular Data
+S
+MLRecommender
+E
+MLRegressor
+E
+MLClassifier
+Creating a Model from Tabular Data
+Tabular Models
+case featuresDataFrame(DataFrame, featureColumn: String, labelColumn: String, parameters: MLSoundClassifier.FeatureExtractionParameters)
+case features(table: MLDataTable, featureColumn: String, labelColumn: String, parameters: MLSoundClassifier.FeatureExtractionParameters)
+E
+case filesByLabel([String : [URL]])
+E
+case labeledFiles(at: URL)
+E
+case labeledDirectories(at: URL)
+Creating a Data Source
+E
+MLSoundClassifier.DataSource
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+Documentation
+Open Menu
+Swift
+Case
+MLSoundClassifier.DataSource.features(table:featureColumn:labelColumn:parameters:)
+Creates a data source from a data table of audio features.
+iOS 15.0–17.0 Deprecated
+iPadOS 15.0–17.0 Deprecated
+macOS 11.0–14.0 Deprecated
+Mac Catalyst 15.0–17.0 Deprecated
+visionOS 1.0+ Beta
+case features(
+    table: MLDataTable,
+    featureColumn: String = __Defaults.featureColumnName,
+    labelColumn: String = __Defaults.labelColumnName,
+    parameters: MLSoundClassifier.FeatureExtractionParameters = FeatureExtractionParameters()
+)
+Parameters
+table
+An MLDataTable instance that contains labeled audio data.
+featureColumn
+The name of the column that contains the audio features.
+labelColumn
+The name of the column that contains the audio labels.
+parameters
+An MLSoundClassifier.FeatureExtractionParameters instance you use to configure the feature-extraction phase.
+Discussion
+Use extractFeatures(trainingData:parameters:sessionParameters:) to create an MLDataTable of audio features.
+See Also
+Creating a Data Source
+case labeledDirectories(at: URL)
+Creates a data source from a folder with subfolders that each contain audio files.
+case labeledFiles(at: URL)
+Creates a data source from a folder that contains audio files, each named after the sound they represent.
+case filesByLabel([String : [URL]])
+Creates a data source from a dictionary.
+case featuresDataFrame(DataFrame, featureColumn: String, labelColumn: String, parameters: MLSoundClassifier.FeatureExtractionParameters)
+Creates a data source from a data frame of audio features.
+struct FeatureExtractionParameters
+Parameters that affect the process of extracting sound features from audio files.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLSoundClassifier.DataSource.features(table:featureColumn:labelColumn:parameters:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

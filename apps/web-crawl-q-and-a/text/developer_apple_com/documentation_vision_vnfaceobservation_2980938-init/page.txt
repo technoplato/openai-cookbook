@@ -1,0 +1,153 @@
+https://developer.apple.com/documentation/vision/vnfaceobservation/2980938-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+VNDetectFaceRectanglesRequest
+V
+let VNDetectFaceLandmarksRequestRevision1: Int
+Deprecated
+V
+let VNDetectFaceLandmarksRequestRevision2: Int
+V
+let VNDetectFaceLandmarksRequestRevision3: Int
+M
+class func revision(Int, supportsConstellation: VNRequestFaceLandmarksConstellation) -> Bool
+Identifying Request Revisions
+E
+VNRequestFaceLandmarksConstellation
+M
+init(requestRevision: Int, boundingBox: CGRect, roll: NSNumber?, yaw: NSNumber?, pitch: NSNumber?)
+Creating an Observation
+C
+VNFaceObservation
+P
+var results: [VNFaceObservation]?
+Accessing the Results
+r
+P
+VNFaceObservationAccepting
+Configuring a Face Landmarks Request
+C
+VNDetectFaceLandmarksRequest
+Documentation
+Open Menu
+Initializer
+init(requestRevision:boundingBox:roll:yaw:)
+Creates an observation that contains the roll and yaw of the face.
+iOS 12.0–15.0 Deprecated
+iPadOS 12.0–15.0 Deprecated
+macOS 10.14–12.0 Deprecated
+Mac Catalyst 13.1–15.0 Deprecated
+tvOS 12.0–15.0 Deprecated
+visionOS 1.0–1.0 Deprecated
+convenience init(
+    requestRevision: Int,
+    boundingBox: CGRect,
+    roll: NSNumber?,
+    yaw: NSNumber?
+)
+Deprecated
+Use init(requestRevision:boundingBox:roll:yaw:pitch:)instead.
+Parameters
+requestRevision
+The revision of the request.
+boundingBox
+The bounding rectangle of the detected face landmark.
+roll
+The rotational angle of the face landmark around the z-axis.
+yaw
+The rotational angle of the face landmark around the y-axis.
+See Also
+Creating an Observation
+init(requestRevision: Int, boundingBox: CGRect, roll: NSNumber?, yaw: NSNumber?, pitch: NSNumber?)
+Creates an observation that contains the roll, yaw, and pitch of the face.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(requestRevision:boundingBox:roll:yaw:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

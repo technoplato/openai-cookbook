@@ -1,0 +1,169 @@
+https://developer.apple.com/documentation/createmlcomponents/logisticregressionclassifier/updatablesupervisedestimator-implementations
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+TreeClassifierModel
+S
+FullyConnectedNetworkClassifierModel
+S
+FullyConnectedNetworkClassifier
+S
+BoostedTreeClassifier
+S
+LogisticRegressionClassifierModel
+M
+func writeWithOptimizer(Self.Transformer, to: URL, overwrite: Bool) throws
+M
+func update<Input>(inout Self.Transformer, with: Input, eventHandler: EventHandler?) async throws
+func update<InputSequence>(inout LogisticRegressionClassifier<Scalar, Label>.Transformer, with: InputSequence, eventHandler: EventHandler?) async throws
+func encodeWithOptimizer(LogisticRegressionClassifier<Scalar, Label>.Transformer, to: inout EstimatorEncoder) throws
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> LogisticRegressionClassifier<Scalar, Label>.Transformer
+func appending<Other>(Other) -> some UpdatableSupervisedTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedEstimator<ComposedTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedEstimator<ComposedTransformer<Self.Transformer, Other>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedEstimator<ComposedTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+func appending<Other>(Other) -> some UpdatableSupervisedTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other.Transformer>, Self.Annotation>
+SupervisedEstimator Implementations
+Default Implementations
+M
+func fitted<Input, Validation>(to: Input, validateOn: Validation, eventHandler: EventHandler?) async throws -> LogisticRegressionClassifierModel<Scalar, Label>
+M
+func fitted<Input>(to: Input, eventHandler: EventHandler?) async throws -> LogisticRegressionClassifier<Scalar, Label>.Transformer
+Instance Methods
+P
+var configuration: LogisticRegressionClassifier<Scalar, Label>.Configuration
+Instance Properties
+M
+init(labels: Set<Label>, configuration: LogisticRegressionClassifier<Scalar, Label>.Configuration)
+Documentation
+Open Menu
+UpdatableSupervisedEstimator Implementations
+Topics
+Instance Methods
+func adaptedAsTemporal() -> UpdatableSupervisedEstimatorToTemporalAdaptor<Self>
+Exposes this supervised estimator as a temporal supervised estimator.
+Available when Annotation conforms to Sendable.
+func appending<Other>(Other) -> some UpdatableSupervisedTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other.Transformer>, Self.Annotation>
+Composes this updatable supervised estimator with an updatable supervised temporal estimator.
+func appending<Other>(Other) -> some UpdatableSupervisedEstimator<ComposedTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this updatable estimator with an updatable supervised estimator.
+func appending<Other>(Other) -> some UpdatableSupervisedEstimator<ComposedTransformer<Self.Transformer, Other>, Self.Annotation>
+Composes this updatable estimator with a transformer.
+func appending<Other>(Other) -> some UpdatableSupervisedEstimator<ComposedTransformer<Self.Transformer, Other.Transformer>, Self.Annotation>
+Composes this updatable estimator with an updatable estimator.
+func appending<Other>(Other) -> some UpdatableSupervisedTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other>, Self.Annotation>
+Composes this updatable supervised estimator with a temporal transformer.
+func appending<Other>(Other) -> some UpdatableSupervisedTemporalEstimator<ComposedTemporalTransformer<TransformerToTemporalAdaptor<Self.Transformer>, Other.Transformer>, Self.Annotation>
+Composes this updatable supervised estimator with an updatable temporal estimator.
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> LogisticRegressionClassifier<Scalar, Label>.Transformer
+Reads the encoded transformer and optimizer with a decoder.
+Available when Scalar conforms to MLShapedArrayScalar, Scalar conforms to BinaryFloatingPoint, Label conforms to Comparable, Label conforms to Decodable, Label conforms to Encodable, and Label conforms to Hashable.
+Beta
+func encodeWithOptimizer(LogisticRegressionClassifier<Scalar, Label>.Transformer, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+Available when Scalar conforms to MLShapedArrayScalar, Scalar conforms to BinaryFloatingPoint, Label conforms to Comparable, Label conforms to Decodable, Label conforms to Encodable, and Label conforms to Hashable.
+Beta
+func makeTransformer() -> LogisticRegressionClassifier<Scalar, Label>.Transformer
+Creates a default-initialized transformer suitable for incremental fitting.
+Available when Scalar conforms to MLShapedArrayScalar, Scalar conforms to BinaryFloatingPoint, Label conforms to Comparable, Label conforms to Decodable, Label conforms to Encodable, and Label conforms to Hashable.
+Beta
+func readWithOptimizer(from: URL) throws -> Self.Transformer
+Reads the encoded transformer and optimizer from a file.
+func update<InputSequence>(inout Self.Transformer, with: InputSequence) async throws
+func update<InputSequence>(inout LogisticRegressionClassifier<Scalar, Label>.Transformer, with: InputSequence, eventHandler: EventHandler?) async throws
+Updates a transformer with a new sequence of examples.
+Available when Scalar conforms to MLShapedArrayScalar, Scalar conforms to BinaryFloatingPoint, Label conforms to Comparable, Label conforms to Decodable, Label conforms to Encodable, and Label conforms to Hashable.
+Beta
+func update<Input>(inout Self.Transformer, with: Input, eventHandler: EventHandler?) async throws
+Updates a transformer on an async sequence of examples.
+Beta
+func writeWithOptimizer(Self.Transformer, to: URL, overwrite: Bool) throws
+Writes the encoded transformer and optimizer to a file.
+Current page is UpdatableSupervisedEstimator Implementations
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

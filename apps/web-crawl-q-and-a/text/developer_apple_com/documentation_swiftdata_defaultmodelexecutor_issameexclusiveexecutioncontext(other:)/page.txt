@@ -1,0 +1,131 @@
+https://developer.apple.com/documentation/swiftdata/defaultmodelexecutor/issameexclusiveexecutioncontext(other:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Default Implementations
+P
+let context: ModelContext
+Accessing the context
+M
+init(context: ModelContext)
+Creating a model executor
+C
+DefaultModelExecutor
+r
+P
+ModelActor
+Concurrency support
+Documentation
+Open Menu
+Swift
+Instance Method
+isSameExclusiveExecutionContext(other:)
+If this executor has complex equality semantics, and the runtime needs to compare two executors, it will first attempt the usual pointer-based equality check, and if it fails it will compare the types of both executors, if they are the same, it will finally invoke this method, in an attempt to let the executor itself decide if this and the other executor represent the same serial, exclusive, isolation context.
+SwiftData
+Swift
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+func isSameExclusiveExecutionContext(other: Self) -> Bool
+Parameters
+other
+the executor to compare with.
+Return Value
+true, if self and the other executor actually are mutually exclusive and it is safe–from a concurrency perspective–to execute code assuming one on the other.
+Discussion
+This method must be implemented with great care, as wrongly returning true would allow code from a different execution context (e.g. thread) to execute code which was intended to be isolated by another actor.
+This check is not used when performing executor switching.
+This check is used when performing preconditionTaskOnActorExecutor, preconditionTaskOnActorExecutor, assumeOnActorExecutor and similar APIs which assert about the same “exclusive serial execution context”.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is isSameExclusiveExecutionContext(other:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

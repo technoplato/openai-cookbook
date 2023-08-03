@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/createml/mldatavalue/dictionarytype/lexicographicallyprecedes(_:by:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Type Aliases
+M
+func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) throws -> R) rethrows -> R?
+M
+func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) throws -> Bool) rethrows -> Bool
+M
+func sorted<S, Comparator>(using: S) -> [Self.Element]
+M
+func sorted<Comparator>(using: Comparator) -> [Self.Element]
+M
+func sorted(by: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func shuffled<T>(using: inout T) -> [Self.Element]
+func randomSplit<Feature, Annotation, Generator>(by: Double, using: inout Generator) -> ([AnnotatedFeature<Feature, Annotation>], [AnnotatedFeature<Feature, Annotation>])
+func mapFeatures<Input, Output, Annotation>((Input) throws -> Output) rethrows -> [AnnotatedFeature<Output, Annotation>]
+func mapFeatures<Input, Output, Annotation>((Input) async throws -> Output) async rethrows -> [AnnotatedFeature<Output, Annotation>]
+func mapAnnotations<Feature, Input, Output>((Input) async throws -> Output) async rethrows -> [AnnotatedFeature<Feature, Output>]
+func mapAnnotations<Feature, Input, Output>((Input) throws -> Output) rethrows -> [AnnotatedFeature<Feature, Output>]
+func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool
+M
+func formatted<S>(S) -> S.FormatOutput
+M
+func forEach((Self.Element) throws -> Void) rethrows
+M
+func flatMap<SegmentOfResult>((Self.Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Element]
+M
+func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
+M
+func first(where: (Self.Element) throws -> Bool) rethrows -> Self.Element?
+M
+func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]
+M
+func filter(Predicate<Self.Element>) throws -> [Self.Element]
+Beta
+M
+func enumerated() -> EnumeratedSequence<Self>
+Documentation
+Open Menu
+Swift
+Instance Method
+lexicographicallyPrecedes(_:by:)
+Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements.
+Create ML
+Swift
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func lexicographicallyPrecedes<OtherSequence>(
+    _ other: OtherSequence,
+    by areInIncreasingOrder: (Self.Element, Self.Element) throws -> Bool
+) rethrows -> Bool where OtherSequence : Sequence, Self.Element == OtherSequence.Element
+Parameters
+other
+A sequence to compare to this sequence.
+areInIncreasingOrder
+A predicate that returns true if its first argument should be ordered before its second argument; otherwise, false.
+Return Value
+true if this sequence precedes other in a dictionary ordering as ordered by areInIncreasingOrder; otherwise, false.
+Discussion
+The predicate must be a strict weak ordering over the elements. That is, for any elements a, b, and c, the following conditions must hold:
+areInIncreasingOrder(a, a) is always false. (Irreflexivity)
+If areInIncreasingOrder(a, b) and areInIncreasingOrder(b, c) are both true, then areInIncreasingOrder(a, c) is also true. (Transitive comparability)
+Two elements are incomparable if neither is ordered before the other according to the predicate. If a and b are incomparable, and b and c are incomparable, then a and c are also incomparable. (Transitive incomparability)
+Note
+This method implements the mathematical notion of lexicographical ordering, which has no connection to Unicode. If you are sorting strings to present to the end user, use String APIs that perform localized comparison instead.
+Complexity
+O(m), where m is the lesser of the length of the sequence and the length of other.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is lexicographicallyPrecedes(_:by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

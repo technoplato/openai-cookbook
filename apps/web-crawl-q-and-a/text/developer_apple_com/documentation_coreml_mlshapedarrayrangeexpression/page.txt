@@ -1,0 +1,163 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayrangeexpression
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+C
+MLGPUComputeDevice
+Beta
+C
+MLCPUComputeDevice
+Beta
+E
+MLComputeDevice
+Beta
+Compute Devices
+C
+MLModelCollection
+Deprecated
+Model Deployments
+Encrypting a Model in Your App
+r
+P
+MLShapedArrayScalar
+S
+MLShapedArraySlice
+Scalar
+Supporting Types
+M
+func withUnsafeMutableShapedBufferPointer<R>((inout UnsafeMutableBufferPointer<Self.Scalar>, [Int], [Int]) -> R) -> R
+M
+func fill<C>(with: C)
+M
+func fill(with: Self.Scalar)
+Modifying a Shaped Array Type
+Documentation
+Open Menu
+Swift
+Protocol
+MLShapedArrayRangeExpression
+An interface for a range expression, which you typically use with subscripts of shaped array types.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+protocol MLShapedArrayRangeExpression
+Topics
+Generating Relative Ranges
+func relative(toShapedArrayAxis: Range<Int>) -> Range<Int>
+Returns the range of indices the range expression describes within a collection.
+Required
+Relationships
+Conforming Types
+ClosedRange
+Conforms when Bound is Int.
+PartialRangeFrom
+Conforms when Bound is Int.
+PartialRangeThrough
+Conforms when Bound is Int.
+PartialRangeUpTo
+Conforms when Bound is Int.
+Range
+Conforms when Bound is Int.
+See Also
+Supporting Types
+associatedtype Scalar
+Represents the underlying scalar type of the shaped array type.
+Required
+struct MLShapedArraySlice
+A multidimensional subset of elements from a shaped array type.
+protocol MLShapedArrayScalar
+A type that associates a scalar with a shaped array.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLShapedArrayRangeExpression
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

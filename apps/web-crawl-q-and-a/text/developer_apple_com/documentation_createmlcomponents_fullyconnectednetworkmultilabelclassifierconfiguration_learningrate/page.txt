@@ -1,0 +1,136 @@
+https://developer.apple.com/documentation/createmlcomponents/fullyconnectednetworkmultilabelclassifierconfiguration/learningrate
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Initializers
+M
+init()
+Instance Properties
+P
+var batchSize: Int
+P
+var dropoutProbability: Float
+P
+var earlyStopIterationCount: Int
+P
+var earlyStoppingTolerance: Double
+P
+var hiddenUnitCounts: [Int]
+Functions
+func maximumAbsoluteError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+func meanAbsoluteError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+func meanAbsolutePercentageError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+func rootMeanSquaredError<T>([AnnotatedPrediction<T, T>]) -> T
+Beta
+Enumerations
+E
+CompatibilityError
+Beta
+Documentation
+Open Menu
+Swift
+Instance Property
+learningRate
+The learning rate.
+iOS 17.0–17.0 Deprecated
+iPadOS 17.0–17.0 Deprecated
+macOS 14.0–14.0 Deprecated
+Mac Catalyst 17.0–17.0 Deprecated
+tvOS 17.0–17.0 Deprecated
+visionOS 1.0+ Beta
+var learningRate: Float
+Discussion
+The learning rate controls how much the model changes when presented with new data. A high learning rate may overshoot when close to a solution, while a low learning rate my take too long to train a good model.
+Defaults to 0.001.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is learningRate
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

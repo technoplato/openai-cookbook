@@ -1,0 +1,211 @@
+https://developer.apple.com/documentation/coreml/mlshapedarrayslice/3763522-sort
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func prefix(Int) -> MLShapedArraySlice<Scalar>
+M
+func max(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+M
+func min(by: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>?
+M
+func joined<Separator>(separator: Separator) -> JoinedSequence<MLShapedArraySlice<Scalar>>
+M
+func joined() -> FlattenSequence<MLShapedArraySlice<Scalar>>
+M
+func drop(while: (MLShapedArraySlice<Scalar>) -> Bool) -> MLShapedArraySlice<Scalar>
+M
+func dropLast(Int) -> MLShapedArraySlice<Scalar>
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+M
+func sort<S, Comparator>(using: S)
+M
+func sort<Comparator>(using: Comparator)
+M
+func partition(by: (MLShapedArraySlice<Scalar>) -> Bool) -> Int
+M
+func swapAt(Int, Int)
+subscript(Range<Int>) -> MLShapedArraySlice<Scalar>
+Modifying a Shaped Array Slice
+M
+func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool
+M
+func ranges<C>(of: C) -> [Range<Int>]
+Documentation
+Open Menu
+Swift
+Instance Method
+sort(by:)
+Sorts the collection in place, using the given predicate as the comparison between elements.
+iOS 15.0+
+iPadOS 15.0+
+macOS 12.0+
+Mac Catalyst 15.0+
+tvOS 15.0+
+watchOS 8.0+
+visionOS 1.0+ Beta
+Xcode 13.0+
+mutating func sort(by areInIncreasingOrder: (MLShapedArraySlice<Scalar>, MLShapedArraySlice<Scalar>) throws -> Bool) rethrows
+Parameters
+areInIncreasingOrder
+A predicate that returns true if its first argument should be ordered before its second argument; otherwise, false. If areInIncreasingOrder throws an error during the sort, the elements may be in a different order, but none will be lost.
+Discussion
+When you want to sort a collection of elements that don’t conform to the Comparable protocol, pass a closure to this method that returns true when the first element should be ordered before the second.
+In the following example, the closure provides an ordering for an array of a custom enumeration that describes an HTTP response. The predicate orders errors before successes and sorts the error responses by their error code.
+enum HTTPResponse {
+    case ok
+    case error(Int)
+}
+
+
+var responses: [HTTPResponse] = [.error(500), .ok, .ok, .error(404), .error(403)]
+responses.sort {
+    switch ($0, $1) {
+    // Order errors by code
+    case let (.error(aCode), .error(bCode)):
+        return aCode < bCode
+
+
+    // All successes are equivalent, so none is before any other
+    case (.ok, .ok): return false
+
+
+    // Order errors before successes
+    case (.error, .ok): return true
+    case (.ok, .error): return false
+    }
+}
+print(responses)
+// Prints "[.error(403), .error(404), .error(500), .ok, .ok]"
+Alternatively, use this method to sort a collection of elements that do conform to Comparable when you want the sort to be descending instead of ascending. Pass the greater-than operator (>) operator as the predicate.
+var students = ["Kofi", "Abena", "Peter", "Kweku", "Akosua"]
+students.sort(by: >)
+print(students)
+// Prints "["Peter", "Kweku", "Kofi", "Akosua", "Abena"]"
+areInIncreasingOrder must be a strict weak ordering over the elements. That is, for any elements a, b, and c, the following conditions must hold:
+areInIncreasingOrder(a, a) is always false. (Irreflexivity)
+If areInIncreasingOrder(a, b) and areInIncreasingOrder(b, c) are both true, then areInIncreasingOrder(a, c) is also true. (Transitive comparability)
+Two elements are incomparable if neither is ordered before the other according to the predicate. If a and b are incomparable, and b and c are incomparable, then a and c are also incomparable. (Transitive incomparability)
+The sorting algorithm is guaranteed to be stable. A stable sort preserves the relative order of elements for which areInIncreasingOrder does not establish an order.
+Complexity: O(n log n), where n is the length of the collection.
+See Also
+Modifying a Shaped Array Slice
+subscript(Range<Int>) -> MLShapedArraySlice<Scalar>
+Accesses a slice with a range in the shaped array’s first dimension.
+func swapAt(Int, Int)
+Exchanges the values at the specified indices of the collection.
+func partition(by: (MLShapedArraySlice<Scalar>) -> Bool) -> Int
+Reorders the elements of the collection such that all the elements that match the given predicate are after all the elements that don’t match.
+func sort<Comparator>(using: Comparator)
+Reorders a shaped array slice by sorting its slices with a comparator.
+func sort<S, Comparator>(using: S)
+Reorders a shaped array slice by sorting its slices with a sequence of comparators.
+func popFirst() -> MLShapedArraySlice<Scalar>?
+Removes and returns the first element of the collection.
+func popLast() -> MLShapedArraySlice<Scalar>?
+Removes and returns the last element of the collection.
+func removeFirst() -> MLShapedArraySlice<Scalar>
+Removes and returns the first element of the collection.
+func removeLast() -> MLShapedArraySlice<Scalar>
+Removes and returns the last element of the collection.
+func removeFirst(Int)
+Removes the specified number of elements from the beginning of the collection.
+func removeLast(Int)
+Removes the given number of elements from the end of the collection.
+func reverse()
+Reverses the elements of the collection in place.
+func shuffle()
+Shuffles the collection in place.
+func shuffle<T>(using: inout T)
+Shuffles the collection in place, using the given generator as a source for randomness.
+func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<MLShapedArraySlice<Scalar>>) -> R) -> R?
+Executes a closure on the collection’s contiguous storage.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is sort(by:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

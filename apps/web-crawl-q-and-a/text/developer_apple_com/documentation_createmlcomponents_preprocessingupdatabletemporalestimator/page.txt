@@ -1,0 +1,205 @@
+https://developer.apple.com/documentation/createmlcomponents/preprocessingupdatabletemporalestimator
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+func preprocessed<InputSequence>(from: InputSequence, eventHandler: EventHandler?) async throws -> [PreprocessedFeatureSequence<Preprocessor.Output>]
+M
+func encodeWithOptimizer(PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer, to: inout EstimatorEncoder) throws
+M
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+Instance Methods
+T
+PreprocessingUpdatableTemporalEstimator.Transformer
+T
+PreprocessingUpdatableTemporalEstimator.Output
+T
+PreprocessingUpdatableTemporalEstimator.Intermediate
+func update<InputSequence>(inout PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer, with: InputSequence, eventHandler: EventHandler?) async throws
+func fitted(toPreprocessed: [PreprocessedFeatureSequence<Preprocessor.Output>], eventHandler: EventHandler?) async throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+func fitted<InputSequence>(to: InputSequence, eventHandler: EventHandler?) async throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+func decode(from: inout EstimatorDecoder) throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+func encode(PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer, to: inout EstimatorEncoder) throws
+S
+PreprocessingUpdatableEstimator
+S
+PreprocessingSupervisedTemporalEstimator
+S
+PreprocessingSupervisedEstimator
+S
+PreprocessingTemporalEstimator
+S
+PreprocessingEstimator
+Composition with Preprocessing
+S
+TemporalTransformerToUpdatableEstimatorAdaptor
+S
+TemporalEstimatorToSupervisedAdaptor
+Documentation
+Open Menu
+Swift
+Structure
+PreprocessingUpdatableTemporalEstimator
+An updatable temporal estimator that composes a preprocessing transformer and an updatable temporal estimator.
+iOS 16.0+
+iPadOS 16.0+
+macOS 13.0+
+Mac Catalyst 16.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+struct PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator> where Preprocessor : TemporalTransformer, Estimator : UpdatableTemporalEstimator, Preprocessor.Output == Estimator.Transformer.Input
+Topics
+Creating the Estimator
+init(Preprocessor, Estimator)
+Creates a composed temporal estimator from a preprocessing transformer and a temporal estimator.
+Getting the Properties
+var estimator: Estimator
+The estimator.
+var preprocessor: Preprocessor
+The preprocessing transformer.
+Encoding and Decoding
+func encode(PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer, to: inout EstimatorEncoder) throws
+Encodes a fitted transformer.
+func decode(from: inout EstimatorDecoder) throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+Decodes a previously fitted transformer.
+Preprocesing and Fitting
+func fitted<InputSequence>(to: InputSequence, eventHandler: EventHandler?) async throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+Fits a transformer to a sequence of examples.
+func fitted(toPreprocessed: [PreprocessedFeatureSequence<Preprocessor.Output>], eventHandler: EventHandler?) async throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+Fits a transformer to a sequence of preprocessed features.
+func makeTransformer() -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+Creates a default-initialized transformer suitable for incremental fitting.
+func update<InputSequence>(inout PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer, with: InputSequence, eventHandler: EventHandler?) async throws
+Updates a transformer with a new sequence of examples.
+typealias Input
+The input type.
+typealias Intermediate
+The intermediate type.
+typealias Output
+The output type.
+typealias Transformer
+The transformer type created by this estimator.
+Instance Methods
+func decodeWithOptimizer(from: inout EstimatorDecoder) throws -> PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer
+Reads the encoded transformer and optimizer with a decoder.
+func encodeWithOptimizer(PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer, to: inout EstimatorEncoder) throws
+Encodes the transformer and optimizer to an encoder.
+func preprocessed<InputSequence>(from: InputSequence, eventHandler: EventHandler?) async throws -> [PreprocessedFeatureSequence<Preprocessor.Output>]
+Preprocesses a sequence of examples.
+func update<InputSequence>(inout PreprocessingUpdatableTemporalEstimator<Preprocessor, Estimator>.Transformer, withPreprocessed: InputSequence, eventHandler: EventHandler?) async throws
+Updates a transformer with a new sequence of preprocessed features.
+Default Implementations
+API Reference
+TemporalEstimator Implementations
+API Reference
+UpdatableTemporalEstimator Implementations
+Relationships
+Conforms To
+Sendable
+TemporalEstimator
+UpdatableTemporalEstimator
+See Also
+Composition with Preprocessing
+struct PreprocessingEstimator
+An estimator that composes a preprocessing transformer and an estimator.
+struct PreprocessingTemporalEstimator
+A temporal estimator that composes a preprocessing transformer and a temporal estimator.
+struct PreprocessingSupervisedEstimator
+A supervised estimator that composes a preprocessing transformer and a supervised estimator.
+struct PreprocessingSupervisedTemporalEstimator
+A supervised temporal estimator that composes a preprocessing transformer and a supervised temporal estimator.
+struct PreprocessingUpdatableEstimator
+An updatable estimator that composes a preprocessing transformer and an updatable estimator.
+struct PreprocessingUpdatableSupervisedEstimator
+An updatable supervised estimator that composes a preprocessing transformer and an updatable supervised estimator.
+struct PreprocessingUpdatableSupervisedTemporalEstimator
+An updatable supervised temporal estimator that composes a preprocessing transformer and an updatable supervised temporal estimator.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is PreprocessingUpdatableTemporalEstimator
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,168 @@
+https://developer.apple.com/documentation/vision/2908992-vnnormalizedrectforimagerect
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+V
+let VNTrackHomographicImageRegistrationRequestRevision1: Int
+Beta
+V
+let VNDetectHumanBodyPose3DRequestRevision1: Int
+Beta
+V
+let VNDetectAnimalBodyPoseRequestRevision1: Int
+Beta
+V
+var VNVisionVersionNumber: Double
+Vision Framework Version and Revision Numbers
+E
+VNErrorCode
+V
+let VNErrorDomain: String
+func VNImageRectForNormalizedRect(CGRect, Int, Int) -> CGRect
+func VNNormalizedPointForImagePointUsingRegionOfInterest(CGPoint, Int, Int, CGRect) -> CGPoint
+func VNImagePointForNormalizedPointUsingRegionOfInterest(CGPoint, Int, Int, CGRect) -> CGPoint
+func VNNormalizedPointForImagePoint(CGPoint, Int, Int) -> CGPoint
+func VNImagePointForNormalizedPoint(CGPoint, Int, Int) -> CGPoint
+Coordinate Conversion
+C
+VNCoreMLFeatureValueObservation
+C
+VNPixelBufferObservation
+Documentation
+Open Menu
+Function
+VNNormalizedRectForImageRect(_:_:_:)
+Projects a rectangle from image coordinates into normalized coordinates.
+iOS 11.0+
+iPadOS 11.0+
+macOS 10.13+
+Mac Catalyst 13.1+
+tvOS 11.0+
+visionOS 1.0+ Beta
+func VNNormalizedRectForImageRect(
+    _ imageRect: CGRect,
+    _ imageWidth: Int,
+    _ imageHeight: Int
+) -> CGRect
+Parameters
+imageRect
+The input rectangle in image coordinate space.
+imageWidth
+The width of the image in whose coordinates the input rect resides.
+imageHeight
+The height of the image in whose coordinates the input rect resides.
+Return Value
+The input rectangle projected into normalized coordinates.
+See Also
+Coordinate Conversion
+func VNImagePointForNormalizedPoint(CGPoint, Int, Int) -> CGPoint
+Projects a point in normalized coordinates into image coordinates.
+func VNNormalizedPointForImagePoint(CGPoint, Int, Int) -> CGPoint
+Projects a point from image coordinates into normalized coordinates.
+func VNImagePointForNormalizedPointUsingRegionOfInterest(CGPoint, Int, Int, CGRect) -> CGPoint
+Projects a point from a region of interest within the normalized coordinates into image coordinates.
+func VNNormalizedPointForImagePointUsingRegionOfInterest(CGPoint, Int, Int, CGRect) -> CGPoint
+Projects a point from a region of interest within the image coordinates into normalized coordinates.
+func VNImageRectForNormalizedRect(CGRect, Int, Int) -> CGRect
+Projects a rectangle from normalized coordinates into image coordinates.
+func VNImageRectForNormalizedRectUsingRegionOfInterest(CGRect, Int, Int, CGRect) -> CGRect
+Projects a rectangle from a region of interest within the normalized coordinates into image coordinates.
+func VNNormalizedRectForImageRectUsingRegionOfInterest(CGRect, Int, Int, CGRect) -> CGRect
+Projects a rectangle from a region of interest within the image coordinates space into normalized coordinates.
+let VNNormalizedIdentityRect: CGRect
+A normalized identity rectangle with an origin of zero and unit length and width.
+func VNNormalizedRectIsIdentityRect(CGRect) -> Bool
+Returns a Boolean value that indicates whether the rectangle has an origin of zero and unit length and width.
+func VNImagePointForFaceLandmarkPoint(vector_float2, CGRect, Int, Int) -> CGPoint
+Returns the image coordinates of a specified face landmark point.
+func VNNormalizedFaceBoundingBoxPointForLandmarkPoint(vector_float2, CGRect, Int, Int) -> CGPoint
+Returns the coordinates of a specified face landmark point, in bounding box coordinates.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is VNNormalizedRectForImageRect(_:_:_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,141 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/mapmissing(_:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func * (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+static func + (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Combining a Column with a Value to Generate an Untyped Column
+static func * (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+static func + (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Combining Columns to Generate an Untyped Column
+M
+func materialize() throws -> MLUntypedColumn
+M
+func map<T>((MLDataValue) -> T?) -> MLDataColumn<T>
+M
+func map<T>((MLDataValue) -> T) -> MLDataColumn<T>
+Transforming Elements to Generate a Data Column
+M
+func column<T>(type: T.Type) -> MLDataColumn<T>?
+P
+var multiArrays: MLDataColumn<MLDataValue.MultiArrayType>?
+P
+var dictionaries: MLDataColumn<MLDataValue.DictionaryType>?
+P
+var sequences: MLDataColumn<MLDataValue.SequenceType>?
+P
+var strings: MLDataColumn<String>?
+Documentation
+Open Menu
+Swift
+Instance Method
+mapMissing(_:)
+Creates a new column of typed values by applying the given thread-safe transform to every element of this untyped column, including missing elements.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+func mapMissing<T>(_ lazyTransform: @escaping (MLDataValue) -> T?) -> MLDataColumn<T> where T : MLDataValueConvertible
+Return Value
+A new MLDataColumn column.
+Discussion
+lazyTransform: A thread-safe element transformation function. The implementation of the transform you provide should accept an element of the column and return a transformed value of a type that conforms to MLDataValueConvertible. If the transform returns nil for a given element, the corresponding element in the new column will have a missing value.
+See Also
+Transforming Elements to Generate a Data Column
+func map<T>((MLDataValue) -> T) -> MLDataColumn<T>
+Creates a new column of typed values by applying the given thread-safe transform to every non-missing element of this untyped column.
+func map<T>((MLDataValue) -> T?) -> MLDataColumn<T>
+Creates a new column of typed values, potentially with missing values, by applying the given thread-safe transform to every non-missing element of this untyped column.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is mapMissing(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

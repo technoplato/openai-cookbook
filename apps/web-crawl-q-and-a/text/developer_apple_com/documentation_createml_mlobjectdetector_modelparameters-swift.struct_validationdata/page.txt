@@ -1,0 +1,145 @@
+https://developer.apple.com/documentation/createml/mlobjectdetector/modelparameters-swift.struct/validationdata
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+S
+MLActionClassifier
+Detecting Human Actions in a Live Video Feed
+Creating an Action Classifier Model
+Video Models
+S
+MLHandPoseClassifier
+CustomStringConvertible Implementations
+CustomPlaygroundDisplayConvertible Implementations
+Supporting Types
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing the Model Parameters
+P
+var gridSize: CGSize
+P
+var algorithm: MLObjectDetector.ModelParameters.ModelAlgorithmType
+P
+var maxIterations: Int?
+Documentation
+Open Menu
+Swift
+Enumeration
+MLObjectDetector.ModelParameters.ValidationData
+A validation dataset for an object detector.
+macOS 10.15+
+visionOS 1.0+ Beta
+enum ValidationData
+Topics
+Designating Validation Data
+case split(strategy: MLSplitStrategy)
+A validation dataset Create ML derives by randomly selecting a portion of the object detector’s training dataset using the split strategy.
+case dataSource(MLObjectDetector.DataSource)
+A validation dataset you provide as a data source.
+case table(MLDataTable, imageColumn: String, annotationColumn: String)
+A validation dataset you provide as a data table.
+case none
+An empty validation dataset that skips the model validation phase after training.
+Enumeration Cases
+case dataFrame(DataFrame, imageColumn: String, annotationColumn: String)
+Set validation data from the MLDataTable provided.
+Relationships
+Conforms To
+Sendable
+See Also
+Supporting Types
+enum ModelAlgorithmType
+An object-detector training algorithm.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLObjectDetector.ModelParameters.ValidationData
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

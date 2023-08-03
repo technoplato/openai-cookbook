@@ -1,0 +1,160 @@
+https://developer.apple.com/documentation/speech/sfspeechrecognitionmetadata
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Speech Enumerations
+Reference
+r
+P
+TemplateInsertable
+Beta
+r
+P
+DataInsertable
+Beta
+Protocols
+C
+SFSpeechLanguageModel
+Beta
+C
+SFCustomLanguageModelData
+C
+SFSpeechRecognitionResult
+Transcription results
+C
+SFSpeechRecognitionTask
+In-progress requests
+C
+SFSpeechRecognitionRequest
+C
+SFSpeechAudioBufferRecognitionRequest
+C
+SFSpeechURLRecognitionRequest
+Recognizing speech in live audio
+Documentation
+Open Menu
+Class
+SFSpeechRecognitionMetadata
+The metadata of speech in the audio of a speech recognition request.
+iOS 14.5+
+iPadOS 14.5+
+macOS 11.3+
+Mac Catalyst 14.5+
+visionOS 1.0+ Beta
+class SFSpeechRecognitionMetadata : NSObject
+Topics
+Getting the Audio Timing Information
+var averagePauseDuration: TimeInterval
+The average pause duration between words, measured in seconds.
+var speakingRate: Double
+The number of words spoken per minute.
+var speechDuration: TimeInterval
+The duration in seconds of speech in the audio.
+var speechStartTimestamp: TimeInterval
+The start timestamp of speech in the audio.
+Analyzing Voice
+var voiceAnalytics: SFVoiceAnalytics?
+An analysis of the transcription segment’s vocal properties.
+Relationships
+Inherits From
+NSObject
+Conforms To
+NSCopying
+NSSecureCoding
+See Also
+Transcription results
+class SFSpeechRecognitionResult
+An object that contains the partial or final results of a speech recognition request.
+class SFTranscription
+A textual representation of the specified speech in its entirety, as recognized by the speech recognizer.
+class SFTranscriptionSegment
+A discrete part of an entire transcription, as identified by the speech recognizer.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is SFSpeechRecognitionMetadata
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

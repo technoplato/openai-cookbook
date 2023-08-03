@@ -1,0 +1,137 @@
+https://developer.apple.com/documentation/createml/mluntypedcolumn/subscript(_:)-8ot43
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+static func + (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn
+Combining a Value with a Column to Generate an Untyped Column
+static func * (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+static func + (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn
+Combining a Column with a Value to Generate an Untyped Column
+static func * (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+static func + (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn
+Masking Elements to Generate an Untyped Column
+M
+func mapMissing<T>((MLDataValue) -> T?) -> MLDataColumn<T>
+M
+func map<T>((MLDataValue) -> T?) -> MLDataColumn<T>
+M
+func map<T>((MLDataValue) -> T) -> MLDataColumn<T>
+Transforming Elements to Generate a Data Column
+M
+func column<T>(type: T.Type) -> MLDataColumn<T>?
+P
+var multiArrays: MLDataColumn<MLDataValue.MultiArrayType>?
+P
+var dictionaries: MLDataColumn<MLDataValue.DictionaryType>?
+Documentation
+Open Menu
+Swift
+Instance Subscript
+subscript(_:)
+Creates a subset of the column by masking its elements with a data column of Booleans.
+Create ML
+CreateML
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.14+
+Mac Catalyst 15.0+
+tvOS 16.0+
+visionOS 1.0+ Beta
+subscript(mask: MLDataColumn<Bool>) -> MLUntypedColumn { get }
+Return Value
+A new column.
+Overview
+mask: A Boolean column indicating whether elements should be kept (true) or removed (false) in the derived column.
+See Also
+Masking Elements to Generate an Untyped Column
+subscript(MLUntypedColumn) -> MLUntypedColumn
+Creates a subset of the column by masking its elements with another untyped column.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is subscript(_:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

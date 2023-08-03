@@ -1,0 +1,156 @@
+https://developer.apple.com/documentation/vision/vnvector/3548349-init
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+V
+let VNDetectHumanBodyPose3DRequestRevision1: Int
+Beta
+V
+let VNDetectAnimalBodyPoseRequestRevision1: Int
+Beta
+V
+var VNVisionVersionNumber: Double
+Vision Framework Version and Revision Numbers
+E
+VNErrorCode
+V
+let VNErrorDomain: String
+Errors
+M
+init(byAdding: VNVector, to: VNVector)
+Creating a Vector
+C
+VNVector
+C
+VNCircle
+Common Data Types
+C
+VNVideoProcessor
+C
+VNGeometryUtils
+S
+VNComputeStage
+Beta
+Documentation
+Open Menu
+Initializer
+init(bySubtracting:from:)
+Creates a new vector by subtracting the first vector from the second vector.
+iOS 14.0+
+iPadOS 14.0+
+macOS 11.0+
+Mac Catalyst 14.0+
+tvOS 14.0+
+visionOS 1.0+ Beta
+init(
+    bySubtracting v1: VNVector,
+    from v2: VNVector
+)
+Parameters
+v1
+The first vector.
+v2
+The second vector.
+See Also
+Creating a Vector
+init(byAdding: VNVector, to: VNVector)
+Creates a new vector by adding the specified vectors.
+init(byMultiplying: VNVector, byScalar: Double)
+Creates a new vector by multiplying the specified vector’s x-axis and y-axis projections by the scalar value.
+init(r: Double, theta: Double)
+Creates a new vector in polar coordinate space.
+init(vectorHead: VNPoint, tail: VNPoint)
+Creates a new vector in Cartesian coordinate space.
+init(xComponent: Double, yComponent: Double)
+Creates a new vector in Cartesian coordinate space, based on its x-axis and y-axis projections.
+class var zero: VNVector
+A vector object with zero length.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is init(bySubtracting:from:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,147 @@
+https://developer.apple.com/documentation/createml/mltextclassifier/modelalgorithmtype/transferlearning(_:revision:)
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+M
+init(validationData: MLDataTable?, algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?, textColumnValidationData: String?, labelColumnValidationData: String?)
+M
+init(validationData: [String : [String]], algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+Deprecated
+P
+var playgroundDescription: Any
+P
+var debugDescription: String
+P
+var description: String
+Describing Parameters
+E
+case maxEnt(revision: Int?)
+E
+case crf(revision: Int?)
+Selecting an Algorithm Type
+E
+MLTextClassifier.ModelAlgorithmType
+S
+NLLanguage
+M
+init(validation: MLTextClassifier.ModelParameters.ValidationData, algorithm: MLTextClassifier.ModelAlgorithmType, language: NLLanguage?)
+Creating Parameters
+S
+MLTextClassifier.ModelParameters
+Documentation
+Open Menu
+Swift
+Case
+MLTextClassifier.ModelAlgorithmType.transferLearning(_:revision:)
+A text classification algorithm that uses transfer learning by leveraging a feature extractor to generate embeddings.
+iOS 15.0+
+iPadOS 15.0+
+macOS 10.15+
+Mac Catalyst 15.0+
+visionOS 1.0+ Beta
+case transferLearning(
+    MLTextClassifier.FeatureExtractorType,
+    revision: Int?
+)
+Parameters
+_
+Feature extractor to be used by the transfer learning algorithm.
+revision
+The algorithm version. The only supported version is 1. If nil defaults to the latest version.
+See Also
+Selecting an Algorithm Type
+case crf(revision: Int?)
+A text classification algorithm that uses a statistical model of transition probabilities between words.
+case maxEnt(revision: Int?)
+A text classification algorithm that uses multinomial logistic regression based on the frequencies of words, independent of context.
+enum FeatureExtractorType
+The text feature extractor type.
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is MLTextClassifier.ModelAlgorithmType.transferLearning(_:revision:)
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+

@@ -1,0 +1,179 @@
+https://developer.apple.com/documentation/swiftdata/modelcontainer
+
+Skip Navigation
+Apple Developer
+News
+Discover
+Design
+Develop
+Distribute
+Support
+Account
+Comparing model containers
+M
+func destroy()
+Destroying the container
+P
+var mainContext: ModelContext
+Accessing the context
+P
+let migrationPlan: (SchemaMigrationPlan.Type)?
+P
+var configurations: Set<ModelConfiguration>
+convenience init(for: [PersistentModel.Type], migrationPlan: (SchemaMigrationPlan.Type)?, ModelConfiguration...) throws
+convenience init(for: PersistentModel.Type, migrationPlan: (SchemaMigrationPlan.Type)?, ModelConfiguration...) throws
+Model storage
+C
+PropertyOptions
+r
+P
+RelationshipCollection
+#
+macro Relationship(Relationship.DeleteRule, PropertyOptions..., originalName: String?, inverse: AnyKeyPath?, hashModifier: String?)
+#
+macro Transient()
+#
+macro Attribute(PropertyOptions..., originalName: String?, hashModifier: String?)
+r
+P
+PersistentModel
+#
+macro Model()
+Documentation
+Open Menu
+Swift
+Class
+ModelContainer
+An object that manages an app’s schema and model storage configuration.
+iOS 17.0+ Beta
+iPadOS 17.0+ Beta
+macOS 14.0+ Beta
+Mac Catalyst 17.0+ Beta
+tvOS 17.0+ Beta
+watchOS 10.0+ Beta
+visionOS 1.0+ Beta
+Swift 5.9+
+class ModelContainer
+Topics
+Creating a model container
+convenience init(for: PersistentModel.Type) throws
+convenience init(for: [PersistentModel.Type]) throws
+convenience init(for: PersistentModel.Type, ModelConfiguration...) throws
+convenience init(for: [PersistentModel.Type], ModelConfiguration...) throws
+struct ModelConfiguration
+A type that describes the configuration of an app’s schema or specific group of models.
+convenience init(for: PersistentModel.Type, migrationPlan: (SchemaMigrationPlan.Type)?, ModelConfiguration...) throws
+convenience init(for: [PersistentModel.Type], migrationPlan: (SchemaMigrationPlan.Type)?, ModelConfiguration...) throws
+convenience init(for: Schema, migrationPlan: (SchemaMigrationPlan.Type)?, ModelConfiguration...) throws
+init(for: Schema, migrationPlan: (SchemaMigrationPlan.Type)?, configurations: [ModelConfiguration]) throws
+class Schema
+An object that maps model classes to data in the model store, and helps with the migration of that data between releases.
+protocol SchemaMigrationPlan
+An interface for describing the evolution of a schema and how to migrate between specific versions.
+Managing schema and configuration details
+let schema: Schema
+var configurations: Set<ModelConfiguration>
+let migrationPlan: (SchemaMigrationPlan.Type)?
+Accessing the context
+var mainContext: ModelContext
+Destroying the container
+func destroy()
+Comparing model containers
+static func == (ModelContainer, ModelContainer) -> Bool
+Returns a Boolean value indicating whether two values are equal.
+Default Implementations
+API Reference
+Equatable Implementations
+Relationships
+Conforms To
+Equatable
+Sendable
+See Also
+Model storage
+class ModelContext
+An object that enables you to fetch, insert, and delete models, and save any changes to disk.
+struct ModelDocument
+A document type that uses SwiftData to manage its storage.
+Beta
+Beta Software
+This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+Learn more about using Apple's beta software
+Current page is ModelContainer
+Developer
+Documentation
+Platforms
+iOS
+iPadOS
+macOS
+tvOS
+watchOS
+visionOS
+Tools
+Swift
+SwiftUI
+Swift Playgrounds
+TestFlight
+Xcode
+Xcode Cloud
+SF Symbols
+Topics & Technologies
+Accessibility
+Accessories
+App Extension
+App Store
+Audio & Video
+Augmented Reality
+Business
+Design
+Distribution
+Education
+Fonts
+Games
+Health & Fitness
+In-App Purchase
+Localization
+Maps & Location
+Machine Learning
+Security
+Safari & Web
+Resources
+Documentation
+Curriculum
+Downloads
+Forums
+Videos
+Support
+Support Articles
+Contact Us
+Bug Reporting
+System Status
+Account
+Apple Developer
+App Store Connect
+Certificates, IDs, & Profiles
+Feedback Assistant
+Programs
+Apple Developer Program
+Apple Developer Enterprise Program
+App Store Small Business Program
+MFi Program
+News Partner Program
+Video Partner Program
+Security Bounty Program
+Security Research Device Program
+Events
+Events Overview
+App Accelerators
+App Store Awards
+Apple Design Awards
+Apple Developer Academies
+Entrepreneur Camp
+Ask Apple
+Tech Talks
+WWDC
+To view the latest developer news, visit News and Updates .
+Light
+Dark
+Auto
+Copyright © 2023 Apple Inc. All rights reserved. Terms of Use Privacy Policy Agreements and Guidelines
+
