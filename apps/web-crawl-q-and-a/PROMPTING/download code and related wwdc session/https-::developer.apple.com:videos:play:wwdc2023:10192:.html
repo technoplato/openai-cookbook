@@ -1,0 +1,3693 @@
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="Author" content="Apple Inc." />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="mask-icon" href="/apple-logo.svg" color="#333333" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/styles/global.dist.css?15182301193"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/styles/dark-mode.css?31162315129"
+      type="text/css"
+      media=""
+      data-color-scheme="dark"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/styles/localization.css?00232331179"
+      type="text/css"
+    />
+
+    <script src="/assets/scripts/lib/jquery/jquery-3.6.0.min.js?41172203193"></script>
+    <script src="/assets/scripts/settings.js?41172203193"></script>
+    <script src="/assets/scripts/language-locales.js?39192318087"></script>
+    <script src="/assets/scripts/DeveloperBreadcrumbs.js?32172326199"></script>
+
+    <script
+      async=""
+      src="/assets/scripts/lib/jquery/jquery.retinate.js?41172203193"
+    ></script>
+    <script async="" src="/assets/scripts/global.js?41172203193"></script>
+    <script
+      async=""
+      src="/assets/scripts/global-logout.js?41172203193"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=SF+Pro&amp;v=2"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=SF+Pro+Icons&amp;v=1"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=SF+Mono&amp;v=2"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=Apple+Icons&amp;v=1"
+      type="text/css"
+    />
+
+    <meta
+      name="omni_page"
+      content="Explore enhancements to RoomPlan - WWDC23 - Videos"
+    />
+    <title>
+      Explore enhancements to RoomPlan - WWDC23 - Videos - Apple Developer
+    </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="/videos/styles/videos.css?2" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/videos/styles/video-overlay.css?2"
+    />
+    <meta
+      name="description"
+      content="Join us for an exciting update to RoomPlan as we explore MultiRoom support and enhancements to room representations. Learn how you can..."
+    />
+
+    <meta
+      property="og:url"
+      content="https://developer.apple.com/videos/play/wwdc2023/10192/"
+    />
+    <meta
+      property="og:title"
+      content="Explore enhancements to RoomPlan - WWDC23 - Videos - Apple Developer"
+    />
+    <meta
+      property="og:description"
+      content="Join us for an exciting update to RoomPlan as we explore MultiRoom support and enhancements to room representations. Learn how you can..."
+    />
+    <meta property="og:site_name" content="Apple Developer" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:video"
+      content="https://devstreaming-cdn.apple.com/videos/wwdc/2023/10192/4/0D847FCD-B40B-4324-A284-F22B79E78F4D/cmaf.m3u8"
+    />
+    <meta
+      property="og:video_secure_url"
+      content="https://devstreaming-cdn.apple.com/videos/wwdc/2023/10192/4/0D847FCD-B40B-4324-A284-F22B79E78F4D/cmaf.m3u8"
+    />
+    <meta property="og:video:type" content="vnd.apple.mpegURL" />
+    <meta property="og:video:width" content="1280" />
+    <meta property="og:video:height" content="720" />
+    <meta
+      property="og:image"
+      content="https://devimages-cdn.apple.com/wwdc-services/images/D35E0E85-CCB6-41A1-B227-7995ECD83ED5/8253/8253_wide_250x141_2x.jpg"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta itemprop="datePublished" content="2023-06-06" />
+    <meta itemprop="uploadDate" content="2023-06-06" />
+  </head>
+  <body class="view-play theme-dark" data-color-scheme="dark">
+    <script>
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      if (window.Settings.preferredColorScheme) {
+        const colorTheme =
+          window.Settings.preferredColorScheme === "auto" && !prefersDark
+            ? "light"
+            : window.Settings.preferredColorScheme === "light"
+            ? "light"
+            : "dark";
+        document.body.setAttribute("data-color-scheme", colorTheme);
+      } else {
+        document.body.setAttribute(
+          "data-color-scheme",
+          prefersDark ? "dark" : "light"
+        );
+      }
+    </script>
+    <style>
+      /* footer */
+      html
+        body[data-color-scheme="dark"]
+        #main
+        section.section.section-resources.bg-alt {
+        background-color: var(--fill-tertiary);
+        color: var(--glyph-gray);
+      }
+      html body[data-color-scheme="dark"] .developer-router-links {
+        background-color: var(--fill-tertiary);
+        color: var(--glyph-gray);
+      }
+      html body[data-color-scheme="dark"] .footer {
+        background-color: var(--fill-tertiary);
+        color: var(--glyph-gray-tertiary);
+      }
+      /* body backgrounds */
+      body[data-color-scheme="dark"].dmf {
+        background-color: #000;
+      }
+      html body[data-color-scheme="dark"].dmf .bg-alt {
+        background-color: var(--fill-tertiary);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-blue {
+        background-color: var(--fill-blue-secondary);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-green-blue {
+        background: linear-gradient(135deg, #65976d 0%, #588ea4 100%);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-yellow {
+        background: linear-gradient(
+          to bottom,
+          var(--fill-tertiary) 0%,
+          var(--fill-tertiary-alt) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-light {
+        background-color: var(--fill-secondary-alt);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-gradient,
+      html body[data-color-scheme="dark"].dmf .bg-grad {
+        background: linear-gradient(
+          to bottom,
+          var(--dark) 0%,
+          var(--fill-gray-secondary-alt) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-grad-down {
+        background: linear-gradient(
+          to bottom,
+          var(--dark) 0%,
+          var(--fill-gray-secondary-alt) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-grad-up {
+        background: linear-gradient(
+          to bottom,
+          var(--fill-gray-secondary-alt) 0%,
+          var(--dark) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-blue-gradient,
+      html body[data-color-scheme="dark"].dmf .bg-gradient-blue {
+        background: linear-gradient(
+          to bottom,
+          var(--fill-blue-gradient-light) 0%,
+          var(--fill-blue-gradient-dark) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-blue-gradient-alt {
+        background: linear-gradient(90deg, #061830 0%, #102d48 100%);
+      }
+      /* globalNav */
+      html body[data-color-scheme="dark"] #ac-globalnav {
+        background: var(--fill-tertiary);
+      }
+      /* localNav */
+      html
+        body[data-color-scheme="dark"]
+        .localnav.localnav-scrim
+        .localnav-background,
+      html
+        body[data-color-scheme="dark"]
+        .localnav-scrim.localnav.localnav-background {
+        background-color: rgba(29, 29, 31, 0.9);
+      }
+      @supports (
+        (-webkit-backdrop-filter: initial) or (backdrop-filter: initial)
+      ) {
+        html
+          body[data-color-scheme="dark"]
+          .localnav.localnav-scrim
+          .localnav-background,
+        html
+          body[data-color-scheme="dark"]
+          .localnav-scrim.localnav.localnav-background {
+          background-color: rgba(29, 29, 31, 0.72);
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="/assets/styles/globalnav.css?41172203193"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/styles/suggest-lang.css?41172203193"
+      type="text/css"
+    />
+    <div id="suggest-lang" class="ribbon hide" lang="en">
+      <div class="ribbon-content-wrapper">
+        <div class="ribbon-content row">
+          <div class="column large-12 large-centered">
+            <p>
+              <a href="#" id="suggest-link" class="ribbon-link more"
+                >View in English</a
+              >
+            </p>
+            <button
+              id="suggest-closer"
+              class="icon icon-after icon-reset"
+              aria-label="Dismiss language suggestion"
+              tabindex="0"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/scripts/suggest-lang.js?05152322130"></script>
+    <aside
+      id="ac-gn-segmentbar"
+      class="ac-gn-segmentbar"
+      lang="en-US"
+      dir="ltr"
+    ></aside>
+    <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate" />
+    <nav
+      id="ac-globalnav"
+      class="js no-touch no-windows"
+      role="navigation"
+      aria-label="Global"
+      data-hires="false"
+      data-analytics-region="global nav"
+      lang="en-US"
+      dir="ltr"
+      data-www-domain="www.apple.com"
+      data-store-locale="us"
+      data-store-root-path="/us"
+      data-store-api="/[storefront]/shop/bag/status"
+      data-search-locale="en_US"
+      data-search-suggestions-api="/search-services/suggestions/"
+      data-search-defaultlinks-api="/search-services/suggestions/defaultlinks/"
+      data-search-suggestions-enabled="false"
+    >
+      <div class="ac-gn-content">
+        <ul class="ac-gn-header">
+          <li class="ac-gn-item ac-gn-menuicon">
+            <label
+              class="ac-gn-menuicon-label"
+              for="ac-gn-menustate"
+              aria-hidden="true"
+            >
+              <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
+                <span
+                  class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"
+                ></span>
+              </span>
+              <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
+                <span
+                  class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"
+                ></span>
+              </span>
+            </label>
+            <a
+              href="#ac-gn-menustate"
+              role="button"
+              class="ac-gn-menuanchor ac-gn-menuanchor-open"
+              id="ac-gn-menuanchor-open"
+            >
+              <span class="ac-gn-menuanchor-label">Global Nav Open Menu</span>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="ac-gn-menuanchor ac-gn-menuanchor-close"
+              id="ac-gn-menuanchor-close"
+            >
+              <span class="ac-gn-menuanchor-label">Global Nav Close Menu</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-apple">
+            <a
+              class="ac-gn-link ac-gn-link-apple-developer"
+              href="/"
+              data-analytics-title="appledeveloper home"
+              id="ac-gn-firstfocus-small"
+            >
+              <span class="ac-gn-link-text">Apple Developer</span>
+            </a>
+          </li>
+        </ul>
+        <div class="ac-gn-search-placeholder-container" role="search">
+          <div class="ac-gn-search ac-gn-search-small">
+            <a
+              id="ac-gn-link-search-small"
+              class="ac-gn-link"
+              href="/search/"
+              data-analytics-title="search"
+              data-analytics-click="search"
+              data-analytics-intrapage-link=""
+              aria-label="Search"
+              role="button"
+              aria-haspopup="true"
+            >
+              <div class="ac-gn-search-placeholder-bar">
+                <div class="ac-gn-search-placeholder-input">
+                  <div
+                    class="ac-gn-search-placeholder-input-text"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="ac-gn-link-search ac-gn-search-placeholder-input-icon"
+                    ></div>
+                    <span class="ac-gn-search-placeholder">Search</span>
+                  </div>
+                </div>
+                <div
+                  class="ac-gn-searchview-close ac-gn-searchview-close-small ac-gn-search-placeholder-searchview-close"
+                >
+                  <span class="ac-gn-searchview-close-cancel" aria-hidden="true"
+                    >Cancel</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <ul class="ac-gn-list">
+          <li class="ac-gn-item ac-gn-apple">
+            <a
+              class="ac-gn-link ac-gn-link-apple-developer"
+              href="/"
+              data-analytics-title="appledeveloper home"
+              id="ac-gn-firstfocus"
+            >
+              <span class="ac-gn-link-text">Apple Developer</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-news">
+            <a
+              class="ac-gn-link ac-gn-link-news"
+              href="/news/"
+              data-analytics-title="news"
+            >
+              <span class="ac-gn-link-text">News</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-discover">
+            <a
+              class="ac-gn-link ac-gn-link-discover"
+              href="/discover/"
+              data-analytics-title="discover"
+            >
+              <span class="ac-gn-link-text">Discover</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-design">
+            <a
+              class="ac-gn-link ac-gn-link-design"
+              href="/design/"
+              data-analytics-title="design"
+            >
+              <span class="ac-gn-link-text">Design</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-develop">
+            <a
+              class="ac-gn-link ac-gn-link-develop"
+              href="/develop/"
+              data-analytics-title="develop"
+            >
+              <span class="ac-gn-link-text">Develop</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-distribute">
+            <a
+              class="ac-gn-link ac-gn-link-distribute"
+              href="/distribute/"
+              data-analytics-title="distribute"
+            >
+              <span class="ac-gn-link-text">Distribute</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-dsupport">
+            <a
+              class="ac-gn-link ac-gn-link-dsupport"
+              href="/support/"
+              data-analytics-title="dsupport"
+            >
+              <span class="ac-gn-link-text">Support</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-account">
+            <a
+              class="ac-gn-link ac-gn-link-account"
+              href="/account/"
+              data-analytics-title="account"
+            >
+              <span class="ac-gn-link-text">Account</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
+            <a
+              id="ac-gn-link-search"
+              class="ac-gn-link ac-gn-link-search"
+              href="/search/"
+              data-analytics-title="search"
+              data-analytics-click="search"
+              data-analytics-intrapage-link=""
+              aria-label="Search"
+              role="button"
+              aria-haspopup="true"
+            ></a>
+          </li>
+        </ul>
+        <aside
+          id="ac-gn-searchview"
+          class="ac-gn-searchview"
+          role="search"
+          data-analytics-region="search"
+        >
+          <div class="ac-gn-searchview-content">
+            <div class="ac-gn-searchview-bar">
+              <div class="ac-gn-searchview-bar-wrapper">
+                <form
+                  id="ac-gn-searchform"
+                  class="ac-gn-searchform"
+                  action="/search/"
+                  method="get"
+                >
+                  <div class="ac-gn-searchform-wrapper">
+                    <input
+                      id="ac-gn-searchform-input"
+                      class="ac-gn-searchform-input"
+                      type="text"
+                      name="q"
+                      aria-label="Search"
+                      placeholder="Search"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="off"
+                      spellcheck="false"
+                      role="combobox"
+                      aria-autocomplete="list"
+                      aria-expanded="true"
+                      aria-owns="quicklinks suggestions"
+                    />
+                    <button
+                      id="ac-gn-searchform-submit"
+                      class="ac-gn-searchform-submit"
+                      type="submit"
+                      disabled=""
+                      aria-label="Submit Search"
+                    ></button>
+                    <button
+                      id="ac-gn-searchform-reset"
+                      class="ac-gn-searchform-reset"
+                      type="reset"
+                      disabled=""
+                      aria-label="Clear Search"
+                    >
+                      <span class="ac-gn-searchform-reset-background"></span>
+                    </button>
+                  </div>
+                  <input
+                    type="hidden"
+                    id="search-hidden-input"
+                    value="Videos"
+                    name="type"
+                  />
+                </form>
+                <button
+                  id="ac-gn-searchview-close-small"
+                  class="ac-gn-searchview-close ac-gn-searchview-close-small"
+                  aria-label="Cancel Search"
+                >
+                  <span
+                    class="ac-gn-searchview-close-cancel"
+                    aria-hidden="true"
+                  >
+                    Cancel
+                  </span>
+                </button>
+              </div>
+            </div>
+            <aside
+              id="ac-gn-searchresults"
+              class="ac-gn-searchresults"
+              data-string-quicklinks="Quick Links"
+              data-string-suggestions="Suggested Searches"
+              data-string-noresults=""
+            >
+              <section
+                class="ac-gn-searchresults-section ac-gn-searchresults-section-defaultlinks"
+              >
+                <div class="ac-gn-searchresults-section-wrapper">
+                  <div class="search-group-checkbox">
+                    <input
+                      id="group-input"
+                      type="checkbox"
+                      name="group-filter"
+                      checked=""
+                      value="Videos"
+                    />Only search within “<span id="group-search-label"
+                      >Videos</span
+                    >”
+                  </div>
+                  <h3
+                    class="ac-gn-searchresults-header ac-gn-searchresults-animated"
+                  >
+                    Quick Links
+                  </h3>
+                  <ul
+                    class="ac-gn-searchresults-list"
+                    id="defaultlinks"
+                    role="listbox"
+                  >
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/download/"
+                        id="search-group-link-0"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Downloads</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/documentation/"
+                        id="search-group-link-1"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Documentation</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/videos/"
+                        id="search-group-link-2"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Videos</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/forums/"
+                        id="search-group-link-3"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Forums</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/wwdc23/"
+                        id="search-group-link-4"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >WWDC</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/xcode/"
+                        id="search-group-link-5"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Xcode</a
+                      >
+                    </li>
+                  </ul>
+                  <span
+                    role="status"
+                    class="ac-gn-searchresults-count"
+                    aria-live="polite"
+                    >5 Quick Links</span
+                  >
+                </div>
+              </section>
+            </aside>
+          </div>
+          <button
+            id="ac-gn-searchview-close"
+            class="ac-gn-searchview-close"
+            aria-label="Cancel Search"
+          >
+            <span class="ac-gn-searchview-close-wrapper">
+              <span class="ac-gn-searchview-close-left"></span>
+              <span class="ac-gn-searchview-close-right"></span>
+            </span>
+          </button>
+        </aside>
+      </div>
+    </nav>
+    <div class="ac-gn-blur"></div>
+    <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+    <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
+    <script src="/assets/scripts/ac-globalnav.built.js?41172203193"></script>
+    <div id="ac-gn-viewport-emitter"></div>
+    <link rel="stylesheet" href="/assets/styles/search.css?17042322115" />
+    <script src="/assets/scripts/search.js?48172337109"></script>
+
+    <!-- metrics -->
+    <script>
+      /* RSID: */
+      var s_account = "awdappledeveloper";
+    </script>
+    <script src="/assets/metrics/scripts/analytics.js?10202020"></script>
+    <script>
+      s.pageName = AC && AC.Tracking && AC.Tracking.pageName();
+      s.channel = "www.en.developer";
+      s.channel = "www.videos.developer";
+
+      /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+      var s_code = s.t();
+      if (s_code) document.write(s_code);
+    </script>
+    <!-- /metrics -->
+
+    <link
+      rel="stylesheet"
+      property="stylesheet"
+      href="/assets/styles/localnav.css"
+      type="text/css"
+    />
+    <input type="checkbox" id="localnav-menustate" class="localnav-menustate" />
+    <div id="localnav-sticky-placeholder" class="css-sticky"></div>
+    <nav
+      id="localnav"
+      class="localnav localnav-scrim theme-dark css-sticky"
+      data-sticky=""
+      role="navigation"
+    >
+      <div class="localnav-wrapper">
+        <div class="localnav-background"></div>
+        <div class="localnav-content">
+          <h2 class="localnav-title">
+            <a href="/videos/">Videos</a>
+          </h2>
+
+          <div class="localnav-menu">
+            <a
+              href="#localnav-menustate"
+              class="localnav-menucta-anchor localnav-menucta-anchor-open"
+              id="localnav-menustate-open"
+            >
+              <span class="localnav-menucta-anchor-label">Open Menu</span>
+            </a>
+            <a
+              href="#"
+              class="localnav-menucta-anchor localnav-menucta-anchor-close"
+              id="localnav-menustate-close"
+            >
+              <span class="localnav-menucta-anchor-label">Close Menu</span>
+            </a>
+            <div class="localnav-menu-tray">
+              <ul class="localnav-menu-items">
+                <li class="localnav-menu-item">
+                  <a href="/videos/" class="localnav-menu-link">Collections</a>
+                </li>
+                <li class="localnav-menu-item">
+                  <a href="/videos/topics/" class="localnav-menu-link"
+                    >Topics</a
+                  >
+                </li>
+                <li class="localnav-menu-item">
+                  <a href="/videos/all-videos/" class="localnav-menu-link"
+                    >All Videos</a
+                  >
+                </li>
+                <li class="localnav-menu-item">
+                  <a href="/videos/about/" class="localnav-menu-link">About</a>
+                </li>
+              </ul>
+            </div>
+            <div class="localnav-actions localnav-actions-center">
+              <div
+                class="localnav-action localnav-action-menucta"
+                aria-hidden="true"
+              >
+                <label for="localnav-menustate" class="localnav-menucta">
+                  <span class="localnav-menucta-chevron"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <label id="localnav-curtain" for="localnav-menustate"></label>
+    <script src="/assets/scripts/ac-localnav.built.js"></script>
+    <div
+      id="localnav-viewport-emitter"
+      data-viewport-emitter-dispatch=""
+      data-viewport-emitter-state='{"viewport":"large","orientation":"landscape","retina":true}'
+    ></div>
+    <script type="text/javascript" src="/assets/scripts/localnav.js"></script>
+    <main id="main" class="main theme-dark" role="main">
+      <section class="bg-dark">
+        <section class="grid">
+          <section class="row">
+            <section
+              class="column large-10 small-12 padding-top-small large-centered no-padding-bottom"
+            >
+              <!-- back link -->
+              <p class="back-link smaller">
+                <a class="icon icon-before icon-chevronleft" href="/videos/"
+                  >More Videos</a
+                >
+              </p>
+            </section>
+          </section>
+
+          <!-- video player -->
+          <section class="video-wrapper row">
+            <section
+              class="column large-10 small-12 padding-top-small padding-bottom-small large-centered"
+            >
+              <div class="developer-video-player">
+                <div
+                  id="video-status-overlay"
+                  class="developer-video-overlay"
+                  style="display: none"
+                >
+                  <div class="video-status-content">
+                    <div id="video-status-text"></div>
+                    <img
+                      class="video-status-icon"
+                      id="icon-backward"
+                      src="/assets/elements/icons/symbols/gobackward5.svg"
+                      style="display: none"
+                      data-hires-status="pending"
+                    />
+                    <img
+                      class="video-status-icon"
+                      id="icon-forward"
+                      src="/assets/elements/icons/symbols/goforward5.svg"
+                      style="display: none"
+                      data-hires-status="pending"
+                    />
+                  </div>
+                </div>
+                <video
+                  id="video"
+                  class="video large-centered"
+                  controls=""
+                  src="https://devstreaming-cdn.apple.com/videos/wwdc/2023/10192/4/0D847FCD-B40B-4324-A284-F22B79E78F4D/cmaf.m3u8"
+                  data-id="wwdc2023-10192"
+                ></video>
+              </div>
+              <div class="no-video-banner hidden">
+                <div class="no-video-copy">
+                  <p>
+                    Streaming is available in most browsers,<br />
+                    and in the WWDC app.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="grid">
+        <!-- tab menu -->
+        <section class="tab-menu row divider-bottom">
+          <section
+            class="column large-10 small-12 padding-top-small padding-bottom-small large-centered"
+          >
+            <ul class="tabs">
+              <li class="tab" data-supplement-id="details">
+                <a href="#"><span class="smaller">Overview</span></a>
+              </li>
+
+              <li class="tab" data-supplement-id="transcript">
+                <a href="#"><span class="smaller">Transcript</span></a>
+              </li>
+              <li class="tab right" data-supplement-id="search">
+                <!-- mobile search -->
+                <a href="#"
+                  ><span><!--icon--></span></a
+                >
+                <!-- desktop search -->
+                <section class="searchbar-wrapper desktop" style="opacity: 1">
+                  <button
+                    class="search-icon"
+                    data-hires-status="pending"
+                  ></button>
+                  <input
+                    id="searchDesktop"
+                    class="active"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Search this video…"
+                  />
+                </section>
+              </li>
+              <li class="tab active" data-supplement-id="sample-code">
+                <a href="#"><span class="smaller">Code</span></a>
+              </li>
+
+              <section class="searchbar-wrapper mobile" style="opacity: 1">
+                <input
+                  class="active"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Search this video…"
+                />
+              </section>
+            </ul>
+          </section>
+        </section>
+
+        <!-- supplements -->
+        <section class="row">
+          <section
+            class="column large-10 small-12 large-centered no-padding-top no-padding-bottom"
+          >
+            <ul class="supplements">
+              <!-- details -->
+              <li class="supplement details" data-supplement-id="details">
+                <h1>Explore enhancements to RoomPlan</h1>
+                <p>
+                  Join us for an exciting update to RoomPlan as we explore
+                  MultiRoom support and enhancements to room representations.
+                  Learn how you can scan areas with more detail, capture
+                  multiple rooms, and merge individual scans into one larger
+                  structure. We'll also share workflows and best practices when
+                  working with RoomPlan results that you want to combine into
+                  your existing 3D model library.
+                </p>
+
+                <h2>Resources</h2>
+
+                <ul class="links small">
+                  <li class="developerForum" data-hires-status="pending">
+                    <a
+                      href="https://developer.apple.com/forums/create/question?&amp;tag1=361030&amp;tag2=694030"
+                      target="_blank"
+                      >Have a question? Ask with tag wwdc2023-10192</a
+                    >
+                  </li>
+                  <li class="developerForum" data-hires-status="pending">
+                    <a
+                      href="https://developer.apple.com/forums/tags/wwdc2023-10192"
+                      target="_blank"
+                      >Search the forums for tag wwdc2023-10192</a
+                    >
+                  </li>
+
+                  <li class="download" data-hires-status="pending">
+                    <ul class="options">
+                      <li>
+                        <a
+                          href="https://devstreaming-cdn.apple.com/videos/wwdc/2023/10192/4/0D847FCD-B40B-4324-A284-F22B79E78F4D/downloads/wwdc2023-10192_hd.mp4?dl=1"
+                          >HD Video</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://devstreaming-cdn.apple.com/videos/wwdc/2023/10192/4/0D847FCD-B40B-4324-A284-F22B79E78F4D/downloads/wwdc2023-10192_sd.mp4?dl=1"
+                          >SD Video</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <div
+                  class="divider-top margin-top-small padding-bottom-small"
+                ></div>
+                <h2>Related Videos</h2>
+                <h4>WWDC23</h4>
+                <ul class="links small">
+                  <li class="video" data-hires-status="pending">
+                    <a href="/videos/play/wwdc2023/10085"
+                      >Discover Quick Look for spatial computing</a
+                    >
+                  </li>
+                </ul>
+                <h4>WWDC22</h4>
+                <ul class="links small">
+                  <li class="video" data-hires-status="pending">
+                    <a href="/videos/play/wwdc2022/10127"
+                      >Create parametric 3D room scans with RoomPlan</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- transcript -->
+              <li
+                class="supplement transcript"
+                data-supplement-id="transcript"
+                data-shortcut-base-url="/videos/play/wwdc2023/10192/"
+              >
+                <section>
+                  <div class="margin-bottom-small download-transcript">
+                    <span
+                      id="get-transcript"
+                      class="icon icon-before icon-downloadcircle"
+                      >Download</span
+                    >
+                  </div>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=0"
+                      >♪ ♪ </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=10"
+                      >Alex: Hi. My name is Alex. I am from the Video
+                      Engineering team. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=14"
+                      >Today, my colleague Antoine and I will be sharing with
+                      you </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=19"
+                      >what's new in RoomPlan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=21"
+                      >RoomPlan uses sophisticated machine learning algorithms </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=25"
+                      >powered by ARKit to detect walls, windows, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=29"
+                      >doors, openings, and other room-defining objects. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=34"
+                      >Our RoomCaptureView API allows you to integrate </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=38"
+                      >a scanning experience directly into your app. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=42"
+                      >Once finished scanning, your app can present the
+                      resulting 3D model </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=46"
+                      >and export to a USDZ file. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=50"
+                      >In this session, we will talk about what's new in
+                      RoomPlan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=54"
+                      >We will start with a new way to combine RoomPlan with
+                      ARKit </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=59"
+                      >by using a custom ARSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=62"
+                      >Then, we will turn our attention to our MultiRoom
+                      support. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=67"
+                      >We provide a new MultiRoom API to merge individual room
+                      scans </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=71"
+                      >into one larger structure. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=74"
+                      >Next, we will show our new VoiceOver support </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=77"
+                      >for RoomCaptureView. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=80"
+                      >Finally, we will go over some improvements in RoomPlan
+                      representations </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=85"
+                      >and enhancements to our export functions to enable new
+                      workflows.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=92"
+                      >Let's start with Custom ARSession support.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=96"
+                      >As mentioned earlier, RoomPlan is relying on information </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=100"
+                      >from ARKit to detect walls, windows, doors, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=104"
+                      >openings, and other objects during scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=108"
+                      >For this, RoomCaptureSession is running with a default
+                      ARSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=113"
+                      >New in iOS 17, RoomPlan can use a custom ARSession </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=118"
+                      >with ARWorldTrackingConfiguration. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=122"
+                      >This allows for some new ways to combine the use of
+                      RoomPlan </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=126"
+                      >and ARKit within the same workflows. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=130"
+                      >Let's take a look at some examples. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=132"
+                      >One way to use RoomPlan with a custom ARSession </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=136"
+                      >is by combining RoomPlan results with ARKit scene
+                      geometry </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=140"
+                      >and plane detection for more immersive interactions </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=144"
+                      >between virtual content and real-world geometry. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=148"
+                      >Moreover, you could collect photographic representations
+                      of a space </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=153"
+                      >by using high-quality image capture from ARKit </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=156"
+                      >to create richer real estate listings with RoomPlan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=160"
+                      >And if you are using RoomPlan as part of an existing AR
+                      experience, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=165"
+                      >you can combine results from RoomPlan </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=168"
+                      >without disrupting your existing ARAnchors. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=171"
+                      >These are just a few use cases that a custom ARSession
+                      can provide. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=176"
+                      >Let's take a look at some codes to see how you pass a
+                      custom ARSession to RoomPlan.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=182"
+                      >Here is the init and stop function in previous RoomPlan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=187"
+                      >And here is how you pass over a custom ARSession to init
+                      function. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=192"
+                      >Any custom ARSession with ARWorldTrackingConfiguration </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=196"
+                      >will be honored inside RoomCaptureSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=200"
+                      >Also, the stop function now includes a new option to
+                      determine </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=205"
+                      >whether you want to pause the underlying ARSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=209"
+                      >You can set the Boolean to false in case you want your
+                      ARSession </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=213"
+                      >to continue running after RoomCaptureSession stops. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=217"
+                      >In the next section, we will see how working with
+                      ARSession </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=222"
+                      >enables for new workflows, like merging multiple scans </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=226"
+                      >into one larger structure </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=229"
+                      >Let's turn our attention to MultiRoom support.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=233"
+                      >What is MultiRoom support? </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=235"
+                      >In previous RoomPlan, you could do a single scan </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=238"
+                      >and get a 3D model for a single room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=242"
+                      >Say you have done several scans of different rooms in a
+                      house, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=246"
+                      >such as a dining room, kitchen, living room, hallway, and
+                      bedroom. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=253"
+                      >If you want to merge them, you'll face some challenges. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=257"
+                      >First, they are all in their own coordinate system, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=260"
+                      >meaning the origin and orientation of the world
+                      coordinate </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=263"
+                      >is different for each room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=266"
+                      >Second, even if you stitch them manually, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=270"
+                      >you'll end up having duplicate walls and potentially
+                      duplicate objects.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=277"
+                      >Let's tackle the different coordinate system first. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=281"
+                      >What we want to achieve here is to have all scans taken </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=284"
+                      >in the same coordinate system. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=287"
+                      >Two approaches are suggested here to scan multiple rooms. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=292"
+                      >First, use continuous ARSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=295"
+                      >Second, use ARSession relocalization. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=299"
+                      >Let's look at how to use a continuous ARSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=302"
+                      >In previous RoomPlan, when RoomCaptureSession stops, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=306"
+                      >ARSession is paused. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=308"
+                      >Each scan has a different coordinate system. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=312"
+                      >Our new API now has a new argument in the stop function, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=317"
+                      >which we can set pauseARSession to false. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=320"
+                      >This allows ARSession to keep running for the next scan, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=325"
+                      >even the one after that, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=327"
+                      >until we finally decide to pause ARSession again.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=332"
+                      >Using this approach, we can ensure the same ARSession </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=336"
+                      >running across several scans. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=339"
+                      >This will allow us to have one common world coordinate
+                      system </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=343"
+                      >for all our scans. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=345"
+                      >Let's look at how this works in codes. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=349"
+                      >Here is an example to run RoomCaptureSession </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=352"
+                      >with a continuous ARSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=355"
+                      >We start the first scan with RoomCaptureSession.run. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=359"
+                      >Then, here is the key part. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=361"
+                      >With the new API in RoomCaptureSession.stop, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=366"
+                      >we need to set pauseARSession to false. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=369"
+                      >This will keep ARSession running for the next scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=373"
+                      >After that, we use the same roomCaptureSession instance </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=377"
+                      >for the second scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=379"
+                      >Then, we stop the second scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=382"
+                      >Finally, we could get the first and second scan results </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=386"
+                      >in the same coordinate system. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=389"
+                      >Another approach to take individual room scans </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=392"
+                      >within the same coordinate space is to use ARSession
+                      relocalization. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=398"
+                      >This approach is most suitable if you're taking
+                      individual room scans </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=402"
+                      >at different times, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=404"
+                      >such as coming back to same location on the next day or
+                      week. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=409"
+                      >Let's take a look at how this works.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=412"
+                      >Again, this is a single scan to get the 3D model of a
+                      single room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=417"
+                      >Since we stop RoomCaptureSession and pause ARSession, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=421"
+                      >for relocalization to work for future scans, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=424"
+                      >we need to save ARWorldMap to disc. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=427"
+                      >If you want to continue the previous scan when an
+                      ARSession is paused, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=432"
+                      >you can now resume scanning by loading an ARWorldMap from
+                      the paused ARSession.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=438"
+                      >Using this ARWorldMap, you can relocalize against a
+                      previous scan's environment </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=444"
+                      >to ensure that a series of scans all share a common
+                      coordinate system. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=450"
+                      >Let's look at the sample codes </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=452"
+                      >for the scanning workflow with relocalization. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=456"
+                      >First, we run the first scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=460"
+                      >Then, we stop the first scan with pausing ARSession. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=464"
+                      >After that, for relocalization to work, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=467"
+                      >we need to save ARWorldMap when ARSession is paused.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=472"
+                      >Before running the second scan, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=474"
+                      >we need to restore our previous ARWorldMap. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=477"
+                      >First, we load the ARWorldMap. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=481"
+                      >And we assign the loaded ARWorldMap </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=483"
+                      >to ARWorldTrackingConfiguration. initialWorldMap. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=487"
+                      >Then, we run ARSession to trigger relocalization. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=492"
+                      >Once relocalization is completed, the previous ARSession
+                      is loaded. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=497"
+                      >Current world coordinate is aligned with previous world
+                      coordinate. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=502"
+                      >Then we can run the second scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=504"
+                      >Last, we stop the second scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=507"
+                      >With all these steps, the first and second scan results </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=511"
+                      >are in the same 3D world coordinate. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=515"
+                      >We have seen two approaches to link multiple scans </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=518"
+                      >in the same 3D coordinate system. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=522"
+                      >Next, we will take a look at how to merge them </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=525"
+                      >into one combined structure by using our new MultiRoom
+                      API.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=531"
+                      >For each scan, we can run RoomBuilder API </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=534"
+                      >to generate individual CapturedRoom. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=537"
+                      >As shown previously, with continuous ARSession </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=541"
+                      >and ARSession relocalization, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=543"
+                      >all the CapturedRooms are in the same 3D world space. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=549"
+                      >Here is the output from RoomBuilder with three
+                      CapturedRooms. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=554"
+                      >Now we provide a new merging API, StructureBuilder, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=558"
+                      >to merge all of them into one large structure, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=562"
+                      >CapturedStructure. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=564"
+                      >Next, let's look at the sample codes for StructureBuilder
+                      API.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=570"
+                      >Here is how we use StructureBuilder API to merge multiple
+                      scans. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=575"
+                      >First, we create a StructureBuilder instance with
+                      configuration option. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=580"
+                      >Then, we create an Array to load multiple CapturedRooms, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=584"
+                      >which we scanned earlier. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=586"
+                      >After that, we call StructureBuilder API </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=589"
+                      >to get capturedStructure, which is the merged result. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=594"
+                      >Finally, we can export the capturedStructure to a USDZ
+                      file. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=599"
+                      >And here is the CapturedStructure definition. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=602"
+                      >First, it has a property of rooms. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=606"
+                      >It's an array of CapturedRoom instances. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=609"
+                      >Then, it has properties for the merged walls, doors, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=614"
+                      >windows, openings, and objects. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=618"
+                      >Last, it has a function to export to a USDZ file.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=624"
+                      >Let's see MultiRoom in action. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=627"
+                      >We provide you a sample.app, which allows you to merge
+                      multiple scans </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=631"
+                      >with StructureBuilder API and export to a USDZ file. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=637"
+                      >Our USDZ file is ready to preview in both iOS and macOS. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=643"
+                      >You can take this one step further by loading your USDZ
+                      file </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=648"
+                      >to a Digital Content Creation Tool such as Blender.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=654"
+                      >After we applied some beautification to the 3D model, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=658"
+                      >the result can look even better.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=663"
+                      >Lastly, let's talk about some considerations </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=666"
+                      >to get the best MultiRoom experience with MultiRoom
+                      support. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=671"
+                      >MultiRoom works best for single-floor residential houses, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=676"
+                      >with a typical setup of one to four bedrooms, living
+                      room, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=680"
+                      >kitchen, and dining room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=683"
+                      >For scanning and merging individual rooms, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=686"
+                      >we recommend a maximal total area of 2,000 square feet </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=691"
+                      >or around 186 square meters. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=694"
+                      >Moreover, having good lighting of 50 lux or higher is
+                      recommended </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=700"
+                      >to ensure RoomPlan can scan with a clear video stream </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=704"
+                      >and good AR tracking performance. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=707"
+                      >Now, here is Antoine to tell us </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=710"
+                      >about even more enhancements for RoomPlan in iOS 17. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=715"
+                      >Antoine: Thanks, Alex. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=716"
+                      >Picking up from here, let's talk about accessibility. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=720"
+                      >When we speak about rendering, most of us think about
+                      visual modality, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=724"
+                      >but for low vision people, this modality is far from
+                      being the most useful one. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=729"
+                      >This year, RoomPlan added an audio feedback </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=732"
+                      >when VoiceOver is enabled, allowing your phone to provide </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=735"
+                      >guidelines about scanning and to describe what it sees. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=738"
+                      >VoiceOver: Move device to start. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=740"
+                      >Point camera at bottom edge of wall. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=742"
+                      >A fireplace. A wall. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=745"
+                      >A window. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=747"
+                      >Antoine: Now let's talk about the new information </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=749"
+                      >that RoomPlan can collect from a room and how it is
+                      rendered. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=752"
+                      >RoomPlan makes it easy to scan a wide range of rooms. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=756"
+                      >However, so far, it was limited to accurately represent </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=760"
+                      >a finite set of room situations. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=763"
+                      >RoomPlan now supports an even larger variety of rooms, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=766"
+                      >which includes slanted walls and curved walls, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=769"
+                      >but also recessed kitchen elements such as dishwashers,
+                      ovens, or sinks. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=775"
+                      >RoomPlan was also improved to detect configurations of
+                      objects </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=779"
+                      >of a given category. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=781"
+                      >For example, there are a lot of types of sofas, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=784"
+                      >from single seat to L-shaped, and on to simple squared
+                      sofas </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=788"
+                      >that RoomPlan will detect in the new version. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=791"
+                      >When we introduced RoomPlan, we talked about the two
+                      elements </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=795"
+                      >that RoomPlan could scan: surfaces and objects. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=800"
+                      >Now, we're adding new elements to describe areas inside a
+                      room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=804"
+                      >We call them sections. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=807"
+                      >Walls can now be described as polygons, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=810"
+                      >to handle non-uniform walls such as slanted walls </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=813"
+                      >or walls with a beam. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=815"
+                      >So far, curved walls and windows were part of data-only
+                      API. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=820"
+                      >Now, final result from RoomCaptureView can also render
+                      curved walls. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=826"
+                      >Besides the surface categories, floor categories is
+                      another addition </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=830"
+                      >that can also be described as a polygon. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=834"
+                      >Objects now have attributes </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=836"
+                      >to better describe the different configurations inside a
+                      category. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=841"
+                      >Surfaces and objects now have a new parent variable. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=845"
+                      >It contains the identifier of their parent. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=848"
+                      >For example, the parent of a window is a wall, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=851"
+                      >the parent of a chair can be a table, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=854"
+                      >and the parent of a dishwasher can be a storage. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=857"
+                      >Let's detail all those improvements with examples. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=861"
+                      >Each section describes the different areas in your room
+                      or house. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=866"
+                      >A section has a label among the following: </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=869"
+                      >livingRoom, bedroom, bathroom, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=872"
+                      >kitchen, and diningRoom. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=875"
+                      >It has a given position, at a given floor.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=881"
+                      >Non-uniform walls can be rendered as polygons </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=884"
+                      >using the polygonCorner variable. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=888"
+                      >Floor is now represented as a rectangle during scanning </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=891"
+                      >and is beautified as a polygon when scanning ends. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=896"
+                      >Parents of dishwashers, ovens, and sinks are now carved
+                      in rendering. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=901"
+                      >When we introduced RoomPlan, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=903"
+                      >categories were used to describe an object. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=906"
+                      >However, this representation had limitations. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=910"
+                      >Let's take the example of a chair. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=912"
+                      >Several types of chairs can represent this category, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=916"
+                      >for example a stool, a dining chair, or an office chair. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=921"
+                      >They all have a different purpose. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=923"
+                      >In order to have a better representation of objects,
+                      we're now adding attributes. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=929"
+                      >In this example, using attributes, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=932"
+                      >we have a more faithful understanding of what was
+                      scanned. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=935"
+                      >In RoomPlan API, attributes are available </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=938"
+                      >through a polymorphic array of enums. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=941"
+                      >However, enums are not the best way to understand
+                      attributes. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=946"
+                      >In next section, we'll explore new ways to arrive </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=949"
+                      >at a more appealing representation. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=951"
+                      >Attributes, together with other new information </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=954"
+                      >captured during scanning, can now be included in our
+                      exported results. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=959"
+                      >There are two additions to the kind of data that we can
+                      now export: </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=963"
+                      >a file to find back metadata from a USDZ node </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=966"
+                      >and a structure to enrich exported USDZ with models. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=971"
+                      >When exporting a Room as a mesh, we create a USDZ </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=975"
+                      >that contains a tree of nodes for surfaces and objects. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=979"
+                      >This year, we added a section group containing section
+                      centers. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=984"
+                      >However, when doing so, we're missing a substantial
+                      amount </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=988"
+                      >of information from our scan, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=990"
+                      >for example dimensions of walls and objects, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=992"
+                      >but also object attributes. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=995"
+                      >A mapping file can now be created when exporting a room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=999"
+                      >It's an encoded dictionary of String to UUID </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1002"
+                      >that creates a bridge between a USDZ unique node name </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1005"
+                      >and a CapturedRoom element, uniquely identified by its
+                      identifier.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1011"
+                      >Let's see how it unfolds in RoomPlan API. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1015"
+                      >In previous version of RoomPlan, a room could be exported
+                      in two ways: </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1020"
+                      >as a USDZ, through the export function, and as a JSON or
+                      Plist, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1025"
+                      >encoding the CapturedRoom structure. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1028"
+                      >New in iOS 17, specifying a metadata URL </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1032"
+                      >to map a room to a USDZ in the export function, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1036"
+                      >you can relate the two exported information. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1039"
+                      >This way, when rendering your scanned room, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1041"
+                      >you can query additional information about a surface or
+                      an object. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1046"
+                      >Along with the new mapping file, we are introducing Model
+                      Provider </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1051"
+                      >in order to replace objects, that used to be represented
+                      as boxes, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1056"
+                      >by models that match the attributes that were scanned. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1060"
+                      >What we want to do here is to associate an object to a 3D
+                      model, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1065"
+                      >and more specifically, to its URL. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1068"
+                      >This way, we'll be able to replace the bounding box </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1071"
+                      >that used to represent the object, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1073"
+                      >by a more compelling and truthful rendering.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1077"
+                      >For that purpose, a new structure is available in
+                      RoomPlan: </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1080"
+                      >ModelProvider. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1083"
+                      >ModelProvider maps categories and sets of attributes to
+                      Model URLs. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1088"
+                      >From an object with categories and attributes, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1091"
+                      >you can ask ModelProvider to give you the corresponding
+                      model URL. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1096"
+                      >Now generalizing it to an entire room, which is a
+                      collection of sections, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1100"
+                      >surfaces, and objects with categories and attributes, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1104"
+                      >a ModelProvider instance specified in the export function </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1108"
+                      >can associate 3D Model URLs to each object of the room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1112"
+                      >Now that we have a structure to handle model association, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1116"
+                      >let's see how we can work with Model Provider. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1120"
+                      >There are many ways to populate ModelProvider. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1123"
+                      >You can, for example, fetch models matching a set of
+                      attributes </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1126"
+                      >from a database, or annotate an existing catalog. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1130"
+                      >Here, we'll walk you through a very simple example </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1133"
+                      >on creating your own small catalog of assets. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1136"
+                      >We'll create and use a catalog in four steps. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1139"
+                      >First, we'll parse categories and attributes that
+                      RoomPlan supports. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1144"
+                      >Then, we'll associate a model for each category and
+                      attribute set. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1148"
+                      >After that, we'll instantiate a ModelProvider. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1152"
+                      >And finally, we'll use it to export our room.</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1157"
+                      >Let's see how to discover attributes and create a model
+                      provider </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1160"
+                      >using some models. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1162"
+                      >First, we iterate through all categories that RoomPlan
+                      supports. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1166"
+                      >Then, we create a folder for each supported category. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1170"
+                      >We can add models to each folder later. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1173"
+                      >Then for each category, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1175"
+                      >we request the attribute combinations that are supported
+                      by RoomPlan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1180"
+                      >For each set of attributes that is supported, we create a
+                      folder. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1184"
+                      >In each of those folders, you can add a 3D model </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1187"
+                      >corresponding to the category or set of attributes. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1191"
+                      >Now that the content of our catalog is ready, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1194"
+                      >we need to create an index file for it. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1197"
+                      >Here is a an example structure that will handle a catalog
+                      index. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1201"
+                      >It contains an array of elements, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1203"
+                      >each one of them containing a category or a set of
+                      attributes. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1207"
+                      >Each element has a reference to the path of a
+                      corresponding model. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1211"
+                      >Now we can save our index file as a plist </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1215"
+                      >and our catalog as a bundle. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1218"
+                      >Each time we want to export a room with models </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1221"
+                      >or each time we want to use a model provider </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1223"
+                      >to relate an object to a model, we can now use this
+                      catalog bundle </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1227"
+                      >to generate a ModelProvider. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1229"
+                      >All we have to do is to iterate through our catalog
+                      categories and attributes, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1234"
+                      >find the corresponding model URL, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1237"
+                      >associate the model URL to a category if there's no
+                      attribute, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1241"
+                      >or associate the model URL to an attribute set. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1245"
+                      >The last step is to call the export function, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1248"
+                      >specifying the output URL, a model provider instance, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1252"
+                      >and a .model option. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1254"
+                      >Et voila! What we get is a USDZ with 3D models </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1258"
+                      >that correspond to your scan. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1260"
+                      >To take it further, you can optionally take the USDZ </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1263"
+                      >into DCC tools like Blender to add lights and shadows </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1267"
+                      >for an even more realistic result that can be obtained in
+                      a matter of minutes. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1272"
+                      >To help you create compelling results, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1275"
+                      >we added a pre-populated catalog in our sample code. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1278"
+                      >Back to you, Alex! </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1281"
+                      >Alex: Thanks, Antoine. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1282"
+                      >Let's take a look at what we shared today. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1285"
+                      >First, custom ARSession support enables new use cases </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1290"
+                      >such as capturing high-quality images and videos
+                      alongside a scan </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1295"
+                      >to improve real estate listings. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1299"
+                      >Now, you can also scan multiple rooms and use the new
+                      StructureBuilder API </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1305"
+                      >to generate a merged 3D model of an entire house. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1309"
+                      >To improve the scanning experience for low vision users, </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1314"
+                      >RoomPlan now supports VoiceOver when using
+                      RoomCaptureView. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1319"
+                      >RoomPlan's new object attributes allow you </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1322"
+                      >to more accurately represent a scanned room. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1326"
+                      >And finally, you can now use our new export API </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1330"
+                      >to assign 3D models from a custom catalog </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1334"
+                      >to corresponding scanned objects. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1337"
+                      >That is RoomPlan in iOS 17. </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/10192/?time=1339"
+                      >We can't wait to see what you make with it.</a
+                    >
+                  </p>
+                </section>
+              </li>
+
+              <!-- sample code -->
+              <li
+                class="supplement sample-code active"
+                data-supplement-id="sample-code"
+              >
+                <section>
+                  <ul class="no-bullet padding-top-small margin-bottom">
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        3:00 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=180"
+                          data-start-time="180"
+                          >RoomPlan with custom ARSession</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// RoomCaptureSession</span>
+
+<span class="syntax-keyword">public</span> <span class="syntax-keyword">class</span> <span class="syntax-title class_">RoomCaptureSession</span> {
+    <span class="syntax-comment">// Init: ARSession is an optional input for RoomCaptureSession</span>
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">init</span>(<span class="syntax-params">arSession</span>: <span class="syntax-type">ARSession</span>? <span class="syntax-operator">=</span> <span class="syntax-literal">nil</span>) {
+       <span class="syntax-operator">...</span>
+  }
+
+    <span class="syntax-comment">// Stop: pauseARSession is used for whether to continue ARSession experience</span>
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">func</span> <span class="syntax-title function_">stop</span>(<span class="syntax-params">pauseARSession</span>: <span class="syntax-type">Bool</span> <span class="syntax-operator">=</span> <span class="syntax-literal">true</span>) {
+       <span class="syntax-operator">...</span>
+  }
+}</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        5:50 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=350"
+                          data-start-time="350"
+                          >MultiRoom support with Continuous ARSession</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// Continuous ARSession</span>
+
+<span class="syntax-comment">// start 1st scan</span>
+roomCaptureSession.run(configuration: captureSessionConfig)
+
+<span class="syntax-comment">// stop 1st scan with continuing ARSession</span>
+roomCaptureSession.stop(pauseARSession: <span class="syntax-literal">false</span>)
+
+<span class="syntax-comment">// start 2nd scan</span>
+roomCaptureSession.run(configuration: captureSessionConfig)
+
+<span class="syntax-comment">// stop 2nd scan (pauseARSession = true by default)</span>
+roomCaptureSession.stop()</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        7:30 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=450"
+                          data-start-time="450"
+                          >MultiRoom capture with loading ARWorldMap</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// Capture with loading ARWorldMap</span>
+
+<span class="syntax-comment">// load ARWorldMap</span>
+<span class="syntax-keyword">let</span> arWorldMap <span class="syntax-operator">=</span> <span class="syntax-keyword">try</span> <span class="syntax-type">NSKeyedUnarchiver</span>.unarchivedObject(ofClass: <span class="syntax-type">ARWorldMap</span>.<span class="syntax-keyword">self</span>, from: data)
+
+<span class="syntax-comment">// run ARKit relocalization</span>
+<span class="syntax-keyword">let</span> arWorldTrackingConfig <span class="syntax-operator">=</span> <span class="syntax-type">ARWorldTrackingConfiguration</span>()
+arWorldTrackingConfig.initialWorldMap <span class="syntax-operator">=</span> arWorldMap
+roomCaptureSession.<span class="syntax-keyword">init</span>()
+roomCaptureSession.arSession.run(arWorldTrackingConfig, options: [])
+
+<span class="syntax-comment">// Wait for relocalization to complete</span>
+<span class="syntax-comment">// start 2nd scan</span>
+roomCaptureSession.run(configuration: captureSessionConfig)
+
+<span class="syntax-comment">// stop 2nd scan</span>
+roomCaptureSession.stop()</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        9:40 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=580"
+                          data-start-time="580"
+                          >StructureBuilder</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// StructureBuilder</span>
+
+<span class="syntax-comment">// create structureBuilder instance</span>
+<span class="syntax-keyword">let</span> structureBuilder <span class="syntax-operator">=</span> <span class="syntax-type">StructureBuilder</span>(option: [.beautifyObjects])
+
+<span class="syntax-comment">// load multiple capturedRoom results to capturedRoomArray</span>
+<span class="syntax-keyword">var</span> capturedRoomArray: [<span class="syntax-type">CapturedRoom</span>] <span class="syntax-operator">=</span> []
+
+<span class="syntax-comment">// run structureBuilder API to get capturedStructure</span>
+<span class="syntax-keyword">let</span> capturedStructure <span class="syntax-operator">=</span> <span class="syntax-keyword">try</span> <span class="syntax-keyword">await</span> structureBuilder.capturedStructure(from: capturedRoomArray)
+
+<span class="syntax-comment">// export capturedStructure to usdz</span>
+<span class="syntax-keyword">try</span> capturedStructure.export(to: destinationURL)</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        10:11 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=611"
+                          data-start-time="611"
+                          >CapturedStructure</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// CapturedStructure</span>
+
+<span class="syntax-keyword">public</span> <span class="syntax-keyword">struct</span> <span class="syntax-title class_">CapturedStructure</span>: <span class="syntax-title class_">Codable</span>, <span class="syntax-title class_">Sendable</span> {
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> rooms: [<span class="syntax-type">CapturedRoom</span>]
+
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> walls: [<span class="syntax-type">Surface</span>]
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> doors: [<span class="syntax-type">Surface</span>]
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> windows: [<span class="syntax-type">Surface</span>]
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> openings: [<span class="syntax-type">Surface</span>]
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> objects: [<span class="syntax-type">Object</span>]
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> floors: [<span class="syntax-type">Surface</span>]
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">var</span> sections: [<span class="syntax-type">Section</span>]
+
+    <span class="syntax-keyword">public</span> <span class="syntax-keyword">func</span> <span class="syntax-title function_">export</span>(<span class="syntax-params">to</span> <span class="syntax-params">url</span>: <span class="syntax-type">URL</span>, <span class="syntax-params">metadataURL</span>: <span class="syntax-type">URL</span>? <span class="syntax-operator">=</span> <span class="syntax-literal">nil</span>, <span class="syntax-params">modelProvider</span>: <span class="syntax-type">ModelProvider</span>? <span class="syntax-operator">=</span> <span class="syntax-literal">nil</span>, <span class="syntax-params">exportOptions</span>: <span class="syntax-type">USDExportOptions</span> <span class="syntax-operator">=</span> .mesh) <span class="syntax-keyword">throws</span>
+}</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        19:20 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=1160"
+                          data-start-time="1160"
+                          >Parse attributes and categories to create folder
+                          hierarchy</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// Parse attributes and categories to create folder hierarchy</span>
+
+<span class="syntax-keyword">for</span> category <span class="syntax-keyword">in</span> <span class="syntax-type">CapturedRoom</span>.<span class="syntax-type">Object</span>.<span class="syntax-type">Category</span>.allCases {
+
+    <span class="syntax-keyword">let</span> url <span class="syntax-operator">=</span> generateFolderURL(category: category, attributes: [])
+    <span class="syntax-type">FileManager</span>.default.createDirectory(at: url, withIntermediateDirectories: <span class="syntax-literal">true</span>)
+
+    <span class="syntax-keyword">for</span> attributes <span class="syntax-keyword">in</span> category.supportedCombinations {
+        <span class="syntax-keyword">let</span> url <span class="syntax-operator">=</span> generateFolderURL(category: category, attributes: attributes)
+        <span class="syntax-type">FileManager</span>.default.createDirectory(at: url, withIntermediateDirectories: <span class="syntax-literal">true</span>)
+    }
+}</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        20:00 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=1200"
+                          data-start-time="1200"
+                          >Create a Catalog index</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// Create a Catalog index</span>
+
+<span class="syntax-keyword">struct</span> <span class="syntax-title class_">RoomPlanCatalog</span>: <span class="syntax-title class_">Codable</span> {
+    <span class="syntax-keyword">let</span> categoryAttributes: [<span class="syntax-type">RoomPlanCatalogCategoryAttribute</span>]
+}
+
+<span class="syntax-keyword">struct</span> <span class="syntax-title class_">RoomPlanCatalogCategoryAttribute</span>: <span class="syntax-title class_">Codable</span> {
+    <span class="syntax-keyword">enum</span> <span class="syntax-title class_">CodingKeys</span>: <span class="syntax-title class_">String</span>, <span class="syntax-title class_">CodingKey</span> {
+        <span class="syntax-keyword">case</span> folderRelativePath
+        <span class="syntax-keyword">case</span> category
+        <span class="syntax-keyword">case</span> attributes
+        <span class="syntax-keyword">case</span> modelFilename
+    }
+    <span class="syntax-keyword">let</span> category: <span class="syntax-type">CapturedRoom</span>.<span class="syntax-type">Object</span>.<span class="syntax-type">Category</span>
+    <span class="syntax-keyword">let</span> attributes: [any <span class="syntax-type">CapturedRoomAttribute</span>]
+    <span class="syntax-keyword">let</span> folderRelativePath: <span class="syntax-type">String</span>
+    <span class="syntax-keyword">private(set)</span> <span class="syntax-keyword">var</span> modelFilename: <span class="syntax-type">String</span>? <span class="syntax-operator">=</span> <span class="syntax-literal">nil</span>
+    
+    <span class="syntax-keyword">func</span> <span class="syntax-title function_">encode</span>(<span class="syntax-params">to</span> <span class="syntax-params">encoder</span>: <span class="syntax-type">Encoder</span>) <span class="syntax-keyword">throws</span> {
+       <span class="syntax-operator">…</span>
+    }
+}</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        20:15 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=1215"
+                          data-start-time="1215"
+                          >Create a Catalog bundle</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">//  Create a Catalog bundle</span>
+
+<span class="syntax-keyword">let</span> catalog <span class="syntax-operator">=</span> <span class="syntax-type">RoomPlanCatalog</span>(categoryAttributes: categoryAttributes)
+<span class="syntax-keyword">let</span> plistEncoder <span class="syntax-operator">=</span> <span class="syntax-type">PropertyListEncoder</span>()
+<span class="syntax-keyword">let</span> data <span class="syntax-operator">=</span> <span class="syntax-keyword">try</span> plistEncoder.encode(catalog)
+<span class="syntax-keyword">let</span> catalogURL <span class="syntax-operator">=</span> inputURL.appending(path: <span class="syntax-string">"catalog.plist"</span>)
+<span class="syntax-keyword">try</span> data.write(to: catalogURL)
+<span class="syntax-keyword">let</span> fileWrapper <span class="syntax-operator">=</span> <span class="syntax-keyword">try</span> <span class="syntax-type">FileWrapper</span>(url: inputURL)
+<span class="syntax-keyword">try</span> fileWrapper.write(to: outputURL, options: [.atomic, .withNameUpdating],
+                      originalContentsURL: <span class="syntax-literal">nil</span>)</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        20:22 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=1222"
+                          data-start-time="1222"
+                          >Instantiate a Model Provider from a Catalog</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// Instantiate a Model Provider from a Catalog</span>
+
+<span class="syntax-keyword">for</span> categoryAttribute <span class="syntax-keyword">in</span> catalog.categoryAttributes {
+    <span class="syntax-keyword">guard</span> <span class="syntax-keyword">let</span> modelFilename <span class="syntax-operator">=</span> categoryAttribute.modelFilename <span class="syntax-keyword">else</span> {
+        <span class="syntax-keyword">continue</span> 
+    }
+    <span class="syntax-keyword">let</span> folderRelativePath <span class="syntax-operator">=</span> categoryAttribute.folderRelativePath
+    <span class="syntax-keyword">let</span> modelURL <span class="syntax-operator">=</span> url.appending(path: folderRelativePath).appending(path: modelFilename)
+    <span class="syntax-keyword">if</span> categoryAttribute.attributes.isEmpty {
+       <span class="syntax-keyword">try</span> modelProvider.setModelFileURL(modelURL, for: categoryAttribute.category)
+    } <span class="syntax-keyword">else</span> {
+       <span class="syntax-keyword">try</span> modelProvider.setModelFileURL(modelURL, for: categoryAttribute.attributes)
+    }
+}</code></pre>
+                    </li>
+                    <li class="sample-code-main-container">
+                      <button class="btn-copy-code">Copy Code</button>
+                      <p>
+                        20:47 -
+                        <a
+                          class="jump-to-time-sample"
+                          href="/videos/play/wwdc2023/10192/?time=1247"
+                          data-start-time="1247"
+                          >Exporting a captured room to usdz with models</a
+                        >
+                      </p>
+                      <pre
+                        class="code-source"
+                      ><code><span class="syntax-comment">// Exporting a captured room to usdz with models</span>
+
+<span class="syntax-keyword">try</span> capturedRoom.export(to: outputURL, modelProvider: modelProvider, 
+                        exportOptions: .model)</code></pre>
+                    </li>
+                  </ul>
+                </section>
+              </li>
+
+              <!-- search -->
+              <li class="supplement search" data-supplement-id="search">
+                <section class="transcript-results-summary">
+                  <p class="message smaller lighter">
+                    <!-- to be populated -->
+                  </p>
+                  <p class="instructions smaller lighter text-center">
+                    Looking for something specific? Enter a topic above and jump
+                    straight to the good stuff.
+                  </p>
+                  <p
+                    class="error smaller lighter italic text-center"
+                    style="display: none"
+                  >
+                    An error occurred when submitting your query. Please check
+                    your Internet connection and try again.
+                  </p>
+                </section>
+
+                <!-- search results -->
+                <ul class="transcript-results row"></ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
+
+      <input
+        id="analytics-meta"
+        type="hidden"
+        data-event-name="WWDC23"
+        data-event-id="wwdc2023-10192"
+        data-session-id="10192"
+        data-video-name="Explore enhancements to RoomPlan"
+        data-session-response-id=""
+      />
+    </main>
+
+    <link rel="stylesheet" href="/assets/styles/footer.dist.css?41172203193" />
+    <footer
+      id="footer"
+      class="footer"
+      role="contentinfo"
+      aria-labelledby="footer-label"
+    >
+      <div class="footer-content">
+        <h2 class="footer-label" id="footer-label">Developer Footer</h2>
+
+        <developer-breadcrumbs style="display: block">
+          <nav class="footer-breadcrumbs" aria-label="Breadcrumbs">
+            <a
+              href="https://www.apple.com/"
+              class="home footer-breadcrumbs-home"
+              ><span
+                class="footer-breadcrumbs-home-icon"
+                aria-hidden="true"
+                data-hires-status="pending"
+                ></span
+              ><span class="footer-breadcrumbs-home-label">Apple</span></a
+            >
+            <div class="footer-breadcrumbs-path">
+              <ol class="footer-breadcrumbs-list">
+                <li class="footer-breadcrumbs-item">
+                  <a href="/">Developer</a>
+                </li>
+                <li class="footer-breadcrumbs-item">
+                  <a href="/videos/">Videos</a>
+                </li>
+                <li class="footer-breadcrumbs-item">
+                  <a href="/videos/wwdc2023/">WWDC23</a>
+                </li>
+                <li class="footer-breadcrumbs-item">
+                  Explore enhancements to RoomPlan
+                </li>
+              </ol>
+            </div>
+          </nav></developer-breadcrumbs
+        >
+        <nav
+          class="footer-directory"
+          aria-label="Apple Developer Directory"
+          role="navigation"
+        >
+          <!--googleoff: all-->
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-platform"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-platform"
+              >
+                <h3 class="footer-directory-column-section-title">Platforms</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-platform"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/ios/"
+                    >iOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/ipados/"
+                    >iPadOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/macos/"
+                    >macOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/tvos/"
+                    >tvOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/watchos/"
+                    >watchOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/visionos/"
+                    >visionOS</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-tools"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-tools"
+              >
+                <h3 class="footer-directory-column-section-title">Tools</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-tools"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/swift/"
+                    >Swift</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/swiftui/"
+                    >SwiftUI</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/swift-playgrounds/"
+                    >Swift Playgrounds</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/testflight/"
+                    >TestFlight</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/xcode/"
+                    >Xcode</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/xcode-cloud/"
+                    >Xcode Cloud</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/sf-symbols/"
+                    >SF Symbols</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-topics"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-topics"
+              >
+                <h3 class="footer-directory-column-section-title">
+                  Topics &amp; Technologies
+                </h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-topics"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/accessibility/"
+                    >Accessibility</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/accessories/"
+                    >Accessories</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-extensions/"
+                    >App Extensions</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-store/"
+                    >App Store</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/audio/"
+                    >Audio &amp; Video</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/augmented-reality/"
+                    >Augmented Reality</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/business/"
+                    >Business</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/design/"
+                    >Design</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/distribute/"
+                    >Distribution</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/education/"
+                    >Education</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/fonts/"
+                    >Fonts</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/games/"
+                    >Games</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/health-fitness/"
+                    >Health &amp; Fitness</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/in-app-purchase/"
+                    >In-App Purchase</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/localization/"
+                    >Localization</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/maps/"
+                    >Maps &amp; Location</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/machine-learning/"
+                    >Machine Learning</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://opensource.apple.com"
+                    >Open Source</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/security/"
+                    >Security</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/safari/"
+                    >Safari &amp; Web</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-resources"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-resources"
+              >
+                <h3 class="footer-directory-column-section-title">Resources</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-resources"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/documentation/"
+                    >Documentation</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/learn/curriculum/"
+                    >Curriculum</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/download/"
+                    >Downloads</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/forums/"
+                    >Forums</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/videos/"
+                    >Videos</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-support"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-support"
+              >
+                <h3 class="footer-directory-column-section-title">Support</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-support"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/support/articles/"
+                    >Support Articles</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/contact/"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/bug-reporting/"
+                    >Bug Reporting</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/system-status/"
+                    >System Status</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-account"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-account"
+              >
+                <h3 class="footer-directory-column-section-title">Account</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-account"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/account/"
+                    >Apple Developer</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://appstoreconnect.apple.com/"
+                    >App Store Connect</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/account/ios/certificate/"
+                    >Certificates, IDs, &amp; Profiles</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://feedbackassistant.apple.com/"
+                    >Feedback Assistant</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-programs"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-programs"
+              >
+                <h3 class="footer-directory-column-section-title">Programs</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-programs"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/"
+                    >Apple Developer Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/enterprise/"
+                    >Apple Developer Enterprise Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-store/small-business-program/"
+                    >App Store Small Business Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://mfi.apple.com/"
+                    >MFi Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/news-partner/"
+                    >News Partner Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/video-partner/"
+                    >Video Partner Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/security-bounty/"
+                    >Security Bounty Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/security-research-device/"
+                    >Security Research Device Program</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-events"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-events"
+              >
+                <h3 class="footer-directory-column-section-title">Events</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-events"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/events/"
+                    >Events Overview</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/accelerator/"
+                    >App Accelerators</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-store/app-store-awards/"
+                    >App Store Awards</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/design/awards/"
+                    >Apple Design Awards</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/learn/experts/#academies"
+                    >Apple Developer Academies</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/entrepreneur-camp/"
+                    >Entrepreneur Camp</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/events/ask-apple/"
+                    >Ask Apple</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/tech-talks/"
+                    >Tech Talks</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/wwdc/"
+                    >WWDC</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--googleon: all-->
+        </nav>
+        <section
+          class="footer-mini"
+          vocab="http://schema.org/"
+          typeof="Organization"
+        >
+          <div class="footer-mini-news">
+            <div class="copy">
+              Get the
+              <a
+                href="https://apps.apple.com/us/app/apple-developer/id640199958"
+                >Apple Developer app</a
+              >.
+            </div>
+            <div class="content">
+              <div
+                class="color-scheme-toggle"
+                role="radiogroup"
+                tabindex="0"
+                aria-label="Select a color scheme preference"
+              >
+                <label data-color-scheme-option="light">
+                  <input
+                    type="radio"
+                    value="light"
+                    autocomplete="off"
+                    onchange="window.setPreferredColorScheme(event.target.value)"
+                  />
+
+                  <div class="text">Light</div>
+                </label>
+
+                <label data-color-scheme-option="dark">
+                  <input
+                    type="radio"
+                    value="dark"
+                    autocomplete="off"
+                    onchange="window.setPreferredColorScheme(event.target.value)"
+                  />
+
+                  <div class="text">Dark</div>
+                </label>
+
+                <label data-color-scheme-option="auto">
+                  <input
+                    type="radio"
+                    value="auto"
+                    autocomplete="off"
+                    onchange="window.setPreferredColorScheme(event.target.value)"
+                  />
+
+                  <div class="text">Auto</div>
+                </label>
+              </div>
+              <script
+                async=""
+                src="/assets/scripts/color-scheme-toggle.js"
+              ></script>
+            </div>
+          </div>
+          <link
+            rel="stylesheet"
+            href="/assets/styles/language-dropdown.css?41172203193"
+          />
+          <div class="language-dropdown dropdown-container legacy-form hidden">
+            <select class="dropdown" aria-label="Language Dropdown"></select>
+            <span
+              class="dropdown-icon icon icon-chevrondown"
+              aria-hidden="true"
+            ></span>
+          </div>
+          <script src="/assets/scripts/language-dropdown.js?46182321067"></script>
+          <div class="footer-mini-legal">
+            <div class="footer-mini-legal-copyright">
+              Copyright © 2023
+              <a href="https://www.apple.com">Apple Inc.</a> All rights
+              reserved.
+            </div>
+            <div class="footer-mini-legal-links">
+              <a
+                class="footer-mini-legal-link"
+                href="https://www.apple.com/legal/internet-services/terms/site.html"
+                >Terms of Use</a
+              >
+              <a
+                class="footer-mini-legal-link"
+                href="https://www.apple.com/legal/privacy/en-ww/"
+                >Privacy Policy</a
+              >
+              <a class="footer-mini-legal-link" href="/support/terms/"
+                >Agreements and Guidelines</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script src="/assets/scripts/params.js"></script>
+    <script src="/assets/scripts/watchable.js"></script>
+    <script src="/assets/scripts/timeout.js"></script>
+
+    <script src="/videos/scripts/play/play.js?11212322208"></script>
+    <script src="/videos/scripts/hls/rtc.min.js?22172203193"></script>
+    <script src="/videos/scripts/hls/hls.min.js?07142356017"></script>
+  </body>
+</html>

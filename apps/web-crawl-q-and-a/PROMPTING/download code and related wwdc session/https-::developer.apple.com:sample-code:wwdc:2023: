@@ -1,0 +1,3591 @@
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=SF+Pro&amp;v=2"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=SF+Pro+Icons&amp;v=1"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=SF+Mono&amp;v=2"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.apple.com/wss/fonts?family=Apple+Icons&amp;v=1"
+      type="text/css"
+    />
+
+    <meta charset="utf-8" />
+    <meta name="Author" content="Apple Inc." />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="mask-icon" href="/apple-logo.svg" color="#333333" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/styles/global.dist.css?15182301193"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/styles/localization.css?00232331179"
+      type="text/css"
+    />
+
+    <script src="/assets/scripts/lib/jquery/jquery-3.6.0.min.js?41172203193"></script>
+    <script src="/assets/scripts/settings.js?41172203193"></script>
+    <script src="/assets/scripts/language-locales.js?39192318087"></script>
+    <script src="/assets/scripts/DeveloperBreadcrumbs.js?32172326199"></script>
+
+    <script
+      async=""
+      src="/assets/scripts/lib/jquery/jquery.retinate.js?41172203193"
+    ></script>
+    <script async="" src="/assets/scripts/global.js?41172203193"></script>
+    <script
+      async=""
+      src="/assets/scripts/global-logout.js?41172203193"
+    ></script>
+
+    <title>Sample Code - WWDC23 - Apple Developer</title>
+    <meta name="omni_page" content="WWDC23 Sample Code" />
+    <meta
+      name="Description"
+      content="View sample code to see how the latest Apple technologies are implemented."
+    />
+
+    <link
+      rel="stylesheet"
+      href="/sample-code/wwdc/2023/styles/sample-code.css?07162340156"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/styles/dark-mode.css?31162315129"
+      type="text/css"
+      media=""
+      data-color-scheme="dark"
+    />
+  </head>
+
+  <body id="sample-code" class="dmf" data-color-scheme="dark">
+    <script>
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      if (window.Settings.preferredColorScheme) {
+        const colorTheme =
+          window.Settings.preferredColorScheme === "auto" && !prefersDark
+            ? "light"
+            : window.Settings.preferredColorScheme === "light"
+            ? "light"
+            : "dark";
+        document.body.setAttribute("data-color-scheme", colorTheme);
+      } else {
+        document.body.setAttribute(
+          "data-color-scheme",
+          prefersDark ? "dark" : "light"
+        );
+      }
+    </script>
+    <style>
+      /* footer */
+      html
+        body[data-color-scheme="dark"]
+        #main
+        section.section.section-resources.bg-alt {
+        background-color: var(--fill-tertiary);
+        color: var(--glyph-gray);
+      }
+      html body[data-color-scheme="dark"] .developer-router-links {
+        background-color: var(--fill-tertiary);
+        color: var(--glyph-gray);
+      }
+      html body[data-color-scheme="dark"] .footer {
+        background-color: var(--fill-tertiary);
+        color: var(--glyph-gray-tertiary);
+      }
+      /* body backgrounds */
+      body[data-color-scheme="dark"].dmf {
+        background-color: #000;
+      }
+      html body[data-color-scheme="dark"].dmf .bg-alt {
+        background-color: var(--fill-tertiary);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-blue {
+        background-color: var(--fill-blue-secondary);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-green-blue {
+        background: linear-gradient(135deg, #65976d 0%, #588ea4 100%);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-yellow {
+        background: linear-gradient(
+          to bottom,
+          var(--fill-tertiary) 0%,
+          var(--fill-tertiary-alt) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-light {
+        background-color: var(--fill-secondary-alt);
+      }
+      html body[data-color-scheme="dark"].dmf .bg-gradient,
+      html body[data-color-scheme="dark"].dmf .bg-grad {
+        background: linear-gradient(
+          to bottom,
+          var(--dark) 0%,
+          var(--fill-gray-secondary-alt) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-grad-down {
+        background: linear-gradient(
+          to bottom,
+          var(--dark) 0%,
+          var(--fill-gray-secondary-alt) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-grad-up {
+        background: linear-gradient(
+          to bottom,
+          var(--fill-gray-secondary-alt) 0%,
+          var(--dark) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-blue-gradient,
+      html body[data-color-scheme="dark"].dmf .bg-gradient-blue {
+        background: linear-gradient(
+          to bottom,
+          var(--fill-blue-gradient-light) 0%,
+          var(--fill-blue-gradient-dark) 100%
+        );
+      }
+      html body[data-color-scheme="dark"].dmf .bg-blue-gradient-alt {
+        background: linear-gradient(90deg, #061830 0%, #102d48 100%);
+      }
+      /* globalNav */
+      html body[data-color-scheme="dark"] #ac-globalnav {
+        background: var(--fill-tertiary);
+      }
+      /* localNav */
+      html
+        body[data-color-scheme="dark"]
+        .localnav.localnav-scrim
+        .localnav-background,
+      html
+        body[data-color-scheme="dark"]
+        .localnav-scrim.localnav.localnav-background {
+        background-color: rgba(29, 29, 31, 0.9);
+      }
+      @supports (
+        (-webkit-backdrop-filter: initial) or (backdrop-filter: initial)
+      ) {
+        html
+          body[data-color-scheme="dark"]
+          .localnav.localnav-scrim
+          .localnav-background,
+        html
+          body[data-color-scheme="dark"]
+          .localnav-scrim.localnav.localnav-background {
+          background-color: rgba(29, 29, 31, 0.72);
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="/assets/styles/globalnav.css?41172203193"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/styles/suggest-lang.css?41172203193"
+      type="text/css"
+    />
+    <div id="suggest-lang" class="ribbon hide" lang="en">
+      <div class="ribbon-content-wrapper">
+        <div class="ribbon-content row">
+          <div class="column large-12 large-centered">
+            <p>
+              <a href="#" id="suggest-link" class="ribbon-link more"
+                >View in English</a
+              >
+            </p>
+            <button
+              id="suggest-closer"
+              class="icon icon-after icon-reset"
+              aria-label="Dismiss language suggestion"
+              tabindex="0"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/scripts/suggest-lang.js?05152322130"></script>
+    <aside
+      id="ac-gn-segmentbar"
+      class="ac-gn-segmentbar"
+      lang="en-US"
+      dir="ltr"
+    ></aside>
+    <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate" />
+    <nav
+      id="ac-globalnav"
+      class="js no-touch no-windows"
+      role="navigation"
+      aria-label="Global"
+      data-hires="false"
+      data-analytics-region="global nav"
+      lang="en-US"
+      dir="ltr"
+      data-www-domain="www.apple.com"
+      data-store-locale="us"
+      data-store-root-path="/us"
+      data-store-api="/[storefront]/shop/bag/status"
+      data-search-locale="en_US"
+      data-search-suggestions-api="/search-services/suggestions/"
+      data-search-defaultlinks-api="/search-services/suggestions/defaultlinks/"
+      data-search-suggestions-enabled="false"
+    >
+      <div class="ac-gn-content">
+        <ul class="ac-gn-header">
+          <li class="ac-gn-item ac-gn-menuicon">
+            <label
+              class="ac-gn-menuicon-label"
+              for="ac-gn-menustate"
+              aria-hidden="true"
+            >
+              <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
+                <span
+                  class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"
+                ></span>
+              </span>
+              <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
+                <span
+                  class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"
+                ></span>
+              </span>
+            </label>
+            <a
+              href="#ac-gn-menustate"
+              role="button"
+              class="ac-gn-menuanchor ac-gn-menuanchor-open"
+              id="ac-gn-menuanchor-open"
+            >
+              <span class="ac-gn-menuanchor-label">Global Nav Open Menu</span>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="ac-gn-menuanchor ac-gn-menuanchor-close"
+              id="ac-gn-menuanchor-close"
+            >
+              <span class="ac-gn-menuanchor-label">Global Nav Close Menu</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-apple">
+            <a
+              class="ac-gn-link ac-gn-link-apple-developer"
+              href="/"
+              data-analytics-title="appledeveloper home"
+              id="ac-gn-firstfocus-small"
+            >
+              <span class="ac-gn-link-text">Apple Developer</span>
+            </a>
+          </li>
+        </ul>
+        <div class="ac-gn-search-placeholder-container" role="search">
+          <div class="ac-gn-search ac-gn-search-small">
+            <a
+              id="ac-gn-link-search-small"
+              class="ac-gn-link"
+              href="/search/"
+              data-analytics-title="search"
+              data-analytics-click="search"
+              data-analytics-intrapage-link=""
+              aria-label="Search"
+              role="button"
+              aria-haspopup="true"
+            >
+              <div class="ac-gn-search-placeholder-bar">
+                <div class="ac-gn-search-placeholder-input">
+                  <div
+                    class="ac-gn-search-placeholder-input-text"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="ac-gn-link-search ac-gn-search-placeholder-input-icon"
+                    ></div>
+                    <span class="ac-gn-search-placeholder">Search</span>
+                  </div>
+                </div>
+                <div
+                  class="ac-gn-searchview-close ac-gn-searchview-close-small ac-gn-search-placeholder-searchview-close"
+                >
+                  <span class="ac-gn-searchview-close-cancel" aria-hidden="true"
+                    >Cancel</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <ul class="ac-gn-list">
+          <li class="ac-gn-item ac-gn-apple">
+            <a
+              class="ac-gn-link ac-gn-link-apple-developer"
+              href="/"
+              data-analytics-title="appledeveloper home"
+              id="ac-gn-firstfocus"
+            >
+              <span class="ac-gn-link-text">Apple Developer</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-news">
+            <a
+              class="ac-gn-link ac-gn-link-news"
+              href="/news/"
+              data-analytics-title="news"
+            >
+              <span class="ac-gn-link-text">News</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-discover">
+            <a
+              class="ac-gn-link ac-gn-link-discover"
+              href="/discover/"
+              data-analytics-title="discover"
+            >
+              <span class="ac-gn-link-text">Discover</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-design">
+            <a
+              class="ac-gn-link ac-gn-link-design"
+              href="/design/"
+              data-analytics-title="design"
+            >
+              <span class="ac-gn-link-text">Design</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-develop">
+            <a
+              class="ac-gn-link ac-gn-link-develop"
+              href="/develop/"
+              data-analytics-title="develop"
+            >
+              <span class="ac-gn-link-text">Develop</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-distribute">
+            <a
+              class="ac-gn-link ac-gn-link-distribute"
+              href="/distribute/"
+              data-analytics-title="distribute"
+            >
+              <span class="ac-gn-link-text">Distribute</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-dsupport">
+            <a
+              class="ac-gn-link ac-gn-link-dsupport"
+              href="/support/"
+              data-analytics-title="dsupport"
+            >
+              <span class="ac-gn-link-text">Support</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-account">
+            <a
+              class="ac-gn-link ac-gn-link-account"
+              href="/account/"
+              data-analytics-title="account"
+            >
+              <span class="ac-gn-link-text">Account</span>
+            </a>
+          </li>
+          <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
+            <a
+              id="ac-gn-link-search"
+              class="ac-gn-link ac-gn-link-search"
+              href="/search/"
+              data-analytics-title="search"
+              data-analytics-click="search"
+              data-analytics-intrapage-link=""
+              aria-label="Search"
+              role="button"
+              aria-haspopup="true"
+            ></a>
+          </li>
+        </ul>
+        <aside
+          id="ac-gn-searchview"
+          class="ac-gn-searchview"
+          role="search"
+          data-analytics-region="search"
+        >
+          <div class="ac-gn-searchview-content">
+            <div class="ac-gn-searchview-bar">
+              <div class="ac-gn-searchview-bar-wrapper">
+                <form
+                  id="ac-gn-searchform"
+                  class="ac-gn-searchform"
+                  action="/search/"
+                  method="get"
+                >
+                  <div class="ac-gn-searchform-wrapper">
+                    <input
+                      id="ac-gn-searchform-input"
+                      class="ac-gn-searchform-input"
+                      type="text"
+                      name="q"
+                      aria-label="Search"
+                      placeholder="Search"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="off"
+                      spellcheck="false"
+                      role="combobox"
+                      aria-autocomplete="list"
+                      aria-expanded="true"
+                      aria-owns="quicklinks suggestions"
+                    />
+                    <button
+                      id="ac-gn-searchform-submit"
+                      class="ac-gn-searchform-submit"
+                      type="submit"
+                      disabled=""
+                      aria-label="Submit Search"
+                    ></button>
+                    <button
+                      id="ac-gn-searchform-reset"
+                      class="ac-gn-searchform-reset"
+                      type="reset"
+                      disabled=""
+                      aria-label="Clear Search"
+                    >
+                      <span class="ac-gn-searchform-reset-background"></span>
+                    </button>
+                  </div>
+                </form>
+                <button
+                  id="ac-gn-searchview-close-small"
+                  class="ac-gn-searchview-close ac-gn-searchview-close-small"
+                  aria-label="Cancel Search"
+                >
+                  <span
+                    class="ac-gn-searchview-close-cancel"
+                    aria-hidden="true"
+                  >
+                    Cancel
+                  </span>
+                </button>
+              </div>
+            </div>
+            <aside
+              id="ac-gn-searchresults"
+              class="ac-gn-searchresults"
+              data-string-quicklinks="Quick Links"
+              data-string-suggestions="Suggested Searches"
+              data-string-noresults=""
+            >
+              <section
+                class="ac-gn-searchresults-section ac-gn-searchresults-section-defaultlinks"
+              >
+                <div class="ac-gn-searchresults-section-wrapper">
+                  <div class="search-group-checkbox hidden">
+                    <input
+                      id="group-input"
+                      type="checkbox"
+                      name="group-filter"
+                      checked=""
+                    />Only search within “<span id="group-search-label"></span>”
+                  </div>
+                  <h3
+                    class="ac-gn-searchresults-header ac-gn-searchresults-animated"
+                  >
+                    Quick Links
+                  </h3>
+                  <ul
+                    class="ac-gn-searchresults-list"
+                    id="defaultlinks"
+                    role="listbox"
+                  >
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/download/"
+                        id="search-group-link-0"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Downloads</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/documentation/"
+                        id="search-group-link-1"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Documentation</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/videos/"
+                        id="search-group-link-2"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Videos</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/forums/"
+                        id="search-group-link-3"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Forums</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/wwdc23/"
+                        id="search-group-link-4"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >WWDC</a
+                      >
+                    </li>
+                    <li
+                      class="ac-gn-searchresults-item ac-gn-searchresults-animated"
+                    >
+                      <a
+                        href="/xcode/"
+                        id="search-group-link-5"
+                        class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks"
+                        >Xcode</a
+                      >
+                    </li>
+                  </ul>
+                  <span
+                    role="status"
+                    class="ac-gn-searchresults-count"
+                    aria-live="polite"
+                    >5 Quick Links</span
+                  >
+                </div>
+              </section>
+            </aside>
+          </div>
+          <button
+            id="ac-gn-searchview-close"
+            class="ac-gn-searchview-close"
+            aria-label="Cancel Search"
+          >
+            <span class="ac-gn-searchview-close-wrapper">
+              <span class="ac-gn-searchview-close-left"></span>
+              <span class="ac-gn-searchview-close-right"></span>
+            </span>
+          </button>
+        </aside>
+      </div>
+    </nav>
+    <div class="ac-gn-blur"></div>
+    <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+    <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
+    <script src="/assets/scripts/ac-globalnav.built.js?41172203193"></script>
+    <div id="ac-gn-viewport-emitter"></div>
+    <link rel="stylesheet" href="/assets/styles/search.css?17042322115" />
+    <script src="/assets/scripts/search.js?48172337109"></script>
+
+    <!-- metrics -->
+    <script>
+      /* RSID: */
+      var s_account = "awdappledeveloper";
+    </script>
+    <script src="/assets/metrics/scripts/analytics.js?10202020"></script>
+    <script>
+      s.pageName = AC && AC.Tracking && AC.Tracking.pageName();
+      s.channel = "www.en.developer";
+      s.channel = "www.wwdc.developer";
+
+      /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+      var s_code = s.t();
+      if (s_code) document.write(s_code);
+    </script>
+    <!-- /metrics -->
+
+    <link
+      rel="stylesheet"
+      property="stylesheet"
+      href="/assets/styles/localnav.css"
+      type="text/css"
+    />
+    <input type="checkbox" id="localnav-menustate" class="localnav-menustate" />
+    <div id="localnav-sticky-placeholder" class="css-sticky"></div>
+    <nav
+      id="localnav"
+      class="localnav localnav-scrim css-sticky"
+      data-sticky=""
+      role="navigation"
+    >
+      <div class="localnav-wrapper">
+        <div class="localnav-background"></div>
+        <div class="localnav-content">
+          <h2 class="localnav-title">
+            <a href="/sample-code/wwdc/2023/">Sample Code</a>
+          </h2>
+
+          <div class="localnav-menu">
+            <a
+              href="#localnav-menustate"
+              class="localnav-menucta-anchor localnav-menucta-anchor-open"
+              id="localnav-menustate-open"
+            >
+              <span class="localnav-menucta-anchor-label">Open Menu</span>
+            </a>
+            <a
+              href="#"
+              class="localnav-menucta-anchor localnav-menucta-anchor-close"
+              id="localnav-menustate-close"
+            >
+              <span class="localnav-menucta-anchor-label">Close Menu</span>
+            </a>
+            <div class="localnav-menu-tray">
+              <ul class="localnav-menu-items">
+                <li class="localnav-menu-item">
+                  <a href="/sample-code/wwdc/2023/" class="localnav-menu-link"
+                    >WWDC23</a
+                  >
+                </li>
+                <li class="localnav-menu-item">
+                  <a href="/sample-code/wwdc/2022/" class="localnav-menu-link"
+                    >WWDC22</a
+                  >
+                </li>
+                <li class="localnav-menu-item">
+                  <a href="/sample-code/wwdc/2021/" class="localnav-menu-link"
+                    >WWDC21</a
+                  >
+                </li>
+                <li class="localnav-menu-item">
+                  <a href="/sample-code/wwdc/2020/" class="localnav-menu-link"
+                    >WWDC20</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="localnav-actions localnav-actions">
+              <div
+                class="localnav-action localnav-action-menucta"
+                aria-hidden="true"
+              >
+                <label for="localnav-menustate" class="localnav-menucta">
+                  <span class="localnav-menucta-chevron"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <label id="localnav-curtain" for="localnav-menustate"></label>
+    <script src="/assets/scripts/ac-localnav.built.js"></script>
+    <div
+      id="localnav-viewport-emitter"
+      data-viewport-emitter-dispatch=""
+      data-viewport-emitter-state='{"viewport":"large","orientation":"portrait","retina":true}'
+    ></div>
+
+    <main id="main" class="main" role="main" style="overflow: initial">
+      <section class="section section-hero">
+        <div class="section-content">
+          <div class="center text-center large-10 medium-11 small-12">
+            <h1 class="typography-hero-headline margin-top-small">WWDC23</h1>
+            <p class="typography-intro">
+              View sample code referenced in the WWDC23 session videos.
+            </p>
+          </div>
+        </div>
+        <div
+          class="section-content padding-top-small padding-bottom-small legacy-form"
+        >
+          <div class="column large-10 small-12 large-centered text-center">
+            <p>
+              <input
+                class="searchbar"
+                type="text"
+                placeholder="Filter by keywords"
+                data-hires-status="pending"
+              />
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="background">
+        <section class="section sample-code">
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Featured</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Backyard Birds: Building an app with SwiftData and
+                          widgets
+                        </h4>
+                        <p class="cs-overview">
+                          Create an app with persistent data, interactive
+                          widgets, and an all new in-app purchase experience.
+                        </p>
+                        <p class="cs-category hidden">Featured</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>watchOS</span>
+                          <span>Xcode</span>
+                          <span>iPadOS</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/swiftui/backyard-birds-sample"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Accelerate</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Training a neural network to recognize digits
+                        </h4>
+                        <p class="cs-overview">
+                          Build a simple neural network and train it to
+                          recognize randomly generated numbers.
+                        </p>
+                        <p class="cs-category hidden">Accelerate</p>
+                        <p class="platform-container">
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/accelerate/training_a_neural_network_to_recognize_digits"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Audio &amp; Video</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          ShazamKit Dance Finder with Managed Session
+                        </h4>
+                        <p class="cs-overview">
+                          Find a video of dance moves for a specific song by
+                          matching the audio to a custom catalog, and show a
+                          history of recognized songs.
+                        </p>
+                        <p class="cs-category hidden">Audio &amp; Video</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/shazamkit/shazamkit_dance_finder_with_managed_session"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Playing and editing Cinematic mode video
+                        </h4>
+                        <p class="cs-overview">
+                          Play and edit Cinematic mode video with an adjustable
+                          depth of field and focus points.
+                        </p>
+                        <p class="cs-category hidden">Audio &amp; Video</p>
+                        <p class="platform-container">
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/cinematic/playing_and_editing_cinematic_mode_video"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Augmented Reality</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Providing custom models for captured rooms and
+                          structure exports
+                        </h4>
+                        <p class="cs-overview">
+                          Enhance the look of an exported 3D model by
+                          substituting object bounding boxes with detailed 3D
+                          renditions.
+                        </p>
+                        <p class="cs-category hidden">Augmented Reality</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>Xcode</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/roomplan/providingcustommodelsforcapturedroomsandstructureexports"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Merging multiple scans into a single structure
+                        </h4>
+                        <p class="cs-overview">
+                          Export a 3D model that consists of multiple rooms
+                          captured in the same physical vicinity
+                        </p>
+                        <p class="cs-category hidden">Augmented Reality</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>Xcode</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/roomplan/mergingmultiplescansintoasinglestructure"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Calendar</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Accessing Calendar using EventKit and EventKitUI
+                        </h4>
+                        <p class="cs-overview">
+                          Choose and implement the appropriate Calendar access
+                          level in your app.
+                        </p>
+                        <p class="cs-category hidden">Calendar</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/eventkit/accessing_calendar_using_eventkit_and_eventkitui"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">CryptoKit</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Performing Common Cryptographic Operations
+                        </h4>
+                        <p class="cs-overview">
+                          Use CryptoKit to carry out operations like hashing,
+                          key generation, and encryption.
+                        </p>
+                        <p class="cs-category hidden">CryptoKit</p>
+                        <p class="platform-container">
+                          <span></span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/cryptokit/performing_common_cryptographic_operations"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Developer Tools</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          SlothCreator: Building DocC Documentation in Xcode
+                        </h4>
+                        <p class="cs-overview">
+                          Build DocC documentation for a Swift package that
+                          contains a DocC Catalog.
+                        </p>
+                        <p class="cs-category hidden">Developer Tools</p>
+                        <p class="platform-container">
+                          <span></span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/xcode/slothcreator_building_docc_documentation_in_xcode"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Foundation</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Building a resumable upload server with SwiftNIO
+                        </h4>
+                        <p class="cs-overview">
+                          Support HTTP resumable upload protocol in SwiftNIO by
+                          translating resumable uploads to regular uploads.
+                        </p>
+                        <p class="cs-category hidden">Foundation</p>
+                        <p class="platform-container">
+                          <span></span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/foundation/urlsession/building_a_resumable_upload_server_with_swiftnio"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Graphics &amp; Games</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Downloading essential assets in the background
+                        </h4>
+                        <p class="cs-overview">
+                          Fetch the assets your app requires before its first
+                          launch using an app extension and the Background
+                          Assets framework.
+                        </p>
+                        <p class="cs-category hidden">Graphics &amp; Games</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/backgroundassets/downloading_essential_assets_in_the_background"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Achieving smooth frame rates with Metal’s display link
+                        </h4>
+                        <p class="cs-overview">
+                          Pace rendering with minimal input latency while
+                          providing essential information to the operating
+                          system for power-efficient rendering, thermal
+                          mitigation, and the scheduling of sustainable
+                          workloads.
+                        </p>
+                        <p class="cs-category hidden">Graphics &amp; Games</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>tvOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/metal/metal_sample_code_library/achieving_smooth_frame_rates_with_metal_s_display_link"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Customizing a PyTorch operation
+                        </h4>
+                        <p class="cs-overview">
+                          Implement a custom operation in PyTorch that uses
+                          Metal kernels to improve performance.
+                        </p>
+                        <p class="cs-category hidden">Graphics &amp; Games</p>
+                        <p class="platform-container">
+                          <span></span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/metal/metal_sample_code_library/customizing_a_pytorch_operation"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Filtering Images with MPSGraph FFT Operations
+                        </h4>
+                        <p class="cs-overview">
+                          Filter an image with MPSGraph fast Fourier transforms
+                          using the convolutional theorem.
+                        </p>
+                        <p class="cs-category hidden">Graphics &amp; Games</p>
+                        <p class="platform-container">
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/metalperformanceshadersgraph/filtering_images_with_mpsgraph_fft_operations"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">GroupActivities</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Drawing content in a group session
+                        </h4>
+                        <p class="cs-overview">
+                          Invite your friends to draw on a shared canvas while
+                          on a FaceTime call.
+                        </p>
+                        <p class="cs-category hidden">GroupActivities</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/groupactivities/drawing_content_in_a_group_session"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Health &amp; Fitness</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Building a multidevice workout app
+                        </h4>
+                        <p class="cs-overview">
+                          Mirror a workout from a watchOS app to its companion
+                          iOS app, and perform bidirectional communication
+                          between them.
+                        </p>
+                        <p class="cs-category hidden">Health &amp; Fitness</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>watchOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/healthkit/workouts_and_activity_rings/building_a_multidevice_workout_app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Customizing workouts with WorkoutKit
+                        </h4>
+                        <p class="cs-overview">
+                          Create, preview, and sync workout structures for use
+                          in the Workout app on Apple Watch.
+                        </p>
+                        <p class="cs-category hidden">Health &amp; Fitness</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>iPadOS</span>
+                          <span>Xcode</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/watchos-apps/updating-your-app-and-widgets-for-watchos-10"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">iCloud &amp; Data</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">Visualizing your app’s data</h4>
+                        <p class="cs-overview">
+                          Build complex and interactive charts using Swift
+                          Charts.
+                        </p>
+                        <p class="cs-category hidden">iCloud &amp; Data</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/charts/visualizing_your_app_s_data"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Machine Learning</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Recognizing speech in live audio
+                        </h4>
+                        <p class="cs-overview">
+                          Perform speech recognition on audio coming from the
+                          microphone of an iOS device.
+                        </p>
+                        <p class="cs-category hidden">Machine Learning</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/speech/recognizing_speech_in_live_audio"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">macOS</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Running macOS in a virtual machine on Apple silicon
+                        </h4>
+                        <p class="cs-overview">
+                          Install and run macOS in a virtual machine using the
+                          Virtualization framework.
+                        </p>
+                        <p class="cs-category hidden">macOS</p>
+                        <p class="platform-container">
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/virtualization/running_macos_in_a_virtual_machine_on_apple_silicon"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Maps &amp; Location</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Adopting live updates in Core Location
+                        </h4>
+                        <p class="cs-overview">
+                          Simplify location delivery using asynchronous events
+                          in Swift.
+                        </p>
+                        <p class="cs-category hidden">Maps &amp; Location</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/corelocation/adopting_live_updates_in_core_location"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Integrating the Apple Maps Server API into Java server
+                          applications
+                        </h4>
+                        <p class="cs-overview">
+                          Streamline your app’s API by moving georelated
+                          searches from inside your app to your server.
+                        </p>
+                        <p class="cs-category hidden">Maps &amp; Location</p>
+                        <p class="platform-container">
+                          <span></span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/applemapsserverapi/integrating_the_apple_maps_server_api_into_java_server_applications"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Monitoring location changes with Core Location
+                        </h4>
+                        <p class="cs-overview">
+                          Define boundaries and act on user location updates.
+                        </p>
+                        <p class="cs-category hidden">Maps &amp; Location</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/corelocation/monitoring_location_changes_with_core_location"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Photo &amp; Camera</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Supporting Continuity Camera in your tvOS app
+                        </h4>
+                        <p class="cs-overview">
+                          Capture high-quality photos, video, and audio in your
+                          Apple TV app by connecting an iPhone or iPad as a
+                          continuity device.
+                        </p>
+                        <p class="cs-category hidden">Photo &amp; Camera</p>
+                        <p class="platform-container">
+                          <span>tvOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/avkit/supporting_continuity_camera_in_your_tvos_app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">AVCam: Building a Camera App</h4>
+                        <p class="cs-overview">
+                          Capture photos with depth data and record video using
+                          the front and rear iPhone and iPad cameras.
+                        </p>
+                        <p class="cs-category hidden">Photo &amp; Camera</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/avfoundation/capture_setup/avcam_building_a_camera_app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Implementing an inline Photos picker
+                        </h4>
+                        <p class="cs-overview">
+                          Embed a system-provided, half-height Photos picker
+                          into your app’s view.
+                        </p>
+                        <p class="cs-category hidden">Photo &amp; Camera</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/photokit/implementing_an_inline_photos_picker"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Swift &amp; SwiftUI</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Focus Cookbook: Supporting and enhancing focus-driven
+                          interactions in your SwiftUI app
+                        </h4>
+                        <p class="cs-overview">
+                          Create custom focusable views with key-press handlers
+                          that accelerate keyboard input and support movement,
+                          and control focus programmatically.
+                        </p>
+                        <p class="cs-category hidden">Swift &amp; SwiftUI</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>Xcode</span>
+                          <span>iPadOS</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/swiftui/focus-cookbook-sample"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">SwiftData</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Managing model data in your app
+                        </h4>
+                        <p class="cs-overview">
+                          Create connections between your app’s data model and
+                          views.
+                        </p>
+                        <p class="cs-category hidden">SwiftData</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>Xcode</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Monitoring data changes in your app
+                        </h4>
+                        <p class="cs-overview">
+                          Show changes to data in your app’s user interface by
+                          using observable objects.
+                        </p>
+                        <p class="cs-category hidden">SwiftData</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>Xcode</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/swiftui/monitoring-model-data-changes-in-your-app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Migrating from the Observable Object protocol to the
+                          Observable macro
+                        </h4>
+                        <p class="cs-overview">
+                          Update your existing app to leverage the benefits of
+                          Observation in Swift
+                        </p>
+                        <p class="cs-category hidden">SwiftData</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>Xcode</span>
+                          <span>iPadOS</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Adopting SwiftData for a Core Data app
+                        </h4>
+                        <p class="cs-overview">
+                          Persist data in your app intuitively with the Swift
+                          native persistence framework.
+                        </p>
+                        <p class="cs-category hidden">SwiftData</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/coredata/adopting_swiftdata_for_a_core_data_app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Building a document-based app using SwiftData
+                        </h4>
+                        <p class="cs-overview">
+                          Code along with the WWDC presenter to transform an app
+                          with SwiftData.
+                        </p>
+                        <p class="cs-category hidden">SwiftData</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>Xcode</span>
+                          <span>iPadOS</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/swiftui/building-a-document-based-app-using-swiftdata"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">UIKit</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Implementing Modern Collection Views
+                        </h4>
+                        <p class="cs-overview">
+                          Bring compositional layouts to your app and simplify
+                          updating your user interface with diffable data
+                          sources.
+                        </p>
+                        <p class="cs-category hidden">UIKit</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/implementing_modern_collection_views"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Supporting desktop-class features in your iPad app
+                        </h4>
+                        <p class="cs-overview">
+                          Enhance your iPad app by adding desktop-class features
+                          and document support.
+                        </p>
+                        <p class="cs-category hidden">UIKit</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>Mac Catalyst</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/uikit/app_and_environment/supporting_desktop-class_features_in_your_ipad_app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Supporting HDR images in your app
+                        </h4>
+                        <p class="cs-overview">
+                          Load, display, edit, and save HDR images using SwiftUI
+                          and Core Image.
+                        </p>
+                        <p class="cs-category hidden">UIKit</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/uikit/images_and_pdf/supporting_hdr_images_in_your_app"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Vision</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Detecting animal body poses with Vision
+                        </h4>
+                        <p class="cs-overview">
+                          Draw the skeleton of an animal by using Vision’s
+                          capability to detect animal body poses.
+                        </p>
+                        <p class="cs-category hidden">Vision</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/vision/detecting_animal_body_poses_with_vision"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Detecting human body poses in 3D with Vision
+                        </h4>
+                        <p class="cs-overview">
+                          Render skeletons of 3D body pose points in a scene
+                          overlaying the input image.
+                        </p>
+                        <p class="cs-category hidden">Vision</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/vision/detecting_human_body_poses_in_3d_with_vision"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Wallet</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Checking IDs with Tap to Present ID on iPhone
+                        </h4>
+                        <p class="cs-overview">
+                          Read and verify mobile driver’s license information
+                          without any additional hardware.
+                        </p>
+                        <p class="cs-category hidden">Wallet</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>Xcode</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/proximityreader/checking-ids-with-tap-to-present-id-on-iphone"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="sample-container">
+            <section class="sticky">
+              <section class="grid">
+                <section class="row">
+                  <section
+                    class="column large-centered large-10 small-12 no-padding-top no-padding-bottom"
+                  >
+                    <span class="focus-group-link" data-scroll-nav="1"
+                      ><span class="font-bold">Widgets</span></span
+                    >
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <div class="section-content">
+              <ul class="sample-code-items no-bullet no-margin">
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Emoji Rangers: Supporting Live Activities,
+                          interactivity, and animations
+                        </h4>
+                        <p class="cs-overview">
+                          Offer Live Activities, animate data updates, and add
+                          interactivity to widgets.
+                        </p>
+                        <p class="cs-category hidden">Widgets</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>watchOS</span>
+                        </p>
+
+                        <a
+                          href="https://developer.apple.com/documentation/widgetkit/emoji_rangers_supporting_live_activities_interactivity_and_animations"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="sample-code-item">
+                  <div class="grid">
+                    <div class="row-full">
+                      <div
+                        class="sample-icon column large-2 medium-3 small-12 padding-right-small"
+                      >
+                        <img
+                          src="/news/images/icons/code.svg"
+                          width="56"
+                          height="56"
+                          alt=""
+                          data-hires-status="pending"
+                        />
+                      </div>
+                      <div
+                        class="sample-description column large-9 small-12 padding-right-small"
+                      >
+                        <h4 class="cs-title">
+                          Updating your app and widgets for watchOS 10
+                        </h4>
+                        <p class="cs-overview">
+                          Integrate SwiftUI elements and watch-specific
+                          features, and build widgets for the Smart Stack.
+                        </p>
+                        <p class="cs-category hidden">Widgets</p>
+                        <p class="platform-container">
+                          <span>iOS</span>
+                          <span>macOS</span>
+                          <span>watchOS</span>
+                          <span>Xcode</span>
+                        </p>
+
+                        <a
+                          href="http://developer.apple.com/documentation/watchos-apps/updating-your-app-and-widgets-for-watchos-10"
+                          class="icon icon-after icon-chevronright"
+                          >View code</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="row">
+            <div
+              class="column large-centered large-10 small-12 text-center padding-bottom margin-bottom"
+            >
+              <h4 class="search-notice hidden">No Results.</h4>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <link rel="stylesheet" href="/assets/styles/footer.dist.css?41172203193" />
+    <footer
+      id="footer"
+      class="footer"
+      role="contentinfo"
+      aria-labelledby="footer-label"
+    >
+      <div class="footer-content">
+        <h2 class="footer-label" id="footer-label">Developer Footer</h2>
+
+        <developer-breadcrumbs style="display: block">
+          <nav class="footer-breadcrumbs" aria-label="Breadcrumbs">
+            <a
+              href="https://www.apple.com/"
+              class="home footer-breadcrumbs-home"
+              ><span
+                class="footer-breadcrumbs-home-icon"
+                aria-hidden="true"
+                data-hires-status="pending"
+                ></span
+              ><span class="footer-breadcrumbs-home-label">Apple</span></a
+            >
+            <div class="footer-breadcrumbs-path">
+              <ol class="footer-breadcrumbs-list">
+                <li class="footer-breadcrumbs-item">
+                  <a href="/">Developer</a>
+                </li>
+                <li class="footer-breadcrumbs-item">
+                  <a href="/documentation/">Documentation</a>
+                </li>
+                <li class="footer-breadcrumbs-item">WWDC23 Sample Code</li>
+              </ol>
+            </div>
+          </nav></developer-breadcrumbs
+        >
+        <nav
+          class="footer-directory"
+          aria-label="Apple Developer Directory"
+          role="navigation"
+        >
+          <!--googleoff: all-->
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-platform"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-platform"
+              >
+                <h3 class="footer-directory-column-section-title">Platforms</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-platform"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/ios/"
+                    >iOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/ipados/"
+                    >iPadOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/macos/"
+                    >macOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/tvos/"
+                    >tvOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/watchos/"
+                    >watchOS</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/visionos/"
+                    >visionOS</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-tools"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-tools"
+              >
+                <h3 class="footer-directory-column-section-title">Tools</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-tools"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/swift/"
+                    >Swift</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/swiftui/"
+                    >SwiftUI</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/swift-playgrounds/"
+                    >Swift Playgrounds</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/testflight/"
+                    >TestFlight</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/xcode/"
+                    >Xcode</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/xcode-cloud/"
+                    >Xcode Cloud</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/sf-symbols/"
+                    >SF Symbols</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-topics"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-topics"
+              >
+                <h3 class="footer-directory-column-section-title">
+                  Topics &amp; Technologies
+                </h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-topics"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/accessibility/"
+                    >Accessibility</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/accessories/"
+                    >Accessories</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-extensions/"
+                    >App Extensions</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-store/"
+                    >App Store</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/audio/"
+                    >Audio &amp; Video</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/augmented-reality/"
+                    >Augmented Reality</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/business/"
+                    >Business</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/design/"
+                    >Design</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/distribute/"
+                    >Distribution</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/education/"
+                    >Education</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/fonts/"
+                    >Fonts</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/games/"
+                    >Games</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/health-fitness/"
+                    >Health &amp; Fitness</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/in-app-purchase/"
+                    >In-App Purchase</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/localization/"
+                    >Localization</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/maps/"
+                    >Maps &amp; Location</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/machine-learning/"
+                    >Machine Learning</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://opensource.apple.com"
+                    >Open Source</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/security/"
+                    >Security</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/safari/"
+                    >Safari &amp; Web</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-resources"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-resources"
+              >
+                <h3 class="footer-directory-column-section-title">Resources</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-resources"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/documentation/"
+                    >Documentation</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/learn/curriculum/"
+                    >Curriculum</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/download/"
+                    >Downloads</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/forums/"
+                    >Forums</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/videos/"
+                    >Videos</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-support"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-support"
+              >
+                <h3 class="footer-directory-column-section-title">Support</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-support"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/support/articles/"
+                    >Support Articles</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/contact/"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/bug-reporting/"
+                    >Bug Reporting</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/system-status/"
+                    >System Status</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-account"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-account"
+              >
+                <h3 class="footer-directory-column-section-title">Account</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-account"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/account/"
+                    >Apple Developer</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://appstoreconnect.apple.com/"
+                    >App Store Connect</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/account/ios/certificate/"
+                    >Certificates, IDs, &amp; Profiles</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://feedbackassistant.apple.com/"
+                    >Feedback Assistant</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-directory-column">
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-programs"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-programs"
+              >
+                <h3 class="footer-directory-column-section-title">Programs</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-programs"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/"
+                    >Apple Developer Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/enterprise/"
+                    >Apple Developer Enterprise Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-store/small-business-program/"
+                    >App Store Small Business Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="https://mfi.apple.com/"
+                    >MFi Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/news-partner/"
+                    >News Partner Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/video-partner/"
+                    >Video Partner Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/security-bounty/"
+                    >Security Bounty Program</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/programs/security-research-device/"
+                    >Security Research Device Program</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <input
+              class="footer-directory-column-section-state"
+              type="checkbox"
+              id="footer-directory-column-section-state-events"
+            />
+            <div class="footer-directory-column-section">
+              <label
+                class="footer-directory-column-section-label"
+                for="footer-directory-column-section-state-events"
+              >
+                <h3 class="footer-directory-column-section-title">Events</h3>
+              </label>
+              <a
+                href="#footer-directory-column-section-state-events"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-open"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Open Menu</span
+                >
+              </a>
+              <a
+                href="#"
+                class="footer-directory-column-section-anchor footer-directory-column-section-anchor-close"
+              >
+                <span class="footer-directory-column-section-anchor-label"
+                  >Close Menu</span
+                >
+              </a>
+              <ul class="footer-directory-column-section-list">
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/events/"
+                    >Events Overview</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/accelerator/"
+                    >App Accelerators</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/app-store/app-store-awards/"
+                    >App Store Awards</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/design/awards/"
+                    >Apple Design Awards</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/learn/experts/#academies"
+                    >Apple Developer Academies</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/entrepreneur-camp/"
+                    >Entrepreneur Camp</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/events/ask-apple/"
+                    >Ask Apple</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a
+                    class="footer-directory-column-section-link"
+                    href="/tech-talks/"
+                    >Tech Talks</a
+                  >
+                </li>
+                <li class="footer-directory-column-section-item">
+                  <a class="footer-directory-column-section-link" href="/wwdc/"
+                    >WWDC</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--googleon: all-->
+        </nav>
+        <section
+          class="footer-mini"
+          vocab="http://schema.org/"
+          typeof="Organization"
+        >
+          <div class="footer-mini-news">
+            <div class="copy">
+              Get the
+              <a
+                href="https://apps.apple.com/us/app/apple-developer/id640199958"
+                >Apple Developer app</a
+              >.
+            </div>
+            <div class="content">
+              <div
+                class="color-scheme-toggle"
+                role="radiogroup"
+                tabindex="0"
+                aria-label="Select a color scheme preference"
+              >
+                <label data-color-scheme-option="light">
+                  <input
+                    type="radio"
+                    value="light"
+                    autocomplete="off"
+                    onchange="window.setPreferredColorScheme(event.target.value)"
+                  />
+
+                  <div class="text">Light</div>
+                </label>
+
+                <label data-color-scheme-option="dark">
+                  <input
+                    type="radio"
+                    value="dark"
+                    autocomplete="off"
+                    onchange="window.setPreferredColorScheme(event.target.value)"
+                  />
+
+                  <div class="text">Dark</div>
+                </label>
+
+                <label data-color-scheme-option="auto">
+                  <input
+                    type="radio"
+                    value="auto"
+                    autocomplete="off"
+                    onchange="window.setPreferredColorScheme(event.target.value)"
+                  />
+
+                  <div class="text">Auto</div>
+                </label>
+              </div>
+              <script
+                async=""
+                src="/assets/scripts/color-scheme-toggle.js"
+              ></script>
+            </div>
+          </div>
+          <link
+            rel="stylesheet"
+            href="/assets/styles/language-dropdown.css?41172203193"
+          />
+          <div class="language-dropdown dropdown-container legacy-form hidden">
+            <select class="dropdown" aria-label="Language Dropdown"></select>
+            <span
+              class="dropdown-icon icon icon-chevrondown"
+              aria-hidden="true"
+            ></span>
+          </div>
+          <script src="/assets/scripts/language-dropdown.js?46182321067"></script>
+          <div class="footer-mini-legal">
+            <div class="footer-mini-legal-copyright">
+              Copyright © 2023
+              <a href="https://www.apple.com">Apple Inc.</a> All rights
+              reserved.
+            </div>
+            <div class="footer-mini-legal-links">
+              <a
+                class="footer-mini-legal-link"
+                href="https://www.apple.com/legal/internet-services/terms/site.html"
+                >Terms of Use</a
+              >
+              <a
+                class="footer-mini-legal-link"
+                href="https://www.apple.com/legal/privacy/en-ww/"
+                >Privacy Policy</a
+              >
+              <a class="footer-mini-legal-link" href="/support/terms/"
+                >Agreements and Guidelines</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script src="/assets/scripts/watchable.js"></script>
+    <script src="/assets/scripts/params.js"></script>
+    <script src="/sample-code/wwdc/2023/scripts/sample-code.js"></script>
+  </body>
+</html>
