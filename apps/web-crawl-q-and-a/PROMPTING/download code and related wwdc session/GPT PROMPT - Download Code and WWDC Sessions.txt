@@ -1,0 +1,113 @@
+I am going to upload multiple files to you
+
+1) get_all_urls.py I would like you to modify this file to perform the following set of operations
+The only reason I'm including this file is because it is working on my computer and I don't want to fiddle around with selenium anymore
+
+
+The below file will be our starting point for our depth first search that will be explained further below. 
+
+2) the html contents of https://developer.apple.com/sample-code/wwdc/2023/ (https-::developer.apple.com:sample-code:wwdc:2023:) of all references files in the format above to match their original url
+
+As you can see from this file at the top, we have a list of links to other pages that contain sample code projects
+
+Before visiting those links, I would like to crawl through all of the "view code" URL's on this page. For example, when I click view code underneath backyard, birds building an app with swift data and widgets, I am taken to this URL https://developer.apple.com/documentation/swiftui/backyard-birds-sample
+
+Visiting that url, I find the following sections
+
+"""
+Backyard Birds: Building an app with SwiftData and widgets
+Create an app with persistent data, interactive widgets, and an all new in-app purchase experience.
+Download
+"""
+
+I would like you to modify the script to download the contents behind this download button
+
+"""
+Note
+This sample code project is associated with WWDC23 session 102: State of the Union.
+"""
+
+(Note that this reference to a WWDC session might not always be present)
+
+That WWDC session itself is a link to the following page 
+
+https://developer.apple.com/videos/play/wwdc2023/102/
+
+That page will always contain tabs called Overview, Transcript 
+That page will sometimes contain a tab called Code
+
+The HTML for the tabs will be uploaded as a separate fill as well 
+
+In the script, please click the Overview tab first. It will contain a section for Resources. I want you to download the SD Video. 
+
+Please download all of the reset of the text along with their links from the Overview
+
+In the transcript tab, we have a transcript with the following form:
+
+<a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/102/?time=23"
+                      >Darin Adler: Welcome to Platforms State of the Union
+                      2023! </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/102/?time=26"
+                      >We're excited to share more about how you can take
+                      advantage </a
+                    ><a
+                      class="sentence"
+                      href="/videos/play/wwdc2023/102/?time=29"
+                      >of what's coming in our new releases. </a
+                    >
+
+I want you to extract all of that text from the transcript along with the FULL href that the sentence points to
+
+For example 
+
+deeplink:
+https://developer.apple.com/videos/play/wwdc2023/102/?time=23 <<~~ note that this is a full deeplink and not just the href
+text: 
+Darin Adler: Welcome to Platforms State of the Union
+                      2023!
+
+deeplink:
+https://developer.apple.com/videos/play/wwdc2023/102/?time=26 <<~~ note that this is a full deeplink and not just the href
+text: 
+We're excited to share more about how you can take
+                      advantage 
+
+FULL INSTRUCTIONS SUMMARIZED
+
+Finally, I want all of the results of these operations to be saved in a file that is appropriate based on the title from the original link. 
+
+In the first example, the folder should be called 
+
+"Backyard Birds: Building an app with SwiftData and widgets"
+
+That folder should then contain a description.txt which will be 
+"Create an app with persistent data, interactive widgets, and an all new in-app purchase experience."
+
+It should also have a platforms.txt which in this case would contain
+"iOS macOS watchOS Xcode iPadOS"
+
+The contents of that directory should then contain the extracted body of this page:
+
+https://developer.apple.com/documentation/swiftui/backyard-birds-sample
+
+With code samples surrounded by a code fence ```code```
+URLs for links wtihin the document should also be maintained by simply replacing the plain text with the text (URL). We do this because getting the body of the document removes the hrefs, which we need for reference. 
+
+Do all of this work and save into "post.Backyard Birds: Building an app with SwiftData and widgets.txt"
+
+From this URL https://developer.apple.com/videos/play/wwdc2023/102/, I want the following
+
+the video downloaded as Platforms State of the Union.Backyard Birds: Building an app with SwiftData and widgets.<video file extension> into our folder for this original page
+
+the overview saved into overview.Backyard Birds: Building an app with SwiftData and widgets.txt
+
+the transcript saved into transcript.Backyard Birds: Building an app with SwiftData and widgets.txt
+
+the code links (very similar to transcript, observe the file (apps/web-crawl-q-and-a/PROMPTING/download code and related wwdc session/https-::developer.apple.com:videos:play:wwdc2023:10192:.html) for more details) saved into transcript.Backyard Birds: Building an app with SwiftData and widgets.txt
+
+
+
