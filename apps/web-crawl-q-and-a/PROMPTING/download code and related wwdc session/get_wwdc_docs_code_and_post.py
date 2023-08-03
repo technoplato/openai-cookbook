@@ -1,4 +1,6 @@
+import os
 from bs4 import BeautifulSoup
+import requests
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from datetime import datetime
@@ -143,6 +145,49 @@ def get_view_code_urls(driver, wwdc_year, wwdc_url, db):
     return view_code_urls
 
 
+def download_sample_code(driver, url, title, db, url_id):
+    # Navigate to the URL
+    driver.get(url)
+    driver.implicitly_wait(10)
+
+    # Parse the HTML content using BeautifulSoup
+    html_content = driver.page_source
+    soup = BeautifulSoup(html_content, "html.parser")
+
+    # Find the download button link
+    download_link = soup.find("a", text="Download")
+    if download_link:
+        download_url = download_link.get("href")
+
+        # Create a folder named after the title
+        folder_name = title.replace(":", "-")  # Replace colons with hyphens
+        os.makedirs(folder_name, exist_ok=True)
+
+        # Download the file
+        download_file(download_url, folder_name)
+
+        # Mark the page as downloaded in the database
+        db.mark_page_downloaded(url_id)
+
+        print(f"Downloaded contents for: {title}")
+
+
+def download_file(url, folder_name):
+    # Download the file from the URL and save it to the folder
+    response = requests.get(url)
+    file_name = os.path.join(folder_name, url.split("/")[-1])
+    with open(file_name, 'wb') as file:
+        file.write(response.content)
+
+
+def process_view_code_urls(driver, db):
+    # Fetch the URLs from the database that have not been downloaded yet
+    urls_to_process = db.get_undownloaded_urls()
+
+    for url_id, wwdc_year, title, url in urls_to_process:
+        download_sample_code(driver, url, title, db, url_id)
+
+
 def main():
     db = WWDCDatabase()
     starting_url = get_current_year_url()
@@ -153,6 +198,9 @@ def main():
         view_code_urls = get_view_code_urls(driver, wwdc_year, wwdc_url, db)
         for url in view_code_urls:
             comment(f"Processing URL: {url}")
+
+    # Process the "View Code" URLs
+    process_view_code_urls(driver, db)
 
 
 if __name__ == "__main__":
