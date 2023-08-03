@@ -110,7 +110,52 @@ def collect_links(driver, url):
     time.sleep(.4)
 
     """
-    TODO
+   TODO: Sample code 
+   https://developer.apple.com/sample-code/wwdc/2023/
+   https://developer.apple.com/sample-code/wwdc/2022/
+   https://developer.apple.com/sample-code/wwdc/2021/
+   https://developer.apple.com/sample-code/wwdc/2020/
+
+   All of the linked pages should be similar to:
+
+   <Download Button>
+
+   Overview
+
+   Note: 
+   This sample code project is associated with WWDC\d\d sesssion: <HREF>
+
+    ---
+
+    We want to visit that WWDC Session via href attribute
+
+    https://developer.apple.com/videos/play/wwdc2020/10052/
+
+    That page should have around three "tabs"
+
+    ---
+
+    Overview | Transcript | Code
+
+    ---
+
+    The code part is the most interesting
+
+    https://developer.apple.com/videos/play/wwdc2020/10052/?time=274
+
+    Fortunately, Apple's website currently allows a ?time=\d parameter to deeplink to a video.
+    
+    The transcript is also a series of links that include the timestamp at which that text was spoken. 
+
+    We can cross reference that transcript in order to grab some surrounding context for the code snippets from the "Code" tab. 
+
+    
+
+    """
+
+    """
+    TODO: more interesting docs we want
+
     https://developer.apple.com/airplay/
     https://developer.apple.com/shareplay/
     https://developer.apple.com/documentation/GroupActivities/
@@ -118,7 +163,19 @@ def collect_links(driver, url):
     https://developer.apple.com/documentation/multipeerconnectivity
     https://developer.apple.com/documentation/xcode
     https://developer.apple.com/documentation/xcode/configuring-app-groups
-    
+    https://developer.apple.com/documentation/widgetkit/ 
+    https://developer.apple.com/documentation/uikit/keyboards_and_input/
+    https://developer.apple.com/documentation/quicklook
+    https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG
+    https://developer.apple.com/documentation/corespotlight/
+    https://developer.apple.com/documentation/usernotificationsui/
+    https://developer.apple.com/documentation/nearbyinteraction/
+    https://developer.apple.com/documentation/watchconnectivity
+    https://developer.apple.com/documentation/watchos-apps
+
+
+
+
     """
 
     # Execute JavaScript to retrieve all href attributes of anchor tags containing specified substrings
