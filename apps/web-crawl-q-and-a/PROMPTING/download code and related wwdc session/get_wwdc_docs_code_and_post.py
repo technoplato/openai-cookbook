@@ -4,7 +4,7 @@ import requests
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from datetime import datetime
-
+import urllib.parse
 import sqlite3
 
 
@@ -19,9 +19,12 @@ class WWDCDatabase:
                 CREATE TABLE IF NOT EXISTS urls (
                     id INTEGER PRIMARY KEY,
                     wwdc_year TEXT,
+                    topic TEXT,
+                    slug TEXT,
                     title TEXT,
-                    description TEXT,
+                    overview TEXT,
                     platforms TEXT,
+                    platform_versions TEXT,
                     url_type TEXT,
                     url TEXT,
                     page_downloaded BOOLEAN DEFAULT 0,
@@ -33,11 +36,12 @@ class WWDCDatabase:
                 )
             """)
 
-    def save_url(self, wwdc_year, title, description, platforms, url_type, url):
+    def save_url(self, wwdc_year, topic, slug, title, overview, platforms, platform_versions, url_type, url):
         with self.conn:
             self.conn.execute("""
-                INSERT INTO urls (wwdc_year, title, description, platforms, url_type, url, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)
-            """, (wwdc_year, title, description, platforms, url_type, url, datetime.now()))
+                INSERT INTO urls (wwdc_year, topic, slug, title, overview, platforms, platform_versions, url_type, url, updated_at) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (wwdc_year, topic, slug, title, overview, ','.join(platforms), ','.join(platform_versions), url_type, url, datetime.now()))
 
     def mark_page_downloaded(self, url_id):
         self._update_status_flag(url_id, "page_downloaded")
@@ -67,6 +71,15 @@ class WWDCDatabase:
             """, (url_id,))
             result = cursor.fetchone()
             return result and result[0]
+
+    def get_undownloaded_urls(self):
+        with self.conn:
+            cursor = self.conn.execute("""
+                SELECT id, wwdc_year, title, url
+                FROM urls
+                WHERE page_downloaded = 0
+            """)
+            return cursor.fetchall()
 
 
 # ####################################################################################################
@@ -126,6 +139,8 @@ def get_view_code_urls(driver, wwdc_year, wwdc_url, db):
     for div in view_code_divs:
         link = div.find("a", text="View code")
         url = link.get("href") if link else ""
+        parsed_url = urllib.parse.urlparse(url)
+        topic, slug = parsed_url.path.strip('/').split('/')[-2:]
 
         title = div.find("h4", class_="cs-title")
         title_text = title.text.strip() if title else ""
@@ -134,30 +149,35 @@ def get_view_code_urls(driver, wwdc_year, wwdc_url, db):
         overview_text = overview.text.strip() if overview else ""
 
         platforms_div = div.find("p", class_="platform-container")
-        platforms = " ".join([span.text.strip() for span in platforms_div.find_all(
-            "span")]) if platforms_div else ""
+        platforms = [span.text.strip() for span in platforms_div.find_all(
+            "span")] if platforms_div else ""
+
+        availability_div = soup.find(
+            "div", class_="summary-section", role="complementary", aria_label="Availability")
+        platform_versions = [span.text.strip() for span in availability_div.find_all(
+            "span", class_="badge platform")] if availability_div else ""
 
         if url:
             view_code_urls.append(url)
-            db.save_url(wwdc_year, title_text, overview_text,
-                        platforms, "View code", url)
+            db.save_url(wwdc_year, topic, slug, title_text, overview_text,
+                        platforms, platform_versions, "View code", url)
+            comment(f"Saved URL: {url}")
 
     return view_code_urls
 
 
 def download_sample_code(driver, url, title, db, url_id):
-    # Navigate to the URL
+
     driver.get(url)
     driver.implicitly_wait(10)
-
-    # Parse the HTML content using BeautifulSoup
     html_content = driver.page_source
     soup = BeautifulSoup(html_content, "html.parser")
 
-    # Find the download button link
-    download_link = soup.find("a", text="Download")
-    if download_link:
-        download_url = download_link.get("href")
+    # Find the download button using the class
+    download_button = soup.find('a', class_='button-cta sample-download')
+
+    if download_button:
+        download_url = download_button.get('href')
 
         # Create a folder named after the title
         folder_name = title.replace(":", "-")  # Replace colons with hyphens
@@ -184,7 +204,8 @@ def process_view_code_urls(driver, db):
     # Fetch the URLs from the database that have not been downloaded yet
     urls_to_process = db.get_undownloaded_urls()
 
-    for url_id, wwdc_year, title, url in urls_to_process:
+    for url_id, wwdc_year, title, url in urls_to_process[:1]:
+        print("doing the first thing")
         download_sample_code(driver, url, title, db, url_id)
 
 
@@ -196,8 +217,13 @@ def main():
     for wwdc_year, wwdc_url in wwdc_urls:
         comment(f"Processing WWDC year: {wwdc_year}")
         view_code_urls = get_view_code_urls(driver, wwdc_year, wwdc_url, db)
-        for url in view_code_urls:
-            comment(f"Processing URL: {url}")
+        # for url in view_code_urls:
+        #     comment(f"Processing URL: {url}")
+        if view_code_urls:
+            first_url = view_code_urls[0]
+            comment(f"Processing First URL: {first_url}")
+            # Add code to process the first URL here
+            break  # Stops further processing after the first URL is found
 
     # Process the "View Code" URLs
     process_view_code_urls(driver, db)
