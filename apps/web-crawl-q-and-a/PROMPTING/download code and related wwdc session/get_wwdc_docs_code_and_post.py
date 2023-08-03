@@ -1,4 +1,5 @@
 import os
+import time
 from bs4 import BeautifulSoup
 import requests
 from selenium.webdriver.chrome.options import Options
@@ -6,6 +7,8 @@ from selenium import webdriver
 from datetime import datetime
 import urllib.parse
 import sqlite3
+import zipfile
+import glob
 
 
 class WWDCDatabase:
@@ -161,20 +164,65 @@ def get_view_code_urls(driver, wwdc_year, wwdc_url, db):
             view_code_urls.append(url)
             db.save_url(wwdc_year, topic, slug, title_text, overview_text,
                         platforms, platform_versions, "View code", url)
-            comment(f"Saved URL: {url}")
+            # comment(f"Saved URL: {url}")
 
     return view_code_urls
 
 
+def extract_zip_and_merge_files(zip_path, title):
+    print(f"Extracting ZIP file: {zip_path}")
+
+    # Extract ZIP file
+    extracted_folder = zip_path.replace('.zip', '')
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extracted_folder)
+
+    print(f"ZIP file extracted to: {extracted_folder}")
+
+    # Initialize content for ALL_<title>.swift and ALL_READMES_<title>.md
+    all_swift_code = ""
+    all_readmes = ""
+
+    # Iterate through all Swift files and concatenate their contents
+    swift_files = glob.glob(f'{extracted_folder}/**/*.swift', recursive=True)
+    print(f"Found {len(swift_files)} Swift files.")
+    for swift_file in swift_files:
+        with open(swift_file, 'r', encoding='utf-8') as file:
+            all_swift_code += file.read() + '\n\n'
+
+    # Iterate through all README files and concatenate their contents
+    readme_files = glob.glob(
+        f'{extracted_folder}/**/README.md', recursive=True)
+    print(f"Found {len(readme_files)} README files.")
+    for readme_file in readme_files:
+        with open(readme_file, 'r', encoding='utf-8') as file:
+            all_readmes += file.read() + '\n\n'
+
+    # Write concatenated Swift code to ALL_<title>.swift
+    with open(f'ALL_{title}.swift', 'w', encoding='utf-8') as file:
+        file.write(all_swift_code)
+
+    print(f"Written Swift code to: ALL_{title}.swift")
+
+    # Write concatenated READMEs to ALL_READMES_<title>.md
+    with open(f'ALL_READMES_{title}.md', 'w', encoding='utf-8') as file:
+        file.write(all_readmes)
+
+    print(f"Written READMEs to: ALL_READMES_{title}.md")
+
+
 def download_sample_code(driver, url, title, db, url_id):
+    print(f"Downloading sample code for URL: {url}")
 
     driver.get(url)
     driver.implicitly_wait(10)
+    time.sleep(.4)
     html_content = driver.page_source
     soup = BeautifulSoup(html_content, "html.parser")
 
     # Find the download button using the class
     download_button = soup.find('a', class_='button-cta sample-download')
+    print("download_button: ", download_button)
 
     if download_button:
         download_url = download_button.get('href')
@@ -185,6 +233,11 @@ def download_sample_code(driver, url, title, db, url_id):
 
         # Download the file
         download_file(download_url, folder_name)
+        print(f"Downloaded ZIP file: {download_url}")
+
+        # Extract ZIP file and merge Swift and README files
+        zip_path = os.path.join(folder_name, download_url.split("/")[-1])
+        extract_zip_and_merge_files(zip_path, title)
 
         # Mark the page as downloaded in the database
         db.mark_page_downloaded(url_id)
