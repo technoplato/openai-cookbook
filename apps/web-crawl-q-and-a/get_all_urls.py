@@ -262,6 +262,10 @@ https://developer.apple.com/documentation/foundation
 https://developer.apple.com/documentation/security
 https://developer.apple.com/documentation/sensitivecontentanalysis
 https://developer.apple.com/documentation/uikit
+https://developer.apple.com/documentation/swift/
+https://docs.swift.org/swift-book/documentation/
+https://developer.apple.com/documentation/Updates/
+https://developer.apple.com/documentation/localauthentication
     """
 
     # Execute JavaScript to retrieve all href attributes of anchor tags containing specified substrings
